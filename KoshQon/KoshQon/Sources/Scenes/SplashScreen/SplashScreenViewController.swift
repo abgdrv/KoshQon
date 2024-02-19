@@ -6,24 +6,38 @@
 //
 
 import UIKit
+import SwiftUI
+import SnapKit
 
 class SplashScreenViewController: UIViewController {
+    
+    // MARK: - UI
+    
+    private lazy var splashScreenView = SplashScreenView()
+    private lazy var hostingController = UIHostingController(rootView: splashScreenView)
+    private lazy var splashScreen = hostingController.view ?? UIView()
+
+    // MARK: - View Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupViews()
+        setupConstraints()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - Setup Views
+    
+    private func setupViews() {
+        view.backgroundColor = AppColor.mainBackground.uiColor
+        view.addSubview(splashScreen)
     }
-    */
-
+    
+    // MARK: - Setup Constraints
+    
+    private func setupConstraints() {
+        splashScreen.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+    }
+    
 }

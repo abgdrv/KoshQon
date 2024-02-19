@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		472E1B242B8305EF005BF649 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472E1B232B8305EF005BF649 /* SplashScreenView.swift */; };
+		472E1B262B830D0E005BF649 /* Anta-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 472E1B252B830D0E005BF649 /* Anta-Regular.ttf */; };
+		472E1B2A2B831BFC005BF649 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472E1B292B831BFC005BF649 /* Double+Extensions.swift */; };
+		472E1B2C2B83215C005BF649 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472E1B2B2B83215C005BF649 /* SplashScreenViewController.swift */; };
 		4743D06F2B81198800103C5E /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4743D06E2B81198800103C5E /* Colors.xcassets */; };
 		4756A0272B7FCC56003F9675 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4756A0262B7FCC56003F9675 /* AppDelegate.swift */; };
 		4756A0292B7FCC56003F9675 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4756A0282B7FCC56003F9675 /* SceneDelegate.swift */; };
@@ -29,6 +33,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		472E1B232B8305EF005BF649 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; usesTabs = 0; };
+		472E1B252B830D0E005BF649 /* Anta-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Anta-Regular.ttf"; path = "../../../../../../Desktop/Anta/Anta-Regular.ttf"; sourceTree = "<group>"; };
+		472E1B292B831BFC005BF649 /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
+		472E1B2B2B83215C005BF649 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
 		4743D06E2B81198800103C5E /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		4756A0232B7FCC56003F9675 /* KoshQon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KoshQon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4756A0262B7FCC56003F9675 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +71,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		472E1B272B831BC9005BF649 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				472E1B292B831BFC005BF649 /* Double+Extensions.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		472E1B282B831BDB005BF649 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
 		4743D0652B81147000103C5E /* Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +151,8 @@
 		4743D06C2B81193000103C5E /* SplashScreen */ = {
 			isa = PBXGroup;
 			children = (
+				472E1B232B8305EF005BF649 /* SplashScreenView.swift */,
+				472E1B2B2B83215C005BF649 /* SplashScreenViewController.swift */,
 			);
 			path = SplashScreen;
 			sourceTree = "<group>";
@@ -167,6 +192,8 @@
 		47C7B3752B8129E800125172 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				472E1B272B831BC9005BF649 /* Foundation */,
+				472E1B282B831BDB005BF649 /* UIKit */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -174,6 +201,7 @@
 		47C7B3822B81327F00125172 /* AppFonts */ = {
 			isa = PBXGroup;
 			children = (
+				472E1B252B830D0E005BF649 /* Anta-Regular.ttf */,
 				47C7B37C2B81321800125172 /* SF-Pro-Display-Bold.otf */,
 				47C7B37B2B81321700125172 /* SF-Pro-Display-Medium.otf */,
 				47C7B37D2B81321800125172 /* SF-Pro-Display-Regular.otf */,
@@ -275,6 +303,7 @@
 				4756A0302B7FCC57003F9675 /* Images.xcassets in Resources */,
 				47C7B3812B81321800125172 /* SF-Pro-Display-Regular.otf in Resources */,
 				47C7B37F2B81321800125172 /* SF-Pro-Display-Medium.otf in Resources */,
+				472E1B262B830D0E005BF649 /* Anta-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,7 +316,10 @@
 			files = (
 				47C7B3792B812AF000125172 /* AppColor.swift in Sources */,
 				47C7B3852B8132C800125172 /* AppFont.swift in Sources */,
+				472E1B242B8305EF005BF649 /* SplashScreenView.swift in Sources */,
 				47C7B3772B812A3700125172 /* AppColorProtocol.swift in Sources */,
+				472E1B2A2B831BFC005BF649 /* Double+Extensions.swift in Sources */,
+				472E1B2C2B83215C005BF649 /* SplashScreenViewController.swift in Sources */,
 				4756A0272B7FCC56003F9675 /* AppDelegate.swift in Sources */,
 				4756A0292B7FCC56003F9675 /* SceneDelegate.swift in Sources */,
 				47C7B3872B8132E100125172 /* AppFontProtocol.swift in Sources */,

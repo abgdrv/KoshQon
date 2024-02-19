@@ -13,5 +13,6 @@ enum AppFont: String, AppFontProtocol {
     case medium = "SF Pro Display Medium"
     case regular = "SF Pro Display Regular"
     case semibold = "SF Pro Display Semibold"
+    case anta = "Anta Regular"
     
 }

@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+extension Double {
+    
+    var convertedToString: String {
+        let doubleString = "\(self)"
+        let double = Double(doubleString.replacingOccurrences(of: ",", with: ".")) ?? 0
+        return String(format: "%.1f", double)
+    }
+    
+}
