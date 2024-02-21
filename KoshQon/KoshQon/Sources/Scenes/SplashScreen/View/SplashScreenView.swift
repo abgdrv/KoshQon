@@ -13,12 +13,12 @@ struct SplashScreenView: View {
     @State private var font = Font(AppFont.anta.s32)
     
     private let minScaleFont = Font(AppFont.anta.s10)
-    private let maxScaleFont = Font(AppFont.anta.s72)
+    private let maxScaleFont = Font(AppFont.anta.s64)
     
     private let maxScaleEffect = 4.0
     private let minScaleEffect = 0.0
     private let animationDuration = 1.0
-    private let animationDelay = 1.0
+    private let animationDelay = 1.5
     
     private let color = Color(AppColor.orange.uiColor)
     private let logoColor = Color(AppColor.mainTitle.uiColor)
@@ -58,7 +58,7 @@ struct SplashScreenView: View {
             .font(font)
             .foregroundColor(logoColor)
             .onAppear {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
                     withAnimation(.spring(response: 1, dampingFraction: 0.5)) {
                         font = minScaleFont
                     }
@@ -72,7 +72,7 @@ struct SplashScreenView: View {
     }
     
     var versionView: some View {
-        Text("\(version.convertedToString) version")
+        Text("\(version.convertedToString) версия")
             .font(versionFont)
             .foregroundColor(logoColor.opacity(0.4))
     }
