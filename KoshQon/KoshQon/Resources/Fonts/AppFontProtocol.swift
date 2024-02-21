@@ -73,8 +73,12 @@ extension AppFontProtocol {
         return apply(size: 32)
     }
     
-    var s72: UIFont {
-        return apply(size: 72)
+    var s40: UIFont {
+        return apply(size: 40)
+    }
+    
+    var s64: UIFont {
+        return apply(size: 64)
     }
 
 }
