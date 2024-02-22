@@ -7,10 +7,20 @@
 
 import Foundation
 
-final class SignInViewModel {
+protocol SignInProtocol {
+    func signIn(signInModel: SignInModel)
+}
+
+final class SignInViewModel: SignInProtocol {
     
     // MARK: - Properties
     
     private var model: SignInModel?
+    
+    // MARK: - Methods
+    
+    func signIn(signInModel: SignInModel) {
+        
+    }
     
 }

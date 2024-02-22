@@ -21,11 +21,11 @@
 		4756A0332B7FCC57003F9675 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4756A0312B7FCC57003F9675 /* LaunchScreen.storyboard */; };
 		4764D5882B84D47900D15A2E /* Anta-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4764D5872B84D47900D15A2E /* Anta-Regular.ttf */; };
 		4764D58B2B850E3F00D15A2E /* PhoneNumberKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4764D58A2B850E3F00D15A2E /* PhoneNumberKit */; };
-		4764D5902B851B2D00D15A2E /* PhoneTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4764D58F2B851B2D00D15A2E /* PhoneTextField.swift */; };
 		4764D5932B85229D00D15A2E /* ProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 4764D5922B85229D00D15A2E /* ProgressHUD */; };
 		4764D5952B85A0A500D15A2E /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4764D5942B85A0A500D15A2E /* SignInViewModel.swift */; };
 		4764D5982B85A50000D15A2E /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4764D5972B85A50000D15A2E /* SignInView.swift */; };
 		4764D59A2B85AC9500D15A2E /* SignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4764D5992B85AC9500D15A2E /* SignInModel.swift */; };
+		4764D59D2B86533300D15A2E /* PanModal in Frameworks */ = {isa = PBXBuildFile; productRef = 4764D59C2B86533300D15A2E /* PanModal */; };
 		47C7B3772B812A3700125172 /* AppColorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C7B3762B812A3700125172 /* AppColorProtocol.swift */; };
 		47C7B3792B812AF000125172 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C7B3782B812AF000125172 /* AppColor.swift */; };
 		47C7B37E2B81321800125172 /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 47C7B37A2B81321700125172 /* SF-Pro-Display-Semibold.otf */; };
@@ -58,7 +58,6 @@
 		4756A0322B7FCC57003F9675 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4756A0342B7FCC57003F9675 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = KoshQon/Resources/Info.plist; sourceTree = SOURCE_ROOT; };
 		4764D5872B84D47900D15A2E /* Anta-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Anta-Regular.ttf"; sourceTree = "<group>"; };
-		4764D58F2B851B2D00D15A2E /* PhoneTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneTextField.swift; sourceTree = "<group>"; };
 		4764D5942B85A0A500D15A2E /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		4764D5972B85A50000D15A2E /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		4764D5992B85AC9500D15A2E /* SignInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInModel.swift; sourceTree = "<group>"; };
@@ -85,6 +84,7 @@
 				4764D5932B85229D00D15A2E /* ProgressHUD in Frameworks */,
 				47C7B38D2B8136AB00125172 /* Kingfisher in Frameworks */,
 				47C7B38A2B8136A200125172 /* netfox in Frameworks */,
+				4764D59D2B86533300D15A2E /* PanModal in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,7 +200,6 @@
 				472E1B3B2B836A75005BF649 /* InputTextField.swift */,
 				472E1B3D2B8372DA005BF649 /* InputLabel.swift */,
 				472E1B3F2B837AAE005BF649 /* ProceedButton.swift */,
-				4764D58F2B851B2D00D15A2E /* PhoneTextField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -381,6 +380,7 @@
 				47C7B3922B8136C000125172 /* SnapKit */,
 				4764D58A2B850E3F00D15A2E /* PhoneNumberKit */,
 				4764D5922B85229D00D15A2E /* ProgressHUD */,
+				4764D59C2B86533300D15A2E /* PanModal */,
 			);
 			productName = KoshQon;
 			productReference = 4756A0232B7FCC56003F9675 /* KoshQon.app */;
@@ -417,6 +417,7 @@
 				47C7B3912B8136C000125172 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				4764D5892B850E3F00D15A2E /* XCRemoteSwiftPackageReference "PhoneNumberKit" */,
 				4764D5912B85229D00D15A2E /* XCRemoteSwiftPackageReference "ProgressHUD" */,
+				4764D59B2B86533300D15A2E /* XCRemoteSwiftPackageReference "PanModal" */,
 			);
 			productRefGroup = 4756A0242B7FCC56003F9675 /* Products */;
 			projectDirPath = "";
@@ -453,7 +454,6 @@
 				4764D5982B85A50000D15A2E /* SignInView.swift in Sources */,
 				47C7B3792B812AF000125172 /* AppColor.swift in Sources */,
 				47C7B3852B8132C800125172 /* AppFont.swift in Sources */,
-				4764D5902B851B2D00D15A2E /* PhoneTextField.swift in Sources */,
 				472E1B242B8305EF005BF649 /* SplashScreenView.swift in Sources */,
 				472E1B3E2B8372DA005BF649 /* InputLabel.swift in Sources */,
 				47C7B3772B812A3700125172 /* AppColorProtocol.swift in Sources */,
@@ -702,6 +702,14 @@
 				minimumVersion = 14.1.1;
 			};
 		};
+		4764D59B2B86533300D15A2E /* XCRemoteSwiftPackageReference "PanModal" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/slackhq/PanModal";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.7;
+			};
+		};
 		47C7B3882B8136A200125172 /* XCRemoteSwiftPackageReference "netfox" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kasketis/netfox";
@@ -746,6 +754,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4764D5912B85229D00D15A2E /* XCRemoteSwiftPackageReference "ProgressHUD" */;
 			productName = ProgressHUD;
+		};
+		4764D59C2B86533300D15A2E /* PanModal */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4764D59B2B86533300D15A2E /* XCRemoteSwiftPackageReference "PanModal" */;
+			productName = PanModal;
 		};
 		47C7B3892B8136A200125172 /* netfox */ = {
 			isa = XCSwiftPackageProductDependency;

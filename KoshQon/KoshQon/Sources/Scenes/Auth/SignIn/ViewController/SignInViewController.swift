@@ -15,7 +15,7 @@ final class SignInViewController: UIViewController {
     
     // MARK: - UI
     
-    private lazy var signInView = SignInView()
+    private lazy var signInView = SignInView(viewModel: viewModel)
     
     // MARK: - Object Lifecycle
     

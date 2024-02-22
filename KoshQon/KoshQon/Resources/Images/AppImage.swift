@@ -7,21 +7,24 @@
 
 import Foundation
 
-enum AppImage: String, AppImageProtocol {
+enum AppImage {
     
     // MARK: - Common
     
-    case AppIcon
+    enum Common: String, AppImageProtocol {
+        case AppIcon
+    }
     
     // MARK: - Auth
     
-    case eyeOn = "auth/eye_on"
-    case eyeOff = "auth/eye_off"
-    case checkbox = "auth/checkbox"
-    case checkboxFilled = "auth/checkbox_filled"
-    case calendar = "auth/calendar"
-    case expandDown = "auth/expand_down"
-    
-    // MARK: -
+    enum Auth: String, AppImageProtocol {
+        case eyeOn = "auth/eye_on"
+        case eyeOff = "auth/eye_off"
+        case checkbox = "auth/checkbox"
+        case checkboxFilled = "auth/checkbox_filled"
+        case calendar = "auth/calendar"
+        case expandDown = "auth/expand_down"
+        case clear = "auth/clear"
+    }
     
 }

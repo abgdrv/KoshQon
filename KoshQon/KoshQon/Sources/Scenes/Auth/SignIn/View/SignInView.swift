@@ -12,7 +12,7 @@ final class SignInView: UIView {
     
     // MARK: - Properties
     
-    private var viewModel: SignInViewModel?
+    private let viewModel: SignInViewModel
 
     // MARK: - UI
     
@@ -33,8 +33,8 @@ final class SignInView: UIView {
         return label
     }()
     
-    private lazy var phoneTextField: PhoneTextField = {
-        let textField = PhoneTextField()
+    private lazy var phoneTextField: InputTextField = {
+        let textField = InputTextField(inputType: .phone)
         textField.placeholder = "Введите ваш номер телефона"
         textField.keyboardType = .phonePad
         return textField
@@ -47,18 +47,10 @@ final class SignInView: UIView {
     }()
     
     private lazy var passwordTextField: InputTextField = {
-        let textField = InputTextField(isButton: true)
+        let textField = InputTextField(inputType: .password)
         textField.placeholder = "Введите ваш пароль"
         textField.isSecureTextEntry = true
         return textField
-    }()
-    
-    private lazy var hidePasswordButton: UIButton = {
-        let button = UIButton(type: .custom)
-        button.setImage(AppImage.eyeOff.uiImage, for: .normal)
-        button.setImage(AppImage.eyeOn.uiImage, for: .selected)
-        button.addTarget(self, action: #selector(hidePasswordButtonTapped), for: .touchUpInside)
-        return button
     }()
     
     private lazy var forgotPasswordButton: UIButton = {
@@ -98,8 +90,9 @@ final class SignInView: UIView {
     
     // MARK: - Object Lifecycle
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init(viewModel: SignInViewModel) {
+        self.viewModel = viewModel
+        super.init(frame: .zero)
         setupViews()
         setupConstraints()
         setupGestures()
@@ -126,7 +119,6 @@ private extension SignInView {
         [logoNameLabel, formView].forEach { addSubview($0) }
         [phoneLabel, phoneTextField, passwordLabel, passwordTextField,
          forgotPasswordButton, signInButton, signUpLinkLabel].forEach { formView.addSubview($0) }
-        passwordTextField.addSubview(hidePasswordButton)
     }
     
     func setupConstraints() {
@@ -162,11 +154,6 @@ private extension SignInView {
             make.height.equalTo(50)
         }
         
-        hidePasswordButton.snp.makeConstraints { make in
-            make.trailing.equalToSuperview().inset(20)
-            make.centerY.equalToSuperview()
-        }
-        
         forgotPasswordButton.snp.makeConstraints { make in
             make.top.equalTo(passwordTextField.snp.bottom).offset(10)
             make.trailing.equalToSuperview()
@@ -193,11 +180,6 @@ private extension SignInView {
 // MARK: - Actions
 
 private extension SignInView {
-    
-    @objc func hidePasswordButtonTapped() {
-        passwordTextField.isSecureTextEntry.toggle()
-        hidePasswordButton.isSelected.toggle()
-    }
     
     @objc func forgotPasswordButtonTapped() {
     }
