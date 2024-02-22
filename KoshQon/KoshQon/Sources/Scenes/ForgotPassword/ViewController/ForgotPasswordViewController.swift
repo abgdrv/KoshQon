@@ -1,25 +1,25 @@
 //
-//  SignInViewController.swift
+//  ForgotPasswordViewController.swift
 //  KoshQon
 //
-//  Created by Almat Begaidarov on 19.02.2024.
+//  Created by Almat Begaidarov on 22.02.2024.
 //
 
 import UIKit
 
-final class SignInViewController: UIViewController {
+final class ForgotPasswordViewController: UIViewController {
     
     // MARK: - Properties
     
-    private let viewModel: SignInViewModel
+    private let viewModel: ForgotPasswordViewModel
     
     // MARK: - UI
     
-    private lazy var signInView = SignInView(viewModel: viewModel)
+    private lazy var forgotPasswordView = ForgotPasswordView(viewModel: viewModel)
     
     // MARK: - Object Lifecycle
     
-    init(viewModel: SignInViewModel) {
+    init(viewModel: ForgotPasswordViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -32,10 +32,13 @@ final class SignInViewController: UIViewController {
     
     override func loadView() {
         super.loadView()
-        view = signInView
+        view = forgotPasswordView
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+
 }

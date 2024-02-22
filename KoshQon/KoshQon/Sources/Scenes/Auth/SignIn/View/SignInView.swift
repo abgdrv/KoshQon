@@ -20,44 +20,22 @@ final class SignInView: UIView {
         let label = UILabel()
         label.font = AppFont.anta.s40
         label.textAlignment = .center
-        label.textColor = AppColor.mainTitle.uiColor
+        label.textColor = AppColor.Theme.mainTitle.uiColor
         label.text = "KoshQon"
         return label
     }()
     
     private lazy var formView = UIView()
-    
-    private lazy var phoneLabel: InputLabel = {
-        let label = InputLabel()
-        label.text = "Номер телефона"
-        return label
-    }()
-    
-    private lazy var phoneTextField: InputTextField = {
-        let textField = InputTextField(inputType: .phone)
-        textField.placeholder = "Введите ваш номер телефона"
-        textField.keyboardType = .phonePad
-        return textField
-    }()
-    
-    private lazy var passwordLabel: InputLabel = {
-        let label = InputLabel()
-        label.text = "Пароль"
-        return label
-    }()
-    
-    private lazy var passwordTextField: InputTextField = {
-        let textField = InputTextField(inputType: .password)
-        textField.placeholder = "Введите ваш пароль"
-        textField.isSecureTextEntry = true
-        return textField
-    }()
+    private lazy var phoneLabel = InputLabel(type: .phone)
+    private lazy var phoneTextField = InputTextField(inputType: .phone)
+    private lazy var passwordLabel = InputLabel(type: .password)
+    private lazy var passwordTextField = InputTextField(inputType: .password)
     
     private lazy var forgotPasswordButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Забыл пароль", for: .normal)
         button.titleLabel?.font = AppFont.regular.s14
-        button.setTitleColor(AppColor.darkBlue.uiColor, for: .normal)
+        button.setTitleColor(AppColor.Static.darkBlue.uiColor, for: .normal)
         button.tintColor = .clear
         button.addTarget(self, action: #selector(forgotPasswordButtonTapped), for: .touchUpInside)
         return button
@@ -65,8 +43,7 @@ final class SignInView: UIView {
     
     private lazy var signInButton: ProceedButton = {
         let button = ProceedButton(type: .system)
-        button.setTitle("Войти", for: .normal)
-        button.titleLabel?.font = AppFont.semibold.s16
+        button.type = .signIn
         button.addTarget(self, action: #selector(signInButtonTapped), for: .touchUpInside)
         return button
     }()
@@ -77,7 +54,7 @@ final class SignInView: UIView {
         let linkText = "Зарегистрироваться"
         let linkString = NSMutableAttributedString(string: regularText + " " + linkText)
         linkString.addAttributes(
-            [.foregroundColor: AppColor.orange.uiColor, .underlineStyle: NSUnderlineStyle.single.rawValue],
+            [.foregroundColor: AppColor.Static.orange.uiColor, .underlineStyle: NSUnderlineStyle.single.rawValue],
             range: NSRange(location: regularText.count + 1, length: linkText.count))
         label.attributedText = linkString
         label.font = AppFont.regular.s16
@@ -113,9 +90,11 @@ final class SignInView: UIView {
     
 }
 
+// MARK: - Setup Views, Constraints, Gestures
+
 private extension SignInView {
     func setupViews() {
-        backgroundColor = AppColor.mainBackground.uiColor
+        backgroundColor = AppColor.Theme.mainBackground.uiColor
         [logoNameLabel, formView].forEach { addSubview($0) }
         [phoneLabel, phoneTextField, passwordLabel, passwordTextField,
          forgotPasswordButton, signInButton, signUpLinkLabel].forEach { formView.addSubview($0) }

@@ -28,9 +28,8 @@ final class SplashScreenViewController: UIViewController {
 // MARK: - Setup Views, Constraints
 
 private extension SplashScreenViewController {
-    
     func setupViews() {
-        view.backgroundColor = AppColor.mainBackground.uiColor
+        view.backgroundColor = AppColor.Theme.mainBackground.uiColor
         view.addSubview(splashScreenView)
     }
         

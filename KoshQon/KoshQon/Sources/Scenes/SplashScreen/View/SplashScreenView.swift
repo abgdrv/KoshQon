@@ -20,8 +20,8 @@ struct SplashScreenView: View {
     private let animationDuration = 1.0
     private let animationDelay = 1.5
     
-    private let color = Color(AppColor.orange.uiColor)
-    private let logoColor = Color(AppColor.mainTitle.uiColor)
+    private let color = Color(AppColor.Static.orange.uiColor)
+    private let logoColor = Color(AppColor.Theme.mainTitle.uiColor)
     
     private let version = 1.0
     private let versionFont = Font(AppFont.medium.s20)

@@ -7,12 +7,22 @@
 
 import UIKit
 
+enum InputLabelType {
+    case phone
+    case password
+    case createPassword
+    case repeatPassword
+}
+
 final class InputLabel: UILabel {
+    
+    private let type: InputLabelType
     
     // MARK: - Object Lifecycle
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init(type: InputLabelType) {
+        self.type = type
+        super.init(frame: .zero)
         configure()
     }
     
@@ -24,7 +34,22 @@ final class InputLabel: UILabel {
     
     private func configure() {
         font = AppFont.regular.s16
-        textColor = AppColor.darkGray.uiColor
+        textColor = AppColor.Static.darkGray.uiColor
         textAlignment = .natural
+        
+        switch type {
+        case .phone:
+            setup(text: "Номер телефона")
+        case .password:
+            setup(text: "Пароль")
+        case .createPassword:
+            setup(text: "Придумайте пароль")
+        case .repeatPassword:
+            setup(text: "Повторите пароль")
+        }
+    }
+    
+    private func setup(text: String) {
+        self.text = text
     }
 }

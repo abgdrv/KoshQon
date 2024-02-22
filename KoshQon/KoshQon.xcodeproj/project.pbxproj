@@ -26,6 +26,9 @@
 		4764D5982B85A50000D15A2E /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4764D5972B85A50000D15A2E /* SignInView.swift */; };
 		4764D59A2B85AC9500D15A2E /* SignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4764D5992B85AC9500D15A2E /* SignInModel.swift */; };
 		4764D59D2B86533300D15A2E /* PanModal in Frameworks */ = {isa = PBXBuildFile; productRef = 4764D59C2B86533300D15A2E /* PanModal */; };
+		4764D5A72B87448300D15A2E /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4764D5A62B87448300D15A2E /* ForgotPasswordViewController.swift */; };
+		4764D5A92B8744E400D15A2E /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4764D5A82B8744E400D15A2E /* ForgotPasswordViewModel.swift */; };
+		4764D5AB2B87459900D15A2E /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4764D5AA2B87459900D15A2E /* ForgotPasswordView.swift */; };
 		47C7B3772B812A3700125172 /* AppColorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C7B3762B812A3700125172 /* AppColorProtocol.swift */; };
 		47C7B3792B812AF000125172 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C7B3782B812AF000125172 /* AppColor.swift */; };
 		47C7B37E2B81321800125172 /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 47C7B37A2B81321700125172 /* SF-Pro-Display-Semibold.otf */; };
@@ -40,6 +43,7 @@
 		47C7B3932B8136C000125172 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 47C7B3922B8136C000125172 /* SnapKit */; };
 		47C7B3962B81372F00125172 /* AppImageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C7B3952B81372F00125172 /* AppImageProtocol.swift */; };
 		47C7B3982B81377400125172 /* AppImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C7B3972B81377400125172 /* AppImage.swift */; };
+		47CD670E2B8759EB0035DCB6 /* Typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CD670D2B8759EB0035DCB6 /* Typealias.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +65,9 @@
 		4764D5942B85A0A500D15A2E /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		4764D5972B85A50000D15A2E /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		4764D5992B85AC9500D15A2E /* SignInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInModel.swift; sourceTree = "<group>"; };
+		4764D5A62B87448300D15A2E /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		4764D5A82B8744E400D15A2E /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
+		4764D5AA2B87459900D15A2E /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		47C7B3762B812A3700125172 /* AppColorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColorProtocol.swift; sourceTree = "<group>"; };
 		47C7B3782B812AF000125172 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
 		47C7B37A2B81321700125172 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
@@ -71,6 +78,7 @@
 		47C7B3862B8132E100125172 /* AppFontProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFontProtocol.swift; sourceTree = "<group>"; };
 		47C7B3952B81372F00125172 /* AppImageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppImageProtocol.swift; sourceTree = "<group>"; };
 		47C7B3972B81377400125172 /* AppImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppImage.swift; sourceTree = "<group>"; };
+		47CD670D2B8759EB0035DCB6 /* Typealias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealias.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,7 +140,6 @@
 		472E1B302B8363B6005BF649 /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
-				472E1B382B836652005BF649 /* Coordinator */,
 				472E1B342B8364BC005BF649 /* Model */,
 				4764D5962B85A43A00D15A2E /* View */,
 				472E1B332B83647B005BF649 /* ViewController */,
@@ -144,6 +151,10 @@
 		472E1B312B8363D7005BF649 /* ForgotPassword */ = {
 			isa = PBXGroup;
 			children = (
+				4764D5A32B87441E00D15A2E /* Model */,
+				4764D5A22B87441000D15A2E /* View */,
+				4764D5A42B87442600D15A2E /* ViewController */,
+				4764D5A52B87442E00D15A2E /* ViewModel */,
 			);
 			path = ForgotPassword;
 			sourceTree = "<group>";
@@ -179,16 +190,10 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		472E1B382B836652005BF649 /* Coordinator */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Coordinator;
-			sourceTree = "<group>";
-		};
 		472E1B392B83689A005BF649 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				47CD670C2B8759CD0035DCB6 /* Typealias */,
 				472E1B3A2B8368AB005BF649 /* View */,
 			);
 			path = Common;
@@ -263,6 +268,8 @@
 			children = (
 				4743D06C2B81193000103C5E /* SplashScreen */,
 				4743D06D2B81194100103C5E /* Auth */,
+				472E1B312B8363D7005BF649 /* ForgotPassword */,
+				47CD670F2B8761530035DCB6 /* SmsCode */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -281,7 +288,6 @@
 			isa = PBXGroup;
 			children = (
 				472E1B302B8363B6005BF649 /* SignIn */,
-				472E1B312B8363D7005BF649 /* ForgotPassword */,
 				472E1B322B8363E1005BF649 /* SignUp */,
 			);
 			path = Auth;
@@ -320,6 +326,37 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		4764D5A22B87441000D15A2E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4764D5AA2B87459900D15A2E /* ForgotPasswordView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4764D5A32B87441E00D15A2E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4764D5A42B87442600D15A2E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4764D5A62B87448300D15A2E /* ForgotPasswordViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		4764D5A52B87442E00D15A2E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4764D5A82B8744E400D15A2E /* ForgotPasswordViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		47C7B3752B8129E800125172 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -355,6 +392,53 @@
 				4756A02F2B7FCC57003F9675 /* Images.xcassets */,
 			);
 			path = AppImages;
+			sourceTree = "<group>";
+		};
+		47CD670C2B8759CD0035DCB6 /* Typealias */ = {
+			isa = PBXGroup;
+			children = (
+				47CD670D2B8759EB0035DCB6 /* Typealias.swift */,
+			);
+			path = Typealias;
+			sourceTree = "<group>";
+		};
+		47CD670F2B8761530035DCB6 /* SmsCode */ = {
+			isa = PBXGroup;
+			children = (
+				47CD67132B87626E0035DCB6 /* Model */,
+				47CD67102B87615D0035DCB6 /* View */,
+				47CD67122B8762670035DCB6 /* ViewController */,
+				47CD67142B8762760035DCB6 /* ViewModel */,
+			);
+			path = SmsCode;
+			sourceTree = "<group>";
+		};
+		47CD67102B87615D0035DCB6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		47CD67122B8762670035DCB6 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		47CD67132B87626E0035DCB6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		47CD67142B8762760035DCB6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -452,20 +536,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				4764D5982B85A50000D15A2E /* SignInView.swift in Sources */,
+				4764D5AB2B87459900D15A2E /* ForgotPasswordView.swift in Sources */,
 				47C7B3792B812AF000125172 /* AppColor.swift in Sources */,
 				47C7B3852B8132C800125172 /* AppFont.swift in Sources */,
 				472E1B242B8305EF005BF649 /* SplashScreenView.swift in Sources */,
 				472E1B3E2B8372DA005BF649 /* InputLabel.swift in Sources */,
 				47C7B3772B812A3700125172 /* AppColorProtocol.swift in Sources */,
 				472E1B2A2B831BFC005BF649 /* Double+Extensions.swift in Sources */,
+				4764D5A72B87448300D15A2E /* ForgotPasswordViewController.swift in Sources */,
 				472E1B2C2B83215C005BF649 /* SplashScreenViewController.swift in Sources */,
 				4756A0272B7FCC56003F9675 /* AppDelegate.swift in Sources */,
 				4764D5952B85A0A500D15A2E /* SignInViewModel.swift in Sources */,
+				47CD670E2B8759EB0035DCB6 /* Typealias.swift in Sources */,
 				4756A0292B7FCC56003F9675 /* SceneDelegate.swift in Sources */,
 				472E1B372B8364E1005BF649 /* SignInViewController.swift in Sources */,
 				472E1B402B837AAE005BF649 /* ProceedButton.swift in Sources */,
 				472E1B3C2B836A75005BF649 /* InputTextField.swift in Sources */,
 				47C7B3872B8132E100125172 /* AppFontProtocol.swift in Sources */,
+				4764D5A92B8744E400D15A2E /* ForgotPasswordViewModel.swift in Sources */,
 				4764D59A2B85AC9500D15A2E /* SignInModel.swift in Sources */,
 				47C7B3962B81372F00125172 /* AppImageProtocol.swift in Sources */,
 				47C7B3982B81377400125172 /* AppImage.swift in Sources */,

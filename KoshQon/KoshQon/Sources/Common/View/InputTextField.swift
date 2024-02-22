@@ -23,7 +23,7 @@ final class InputTextField: UITextField {
 
     private var padding = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
     private var placeholderPadding = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
-    private let inputType: InputType
+    private let type: InputType
     private let inputData: [String]? = []
     
     // MARK: - UI
@@ -60,7 +60,7 @@ final class InputTextField: UITextField {
     // MARK: - Object Lifecycle
     
     init(inputType: InputType) {
-        self.inputType = inputType
+        self.type = inputType
         super.init(frame: .zero)
         configure()
     }
@@ -73,7 +73,7 @@ final class InputTextField: UITextField {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        switch inputType {
+        switch type {
         case .password:
             break
         case .date:
@@ -107,9 +107,9 @@ final class InputTextField: UITextField {
     
     private func configure() {
         font = AppFont.medium.s16
-        textColor = AppColor.darkGray.uiColor
-        backgroundColor = AppColor.mainBackground.uiColor
-        layer.borderColor = AppColor.darkGray.cgColor
+        textColor = AppColor.Static.darkGray.uiColor
+        backgroundColor = AppColor.Theme.mainBackground.uiColor
+        layer.borderColor = AppColor.Static.darkGray.cgColor
         layer.borderWidth = 1
         clipsToBounds = true
         autocapitalizationType = .none
@@ -120,7 +120,7 @@ final class InputTextField: UITextField {
         setupConstraints()
         setupPadding()
         
-        switch inputType {
+        switch type {
         case .password:
             isSecureTextEntry = true
             placeholder = "Введите ваш пароль"
@@ -128,6 +128,7 @@ final class InputTextField: UITextField {
             placeholder = "Дата рождения"
         case .phone:
             placeholder = "Введите ваш номер телефона"
+            keyboardType = .phonePad
         case .gender:
             placeholder = "Пол"
         case .city:
@@ -151,7 +152,7 @@ final class InputTextField: UITextField {
 private extension InputTextField {
     func setupViews() {
         addSubview(containerView)
-        switch inputType {
+        switch type {
         case .password:
             containerView.addArrangedSubview(hidePasswordButton)
         case .date:
@@ -166,7 +167,7 @@ private extension InputTextField {
     }
     
     func setupConstraints() {
-        switch inputType {
+        switch type {
         case .password:
             containerView.snp.makeConstraints { make in
                 make.top.bottom.equalToSuperview()
@@ -188,7 +189,7 @@ private extension InputTextField {
     }
     
     func setupPadding() {
-        switch inputType {
+        switch type {
         case .password, .date, .gender, .city:
             padding = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 60)
             placeholderPadding = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 60)

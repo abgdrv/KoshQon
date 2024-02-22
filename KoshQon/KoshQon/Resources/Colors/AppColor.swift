@@ -7,27 +7,31 @@
 
 import Foundation
 
-enum AppColor: String, AppColorProtocol {
+enum AppColor {
     
     // MARK: - Static
     
-    case black = "static/black"
-    case white = "static/white"
-    case darkBlue = "static/blue_dark"
-    case lightBlue = "static/blue_light"
-    case darkGray = "static/gray_dark"
-    case lightGray = "static/gray_light"
-    case green = "static/green"
-    case orange = "static/orange"
-    case darkRed = "static/red_dark"
-    case lightRed = "static/red_light"
-    case yellow = "static/yellow"
+    enum Static: String, AppColorProtocol {
+        case black = "static/black"
+        case white = "static/white"
+        case darkBlue = "static/blue_dark"
+        case lightBlue = "static/blue_light"
+        case darkGray = "static/gray_dark"
+        case lightGray = "static/gray_light"
+        case green = "static/green"
+        case orange = "static/orange"
+        case darkRed = "static/red_dark"
+        case lightRed = "static/red_light"
+        case yellow = "static/yellow"
+    }
     
     // MARK: - Theme
     
-    case mainBackground = "theme/main_background"
-    case mainTitle = "theme/main_title"
-    case secondaryBackground = "theme/secondary_background"
-    case secondaryTitle = "theme/secondary_title"
-    
+    enum Theme: String, AppColorProtocol {
+        case mainBackground = "theme/main_background"
+        case mainTitle = "theme/main_title"
+        case secondaryBackground = "theme/secondary_background"
+        case secondaryTitle = "theme/secondary_title"
+        
+    }
 }
