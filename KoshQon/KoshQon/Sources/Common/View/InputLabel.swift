@@ -12,6 +12,8 @@ enum InputLabelType {
     case password
     case createPassword
     case repeatPassword
+    case sms
+    case resend
 }
 
 final class InputLabel: UILabel {
@@ -46,6 +48,10 @@ final class InputLabel: UILabel {
             setup(text: "Придумайте пароль")
         case .repeatPassword:
             setup(text: "Повторите пароль")
+        case .sms:
+            setup(text: "Код подтверждения отправлен на")
+        case .resend:
+            setup(text: "Переотправить через")
         }
     }
     

@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-final class SignInView: UIView {
+final class SignInView: BaseView {
     
     // MARK: - Properties
     
@@ -72,7 +72,6 @@ final class SignInView: UIView {
         super.init(frame: .zero)
         setupViews()
         setupConstraints()
-        setupGestures()
     }
     
     required init?(coder: NSCoder) {
@@ -90,11 +89,10 @@ final class SignInView: UIView {
     
 }
 
-// MARK: - Setup Views, Constraints, Gestures
+// MARK: - Setup Views, Constraints
 
 private extension SignInView {
     func setupViews() {
-        backgroundColor = AppColor.Theme.mainBackground.uiColor
         [logoNameLabel, formView].forEach { addSubview($0) }
         [phoneLabel, phoneTextField, passwordLabel, passwordTextField,
          forgotPasswordButton, signInButton, signUpLinkLabel].forEach { formView.addSubview($0) }
@@ -150,16 +148,11 @@ private extension SignInView {
             make.bottom.equalToSuperview().inset(20)
         }
     }
-    
-    func setupGestures() {
-        addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(viewTapped)))
-    }
 }
 
 // MARK: - Actions
 
 private extension SignInView {
-    
     @objc func forgotPasswordButtonTapped() {
     }
     
@@ -168,9 +161,5 @@ private extension SignInView {
     }
     
     @objc func signUpLinkLabelTapped() {
-    }
-    
-    @objc func viewTapped() {
-        endEditing(true)
     }
 }

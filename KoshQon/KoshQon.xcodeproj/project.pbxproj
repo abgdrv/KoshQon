@@ -44,6 +44,15 @@
 		47C7B3962B81372F00125172 /* AppImageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C7B3952B81372F00125172 /* AppImageProtocol.swift */; };
 		47C7B3982B81377400125172 /* AppImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C7B3972B81377400125172 /* AppImage.swift */; };
 		47CD670E2B8759EB0035DCB6 /* Typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CD670D2B8759EB0035DCB6 /* Typealias.swift */; };
+		47CD67162B8762F70035DCB6 /* SmsCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CD67152B8762F70035DCB6 /* SmsCodeView.swift */; };
+		47CD67182B87635C0035DCB6 /* SmsCodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CD67172B87635C0035DCB6 /* SmsCodeViewModel.swift */; };
+		47CD671A2B8796060035DCB6 /* SmsCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CD67192B8796060035DCB6 /* SmsCodeViewController.swift */; };
+		47CD67222B88A7AE0035DCB6 /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CD67212B88A7AE0035DCB6 /* ChangePasswordView.swift */; };
+		47CD67242B88A8E10035DCB6 /* ChangePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CD67232B88A8E10035DCB6 /* ChangePasswordViewModel.swift */; };
+		47CD67262B88A9980035DCB6 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CD67252B88A9980035DCB6 /* BaseView.swift */; };
+		47CD67282B88BB070035DCB6 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CD67272B88BB070035DCB6 /* ChangePasswordViewController.swift */; };
+		47CD672D2B8C3DD50035DCB6 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CD672C2B8C3DD50035DCB6 /* BaseViewController.swift */; };
+		47CD67382B8DA33E0035DCB6 /* NavigationTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CD67372B8DA33E0035DCB6 /* NavigationTitleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +88,15 @@
 		47C7B3952B81372F00125172 /* AppImageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppImageProtocol.swift; sourceTree = "<group>"; };
 		47C7B3972B81377400125172 /* AppImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppImage.swift; sourceTree = "<group>"; };
 		47CD670D2B8759EB0035DCB6 /* Typealias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealias.swift; sourceTree = "<group>"; };
+		47CD67152B8762F70035DCB6 /* SmsCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsCodeView.swift; sourceTree = "<group>"; };
+		47CD67172B87635C0035DCB6 /* SmsCodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsCodeViewModel.swift; sourceTree = "<group>"; };
+		47CD67192B8796060035DCB6 /* SmsCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsCodeViewController.swift; sourceTree = "<group>"; };
+		47CD67212B88A7AE0035DCB6 /* ChangePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordView.swift; sourceTree = "<group>"; };
+		47CD67232B88A8E10035DCB6 /* ChangePasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewModel.swift; sourceTree = "<group>"; };
+		47CD67252B88A9980035DCB6 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		47CD67272B88BB070035DCB6 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		47CD672C2B8C3DD50035DCB6 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		47CD67372B8DA33E0035DCB6 /* NavigationTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTitleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +213,7 @@
 			children = (
 				47CD670C2B8759CD0035DCB6 /* Typealias */,
 				472E1B3A2B8368AB005BF649 /* View */,
+				47CD672B2B8C3DC00035DCB6 /* ViewController */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -205,6 +224,8 @@
 				472E1B3B2B836A75005BF649 /* InputTextField.swift */,
 				472E1B3D2B8372DA005BF649 /* InputLabel.swift */,
 				472E1B3F2B837AAE005BF649 /* ProceedButton.swift */,
+				47CD67252B88A9980035DCB6 /* BaseView.swift */,
+				47CD67372B8DA33E0035DCB6 /* NavigationTitleView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -269,6 +290,7 @@
 				4743D06C2B81193000103C5E /* SplashScreen */,
 				4743D06D2B81194100103C5E /* Auth */,
 				472E1B312B8363D7005BF649 /* ForgotPassword */,
+				47CD671B2B88A6F50035DCB6 /* ChangePassword */,
 				47CD670F2B8761530035DCB6 /* SmsCode */,
 			);
 			path = Scenes;
@@ -416,6 +438,7 @@
 		47CD67102B87615D0035DCB6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				47CD67152B8762F70035DCB6 /* SmsCodeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -423,6 +446,7 @@
 		47CD67122B8762670035DCB6 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				47CD67192B8796060035DCB6 /* SmsCodeViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -437,8 +461,59 @@
 		47CD67142B8762760035DCB6 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				47CD67172B87635C0035DCB6 /* SmsCodeViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		47CD671B2B88A6F50035DCB6 /* ChangePassword */ = {
+			isa = PBXGroup;
+			children = (
+				47CD671C2B88A76E0035DCB6 /* Model */,
+				47CD671E2B88A7830035DCB6 /* View */,
+				47CD671F2B88A7880035DCB6 /* ViewController */,
+				47CD67202B88A7970035DCB6 /* ViewModel */,
+			);
+			path = ChangePassword;
+			sourceTree = "<group>";
+		};
+		47CD671C2B88A76E0035DCB6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		47CD671E2B88A7830035DCB6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				47CD67212B88A7AE0035DCB6 /* ChangePasswordView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		47CD671F2B88A7880035DCB6 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				47CD67272B88BB070035DCB6 /* ChangePasswordViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		47CD67202B88A7970035DCB6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				47CD67232B88A8E10035DCB6 /* ChangePasswordViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		47CD672B2B8C3DC00035DCB6 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				47CD672C2B8C3DD50035DCB6 /* BaseViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -536,21 +611,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				4764D5982B85A50000D15A2E /* SignInView.swift in Sources */,
+				47CD67382B8DA33E0035DCB6 /* NavigationTitleView.swift in Sources */,
 				4764D5AB2B87459900D15A2E /* ForgotPasswordView.swift in Sources */,
 				47C7B3792B812AF000125172 /* AppColor.swift in Sources */,
 				47C7B3852B8132C800125172 /* AppFont.swift in Sources */,
+				47CD672D2B8C3DD50035DCB6 /* BaseViewController.swift in Sources */,
+				47CD67242B88A8E10035DCB6 /* ChangePasswordViewModel.swift in Sources */,
 				472E1B242B8305EF005BF649 /* SplashScreenView.swift in Sources */,
 				472E1B3E2B8372DA005BF649 /* InputLabel.swift in Sources */,
 				47C7B3772B812A3700125172 /* AppColorProtocol.swift in Sources */,
+				47CD67162B8762F70035DCB6 /* SmsCodeView.swift in Sources */,
+				47CD671A2B8796060035DCB6 /* SmsCodeViewController.swift in Sources */,
 				472E1B2A2B831BFC005BF649 /* Double+Extensions.swift in Sources */,
+				47CD67262B88A9980035DCB6 /* BaseView.swift in Sources */,
+				47CD67282B88BB070035DCB6 /* ChangePasswordViewController.swift in Sources */,
 				4764D5A72B87448300D15A2E /* ForgotPasswordViewController.swift in Sources */,
 				472E1B2C2B83215C005BF649 /* SplashScreenViewController.swift in Sources */,
+				47CD67182B87635C0035DCB6 /* SmsCodeViewModel.swift in Sources */,
 				4756A0272B7FCC56003F9675 /* AppDelegate.swift in Sources */,
 				4764D5952B85A0A500D15A2E /* SignInViewModel.swift in Sources */,
 				47CD670E2B8759EB0035DCB6 /* Typealias.swift in Sources */,
 				4756A0292B7FCC56003F9675 /* SceneDelegate.swift in Sources */,
 				472E1B372B8364E1005BF649 /* SignInViewController.swift in Sources */,
 				472E1B402B837AAE005BF649 /* ProceedButton.swift in Sources */,
+				47CD67222B88A7AE0035DCB6 /* ChangePasswordView.swift in Sources */,
 				472E1B3C2B836A75005BF649 /* InputTextField.swift in Sources */,
 				47C7B3872B8132E100125172 /* AppFontProtocol.swift in Sources */,
 				4764D5A92B8744E400D15A2E /* ForgotPasswordViewModel.swift in Sources */,
@@ -627,7 +711,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -684,7 +768,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -708,7 +792,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -736,7 +820,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

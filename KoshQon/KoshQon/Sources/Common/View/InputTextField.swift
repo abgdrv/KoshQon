@@ -14,13 +14,14 @@ enum InputType {
     case phone
     case gender
     case city
-    case none
+    case regular
+    case sms
 }
 
 final class InputTextField: UITextField {
     
     // MARK: - Properties
-
+    
     private var padding = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
     private var placeholderPadding = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
     private let type: InputType
@@ -84,8 +85,10 @@ final class InputTextField: UITextField {
             break
         case .city:
             break
-        case .none:
+        case .regular:
             checkEditing()
+        case .sms:
+            break
         }
     }
     
@@ -133,7 +136,12 @@ final class InputTextField: UITextField {
             placeholder = "Пол"
         case .city:
             placeholder = "Город"
-        case .none:
+        case .sms:
+            keyboardType = .numberPad
+            font = AppFont.bold.s24
+            layer.borderColor = AppColor.Static.orange.cgColor
+            textAlignment = .center
+        case .regular:
             break
         }
     }
@@ -161,7 +169,7 @@ private extension InputTextField {
             break
         case .gender,.city:
             containerView.addArrangedSubview(expandDownButton)
-        case .none:
+        case .regular, .sms:
             break
         }
     }
@@ -180,7 +188,7 @@ private extension InputTextField {
                 make.leading.equalToSuperview()
                 make.width.equalTo(50)
             }
-        case .none:
+        case .regular:
             break
         default:
             break
@@ -196,7 +204,7 @@ private extension InputTextField {
         case .phone:
             padding = UIEdgeInsets(top: 16, left: 60, bottom: 16, right: 16)
             placeholderPadding = UIEdgeInsets(top: 16, left: 60, bottom: 16, right: 16)
-        case .none:
+        case .regular, .sms:
             break
         }
     }

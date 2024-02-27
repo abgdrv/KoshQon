@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-final class ForgotPasswordView: UIView {
+final class ForgotPasswordView: BaseView {
 
     // MARK: - Properties
     
@@ -34,7 +34,6 @@ final class ForgotPasswordView: UIView {
         super.init(frame: .zero)
         setupViews()
         setupConstraints()
-        setupGestures()
     }
     
     required init?(coder: NSCoder) {
@@ -54,13 +53,12 @@ final class ForgotPasswordView: UIView {
 
 private extension ForgotPasswordView {
     func setupViews() {
-        backgroundColor = AppColor.Theme.mainBackground.uiColor
         [phoneLabel, phoneTextField, continueButton].forEach { addSubview($0) }
     }
     
     func setupConstraints() {
         phoneLabel.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(32)
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(30)
             make.leading.equalToSuperview().offset(16)
         }
         
@@ -76,10 +74,6 @@ private extension ForgotPasswordView {
             make.height.equalTo(50)
         }
     }
-    
-    func setupGestures() {
-        addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(viewTapped)))
-    }
 }
 
 // MARK: - Actions
@@ -88,10 +82,4 @@ private extension ForgotPasswordView {
     @objc func continueButtonTapped() {
         onAction?(phoneTextField.text ?? "")
     }
-    
-    @objc func viewTapped() {
-        endEditing(true)
-    }
 }
-
-
