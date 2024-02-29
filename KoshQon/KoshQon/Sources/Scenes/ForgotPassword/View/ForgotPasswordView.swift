@@ -17,7 +17,7 @@ final class ForgotPasswordView: BaseView {
     
     // MARK: - UI
     
-    private lazy var phoneLabel = InputLabel(type: .phone)
+    private lazy var phoneLabel = InfoLabel(type: .phone)
     private lazy var phoneTextField = InputTextField(inputType: .phone)
     
     private lazy var continueButton: ProceedButton = {

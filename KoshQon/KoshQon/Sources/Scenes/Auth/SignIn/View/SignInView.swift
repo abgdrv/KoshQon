@@ -26,9 +26,9 @@ final class SignInView: BaseView {
     }()
     
     private lazy var formView = UIView()
-    private lazy var phoneLabel = InputLabel(type: .phone)
+    private lazy var phoneLabel = InfoLabel(type: .phone)
     private lazy var phoneTextField = InputTextField(inputType: .phone)
-    private lazy var passwordLabel = InputLabel(type: .password)
+    private lazy var passwordLabel = InfoLabel(type: .password)
     private lazy var passwordTextField = InputTextField(inputType: .password)
     
     private lazy var forgotPasswordButton: UIButton = {

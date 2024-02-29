@@ -15,23 +15,12 @@ final class ChangePasswordView: BaseView {
     
     private let viewModel: ChangePasswordViewModel
     private let isFirstTime: Bool
-//    
-//    static var keyboardHeightPublisher: AnyPublisher<CGFloat, Never> {
-//        let willShow = NotificationCenter.default.publisher(for: UIApplication.keyboardWillShowNotification)
-//            .map { $0.(userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect)?.height ?? 0 }
-//
-//        let willHide = NotificationCenter.default.publisher(for: UIApplication.keyboardWillHideNotification)
-//            .map { _ in CGFloat(0) }
-//
-//        return MergeMany(willShow, willHide)
-//            .eraseToAnyPublisher()
-//    }
     
     // MARK: - UI
     
-    private lazy var createPasswordLabel = InputLabel(type: .createPassword)
+    private lazy var createPasswordLabel = InfoLabel(type: .createPassword)
     private lazy var passwordTextField = InputTextField(inputType: .password)
-    private lazy var repeatPasswordLabel = InputLabel(type: .repeatPassword)
+    private lazy var repeatPasswordLabel = InfoLabel(type: .repeatPassword)
     private lazy var repeatPasswordTextField = InputTextField(inputType: .password)
     
     private lazy var changePasswordButton: ProceedButton = {
@@ -41,6 +30,9 @@ final class ChangePasswordView: BaseView {
         return button
     }()
     
+    private lazy var infoLabel = InfoLabel(type: .passwordContain)
+    private lazy var passwordRequirementsLabel = InfoLabel(type: .passwordRequirements)
+    
     // MARK: - Object Lifecycle
     
     init(viewModel: ChangePasswordViewModel, isFirstTime: Bool) {
@@ -49,6 +41,7 @@ final class ChangePasswordView: BaseView {
         super.init(frame: .zero)
         setupViews()
         setupConstraints()
+        setupObservers()
     }
     
     required init?(coder: NSCoder) {
@@ -69,8 +62,8 @@ final class ChangePasswordView: BaseView {
 
 private extension ChangePasswordView {
     func setupViews() {
-        [createPasswordLabel, passwordTextField, repeatPasswordLabel,
-         repeatPasswordTextField, changePasswordButton].forEach { addSubview($0) }
+        [createPasswordLabel, passwordTextField, repeatPasswordLabel, repeatPasswordTextField,
+         changePasswordButton, infoLabel, passwordRequirementsLabel].forEach { addSubview($0) }
     }
         
     func setupConstraints() {
@@ -97,13 +90,23 @@ private extension ChangePasswordView {
         }
         
         changePasswordButton.snp.makeConstraints { make in
-            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom)
+            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).inset(8)
             make.leading.trailing.equalToSuperview().inset(16)
             make.height.equalTo(50)
         }
+        
+        infoLabel.snp.makeConstraints { make in
+            make.top.equalTo(repeatPasswordTextField.snp.bottom).offset(20)
+            make.leading.equalToSuperview().offset(16)
+        }
+        
+        passwordRequirementsLabel.snp.makeConstraints { make in
+            make.top.equalTo(infoLabel.snp.bottom).offset(10)
+            make.leading.equalToSuperview().offset(16)
+        }
     }
     
-    func trackKeyboard() {
+    func setupObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow),
                                                name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide),
@@ -119,16 +122,27 @@ private extension ChangePasswordView {
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            if frame.origin.y == 0 {
-                frame.origin.y -= keyboardSize.height
+        if let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect {
+            let keyboardHeight = keyboardFrame.height + 8
+            changePasswordButton.snp.remakeConstraints { make in
+                make.bottom.equalToSuperview().inset(keyboardHeight)
+                make.leading.trailing.equalToSuperview().inset(16)
+                make.height.equalTo(50)
+            }
+            UIView.animate(withDuration: 0.3) {
+                self.layoutIfNeeded()
             }
         }
     }
 
     @objc func keyboardWillHide(notification: NSNotification) {
-        if frame.origin.y != 0 {
-            frame.origin.y = 0
+        changePasswordButton.snp.remakeConstraints { make in
+            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).inset(8)
+            make.leading.trailing.equalToSuperview().inset(16)
+            make.height.equalTo(50)
+        }
+        UIView.animate(withDuration: 0.3) {
+            self.layoutIfNeeded()
         }
     }
 }

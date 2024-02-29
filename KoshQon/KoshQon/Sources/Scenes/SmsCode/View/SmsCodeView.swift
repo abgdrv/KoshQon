@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import ProgressHUD
 
 final class SmsCodeView: BaseView {
     
@@ -26,7 +27,7 @@ final class SmsCodeView: BaseView {
     
     // MARK: - UI
     
-    private lazy var infoLabel = InputLabel(type: .sms)
+    private lazy var infoLabel = InfoLabel(type: .sms)
     
     private lazy var phoneNumberLabel: UILabel = {
         let label = UILabel()
@@ -43,16 +44,14 @@ final class SmsCodeView: BaseView {
         stackView.distribution = .fillEqually
         for _ in 0..<4 {
             let textField = InputTextField(inputType: .sms)
-            textField.delegate = self
             textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
             stackView.addArrangedSubview(textField)
             codeTextFields.append(textField)
         }
-        codeTextFields.first?.becomeFirstResponder()
         return stackView
     }()
     
-    private lazy var resendLabel = InputLabel(type: .resend)
+    private lazy var resendLabel = InfoLabel(type: .resend)
     
     private lazy var resendButton: UIButton = {
         let button = UIButton(type: .system)
@@ -77,6 +76,7 @@ final class SmsCodeView: BaseView {
         super.init(frame: .zero)
         setupViews()
         setupConstraints()
+        setupObservers()
         setupTimer()
     }
     
@@ -94,7 +94,7 @@ final class SmsCodeView: BaseView {
     }
 }
 
-// MARK: - Setup Views, Constraints, Gestures, Timer
+// MARK: - Setup
 
 private extension SmsCodeView {
     func setupViews() {
@@ -131,7 +131,7 @@ private extension SmsCodeView {
         }
         
         continueButton.snp.makeConstraints { make in
-            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom)
+            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).inset(8)
             make.leading.trailing.equalToSuperview().inset(16)
             make.height.equalTo(50)
         }
@@ -140,6 +140,13 @@ private extension SmsCodeView {
     func setupTimer() {
         resendTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer),
                                            userInfo: nil, repeats: true)
+    }
+    
+    func setupObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow),
+                                               name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide),
+                                               name: UIResponder.keyboardWillHideNotification, object: nil)
     }
 }
 
@@ -165,25 +172,45 @@ private extension SmsCodeView {
     }
 
     @objc func continueButtonTapped() {
+        guard code == "0000" else {
+            ProgressHUD.banner("Ошибка", "Неверный код подтверждения", delay: 3)
+            return
+        }
         onAction?()
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
-        guard textField.text != nil else { return }
-        if let index = codeTextFields.firstIndex(of: textField), index < codeTextFields.count - 1 {
+        guard let index = codeTextFields.firstIndex(of: textField) else { return }
+        if  index < codeTextFields.count - 1 {
             codeTextFields[index + 1].becomeFirstResponder()
         }
+        if codeTextFields[index].text == "", index > 0 {
+            codeTextFields[index - 1].becomeFirstResponder()
+        }
     }
-}
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect {
+            let keyboardHeight = keyboardFrame.height + 8
+            continueButton.snp.remakeConstraints { make in
+                make.bottom.equalToSuperview().inset(keyboardHeight)
+                make.leading.trailing.equalToSuperview().inset(16)
+                make.height.equalTo(50)
+            }
+            UIView.animate(withDuration: 0.3) {
+                self.layoutIfNeeded()
+            }
+        }
+    }
 
-// MARK: - UITextFieldDelegate
-
-extension SmsCodeView: UITextFieldDelegate {
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange,
-                   replacementString string: String) -> Bool {
-        let maxLength = 1
-        let currentText = textField.text ?? ""
-        let newText = (currentText as NSString).replacingCharacters(in: range, with: string)
-        return newText.count <= maxLength
+    @objc func keyboardWillHide(notification: NSNotification) {
+        continueButton.snp.remakeConstraints { make in
+            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom)
+            make.leading.trailing.equalToSuperview().inset(16)
+            make.height.equalTo(50)
+        }
+        UIView.animate(withDuration: 0.3) {
+            self.layoutIfNeeded()
+        }
     }
 }

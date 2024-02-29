@@ -39,13 +39,6 @@ final class InputTextField: UITextField {
         return button
     }()
     
-    private lazy var clearContentButton: UIButton = {
-        let button = UIButton(type: .custom)
-        button.setImage(AppImage.Auth.clear.uiImage, for: .normal)
-        button.addTarget(self, action: #selector(clearContentButtonTapped), for: .touchUpInside)
-        return button
-    }()
-    
     private lazy var calendarButton: UIButton = {
         let button = UIButton(type: .custom)
         button.setImage(AppImage.Auth.calendar.uiImage, for: .normal)
@@ -72,26 +65,6 @@ final class InputTextField: UITextField {
     
     // MARK: - View Lifecycle
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        switch type {
-        case .password:
-            break
-        case .date:
-            break
-        case .phone:
-            break
-        case .gender:
-            break
-        case .city:
-            break
-        case .regular:
-            checkEditing()
-        case .sms:
-            break
-        }
-    }
-    
     // MARK: - Override Functions
     
     override public func textRect(forBounds bounds: CGRect) -> CGRect {
@@ -106,6 +79,13 @@ final class InputTextField: UITextField {
         return bounds.inset(by: padding)
     }
     
+    
+    
+    override func clearButtonRect(forBounds bounds: CGRect) -> CGRect {
+            let originalRect = super.clearButtonRect(forBounds: bounds)
+            return originalRect.offsetBy(dx: -10, dy: 0)
+    }
+    
     // MARK: - Private Methods
     
     private func configure() {
@@ -118,10 +98,13 @@ final class InputTextField: UITextField {
         autocapitalizationType = .none
         autocorrectionType = .no
         spellCheckingType = .no
+        delegate = self
         
         setupViews()
         setupConstraints()
         setupPadding()
+        setupGestures()
+        setupClearButton()
         
         switch type {
         case .password:
@@ -132,6 +115,7 @@ final class InputTextField: UITextField {
         case .phone:
             placeholder = "Введите ваш номер телефона"
             keyboardType = .phonePad
+            clearButtonMode = .whileEditing
         case .gender:
             placeholder = "Пол"
         case .city:
@@ -142,15 +126,7 @@ final class InputTextField: UITextField {
             layer.borderColor = AppColor.Static.orange.cgColor
             textAlignment = .center
         case .regular:
-            break
-        }
-    }
-    
-    private func checkEditing() {
-        if isEditing && text?.isEmpty == false {
-            clearContentButton.isHidden = false
-        } else {
-            clearContentButton.isHidden = true
+            clearButtonMode = .whileEditing
         }
     }
 }
@@ -205,12 +181,39 @@ private extension InputTextField {
             padding = UIEdgeInsets(top: 16, left: 60, bottom: 16, right: 16)
             placeholderPadding = UIEdgeInsets(top: 16, left: 60, bottom: 16, right: 16)
         case .regular, .sms:
-            break
+            padding = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
+            placeholderPadding = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
         }
     }
     
     func setupGestures() {
         
+    }
+    
+    func setupClearButton() {
+        if let clearButton = value(forKeyPath: "_clearButton") as? UIButton {
+            clearButton.setImage(AppImage.Auth.clear.uiImage, for: .normal)
+        }
+    }
+}
+
+// MARK: - Private methods
+
+private extension InputTextField {
+    func formattedNumber(number: String) -> String {
+        let cleanPhoneNumber = number.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
+        let mask = "(###) ### ## ##"
+        var result = ""
+        var index = cleanPhoneNumber.startIndex
+        for ch in mask where index < cleanPhoneNumber.endIndex {
+            if ch == "#" {
+                result.append(cleanPhoneNumber[index])
+                index = cleanPhoneNumber.index(after: index)
+            } else {
+                result.append(ch)
+            }
+        }
+        return result
     }
 }
 
@@ -222,16 +225,29 @@ private extension InputTextField {
         hidePasswordButton.isSelected.toggle()
     }
     
-    @objc func clearContentButtonTapped() {
-        text = ""
-        clearContentButton.isHidden = true
-    }
-    
     @objc func calendarButtonTapped() {
         
     }
     
     @objc func expandDownButtonTapped() {
         
+    }
+}
+
+extension InputTextField: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange,
+                   replacementString string: String) -> Bool {
+        guard let text = textField.text else { return false }
+        if type == .phone {
+            let newString = (text as NSString).replacingCharacters(in: range, with: string)
+            textField.text = formattedNumber(number: newString)
+            return false
+        }
+        if type == .sms {
+            let maxLength = 1
+            let newText = (text as NSString).replacingCharacters(in: range, with: string)
+            return newText.count <= maxLength
+        }
+        return false
     }
 }

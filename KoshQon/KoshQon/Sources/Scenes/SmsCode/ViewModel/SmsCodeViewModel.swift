@@ -18,6 +18,7 @@ final class SmsCodeViewModel {
         let prodSeconds = seconds % 60
         return String(format: "%02d:%02d", prodMinutes, prodSeconds)
     }
+    var check = false
     
     func secondsDecrement() {
         seconds -= 1
