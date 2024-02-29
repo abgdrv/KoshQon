@@ -30,6 +30,7 @@ final class NavigationTitleView: UIView {
     private let type: NavigationTitleType
     private let title: String?
     private var isIcon = false
+    private var isFirst = false
     
     // MARK: - UI
     
@@ -83,12 +84,16 @@ final class NavigationTitleView: UIView {
             setup(text: "Создание пароля")
         case .personalInfo:
             setup(text: "Личная информация")
+            isFirst = true
         case .koshqon:
             setup(text: "KoshQon", font: AppFont.anta.s24)
+            isFirst = true
         case .favorites:
             setup(text: "Избранное")
+            isFirst = true
         case .messages:
             setup(text: "Сообщения")
+            isFirst = true
         case .directMessages:
             setup(text: title)
         case .profile:
@@ -132,7 +137,11 @@ private extension NavigationTitleView {
         }
         
         titleLabel.snp.makeConstraints { make in
-            make.trailing.equalToSuperview().offset(20)
+            if isFirst {
+                make.trailing.equalToSuperview()
+            } else {
+                make.trailing.equalToSuperview().offset(20)
+            }
             make.centerY.equalToSuperview()
         }
     }

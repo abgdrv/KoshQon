@@ -28,4 +28,10 @@ enum AppImage {
         case clear = "auth/clear"
     }
     
+    // MARK: - Personal
+
+    enum Personal: String, AppImageProtocol {
+        case plus = "personal/plus"
+    }
+    
 }

@@ -55,6 +55,8 @@
 		47CD67382B8DA33E0035DCB6 /* NavigationTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CD67372B8DA33E0035DCB6 /* NavigationTitleView.swift */; };
 		47CD673E2B8DDB2B0035DCB6 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CD673D2B8DDB2B0035DCB6 /* SignUpView.swift */; };
 		47CD67402B8DE0D40035DCB6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CD673F2B8DE0D40035DCB6 /* SignUpViewController.swift */; };
+		47CD67592B908A0A0035DCB6 /* PersonInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CD67582B908A0A0035DCB6 /* PersonInformationView.swift */; };
+		47CD675C2B90950E0035DCB6 /* PersonInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CD675B2B90950D0035DCB6 /* PersonInformationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,6 +103,8 @@
 		47CD67372B8DA33E0035DCB6 /* NavigationTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTitleView.swift; sourceTree = "<group>"; };
 		47CD673D2B8DDB2B0035DCB6 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		47CD673F2B8DE0D40035DCB6 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		47CD67582B908A0A0035DCB6 /* PersonInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonInformationView.swift; sourceTree = "<group>"; };
+		47CD675B2B90950D0035DCB6 /* PersonInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonInformationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,12 +140,12 @@
 			path = UIKit;
 			sourceTree = "<group>";
 		};
-		472E1B2D2B834832005BF649 /* View */ = {
+		472E1B2D2B834832005BF649 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				472E1B232B8305EF005BF649 /* SplashScreenView.swift */,
 			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		472E1B2E2B8348B5005BF649 /* View Controller */ = {
@@ -163,7 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				472E1B342B8364BC005BF649 /* Model */,
-				4764D5962B85A43A00D15A2E /* View */,
+				4764D5962B85A43A00D15A2E /* Views */,
 				472E1B332B83647B005BF649 /* ViewController */,
 				472E1B352B8364C0005BF649 /* ViewModel */,
 			);
@@ -174,7 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				4764D5A32B87441E00D15A2E /* Model */,
-				4764D5A22B87441000D15A2E /* View */,
+				4764D5A22B87441000D15A2E /* Views */,
 				4764D5A42B87442600D15A2E /* ViewController */,
 				4764D5A52B87442E00D15A2E /* ViewModel */,
 			);
@@ -185,7 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				47CD673C2B8DDB050035DCB6 /* Model */,
-				47CD673B2B8DDB000035DCB6 /* View */,
+				47CD673B2B8DDB000035DCB6 /* Views */,
 				47CD673A2B8DDAE70035DCB6 /* ViewController */,
 				47CD67392B8DDADF0035DCB6 /* ViewModel */,
 			);
@@ -300,6 +304,7 @@
 				472E1B312B8363D7005BF649 /* ForgotPassword */,
 				47CD670F2B8761530035DCB6 /* SmsCode */,
 				47CD671B2B88A6F50035DCB6 /* ChangePassword */,
+				47CD67532B9084D60035DCB6 /* PersonInformation */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -308,7 +313,7 @@
 			isa = PBXGroup;
 			children = (
 				472E1B2F2B8348CA005BF649 /* Coordinator */,
-				472E1B2D2B834832005BF649 /* View */,
+				472E1B2D2B834832005BF649 /* Views */,
 				472E1B2E2B8348B5005BF649 /* View Controller */,
 			);
 			path = SplashScreen;
@@ -317,7 +322,6 @@
 		4743D06D2B81194100103C5E /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				47CD67532B9084D60035DCB6 /* PersonInformation */,
 				472E1B302B8363B6005BF649 /* SignIn */,
 				472E1B322B8363E1005BF649 /* SignUp */,
 			);
@@ -349,20 +353,20 @@
 			path = KoshQon;
 			sourceTree = "<group>";
 		};
-		4764D5962B85A43A00D15A2E /* View */ = {
+		4764D5962B85A43A00D15A2E /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				4764D5972B85A50000D15A2E /* SignInView.swift */,
 			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
-		4764D5A22B87441000D15A2E /* View */ = {
+		4764D5A22B87441000D15A2E /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				4764D5AA2B87459900D15A2E /* ForgotPasswordView.swift */,
 			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		4764D5A32B87441E00D15A2E /* Model */ = {
@@ -437,19 +441,19 @@
 			isa = PBXGroup;
 			children = (
 				47CD67132B87626E0035DCB6 /* Model */,
-				47CD67102B87615D0035DCB6 /* View */,
+				47CD67102B87615D0035DCB6 /* Views */,
 				47CD67122B8762670035DCB6 /* ViewController */,
 				47CD67142B8762760035DCB6 /* ViewModel */,
 			);
 			path = SmsCode;
 			sourceTree = "<group>";
 		};
-		47CD67102B87615D0035DCB6 /* View */ = {
+		47CD67102B87615D0035DCB6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				47CD67152B8762F70035DCB6 /* SmsCodeView.swift */,
 			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		47CD67122B8762670035DCB6 /* ViewController */ = {
@@ -479,7 +483,7 @@
 			isa = PBXGroup;
 			children = (
 				47CD671C2B88A76E0035DCB6 /* Model */,
-				47CD671E2B88A7830035DCB6 /* View */,
+				47CD671E2B88A7830035DCB6 /* Views */,
 				47CD671F2B88A7880035DCB6 /* ViewController */,
 				47CD67202B88A7970035DCB6 /* ViewModel */,
 			);
@@ -493,12 +497,12 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		47CD671E2B88A7830035DCB6 /* View */ = {
+		47CD671E2B88A7830035DCB6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				47CD67212B88A7AE0035DCB6 /* ChangePasswordView.swift */,
 			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		47CD671F2B88A7880035DCB6 /* ViewController */ = {
@@ -540,12 +544,12 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		47CD673B2B8DDB000035DCB6 /* View */ = {
+		47CD673B2B8DDB000035DCB6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				47CD673D2B8DDB2B0035DCB6 /* SignUpView.swift */,
 			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		47CD673C2B8DDB050035DCB6 /* Model */ = {
@@ -558,8 +562,42 @@
 		47CD67532B9084D60035DCB6 /* PersonInformation */ = {
 			isa = PBXGroup;
 			children = (
+				47CD67572B9085E00035DCB6 /* Model */,
+				47CD67562B9085D90035DCB6 /* Views */,
+				47CD67552B9085CD0035DCB6 /* ViewController */,
+				47CD67542B9085C40035DCB6 /* ViewModel */,
 			);
 			path = PersonInformation;
+			sourceTree = "<group>";
+		};
+		47CD67542B9085C40035DCB6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		47CD67552B9085CD0035DCB6 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				47CD675B2B90950D0035DCB6 /* PersonInformationViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		47CD67562B9085D90035DCB6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				47CD67582B908A0A0035DCB6 /* PersonInformationView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		47CD67572B9085E00035DCB6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -668,12 +706,14 @@
 				472E1B3E2B8372DA005BF649 /* InfoLabel.swift in Sources */,
 				47C7B3772B812A3700125172 /* AppColorProtocol.swift in Sources */,
 				47CD67162B8762F70035DCB6 /* SmsCodeView.swift in Sources */,
+				47CD67592B908A0A0035DCB6 /* PersonInformationView.swift in Sources */,
 				47CD671A2B8796060035DCB6 /* SmsCodeViewController.swift in Sources */,
 				472E1B2A2B831BFC005BF649 /* Double+Extensions.swift in Sources */,
 				47CD67262B88A9980035DCB6 /* BaseView.swift in Sources */,
 				47CD67282B88BB070035DCB6 /* ChangePasswordViewController.swift in Sources */,
 				4764D5A72B87448300D15A2E /* ForgotPasswordViewController.swift in Sources */,
 				472E1B2C2B83215C005BF649 /* SplashScreenViewController.swift in Sources */,
+				47CD675C2B90950E0035DCB6 /* PersonInformationViewController.swift in Sources */,
 				47CD67182B87635C0035DCB6 /* SmsCodeViewModel.swift in Sources */,
 				4756A0272B7FCC56003F9675 /* AppDelegate.swift in Sources */,
 				4764D5952B85A0A500D15A2E /* SignInViewModel.swift in Sources */,

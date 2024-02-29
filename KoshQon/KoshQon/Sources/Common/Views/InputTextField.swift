@@ -22,10 +22,13 @@ final class InputTextField: UITextField {
     
     // MARK: - Properties
     
-    private var padding = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
-    private var placeholderPadding = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
+    var onAction: Callback<InputType>?
+    
     private let type: InputType
-    private let inputData: [String]? = []
+    private let placeHolder: String?
+    
+    private var padding = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 50)
+    private var placeholderPadding = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 50)
     
     // MARK: - UI
     
@@ -39,22 +42,17 @@ final class InputTextField: UITextField {
         return button
     }()
     
-    private lazy var calendarButton: UIButton = {
-        let button = UIButton(type: .custom)
-        button.setImage(AppImage.Auth.calendar.uiImage, for: .normal)
-        return button
-    }()
-    
-    private lazy var expandDownButton: UIButton = {
-        let button = UIButton(type: .custom)
-        button.setImage(AppImage.Auth.expandDown.uiImage, for: .normal)
-        return button
+    private lazy var iconImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .center
+        return imageView
     }()
     
     // MARK: - Object Lifecycle
     
-    init(inputType: InputType) {
+    init(inputType: InputType, placeHolder: String? = nil) {
         self.type = inputType
+        self.placeHolder = placeHolder
         super.init(frame: .zero)
         configure()
     }
@@ -64,7 +62,12 @@ final class InputTextField: UITextField {
     }
     
     // MARK: - View Lifecycle
-    
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        layer.borderWidth = 1
+    }
+        
     // MARK: - Override Functions
     
     override public func textRect(forBounds bounds: CGRect) -> CGRect {
@@ -79,27 +82,14 @@ final class InputTextField: UITextField {
         return bounds.inset(by: padding)
     }
     
-    
-    
     override func clearButtonRect(forBounds bounds: CGRect) -> CGRect {
-            let originalRect = super.clearButtonRect(forBounds: bounds)
-            return originalRect.offsetBy(dx: -10, dy: 0)
+        let originalRect = super.clearButtonRect(forBounds: bounds)
+        return originalRect.offsetBy(dx: -7.5, dy: 0)
     }
     
     // MARK: - Private Methods
     
     private func configure() {
-        font = AppFont.medium.s16
-        textColor = AppColor.Static.darkGray.uiColor
-        backgroundColor = AppColor.Theme.mainBackground.uiColor
-        layer.borderColor = AppColor.Static.darkGray.cgColor
-        layer.borderWidth = 1
-        clipsToBounds = true
-        autocapitalizationType = .none
-        autocorrectionType = .no
-        spellCheckingType = .no
-        delegate = self
-        
         setupViews()
         setupConstraints()
         setupPadding()
@@ -108,26 +98,47 @@ final class InputTextField: UITextField {
         
         switch type {
         case .password:
-            isSecureTextEntry = true
-            placeholder = "Введите ваш пароль"
+            setup(placeholder: "Введите ваш пароль", isSecureTextEntry: true)
         case .date:
-            placeholder = "Дата рождения"
+            setup(placeholder: "Дата рождения", image: AppImage.Auth.calendar.uiImage)
         case .phone:
-            placeholder = "Введите ваш номер телефона"
-            keyboardType = .phonePad
-            clearButtonMode = .whileEditing
+            setup(placeholder: "Введите ваш номер телефона",
+                  keyboardType: .phonePad, clearButtonMode: .whileEditing)
         case .gender:
-            placeholder = "Пол"
+            setup(placeholder: "Пол", image: AppImage.Auth.expandDown.uiImage)
         case .city:
-            placeholder = "Город"
+            setup(placeholder: "Город", image: AppImage.Auth.expandDown.uiImage)
         case .sms:
-            keyboardType = .numberPad
-            font = AppFont.bold.s24
-            layer.borderColor = AppColor.Static.orange.cgColor
-            textAlignment = .center
+            setup(keyboardType: .numberPad, font: AppFont.bold.s24,
+                  borderColor: AppColor.Static.orange.cgColor, textAlignment: .center)
         case .regular:
-            clearButtonMode = .whileEditing
+            setup(placeholder: placeHolder, clearButtonMode: .whileEditing)
         }
+    }
+    
+    private func setup(placeholder: String? = nil,
+                       keyboardType: UIKeyboardType = .default,
+                       font: UIFont = AppFont.medium.s16,
+                       isSecureTextEntry: Bool = false,
+                       clearButtonMode: UITextField.ViewMode = .never,
+                       borderColor: CGColor = AppColor.Static.lightGray.cgColor,
+                       textColor: UIColor = AppColor.Static.darkGray.uiColor,
+                       backgroundColor: UIColor = AppColor.Theme.mainBackground.uiColor,
+                       textAlignment: NSTextAlignment = .natural,
+                       isEnabled: Bool = true,
+                       image: UIImage? = nil) {
+        self.placeholder = placeholder
+        self.keyboardType = keyboardType
+        self.font = font
+        self.isSecureTextEntry = isSecureTextEntry
+        self.clearButtonMode = clearButtonMode
+        self.layer.borderColor = borderColor
+        self.textColor = textColor
+        self.backgroundColor = backgroundColor
+        self.textAlignment = textAlignment
+        self.isEnabled = isEnabled
+        iconImageView.image = image
+        delegate = self
     }
 }
 
@@ -139,12 +150,10 @@ private extension InputTextField {
         switch type {
         case .password:
             containerView.addArrangedSubview(hidePasswordButton)
-        case .date:
-            containerView.addArrangedSubview(calendarButton)
         case .phone:
             break
-        case .gender,.city:
-            containerView.addArrangedSubview(expandDownButton)
+        case .gender,.city, .date:
+            containerView.addArrangedSubview(iconImageView)
         case .regular, .sms:
             break
         }
@@ -152,7 +161,7 @@ private extension InputTextField {
     
     func setupConstraints() {
         switch type {
-        case .password:
+        case .password, .date, .gender, .city:
             containerView.snp.makeConstraints { make in
                 make.top.bottom.equalToSuperview()
                 make.trailing.equalToSuperview()
@@ -180,14 +189,19 @@ private extension InputTextField {
         case .phone:
             padding = UIEdgeInsets(top: 16, left: 60, bottom: 16, right: 16)
             placeholderPadding = UIEdgeInsets(top: 16, left: 60, bottom: 16, right: 16)
-        case .regular, .sms:
-            padding = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
-            placeholderPadding = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
+        default:
+            break
         }
     }
     
     func setupGestures() {
-        
+        switch type {
+        case .phone:
+            containerView.addGestureRecognizer(UITapGestureRecognizer(target: self,
+                                                                      action: #selector(phonePickerTapped)))
+        default:
+            addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(someTextFieldTapped)))
+        }
     }
     
     func setupClearButton() {
@@ -225,12 +239,12 @@ private extension InputTextField {
         hidePasswordButton.isSelected.toggle()
     }
     
-    @objc func calendarButtonTapped() {
-        
+    @objc func someTextFieldTapped() {
+        onAction?(type)
     }
     
-    @objc func expandDownButtonTapped() {
-        
+    @objc func phonePickerTapped() {
+        onAction?(.phone)
     }
 }
 
@@ -238,16 +252,19 @@ extension InputTextField: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange,
                    replacementString string: String) -> Bool {
         guard let text = textField.text else { return false }
-        if type == .phone {
+        switch type {
+        case .password, .regular:
+            return true
+        case .phone:
             let newString = (text as NSString).replacingCharacters(in: range, with: string)
             textField.text = formattedNumber(number: newString)
             return false
-        }
-        if type == .sms {
+        case .sms:
             let maxLength = 1
             let newText = (text as NSString).replacingCharacters(in: range, with: string)
             return newText.count <= maxLength
+        default:
+            return false
         }
-        return false
     }
 }
