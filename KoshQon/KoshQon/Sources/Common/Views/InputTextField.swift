@@ -199,8 +199,10 @@ private extension InputTextField {
         case .phone:
             containerView.addGestureRecognizer(UITapGestureRecognizer(target: self,
                                                                       action: #selector(phonePickerTapped)))
-        default:
+        case .date, .gender, .city:
             addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(someTextFieldTapped)))
+        default:
+            break
         }
     }
     

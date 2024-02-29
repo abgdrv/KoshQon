@@ -7,7 +7,6 @@
 
 import UIKit
 import SnapKit
-import ProgressHUD
 
 final class SmsCodeView: BaseView {
     
@@ -173,7 +172,6 @@ private extension SmsCodeView {
 
     @objc func continueButtonTapped() {
         guard code == "0000" else {
-            ProgressHUD.banner("Ошибка", "Неверный код подтверждения", delay: 3)
             return
         }
         onAction?()
