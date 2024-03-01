@@ -22,7 +22,7 @@ final class InputTextField: UITextField {
     
     // MARK: - Properties
     
-    var onAction: Callback<InputType>?
+    var didTap: Callback<InputType>?
     
     private let type: InputType
     private let placeHolder: String?
@@ -242,11 +242,11 @@ private extension InputTextField {
     }
     
     @objc func someTextFieldTapped() {
-        onAction?(type)
+        didTap?(type)
     }
     
     @objc func phonePickerTapped() {
-        onAction?(.phone)
+        didTap?(.phone)
     }
 }
 

@@ -43,6 +43,6 @@ final class ForgotPasswordViewController: UIViewController {
 
 private extension ForgotPasswordViewController {
     func setupNavigation() {
-        
+        navigationItem.titleView = NavigationTitleView(type: .forgotPassword)
     }
 }

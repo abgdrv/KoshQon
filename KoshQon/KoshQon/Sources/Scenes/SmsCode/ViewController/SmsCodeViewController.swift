@@ -48,7 +48,6 @@ final class SmsCodeViewController: BaseViewController {
 
 private extension SmsCodeViewController {
     func setupNavigation() {
-        let navigationTitle = NavigationTitleView(type: .sms)
-        navigationItem.titleView = navigationTitle
+        navigationItem.titleView = NavigationTitleView(type: .sms)
     }
 }

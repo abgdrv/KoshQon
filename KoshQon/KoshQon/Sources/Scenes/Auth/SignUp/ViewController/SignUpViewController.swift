@@ -32,7 +32,6 @@ final class SignUpViewController: BaseViewController {
 
 private extension SignUpViewController {
     func setupNavigation() {
-        let navigationTitle = NavigationTitleView(type: .registration)
-        navigationItem.titleView = navigationTitle
+        navigationItem.titleView = NavigationTitleView(type: .registration)
     }
 }

@@ -54,6 +54,9 @@
 		47D54CB62B91919200021FA7 /* BottomSheetOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D54CB52B91919200021FA7 /* BottomSheetOption.swift */; };
 		47D54CB82B9196B200021FA7 /* BottomSheetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D54CB72B9196B200021FA7 /* BottomSheetCell.swift */; };
 		47D54CBB2B91D22F00021FA7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D54CBA2B91D22F00021FA7 /* Constants.swift */; };
+		47D54CC32B91EC5800021FA7 /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D54CC22B91EC5800021FA7 /* MainScreenView.swift */; };
+		47D54CC52B91EC7200021FA7 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D54CC42B91EC7200021FA7 /* MainScreenViewController.swift */; };
+		47D54CC72B92405500021FA7 /* PHPhotoLibrary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D54CC62B92405500021FA7 /* PHPhotoLibrary+Extensions.swift */; };
 		D75DF604CA3D887D4F33D6C0 /* Pods_KoshQon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61086CEFBD17C86EC8E72953 /* Pods_KoshQon.framework */; };
 /* End PBXBuildFile section */
 
@@ -108,6 +111,9 @@
 		47D54CB52B91919200021FA7 /* BottomSheetOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetOption.swift; sourceTree = "<group>"; };
 		47D54CB72B9196B200021FA7 /* BottomSheetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetCell.swift; sourceTree = "<group>"; };
 		47D54CBA2B91D22F00021FA7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		47D54CC22B91EC5800021FA7 /* MainScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenView.swift; sourceTree = "<group>"; };
+		47D54CC42B91EC7200021FA7 /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
+		47D54CC62B92405500021FA7 /* PHPhotoLibrary+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PHPhotoLibrary+Extensions.swift"; sourceTree = "<group>"; };
 		61086CEFBD17C86EC8E72953 /* Pods_KoshQon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KoshQon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D90A3B52983C518C2D6105E0 /* Pods-KoshQon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KoshQon.debug.xcconfig"; path = "Target Support Files/Pods-KoshQon/Pods-KoshQon.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -135,6 +141,7 @@
 		472E1B282B831BDB005BF649 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				47D54CC62B92405500021FA7 /* PHPhotoLibrary+Extensions.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -305,6 +312,7 @@
 				47CD670F2B8761530035DCB6 /* SmsCode */,
 				47CD671B2B88A6F50035DCB6 /* ChangePassword */,
 				47CD67532B9084D60035DCB6 /* PersonInformation */,
+				47D54CBC2B91E8F800021FA7 /* MainScreen */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -613,6 +621,47 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
+		47D54CBC2B91E8F800021FA7 /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				47D54CC02B91E93000021FA7 /* Model */,
+				47D54CBF2B91E91F00021FA7 /* Views */,
+				47D54CBD2B91E90200021FA7 /* ViewController */,
+				47D54CBE2B91E90E00021FA7 /* ViewModel */,
+			);
+			path = MainScreen;
+			sourceTree = "<group>";
+		};
+		47D54CBD2B91E90200021FA7 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				47D54CC42B91EC7200021FA7 /* MainScreenViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		47D54CBE2B91E90E00021FA7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		47D54CBF2B91E91F00021FA7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				47D54CC22B91EC5800021FA7 /* MainScreenView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		47D54CC02B91E93000021FA7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		D8FB05A19510FA521F394368 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -758,6 +807,7 @@
 				47C7B3792B812AF000125172 /* AppColor.swift in Sources */,
 				47C7B3852B8132C800125172 /* AppFont.swift in Sources */,
 				47CD672D2B8C3DD50035DCB6 /* BaseViewController.swift in Sources */,
+				47D54CC52B91EC7200021FA7 /* MainScreenViewController.swift in Sources */,
 				47CD67242B88A8E10035DCB6 /* ChangePasswordViewModel.swift in Sources */,
 				47D54CB82B9196B200021FA7 /* BottomSheetCell.swift in Sources */,
 				472E1B242B8305EF005BF649 /* SplashScreenView.swift in Sources */,
@@ -781,11 +831,13 @@
 				4756A0292B7FCC56003F9675 /* SceneDelegate.swift in Sources */,
 				472E1B372B8364E1005BF649 /* SignInViewController.swift in Sources */,
 				472E1B402B837AAE005BF649 /* ProceedButton.swift in Sources */,
+				47D54CC32B91EC5800021FA7 /* MainScreenView.swift in Sources */,
 				47CD67222B88A7AE0035DCB6 /* ChangePasswordView.swift in Sources */,
 				472E1B3C2B836A75005BF649 /* InputTextField.swift in Sources */,
 				47C7B3872B8132E100125172 /* AppFontProtocol.swift in Sources */,
 				4764D5A92B8744E400D15A2E /* ForgotPasswordViewModel.swift in Sources */,
 				47CD673E2B8DDB2B0035DCB6 /* SignUpView.swift in Sources */,
+				47D54CC72B92405500021FA7 /* PHPhotoLibrary+Extensions.swift in Sources */,
 				4764D59A2B85AC9500D15A2E /* SignInModel.swift in Sources */,
 				47C7B3962B81372F00125172 /* AppImageProtocol.swift in Sources */,
 				47C7B3982B81377400125172 /* AppImage.swift in Sources */,
@@ -937,10 +989,12 @@
 				DEVELOPMENT_TEAM = 9QVR9UVA7V;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = KoshQon/Resources/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Need to access your camera to capture a photo add and update profile picture.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Need to access your photo library to select a photo add and update profile picture";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -966,10 +1020,12 @@
 				DEVELOPMENT_TEAM = 9QVR9UVA7V;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = KoshQon/Resources/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Need to access your camera to capture a photo add and update profile picture.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Need to access your photo library to select a photo add and update profile picture";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

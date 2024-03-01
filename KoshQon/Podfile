@@ -10,5 +10,6 @@ pod 'SnapKit'
 pod 'Alamofire'
 pod 'PanModal'
 pod 'ProgressHUD'
+pod 'RSKImageCropper'
 
 end

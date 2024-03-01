@@ -59,7 +59,6 @@ final class BottomSheetCell: UITableViewCell {
 
 private extension BottomSheetCell {
     func setupViews() {
-        selectionStyle = .gray
         [optionLabel, separatorView].forEach { contentView.addSubview($0) }
     }
     

@@ -13,7 +13,8 @@ final class PersonInformationView: BaseView {
 
     // MARK: - Properties
     
-    var onAction: Callback<InputType>?
+    var textFieldDidTap: Callback<InputType>?
+    var imageDidTap: VoidCallback?
     
     // MARK: - UI
     
@@ -21,8 +22,8 @@ final class PersonInformationView: BaseView {
         let imageView = UIImageView(image: AppImage.Personal.plus.uiImage)
         imageView.contentMode = .center
         imageView.layer.borderColor = AppColor.Static.lightGray.cgColor
-        imageView.addGestureRecognizer(UITapGestureRecognizer(target: self,
-                                                              action: #selector(profileImageViewTapped)))
+        imageView.isUserInteractionEnabled = true
+        imageView.clipsToBounds = true
         return imageView
     }()
     
@@ -77,6 +78,13 @@ final class PersonInformationView: BaseView {
         genderTextField.layer.cornerRadius = 8
         cityTextField.layer.cornerRadius = 8
         continueButton.layer.cornerRadius = continueButton.frame.height / 2
+    }
+    
+    // MARK: - Public methods
+    
+    func setProfileImage(image: UIImage) {
+        profileImageView.image = image
+        profileImageView.contentMode = .scaleAspectFit
     }
 }
 
@@ -142,20 +150,16 @@ private extension PersonInformationView {
     }
     
     func setupBindings() {
-        birthdayTextField.onAction = { [weak self] type in
+        genderTextField.didTap = { [weak self] type in
             guard let self = self else { return }
-            self.onAction?(type)
+            self.textFieldDidTap?(type)
         }
-        
-        genderTextField.onAction = { [weak self] type in
+        cityTextField.didTap = { [weak self] type in
             guard let self = self else { return }
-            self.onAction?(type)
+            self.textFieldDidTap?(type)
         }
-        
-        cityTextField.onAction = { [weak self] type in
-            guard let self = self else { return }
-            self.onAction?(type)
-        }
+        profileImageView.addGestureRecognizer(UITapGestureRecognizer(target: self,
+                                                                     action: #selector(profileImageViewTapped)))
     }
 }
 
@@ -173,7 +177,7 @@ private extension PersonInformationView {
 
 private extension PersonInformationView {
     @objc func profileImageViewTapped() {
-        
+        imageDidTap?()
     }
     
     @objc func dateChanged() {

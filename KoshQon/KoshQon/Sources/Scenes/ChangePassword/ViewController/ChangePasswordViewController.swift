@@ -45,7 +45,6 @@ final class ChangePasswordViewController: BaseViewController {
 
 private extension ChangePasswordViewController {
     func setupNavigation() {
-        let navigationTitle = NavigationTitleView(type: .createPassword)
-        navigationItem.titleView = navigationTitle
+        navigationItem.titleView = NavigationTitleView(type: .createPassword)
     }
 }
