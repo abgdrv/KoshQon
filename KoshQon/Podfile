@@ -6,6 +6,9 @@ target 'KoshQon' do
   use_frameworks!
 
   # Pods for KoshQon
-pod 'SnapKit', '~> 5.7.0'
+pod 'SnapKit'
+pod 'Alamofire'
+pod 'PanModal'
+pod 'ProgressHUD'
 
 end

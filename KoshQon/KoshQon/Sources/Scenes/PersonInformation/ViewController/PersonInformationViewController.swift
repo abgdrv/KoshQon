@@ -6,11 +6,14 @@
 //
 
 import UIKit
+import PanModal
 
 final class PersonInformationViewController: UIViewController {
     
     // MARK: - Properties
     
+    private var options: [BottomSheetOption] = []
+        
     // MARK: - UI
     
     private lazy var personInformationView = PersonInformationView()
@@ -25,6 +28,7 @@ final class PersonInformationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigation()
+        setupBindings()
     }
 }
 
@@ -39,9 +43,14 @@ private extension PersonInformationViewController {
     func setupBindings() {
         personInformationView.onAction = { [weak self] type in
             guard let self = self else { return }
-            if type == .date {
-                
+            let longFomTypes: [InputType] = [.city, .phone]
+            if type == .gender {
+                self.options = [BottomSheetOption(primeText: "Мужской"), BottomSheetOption(primeText: "Женский")]
             }
+            if type == .city {
+                self.options = [BottomSheetOption(primeText: "Алматы"), BottomSheetOption(primeText: "Астана"), BottomSheetOption(primeText: "Алматы"), BottomSheetOption(primeText: "Астана"), BottomSheetOption(primeText: "Алматы"), BottomSheetOption(primeText: "Астана"), BottomSheetOption(primeText: "Алматы"), BottomSheetOption(primeText: "Астана"), BottomSheetOption(primeText: "Алматы"), BottomSheetOption(primeText: "Астана"), BottomSheetOption(primeText: "Алматы"), BottomSheetOption(primeText: "Астана"),BottomSheetOption(primeText: "Алматы"), BottomSheetOption(primeText: "Астана")]
+            }
+            presentPanModal(BottomSheetViewController(options: options, isLong: longFomTypes.contains(type)))
         }
     }
 }

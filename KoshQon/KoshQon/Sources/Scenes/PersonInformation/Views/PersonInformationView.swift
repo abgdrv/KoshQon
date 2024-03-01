@@ -28,7 +28,11 @@ final class PersonInformationView: BaseView {
     
     private lazy var firstNameTextField = InputTextField(inputType: .regular, placeHolder: "Имя")
     private lazy var secondNameTextField = InputTextField(inputType: .regular, placeHolder: "Фамилия")
-    private lazy var birthdayTextField = InputTextField(inputType: .date)
+    private lazy var birthdayTextField: InputTextField = {
+        let textField = InputTextField(inputType: .date)
+        textField.inputView = datePicker
+        return textField
+    }()
     private lazy var genderTextField = InputTextField(inputType: .gender)
     private lazy var cityTextField = InputTextField(inputType: .city)
     
@@ -36,6 +40,15 @@ final class PersonInformationView: BaseView {
         let button = ProceedButton(type: .system)
         button.type = .continue
         return button
+    }()
+    
+    private lazy var datePicker: UIDatePicker = {
+        let datePicker = UIDatePicker()
+        datePicker.datePickerMode = .date
+        datePicker.preferredDatePickerStyle = .wheels
+        datePicker.addTarget(self, action: #selector(dateChanged), for: .valueChanged)
+        datePicker.backgroundColor = AppColor.Theme.mainBackground.uiColor
+        return datePicker
     }()
     
     // MARK: - Object Lifecycle
@@ -146,11 +159,25 @@ private extension PersonInformationView {
     }
 }
 
+// MARK: - Private methods
+
+private extension PersonInformationView {
+    func formattedDate(date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd MMMM yyyy"
+        return formatter.string(from: date)
+    }
+}
+
 // MARK: - Actions
 
 private extension PersonInformationView {
     @objc func profileImageViewTapped() {
         
+    }
+    
+    @objc func dateChanged() {
+        birthdayTextField.text = formattedDate(date: datePicker.date)
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {

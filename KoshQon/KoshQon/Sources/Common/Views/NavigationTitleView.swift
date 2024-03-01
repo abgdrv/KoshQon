@@ -84,7 +84,6 @@ final class NavigationTitleView: UIView {
             setup(text: "Создание пароля")
         case .personalInfo:
             setup(text: "Личная информация")
-            isFirst = true
         case .koshqon:
             setup(text: "KoshQon", font: AppFont.anta.s24)
             isFirst = true
