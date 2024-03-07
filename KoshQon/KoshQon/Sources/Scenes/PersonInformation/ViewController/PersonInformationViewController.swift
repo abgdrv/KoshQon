@@ -19,7 +19,8 @@ final class PersonInformationViewController: BaseViewController {
     // MARK: - UI
     
     private lazy var personInformationView = PersonInformationView()
-    private lazy var imagePicker = UIImagePickerController().apply { $0.delegate = self }
+    private let imagePicker = UIImagePickerController()
+
     
     // MARK: - View Lifecycle
     
@@ -45,19 +46,24 @@ private extension PersonInformationViewController {
     func setupBindings() {
         personInformationView.textFieldDidTap = { [weak self] type in
             guard let self = self else { return }
-            let longFomTypes: [InputType] = [.city, .phone]
+            let longFomTypes: [InputType] = [.country, .city]
             if type == .gender {
                 self.options = [BottomSheetOption(primeText: "Мужской"), BottomSheetOption(primeText: "Женский")]
             }
             if type == .city {
                 self.options = [BottomSheetOption(primeText: "Алматы"), BottomSheetOption(primeText: "Астана"), BottomSheetOption(primeText: "Алматы"), BottomSheetOption(primeText: "Астана"), BottomSheetOption(primeText: "Алматы"), BottomSheetOption(primeText: "Астана"), BottomSheetOption(primeText: "Алматы"), BottomSheetOption(primeText: "Астана"), BottomSheetOption(primeText: "Алматы"), BottomSheetOption(primeText: "Астана"), BottomSheetOption(primeText: "Алматы"), BottomSheetOption(primeText: "Астана"),BottomSheetOption(primeText: "Алматы"), BottomSheetOption(primeText: "Астана")]
             }
+            if type == .country {
+                self.options = [BottomSheetOption(primeText: "Казахстан"), BottomSheetOption(primeText: "Казахстан"), BottomSheetOption(primeText: "Казахстан"), BottomSheetOption(primeText: "Казахстан"), BottomSheetOption(primeText: "Казахстан"), BottomSheetOption(primeText: "Казахстан"), BottomSheetOption(primeText: "Казахстан"), BottomSheetOption(primeText: "Казахстан"), BottomSheetOption(primeText: "Казахстан"), BottomSheetOption(primeText: "Казахстан"), BottomSheetOption(primeText: "Казахстан"), BottomSheetOption(primeText: "Казахстан"),BottomSheetOption(primeText: "Казахстан"), BottomSheetOption(primeText: "Казахстан")]
+            }
             presentPanModal(BottomSheetViewController(options: options, isLong: longFomTypes.contains(type)))
         }
         
         personInformationView.imageDidTap = { [weak self] in
             guard let self = self else { return }
-            self.showImagePickerOptions()
+            DispatchQueue.main.async {
+                self.showImagePickerOptions()
+            }
         }
     }
 }
@@ -93,7 +99,10 @@ private extension PersonInformationViewController {
     func checkPermission() {
         PHPhotoLibrary.checkPermission(controller: self) { [weak self] in
             guard let self = self else { return }
-            self.present(self.imagePicker, animated: true)
+            self.imagePicker.delegate = self
+            DispatchQueue.main.async {
+                self.present(self.imagePicker, animated: true)
+            }
         }
     }
 }

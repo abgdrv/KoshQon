@@ -29,6 +29,7 @@ final class PersonInformationView: BaseView {
     private lazy var secondNameTextField = InputTextField(inputType: .regular, placeHolder: "Фамилия")
     private lazy var birthdayTextField = InputTextField(inputType: .date).apply { $0.inputView = datePicker }
     private lazy var genderTextField = InputTextField(inputType: .gender)
+    private lazy var countryTextField = InputTextField(inputType: .country)
     private lazy var cityTextField = InputTextField(inputType: .city)
     private lazy var continueButton = ProceedButton(type: .system).apply { $0.type = .continue }
     
@@ -63,6 +64,7 @@ final class PersonInformationView: BaseView {
         secondNameTextField.layer.cornerRadius = 8
         birthdayTextField.layer.cornerRadius = 8
         genderTextField.layer.cornerRadius = 8
+        countryTextField.layer.cornerRadius = 8
         cityTextField.layer.cornerRadius = 8
         continueButton.layer.cornerRadius = continueButton.frame.height / 2
     }
@@ -80,7 +82,7 @@ final class PersonInformationView: BaseView {
 private extension PersonInformationView {
     func setupViews() {
         addSubviews(profileImageView, firstNameTextField, secondNameTextField, birthdayTextField,
-                    genderTextField, cityTextField, continueButton)
+                    genderTextField, countryTextField, cityTextField, continueButton)
     }
     
     func setupConstraints() {
@@ -116,8 +118,14 @@ private extension PersonInformationView {
             make.height.equalTo(50)
         }
         
-        cityTextField.snp.makeConstraints { make in
+        countryTextField.snp.makeConstraints { make in
             make.top.equalTo(genderTextField.snp.bottom).offset(16)
+            make.leading.trailing.equalToSuperview().inset(16)
+            make.height.equalTo(50)
+        }
+        
+        cityTextField.snp.makeConstraints { make in
+            make.top.equalTo(countryTextField.snp.bottom).offset(16)
             make.leading.trailing.equalToSuperview().inset(16)
             make.height.equalTo(50)
         }
@@ -139,10 +147,17 @@ private extension PersonInformationView {
     func setupBindings() {
         genderTextField.didTap = { [weak self] type in
             guard let self = self else { return }
+            self.endEditing(true)
+            self.textFieldDidTap?(type)
+        }
+        countryTextField.didTap = { [weak self] type in
+            guard let self = self else { return }
+            self.endEditing(true)
             self.textFieldDidTap?(type)
         }
         cityTextField.didTap = { [weak self] type in
             guard let self = self else { return }
+            self.endEditing(true)
             self.textFieldDidTap?(type)
         }
         profileImageView.addGestureRecognizer(UITapGestureRecognizer(target: self,

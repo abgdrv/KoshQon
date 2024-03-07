@@ -14,6 +14,7 @@ enum InputType {
     case phone
     case gender
     case city
+    case country
     case regular
     case sms
 }
@@ -98,15 +99,17 @@ final class InputTextField: UITextField {
         case .phone:
             setup(placeholder: "Введите ваш номер телефона",
                   keyboardType: .phonePad, clearButtonMode: .whileEditing)
-        case .gender:
-            setup(placeholder: "Пол", image: AppImage.Auth.expandDown.uiImage)
-        case .city:
-            setup(placeholder: "Город", image: AppImage.Auth.expandDown.uiImage)
         case .sms:
             setup(keyboardType: .numberPad, font: AppFont.bold.s24,
                   borderColor: AppColor.Static.orange.cgColor, textAlignment: .center)
         case .regular:
             setup(placeholder: placeHolder, clearButtonMode: .whileEditing)
+        case .gender:
+            setup(placeholder: "Пол", image: AppImage.Auth.expandDown.uiImage)
+        case .city:
+            setup(placeholder: "Город", image: AppImage.Auth.expandDown.uiImage)
+        case .country:
+            setup(placeholder: "Страна", image: AppImage.Auth.expandDown.uiImage)
         }
     }
     
@@ -146,7 +149,7 @@ private extension InputTextField {
             containerView.addArrangedSubview(hidePasswordButton)
         case .phone:
             break
-        case .gender,.city, .date:
+        case .gender,.city, .country, .date:
             containerView.addArrangedSubview(iconImageView)
         case .regular, .sms:
             break
@@ -155,7 +158,7 @@ private extension InputTextField {
     
     func setupConstraints() {
         switch type {
-        case .password, .date, .gender, .city:
+        case .password, .date, .gender, .city, .country:
             containerView.snp.makeConstraints { make in
                 make.top.bottom.equalToSuperview()
                 make.trailing.equalToSuperview()
@@ -177,7 +180,7 @@ private extension InputTextField {
     
     func setupPadding() {
         switch type {
-        case .password, .date, .gender, .city:
+        case .password, .date, .gender, .city, .country:
             padding = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 60)
             placeholderPadding = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 60)
         case .phone:
@@ -193,8 +196,8 @@ private extension InputTextField {
         case .phone:
             containerView.addGestureRecognizer(UITapGestureRecognizer(target: self,
                                                                       action: #selector(phonePickerTapped)))
-        case .gender, .city:
-            addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(someTextFieldTapped)))
+        case .gender, .city, .country:
+            addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(listTextFieldTapped)))
         default:
             break
         }
@@ -235,7 +238,7 @@ private extension InputTextField {
         hidePasswordButton.isSelected.toggle()
     }
     
-    @objc func someTextFieldTapped() {
+    @objc func listTextFieldTapped() {
         didTap?(type)
     }
     
