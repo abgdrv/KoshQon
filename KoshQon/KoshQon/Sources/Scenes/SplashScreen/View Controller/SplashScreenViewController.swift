@@ -9,7 +9,7 @@ import UIKit
 import SwiftUI
 import SnapKit
 
-final class SplashScreenViewController: UIViewController {
+final class SplashScreenViewController: BaseViewController {
     
     // MARK: - UI
     
@@ -25,12 +25,11 @@ final class SplashScreenViewController: UIViewController {
     }
 }
 
-// MARK: - Setup Views, Constraints
+// MARK: - Setup Views
 
 private extension SplashScreenViewController {
     func setupViews() {
-        view.backgroundColor = AppColor.Theme.mainBackground.uiColor
-        view.addSubview(splashScreenView)
+        view.addSubviews(splashScreenView)
     }
         
     func setupConstraints() {

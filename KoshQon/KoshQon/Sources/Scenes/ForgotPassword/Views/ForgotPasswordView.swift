@@ -20,12 +20,10 @@ final class ForgotPasswordView: BaseView {
     private lazy var phoneLabel = InfoLabel(type: .phone)
     private lazy var phoneTextField = InputTextField(inputType: .phone)
     
-    private lazy var continueButton: ProceedButton = {
-        let button = ProceedButton(type: .system)
-        button.type = .continue
-        button.addTarget(self, action: #selector(continueButtonTapped), for: .touchUpInside)
-        return button
-    }()
+    private lazy var continueButton = ProceedButton(type: .system).apply {
+        $0.type = .continue
+        $0.addTarget(self, action: #selector(continueButtonTapped), for: .touchUpInside)
+    }
     
     // MARK: - Object Lifecycle
     
@@ -49,11 +47,11 @@ final class ForgotPasswordView: BaseView {
     }
 }
 
-// MARK: - Setup Views, Constraints
+// MARK: - Setup Views
 
 private extension ForgotPasswordView {
     func setupViews() {
-        [phoneLabel, phoneTextField, continueButton].forEach { addSubview($0) }
+        addSubviews(phoneLabel, phoneTextField, continueButton)
     }
     
     func setupConstraints() {

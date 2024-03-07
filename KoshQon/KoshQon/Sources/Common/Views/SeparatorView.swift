@@ -12,9 +12,7 @@ final class SeparatorView: UIView {
 
     // MARK: - UI
     
-    private lazy var lineView = UIView().apply {
-        $0.backgroundColor = AppColor.Static.lightGray.uiColor
-    }
+    private lazy var lineView = UIView().apply { $0.backgroundColor = AppColor.Static.lightGray.uiColor }
     
     // MARK: - Object Lifecycle
     

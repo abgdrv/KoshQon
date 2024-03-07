@@ -10,7 +10,7 @@ import PanModal
 import Photos
 import RSKImageCropper
 
-final class PersonInformationViewController: UIViewController {
+final class PersonInformationViewController: BaseViewController {
     
     // MARK: - Properties
     
@@ -19,11 +19,7 @@ final class PersonInformationViewController: UIViewController {
     // MARK: - UI
     
     private lazy var personInformationView = PersonInformationView()
-    private lazy var imagePicker: UIImagePickerController = {
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        return imagePicker
-    }()
+    private lazy var imagePicker = UIImagePickerController().apply { $0.delegate = self }
     
     // MARK: - View Lifecycle
     

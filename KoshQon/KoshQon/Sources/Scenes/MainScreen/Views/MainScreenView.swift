@@ -16,7 +16,6 @@ final class MainScreenView: UIView {
     
     private lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView()
-        colle
         return collectionView
     }()
     

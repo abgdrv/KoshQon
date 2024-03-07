@@ -11,9 +11,7 @@ import SnapKit
 final class BottomSheetCell: UITableViewCell {
     
     // MARK: - Properties
-    
-    static let identifier = String(describing: BottomSheetCell.self)
-    
+        
     private var primeText: String = ""
     private var secondText: String? = ""
     private var optionText: String {
@@ -22,22 +20,15 @@ final class BottomSheetCell: UITableViewCell {
     
     // MARK: - UI
     
-    private lazy var optionLabel: UILabel = {
-        let label = UILabel()
-        label.font = AppFont.medium.s16
-        label.textColor = AppColor.Static.black.uiColor
-        label.text = optionText
-        return label
-    }()
+    private lazy var optionLabel = UILabel().apply {
+        $0.font = AppFont.medium.s16
+        $0.textColor = AppColor.Static.black.uiColor
+        $0.text = optionText
+    }
         
-    private lazy var separatorView: UIView = {
-        let view = UIView()
-        view.backgroundColor = AppColor.Static.lightGray.uiColor
-        return view
-    }()
+    private lazy var separatorView = SeparatorView()
 
     // MARK: - Object Lifecycle
-    
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -59,7 +50,7 @@ final class BottomSheetCell: UITableViewCell {
 
 private extension BottomSheetCell {
     func setupViews() {
-        [optionLabel, separatorView].forEach { contentView.addSubview($0) }
+        contentView.addSubviews(optionLabel, separatorView)
     }
     
     func setupConstraints() {

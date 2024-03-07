@@ -18,39 +18,26 @@ final class PersonInformationView: BaseView {
     
     // MARK: - UI
     
-    private lazy var profileImageView: UIImageView = {
-        let imageView = UIImageView(image: AppImage.Personal.plus.uiImage)
-        imageView.contentMode = .center
-        imageView.layer.borderColor = AppColor.Static.lightGray.cgColor
-        imageView.isUserInteractionEnabled = true
-        imageView.clipsToBounds = true
-        return imageView
-    }()
+    private lazy var profileImageView = UIImageView(image: AppImage.Personal.plus.uiImage).apply {
+        $0.contentMode = .center
+        $0.layer.borderColor = AppColor.Static.lightGray.cgColor
+        $0.isUserInteractionEnabled = true
+        $0.clipsToBounds = true
+    }
     
     private lazy var firstNameTextField = InputTextField(inputType: .regular, placeHolder: "Имя")
     private lazy var secondNameTextField = InputTextField(inputType: .regular, placeHolder: "Фамилия")
-    private lazy var birthdayTextField: InputTextField = {
-        let textField = InputTextField(inputType: .date)
-        textField.inputView = datePicker
-        return textField
-    }()
+    private lazy var birthdayTextField = InputTextField(inputType: .date).apply { $0.inputView = datePicker }
     private lazy var genderTextField = InputTextField(inputType: .gender)
     private lazy var cityTextField = InputTextField(inputType: .city)
+    private lazy var continueButton = ProceedButton(type: .system).apply { $0.type = .continue }
     
-    private lazy var continueButton: ProceedButton = {
-        let button = ProceedButton(type: .system)
-        button.type = .continue
-        return button
-    }()
-    
-    private lazy var datePicker: UIDatePicker = {
-        let datePicker = UIDatePicker()
-        datePicker.datePickerMode = .date
-        datePicker.preferredDatePickerStyle = .wheels
-        datePicker.addTarget(self, action: #selector(dateChanged), for: .valueChanged)
-        datePicker.backgroundColor = AppColor.Theme.mainBackground.uiColor
-        return datePicker
-    }()
+    private lazy var datePicker = UIDatePicker().apply {
+        $0.datePickerMode = .date
+        $0.preferredDatePickerStyle = .wheels
+        $0.addTarget(self, action: #selector(dateChanged), for: .valueChanged)
+        $0.backgroundColor = AppColor.Theme.mainBackground.uiColor
+    }
     
     // MARK: - Object Lifecycle
     
@@ -92,8 +79,8 @@ final class PersonInformationView: BaseView {
 
 private extension PersonInformationView {
     func setupViews() {
-        [profileImageView, firstNameTextField, secondNameTextField,
-         birthdayTextField, genderTextField, cityTextField, continueButton].forEach { addSubview($0) }
+        addSubviews(profileImageView, firstNameTextField, secondNameTextField, birthdayTextField,
+                    genderTextField, cityTextField, continueButton)
     }
     
     func setupConstraints() {
@@ -164,6 +151,7 @@ private extension PersonInformationView {
 }
 
 // MARK: - Private methods
+// TODO: viewModel
 
 private extension PersonInformationView {
     func formattedDate(date: Date) -> String {

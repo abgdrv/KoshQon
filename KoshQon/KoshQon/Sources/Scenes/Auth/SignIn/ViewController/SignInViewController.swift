@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class SignInViewController: UIViewController {
+final class SignInViewController: BaseViewController {
     
     // MARK: - Properties
     

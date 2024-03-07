@@ -26,6 +26,8 @@
 		4764D5A72B87448300D15A2E /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4764D5A62B87448300D15A2E /* ForgotPasswordViewController.swift */; };
 		4764D5A92B8744E400D15A2E /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4764D5A82B8744E400D15A2E /* ForgotPasswordViewModel.swift */; };
 		4764D5AB2B87459900D15A2E /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4764D5AA2B87459900D15A2E /* ForgotPasswordView.swift */; };
+		478F5FFC2B9981B400A07ECD /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478F5FFB2B9981B400A07ECD /* UICollectionView+Extensions.swift */; };
+		478F5FFE2B99823B00A07ECD /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478F5FFD2B99823B00A07ECD /* UITableView+Extensions.swift */; };
 		47C7B3772B812A3700125172 /* AppColorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C7B3762B812A3700125172 /* AppColorProtocol.swift */; };
 		47C7B3792B812AF000125172 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C7B3782B812AF000125172 /* AppColor.swift */; };
 		47C7B37E2B81321800125172 /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 47C7B37A2B81321700125172 /* SF-Pro-Display-Semibold.otf */; };
@@ -88,6 +90,8 @@
 		4764D5A62B87448300D15A2E /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		4764D5A82B8744E400D15A2E /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 		4764D5AA2B87459900D15A2E /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
+		478F5FFB2B9981B400A07ECD /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
+		478F5FFD2B99823B00A07ECD /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		47C7B3762B812A3700125172 /* AppColorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColorProtocol.swift; sourceTree = "<group>"; };
 		47C7B3782B812AF000125172 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
 		47C7B37A2B81321700125172 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
@@ -156,6 +160,8 @@
 				47D54CC62B92405500021FA7 /* PHPhotoLibrary+Extensions.swift */,
 				47D54CE52B963E6B00021FA7 /* UILabel+Extensions.swift */,
 				47D54CEB2B96419700021FA7 /* UIView+Extensions.swift */,
+				478F5FFB2B9981B400A07ECD /* UICollectionView+Extensions.swift */,
+				478F5FFD2B99823B00A07ECD /* UITableView+Extensions.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -817,6 +823,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				47D54CE82B963F5900021FA7 /* NSObject+Extensions.swift in Sources */,
+				478F5FFE2B99823B00A07ECD /* UITableView+Extensions.swift in Sources */,
 				47CD67402B8DE0D40035DCB6 /* SignUpViewController.swift in Sources */,
 				47D54CB62B91919200021FA7 /* BottomSheetOption.swift in Sources */,
 				4764D5982B85A50000D15A2E /* SignInView.swift in Sources */,
@@ -836,6 +843,7 @@
 				47CD67592B908A0A0035DCB6 /* PersonInformationView.swift in Sources */,
 				47CD671A2B8796060035DCB6 /* SmsCodeViewController.swift in Sources */,
 				472E1B2A2B831BFC005BF649 /* Double+Extensions.swift in Sources */,
+				478F5FFC2B9981B400A07ECD /* UICollectionView+Extensions.swift in Sources */,
 				47CD67262B88A9980035DCB6 /* BaseView.swift in Sources */,
 				47CD67282B88BB070035DCB6 /* ChangePasswordViewController.swift in Sources */,
 				4764D5A72B87448300D15A2E /* ForgotPasswordViewController.swift in Sources */,

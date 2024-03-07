@@ -23,12 +23,10 @@ final class ChangePasswordView: BaseView {
     private lazy var repeatPasswordLabel = InfoLabel(type: .repeatPassword)
     private lazy var repeatPasswordTextField = InputTextField(inputType: .password)
     
-    private lazy var changePasswordButton: ProceedButton = {
-        let button = ProceedButton(type: .system)
-        button.type = isFirstTime ? .signUp : .changePassword
-        button.addTarget(self, action: #selector(changePasswordButtonTapped), for: .touchUpInside)
-        return button
-    }()
+    private lazy var changePasswordButton = ProceedButton(type: .system).apply {
+        $0.type = isFirstTime ? .signUp : .changePassword
+        $0.addTarget(self, action: #selector(changePasswordButtonTapped), for: .touchUpInside)
+    }
     
     private lazy var infoLabel = InfoLabel(type: .passwordContain)
     private lazy var passwordRequirementsLabel = InfoLabel(type: .passwordRequirements)
@@ -58,12 +56,12 @@ final class ChangePasswordView: BaseView {
     }
 }
 
-// MARK: - Setup Views, Constraints, Gestures
+// MARK: - Setup Views
 
 private extension ChangePasswordView {
     func setupViews() {
-        [createPasswordLabel, passwordTextField, repeatPasswordLabel, repeatPasswordTextField,
-         changePasswordButton, infoLabel, passwordRequirementsLabel].forEach { addSubview($0) }
+        addSubviews(createPasswordLabel, passwordTextField, repeatPasswordLabel, repeatPasswordTextField,
+                    changePasswordButton, infoLabel, passwordRequirementsLabel)
     }
         
     func setupConstraints() {

@@ -34,19 +34,13 @@ final class InputTextField: UITextField {
     
     private lazy var containerView = UIStackView()
     
-    private lazy var hidePasswordButton: UIButton = {
-        let button = UIButton(type: .custom)
-        button.setImage(AppImage.Auth.eyeOff.uiImage, for: .normal)
-        button.setImage(AppImage.Auth.eyeOn.uiImage, for: .selected)
-        button.addTarget(self, action: #selector(hidePasswordButtonTapped), for: .touchUpInside)
-        return button
-    }()
+    private lazy var hidePasswordButton = UIButton(type: .custom).apply {
+        $0.setImage(AppImage.Auth.eyeOff.uiImage, for: .normal)
+        $0.setImage(AppImage.Auth.eyeOn.uiImage, for: .selected)
+        $0.addTarget(self, action: #selector(hidePasswordButtonTapped), for: .touchUpInside)
+    }
     
-    private lazy var iconImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .center
-        return imageView
-    }()
+    private lazy var iconImageView = UIImageView().apply { $0.contentMode = .center }
     
     // MARK: - Object Lifecycle
     
@@ -146,7 +140,7 @@ final class InputTextField: UITextField {
 
 private extension InputTextField {
     func setupViews() {
-        addSubview(containerView)
+        addSubviews(containerView)
         switch type {
         case .password:
             containerView.addArrangedSubview(hidePasswordButton)

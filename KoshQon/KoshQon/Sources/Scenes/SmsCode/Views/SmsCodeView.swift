@@ -28,45 +28,37 @@ final class SmsCodeView: BaseView {
     
     private lazy var infoLabel = InfoLabel(type: .sms)
     
-    private lazy var phoneNumberLabel: UILabel = {
-        let label = UILabel()
-        label.text = "+7 (777) 777 77 77"
-        label.font = AppFont.medium.s20
-        label.textColor = AppColor.Theme.mainTitle.uiColor
-        return label
-    }()
+    private lazy var phoneNumberLabel = UILabel().apply {
+        $0.text = "+7 (777) 777 77 77"
+        $0.font = AppFont.medium.s20
+        $0.textColor = AppColor.Theme.mainTitle.uiColor
+    }
     
-    private lazy var codeStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.spacing = 10.0
-        stackView.distribution = .fillEqually
+    private lazy var codeStackView = UIStackView().apply {
+        $0.axis = .horizontal
+        $0.spacing = 10.0
+        $0.distribution = .fillEqually
         for _ in 0..<4 {
             let textField = InputTextField(inputType: .sms)
             textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
-            stackView.addArrangedSubview(textField)
+            $0.addArrangedSubview(textField)
             codeTextFields.append(textField)
         }
-        return stackView
-    }()
+    }
     
     private lazy var resendLabel = InfoLabel(type: .resend)
     
-    private lazy var resendButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle(viewModel.timeString, for: .normal)
-        button.setTitleColor(AppColor.Static.darkBlue.uiColor, for: .normal)
-        button.titleLabel?.font = AppFont.medium.s16
-        button.addTarget(self, action: #selector(resendButtonTapped), for: .touchUpInside)
-        return button
-    }()
+    private lazy var resendButton = UIButton(type: .system).apply {
+        $0.setTitle(viewModel.timeString, for: .normal)
+        $0.setTitleColor(AppColor.Static.darkBlue.uiColor, for: .normal)
+        $0.titleLabel?.font = AppFont.medium.s16
+        $0.addTarget(self, action: #selector(resendButtonTapped), for: .touchUpInside)
+    }
     
-    private lazy var continueButton: ProceedButton = {
-        let button = ProceedButton(type: .system)
-        button.type = .continue
-        button.addTarget(self, action: #selector(continueButtonTapped), for: .touchUpInside)
-        return button
-    }()
+    private lazy var continueButton = ProceedButton(type: .system).apply {
+        $0.type = .continue
+        $0.addTarget(self, action: #selector(continueButtonTapped), for: .touchUpInside)
+    }
     
     // MARK: - Object Lifecycle
     
@@ -97,9 +89,7 @@ final class SmsCodeView: BaseView {
 
 private extension SmsCodeView {
     func setupViews() {
-        backgroundColor = AppColor.Theme.mainBackground.uiColor
-        [infoLabel, phoneNumberLabel, codeStackView,
-         resendLabel, resendButton, continueButton].forEach { addSubview($0) }
+        addSubviews(infoLabel, phoneNumberLabel, codeStackView, resendLabel, resendButton, continueButton)
     }
     
     func setupConstraints() {

@@ -34,25 +34,17 @@ final class NavigationTitleView: UIView {
     
     // MARK: - UI
     
-    private lazy var titleLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = AppColor.Theme.mainTitle.uiColor
-        return label
-    }()
+    private lazy var titleLabel = UILabel().apply { $0.textColor = AppColor.Theme.mainTitle.uiColor }
     
-    private lazy var appIconImageView: UIImageView = {
-        let imageView = UIImageView(image: AppImage.Common.AppIcon.uiImage)
-        imageView.clipsToBounds = true
-        imageView.contentMode = .scaleAspectFit
-        return imageView
-    }()
+    private lazy var appIconImageView = UIImageView(image: AppImage.Common.AppIcon.uiImage).apply {
+        $0.clipsToBounds = true
+        $0.contentMode = .scaleAspectFit
+    }
     
-    private lazy var containerView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [appIconImageView, titleLabel])
-        stackView.axis = .horizontal
-        stackView.spacing = 5
-        return stackView
-    }()
+    private lazy var containerView = UIStackView(arrangedSubviews: [appIconImageView, titleLabel]).apply {
+        $0.axis = .horizontal
+        $0.spacing = 5
+    }
 
     // MARK: - Object Lifecycle
     
@@ -120,7 +112,7 @@ final class NavigationTitleView: UIView {
 
 private extension NavigationTitleView {
     func setupViews() {
-        isIcon ? addSubview(containerView) : addSubview(titleLabel)
+        isIcon ? addSubviews(containerView) : addSubviews(titleLabel)
     }
     
     func setupConstraints() {

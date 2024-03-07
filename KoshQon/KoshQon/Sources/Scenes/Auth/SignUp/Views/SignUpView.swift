@@ -18,13 +18,11 @@ final class SignUpView: BaseView {
     private lazy var phoneLabel = InfoLabel(type: .phone)
     private lazy var phoneTextField = InputTextField(inputType: .phone)
     
-    private lazy var continueButton: ProceedButton = {
-        let button = ProceedButton(type: .system)
-        button.type = .continue
-        button.addTarget(self, action: #selector(continueButtonTapped), for: .touchUpInside)
-        return button
-    }()
-    
+    private lazy var continueButton = ProceedButton(type: .system).apply {
+        $0.type = .continue
+        $0.addTarget(self, action: #selector(continueButtonTapped), for: .touchUpInside)
+    }
+
     // MARK: - Object Lifecycle
     
     override init(frame: CGRect) {
@@ -51,7 +49,7 @@ final class SignUpView: BaseView {
 
 private extension SignUpView {
     func setupViews() {
-        [infoLabel, phoneLabel, phoneTextField, continueButton].forEach { addSubview($0) }
+        addSubviews(infoLabel, phoneLabel, phoneTextField, continueButton)
     }
     
     func setupConstraints() {
