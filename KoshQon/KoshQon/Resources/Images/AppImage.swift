@@ -14,6 +14,7 @@ enum AppImage {
     enum Common: String, AppImageProtocol {
         case AppIcon
         case backArrow = "common/back_arrow"
+        case expandRight = "common/expand_right"
     }
     
     // MARK: - Auth

@@ -57,6 +57,11 @@
 		47D54CC32B91EC5800021FA7 /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D54CC22B91EC5800021FA7 /* MainScreenView.swift */; };
 		47D54CC52B91EC7200021FA7 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D54CC42B91EC7200021FA7 /* MainScreenViewController.swift */; };
 		47D54CC72B92405500021FA7 /* PHPhotoLibrary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D54CC62B92405500021FA7 /* PHPhotoLibrary+Extensions.swift */; };
+		47D54CE42B963A6700021FA7 /* MainNavigationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D54CE32B963A6700021FA7 /* MainNavigationCell.swift */; };
+		47D54CE62B963E6B00021FA7 /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D54CE52B963E6B00021FA7 /* UILabel+Extensions.swift */; };
+		47D54CE82B963F5900021FA7 /* NSObject+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D54CE72B963F5900021FA7 /* NSObject+Extensions.swift */; };
+		47D54CEA2B9640C900021FA7 /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D54CE92B9640C900021FA7 /* SeparatorView.swift */; };
+		47D54CEC2B96419700021FA7 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D54CEB2B96419700021FA7 /* UIView+Extensions.swift */; };
 		D75DF604CA3D887D4F33D6C0 /* Pods_KoshQon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61086CEFBD17C86EC8E72953 /* Pods_KoshQon.framework */; };
 /* End PBXBuildFile section */
 
@@ -114,6 +119,12 @@
 		47D54CC22B91EC5800021FA7 /* MainScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenView.swift; sourceTree = "<group>"; };
 		47D54CC42B91EC7200021FA7 /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
 		47D54CC62B92405500021FA7 /* PHPhotoLibrary+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PHPhotoLibrary+Extensions.swift"; sourceTree = "<group>"; };
+		47D54CC82B926B8E00021FA7 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		47D54CE32B963A6700021FA7 /* MainNavigationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationCell.swift; sourceTree = "<group>"; };
+		47D54CE52B963E6B00021FA7 /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
+		47D54CE72B963F5900021FA7 /* NSObject+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extensions.swift"; sourceTree = "<group>"; };
+		47D54CE92B9640C900021FA7 /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
+		47D54CEB2B96419700021FA7 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		61086CEFBD17C86EC8E72953 /* Pods_KoshQon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KoshQon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D90A3B52983C518C2D6105E0 /* Pods-KoshQon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KoshQon.debug.xcconfig"; path = "Target Support Files/Pods-KoshQon/Pods-KoshQon.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -134,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				472E1B292B831BFC005BF649 /* Double+Extensions.swift */,
+				47D54CE72B963F5900021FA7 /* NSObject+Extensions.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -142,6 +154,8 @@
 			isa = PBXGroup;
 			children = (
 				47D54CC62B92405500021FA7 /* PHPhotoLibrary+Extensions.swift */,
+				47D54CE52B963E6B00021FA7 /* UILabel+Extensions.swift */,
+				47D54CEB2B96419700021FA7 /* UIView+Extensions.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -245,6 +259,7 @@
 				472E1B3D2B8372DA005BF649 /* InfoLabel.swift */,
 				472E1B3F2B837AAE005BF649 /* ProceedButton.swift */,
 				47CD67372B8DA33E0035DCB6 /* NavigationTitleView.swift */,
+				47D54CE92B9640C900021FA7 /* SeparatorView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -651,6 +666,7 @@
 			isa = PBXGroup;
 			children = (
 				47D54CC22B91EC5800021FA7 /* MainScreenView.swift */,
+				47D54CE32B963A6700021FA7 /* MainNavigationCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -718,11 +734,12 @@
 			};
 			buildConfigurationList = 4756A01E2B7FCC56003F9675 /* Build configuration list for PBXProject "KoshQon" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = ru;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 4756A01A2B7FCC56003F9675;
 			productRefGroup = 4756A0242B7FCC56003F9675 /* Products */;
@@ -799,9 +816,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47D54CE82B963F5900021FA7 /* NSObject+Extensions.swift in Sources */,
 				47CD67402B8DE0D40035DCB6 /* SignUpViewController.swift in Sources */,
 				47D54CB62B91919200021FA7 /* BottomSheetOption.swift in Sources */,
 				4764D5982B85A50000D15A2E /* SignInView.swift in Sources */,
+				47D54CE42B963A6700021FA7 /* MainNavigationCell.swift in Sources */,
 				47CD67382B8DA33E0035DCB6 /* NavigationTitleView.swift in Sources */,
 				4764D5AB2B87459900D15A2E /* ForgotPasswordView.swift in Sources */,
 				47C7B3792B812AF000125172 /* AppColor.swift in Sources */,
@@ -820,8 +839,11 @@
 				47CD67262B88A9980035DCB6 /* BaseView.swift in Sources */,
 				47CD67282B88BB070035DCB6 /* ChangePasswordViewController.swift in Sources */,
 				4764D5A72B87448300D15A2E /* ForgotPasswordViewController.swift in Sources */,
+				47D54CEC2B96419700021FA7 /* UIView+Extensions.swift in Sources */,
 				47D54CBB2B91D22F00021FA7 /* Constants.swift in Sources */,
 				472E1B2C2B83215C005BF649 /* SplashScreenViewController.swift in Sources */,
+				47D54CE62B963E6B00021FA7 /* UILabel+Extensions.swift in Sources */,
+				47D54CEA2B9640C900021FA7 /* SeparatorView.swift in Sources */,
 				47D54CB42B918FA800021FA7 /* BottomSheetViewController.swift in Sources */,
 				47CD675C2B90950E0035DCB6 /* PersonInformationViewController.swift in Sources */,
 				47CD67182B87635C0035DCB6 /* SmsCodeViewModel.swift in Sources */,
@@ -851,6 +873,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				4756A0322B7FCC57003F9675 /* Base */,
+				47D54CC82B926B8E00021FA7 /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			path = KoshQon/Resources;
@@ -864,6 +887,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -927,6 +951,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -989,8 +1014,8 @@
 				DEVELOPMENT_TEAM = 9QVR9UVA7V;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = KoshQon/Resources/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "Need to access your camera to capture a photo add and update profile picture.";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Need to access your photo library to select a photo add and update profile picture";
+				INFOPLIST_KEY_NSCameraUsageDescription = "KoshQon requires access to your phone’s camera.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "KoshQon requires access to your phone’s photo library.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -1020,8 +1045,8 @@
 				DEVELOPMENT_TEAM = 9QVR9UVA7V;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = KoshQon/Resources/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "Need to access your camera to capture a photo add and update profile picture.";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Need to access your photo library to select a photo add and update profile picture";
+				INFOPLIST_KEY_NSCameraUsageDescription = "KoshQon requires access to your phone’s camera.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "KoshQon requires access to your phone’s photo library.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;

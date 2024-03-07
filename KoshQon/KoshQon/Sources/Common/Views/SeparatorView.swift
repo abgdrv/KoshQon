@@ -1,24 +1,20 @@
 //
-//  MainScreenView.swift
+//  SeparatorView.swift
 //  KoshQon
 //
-//  Created by Almat Begaidarov on 01.03.2024.
+//  Created by Almat Begaidarov on 04.03.2024.
 //
 
 import UIKit
 import SnapKit
 
-final class MainScreenView: UIView {
-    
-    // MARK: - Properties
-    
+final class SeparatorView: UIView {
+
     // MARK: - UI
     
-    private lazy var collectionView: UICollectionView = {
-        let collectionView = UICollectionView()
-        colle
-        return collectionView
-    }()
+    private lazy var lineView = UIView().apply {
+        $0.backgroundColor = AppColor.Static.lightGray.uiColor
+    }
     
     // MARK: - Object Lifecycle
     
@@ -31,20 +27,18 @@ final class MainScreenView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-    }
 }
 
 // MARK: - Setup Views
 
-private extension MainScreenView {
+private extension SeparatorView {
     func setupViews() {
-        
+        addSubviews(lineView)
     }
     
     func setupConstraints() {
-        
+        lineView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
     }
 }
