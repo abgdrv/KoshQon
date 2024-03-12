@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-final class MainNavigationCell: UICollectionViewCell {
+final class MainNavigationCell: UITableViewCell {
 
     // MARK: - Properties
     
@@ -16,10 +16,7 @@ final class MainNavigationCell: UICollectionViewCell {
     
     // MARK: - UI
     
-    private lazy var iconImageView = UIImageView().apply {
-        $0.contentMode = .scaleAspectFit
-    }
-    
+    private lazy var iconImageView = UIImageView().apply { $0.contentMode = .scaleAspectFit }
     private lazy var containerView = UIView()
     
     private lazy var titleLabel = UILabel().apply {
@@ -34,9 +31,9 @@ final class MainNavigationCell: UICollectionViewCell {
     }
     
     // MARK: - Object Lifecycle
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupViews()
         setupConstraints()
     }
@@ -50,33 +47,35 @@ final class MainNavigationCell: UICollectionViewCell {
 
 private extension MainNavigationCell {
     func setupViews() {
+        backgroundColor = AppColor.Theme.mainBackground.uiColor
         contentView.addSubviews(iconImageView, containerView)
-        containerView.addSubviews(titleLabel, separatorView, expandRightIconImageView)
+        containerView.addSubviews(titleLabel, expandRightIconImageView, separatorView)
     }
     
     func setupConstraints() {
         iconImageView.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(10)
-            make.centerY.equalToSuperview()
+            make.top.bottom.equalToSuperview().inset(10)
         }
         
         containerView.snp.makeConstraints { make in
-            make.leading.equalTo(iconImageView.snp.trailing).offset(7)
+            make.leading.equalTo(iconImageView.snp.trailing).offset(8)
             make.trailing.height.equalToSuperview()
         }
         
         titleLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview()
-            make.centerY.equalToSuperview()
+            make.top.bottom.equalToSuperview().inset(10)
         }
         
         separatorView.snp.makeConstraints { make in
             make.bottom.width.equalToSuperview()
+            make.height.equalTo(1)
         }
         
         expandRightIconImageView.snp.makeConstraints { make in
             make.trailing.equalToSuperview().inset(10)
-            make.centerY.equalToSuperview()
+            make.top.bottom.equalToSuperview().inset(10)
         }
     }
 }
@@ -84,7 +83,7 @@ private extension MainNavigationCell {
 // MARK: - Public methods
 
 extension MainNavigationCell {
-    func configure(iconImage: UIImage, title: String) {
+    func configure(iconImage: UIImage?, title: String) {
         iconImageView.image = iconImage
         titleLabel.text = title
     }

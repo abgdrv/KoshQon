@@ -7,23 +7,33 @@
 
 import UIKit
 
-final class MainScreenViewController: UIViewController {
+final class MainScreenViewController: BaseViewController {
+    
+    // MARK: - Properties
+    
+    // TODO: VM
+    
+    // MARK: - UI
+    
+    private lazy var mainScreenView = MainScreenView()
+    
+    // MARK: - View Lifecycle
+    
+    override func loadView() {
+        super.loadView()
+        view = mainScreenView
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupNavigation()
     }
-    
+}
 
-    /*
-    // MARK: - Navigation
+// MARK: - Setup
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+private extension MainScreenViewController {
+    func setupNavigation() {
+        navigationItem.titleView = NavigationTitleView(type: .koshqon)
     }
-    */
-
 }

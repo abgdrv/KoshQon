@@ -15,6 +15,7 @@ final class PersonInformationView: BaseView {
     
     var textFieldDidTap: Callback<InputType>?
     var imageDidTap: VoidCallback?
+    var didTap: VoidCallback?
     
     // MARK: - UI
     
@@ -31,7 +32,10 @@ final class PersonInformationView: BaseView {
     private lazy var genderTextField = InputTextField(inputType: .gender)
     private lazy var countryTextField = InputTextField(inputType: .country)
     private lazy var cityTextField = InputTextField(inputType: .city)
-    private lazy var continueButton = ProceedButton(type: .system).apply { $0.type = .continue }
+    private lazy var continueButton = ProceedButton(type: .system).apply { 
+        $0.type = .continue
+        $0.addTarget(self, action: #selector(continueButtonTapped), for: .touchUpInside)
+    }
     
     private lazy var datePicker = UIDatePicker().apply {
         $0.datePickerMode = .date
@@ -179,6 +183,10 @@ private extension PersonInformationView {
 // MARK: - Actions
 
 private extension PersonInformationView {
+    @objc func continueButtonTapped() {
+        didTap?()
+    }
+    
     @objc func profileImageViewTapped() {
         imageDidTap?()
     }

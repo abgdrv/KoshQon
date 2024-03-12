@@ -30,7 +30,6 @@ final class NavigationTitleView: UIView {
     private let type: NavigationTitleType
     private let title: String?
     private var isIcon = false
-    private var isFirst = false
     
     // MARK: - UI
     
@@ -41,16 +40,24 @@ final class NavigationTitleView: UIView {
         $0.contentMode = .scaleAspectFit
     }
     
-    private lazy var containerView = UIStackView(arrangedSubviews: [appIconImageView, titleLabel]).apply {
+    private lazy var containerView = UIStackView().apply {
         $0.axis = .horizontal
         $0.spacing = 5
+        $0.alignment = isIcon ? .center : .leading
+    }
+    
+    private lazy var spacerView = UIView().apply {
+        let constraint = $0.widthAnchor.constraint(greaterThanOrEqualToConstant: CGFloat.greatestFiniteMagnitude)
+        constraint.isActive = true
+        constraint.priority = .defaultLow
     }
 
     // MARK: - Object Lifecycle
     
-    init(type: NavigationTitleType, title: String? = nil) {
+    init(type: NavigationTitleType, isIcon: Bool = false, title: String? = nil) {
         self.type = type
         self.title = title
+        self.isIcon = isIcon
         super.init(frame: .zero)
         configure()
     }
@@ -58,6 +65,8 @@ final class NavigationTitleView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - View Lifecycle
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -77,14 +86,11 @@ final class NavigationTitleView: UIView {
         case .personalInfo:
             setup(text: "Личная информация")
         case .koshqon:
-            setup(text: "KoshQon", font: AppFont.anta.s24)
-            isFirst = true
+            setup(text: "KoshQon", font: AppFont.anta.s28)
         case .favorites:
             setup(text: "Избранное")
-            isFirst = true
         case .messages:
             setup(text: "Сообщения")
-            isFirst = true
         case .directMessages:
             setup(text: title)
         case .profile:
@@ -95,7 +101,6 @@ final class NavigationTitleView: UIView {
             setup(text: "Настройки")
         case .registration:
             setup(text: "ID")
-            isIcon = true
         }
         
         setupViews()
@@ -112,28 +117,19 @@ final class NavigationTitleView: UIView {
 
 private extension NavigationTitleView {
     func setupViews() {
-        isIcon ? addSubviews(containerView) : addSubviews(titleLabel)
+        addSubviews(containerView)
+        if isIcon {
+            containerView.addArrangedSubview(appIconImageView)
+            containerView.addArrangedSubview(titleLabel)
+        } else {
+            containerView.addArrangedSubview(titleLabel)
+            containerView.addArrangedSubview(spacerView)
+        }
     }
     
     func setupConstraints() {
-        if isIcon {
-            containerView.snp.makeConstraints { make in
-                make.center.equalToSuperview()
-            }
-            
-            appIconImageView.snp.makeConstraints { make in
-                make.size.equalTo(30)
-            }
-            return
-        }
-        
-        titleLabel.snp.makeConstraints { make in
-            if isFirst {
-                make.trailing.equalToSuperview()
-            } else {
-                make.trailing.equalToSuperview().offset(20)
-            }
-            make.centerY.equalToSuperview()
+        containerView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
         }
     }
 }

@@ -35,4 +35,27 @@ enum AppImage {
         case plus = "personal/plus"
     }
     
+    // MARK: - Main
+
+    enum Main: String, AppImageProtocol {
+        case search = "main/search"
+        case advertisement = "main/advertisement"
+        case guide = "main/guide"
+        case adBlank = "main/ad_blank"
+        case star = "main/star"
+    }
+    
+    // MARK: - Tabbar
+    
+    enum Tabbar: String, AppImageProtocol {
+        case logo = "tabbar/logo"
+        case logoSelected = "tabbar/logo_selected"
+        case favourites = "tabbar/favourites"
+        case favouritesSelected = "tabbar/favourites_selected"
+        case add = "tabbar/add"
+        case messages = "tabbar/messages"
+        case messagesSelected = "tabbar/messages_selected"
+        case profile = "tabbar/profile"
+        case profileSelected = "tabbar/profile_selected"
+    }
 }
