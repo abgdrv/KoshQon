@@ -24,7 +24,7 @@ final class BottomSheetViewController: BaseViewController {
         tableView.rowHeight = Constants.PanModal.short / 2
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.registerCell(BottomSheetCell.self)
+        tableView.register(type: BottomSheetCell.self)
         tableView.separatorStyle = .none
         return tableView
     }()
@@ -54,7 +54,7 @@ final class BottomSheetViewController: BaseViewController {
 
 private extension BottomSheetViewController {
     func setupViews() {
-        view.addSubviews(optionsTableView)
+        view.addSubview(optionsTableView)
     }
     
     func setupConstraints() {
@@ -73,7 +73,7 @@ extension BottomSheetViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueCell(BottomSheetCell.self, indexPath: indexPath)
+        let cell = tableView.dequeue(type: BottomSheetCell.self, for: indexPath)
         cell.configure(option: options[indexPath.row])
         cell.accessoryType = indexPath == selectedDayIndexPath ? .checkmark : .none
         return cell

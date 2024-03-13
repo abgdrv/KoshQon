@@ -12,6 +12,8 @@ final class MainNavigationCell: UITableViewCell {
 
     // MARK: - Properties
     
+//    private let viewModel: MainNavigationCellViewModel
+    
     // TODO: - VM
     
     // MARK: - UI

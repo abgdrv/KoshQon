@@ -17,7 +17,7 @@ class BaseViewController: UIViewController {
     }
 }
 
-// MARK: - Setup Navigation
+// MARK: - Navigation
 
 private extension BaseViewController {
     func setupNavigation() {
@@ -30,6 +30,7 @@ private extension BaseViewController {
             navigationItem.leftBarButtonItem = backButton
         }
         navigationController.interactivePopGestureRecognizer?.delegate = self
+        navigationController.navigationBar.backgroundColor = AppColor.Theme.mainBackground.uiColor
     }
 }
 

@@ -21,14 +21,12 @@ final class MainTabBarController: UITabBarController {
 
 private extension MainTabBarController {
     func getViewControllers() -> [UIViewController] {
-        let home = UINavigationController(rootViewController: MainScreenViewController())
+        let home = UINavigationController(rootViewController: MainScreenViewController(viewModel: MainScreenViewModel()))
         home.tabBarItem = UITabBarItem(title: "KoshQon",
                                        image: AppImage.Tabbar.logo.uiImage,
                                        selectedImage: AppImage.Tabbar.logoSelected.uiImage)
         
-        let favourites = UINavigationController(rootViewController: UIViewController().apply({
-            $0.view.backgroundColor = .white
-        }))
+        let favourites = UINavigationController(rootViewController: FavoritesViewController(viewModel: FavoritesViewModel()))
         favourites.tabBarItem = UITabBarItem(title: "Избранное",
                                              image: AppImage.Tabbar.favourites.uiImage,
                                              selectedImage: AppImage.Tabbar.favouritesSelected.uiImage)

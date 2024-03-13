@@ -65,10 +65,6 @@ private extension PersonInformationViewController {
                 self.showImagePickerOptions()
             }
         }
-        
-        personInformationView.didTap = {
-            self.navigationController?.pushViewController(MainScreenViewController(), animated: true)
-        }
     }
 }
 

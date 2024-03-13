@@ -58,4 +58,10 @@ enum AppImage {
         case profile = "tabbar/profile"
         case profileSelected = "tabbar/profile_selected"
     }
+    
+    // MARK: - Favorites
+    
+    enum Favorites: String, AppImageProtocol {
+        case heart = "favorites/heart"
+    }
 }

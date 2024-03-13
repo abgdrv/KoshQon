@@ -143,7 +143,7 @@ final class InputTextField: UITextField {
 
 private extension InputTextField {
     func setupViews() {
-        addSubviews(containerView)
+        addSubview(containerView)
         switch type {
         case .password:
             containerView.addArrangedSubview(hidePasswordButton)

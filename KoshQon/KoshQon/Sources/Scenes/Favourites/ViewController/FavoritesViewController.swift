@@ -1,27 +1,25 @@
 //
-//  MainScreenViewController.swift
+//  FavoritesViewController.swift
 //  KoshQon
 //
-//  Created by Almat Begaidarov on 01.03.2024.
+//  Created by Almat Begaidarov on 12.03.2024.
 //
 
 import UIKit
 
-final class MainScreenViewController: BaseViewController {
+final class FavoritesViewController: BaseViewController {
     
     // MARK: - Properties
     
-    private let viewModel: MainScreenViewModel
-    
-    // TODO: VM
+    private let viewModel: FavoritesViewModel
     
     // MARK: - UI
     
-    private lazy var mainScreenView = MainScreenView(viewModel: viewModel)
+    private lazy var favoritesView = FavoritesView(viewModel: viewModel)
     
     // MARK: - Object Lifecycle
     
-    init(viewModel: MainScreenViewModel) {
+    init(viewModel: FavoritesViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -34,7 +32,7 @@ final class MainScreenViewController: BaseViewController {
     
     override func loadView() {
         super.loadView()
-        view = mainScreenView
+        view = favoritesView
     }
 
     override func viewDidLoad() {
@@ -43,10 +41,11 @@ final class MainScreenViewController: BaseViewController {
     }
 }
 
-// MARK: - Setup
+// MARK: - Navigation
 
-private extension MainScreenViewController {
+private extension FavoritesViewController {
     func setupNavigation() {
-        navigationItem.titleView = NavigationTitleView(type: .koshqon)
+        navigationItem.titleView = NavigationTitleView(type: .favorites)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(systemItem: .done)
     }
 }

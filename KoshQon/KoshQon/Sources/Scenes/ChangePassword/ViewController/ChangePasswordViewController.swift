@@ -41,7 +41,7 @@ final class ChangePasswordViewController: BaseViewController {
     }
 }
 
-// MARK: - Setup Navigation
+// MARK: - Navigation
 
 private extension ChangePasswordViewController {
     func setupNavigation() {

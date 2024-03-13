@@ -8,18 +8,14 @@
 import UIKit
 
 extension UITableView {
-    func registerCell<T: UITableViewCell>(_ cellClass: T.Type) {
-        let cellId = String(describing: cellClass.self)
-        register(cellClass.self, forCellReuseIdentifier: cellId)
+
+    func register<CellType: Reusable>(type: CellType.Type) {
+        register(type, forCellReuseIdentifier: type.reuseID)
     }
     
-    func dequeueCell<T>(_ cellClass: T.Type, indexPath path: IndexPath) -> T {
-        let cellId = String(describing: T.self)
-        return self.dequeueReusableCell(withIdentifier: cellId, for: path) as! T
-    }
-    
-    func registerHeaderFooter<T: UITableViewHeaderFooterView>(_ headerClass: T.Type) {
-        let cellId = String(describing: T.self)
-        register(headerClass.self, forCellReuseIdentifier: cellId)
+    func dequeue<CellType: Reusable>(type: CellType.Type, for indexPath: IndexPath) -> CellType {
+        return (dequeueReusableCell(withIdentifier: type.reuseID, for: indexPath) as? CellType)!
     }
 }
+
+extension UITableViewCell: Reusable {}

@@ -44,7 +44,7 @@ final class SmsCodeViewController: BaseViewController {
     }
 }
 
-// MARK: - Setup Navigation
+// MARK: - Navigation
 
 private extension SmsCodeViewController {
     func setupNavigation() {

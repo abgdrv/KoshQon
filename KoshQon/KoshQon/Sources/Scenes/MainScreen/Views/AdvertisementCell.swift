@@ -20,6 +20,7 @@ final class AdvertisementCell: UITableViewCell {
     
     private lazy var adImageView = UIImageView(image: AppImage.Main.adBlank.uiImage).apply {
         $0.contentMode = .scaleAspectFit
+        $0.clipsToBounds = true
     }
     
     private lazy var titleLabel = UILabel().apply {
@@ -65,7 +66,7 @@ final class AdvertisementCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         containerView.layer.cornerRadius = 10
-        adImageView.layer.cornerRadius = 20
+        adImageView.layer.cornerRadius = 10
     }
 }
 
@@ -74,7 +75,7 @@ final class AdvertisementCell: UITableViewCell {
 private extension AdvertisementCell {
     func setupViews() {
         backgroundColor = AppColor.Theme.secondaryBackground.uiColor
-        contentView.addSubviews(containerView)
+        contentView.addSubview(containerView)
         containerView.addSubviews(adImageView, titleLabel, addressLabel, separatorView, bottomContainerView)
         bottomContainerView.addSubviews(dateLabel, ratingImageView, ratingLabel)
     }

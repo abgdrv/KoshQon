@@ -35,7 +35,7 @@ final class MainSectionHeaderView: UIView {
 private extension MainSectionHeaderView {
     func setupViews() {
         backgroundColor = AppColor.Theme.secondaryBackground.uiColor
-        addSubviews(titleLabel)
+        addSubview(titleLabel)
     }
     
     func setupConstraints() {

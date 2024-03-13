@@ -21,8 +21,12 @@
 		472E1B402B837AAE005BF649 /* ProceedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472E1B3F2B837AAE005BF649 /* ProceedButton.swift */; };
 		4743D06F2B81198800103C5E /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4743D06E2B81198800103C5E /* Colors.xcassets */; };
 		475224942BA04E79000DAE1B /* MainScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475224932BA04E79000DAE1B /* MainScreenViewModel.swift */; };
-		475224962BA04E94000DAE1B /* MainNavigationItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475224952BA04E94000DAE1B /* MainNavigationItemViewModel.swift */; };
+		475224962BA04E94000DAE1B /* MainNavigationCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475224952BA04E94000DAE1B /* MainNavigationCellViewModel.swift */; };
 		475224982BA04EAC000DAE1B /* AdvertisementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475224972BA04EAC000DAE1B /* AdvertisementViewModel.swift */; };
+		4752249D2BA05187000DAE1B /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4752249C2BA05187000DAE1B /* FavoritesViewController.swift */; };
+		4752249F2BA051EA000DAE1B /* FavouritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4752249E2BA051EA000DAE1B /* FavouritesView.swift */; };
+		475224A22BA05800000DAE1B /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475224A12BA05800000DAE1B /* FavoritesViewModel.swift */; };
+		475224A52BA162A4000DAE1B /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475224A42BA162A4000DAE1B /* Reusable.swift */; };
 		4756A0272B7FCC56003F9675 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4756A0262B7FCC56003F9675 /* AppDelegate.swift */; };
 		4756A0292B7FCC56003F9675 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4756A0282B7FCC56003F9675 /* SceneDelegate.swift */; };
 		4756A0302B7FCC57003F9675 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4756A02F2B7FCC57003F9675 /* Images.xcassets */; };
@@ -34,7 +38,6 @@
 		4764D5A72B87448300D15A2E /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4764D5A62B87448300D15A2E /* ForgotPasswordViewController.swift */; };
 		4764D5A92B8744E400D15A2E /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4764D5A82B8744E400D15A2E /* ForgotPasswordViewModel.swift */; };
 		4764D5AB2B87459900D15A2E /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4764D5AA2B87459900D15A2E /* ForgotPasswordView.swift */; };
-		478F5FFC2B9981B400A07ECD /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478F5FFB2B9981B400A07ECD /* UICollectionView+Extensions.swift */; };
 		478F5FFE2B99823B00A07ECD /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478F5FFD2B99823B00A07ECD /* UITableView+Extensions.swift */; };
 		47C7B3772B812A3700125172 /* AppColorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C7B3762B812A3700125172 /* AppColorProtocol.swift */; };
 		47C7B3792B812AF000125172 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C7B3782B812AF000125172 /* AppColor.swift */; };
@@ -91,8 +94,12 @@
 		472E1B3F2B837AAE005BF649 /* ProceedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProceedButton.swift; sourceTree = "<group>"; };
 		4743D06E2B81198800103C5E /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		475224932BA04E79000DAE1B /* MainScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewModel.swift; sourceTree = "<group>"; };
-		475224952BA04E94000DAE1B /* MainNavigationItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationItemViewModel.swift; sourceTree = "<group>"; };
+		475224952BA04E94000DAE1B /* MainNavigationCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationCellViewModel.swift; sourceTree = "<group>"; };
 		475224972BA04EAC000DAE1B /* AdvertisementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertisementViewModel.swift; sourceTree = "<group>"; };
+		4752249C2BA05187000DAE1B /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		4752249E2BA051EA000DAE1B /* FavouritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesView.swift; sourceTree = "<group>"; };
+		475224A12BA05800000DAE1B /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
+		475224A42BA162A4000DAE1B /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		4756A0232B7FCC56003F9675 /* KoshQon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KoshQon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4756A0262B7FCC56003F9675 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4756A0282B7FCC56003F9675 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,7 +113,6 @@
 		4764D5A62B87448300D15A2E /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		4764D5A82B8744E400D15A2E /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 		4764D5AA2B87459900D15A2E /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
-		478F5FFB2B9981B400A07ECD /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
 		478F5FFD2B99823B00A07ECD /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		47C7B3762B812A3700125172 /* AppColorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColorProtocol.swift; sourceTree = "<group>"; };
 		47C7B3782B812AF000125172 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
@@ -208,7 +214,6 @@
 				47D54CC62B92405500021FA7 /* PHPhotoLibrary+Extensions.swift */,
 				47D54CE52B963E6B00021FA7 /* UILabel+Extensions.swift */,
 				47D54CEB2B96419700021FA7 /* UIView+Extensions.swift */,
-				478F5FFB2B9981B400A07ECD /* UICollectionView+Extensions.swift */,
 				478F5FFD2B99823B00A07ECD /* UITableView+Extensions.swift */,
 			);
 			path = UIKit;
@@ -300,7 +305,8 @@
 				47D54CB92B91D22100021FA7 /* Constants */,
 				47CD670C2B8759CD0035DCB6 /* Typealias */,
 				472E1B3A2B8368AB005BF649 /* Views */,
-				47CD672B2B8C3DC00035DCB6 /* ViewController */,
+				47CD672B2B8C3DC00035DCB6 /* ViewControllers */,
+				475224A32BA16291000DAE1B /* Protocols */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -410,8 +416,43 @@
 		475224992BA04EC5000DAE1B /* Favourites */ = {
 			isa = PBXGroup;
 			children = (
+				475224A02BA057B1000DAE1B /* ViewModel */,
+				4752249A2BA0503F000DAE1B /* View */,
+				4752249B2BA05087000DAE1B /* ViewController */,
 			);
 			path = Favourites;
+			sourceTree = "<group>";
+		};
+		4752249A2BA0503F000DAE1B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4752249E2BA051EA000DAE1B /* FavouritesView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4752249B2BA05087000DAE1B /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4752249C2BA05187000DAE1B /* FavoritesViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		475224A02BA057B1000DAE1B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				475224A12BA05800000DAE1B /* FavoritesViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		475224A32BA16291000DAE1B /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				475224A42BA162A4000DAE1B /* Reusable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		4756A01A2B7FCC56003F9675 = {
@@ -609,12 +650,12 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		47CD672B2B8C3DC00035DCB6 /* ViewController */ = {
+		47CD672B2B8C3DC00035DCB6 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				47CD672C2B8C3DD50035DCB6 /* BaseViewController.swift */,
 			);
-			path = ViewController;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		47CD67392B8DDADF0035DCB6 /* ViewModel */ = {
@@ -722,7 +763,7 @@
 			isa = PBXGroup;
 			children = (
 				475224932BA04E79000DAE1B /* MainScreenViewModel.swift */,
-				475224952BA04E94000DAE1B /* MainNavigationItemViewModel.swift */,
+				475224952BA04E94000DAE1B /* MainNavigationCellViewModel.swift */,
 				475224972BA04EAC000DAE1B /* AdvertisementViewModel.swift */,
 			);
 			path = ViewModel;
@@ -890,7 +931,7 @@
 				475224942BA04E79000DAE1B /* MainScreenViewModel.swift in Sources */,
 				471086482B9E299900556C2D /* Advertisement.swift in Sources */,
 				478F5FFE2B99823B00A07ECD /* UITableView+Extensions.swift in Sources */,
-				475224962BA04E94000DAE1B /* MainNavigationItemViewModel.swift in Sources */,
+				475224962BA04E94000DAE1B /* MainNavigationCellViewModel.swift in Sources */,
 				47CD67402B8DE0D40035DCB6 /* SignUpViewController.swift in Sources */,
 				47D54CB62B91919200021FA7 /* BottomSheetOption.swift in Sources */,
 				4764D5982B85A50000D15A2E /* SignInView.swift in Sources */,
@@ -909,13 +950,14 @@
 				47C7B3772B812A3700125172 /* AppColorProtocol.swift in Sources */,
 				47CD67162B8762F70035DCB6 /* SmsCodeView.swift in Sources */,
 				471086522B9E42E100556C2D /* MainTabBarController.swift in Sources */,
+				475224A52BA162A4000DAE1B /* Reusable.swift in Sources */,
 				47CD67592B908A0A0035DCB6 /* PersonInformationView.swift in Sources */,
 				47CD671A2B8796060035DCB6 /* SmsCodeViewController.swift in Sources */,
 				472E1B2A2B831BFC005BF649 /* Double+Extensions.swift in Sources */,
-				478F5FFC2B9981B400A07ECD /* UICollectionView+Extensions.swift in Sources */,
 				47CD67262B88A9980035DCB6 /* BaseView.swift in Sources */,
 				47CD67282B88BB070035DCB6 /* ChangePasswordViewController.swift in Sources */,
 				4764D5A72B87448300D15A2E /* ForgotPasswordViewController.swift in Sources */,
+				475224A22BA05800000DAE1B /* FavoritesViewModel.swift in Sources */,
 				47D54CEC2B96419700021FA7 /* UIView+Extensions.swift in Sources */,
 				47D54CBB2B91D22F00021FA7 /* Constants.swift in Sources */,
 				472E1B2C2B83215C005BF649 /* SplashScreenViewController.swift in Sources */,
@@ -926,11 +968,13 @@
 				47CD67182B87635C0035DCB6 /* SmsCodeViewModel.swift in Sources */,
 				4756A0272B7FCC56003F9675 /* AppDelegate.swift in Sources */,
 				4764D5952B85A0A500D15A2E /* SignInViewModel.swift in Sources */,
+				4752249D2BA05187000DAE1B /* FavoritesViewController.swift in Sources */,
 				47CD670E2B8759EB0035DCB6 /* Typealias.swift in Sources */,
 				4756A0292B7FCC56003F9675 /* SceneDelegate.swift in Sources */,
 				472E1B372B8364E1005BF649 /* SignInViewController.swift in Sources */,
 				472E1B402B837AAE005BF649 /* ProceedButton.swift in Sources */,
 				47D54CC32B91EC5800021FA7 /* MainScreenView.swift in Sources */,
+				4752249F2BA051EA000DAE1B /* FavouritesView.swift in Sources */,
 				47CD67222B88A7AE0035DCB6 /* ChangePasswordView.swift in Sources */,
 				472E1B3C2B836A75005BF649 /* InputTextField.swift in Sources */,
 				4710864C2B9E389400556C2D /* MainNavigationItem.swift in Sources */,

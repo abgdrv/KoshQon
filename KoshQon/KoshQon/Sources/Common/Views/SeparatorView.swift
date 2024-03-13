@@ -31,7 +31,7 @@ final class SeparatorView: UIView {
 
 private extension SeparatorView {
     func setupViews() {
-        addSubviews(lineView)
+        addSubview(lineView)
     }
     
     func setupConstraints() {

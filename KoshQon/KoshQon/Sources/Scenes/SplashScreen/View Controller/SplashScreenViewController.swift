@@ -29,7 +29,7 @@ final class SplashScreenViewController: BaseViewController {
 
 private extension SplashScreenViewController {
     func setupViews() {
-        view.addSubviews(splashScreenView)
+        view.addSubview(splashScreenView)
     }
         
     func setupConstraints() {

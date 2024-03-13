@@ -28,10 +28,10 @@ final class SignUpViewController: BaseViewController {
     }
 }
 
-// MARK: - Setup Navigation
+// MARK: - Navigation
 
 private extension SignUpViewController {
     func setupNavigation() {
-        navigationItem.titleView = NavigationTitleView(type: .registration)
+        navigationItem.titleView = NavigationTitleView(type: .registration, isIcon: true)
     }
 }
