@@ -29,7 +29,11 @@ final class NavigationTitleView: UIView {
     
     private let type: NavigationTitleType
     private let title: String?
-    private var isIcon = false
+    private var isIcon: Bool
+    
+    override var intrinsicContentSize: CGSize {
+        UIView.layoutFittingExpandedSize
+    }
     
     // MARK: - UI
     
@@ -43,15 +47,12 @@ final class NavigationTitleView: UIView {
     private lazy var containerView = UIStackView().apply {
         $0.axis = .horizontal
         $0.spacing = 5
-        $0.alignment = isIcon ? .center : .leading
+        $0.alignment = .center
+        $0.distribution = .fill
     }
     
-    private lazy var spacerView = UIView().apply {
-        let constraint = $0.widthAnchor.constraint(greaterThanOrEqualToConstant: CGFloat.greatestFiniteMagnitude)
-        constraint.isActive = true
-        constraint.priority = .defaultLow
-    }
-
+    private lazy var spacerView = UIView()
+    
     // MARK: - Object Lifecycle
     
     init(type: NavigationTitleType, isIcon: Bool = false, title: String? = nil) {
@@ -60,6 +61,8 @@ final class NavigationTitleView: UIView {
         self.isIcon = isIcon
         super.init(frame: .zero)
         configure()
+        setupViews()
+        setupConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -72,52 +75,13 @@ final class NavigationTitleView: UIView {
         super.layoutSubviews()
         appIconImageView.layer.cornerRadius = 5
     }
-    
-    // MARK: - Private methods
-    
-    private func configure() {
-        switch type {
-        case .forgotPassword:
-            setup(text: "Забыл пароль")
-        case .sms:
-            setup(text: "Код подтверждения")
-        case .createPassword:
-            setup(text: "Создание пароля")
-        case .personalInfo:
-            setup(text: "Личная информация")
-        case .koshqon:
-            setup(text: "KoshQon", font: AppFont.anta.s28)
-        case .favorites:
-            setup(text: "Избранное")
-        case .messages:
-            setup(text: "Сообщения")
-        case .directMessages:
-            setup(text: title)
-        case .profile:
-            setup(text: "Профиль")
-        case .friends:
-            setup(text: "Друзья")
-        case .settings:
-            setup(text: "Настройки")
-        case .registration:
-            setup(text: "ID")
-        }
-        
-        setupViews()
-        setupConstraints()
-    }
-    
-    private func setup(text: String?, font: UIFont = AppFont.medium.s20) {
-        titleLabel.text = text
-        titleLabel.font = font
-    }
 }
 
-// MARK: - Setup
+// MARK: - Setup Views
 
 private extension NavigationTitleView {
     func setupViews() {
-        addSubviews(containerView)
+        addSubview(containerView)
         if isIcon {
             containerView.addArrangedSubview(appIconImageView)
             containerView.addArrangedSubview(titleLabel)
@@ -131,5 +95,43 @@ private extension NavigationTitleView {
         containerView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+    }
+}
+
+// MARK: - Private methods
+
+private extension NavigationTitleView {
+    func configure() {
+        switch type {
+        case .forgotPassword:
+            setupLabel(text: "Забыл пароль")
+        case .sms:
+            setupLabel(text: "Код подтверждения")
+        case .createPassword:
+            setupLabel(text: "Создание пароля")
+        case .personalInfo:
+            setupLabel(text: "Личная информация")
+        case .koshqon:
+            setupLabel(text: "KoshQon", font: AppFont.anta.s28)
+        case .favorites:
+            setupLabel(text: "Избранное")
+        case .messages:
+            setupLabel(text: "Сообщения")
+        case .directMessages:
+            setupLabel(text: title)
+        case .profile:
+            setupLabel(text: "Профиль")
+        case .friends:
+            setupLabel(text: "Друзья")
+        case .settings:
+            setupLabel(text: "Настройки")
+        case .registration:
+            setupLabel(text: "ID")
+        }
+    }
+    
+    func setupLabel(text: String?, font: UIFont = AppFont.medium.s20) {
+        titleLabel.text = text
+        titleLabel.font = font
     }
 }

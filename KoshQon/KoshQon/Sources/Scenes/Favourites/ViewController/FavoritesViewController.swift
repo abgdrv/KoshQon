@@ -46,6 +46,5 @@ final class FavoritesViewController: BaseViewController {
 private extension FavoritesViewController {
     func setupNavigation() {
         navigationItem.titleView = NavigationTitleView(type: .favorites)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(systemItem: .done)
     }
 }
