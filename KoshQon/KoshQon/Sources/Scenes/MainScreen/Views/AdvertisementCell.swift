@@ -68,6 +68,17 @@ final class AdvertisementCell: UITableViewCell {
         containerView.layer.cornerRadius = 10
         adImageView.layer.cornerRadius = 10
     }
+    
+    // MARK: - Override methods
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        adImageView.image = nil
+        titleLabel.text = nil
+        addressLabel.text = nil
+        dateLabel.text = nil
+        ratingLabel.text = nil
+    }
 }
 
 // MARK: - Setup Views
@@ -107,7 +118,6 @@ private extension AdvertisementCell {
         separatorView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(8)
             make.top.equalTo(adImageView.snp.bottom).offset(10)
-            make.height.equalTo(1)
         }
         
         bottomContainerView.snp.makeConstraints { make in

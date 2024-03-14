@@ -62,7 +62,6 @@ private extension BottomSheetCell {
         separatorView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(16)
             make.bottom.equalToSuperview()
-            make.height.equalTo(1)
         }
     }
 }

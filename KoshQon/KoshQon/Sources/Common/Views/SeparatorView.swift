@@ -37,6 +37,7 @@ private extension SeparatorView {
     func setupConstraints() {
         lineView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
+            make.height.equalTo(1)
         }
     }
 }

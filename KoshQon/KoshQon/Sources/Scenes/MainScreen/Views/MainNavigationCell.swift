@@ -43,6 +43,14 @@ final class MainNavigationCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - Override methods
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        iconImageView.image = nil
+        titleLabel.text = nil
+    }
 }
 
 // MARK: - Setup Views
@@ -72,7 +80,6 @@ private extension MainNavigationCell {
         
         separatorView.snp.makeConstraints { make in
             make.bottom.width.equalToSuperview()
-            make.height.equalTo(1)
         }
         
         expandRightIconImageView.snp.makeConstraints { make in
