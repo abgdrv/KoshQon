@@ -37,7 +37,7 @@ final class NavigationTitleView: UIView {
     
     // MARK: - UI
     
-    private lazy var titleLabel = UILabel().apply { $0.textColor = AppColor.Theme.mainTitle.uiColor }
+    private lazy var titleLabel = UILabel()
     
     private lazy var appIconImageView = UIImageView(image: AppImage.Common.AppIcon.uiImage).apply {
         $0.clipsToBounds = true
@@ -131,7 +131,7 @@ private extension NavigationTitleView {
     }
     
     func setupLabel(text: String?, font: UIFont = AppFont.medium.s20) {
+        titleLabel.set(font: font, textColor: AppColor.Theme.mainTitle.uiColor)
         titleLabel.text = text
-        titleLabel.font = font
     }
 }
