@@ -9,9 +9,10 @@ import Photos
 import UIKit
 
 extension PHPhotoLibrary {
+    
     static func checkPermission(controller: UIViewController,
-                        onAccessHasBeenGranted: @escaping VoidCallback,
-                        onAccessHasBeenDenied: VoidCallback? = nil) {
+                                onAccessHasBeenGranted: @escaping VoidCallback,
+                                onAccessHasBeenDenied: VoidCallback? = nil) {
         let onDeniedOrRestricted = onAccessHasBeenDenied ?? {
             let alert = UIAlertController(title: "Unable to load your album groups",
                                           message: "You can enable access in Privacy Settings",
@@ -42,26 +43,26 @@ extension PHPhotoLibrary {
             onAccessHasBeenGranted()
         case .limited:
             onDeniedOrRestricted()
-        @unknown default:
+        default:
             break
         }
     }
-}
-
-private func onNotDetermined(_ onDeniedOrRestricted: @escaping VoidCallback,
-                             _ onAuthorized: @escaping VoidCallback) {
-    PHPhotoLibrary.requestAuthorization { status in
-        switch status {
-        case .notDetermined:
-            onNotDetermined(onDeniedOrRestricted, onAuthorized)
-        case .denied, .restricted:
-            onDeniedOrRestricted()
-        case .authorized:
-            onAuthorized()
-        case .limited:
-            onDeniedOrRestricted()
-        @unknown default:
-            break
+    
+    private static func onNotDetermined(_ onDeniedOrRestricted: @escaping VoidCallback,
+                                        _ onAuthorized: @escaping VoidCallback) {
+        PHPhotoLibrary.requestAuthorization { status in
+            switch status {
+            case .notDetermined:
+                onNotDetermined(onDeniedOrRestricted, onAuthorized)
+            case .denied, .restricted:
+                onDeniedOrRestricted()
+            case .authorized:
+                onAuthorized()
+            case .limited:
+                onDeniedOrRestricted()
+            default:
+                break
+            }
         }
     }
 }

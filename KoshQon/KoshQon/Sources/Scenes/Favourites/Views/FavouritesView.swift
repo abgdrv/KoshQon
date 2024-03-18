@@ -112,12 +112,11 @@ private extension FavoritesView {
 
 extension FavoritesView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.ads.count
+        viewModel.items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeue(type: AdvertisementCell.self, for: indexPath)
-        cell.configure(ad: viewModel.ads[indexPath.row])
+        let cell = AdvertisementCell(viewModel: viewModel.items[indexPath.row])
         return cell
     }
 }

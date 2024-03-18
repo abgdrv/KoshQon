@@ -48,9 +48,7 @@ private extension MainTabBarController {
                                            image: AppImage.Tabbar.messages.uiImage,
                                            selectedImage: AppImage.Tabbar.messagesSelected.uiImage)
         
-        let profile = UINavigationController(rootViewController: UIViewController().apply({
-            $0.view.backgroundColor = .white
-        }))
+        let profile = UINavigationController(rootViewController: ProfileViewViewController(viewModel: ProfileViewModel()))
         profile.tabBarItem = UITabBarItem(title: "Профиль",
                                           image: AppImage.Tabbar.profile.uiImage,
                                           selectedImage: AppImage.Tabbar.profileSelected.uiImage)

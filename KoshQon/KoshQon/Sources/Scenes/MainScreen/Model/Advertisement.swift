@@ -11,5 +11,5 @@ struct Advertisement {
     let title: String
     let address: String
     let date: String
-    let rating: String
+    let rating: Float
 }

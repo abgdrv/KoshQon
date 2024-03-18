@@ -1,15 +1,15 @@
 //
-//  AdvertisementCell.swift
+//  AdvertisementView.swift
 //  KoshQon
 //
-//  Created by Almat Begaidarov on 09.03.2024.
+//  Created by Almat Begaidarov on 18.03.2024.
 //
 
 import UIKit
 import SnapKit
 
-final class AdvertisementCell: UITableViewCell {
-    
+final class AdvertisementView: UIView {
+
     // MARK: - Properties
     
     var viewModel: AdvertisementViewModel? {
@@ -60,7 +60,7 @@ final class AdvertisementCell: UITableViewCell {
     // MARK: - Object Lifecycle
     
     init(viewModel: AdvertisementViewModel) {
-        super.init(style: .default, reuseIdentifier: AdvertisementCell.reuseID)
+        super.init(frame: .zero)
         defer {
             self.viewModel = viewModel
         }
@@ -79,25 +79,14 @@ final class AdvertisementCell: UITableViewCell {
         containerView.layer.cornerRadius = 10
         adImageView.layer.cornerRadius = 10
     }
-    
-    // MARK: - Override methods
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        adImageView.image = nil
-        titleLabel.text = nil
-        addressLabel.text = nil
-        dateLabel.text = nil
-        ratingLabel.text = nil
-    }
 }
 
 // MARK: - Setup Views
 
-private extension AdvertisementCell {
+private extension AdvertisementView {
     func setupViews() {
-        backgroundColor = AppColor.Theme.secondaryBackground.uiColor
-        contentView.addSubview(containerView)
+        backgroundColor = AppColor.Theme.mainBackground.uiColor
+        addSubview(containerView)
         containerView.addSubviews(adImageView, titleLabel, addressLabel, separatorView, bottomContainerView)
         bottomContainerView.addSubviews(dateLabel, ratingImageView, ratingLabel)
     }
@@ -157,7 +146,7 @@ private extension AdvertisementCell {
 
 // MARK: - Private methods
 
-private extension AdvertisementCell {
+private extension AdvertisementView {
     func setup(_ vm: AdvertisementViewModel) {
         titleLabel.text = vm.title
         dateLabel.text = vm.date

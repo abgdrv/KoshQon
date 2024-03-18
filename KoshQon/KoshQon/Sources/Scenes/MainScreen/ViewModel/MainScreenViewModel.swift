@@ -11,6 +11,8 @@ final class MainScreenViewModel {
     
     // MARK: - Properties
     
+    var items: [AdvertisementViewModel] = []
+    
     let navigationItems = [
         MainNavigationItem(type: .search),
         MainNavigationItem(type: .advertisements),
@@ -18,10 +20,29 @@ final class MainScreenViewModel {
     ]
     
     let ads = [
-        Advertisement(title: "Ищу сожителя", address: "Алматы, Бостандыкский район", date: "2 февраля", rating: "8.7"),
-        Advertisement(title: "Ищу сожителя", address: "Алматы, Бостандыкский район", date: "2 февраля", rating: "8.7"),
-        Advertisement(title: "Ищу сожителя", address: "Алматы, Бостандыкский район", date: "2 февраля", rating: "8.7"),
-        Advertisement(title: "Ищу сожителя", address: "Алматы, Бостандыкский район", date: "2 февраля", rating: "8.7")
+        Advertisement(title: "Ищу сожителя", address: "Алматы, Бостандыкский район", date: "2 февраля", rating: 8.7),
+        Advertisement(title: "Ищу сожителя", address: "Алматы, Бостандыкский район", date: "2 февраля", rating: 8.7),
+        Advertisement(title: "Ищу сожителя", address: "Алматы, Бостандыкский район", date: "2 февраля", rating: 8.7),
+        Advertisement(title: "Ищу сожителя", address: "Алматы, Бостандыкский район", date: "2 февраля", rating: 8.7)
     ]
     
+    // MARK: - Object Lifecycle
+    
+    init() {
+        getAdvertisements()
+    }
+    
+    // MARK: - Private methods
+    
+    func makeCellViewModels(items: [Advertisement]) -> [AdvertisementViewModel] {
+        return items.compactMap { AdvertisementViewModel(advertisement: $0) }
+    }
+}
+
+// MARK: - Request
+
+private extension MainScreenViewModel {
+    func getAdvertisements() {
+        items = makeCellViewModels(items: ads)
+    }
 }

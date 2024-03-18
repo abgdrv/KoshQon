@@ -62,7 +62,7 @@ extension MainScreenView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        section == 0 ? viewModel.navigationItems.count : viewModel.ads.count
+        section == 0 ? viewModel.navigationItems.count : viewModel.items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -73,8 +73,7 @@ extension MainScreenView: UITableViewDelegate, UITableViewDataSource {
             return cell
         }
         if indexPath.section == 1 {
-            let cell = tableView.dequeue(type: AdvertisementCell.self, for: indexPath)
-            cell.configure(ad: viewModel.ads[indexPath.row])
+            let cell = AdvertisementCell(viewModel: viewModel.items[indexPath.row])
             return cell
         }
         return UITableViewCell()

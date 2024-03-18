@@ -13,5 +13,4 @@ extension UILabel {
         self.font = font
         self.textColor = textColor
     }
-    
 }

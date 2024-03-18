@@ -15,6 +15,7 @@ enum AppImage {
         case AppIcon
         case backArrow = "common/back_arrow"
         case expandRight = "common/expand_right"
+        case star = "common/star"
     }
     
     // MARK: - Auth
@@ -42,7 +43,6 @@ enum AppImage {
         case advertisement = "main/advertisement"
         case guide = "main/guide"
         case adBlank = "main/ad_blank"
-        case star = "main/star"
     }
     
     // MARK: - Tabbar
@@ -63,5 +63,23 @@ enum AppImage {
     
     enum Favorites: String, AppImageProtocol {
         case heart = "favorites/heart"
+    }
+    
+    // MARK: - Profile
+    
+    enum Profile: String, AppImageProtocol {
+        case good = "profile/good"
+        case responsible = "profile/responsible"
+        case clean = "profile/clean"
+        case smoke = "profile/smoke"
+        case alcohol = "profile/alcohol"
+        case sport = "profile/sport"
+        case pet = "profile/pet"
+        case job = "profile/job"
+        case student = "profile/student"
+        case cook = "profile/cook"
+        case religion = "profile/religion"
+        case edit = "profile/edit"
+        case settings = "profile/settings"
     }
 }
