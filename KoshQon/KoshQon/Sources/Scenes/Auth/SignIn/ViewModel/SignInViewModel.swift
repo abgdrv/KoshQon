@@ -20,7 +20,7 @@ final class SignInViewModel: SignInProtocol {
     // MARK: - Methods
     
     func signIn(signInModel: SignInModel) {
-        
+        print(signInModel.formattedPhoneNumber)
     }
     
 }

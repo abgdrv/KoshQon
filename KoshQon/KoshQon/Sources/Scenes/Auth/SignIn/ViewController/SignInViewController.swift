@@ -11,11 +11,15 @@ final class SignInViewController: BaseViewController {
     
     // MARK: - Properties
     
+    var didSignIn: VoidCallback?
+    var didForgot: VoidCallback?
+    var didSignUp: VoidCallback?
+    
     private let viewModel: SignInViewModel
     
     // MARK: - UI
     
-    private lazy var signInView = SignInView(viewModel: viewModel)
+    private lazy var signInView = SignInView()
     
     // MARK: - Object Lifecycle
     
@@ -37,5 +41,17 @@ final class SignInViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupBindings()
+    }
+}
+
+// MARK: - Setup
+
+private extension SignInViewController {
+    func setupBindings() {
+        signInView.didSignIn = { [weak self] model in
+            guard let self = self else { return }
+            self.viewModel.signIn(signInModel: model)
+        }
     }
 }

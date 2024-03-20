@@ -11,9 +11,22 @@ final class SignUpViewController: BaseViewController {
     
     // MARK: - Properties
     
+    private let viewModel: SignUpViewModel
+    
     // MARK: - UI
     
-    private lazy var signUpView = SignUpView()
+    private lazy var signUpView = SignUpView(viewModel: viewModel)
+    
+    // MARK: - Object Lifecycle
+    
+    init(viewModel: SignUpViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: - View Lifecycle
     

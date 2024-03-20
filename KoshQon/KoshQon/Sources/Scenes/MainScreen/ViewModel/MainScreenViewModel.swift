@@ -11,14 +11,10 @@ final class MainScreenViewModel {
     
     // MARK: - Properties
     
-    var items: [AdvertisementViewModel] = []
+    var adViewModels: [AdvertisementViewModel] = []
+    var navigationItemViewModels: [MainNavigationCellViewModel] = []
     
-    let navigationItems = [
-        MainNavigationItem(type: .search),
-        MainNavigationItem(type: .advertisements),
-        MainNavigationItem(type: .guide)
-    ]
-    
+    let navigationItems = MainNavigationType.allCases
     let ads = [
         Advertisement(title: "Ищу сожителя", address: "Алматы, Бостандыкский район", date: "2 февраля", rating: 8.7),
         Advertisement(title: "Ищу сожителя", address: "Алматы, Бостандыкский район", date: "2 февраля", rating: 8.7),
@@ -30,12 +26,17 @@ final class MainScreenViewModel {
     
     init() {
         getAdvertisements()
+        getNavigationItems()
     }
     
     // MARK: - Private methods
     
-    func makeCellViewModels(items: [Advertisement]) -> [AdvertisementViewModel] {
+    private func makeAdvertisementCellViewModels(items: [Advertisement]) -> [AdvertisementViewModel] {
         return items.compactMap { AdvertisementViewModel(advertisement: $0) }
+    }
+    
+    private func makeNavigationCellViewModels(items: [MainNavigationType]) -> [MainNavigationCellViewModel] {
+        return items.compactMap { MainNavigationCellViewModel(type: $0) }
     }
 }
 
@@ -43,6 +44,10 @@ final class MainScreenViewModel {
 
 private extension MainScreenViewModel {
     func getAdvertisements() {
-        items = makeCellViewModels(items: ads)
+        adViewModels = makeAdvertisementCellViewModels(items: ads)
+    }
+    
+    func getNavigationItems() {
+        navigationItemViewModels = makeNavigationCellViewModels(items: navigationItems)
     }
 }

@@ -62,18 +62,16 @@ extension MainScreenView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        section == 0 ? viewModel.navigationItems.count : viewModel.items.count
+        section == 0 ? viewModel.navigationItems.count : viewModel.adViewModels.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
-            let cell = tableView.dequeue(type: MainNavigationCell.self, for: indexPath)
-            let item = viewModel.navigationItems[indexPath.row]
-            cell.configure(iconImage: item.image, title: item.title)
+            let cell = MainNavigationCell(viewModel: viewModel.navigationItemViewModels[indexPath.row])
             return cell
         }
         if indexPath.section == 1 {
-            let cell = AdvertisementCell(viewModel: viewModel.items[indexPath.row])
+            let cell = AdvertisementCell(viewModel: viewModel.adViewModels[indexPath.row])
             return cell
         }
         return UITableViewCell()

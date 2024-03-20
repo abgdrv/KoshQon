@@ -12,6 +12,8 @@ final class SignUpView: BaseView {
 
     // MARK: - Properties
     
+    private let viewModel: SignUpViewModel
+    
     // MARK: - UI
     
     private lazy var infoLabel = InfoLabel(type: .registerPhone)
@@ -25,8 +27,9 @@ final class SignUpView: BaseView {
 
     // MARK: - Object Lifecycle
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init(viewModel: SignUpViewModel) {
+        self.viewModel = viewModel
+        super.init(frame: .zero)
         setupViews()
         setupConstraints()
         setupObservers()

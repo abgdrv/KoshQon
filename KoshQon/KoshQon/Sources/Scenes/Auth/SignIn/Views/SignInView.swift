@@ -7,13 +7,16 @@
 
 import UIKit
 import SnapKit
+import ProgressHUD
 
 final class SignInView: BaseView {
     
     // MARK: - Properties
     
-    private let viewModel: SignInViewModel
-
+    var didForgot: VoidCallback?
+    var didSignUp: VoidCallback?
+    var didSignIn: Callback<SignInModel>?
+    
     // MARK: - UI
     
     private lazy var logoNameLabel = UILabel().apply {
@@ -59,9 +62,8 @@ final class SignInView: BaseView {
     
     // MARK: - Object Lifecycle
     
-    init(viewModel: SignInViewModel) {
-        self.viewModel = viewModel
-        super.init(frame: .zero)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         setupViews()
         setupConstraints()
     }
@@ -146,10 +148,27 @@ private extension SignInView {
 
 private extension SignInView {
     @objc func forgotPasswordButtonTapped() {
+        didForgot?()
     }
     
     @objc func signInButtonTapped() {
+        guard let phoneNumber = phoneTextField.text, !phoneNumber.isEmpty,
+              let password = passwordTextField.text, !password.isEmpty else {
+            ProgressHUD.banner("Ошибка!", "Некоторые из полей пустые!", delay: 3)
+            return
+        }
         
+        if phoneNumber.count < 10 {
+            ProgressHUD.banner("Ошибка!", "Неккоректный номер телефона!", delay: 3)
+            return
+        }
+        
+        if password.count < 8 {
+            ProgressHUD.banner("Ошибка!", "Неккоректный пароль!", delay: 3)
+            return
+        }
+        
+        didSignIn?(SignInModel(phoneNumber: phoneNumber, password: password))
     }
     
     @objc func signUpLinkLabelTapped() {

@@ -10,4 +10,9 @@ import Foundation
 struct SignInModel: Encodable {
     let phoneNumber: String
     let password: String
+    
+    var formattedPhoneNumber: String {
+        phoneNumber.components(separatedBy: CharacterSet.decimalDigits.inverted)
+                                         .joined(separator: "")
+    }
 }

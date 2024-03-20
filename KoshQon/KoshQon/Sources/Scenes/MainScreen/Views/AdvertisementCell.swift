@@ -12,7 +12,7 @@ final class AdvertisementCell: UITableViewCell {
     
     // MARK: - Properties
     
-    var viewModel: AdvertisementViewModel? {
+    private var viewModel: AdvertisementViewModel? {
         didSet {
             if let vm = viewModel {
                 setup(vm)

@@ -23,4 +23,11 @@ enum Constants {
         static let cornerRadius: CGFloat = 20
     }
     
+    enum NotificationNameConstants: String {
+        case theme
+        
+        var name: Notification.Name {
+            return Notification.Name(self.rawValue)
+        }
+    }
 }

@@ -18,7 +18,7 @@ struct SplashScreenView: View {
     private let maxScaleEffect = 4.0
     private let minScaleEffect = 0.0
     private let animationDuration = 1.0
-    private let animationDelay = 1.5
+    private let animationDelay = 0.5
     
     private let color = Color(AppColor.Static.orange.uiColor)
     private let logoColor = Color(AppColor.Theme.mainTitle.uiColor)
@@ -29,15 +29,18 @@ struct SplashScreenView: View {
     private let logoName = "KoshQon"
     
     var body: some View {
-        VStack {
-            Spacer()
-            ZStack {
-                backgroundEffectView
-                logoView
+        GeometryReader(content: { geometry in
+            VStack {
+                Spacer()
+                ZStack {
+                    backgroundEffectView
+                    logoView
+                }
+                Spacer()
+                versionView
+                    .padding(EdgeInsets(top: 0, leading: 0, bottom: geometry.size.height / 20, trailing: 0))
             }
-            Spacer()
-            versionView
-        }
+        })
     }
     
     var backgroundEffectView: some View {
@@ -58,7 +61,7 @@ struct SplashScreenView: View {
             .font(font)
             .foregroundColor(logoColor)
             .onAppear {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                     withAnimation(.spring(response: 1, dampingFraction: 0.5)) {
                         font = minScaleFont
                     }
@@ -76,9 +79,4 @@ struct SplashScreenView: View {
             .font(versionFont)
             .foregroundColor(logoColor.opacity(0.4))
     }
-}
-
-
-#Preview {
-    SplashScreenView()
 }

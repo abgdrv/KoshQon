@@ -11,6 +11,12 @@ import SnapKit
 
 final class SplashScreenViewController: BaseViewController {
     
+    // MARK: - Properties
+    
+    var didFinish: VoidCallback?
+    
+    private let animationDelay = 1.8
+    
     // MARK: - UI
     
     private lazy var hostingController = UIHostingController(rootView: SplashScreenView())
@@ -22,6 +28,9 @@ final class SplashScreenViewController: BaseViewController {
         super.viewDidLoad()
         setupViews()
         setupConstraints()
+        DispatchQueue.main.asyncAfter(deadline: .now() + animationDelay) {
+            self.didFinish?()
+        }
     }
 }
 

@@ -12,7 +12,6 @@ protocol Reusable: AnyObject {
 }
 
 extension Reusable {
-    
     static var reuseID: String {
         return String(describing: self)
     }

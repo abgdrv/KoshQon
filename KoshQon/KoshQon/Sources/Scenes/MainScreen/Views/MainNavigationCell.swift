@@ -12,10 +12,16 @@ final class MainNavigationCell: UITableViewCell {
 
     // MARK: - Properties
     
-//    private let viewModel: MainNavigationCellViewModel
+    private var viewModel: MainNavigationCellViewModel? {
+        didSet {
+            if let vm = viewModel {
+                setup(vm)
+            }
+        }
+    }
     
-    // TODO: - VM
-    
+    private var isLast = false
+        
     // MARK: - UI
     
     private lazy var iconImageView = UIImageView().apply { $0.contentMode = .scaleAspectFit }
@@ -34,10 +40,13 @@ final class MainNavigationCell: UITableViewCell {
     
     // MARK: - Object Lifecycle
 
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setupViews()
-        setupConstraints()
+    init(viewModel: MainNavigationCellViewModel) {
+        super.init(style: .default, reuseIdentifier: MainNavigationCell.reuseID)
+        defer {
+            self.viewModel = viewModel
+            setupViews()
+            setupConstraints()
+        }
     }
     
     required init?(coder: NSCoder) {
@@ -59,7 +68,10 @@ private extension MainNavigationCell {
     func setupViews() {
         backgroundColor = AppColor.Theme.mainBackground.uiColor
         contentView.addSubviews(iconImageView, containerView)
-        containerView.addSubviews(titleLabel, expandRightIconImageView, separatorView)
+        containerView.addSubviews(titleLabel, expandRightIconImageView)
+        if !isLast {
+            containerView.addSubview(separatorView)
+        }
     }
     
     func setupConstraints() {
@@ -78,8 +90,10 @@ private extension MainNavigationCell {
             make.top.bottom.equalToSuperview().inset(10)
         }
         
-        separatorView.snp.makeConstraints { make in
-            make.bottom.width.equalToSuperview()
+        if !isLast {
+            separatorView.snp.makeConstraints { make in
+                make.bottom.width.equalToSuperview()
+            }
         }
         
         expandRightIconImageView.snp.makeConstraints { make in
@@ -89,11 +103,12 @@ private extension MainNavigationCell {
     }
 }
 
-// MARK: - Public methods
+// MARK: - Private methods
 
-extension MainNavigationCell {
-    func configure(iconImage: UIImage?, title: String) {
-        iconImageView.image = iconImage
-        titleLabel.text = title
+private extension MainNavigationCell {
+    func setup(_ vm: MainNavigationCellViewModel) {
+        titleLabel.text = vm.title
+        iconImageView.image = vm.image
+        isLast = vm.isLast
     }
 }
