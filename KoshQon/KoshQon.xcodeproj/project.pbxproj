@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C449C9348E14F8AA92EF7E4 /* Pods_KoshQon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B1CB0D67C4284B3386A5D17 /* Pods_KoshQon.framework */; };
 		471086462B9C9AA900556C2D /* AdvertisementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471086452B9C9AA900556C2D /* AdvertisementCell.swift */; };
 		471086482B9E299900556C2D /* Advertisement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471086472B9E299900556C2D /* Advertisement.swift */; };
 		4710864A2B9E308F00556C2D /* MainSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471086492B9E308F00556C2D /* MainSectionHeaderView.swift */; };
@@ -59,6 +60,10 @@
 		475224F72BA9FC45000DAE1B /* AuthOutputCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475224F62BA9FC45000DAE1B /* AuthOutputCoordinator.swift */; };
 		475224FA2BA9FECB000DAE1B /* AuthFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475224F92BA9FECB000DAE1B /* AuthFlowFactory.swift */; };
 		475224FC2BAA0FFF000DAE1B /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475224FB2BAA0FFF000DAE1B /* SignUpViewModel.swift */; };
+		475224FF2BAB2055000DAE1B /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475224FE2BAB2055000DAE1B /* Country.swift */; };
+		475225012BAB37E5000DAE1B /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475225002BAB37E5000DAE1B /* Gender.swift */; };
+		475225032BAB5B28000DAE1B /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475225022BAB5B28000DAE1B /* MenuButton.swift */; };
+		475225072BACA8A1000DAE1B /* PersonInformationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475225062BACA8A1000DAE1B /* PersonInformationViewModel.swift */; };
 		4756A0272B7FCC56003F9675 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4756A0262B7FCC56003F9675 /* AppDelegate.swift */; };
 		4756A0292B7FCC56003F9675 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4756A0282B7FCC56003F9675 /* SceneDelegate.swift */; };
 		4756A0302B7FCC57003F9675 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4756A02F2B7FCC57003F9675 /* Images.xcassets */; };
@@ -107,11 +112,9 @@
 		47D54CE82B963F5900021FA7 /* NSObject+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D54CE72B963F5900021FA7 /* NSObject+Extensions.swift */; };
 		47D54CEA2B9640C900021FA7 /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D54CE92B9640C900021FA7 /* SeparatorView.swift */; };
 		47D54CEC2B96419700021FA7 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D54CEB2B96419700021FA7 /* UIView+Extensions.swift */; };
-		D75DF604CA3D887D4F33D6C0 /* Pods_KoshQon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61086CEFBD17C86EC8E72953 /* Pods_KoshQon.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1F7532FB0943DC8FF0C947D7 /* Pods-KoshQon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KoshQon.release.xcconfig"; path = "Target Support Files/Pods-KoshQon/Pods-KoshQon.release.xcconfig"; sourceTree = "<group>"; };
 		471086452B9C9AA900556C2D /* AdvertisementCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertisementCell.swift; sourceTree = "<group>"; };
 		471086472B9E299900556C2D /* Advertisement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Advertisement.swift; sourceTree = "<group>"; };
 		471086492B9E308F00556C2D /* MainSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSectionHeaderView.swift; sourceTree = "<group>"; };
@@ -164,6 +167,10 @@
 		475224F62BA9FC45000DAE1B /* AuthOutputCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthOutputCoordinator.swift; sourceTree = "<group>"; };
 		475224F92BA9FECB000DAE1B /* AuthFlowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFlowFactory.swift; sourceTree = "<group>"; };
 		475224FB2BAA0FFF000DAE1B /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		475224FE2BAB2055000DAE1B /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		475225002BAB37E5000DAE1B /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
+		475225022BAB5B28000DAE1B /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
+		475225062BACA8A1000DAE1B /* PersonInformationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonInformationViewModel.swift; sourceTree = "<group>"; };
 		4756A0232B7FCC56003F9675 /* KoshQon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KoshQon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4756A0262B7FCC56003F9675 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4756A0282B7FCC56003F9675 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -215,8 +222,9 @@
 		47D54CE72B963F5900021FA7 /* NSObject+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extensions.swift"; sourceTree = "<group>"; };
 		47D54CE92B9640C900021FA7 /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
 		47D54CEB2B96419700021FA7 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
-		61086CEFBD17C86EC8E72953 /* Pods_KoshQon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KoshQon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D90A3B52983C518C2D6105E0 /* Pods-KoshQon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KoshQon.debug.xcconfig"; path = "Target Support Files/Pods-KoshQon/Pods-KoshQon.debug.xcconfig"; sourceTree = "<group>"; };
+		4B1CB0D67C4284B3386A5D17 /* Pods_KoshQon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KoshQon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F34D042224D89E307A460AA /* Pods-KoshQon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KoshQon.release.xcconfig"; path = "Target Support Files/Pods-KoshQon/Pods-KoshQon.release.xcconfig"; sourceTree = "<group>"; };
+		6D25178508F65D3C6D2EDA43 /* Pods-KoshQon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KoshQon.debug.xcconfig"; path = "Target Support Files/Pods-KoshQon/Pods-KoshQon.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,7 +232,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D75DF604CA3D887D4F33D6C0 /* Pods_KoshQon.framework in Frameworks */,
+				3C449C9348E14F8AA92EF7E4 /* Pods_KoshQon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,6 +399,7 @@
 				472E1B3F2B837AAE005BF649 /* ProceedButton.swift */,
 				47CD67372B8DA33E0035DCB6 /* NavigationTitleView.swift */,
 				47D54CE92B9640C900021FA7 /* SeparatorView.swift */,
+				475225022BAB5B28000DAE1B /* MenuButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -485,6 +494,7 @@
 				475224F82BA9FD69000DAE1B /* Factory */,
 				472E1B302B8363B6005BF649 /* SignIn */,
 				472E1B322B8363E1005BF649 /* SignUp */,
+				475224FD2BAAF9B3000DAE1B /* Helpers */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -655,13 +665,22 @@
 			path = Factory;
 			sourceTree = "<group>";
 		};
+		475224FD2BAAF9B3000DAE1B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				475224FE2BAB2055000DAE1B /* Country.swift */,
+				475225002BAB37E5000DAE1B /* Gender.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		4756A01A2B7FCC56003F9675 = {
 			isa = PBXGroup;
 			children = (
 				4756A0252B7FCC56003F9675 /* KoshQon */,
 				4756A0242B7FCC56003F9675 /* Products */,
 				F4F4C04DC072056AA5C84DC2 /* Pods */,
-				D8FB05A19510FA521F394368 /* Frameworks */,
+				859EE003E211FF3686884D56 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -903,6 +922,7 @@
 		47CD67542B9085C40035DCB6 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				475225062BACA8A1000DAE1B /* PersonInformationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -989,10 +1009,10 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		D8FB05A19510FA521F394368 /* Frameworks */ = {
+		859EE003E211FF3686884D56 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				61086CEFBD17C86EC8E72953 /* Pods_KoshQon.framework */,
+				4B1CB0D67C4284B3386A5D17 /* Pods_KoshQon.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1000,8 +1020,8 @@
 		F4F4C04DC072056AA5C84DC2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				D90A3B52983C518C2D6105E0 /* Pods-KoshQon.debug.xcconfig */,
-				1F7532FB0943DC8FF0C947D7 /* Pods-KoshQon.release.xcconfig */,
+				6D25178508F65D3C6D2EDA43 /* Pods-KoshQon.debug.xcconfig */,
+				5F34D042224D89E307A460AA /* Pods-KoshQon.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -1013,11 +1033,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4756A0372B7FCC57003F9675 /* Build configuration list for PBXNativeTarget "KoshQon" */;
 			buildPhases = (
-				5264FB1AC2F9B95791A6C4F2 /* [CP] Check Pods Manifest.lock */,
+				9216BE3942CAB8A76E0F2D3C /* [CP] Check Pods Manifest.lock */,
 				4756A01F2B7FCC56003F9675 /* Sources */,
 				4756A0202B7FCC56003F9675 /* Frameworks */,
 				4756A0212B7FCC56003F9675 /* Resources */,
-				ACEACA8B84F83103DE12D367 /* [CP] Embed Pods Frameworks */,
+				290B041214CA76DAF535A084 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1081,7 +1101,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5264FB1AC2F9B95791A6C4F2 /* [CP] Check Pods Manifest.lock */ = {
+		290B041214CA76DAF535A084 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KoshQon/Pods-KoshQon-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KoshQon/Pods-KoshQon-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KoshQon/Pods-KoshQon-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9216BE3942CAB8A76E0F2D3C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1103,23 +1140,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		ACEACA8B84F83103DE12D367 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KoshQon/Pods-KoshQon-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KoshQon/Pods-KoshQon-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KoshQon/Pods-KoshQon-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1139,6 +1159,7 @@
 				475224F02BA9EC78000DAE1B /* SplashScreenFlowFactory.swift in Sources */,
 				475224AC2BA407E6000DAE1B /* ProfileViewViewController.swift in Sources */,
 				475224BE2BA45A4A000DAE1B /* ProfileCommonView.swift in Sources */,
+				475225032BAB5B28000DAE1B /* MenuButton.swift in Sources */,
 				475224962BA04E94000DAE1B /* MainNavigationCellViewModel.swift in Sources */,
 				475224C92BA89450000DAE1B /* AdvertisementView.swift in Sources */,
 				475224E22BA9D515000DAE1B /* RouterProtocol.swift in Sources */,
@@ -1166,6 +1187,7 @@
 				475224DD2BA9D405000DAE1B /* AppCoordinator.swift in Sources */,
 				472E1B242B8305EF005BF649 /* SplashScreenView.swift in Sources */,
 				472E1B3E2B8372DA005BF649 /* InfoLabel.swift in Sources */,
+				475225072BACA8A1000DAE1B /* PersonInformationViewModel.swift in Sources */,
 				47C7B3772B812A3700125172 /* AppColorProtocol.swift in Sources */,
 				47CD67162B8762F70035DCB6 /* SmsCodeView.swift in Sources */,
 				475224B82BA443F0000DAE1B /* ProfileAboutInfo.swift in Sources */,
@@ -1204,6 +1226,7 @@
 				4752249F2BA051EA000DAE1B /* FavouritesView.swift in Sources */,
 				47CD67222B88A7AE0035DCB6 /* ChangePasswordView.swift in Sources */,
 				475224D32BA9CB15000DAE1B /* CoordinatorFactory.swift in Sources */,
+				475225012BAB37E5000DAE1B /* Gender.swift in Sources */,
 				472E1B3C2B836A75005BF649 /* InputTextField.swift in Sources */,
 				475224E72BA9DB7F000DAE1B /* UserDefaultsService.swift in Sources */,
 				475224982BA04EAC000DAE1B /* AdvertisementViewModel.swift in Sources */,
@@ -1216,6 +1239,7 @@
 				4764D59A2B85AC9500D15A2E /* SignInModel.swift in Sources */,
 				4710864A2B9E308F00556C2D /* MainSectionHeaderView.swift in Sources */,
 				47C7B3962B81372F00125172 /* AppImageProtocol.swift in Sources */,
+				475224FF2BAB2055000DAE1B /* Country.swift in Sources */,
 				475224C22BA76649000DAE1B /* ProfileCharacteristicProgressView.swift in Sources */,
 				47C7B3982B81377400125172 /* AppImage.swift in Sources */,
 				475224F72BA9FC45000DAE1B /* AuthOutputCoordinator.swift in Sources */,
@@ -1361,7 +1385,7 @@
 		};
 		4756A0382B7FCC57003F9675 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D90A3B52983C518C2D6105E0 /* Pods-KoshQon.debug.xcconfig */;
+			baseConfigurationReference = 6D25178508F65D3C6D2EDA43 /* Pods-KoshQon.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1370,12 +1394,11 @@
 				DEVELOPMENT_TEAM = 9QVR9UVA7V;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = KoshQon/Resources/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "KoshQon requires access to your phone’s camera.";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "KoshQon requires access to your phone’s photo library.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "$(PRODUCT_NAME) camera use";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "$(PRODUCT_NAME) photo use";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1392,7 +1415,7 @@
 		};
 		4756A0392B7FCC57003F9675 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1F7532FB0943DC8FF0C947D7 /* Pods-KoshQon.release.xcconfig */;
+			baseConfigurationReference = 5F34D042224D89E307A460AA /* Pods-KoshQon.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1401,12 +1424,11 @@
 				DEVELOPMENT_TEAM = 9QVR9UVA7V;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = KoshQon/Resources/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "KoshQon requires access to your phone’s camera.";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "KoshQon requires access to your phone’s photo library.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "$(PRODUCT_NAME) camera use";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "$(PRODUCT_NAME) photo use";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

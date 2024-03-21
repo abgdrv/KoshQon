@@ -6,21 +6,30 @@
 //
 
 import UIKit
-import PanModal
 import Photos
 import RSKImageCropper
 
-final class PersonInformationViewController: BaseViewController {
+final class PersonInformationViewController: BaseViewController, UINavigationControllerDelegate {
     
     // MARK: - Properties
     
-    private var options: [BottomSheetOption] = []
+    private let viewModel: PersonInformationViewModel
         
     // MARK: - UI
     
     private lazy var personInformationView = PersonInformationView()
     private let imagePicker = UIImagePickerController()
-
+    
+    // MARK: - Object Lifecycle
+    
+    init(viewModel: PersonInformationViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: - View Lifecycle
     
@@ -44,26 +53,9 @@ private extension PersonInformationViewController {
     }
     
     func setupBindings() {
-        personInformationView.textFieldDidTap = { [weak self] type in
-            guard let self = self else { return }
-            let longFomTypes: [InputType] = [.country, .city]
-            if type == .gender {
-                self.options = [BottomSheetOption(primeText: "Мужской"), BottomSheetOption(primeText: "Женский")]
-            }
-            if type == .city {
-                self.options = [BottomSheetOption(primeText: "Алматы"), BottomSheetOption(primeText: "Астана"), BottomSheetOption(primeText: "Алматы"), BottomSheetOption(primeText: "Астана"), BottomSheetOption(primeText: "Алматы"), BottomSheetOption(primeText: "Астана"), BottomSheetOption(primeText: "Алматы"), BottomSheetOption(primeText: "Астана"), BottomSheetOption(primeText: "Алматы"), BottomSheetOption(primeText: "Астана"), BottomSheetOption(primeText: "Алматы"), BottomSheetOption(primeText: "Астана"),BottomSheetOption(primeText: "Алматы"), BottomSheetOption(primeText: "Астана")]
-            }
-            if type == .country {
-                self.options = [BottomSheetOption(primeText: "Казахстан"), BottomSheetOption(primeText: "Казахстан"), BottomSheetOption(primeText: "Казахстан"), BottomSheetOption(primeText: "Казахстан"), BottomSheetOption(primeText: "Казахстан"), BottomSheetOption(primeText: "Казахстан"), BottomSheetOption(primeText: "Казахстан"), BottomSheetOption(primeText: "Казахстан"), BottomSheetOption(primeText: "Казахстан"), BottomSheetOption(primeText: "Казахстан"), BottomSheetOption(primeText: "Казахстан"), BottomSheetOption(primeText: "Казахстан"),BottomSheetOption(primeText: "Казахстан"), BottomSheetOption(primeText: "Казахстан")]
-            }
-            presentPanModal(BottomSheetViewController(options: options, isLong: longFomTypes.contains(type)))
-        }
-        
         personInformationView.imageDidTap = { [weak self] in
             guard let self = self else { return }
-            DispatchQueue.main.async {
-                self.showImagePickerOptions()
-            }
+            self.showImagePickerOptions()
         }
     }
 }
@@ -75,17 +67,18 @@ private extension PersonInformationViewController {
         let alert = UIAlertController(title: "Выберите фото",
                                         message: "Выберите фото из галереи или откройте камеру",
                                         preferredStyle: .actionSheet)
-        let cameraAction = UIAlertAction(title: "Камера", style: .default) { [weak self] action in
+        let cameraAction = UIAlertAction(title: "Камера", style: .default) { [weak self] _ in
             guard let self = self else { return }
             if UIImagePickerController.isSourceTypeAvailable(.camera) {
                 imagePicker.sourceType = .camera
-                checkPermission()
+                imagePicker.cameraCaptureMode = .photo
+                openImagePicker()
             }
         }
-        let libraryAction = UIAlertAction(title: "Галерея", style: .default) { [weak self] action in
+        let libraryAction = UIAlertAction(title: "Галерея", style: .default) { [weak self] _ in
             guard let self = self else { return }
             imagePicker.sourceType = .photoLibrary
-            checkPermission()
+            openImagePicker()
         }
         let cancelAction = UIAlertAction(title: "Закрыть", style: .cancel, handler: nil)
         
@@ -93,14 +86,16 @@ private extension PersonInformationViewController {
         alert.addAction(libraryAction)
         alert.addAction(cancelAction)
         
-        self.present(alert, animated: true)
+        DispatchQueue.main.async {
+            self.present(alert, animated: true)
+        }
     }
     
-    func checkPermission() {
+    func openImagePicker() {
         PHPhotoLibrary.checkPermission(controller: self) { [weak self] in
             guard let self = self else { return }
-            self.imagePicker.delegate = self
             DispatchQueue.main.async {
+                self.imagePicker.delegate = self
                 self.present(self.imagePicker, animated: true)
             }
         }
@@ -110,7 +105,6 @@ private extension PersonInformationViewController {
 // MARK: - UIImagePickerControllerDelegate, UINavigationControllerDelegate, RSKImageCropViewControllerDelegate
 
 extension PersonInformationViewController: UIImagePickerControllerDelegate,
-                                           UINavigationControllerDelegate,
                                            RSKImageCropViewControllerDelegate {
     func imageCropViewControllerDidCancelCrop(_ controller: RSKImageCropViewController) {
         navigationController?.popViewController(animated: true)

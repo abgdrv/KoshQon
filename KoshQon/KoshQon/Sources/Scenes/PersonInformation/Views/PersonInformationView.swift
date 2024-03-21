@@ -10,10 +10,9 @@ import SnapKit
 
 
 final class PersonInformationView: BaseView {
-
+    
     // MARK: - Properties
     
-    var textFieldDidTap: Callback<InputType>?
     var imageDidTap: VoidCallback?
     var didTap: VoidCallback?
     
@@ -26,13 +25,18 @@ final class PersonInformationView: BaseView {
         $0.clipsToBounds = true
     }
     
-    private lazy var firstNameTextField = InputTextField(inputType: .regular, placeHolder: "Имя")
-    private lazy var secondNameTextField = InputTextField(inputType: .regular, placeHolder: "Фамилия")
+    private lazy var firstNameTextField = InputTextField(inputType: .regular, _placeholder: "Имя")
+    private lazy var secondNameTextField = InputTextField(inputType: .regular, _placeholder: "Фамилия")
     private lazy var birthdayTextField = InputTextField(inputType: .date).apply { $0.inputView = datePicker }
     private lazy var genderTextField = InputTextField(inputType: .gender)
     private lazy var countryTextField = InputTextField(inputType: .country)
-    private lazy var cityTextField = InputTextField(inputType: .city)
-    private lazy var continueButton = ProceedButton(type: .system).apply { 
+    
+    private lazy var cityTextField = InputTextField(inputType: .city).apply {
+        $0.alpha = 0
+        $0.layer.cornerRadius = 8
+    }
+    
+    private lazy var continueButton = ProceedButton(type: .system).apply {
         $0.type = .continue
         $0.addTarget(self, action: #selector(continueButtonTapped), for: .touchUpInside)
     }
@@ -69,7 +73,6 @@ final class PersonInformationView: BaseView {
         birthdayTextField.layer.cornerRadius = 8
         genderTextField.layer.cornerRadius = 8
         countryTextField.layer.cornerRadius = 8
-        cityTextField.layer.cornerRadius = 8
         continueButton.layer.cornerRadius = continueButton.frame.height / 2
     }
     
@@ -86,7 +89,7 @@ final class PersonInformationView: BaseView {
 private extension PersonInformationView {
     func setupViews() {
         addSubviews(profileImageView, firstNameTextField, secondNameTextField, birthdayTextField,
-                    genderTextField, countryTextField, cityTextField, continueButton)
+                    genderTextField, countryTextField, continueButton)
     }
     
     func setupConstraints() {
@@ -128,16 +131,29 @@ private extension PersonInformationView {
             make.height.equalTo(50)
         }
         
+        continueButton.snp.makeConstraints { make in
+            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).inset(8)
+            make.leading.trailing.equalToSuperview().inset(16)
+            make.height.equalTo(50)
+        }
+    }
+    
+    func setupCityTextField() {
+        if subviews.contains(cityTextField) {
+            cityTextField.removeFromSuperview()
+        }
+        cityTextField = InputTextField(inputType: .city).apply {
+            $0.alpha = 0
+            $0.layer.cornerRadius = 8
+        }
+        addSubview(cityTextField)
         cityTextField.snp.makeConstraints { make in
             make.top.equalTo(countryTextField.snp.bottom).offset(16)
             make.leading.trailing.equalToSuperview().inset(16)
             make.height.equalTo(50)
         }
-        
-        continueButton.snp.makeConstraints { make in
-            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).inset(8)
-            make.leading.trailing.equalToSuperview().inset(16)
-            make.height.equalTo(50)
+        UIView.animate(withDuration: 0.2) {
+            self.cityTextField.alpha = 1
         }
     }
     
@@ -149,23 +165,14 @@ private extension PersonInformationView {
     }
     
     func setupBindings() {
-        genderTextField.didTap = { [weak self] type in
+        countryTextField.didCountrySelect = { [weak self] in
             guard let self = self else { return }
-            self.endEditing(true)
-            self.textFieldDidTap?(type)
+            self.setupCityTextField()
         }
-        countryTextField.didTap = { [weak self] type in
-            guard let self = self else { return }
-            self.endEditing(true)
-            self.textFieldDidTap?(type)
-        }
-        cityTextField.didTap = { [weak self] type in
-            guard let self = self else { return }
-            self.endEditing(true)
-            self.textFieldDidTap?(type)
-        }
-        profileImageView.addGestureRecognizer(UITapGestureRecognizer(target: self,
-                                                                     action: #selector(profileImageViewTapped)))
+        
+        profileImageView.addGestureRecognizer(
+            UITapGestureRecognizer(target: self, action: #selector(profileImageViewTapped))
+        )
     }
 }
 
@@ -208,7 +215,7 @@ private extension PersonInformationView {
             }
         }
     }
-
+    
     @objc func keyboardWillHide(notification: NSNotification) {
         continueButton.snp.remakeConstraints { make in
             make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).inset(8)

@@ -33,8 +33,7 @@ final class AuthCoordinator: BaseCoordinator, AuthOutputCoordinator {
 private extension AuthCoordinator {
     func showSignInFlow() {
         let view = factory.makeSignInView()
-        view.didFinish = {
-            router.
+        view.didSignIn = {
         }
         router.present(view, transitionStyle: .crossDissolve )
     }
