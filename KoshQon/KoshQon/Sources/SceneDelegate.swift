@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        appCoordinator = setupAppCoordinator(windowScene: windowScene)
 //        appCoordinator?.start()
         self.window = UIWindow(windowScene: windowScene)
-        self.window?.rootViewController = UINavigationController(rootViewController: PersonInformationViewController()) 
+        self.window?.rootViewController = UINavigationController(rootViewController: PersonInformationViewController(viewModel: PersonInformationViewModel())) 
         self.window?.makeKeyAndVisible()
     }
     

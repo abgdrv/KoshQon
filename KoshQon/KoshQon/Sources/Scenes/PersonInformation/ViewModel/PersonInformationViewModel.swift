@@ -9,4 +9,11 @@ import Foundation
 
 final class PersonInformationViewModel {
     
+    
+    func formattedDate(date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd MMMM yyyy"
+        return formatter.string(from: date)
+    }
+    
 }

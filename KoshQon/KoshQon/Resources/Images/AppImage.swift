@@ -34,6 +34,7 @@ enum AppImage {
 
     enum Personal: String, AppImageProtocol {
         case plus = "personal/plus"
+        case defaultProfile = "personal/default"
     }
     
     // MARK: - Main

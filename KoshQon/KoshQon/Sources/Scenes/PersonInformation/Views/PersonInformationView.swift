@@ -14,27 +14,31 @@ final class PersonInformationView: BaseView {
     // MARK: - Properties
     
     var imageDidTap: VoidCallback?
-    var didTap: VoidCallback?
+    
+    var birthdayString: String? {
+        didSet {
+            birthdayTextField.text = birthdayString
+        }
+    }
+    
+    var date: Date {
+        datePicker.date
+    }
     
     // MARK: - UI
     
-    private lazy var profileImageView = UIImageView(image: AppImage.Personal.plus.uiImage).apply {
-        $0.contentMode = .center
-        $0.layer.borderColor = AppColor.Static.lightGray.cgColor
+    private lazy var profileImageView = UIImageView(image: AppImage.Personal.defaultProfile.uiImage).apply {
         $0.isUserInteractionEnabled = true
         $0.clipsToBounds = true
     }
     
-    private lazy var firstNameTextField = InputTextField(inputType: .regular, _placeholder: "Имя")
-    private lazy var secondNameTextField = InputTextField(inputType: .regular, _placeholder: "Фамилия")
+    private lazy var plusImageView = UIImageView(image: AppImage.Personal.plus.uiImage)
+    private lazy var firstNameTextField = InputTextField(inputType: .regular, placeholder: "Имя")
+    private lazy var secondNameTextField = InputTextField(inputType: .regular, placeholder: "Фамилия")
     private lazy var birthdayTextField = InputTextField(inputType: .date).apply { $0.inputView = datePicker }
     private lazy var genderTextField = InputTextField(inputType: .gender)
     private lazy var countryTextField = InputTextField(inputType: .country)
-    
-    private lazy var cityTextField = InputTextField(inputType: .city).apply {
-        $0.alpha = 0
-        $0.layer.cornerRadius = 8
-    }
+    private lazy var cityTextField = InputTextField(inputType: .city).apply { $0.alpha = 0 }
     
     private lazy var continueButton = ProceedButton(type: .system).apply {
         $0.type = .continue
@@ -44,8 +48,21 @@ final class PersonInformationView: BaseView {
     private lazy var datePicker = UIDatePicker().apply {
         $0.datePickerMode = .date
         $0.preferredDatePickerStyle = .wheels
-        $0.addTarget(self, action: #selector(dateChanged), for: .valueChanged)
         $0.backgroundColor = AppColor.Theme.mainBackground.uiColor
+        
+        let calendar = Calendar(identifier: .gregorian)
+        let currentDate = Date()
+        var components = DateComponents()
+        components.calendar = calendar
+        components.year = -18
+        components.month = 0
+        let maxDate = calendar.date(byAdding: components, to: currentDate)
+        
+        components.year = -50
+        let minDate = calendar.date(byAdding: components, to: currentDate)
+        
+        $0.maximumDate = maxDate
+        $0.minimumDate = minDate
     }
     
     // MARK: - Object Lifecycle
@@ -67,12 +84,14 @@ final class PersonInformationView: BaseView {
     override func layoutSubviews() {
         super.layoutSubviews()
         profileImageView.layer.cornerRadius = profileImageView.frame.height / 2
-        profileImageView.layer.borderWidth = 1
+        plusImageView.layer.cornerRadius = plusImageView.frame.height / 2
+        plusImageView.bezierPathBorder(color: AppColor.Theme.mainBackground.uiColor, width: 5)
         firstNameTextField.layer.cornerRadius = 8
         secondNameTextField.layer.cornerRadius = 8
         birthdayTextField.layer.cornerRadius = 8
         genderTextField.layer.cornerRadius = 8
         countryTextField.layer.cornerRadius = 8
+        cityTextField.layer.cornerRadius = 8
         continueButton.layer.cornerRadius = continueButton.frame.height / 2
     }
     
@@ -80,7 +99,10 @@ final class PersonInformationView: BaseView {
     
     func setProfileImage(image: UIImage) {
         profileImageView.image = image
-        profileImageView.contentMode = .scaleAspectFit
+    }
+    
+    func setupDatePickerTarget(target: Any?, action: Selector) {
+        datePicker.addTarget(target, action: action, for: .valueChanged)
     }
 }
 
@@ -88,8 +110,8 @@ final class PersonInformationView: BaseView {
 
 private extension PersonInformationView {
     func setupViews() {
-        addSubviews(profileImageView, firstNameTextField, secondNameTextField, birthdayTextField,
-                    genderTextField, countryTextField, continueButton)
+        addSubviews(profileImageView, plusImageView, firstNameTextField, secondNameTextField,
+                    birthdayTextField, genderTextField, countryTextField, continueButton)
     }
     
     func setupConstraints() {
@@ -97,6 +119,12 @@ private extension PersonInformationView {
             make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(30)
             make.leading.equalToSuperview().offset(16)
             make.size.equalTo(116)
+        }
+        
+        plusImageView.snp.makeConstraints { make in
+            make.trailing.equalTo(profileImageView.snp.trailing)
+            make.bottom.equalTo(profileImageView.snp.bottom)
+            make.size.equalTo(32)
         }
         
         firstNameTextField.snp.makeConstraints { make in
@@ -176,30 +204,15 @@ private extension PersonInformationView {
     }
 }
 
-// MARK: - Private methods
-// TODO: viewModel
-
-private extension PersonInformationView {
-    func formattedDate(date: Date) -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd MMMM yyyy"
-        return formatter.string(from: date)
-    }
-}
-
 // MARK: - Actions
 
 private extension PersonInformationView {
     @objc func continueButtonTapped() {
-        didTap?()
+        
     }
     
     @objc func profileImageViewTapped() {
         imageDidTap?()
-    }
-    
-    @objc func dateChanged() {
-        birthdayTextField.text = formattedDate(date: datePicker.date)
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {

@@ -38,7 +38,6 @@ final class InputTextField: UITextField {
     
     // MARK: - Properties
     
-    var didTap: Callback<InputType>?
     var didCountrySelect: VoidCallback?
     
     private let type: InputType
@@ -63,9 +62,9 @@ final class InputTextField: UITextField {
     
     // MARK: - Object Lifecycle
     
-    init(inputType: InputType, _placeholder: String? = nil) {
+    init(inputType: InputType, placeholder: String? = nil) {
         self.type = inputType
-        self._placeholder = _placeholder
+        self._placeholder = placeholder
         super.init(frame: .zero)
         setup()
         setupViews()
@@ -82,7 +81,7 @@ final class InputTextField: UITextField {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        layer.borderWidth = 1
+        bezierPathBorder(color: AppColor.Static.orange.uiColor, width: 1)
     }
     
     // MARK: - Override methods
@@ -202,8 +201,7 @@ private extension InputTextField {
             setupTextField(placeholder: "Введите ваш номер телефона",
                            keyboardType: .phonePad, clearButtonMode: .whileEditing)
         case .sms:
-            setupTextField(keyboardType: .numberPad, font: AppFont.bold.s24,
-                           borderColor: AppColor.Static.orange.cgColor, textAlignment: .center)
+            setupTextField(keyboardType: .numberPad, font: AppFont.bold.s24, textAlignment: .center)
         case .regular:
             setupTextField(placeholder: _placeholder, clearButtonMode: .whileEditing)
         case .gender:
@@ -220,7 +218,6 @@ private extension InputTextField {
                         font: UIFont = AppFont.medium.s16,
                         isSecureTextEntry: Bool = false,
                         clearButtonMode: UITextField.ViewMode = .never,
-                        borderColor: CGColor = AppColor.Static.lightGray.cgColor,
                         textColor: UIColor = AppColor.Static.darkGray.uiColor,
                         backgroundColor: UIColor = AppColor.Theme.mainBackground.uiColor,
                         textAlignment: NSTextAlignment = .natural,
@@ -231,7 +228,6 @@ private extension InputTextField {
         self.font = font
         self.isSecureTextEntry = isSecureTextEntry
         self.clearButtonMode = clearButtonMode
-        self.layer.borderColor = borderColor
         self.textColor = textColor
         self.backgroundColor = backgroundColor
         self.textAlignment = textAlignment

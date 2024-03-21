@@ -57,6 +57,8 @@ private extension PersonInformationViewController {
             guard let self = self else { return }
             self.showImagePickerOptions()
         }
+        
+        personInformationView.setupDatePickerTarget(target: self, action: #selector(dateChanged))
     }
 }
 
@@ -127,5 +129,13 @@ extension PersonInformationViewController: UIImagePickerControllerDelegate,
             imageCropVC.delegate = self
             self.navigationController?.pushViewController(imageCropVC, animated: true)
         }
+    }
+}
+
+// MARK: - Actions
+
+private extension PersonInformationViewController {
+    @objc func dateChanged() {
+        personInformationView.birthdayString = viewModel.formattedDate(date: personInformationView.date)
     }
 }
