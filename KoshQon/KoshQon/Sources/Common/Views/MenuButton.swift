@@ -112,7 +112,6 @@ private extension MenuButton {
         showsMenuAsPrimaryAction = true
         menu = UIMenu(title: menuTitle, children: menuItems)
         setTitle(title, for: .normal)
-        titleLabel?.font = font
-        setTitleColor(AppColor.Static.darkGray.uiColor, for: .normal)
+        set(font: font, titleColor: AppColor.Static.darkGray.uiColor)
     }
 }

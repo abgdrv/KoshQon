@@ -50,8 +50,7 @@ final class SmsCodeView: BaseView {
     
     private lazy var resendButton = UIButton(type: .system).apply {
         $0.setTitle(viewModel.timeString, for: .normal)
-        $0.setTitleColor(AppColor.Static.darkBlue.uiColor, for: .normal)
-        $0.titleLabel?.font = AppFont.medium.s16
+        $0.set(font: AppFont.medium.s16, titleColor: AppColor.Static.darkBlue.uiColor)
         $0.addTarget(self, action: #selector(resendButtonTapped), for: .touchUpInside)
     }
     

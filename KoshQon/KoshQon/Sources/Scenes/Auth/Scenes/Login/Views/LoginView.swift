@@ -19,11 +19,10 @@ final class LoginView: BaseView {
     
     // MARK: - UI
     
-    private lazy var logoNameLabel = UILabel().apply {
-        $0.font = AppFont.anta.s40
+    private lazy var appNameLabel = UILabel().apply {
+        $0.set(font: AppFont.anta.s40, textColor: AppColor.Theme.mainTitle.uiColor)
         $0.textAlignment = .center
-        $0.textColor = AppColor.Theme.mainTitle.uiColor
-        $0.text = "KoshQon"
+        $0.text = AppDelegate.appName
     }
     
     private lazy var formView = UIView()
@@ -34,30 +33,32 @@ final class LoginView: BaseView {
     
     private lazy var forgotPasswordButton = UIButton(type: .system).apply {
         $0.setTitle("Забыл пароль", for: .normal)
-        $0.titleLabel?.font = AppFont.regular.s14
-        $0.setTitleColor(AppColor.Static.darkBlue.uiColor, for: .normal)
-        $0.tintColor = .clear
+        $0.set(font: AppFont.regular.s14, titleColor: AppColor.Static.darkBlue.uiColor)
         $0.addTarget(self, action: #selector(forgotPasswordButtonTapped), for: .touchUpInside)
     }
     
-    private lazy var signInButton = ProceedButton(type: .system).apply {
+    private lazy var loginButton = ProceedButton(type: .system).apply {
         $0.type = .signIn
         $0.addTarget(self, action: #selector(signInButtonTapped), for: .touchUpInside)
     }
     
-    private lazy var signUpLinkLabel = UILabel().apply {
-        let regularText = "У вас нет аккаунта?"
-        let linkText = "Зарегистрироваться"
-        let linkString = NSMutableAttributedString(string: regularText + " " + linkText)
-        linkString.addAttributes([.foregroundColor: AppColor.Static.orange.uiColor,
-                                  .underlineStyle: NSUnderlineStyle.single.rawValue],
-                                 range: NSRange(location: regularText.count + 1, length: linkText.count))
-        $0.attributedText = linkString
-        $0.font = AppFont.regular.s16
-        $0.textAlignment = .center
-        $0.isUserInteractionEnabled = true
-        $0.addGestureRecognizer(UITapGestureRecognizer(target: self,
-                                                       action: #selector(signUpLinkLabelTapped)))
+    private lazy var registerLabel = InfoLabel(type: .noAccount)
+    
+    private lazy var registerButton = UIButton(type: .system).apply {
+        $0.set(font: AppFont.regular.s16, titleColor: AppColor.Static.orange.uiColor)
+        $0.contentHorizontalAlignment = .left
+        let title = NSMutableAttributedString(string: "Зарегистрироваться")
+        title.addAttributes([.underlineStyle: NSUnderlineStyle.single.rawValue],
+                            range: NSRange(location: 0, length: title.length))
+        $0.setAttributedTitle(title, for: .normal)
+        $0.addTarget(self, action: #selector(signUpLinkLabelTapped), for: .touchUpInside)
+    }
+    
+    private lazy var registerContainerView = UIStackView(arrangedSubviews: [registerLabel,
+                                                                            registerButton]).apply {
+        $0.axis = .horizontal
+        $0.spacing = 5
+        $0.distribution = .fillEqually
     }
     
     // MARK: - Object Lifecycle
@@ -78,7 +79,7 @@ final class LoginView: BaseView {
         super.layoutSubviews()
         phoneTextField.layer.cornerRadius = 8
         passwordTextField.layer.cornerRadius = 8
-        signInButton.layer.cornerRadius = signInButton.frame.height / 2
+        loginButton.layer.cornerRadius = loginButton.frame.height / 2
     }
     
 }
@@ -87,13 +88,13 @@ final class LoginView: BaseView {
 
 private extension LoginView {
     func setupViews() {
-        addSubviews(logoNameLabel, formView)
+        addSubviews(appNameLabel, formView)
         formView.addSubviews(phoneLabel, phoneTextField, passwordLabel, passwordTextField,
-                             forgotPasswordButton, signInButton, signUpLinkLabel)
+                             forgotPasswordButton, loginButton, registerContainerView)
     }
     
     func setupConstraints() {
-        logoNameLabel.snp.makeConstraints { make in
+        appNameLabel.snp.makeConstraints { make in
             make.bottom.equalTo(formView.snp.top).offset(-50)
             make.centerX.equalToSuperview()
         }
@@ -130,14 +131,14 @@ private extension LoginView {
             make.trailing.equalToSuperview()
         }
         
-        signInButton.snp.makeConstraints { make in
+        loginButton.snp.makeConstraints { make in
             make.top.equalTo(forgotPasswordButton.snp.bottom).offset(20)
             make.leading.trailing.equalToSuperview()
             make.height.equalTo(50)
         }
         
-        signUpLinkLabel.snp.makeConstraints { make in
-            make.top.equalTo(signInButton.snp.bottom).offset(20)
+        registerContainerView.snp.makeConstraints { make in
+            make.top.equalTo(loginButton.snp.bottom).offset(20)
             make.leading.trailing.equalToSuperview()
             make.bottom.equalToSuperview().inset(20)
         }

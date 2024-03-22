@@ -73,6 +73,7 @@
 		4764D5982B85A50000D15A2E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4764D5972B85A50000D15A2E /* LoginView.swift */; };
 		4764D59A2B85AC9500D15A2E /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4764D5992B85AC9500D15A2E /* LoginModel.swift */; };
 		478F5FFE2B99823B00A07ECD /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478F5FFD2B99823B00A07ECD /* UITableView+Extensions.swift */; };
+		47C01DD22BAD9D7500D1B2F2 /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01DD12BAD9D7500D1B2F2 /* UIButton+Extensions.swift */; };
 		47C7B3772B812A3700125172 /* AppColorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C7B3762B812A3700125172 /* AppColorProtocol.swift */; };
 		47C7B3792B812AF000125172 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C7B3782B812AF000125172 /* AppColor.swift */; };
 		47C7B37E2B81321800125172 /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 47C7B37A2B81321700125172 /* SF-Pro-Display-Semibold.otf */; };
@@ -179,6 +180,7 @@
 		4764D5972B85A50000D15A2E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		4764D5992B85AC9500D15A2E /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		478F5FFD2B99823B00A07ECD /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
+		47C01DD12BAD9D7500D1B2F2 /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
 		47C7B3762B812A3700125172 /* AppColorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColorProtocol.swift; sourceTree = "<group>"; };
 		47C7B3782B812AF000125172 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
 		47C7B37A2B81321700125172 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 				478F5FFD2B99823B00A07ECD /* UITableView+Extensions.swift */,
 				475224DF2BA9D4BD000DAE1B /* UIViewController+Extensions.swift */,
 				475224EA2BA9DE6F000DAE1B /* UIApplication+Extensions.swift */,
+				47C01DD12BAD9D7500D1B2F2 /* UIButton+Extensions.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -1185,6 +1188,7 @@
 				475224D32BA9CB15000DAE1B /* CoordinatorFactory.swift in Sources */,
 				475225012BAB37E5000DAE1B /* Gender.swift in Sources */,
 				472E1B3C2B836A75005BF649 /* InputTextField.swift in Sources */,
+				47C01DD22BAD9D7500D1B2F2 /* UIButton+Extensions.swift in Sources */,
 				475224E72BA9DB7F000DAE1B /* UserDefaultsService.swift in Sources */,
 				475224982BA04EAC000DAE1B /* AdvertisementViewModel.swift in Sources */,
 				47C7B3872B8132E100125172 /* AppFontProtocol.swift in Sources */,

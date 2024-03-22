@@ -14,6 +14,7 @@ struct SplashScreenView: View {
     
     private let minScaleFont = Font(AppFont.anta.s10)
     private let maxScaleFont = Font(AppFont.anta.s64)
+    private let versionFont = Font(AppFont.medium.s20)
     
     private let maxScaleEffect = 4.0
     private let minScaleEffect = 0.0
@@ -22,11 +23,6 @@ struct SplashScreenView: View {
     
     private let color = Color(AppColor.Static.orange.uiColor)
     private let logoColor = Color(AppColor.Theme.mainTitle.uiColor)
-    
-    private let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
-    private let versionFont = Font(AppFont.medium.s20)
-    
-    private let logoName = "KoshQon"
     
     var body: some View {
         GeometryReader(content: { geometry in
@@ -38,7 +34,7 @@ struct SplashScreenView: View {
                 }
                 Spacer()
                 versionView
-                    .padding(EdgeInsets(top: 0, leading: 0, bottom: geometry.size.height / 20, trailing: 0))
+                    .padding(EdgeInsets(top: 0, leading: 0, bottom: geometry.size.height / 15, trailing: 0))
             }
         })
     }
@@ -57,7 +53,7 @@ struct SplashScreenView: View {
     }
     
     var logoView: some View {
-        Text(logoName)
+        Text(AppDelegate.appName ?? "")
             .font(font)
             .foregroundColor(logoColor)
             .onAppear {
@@ -76,7 +72,7 @@ struct SplashScreenView: View {
     
     var versionView: some View {
         HStack {
-            Text(version)
+            Text(AppDelegate.appVersion ?? "")
             Text("версия")
         }
         .font(versionFont)

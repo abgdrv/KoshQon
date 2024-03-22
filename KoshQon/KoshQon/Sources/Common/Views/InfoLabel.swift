@@ -10,6 +10,7 @@ import UIKit
 enum InfoLabelType {
     case phone
     case password
+    case noAccount
     case createPassword
     case repeatPassword
     case sms
@@ -47,6 +48,10 @@ final class InfoLabel: UILabel {
             setup(text: "Номер телефона")
         case .password:
             setup(text: "Пароль")
+        case .noAccount:
+            setup(text: "У вас нет аккаунта?",
+                  textColor: AppColor.Theme.mainTitle.uiColor,
+                  textAlignment: .right)
         case .createPassword:
             setup(text: "Придумайте пароль")
         case .repeatPassword:

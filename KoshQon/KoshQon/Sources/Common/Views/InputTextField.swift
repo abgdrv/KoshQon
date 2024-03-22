@@ -194,11 +194,11 @@ private extension InputTextField {
     func setup() {
         switch type {
         case .password:
-            setupTextField(placeholder: "Введите ваш пароль", isSecureTextEntry: true)
+            setupTextField(placeholder: "Введите пароль", isSecureTextEntry: true)
         case .date:
             setupTextField(placeholder: "Дата рождения", image: AppImage.Auth.calendar.uiImage)
         case .phone:
-            setupTextField(placeholder: "Введите ваш номер телефона",
+            setupTextField(placeholder: "Введите номер телефона",
                            keyboardType: .phonePad, clearButtonMode: .whileEditing)
         case .sms:
             setupTextField(keyboardType: .numberPad, font: AppFont.bold.s24, textAlignment: .center)

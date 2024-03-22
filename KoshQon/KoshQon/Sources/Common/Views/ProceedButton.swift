@@ -69,8 +69,7 @@ final class ProceedButton: UIButton {
     private func setup(backgroundColor: UIColor, title: String? = nil, font: UIFont, image: UIImage? = nil) {
         self.backgroundColor = backgroundColor
         setTitle(title, for: .normal)
-        setTitleColor(AppColor.Static.white.uiColor, for: .normal)
-        titleLabel?.font = font
+        set(font: font, titleColor: AppColor.Static.white.uiColor)
         setImage(image, for: .normal)
     }
 }
