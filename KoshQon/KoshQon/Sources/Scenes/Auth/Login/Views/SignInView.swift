@@ -1,5 +1,5 @@
 //
-//  SignInView.swift
+//  LoginView.swift
 //  KoshQon
 //
 //  Created by Almat Begaidarov on 21.02.2024.
@@ -9,13 +9,13 @@ import UIKit
 import SnapKit
 import ProgressHUD
 
-final class SignInView: BaseView {
+final class LoginView: BaseView {
     
     // MARK: - Properties
     
     var didForgot: VoidCallback?
-    var didSignUp: VoidCallback?
-    var didSignIn: Callback<SignInModel>?
+    var didRegister: VoidCallback?
+    var didLogin: Callback<LoginModel>?
     
     // MARK: - UI
     
@@ -85,7 +85,7 @@ final class SignInView: BaseView {
 
 // MARK: - Setup Views
 
-private extension SignInView {
+private extension LoginView {
     func setupViews() {
         addSubviews(logoNameLabel, formView)
         formView.addSubviews(phoneLabel, phoneTextField, passwordLabel, passwordTextField,
@@ -146,7 +146,7 @@ private extension SignInView {
 
 // MARK: - Actions
 
-private extension SignInView {
+private extension LoginView {
     @objc func forgotPasswordButtonTapped() {
         didForgot?()
     }
@@ -168,7 +168,7 @@ private extension SignInView {
             return
         }
         
-        didSignIn?(SignInModel(phoneNumber: phoneNumber, password: password))
+        didLogin?(LoginModel(phoneNumber: phoneNumber, password: password))
     }
     
     @objc func signUpLinkLabelTapped() {

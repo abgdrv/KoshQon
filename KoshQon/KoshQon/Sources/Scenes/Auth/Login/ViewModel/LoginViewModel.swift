@@ -1,5 +1,5 @@
 //
-//  SignInViewModel.swift
+//  LoginViewModel.swift
 //  KoshQon
 //
 //  Created by Almat Begaidarov on 21.02.2024.
@@ -7,19 +7,19 @@
 
 import Foundation
 
-protocol SignInProtocol {
-    func signIn(signInModel: SignInModel)
+protocol LoginProtocol {
+    func signIn(signInModel: LoginModel)
 }
 
-final class SignInViewModel: SignInProtocol {
+final class LoginViewModel: LoginProtocol {
     
     // MARK: - Properties
     
-    private var model: SignInModel?
+    private var model: LoginModel?
     
     // MARK: - Methods
     
-    func signIn(signInModel: SignInModel) {
+    func signIn(signInModel: LoginModel) {
         print(signInModel.formattedPhoneNumber)
     }
     

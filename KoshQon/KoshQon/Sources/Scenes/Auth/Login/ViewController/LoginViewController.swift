@@ -1,5 +1,5 @@
 //
-//  SignInViewController.swift
+//  LoginViewController.swift
 //  KoshQon
 //
 //  Created by Almat Begaidarov on 19.02.2024.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class SignInViewController: BaseViewController {
+final class LoginViewController: BaseViewController {
     
     // MARK: - Properties
     
@@ -15,15 +15,15 @@ final class SignInViewController: BaseViewController {
     var didForgot: VoidCallback?
     var didSignUp: VoidCallback?
     
-    private let viewModel: SignInViewModel
+    private let viewModel: LoginViewModel
     
     // MARK: - UI
     
-    private lazy var signInView = SignInView()
+    private lazy var signInView = LoginView()
     
     // MARK: - Object Lifecycle
     
-    init(viewModel: SignInViewModel) {
+    init(viewModel: LoginViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -47,9 +47,9 @@ final class SignInViewController: BaseViewController {
 
 // MARK: - Setup
 
-private extension SignInViewController {
+private extension LoginViewController {
     func setupBindings() {
-        signInView.didSignIn = { [weak self] model in
+        signInView.didLogin = { [weak self] model in
             guard let self = self else { return }
             self.viewModel.signIn(signInModel: model)
         }
