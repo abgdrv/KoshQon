@@ -74,6 +74,12 @@
 		4764D59A2B85AC9500D15A2E /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4764D5992B85AC9500D15A2E /* LoginModel.swift */; };
 		478F5FFE2B99823B00A07ECD /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478F5FFD2B99823B00A07ECD /* UITableView+Extensions.swift */; };
 		47C01DD22BAD9D7500D1B2F2 /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01DD12BAD9D7500D1B2F2 /* UIButton+Extensions.swift */; };
+		47C01DD82BADC49A00D1B2F2 /* RegisterFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01DD72BADC49A00D1B2F2 /* RegisterFlowFactory.swift */; };
+		47C01DDA2BADC99000D1B2F2 /* RegisterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01DD92BADC99000D1B2F2 /* RegisterCoordinator.swift */; };
+		47C01DDC2BADC9A900D1B2F2 /* RegisterOutputCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01DDB2BADC9A900D1B2F2 /* RegisterOutputCoordinator.swift */; };
+		47C01DE02BAE07C300D1B2F2 /* ForgotPasswordOutputCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01DDF2BAE07C300D1B2F2 /* ForgotPasswordOutputCoordinator.swift */; };
+		47C01DE72BAE094B00D1B2F2 /* ForgotPasswordFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01DE62BAE094B00D1B2F2 /* ForgotPasswordFlowFactory.swift */; };
+		47C01DE92BAE09C300D1B2F2 /* ForgotPasswordCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01DE82BAE09C300D1B2F2 /* ForgotPasswordCoordinator.swift */; };
 		47C7B3772B812A3700125172 /* AppColorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C7B3762B812A3700125172 /* AppColorProtocol.swift */; };
 		47C7B3792B812AF000125172 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C7B3782B812AF000125172 /* AppColor.swift */; };
 		47C7B37E2B81321800125172 /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 47C7B37A2B81321700125172 /* SF-Pro-Display-Semibold.otf */; };
@@ -181,6 +187,12 @@
 		4764D5992B85AC9500D15A2E /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		478F5FFD2B99823B00A07ECD /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		47C01DD12BAD9D7500D1B2F2 /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
+		47C01DD72BADC49A00D1B2F2 /* RegisterFlowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterFlowFactory.swift; sourceTree = "<group>"; };
+		47C01DD92BADC99000D1B2F2 /* RegisterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCoordinator.swift; sourceTree = "<group>"; };
+		47C01DDB2BADC9A900D1B2F2 /* RegisterOutputCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterOutputCoordinator.swift; sourceTree = "<group>"; };
+		47C01DDF2BAE07C300D1B2F2 /* ForgotPasswordOutputCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordOutputCoordinator.swift; sourceTree = "<group>"; };
+		47C01DE62BAE094B00D1B2F2 /* ForgotPasswordFlowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordFlowFactory.swift; sourceTree = "<group>"; };
+		47C01DE82BAE09C300D1B2F2 /* ForgotPasswordCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordCoordinator.swift; sourceTree = "<group>"; };
 		47C7B3762B812A3700125172 /* AppColorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColorProtocol.swift; sourceTree = "<group>"; };
 		47C7B3782B812AF000125172 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
 		47C7B37A2B81321700125172 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
@@ -319,6 +331,8 @@
 		472E1B302B8363B6005BF649 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				475224F32BA9FBD7000DAE1B /* Coordinator */,
+				475224F82BA9FD69000DAE1B /* Factory */,
 				472E1B342B8364BC005BF649 /* Model */,
 				4764D5962B85A43A00D15A2E /* Views */,
 				472E1B332B83647B005BF649 /* ViewController */,
@@ -330,6 +344,8 @@
 		472E1B322B8363E1005BF649 /* EnterPhone */ = {
 			isa = PBXGroup;
 			children = (
+				47C01DE12BAE07C900D1B2F2 /* Register */,
+				47C01DE52BAE084D00D1B2F2 /* ForgotPassword */,
 				47CD673C2B8DDB050035DCB6 /* Model */,
 				47CD673B2B8DDB000035DCB6 /* Views */,
 				47CD673A2B8DDAE70035DCB6 /* ViewController */,
@@ -368,6 +384,7 @@
 				475224E52BA9DB65000DAE1B /* Services */,
 				475224CC2BA9CA0E000DAE1B /* Flow */,
 				47D54CB92B91D22100021FA7 /* Constants */,
+				47C01DD42BADC1E200D1B2F2 /* Enum */,
 				47CD670C2B8759CD0035DCB6 /* Typealias */,
 				472E1B3A2B8368AB005BF649 /* Views */,
 				47CD672B2B8C3DC00035DCB6 /* ViewControllers */,
@@ -472,10 +489,11 @@
 		4743D06D2B81194100103C5E /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				475224F32BA9FBD7000DAE1B /* Coordinator */,
-				475224F82BA9FD69000DAE1B /* Factory */,
-				47C01DD02BAD694D00D1B2F2 /* Scenes */,
-				475224FD2BAAF9B3000DAE1B /* Helpers */,
+				472E1B302B8363B6005BF649 /* Login */,
+				472E1B322B8363E1005BF649 /* EnterPhone */,
+				47CD670F2B8761530035DCB6 /* SmsCode */,
+				47CD67532B9084D60035DCB6 /* Personal */,
+				47CD671B2B88A6F50035DCB6 /* SetPassword */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -646,15 +664,6 @@
 			path = Factory;
 			sourceTree = "<group>";
 		};
-		475224FD2BAAF9B3000DAE1B /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				475224FE2BAB2055000DAE1B /* Country.swift */,
-				475225002BAB37E5000DAE1B /* Gender.swift */,
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
 		4756A01A2B7FCC56003F9675 = {
 			isa = PBXGroup;
 			children = (
@@ -690,16 +699,65 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		47C01DD02BAD694D00D1B2F2 /* Scenes */ = {
+		47C01DD42BADC1E200D1B2F2 /* Enum */ = {
 			isa = PBXGroup;
 			children = (
-				472E1B302B8363B6005BF649 /* Login */,
-				472E1B322B8363E1005BF649 /* EnterPhone */,
-				47CD670F2B8761530035DCB6 /* SmsCode */,
-				47CD67532B9084D60035DCB6 /* Personal */,
-				47CD671B2B88A6F50035DCB6 /* SetPassword */,
+				475224FE2BAB2055000DAE1B /* Country.swift */,
+				475225002BAB37E5000DAE1B /* Gender.swift */,
 			);
-			path = Scenes;
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		47C01DD52BADC3C100D1B2F2 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				47C01DE82BAE09C300D1B2F2 /* ForgotPasswordCoordinator.swift */,
+				47C01DDF2BAE07C300D1B2F2 /* ForgotPasswordOutputCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		47C01DD62BADC45500D1B2F2 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				47C01DE62BAE094B00D1B2F2 /* ForgotPasswordFlowFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		47C01DE12BAE07C900D1B2F2 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				47C01DE32BAE080300D1B2F2 /* Coordinator */,
+				47C01DE42BAE083600D1B2F2 /* Factory */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		47C01DE32BAE080300D1B2F2 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				47C01DD92BADC99000D1B2F2 /* RegisterCoordinator.swift */,
+				47C01DDB2BADC9A900D1B2F2 /* RegisterOutputCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		47C01DE42BAE083600D1B2F2 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				47C01DD72BADC49A00D1B2F2 /* RegisterFlowFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		47C01DE52BAE084D00D1B2F2 /* ForgotPassword */ = {
+			isa = PBXGroup;
+			children = (
+				47C01DD52BADC3C100D1B2F2 /* Coordinator */,
+				47C01DD62BADC45500D1B2F2 /* Factory */,
+			);
+			path = ForgotPassword;
 			sourceTree = "<group>";
 		};
 		47C7B3752B8129E800125172 /* Extensions */ = {
@@ -1135,11 +1193,14 @@
 				471086462B9C9AA900556C2D /* AdvertisementCell.swift in Sources */,
 				475224D52BA9CB56000DAE1B /* BaseCoordinator.swift in Sources */,
 				47CD67382B8DA33E0035DCB6 /* NavigationTitleView.swift in Sources */,
+				47C01DD82BADC49A00D1B2F2 /* RegisterFlowFactory.swift in Sources */,
 				47C7B3792B812AF000125172 /* AppColor.swift in Sources */,
 				47C7B3852B8132C800125172 /* AppFont.swift in Sources */,
+				47C01DDA2BADC99000D1B2F2 /* RegisterCoordinator.swift in Sources */,
 				475224B62BA441C3000DAE1B /* ProfileMainInfo.swift in Sources */,
 				47CD672D2B8C3DD50035DCB6 /* BaseViewController.swift in Sources */,
 				475224DB2BA9CE4B000DAE1B /* Presentable.swift in Sources */,
+				47C01DE72BAE094B00D1B2F2 /* ForgotPasswordFlowFactory.swift in Sources */,
 				47D54CC52B91EC7200021FA7 /* MainScreenViewController.swift in Sources */,
 				475224FA2BA9FECB000DAE1B /* AuthFlowFactory.swift in Sources */,
 				47CD67242B88A8E10035DCB6 /* SetPasswordViewModel.swift in Sources */,
@@ -1163,6 +1224,7 @@
 				472E1B2A2B831BFC005BF649 /* Double+Extensions.swift in Sources */,
 				47CD67262B88A9980035DCB6 /* BaseView.swift in Sources */,
 				47CD67282B88BB070035DCB6 /* SetPasswordViewController.swift in Sources */,
+				47C01DDC2BADC9A900D1B2F2 /* RegisterOutputCoordinator.swift in Sources */,
 				475224A22BA05800000DAE1B /* FavoritesViewModel.swift in Sources */,
 				47D54CEC2B96419700021FA7 /* UIView+Extensions.swift in Sources */,
 				47D54CBB2B91D22F00021FA7 /* Constants.swift in Sources */,
@@ -1177,6 +1239,7 @@
 				475224CF2BA9CA21000DAE1B /* Coordinator.swift in Sources */,
 				4764D5952B85A0A500D15A2E /* LoginViewModel.swift in Sources */,
 				4752249D2BA05187000DAE1B /* FavoritesViewController.swift in Sources */,
+				47C01DE02BAE07C300D1B2F2 /* ForgotPasswordOutputCoordinator.swift in Sources */,
 				475224ED2BA9E882000DAE1B /* SplashScreenOutputCoordinator.swift in Sources */,
 				47CD670E2B8759EB0035DCB6 /* Typealias.swift in Sources */,
 				4756A0292B7FCC56003F9675 /* SceneDelegate.swift in Sources */,
@@ -1194,6 +1257,7 @@
 				47C7B3872B8132E100125172 /* AppFontProtocol.swift in Sources */,
 				475224FC2BAA0FFF000DAE1B /* EnterPhoneViewModel.swift in Sources */,
 				475224C52BA7FE1A000DAE1B /* ProfileCharacteristicView.swift in Sources */,
+				47C01DE92BAE09C300D1B2F2 /* ForgotPasswordCoordinator.swift in Sources */,
 				47CD673E2B8DDB2B0035DCB6 /* EnterPhoneView.swift in Sources */,
 				47D54CC72B92405500021FA7 /* PHPhotoLibrary+Extensions.swift in Sources */,
 				4764D59A2B85AC9500D15A2E /* LoginModel.swift in Sources */,

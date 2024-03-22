@@ -18,7 +18,9 @@ final class FlowFactory {
     private init() {}
 }
 
-extension FlowFactory: SplashScreenFlowFactory, AuthFlowFactory {
+extension FlowFactory: SplashScreenFlowFactory,
+                       AuthFlowFactory,
+                       RegisterFlowFactory {
     func makeSplashScreen() -> SplashScreenViewController {
         let vc = SplashScreenViewController()
         return vc
@@ -30,15 +32,27 @@ extension FlowFactory: SplashScreenFlowFactory, AuthFlowFactory {
         return vc
     }
     
-    func makeRegisterView() -> EnterPhoneViewController {
-        let vm = EnterPhoneViewModel()
-        let vc = EnterPhoneViewController(viewModel: vm, isFirst: true)
+    func makeEnterPhoneView(type: EnterPhoneType) -> EnterPhoneViewController {
+        let vm = EnterPhoneViewModel(type: type)
+        let vc = EnterPhoneViewController(viewModel: vm, type: type)
         return vc
     }
     
-    func makeForgotPasswordView() -> EnterPhoneViewController {
-        let vm = EnterPhoneViewModel()
-        let vc = EnterPhoneViewController(viewModel: vm, isFirst: false)
+    func makeSmsCodeView() -> SmsCodeViewController {
+        let vm = SmsCodeViewModel()
+        let vc = SmsCodeViewController(viewModel: vm)
+        return vc
+    }
+    
+    func makePersonalView() -> PersonalViewController {
+        let vm = PersonalViewModel()
+        let vc = PersonalViewController(viewModel: vm)
+        return vc
+    }
+    
+    func makeSetPasswordView(type: SetPasswordType) -> SetPasswordViewController {
+        let vm = SetPasswordViewModel(type: type)
+        let vc = SetPasswordViewController(viewModel: vm, type: type)
         return vc
     }
 }

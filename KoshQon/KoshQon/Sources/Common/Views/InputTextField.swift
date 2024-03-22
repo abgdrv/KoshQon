@@ -39,12 +39,13 @@ final class InputTextField: UITextField {
     // MARK: - Properties
     
     var didCountrySelect: VoidCallback?
+    var didPhoneCodeSelect: Callback<String>?
     
     private let type: InputType
     private let _placeholder: String?
     
-    private var padding = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 50)
-    private var placeholderPadding = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 50)
+    private var padding = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
+    private var placeholderPadding = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
     
     // MARK: - UI
     
@@ -170,6 +171,9 @@ private extension InputTextField {
         case .phone:
             padding = UIEdgeInsets(top: 16, left: 70, bottom: 16, right: 16)
             placeholderPadding = UIEdgeInsets(top: 16, left: 70, bottom: 16, right: 16)
+        case .regular:
+            padding = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 50)
+            placeholderPadding = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 50)
         default:
             break
         }
@@ -184,6 +188,11 @@ private extension InputTextField {
         menuButton.didCountrySelect = { [weak self] in
             guard let self = self else { return }
             self.didCountrySelect?()
+        }
+        
+        menuButton.didPhoneCodeSelect = { [weak self] code in
+            guard let self = self else { return }
+            self.didPhoneCodeSelect?(code)
         }
     }
 }

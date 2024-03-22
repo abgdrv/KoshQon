@@ -9,9 +9,6 @@ import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    
-    static let appName = Bundle.main.infoDictionary?[kCFBundleNameKey as String] as? String
-    static let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

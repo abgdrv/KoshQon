@@ -20,6 +20,7 @@ final class MenuButton: UIButton {
     
     var didSelect: Callback<String>?
     var didCountrySelect: VoidCallback?
+    var didPhoneCodeSelect: Callback<String>?
     
     var menuType: MenuType? {
         didSet {
@@ -39,6 +40,7 @@ final class MenuButton: UIButton {
             countries.forEach { country in
                 menuItems.append(UIAction(title: country.fullTitle, handler: { action in
                     self.setTitle(country.phoneCodeTitle, for: .normal)
+                    self.didPhoneCodeSelect?(country.phoneCode)
                 }))
             }
         case .gender:

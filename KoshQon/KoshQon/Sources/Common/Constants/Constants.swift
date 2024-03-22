@@ -9,6 +9,13 @@ import UIKit
 
 enum Constants {
     
+    // MARK: - App
+    
+    enum App {
+        static let appName = Bundle.main.infoDictionary?[kCFBundleNameKey as String] as? String
+        static let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+    }
+    
     // MARK: - Padding
     
     enum Padding {
@@ -22,6 +29,8 @@ enum Constants {
         static let long = UIScreen.main.bounds.height * 0.6
         static let cornerRadius: CGFloat = 20
     }
+    
+    // MARK: - NotificationName
     
     enum NotificationNameConstants: String {
         case theme

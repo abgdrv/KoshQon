@@ -12,6 +12,8 @@ protocol CoordinatorFactoryProtocol {
     func makeSplashScreenCoordinator(router: RouterProtocol) -> Coordinator & SplashScreenOutputCoordinator
     func makeAuthCoordinator(router: RouterProtocol,
                              coordinatorFactory: CoordinatorFactoryProtocol) -> Coordinator & AuthOutputCoordinator
+    func makeRegisterCoordinator(router: RouterProtocol) -> Coordinator & RegisterOutputCoordinator
+    func makeForgotPasswordCoordinator(router: RouterProtocol) -> Coordinator & ForgotPasswordOutputCoordinator
 }
 
 final class CoordinatorFactory: CoordinatorFactoryProtocol {
@@ -25,6 +27,16 @@ final class CoordinatorFactory: CoordinatorFactoryProtocol {
                              coordinatorFactory: CoordinatorFactoryProtocol) -> Coordinator & AuthOutputCoordinator {
         let coordinator = AuthCoordinator(router: router, factory: FlowFactory.shared,
                                           coordinatorFactory: coordinatorFactory)
+        return coordinator
+    }
+    
+    func makeRegisterCoordinator(router: RouterProtocol) -> Coordinator & RegisterOutputCoordinator {
+        let coordinator = RegisterCoordinator(router: router, factory: FlowFactory.shared)
+        return coordinator
+    }
+    
+    func makeForgotPasswordCoordinator(router: RouterProtocol) -> Coordinator & ForgotPasswordOutputCoordinator {
+        let coordinator = ForgotPasswordCoordinator(router: router, factory: FlowFactory.shared)
         return coordinator
     }
     

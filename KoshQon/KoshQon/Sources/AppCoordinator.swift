@@ -12,8 +12,8 @@ final class AppCoordinator: BaseCoordinator {
     
     // MARK: - Properties
     
-    private let coordinatorFactory: CoordinatorFactory
     private let router: RouterProtocol
+    private let coordinatorFactory: CoordinatorFactory
     private let appThemeService = AppThemeService.shared
     
     // MARK: - Object Lifecycle

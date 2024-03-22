@@ -142,7 +142,7 @@ extension Router: RouterProtocol, UIViewControllerTransitioningDelegate {
         
         let options: UIView.AnimationOptions = .transitionCrossDissolve
         let duration: TimeInterval = 0.4
-        if let window = SceneDelegate().window {
+        if let window = UIApplication.shared.keyWindow {
             UIView.transition(with: window, duration: duration, options: options, animations: {})
         }
     }

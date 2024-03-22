@@ -53,7 +53,7 @@ struct SplashScreenView: View {
     }
     
     var logoView: some View {
-        Text(AppDelegate.appName ?? "")
+        Text(Constants.App.appName ?? "")
             .font(font)
             .foregroundColor(logoColor)
             .onAppear {
@@ -72,7 +72,7 @@ struct SplashScreenView: View {
     
     var versionView: some View {
         HStack {
-            Text(AppDelegate.appVersion ?? "")
+            Text(Constants.App.appVersion ?? "")
             Text("версия")
         }
         .font(versionFont)
