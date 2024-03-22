@@ -13,7 +13,7 @@ enum NavigationTitleType {
     case sms
     case createPassword
     case personalInfo
-    case koshqon
+    case main
     case favorites
     case messages
     case directMessages
@@ -41,18 +41,14 @@ final class NavigationTitleView: UIView {
     
     private lazy var appIconImageView = UIImageView(image: AppImage.Common.AppIcon.uiImage).apply {
         $0.clipsToBounds = true
-        $0.contentMode = .scaleAspectFit
     }
     
     private lazy var containerView = UIStackView().apply {
         $0.axis = .horizontal
         $0.spacing = 5
         $0.alignment = .center
-        $0.distribution = .fill
     }
-    
-    private lazy var spacerView = UIView()
-    
+        
     // MARK: - Object Lifecycle
     
     init(type: NavigationTitleType, isIcon: Bool = false, title: String? = nil) {
@@ -87,13 +83,22 @@ private extension NavigationTitleView {
             containerView.addArrangedSubview(titleLabel)
         } else {
             containerView.addArrangedSubview(titleLabel)
-            containerView.addArrangedSubview(spacerView)
         }
     }
     
     func setupConstraints() {
         containerView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
+        }
+        
+        if isIcon {
+            appIconImageView.snp.makeConstraints { make in
+                make.size.equalTo(30)
+            }
+            
+            titleLabel.snp.makeConstraints { make in
+                make.width.equalTo(titleLabel.intrinsicContentSize)
+            }
         }
     }
 }
@@ -111,7 +116,7 @@ private extension NavigationTitleView {
             setupLabel(text: "Создание пароля")
         case .personalInfo:
             setupLabel(text: "Личная информация")
-        case .koshqon:
+        case .main:
             setupLabel(text: "KoshQon", font: AppFont.anta.s28)
         case .favorites:
             setupLabel(text: "Избранное")

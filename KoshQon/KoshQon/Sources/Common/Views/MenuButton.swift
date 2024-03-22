@@ -103,7 +103,7 @@ final class MenuButton: UIButton {
     
     override func menuAttachmentPoint(for configuration: UIContextMenuConfiguration) -> CGPoint {
         let original = super.menuAttachmentPoint(for: configuration)
-        return CGPoint(x: 16, y: original.y)
+        return menuType == .phone ? original : CGPoint(x: 16, y: original.y)
     }
 }
 

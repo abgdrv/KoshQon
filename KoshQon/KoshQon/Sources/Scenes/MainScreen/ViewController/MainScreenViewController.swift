@@ -47,6 +47,6 @@ final class MainScreenViewController: BaseViewController {
 
 private extension MainScreenViewController {
     func setupNavigation() {
-        navigationItem.titleView = NavigationTitleView(type: .koshqon)
+        navigationItem.titleView = NavigationTitleView(type: .main)
     }
 }
