@@ -23,7 +23,7 @@ struct SplashScreenView: View {
     private let color = Color(AppColor.Static.orange.uiColor)
     private let logoColor = Color(AppColor.Theme.mainTitle.uiColor)
     
-    private let version = 1.0
+    private let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
     private let versionFont = Font(AppFont.medium.s20)
     
     private let logoName = "KoshQon"
@@ -75,8 +75,11 @@ struct SplashScreenView: View {
     }
     
     var versionView: some View {
-        Text("\(version.convertedToString) версия")
-            .font(versionFont)
-            .foregroundColor(logoColor.opacity(0.4))
+        HStack {
+            Text(version)
+            Text("версия")
+        }
+        .font(versionFont)
+        .foregroundColor(logoColor.opacity(0.5))
     }
 }
