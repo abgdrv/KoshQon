@@ -11,15 +11,15 @@ final class LoginViewController: BaseViewController {
     
     // MARK: - Properties
     
-    var didSignIn: VoidCallback?
+    var didLogin: VoidCallback?
     var didForgot: VoidCallback?
-    var didSignUp: VoidCallback?
+    var didRegister: VoidCallback?
     
     private let viewModel: LoginViewModel
     
     // MARK: - UI
     
-    private lazy var signInView = LoginView()
+    private lazy var loginView = LoginView()
     
     // MARK: - Object Lifecycle
     
@@ -36,7 +36,7 @@ final class LoginViewController: BaseViewController {
     
     override func loadView() {
         super.loadView()
-        view = signInView
+        view = loginView
     }
     
     override func viewDidLoad() {
@@ -49,7 +49,7 @@ final class LoginViewController: BaseViewController {
 
 private extension LoginViewController {
     func setupBindings() {
-        signInView.didLogin = { [weak self] model in
+        loginView.didLogin = { [weak self] model in
             guard let self = self else { return }
             self.viewModel.signIn(signInModel: model)
         }

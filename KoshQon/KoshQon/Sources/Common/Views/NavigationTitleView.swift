@@ -29,7 +29,7 @@ final class NavigationTitleView: UIView {
     
     private let type: NavigationTitleType
     private let title: String?
-    private var isIcon: Bool
+    private var isIcon = false
     
     override var intrinsicContentSize: CGSize {
         UIView.layoutFittingExpandedSize
@@ -51,12 +51,11 @@ final class NavigationTitleView: UIView {
         
     // MARK: - Object Lifecycle
     
-    init(type: NavigationTitleType, isIcon: Bool = false, title: String? = nil) {
+    init(type: NavigationTitleType, title: String? = nil) {
         self.type = type
         self.title = title
-        self.isIcon = isIcon
         super.init(frame: .zero)
-        configure()
+        setup()
         setupViews()
         setupConstraints()
     }
@@ -106,7 +105,7 @@ private extension NavigationTitleView {
 // MARK: - Private methods
 
 private extension NavigationTitleView {
-    func configure() {
+    func setup() {
         switch type {
         case .forgotPassword:
             setupLabel(text: "Забыл пароль")
@@ -132,6 +131,7 @@ private extension NavigationTitleView {
             setupLabel(text: "Настройки")
         case .registration:
             setupLabel(text: "ID")
+            isIcon = true
         }
     }
     

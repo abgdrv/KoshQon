@@ -33,9 +33,6 @@ final class SmsCodeViewController: BaseViewController {
     override func loadView() {
         super.loadView()
         view = smsCodeView
-        smsCodeView.onAction = {
-            self.navigationController?.pushViewController(ChangePasswordViewController(viewModel: ChangePasswordViewModel()), animated: true)
-        }
     }
     
     override func viewDidLoad() {

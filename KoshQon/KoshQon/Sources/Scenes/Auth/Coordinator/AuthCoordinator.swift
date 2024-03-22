@@ -19,27 +19,27 @@ final class AuthCoordinator: BaseCoordinator, AuthOutputCoordinator {
     
     // MARK: - Object Lifecycle
     
-    init(factory: AuthFlowFactory, router: RouterProtocol, coordinatorFactory: CoordinatorFactoryProtocol) {
-        self.factory = factory
+    init(router: RouterProtocol, factory: AuthFlowFactory, coordinatorFactory: CoordinatorFactoryProtocol) {
         self.router = router
+        self.factory = factory
         self.coordinatorFactory = coordinatorFactory
     }
     
     override func start() {
-        showSignInFlow()
+        showLoginFlow()
     }
 }
 
 private extension AuthCoordinator {
-    func showSignInFlow() {
-        let view = factory.makeSignInView()
-        view.didSignIn = {
+    func showLoginFlow() {
+        let view = factory.makeLoginView()
+        view.didLogin = {
         }
         router.present(view, transitionStyle: .crossDissolve )
     }
     
-    func showSignUpFlow() {
-        let view = factory.makeSignUpView()
+    func showRegisterFlow() {
+        let view = factory.makeRegisterView()
         router.push(view)
     }
 }

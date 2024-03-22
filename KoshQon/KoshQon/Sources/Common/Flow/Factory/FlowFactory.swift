@@ -24,15 +24,21 @@ extension FlowFactory: SplashScreenFlowFactory, AuthFlowFactory {
         return vc
     }
     
-    func makeSignInView() -> LoginViewController {
+    func makeLoginView() -> LoginViewController {
         let vm = LoginViewModel()
         let vc = LoginViewController(viewModel: vm)
         return vc
     }
     
-    func makeSignUpView() -> SignUpViewController {
-        let vm = SignUpViewModel()
-        let vc = SignUpViewController(viewModel: vm)
+    func makeRegisterView() -> EnterPhoneViewController {
+        let vm = EnterPhoneViewModel()
+        let vc = EnterPhoneViewController(viewModel: vm, isFirst: true)
+        return vc
+    }
+    
+    func makeForgotPasswordView() -> EnterPhoneViewController {
+        let vm = EnterPhoneViewModel()
+        let vc = EnterPhoneViewController(viewModel: vm, isFirst: false)
         return vc
     }
 }

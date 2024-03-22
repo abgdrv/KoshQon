@@ -1,5 +1,5 @@
 //
-//  ChangePasswordViewController.swift
+//  SetPasswordViewController.swift
 //  KoshQon
 //
 //  Created by Almat Begaidarov on 23.02.2024.
@@ -7,19 +7,19 @@
 
 import UIKit
 
-final class ChangePasswordViewController: BaseViewController {
+final class SetPasswordViewController: BaseViewController {
     
     // MARK: - Properties
     
-    private let viewModel: ChangePasswordViewModel
+    private let viewModel: SetPasswordViewModel
     
     // MARK: - UI
     
-    private lazy var changePasswordView = ChangePasswordView(viewModel: viewModel, isFirstTime: false)
+    private lazy var setPasswordView = SetPasswordView(viewModel: viewModel, isFirstTime: false)
     
     // MARK: - Object Lifecycle
     
-    init(viewModel: ChangePasswordViewModel) {
+    init(viewModel: SetPasswordViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -32,7 +32,7 @@ final class ChangePasswordViewController: BaseViewController {
     
     override func loadView() {
         super.loadView()
-        view = changePasswordView
+        view = setPasswordView
     }
 
     override func viewDidLoad() {
@@ -43,7 +43,7 @@ final class ChangePasswordViewController: BaseViewController {
 
 // MARK: - Navigation
 
-private extension ChangePasswordViewController {
+private extension SetPasswordViewController {
     func setupNavigation() {
         navigationItem.titleView = NavigationTitleView(type: .createPassword)
     }

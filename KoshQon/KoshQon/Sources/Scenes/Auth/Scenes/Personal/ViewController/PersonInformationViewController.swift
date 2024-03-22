@@ -1,5 +1,5 @@
 //
-//  PersonInformationViewController.swift
+//  PersonalViewController.swift
 //  KoshQon
 //
 //  Created by Almat Begaidarov on 29.02.2024.
@@ -9,20 +9,20 @@ import UIKit
 import Photos
 import RSKImageCropper
 
-final class PersonInformationViewController: BaseViewController, UINavigationControllerDelegate {
+final class PersonalViewController: BaseViewController {
     
     // MARK: - Properties
     
-    private let viewModel: PersonInformationViewModel
+    private let viewModel: PersonalViewModel
         
     // MARK: - UI
     
-    private lazy var personInformationView = PersonInformationView()
+    private lazy var personalView = PersonalView()
     private let imagePicker = UIImagePickerController()
     
     // MARK: - Object Lifecycle
     
-    init(viewModel: PersonInformationViewModel) {
+    init(viewModel: PersonalViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -35,7 +35,7 @@ final class PersonInformationViewController: BaseViewController, UINavigationCon
     
     override func loadView() {
         super.loadView()
-        view = personInformationView
+        view = personalView
     }
 
     override func viewDidLoad() {
@@ -47,24 +47,24 @@ final class PersonInformationViewController: BaseViewController, UINavigationCon
 
 // MARK: - Setup
 
-private extension PersonInformationViewController {
+private extension PersonalViewController {
     func setupNavigation() {
         navigationItem.titleView = NavigationTitleView(type: .personalInfo)
     }
     
     func setupBindings() {
-        personInformationView.imageDidTap = { [weak self] in
+        personalView.imageDidTap = { [weak self] in
             guard let self = self else { return }
             self.showImagePickerOptions()
         }
         
-        personInformationView.setupDatePickerTarget(target: self, action: #selector(dateChanged))
+        personalView.setupDatePickerTarget(target: self, action: #selector(dateChanged))
     }
 }
 
 // MARK: - Private methods
 
-private extension PersonInformationViewController {
+private extension PersonalViewController {
     func showImagePickerOptions() {
         let alert = UIAlertController(title: "Выберите фото",
                                         message: "Выберите фото из галереи или откройте камеру",
@@ -106,8 +106,9 @@ private extension PersonInformationViewController {
 
 // MARK: - UIImagePickerControllerDelegate, UINavigationControllerDelegate, RSKImageCropViewControllerDelegate
 
-extension PersonInformationViewController: UIImagePickerControllerDelegate,
-                                           RSKImageCropViewControllerDelegate {
+extension PersonalViewController: UIImagePickerControllerDelegate,
+                                           RSKImageCropViewControllerDelegate,
+                                           UINavigationControllerDelegate {
     func imageCropViewControllerDidCancelCrop(_ controller: RSKImageCropViewController) {
         navigationController?.popViewController(animated: true)
     }
@@ -116,7 +117,7 @@ extension PersonInformationViewController: UIImagePickerControllerDelegate,
                                  didCropImage croppedImage: UIImage,
                                  usingCropRect cropRect: CGRect,
                                  rotationAngle: CGFloat) {
-        personInformationView.setProfileImage(image: croppedImage)
+        personalView.setProfileImage(image: croppedImage)
         navigationController?.popViewController(animated: true)
     }
     
@@ -134,8 +135,8 @@ extension PersonInformationViewController: UIImagePickerControllerDelegate,
 
 // MARK: - Actions
 
-private extension PersonInformationViewController {
+private extension PersonalViewController {
     @objc func dateChanged() {
-        personInformationView.birthdayString = viewModel.formattedDate(date: personInformationView.date)
+        personalView.birthdayString = viewModel.formattedDate(date: personalView.date)
     }
 }

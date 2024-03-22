@@ -8,6 +8,6 @@
 import Foundation
 
 protocol AuthFlowFactory {
-    func makeSignInView() -> LoginViewController
-    func makeSignUpView() -> SignUpViewController
+    func makeLoginView() -> LoginViewController
+    func makeRegisterView() -> EnterPhoneViewController
 }

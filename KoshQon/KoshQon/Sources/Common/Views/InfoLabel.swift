@@ -17,6 +17,7 @@ enum InfoLabelType {
     case passwordContain
     case passwordRequirements
     case registerPhone
+    case forgotPassword
     case favorites
 }
 
@@ -62,6 +63,9 @@ final class InfoLabel: UILabel {
                   textColor: AppColor.Theme.mainTitle.uiColor)
         case .registerPhone:
             setup(text: "Ваш номер телефона будет использоваться для входа в вашу учетную запись",
+                  textAlignment: .center)
+        case .forgotPassword:
+            setup(text: "Для восстановления вашего пароля требуется ваш номер телефона, связанный с учетной записью",
                   textAlignment: .center)
         case .favorites:
             setup(text: "Нажимайте на сердечко возле объявлений, чтобы не потерять их",

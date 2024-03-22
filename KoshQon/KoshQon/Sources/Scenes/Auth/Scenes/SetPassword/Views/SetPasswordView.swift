@@ -1,5 +1,5 @@
 //
-//  ChangePasswordView.swift
+//  SetPasswordView.swift
 //  KoshQon
 //
 //  Created by Almat Begaidarov on 23.02.2024.
@@ -9,11 +9,11 @@ import UIKit
 import SnapKit
 import Combine
 
-final class ChangePasswordView: BaseView {
+final class SetPasswordView: BaseView {
 
     // MARK: - Properties
     
-    private let viewModel: ChangePasswordViewModel
+    private let viewModel: SetPasswordViewModel
     private let isFirstTime: Bool
     
     // MARK: - UI
@@ -33,7 +33,7 @@ final class ChangePasswordView: BaseView {
     
     // MARK: - Object Lifecycle
     
-    init(viewModel: ChangePasswordViewModel, isFirstTime: Bool) {
+    init(viewModel: SetPasswordViewModel, isFirstTime: Bool) {
         self.viewModel = viewModel
         self.isFirstTime = isFirstTime
         super.init(frame: .zero)
@@ -58,7 +58,7 @@ final class ChangePasswordView: BaseView {
 
 // MARK: - Setup Views
 
-private extension ChangePasswordView {
+private extension SetPasswordView {
     func setupViews() {
         addSubviews(createPasswordLabel, passwordTextField, repeatPasswordLabel, repeatPasswordTextField,
                     changePasswordButton, infoLabel, passwordRequirementsLabel)
@@ -114,7 +114,7 @@ private extension ChangePasswordView {
 
 // MARK: - Actions
 
-private extension ChangePasswordView {
+private extension SetPasswordView {
     @objc func changePasswordButtonTapped() {
         
     }

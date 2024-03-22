@@ -22,8 +22,9 @@ final class CoordinatorFactory: CoordinatorFactoryProtocol {
     }
     
     func makeAuthCoordinator(router: RouterProtocol,
-                             coordinatorFactory: CoordinatorFactoryProtocol) -> AuthOutputCoordinator & Coordinator {
-        let coordinator = AuthCoordinator(factory: FlowFactory.shared, router: router, coordinatorFactory: coordinatorFactory)
+                             coordinatorFactory: CoordinatorFactoryProtocol) -> Coordinator & AuthOutputCoordinator {
+        let coordinator = AuthCoordinator(router: router, factory: FlowFactory.shared,
+                                          coordinatorFactory: coordinatorFactory)
         return coordinator
     }
     

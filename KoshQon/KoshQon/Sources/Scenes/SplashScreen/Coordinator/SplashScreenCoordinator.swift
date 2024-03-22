@@ -34,7 +34,8 @@ private extension SplashScreenCoordinator {
     func showSplashScreen() {
         let view = factory.makeSplashScreen()
         view.didFinish = { [weak self] in
-            self?.finishFlow?()
+            guard let self = self else { return }
+            self.finishFlow?()
         }
         router.setRootModule(view, hideNavBar: true)
     }

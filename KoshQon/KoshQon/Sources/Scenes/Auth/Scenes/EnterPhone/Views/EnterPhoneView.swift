@@ -1,5 +1,5 @@
 //
-//  SignUpView.swift
+//  EnterPhoneView.swift
 //  KoshQon
 //
 //  Created by Almat Begaidarov on 27.02.2024.
@@ -8,15 +8,15 @@
 import UIKit
 import SnapKit
 
-final class SignUpView: BaseView {
+final class EnterPhoneView: BaseView {
 
     // MARK: - Properties
     
-    private let viewModel: SignUpViewModel
+    private let isFirst: Bool
     
     // MARK: - UI
     
-    private lazy var infoLabel = InfoLabel(type: .registerPhone)
+    private lazy var infoLabel = InfoLabel(type: isFirst ? .registerPhone : .forgotPassword)
     private lazy var phoneLabel = InfoLabel(type: .phone)
     private lazy var phoneTextField = InputTextField(inputType: .phone)
     
@@ -27,8 +27,8 @@ final class SignUpView: BaseView {
 
     // MARK: - Object Lifecycle
     
-    init(viewModel: SignUpViewModel) {
-        self.viewModel = viewModel
+    init(isFirst: Bool) {
+        self.isFirst = isFirst
         super.init(frame: .zero)
         setupViews()
         setupConstraints()
@@ -50,7 +50,7 @@ final class SignUpView: BaseView {
 
 // MARK: - Setup
 
-private extension SignUpView {
+private extension EnterPhoneView {
     func setupViews() {
         addSubviews(infoLabel, phoneLabel, phoneTextField, continueButton)
     }
@@ -89,7 +89,7 @@ private extension SignUpView {
 
 // MARK: - Actions
 
-private extension SignUpView {
+private extension EnterPhoneView {
     @objc func continueButtonTapped() {
         
     }

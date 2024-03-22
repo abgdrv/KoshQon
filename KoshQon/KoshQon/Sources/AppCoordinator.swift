@@ -27,12 +27,6 @@ final class AppCoordinator: BaseCoordinator {
         runSplashScreenFlow()
         applyTheme()
     }
-    
-    func startFromAuth() {
-        
-    }
-    
-    
 }
 
 private extension AppCoordinator {

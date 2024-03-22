@@ -1,5 +1,5 @@
 //
-//  PersonInformationView.swift
+//  PersonalView.swift
 //  KoshQon
 //
 //  Created by Almat Begaidarov on 29.02.2024.
@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 
-final class PersonInformationView: BaseView {
+final class PersonalView: BaseView {
     
     // MARK: - Properties
     
@@ -108,7 +108,7 @@ final class PersonInformationView: BaseView {
 
 // MARK: - Setup Views
 
-private extension PersonInformationView {
+private extension PersonalView {
     func setupViews() {
         addSubviews(profileImageView, plusImageView, firstNameTextField, secondNameTextField,
                     birthdayTextField, genderTextField, countryTextField, continueButton)
@@ -206,7 +206,7 @@ private extension PersonInformationView {
 
 // MARK: - Actions
 
-private extension PersonInformationView {
+private extension PersonalView {
     @objc func continueButtonTapped() {
         
     }

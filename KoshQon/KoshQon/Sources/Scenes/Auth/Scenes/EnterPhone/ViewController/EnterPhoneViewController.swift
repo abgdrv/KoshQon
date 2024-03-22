@@ -1,5 +1,5 @@
 //
-//  SignUpViewController.swift
+//  EnterPhoneViewController.swift
 //  KoshQon
 //
 //  Created by Almat Begaidarov on 27.02.2024.
@@ -7,20 +7,22 @@
 
 import UIKit
 
-final class SignUpViewController: BaseViewController {
+final class EnterPhoneViewController: BaseViewController {
     
     // MARK: - Properties
     
-    private let viewModel: SignUpViewModel
+    private let viewModel: EnterPhoneViewModel
+    private let isFirst: Bool
     
     // MARK: - UI
     
-    private lazy var signUpView = SignUpView(viewModel: viewModel)
+    private lazy var enterPhoneView = EnterPhoneView(isFirst: isFirst)
     
     // MARK: - Object Lifecycle
     
-    init(viewModel: SignUpViewModel) {
+    init(viewModel: EnterPhoneViewModel, isFirst: Bool) {
         self.viewModel = viewModel
+        self.isFirst = isFirst
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -32,7 +34,7 @@ final class SignUpViewController: BaseViewController {
     
     override func loadView() {
         super.loadView()
-        view = signUpView
+        view = enterPhoneView
     }
 
     override func viewDidLoad() {
@@ -43,8 +45,8 @@ final class SignUpViewController: BaseViewController {
 
 // MARK: - Navigation
 
-private extension SignUpViewController {
+private extension EnterPhoneViewController {
     func setupNavigation() {
-        navigationItem.titleView = NavigationTitleView(type: .registration, isIcon: true)
+        navigationItem.titleView = NavigationTitleView(type: isFirst ? .registration : .forgotPassword)
     }
 }
