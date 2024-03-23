@@ -21,6 +21,10 @@ final class EnterPhoneView: BaseView {
     
     private let type: EnterPhoneType
     
+    override var keyboardHandlingButton: ProceedButton? {
+        continueButton
+    }
+    
     // MARK: - UI
     
     private lazy var infoLabel = InfoLabel(type: type == .register ? .registerPhone : .forgotPassword)
@@ -39,7 +43,6 @@ final class EnterPhoneView: BaseView {
         super.init(frame: .zero)
         setupViews()
         setupConstraints()
-        setupObservers()
     }
     
     required init?(coder: NSCoder) {
@@ -85,13 +88,6 @@ private extension EnterPhoneView {
             make.height.equalTo(50)
         }
     }
-    
-    func setupObservers() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow),
-                                               name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide),
-                                               name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
 }
 
 // MARK: - Actions
@@ -99,30 +95,5 @@ private extension EnterPhoneView {
 private extension EnterPhoneView {
     @objc func continueButtonTapped() {
         didFinish?()
-    }
-    
-    @objc func keyboardWillShow(notification: NSNotification) {
-        if let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect {
-            let keyboardHeight = keyboardFrame.height + 8
-            continueButton.snp.remakeConstraints { make in
-                make.bottom.equalToSuperview().inset(keyboardHeight)
-                make.leading.trailing.equalToSuperview().inset(16)
-                make.height.equalTo(50)
-            }
-            UIView.animate(withDuration: 0.3) {
-                self.layoutIfNeeded()
-            }
-        }
-    }
-
-    @objc func keyboardWillHide(notification: NSNotification) {
-        continueButton.snp.remakeConstraints { make in
-            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom)
-            make.leading.trailing.equalToSuperview().inset(16)
-            make.height.equalTo(50)
-        }
-        UIView.animate(withDuration: 0.3) {
-            self.layoutIfNeeded()
-        }
     }
 }

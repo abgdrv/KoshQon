@@ -16,6 +16,11 @@ final class SmsCodeView: BaseView {
         
     private let viewModel: SmsCodeViewModel
     private var codeTextFields: [UITextField] = []
+    
+    override var keyboardHandlingButton: ProceedButton? {
+        continueButton
+    }
+    
     private var resendTimer = Timer()
     
     private var code: String {
@@ -67,7 +72,6 @@ final class SmsCodeView: BaseView {
         super.init(frame: .zero)
         setupViews()
         setupConstraints()
-        setupObservers()
         setupTimer()
     }
     
@@ -106,7 +110,7 @@ private extension SmsCodeView {
         codeStackView.snp.makeConstraints { make in
             make.top.equalTo(phoneNumberLabel.snp.bottom).offset(40)
             make.leading.trailing.equalToSuperview().inset(16)
-            make.height.equalTo(80)
+            make.height.equalTo(70)
         }
         
         resendLabel.snp.makeConstraints { make in
@@ -129,13 +133,6 @@ private extension SmsCodeView {
     func setupTimer() {
         resendTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer),
                                            userInfo: nil, repeats: true)
-    }
-    
-    func setupObservers() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow),
-                                               name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide),
-                                               name: UIResponder.keyboardWillHideNotification, object: nil)
     }
 }
 
@@ -174,31 +171,6 @@ private extension SmsCodeView {
         }
         if codeTextFields[index].text == "", index > 0 {
             codeTextFields[index - 1].becomeFirstResponder()
-        }
-    }
-    
-    @objc func keyboardWillShow(notification: NSNotification) {
-        if let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect {
-            let keyboardHeight = keyboardFrame.height + 8
-            continueButton.snp.remakeConstraints { make in
-                make.bottom.equalToSuperview().inset(keyboardHeight)
-                make.leading.trailing.equalToSuperview().inset(16)
-                make.height.equalTo(50)
-            }
-            UIView.animate(withDuration: 0.3) {
-                self.layoutIfNeeded()
-            }
-        }
-    }
-
-    @objc func keyboardWillHide(notification: NSNotification) {
-        continueButton.snp.remakeConstraints { make in
-            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom)
-            make.leading.trailing.equalToSuperview().inset(16)
-            make.height.equalTo(50)
-        }
-        UIView.animate(withDuration: 0.3) {
-            self.layoutIfNeeded()
         }
     }
 }

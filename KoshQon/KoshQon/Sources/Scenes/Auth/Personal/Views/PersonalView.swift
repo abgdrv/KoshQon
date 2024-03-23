@@ -26,6 +26,10 @@ final class PersonalView: BaseView {
         datePicker.date
     }
     
+    override var keyboardHandlingButton: ProceedButton? {
+        continueButton
+    }
+    
     // MARK: - UI
     
     private lazy var profileImageView = UIImageView(image: AppImage.Personal.defaultProfile.uiImage).apply {
@@ -72,7 +76,6 @@ final class PersonalView: BaseView {
         super.init(frame: frame)
         setupViews()
         setupConstraints()
-        setupObservers()
         setupBindings()
     }
     
@@ -186,13 +189,6 @@ private extension PersonalView {
         }
     }
     
-    func setupObservers() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow),
-                                               name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide),
-                                               name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-    
     func setupBindings() {
         countryTextField.didCountrySelect = { [weak self] in
             guard let self = self else { return }
@@ -214,30 +210,5 @@ private extension PersonalView {
     
     @objc func profileImageViewTapped() {
         imageDidTap?()
-    }
-    
-    @objc func keyboardWillShow(notification: NSNotification) {
-        if let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect {
-            let keyboardHeight = keyboardFrame.height + 8
-            continueButton.snp.remakeConstraints { make in
-                make.bottom.equalToSuperview().inset(keyboardHeight)
-                make.leading.trailing.equalToSuperview().inset(16)
-                make.height.equalTo(50)
-            }
-            UIView.animate(withDuration: 0.3) {
-                self.layoutIfNeeded()
-            }
-        }
-    }
-    
-    @objc func keyboardWillHide(notification: NSNotification) {
-        continueButton.snp.remakeConstraints { make in
-            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).inset(8)
-            make.leading.trailing.equalToSuperview().inset(16)
-            make.height.equalTo(50)
-        }
-        UIView.animate(withDuration: 0.3) {
-            self.layoutIfNeeded()
-        }
     }
 }

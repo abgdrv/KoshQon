@@ -22,6 +22,10 @@ final class SetPasswordView: BaseView {
     
     private let type: SetPasswordType
     
+    override var keyboardHandlingButton: ProceedButton? {
+        changePasswordButton
+    }
+    
     // MARK: - UI
     
     private lazy var createPasswordLabel = InfoLabel(type: .createPassword)
@@ -44,7 +48,6 @@ final class SetPasswordView: BaseView {
         super.init(frame: .zero)
         setupViews()
         setupConstraints()
-        setupObservers()
     }
     
     required init?(coder: NSCoder) {
@@ -108,13 +111,6 @@ private extension SetPasswordView {
             make.leading.equalToSuperview().offset(16)
         }
     }
-    
-    func setupObservers() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow),
-                                               name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide),
-                                               name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
 }
 
 // MARK: - Actions
@@ -122,30 +118,5 @@ private extension SetPasswordView {
 private extension SetPasswordView {
     @objc func changePasswordButtonTapped() {
         didFinish?()
-    }
-    
-    @objc func keyboardWillShow(notification: NSNotification) {
-        if let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect {
-            let keyboardHeight = keyboardFrame.height + 8
-            changePasswordButton.snp.remakeConstraints { make in
-                make.bottom.equalToSuperview().inset(keyboardHeight)
-                make.leading.trailing.equalToSuperview().inset(16)
-                make.height.equalTo(50)
-            }
-            UIView.animate(withDuration: 0.3) {
-                self.layoutIfNeeded()
-            }
-        }
-    }
-
-    @objc func keyboardWillHide(notification: NSNotification) {
-        changePasswordButton.snp.remakeConstraints { make in
-            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).inset(8)
-            make.leading.trailing.equalToSuperview().inset(16)
-            make.height.equalTo(50)
-        }
-        UIView.animate(withDuration: 0.3) {
-            self.layoutIfNeeded()
-        }
     }
 }
