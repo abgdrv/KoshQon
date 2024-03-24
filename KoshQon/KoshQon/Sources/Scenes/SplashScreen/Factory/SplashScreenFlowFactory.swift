@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol SplashScreenFlowFactory {
+protocol SplashScreenFlowFactory: AlertFlowFactory {
     func makeSplashScreen() -> SplashScreenViewController
 }

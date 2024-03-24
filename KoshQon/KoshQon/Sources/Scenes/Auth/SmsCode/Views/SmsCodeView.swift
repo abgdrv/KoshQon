@@ -13,7 +13,7 @@ final class SmsCodeView: BaseView {
     // MARK: - Properties
     
     var didFinish: VoidCallback?
-        
+    
     private let viewModel: SmsCodeViewModel
     private var codeTextFields: [UITextField] = []
     
@@ -43,13 +43,12 @@ final class SmsCodeView: BaseView {
         $0.spacing = 10
         $0.distribution = .fillEqually
         for _ in 0..<4 {
-            let textField = InputTextField(inputType: .sms).apply {
-                $0.textAlignment = .center
-            }
-            textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+            let textField = InputTextField(inputType: .sms)
+            textField.delegate = self
             $0.addArrangedSubview(textField)
             codeTextFields.append(textField)
         }
+        codeTextFields[0].becomeFirstResponder()
     }
     
     private lazy var resendLabel = InfoLabel(type: .resend)
@@ -136,6 +135,34 @@ private extension SmsCodeView {
     }
 }
 
+extension SmsCodeView: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let index = codeTextFields.firstIndex(of: textField) else { return false }
+        let maxLength = 1
+        let currentText = textField.text ?? ""
+        var newText = (currentText as NSString).replacingCharacters(in: range, with: string)
+        
+        if newText.count > maxLength {
+            newText = String(newText.prefix(maxLength))
+        }
+        
+        if newText.count == maxLength {
+            if index + 1 <= 3 {
+                codeTextFields[index + 1].becomeFirstResponder()
+            } else {
+                textField.resignFirstResponder()
+            }
+        } else if newText.isEmpty {
+            if index - 1 >= 0 {
+                codeTextFields[index - 1].becomeFirstResponder()
+            }
+        }
+        
+        textField.text = newText
+        return false
+    }
+}
+
 // MARK: - Actions
 
 private extension SmsCodeView {
@@ -156,21 +183,11 @@ private extension SmsCodeView {
         setupTimer()
         resendButton.setTitle(viewModel.timeString, for: .normal)
     }
-
+    
     @objc func continueButtonTapped() {
         guard code == "0000" else {
             return
         }
         didFinish?()
-    }
-    
-    @objc func textFieldDidChange(_ textField: UITextField) {
-        guard let index = codeTextFields.firstIndex(of: textField) else { return }
-        if  index < codeTextFields.count - 1 {
-            codeTextFields[index + 1].becomeFirstResponder()
-        }
-        if codeTextFields[index].text == "", index > 0 {
-            codeTextFields[index - 1].becomeFirstResponder()
-        }
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 final class FlowFactory {
     
@@ -18,9 +19,26 @@ final class FlowFactory {
     private init() {}
 }
 
-extension FlowFactory: SplashScreenFlowFactory,
+extension FlowFactory: AlertFlowFactory,
+                       SplashScreenFlowFactory,
                        AuthFlowFactory,
                        RegisterFlowFactory {
+    func makeAlert(title: String, message: String, with actions: [UIAlertAction]) -> UIAlertController {
+        let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        actions.forEach {
+            ac.addAction($0)
+        }
+        return ac
+    }
+    
+    func makeAlertSheet(title: String, message: String, with actions: [UIAlertAction]) -> UIAlertController {
+        let ac = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
+        actions.forEach {
+            ac.addAction($0)
+        }
+        return ac
+    }
+    
     func makeSplashScreen() -> SplashScreenViewController {
         let vc = SplashScreenViewController()
         return vc

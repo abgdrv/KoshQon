@@ -82,6 +82,7 @@
 		47C01DE92BAE09C300D1B2F2 /* ForgotPasswordCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01DE82BAE09C300D1B2F2 /* ForgotPasswordCoordinator.swift */; };
 		47C01DEB2BAEF2D600D1B2F2 /* UIDevice+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01DEA2BAEF2D600D1B2F2 /* UIDevice+Extensions.swift */; };
 		47C01DED2BAF5FE700D1B2F2 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01DEC2BAF5FE700D1B2F2 /* KeychainService.swift */; };
+		47C01DEF2BB09BE500D1B2F2 /* AlertFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01DEE2BB09BE500D1B2F2 /* AlertFlowFactory.swift */; };
 		47C7B3772B812A3700125172 /* AppColorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C7B3762B812A3700125172 /* AppColorProtocol.swift */; };
 		47C7B3792B812AF000125172 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C7B3782B812AF000125172 /* AppColor.swift */; };
 		47C7B37E2B81321800125172 /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 47C7B37A2B81321700125172 /* SF-Pro-Display-Semibold.otf */; };
@@ -112,7 +113,6 @@
 		47D54CBB2B91D22F00021FA7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D54CBA2B91D22F00021FA7 /* Constants.swift */; };
 		47D54CC32B91EC5800021FA7 /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D54CC22B91EC5800021FA7 /* MainScreenView.swift */; };
 		47D54CC52B91EC7200021FA7 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D54CC42B91EC7200021FA7 /* MainScreenViewController.swift */; };
-		47D54CC72B92405500021FA7 /* PHPhotoLibrary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D54CC62B92405500021FA7 /* PHPhotoLibrary+Extensions.swift */; };
 		47D54CE42B963A6700021FA7 /* MainNavigationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D54CE32B963A6700021FA7 /* MainNavigationCell.swift */; };
 		47D54CE62B963E6B00021FA7 /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D54CE52B963E6B00021FA7 /* UILabel+Extensions.swift */; };
 		47D54CE82B963F5900021FA7 /* NSObject+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D54CE72B963F5900021FA7 /* NSObject+Extensions.swift */; };
@@ -197,6 +197,7 @@
 		47C01DE82BAE09C300D1B2F2 /* ForgotPasswordCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordCoordinator.swift; sourceTree = "<group>"; };
 		47C01DEA2BAEF2D600D1B2F2 /* UIDevice+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extensions.swift"; sourceTree = "<group>"; };
 		47C01DEC2BAF5FE700D1B2F2 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
+		47C01DEE2BB09BE500D1B2F2 /* AlertFlowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertFlowFactory.swift; sourceTree = "<group>"; };
 		47C7B3762B812A3700125172 /* AppColorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColorProtocol.swift; sourceTree = "<group>"; };
 		47C7B3782B812AF000125172 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
 		47C7B37A2B81321700125172 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
@@ -227,7 +228,6 @@
 		47D54CBA2B91D22F00021FA7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		47D54CC22B91EC5800021FA7 /* MainScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenView.swift; sourceTree = "<group>"; };
 		47D54CC42B91EC7200021FA7 /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
-		47D54CC62B92405500021FA7 /* PHPhotoLibrary+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PHPhotoLibrary+Extensions.swift"; sourceTree = "<group>"; };
 		47D54CC82B926B8E00021FA7 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		47D54CE32B963A6700021FA7 /* MainNavigationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationCell.swift; sourceTree = "<group>"; };
 		47D54CE52B963E6B00021FA7 /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
@@ -296,7 +296,6 @@
 		472E1B282B831BDB005BF649 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				47D54CC62B92405500021FA7 /* PHPhotoLibrary+Extensions.swift */,
 				47D54CE52B963E6B00021FA7 /* UILabel+Extensions.swift */,
 				47D54CEB2B96419700021FA7 /* UIView+Extensions.swift */,
 				478F5FFD2B99823B00A07ECD /* UITableView+Extensions.swift */,
@@ -622,6 +621,7 @@
 			isa = PBXGroup;
 			children = (
 				475224D72BA9CBBA000DAE1B /* FlowFactory.swift */,
+				47C01DEE2BB09BE500D1B2F2 /* AlertFlowFactory.swift */,
 			);
 			path = Factory;
 			sourceTree = "<group>";
@@ -1248,6 +1248,7 @@
 				4764D5952B85A0A500D15A2E /* LoginViewModel.swift in Sources */,
 				4752249D2BA05187000DAE1B /* FavoritesViewController.swift in Sources */,
 				47C01DE02BAE07C300D1B2F2 /* ForgotPasswordOutputCoordinator.swift in Sources */,
+				47C01DEF2BB09BE500D1B2F2 /* AlertFlowFactory.swift in Sources */,
 				475224ED2BA9E882000DAE1B /* SplashScreenOutputCoordinator.swift in Sources */,
 				47CD670E2B8759EB0035DCB6 /* Typealias.swift in Sources */,
 				4756A0292B7FCC56003F9675 /* SceneDelegate.swift in Sources */,
@@ -1267,7 +1268,6 @@
 				475224C52BA7FE1A000DAE1B /* ProfileCharacteristicView.swift in Sources */,
 				47C01DE92BAE09C300D1B2F2 /* ForgotPasswordCoordinator.swift in Sources */,
 				47CD673E2B8DDB2B0035DCB6 /* EnterPhoneView.swift in Sources */,
-				47D54CC72B92405500021FA7 /* PHPhotoLibrary+Extensions.swift in Sources */,
 				4764D59A2B85AC9500D15A2E /* LoginModel.swift in Sources */,
 				4710864A2B9E308F00556C2D /* MainSectionHeaderView.swift in Sources */,
 				47C7B3962B81372F00125172 /* AppImageProtocol.swift in Sources */,

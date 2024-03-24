@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol RegisterFlowFactory: ForgotPasswordFlowFactory {
+protocol RegisterFlowFactory: AlertFlowFactory, ForgotPasswordFlowFactory {
     func makePersonalView() -> PersonalViewController
 }
 

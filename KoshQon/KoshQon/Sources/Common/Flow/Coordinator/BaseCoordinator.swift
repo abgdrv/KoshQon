@@ -12,10 +12,15 @@ class BaseCoordinator: Coordinator {
     // MARK: - Properties
     
     var childCoordinators: [Coordinator] = []
+    var alertFlowFactory: AlertFlowFactory?
     
     // MARK: - Object Lifecycle
     
     init() {}
+    
+    init(alertFlowFactory: AlertFlowFactory) {
+        self.alertFlowFactory = alertFlowFactory
+    }
     
     // MARK: - Methods
     

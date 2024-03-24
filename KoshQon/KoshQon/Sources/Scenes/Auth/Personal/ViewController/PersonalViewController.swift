@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Photos
 import RSKImageCropper
 
 final class PersonalViewController: BaseViewController {
@@ -14,13 +13,17 @@ final class PersonalViewController: BaseViewController {
     // MARK: - Properties
     
     var didFinish: VoidCallback?
+    var didShowImagePickerOptions: Callback<UIImagePickerController>?
+    var didCancelCrop: VoidCallback?
+    var didCropImage: VoidCallback?
+    var didShowCropImage: Callback<RSKImageCropViewController>?
     
     private let viewModel: PersonalViewModel
-        
+    
     // MARK: - UI
     
     private lazy var personalView = PersonalView()
-    private let imagePicker = UIImagePickerController()
+    private lazy var imagePicker = UIImagePickerController().apply { $0.delegate = self }
     
     // MARK: - Object Lifecycle
     
@@ -39,7 +42,7 @@ final class PersonalViewController: BaseViewController {
         super.loadView()
         view = personalView
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigation()
@@ -62,62 +65,20 @@ private extension PersonalViewController {
         
         personalView.imageDidTap = { [weak self] in
             guard let self = self else { return }
-            self.showImagePickerOptions()
+            self.didShowImagePickerOptions?(self.imagePicker)
         }
         
         personalView.setupDatePickerTarget(target: self, action: #selector(dateChanged))
     }
 }
 
-// MARK: - Private methods
-
-private extension PersonalViewController {
-    func showImagePickerOptions() {
-        let alert = UIAlertController(title: "Выберите фото",
-                                        message: "Выберите фото из галереи или откройте камеру",
-                                        preferredStyle: .actionSheet)
-        let cameraAction = UIAlertAction(title: "Камера", style: .default) { [weak self] _ in
-            guard let self = self else { return }
-            if UIImagePickerController.isSourceTypeAvailable(.camera) {
-                imagePicker.sourceType = .camera
-                imagePicker.cameraCaptureMode = .photo
-                openImagePicker()
-            }
-        }
-        let libraryAction = UIAlertAction(title: "Галерея", style: .default) { [weak self] _ in
-            guard let self = self else { return }
-            imagePicker.sourceType = .photoLibrary
-            openImagePicker()
-        }
-        let cancelAction = UIAlertAction(title: "Закрыть", style: .cancel, handler: nil)
-        
-        alert.addAction(cameraAction)
-        alert.addAction(libraryAction)
-        alert.addAction(cancelAction)
-        
-        DispatchQueue.main.async {
-            self.present(alert, animated: true)
-        }
-    }
-    
-    func openImagePicker() {
-        PHPhotoLibrary.checkPermission(controller: self) { [weak self] in
-            guard let self = self else { return }
-            DispatchQueue.main.async {
-                self.imagePicker.delegate = self
-                self.present(self.imagePicker, animated: true)
-            }
-        }
-    }
-}
-
 // MARK: - UIImagePickerControllerDelegate, UINavigationControllerDelegate, RSKImageCropViewControllerDelegate
 
 extension PersonalViewController: UIImagePickerControllerDelegate,
-                                           RSKImageCropViewControllerDelegate,
-                                           UINavigationControllerDelegate {
+                                  RSKImageCropViewControllerDelegate,
+                                  UINavigationControllerDelegate {
     func imageCropViewControllerDidCancelCrop(_ controller: RSKImageCropViewController) {
-        navigationController?.popViewController(animated: true)
+        didCancelCrop?()
     }
     
     func imageCropViewController(_ controller: RSKImageCropViewController,
@@ -125,7 +86,7 @@ extension PersonalViewController: UIImagePickerControllerDelegate,
                                  usingCropRect cropRect: CGRect,
                                  rotationAngle: CGFloat) {
         personalView.setProfileImage(image: croppedImage)
-        navigationController?.popViewController(animated: true)
+        didCropImage?()
     }
     
     func imagePickerController(_ picker: UIImagePickerController,
@@ -135,7 +96,7 @@ extension PersonalViewController: UIImagePickerControllerDelegate,
             guard let self = self else { return }
             let imageCropVC = RSKImageCropViewController(image: image, cropMode: .circle)
             imageCropVC.delegate = self
-            self.navigationController?.pushViewController(imageCropVC, animated: true)
+            self.didShowCropImage?(imageCropVC)
         }
     }
 }

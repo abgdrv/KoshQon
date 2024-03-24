@@ -21,6 +21,7 @@ final class AppCoordinator: BaseCoordinator {
     init(router: RouterProtocol, coordinatorFactory: CoordinatorFactory) {
         self.router = router
         self.coordinatorFactory = coordinatorFactory
+        super.init()
     }
     
     override func start() {

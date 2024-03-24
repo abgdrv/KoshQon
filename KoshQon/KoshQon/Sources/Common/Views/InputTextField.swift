@@ -105,7 +105,7 @@ final class InputTextField: UITextField {
     }
     
     override func caretRect(for position: UITextPosition) -> CGRect {
-        return type == .date ? .zero : super.caretRect(for: position)
+        return (type == .date || type == .sms) ? .zero : super.caretRect(for: position)
     }
 }
 
@@ -211,6 +211,7 @@ private extension InputTextField {
                            keyboardType: .phonePad, clearButtonMode: .whileEditing)
         case .sms:
             setupTextField(keyboardType: .numberPad, font: AppFont.bold.s24, textAlignment: .center)
+            textContentType = .oneTimeCode
         case .regular:
             setupTextField(placeholder: _placeholder, clearButtonMode: .whileEditing)
         case .gender:
@@ -275,10 +276,6 @@ extension InputTextField: UITextFieldDelegate {
             let newString = (text as NSString).replacingCharacters(in: range, with: string)
             textField.text = formattedNumber(number: newString)
             return false
-        case .sms:
-            let maxLength = 1
-            let newText = (text as NSString).replacingCharacters(in: range, with: string)
-            return newText.count <= maxLength
         default:
             return false
         }

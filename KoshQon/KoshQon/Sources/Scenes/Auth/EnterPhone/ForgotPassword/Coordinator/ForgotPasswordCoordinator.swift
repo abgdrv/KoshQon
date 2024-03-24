@@ -21,6 +21,7 @@ final class ForgotPasswordCoordinator: BaseCoordinator, ForgotPasswordOutputCoor
     init(router: RouterProtocol, factory: RegisterFlowFactory) {
         self.router = router
         self.factory = factory
+        super.init(alertFlowFactory: factory)
     }
     
     override func start() {

@@ -23,6 +23,7 @@ final class AuthCoordinator: BaseCoordinator, AuthOutputCoordinator {
         self.router = router
         self.factory = factory
         self.coordinatorFactory = coordinatorFactory
+        super.init(alertFlowFactory: factory)
     }
     
     override func start() {
@@ -37,7 +38,8 @@ private extension AuthCoordinator {
             guard let self = self else { return }
             self.showForgotPasswordFlow()
         }
-        view.didLogin = {
+        view.didLogin = { [weak self] in
+            guard let self = self else { return }
             
         }
         view.didRegister = { [weak self] in

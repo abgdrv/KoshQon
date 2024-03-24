@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol AuthFlowFactory {
+protocol AuthFlowFactory: AlertFlowFactory {
     func makeLoginView() -> LoginViewController
 }

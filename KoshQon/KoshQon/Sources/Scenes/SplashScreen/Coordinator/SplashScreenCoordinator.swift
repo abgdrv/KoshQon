@@ -21,6 +21,7 @@ final class SplashScreenCoordinator: BaseCoordinator, SplashScreenOutputCoordina
     init(router: RouterProtocol, factory: SplashScreenFlowFactory) {
         self.router = router
         self.factory = factory
+        super.init(alertFlowFactory: factory)
     }
     
     override func start() {
