@@ -10,6 +10,6 @@ pod 'SnapKit'
 pod 'PanModal'
 pod 'ProgressHUD'
 pod 'RSKImageCropper'
-
+pod 'KeychainSwift'
 
 end

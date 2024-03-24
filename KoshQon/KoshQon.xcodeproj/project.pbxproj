@@ -81,6 +81,7 @@
 		47C01DE72BAE094B00D1B2F2 /* ForgotPasswordFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01DE62BAE094B00D1B2F2 /* ForgotPasswordFlowFactory.swift */; };
 		47C01DE92BAE09C300D1B2F2 /* ForgotPasswordCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01DE82BAE09C300D1B2F2 /* ForgotPasswordCoordinator.swift */; };
 		47C01DEB2BAEF2D600D1B2F2 /* UIDevice+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01DEA2BAEF2D600D1B2F2 /* UIDevice+Extensions.swift */; };
+		47C01DED2BAF5FE700D1B2F2 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01DEC2BAF5FE700D1B2F2 /* KeychainService.swift */; };
 		47C7B3772B812A3700125172 /* AppColorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C7B3762B812A3700125172 /* AppColorProtocol.swift */; };
 		47C7B3792B812AF000125172 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C7B3782B812AF000125172 /* AppColor.swift */; };
 		47C7B37E2B81321800125172 /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 47C7B37A2B81321700125172 /* SF-Pro-Display-Semibold.otf */; };
@@ -195,6 +196,7 @@
 		47C01DE62BAE094B00D1B2F2 /* ForgotPasswordFlowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordFlowFactory.swift; sourceTree = "<group>"; };
 		47C01DE82BAE09C300D1B2F2 /* ForgotPasswordCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordCoordinator.swift; sourceTree = "<group>"; };
 		47C01DEA2BAEF2D600D1B2F2 /* UIDevice+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extensions.swift"; sourceTree = "<group>"; };
+		47C01DEC2BAF5FE700D1B2F2 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		47C7B3762B812A3700125172 /* AppColorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColorProtocol.swift; sourceTree = "<group>"; };
 		47C7B3782B812AF000125172 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
 		47C7B37A2B81321700125172 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
@@ -638,6 +640,7 @@
 			children = (
 				475224E62BA9DB7F000DAE1B /* UserDefaultsService.swift */,
 				475224E82BA9DC5E000DAE1B /* AppThemeService.swift */,
+				47C01DEC2BAF5FE700D1B2F2 /* KeychainService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1223,6 +1226,7 @@
 				475224A52BA162A4000DAE1B /* Reusable.swift in Sources */,
 				47CD67592B908A0A0035DCB6 /* PersonalView.swift in Sources */,
 				47CD671A2B8796060035DCB6 /* SmsCodeViewController.swift in Sources */,
+				47C01DED2BAF5FE700D1B2F2 /* KeychainService.swift in Sources */,
 				475224BC2BA447D4000DAE1B /* ProfileCommonInfo.swift in Sources */,
 				475224B22BA40E28000DAE1B /* ProfileTopView.swift in Sources */,
 				472E1B2A2B831BFC005BF649 /* Double+Extensions.swift in Sources */,
