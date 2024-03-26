@@ -24,7 +24,7 @@ final class LoginView: BaseView {
     private lazy var appNameLabel = UILabel().apply {
         $0.set(font: AppFont.anta.s40, textColor: AppColor.Theme.mainTitle.uiColor)
         $0.textAlignment = .center
-        $0.text = Constants.App.appName
+        $0.text = Constants.App.name
     }
     
     private lazy var formView = UIView()

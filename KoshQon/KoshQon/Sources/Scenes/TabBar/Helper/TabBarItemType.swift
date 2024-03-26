@@ -20,7 +20,7 @@ enum TabBarItemType: Int, CaseIterable {
     var title: String {
         switch self {
         case .main:
-            Constants.App.appName ?? ""
+            Constants.App.name ?? ""
         case .favorites:
             "Избранное"
         case .add:

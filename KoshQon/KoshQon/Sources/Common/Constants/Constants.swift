@@ -12,8 +12,8 @@ enum Constants {
     // MARK: - App
     
     enum App {
-        static let appName = Bundle.main.infoDictionary?[kCFBundleNameKey as String] as? String
-        static let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+        static let name = Bundle.main.infoDictionary?[kCFBundleNameKey as String] as? String
+        static let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
     }
     
     // MARK: - Padding
