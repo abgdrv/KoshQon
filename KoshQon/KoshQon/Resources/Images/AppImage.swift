@@ -41,7 +41,7 @@ enum AppImage {
 
     enum Main: String, AppImageProtocol {
         case search = "main/search"
-        case advertisement = "main/advertisement"
+        case announcement = "main/announcement"
         case guide = "main/guide"
         case adBlank = "main/ad_blank"
     }
@@ -51,8 +51,8 @@ enum AppImage {
     enum Tabbar: String, AppImageProtocol {
         case logo = "tabbar/logo"
         case logoSelected = "tabbar/logo_selected"
-        case favourites = "tabbar/favourites"
-        case favouritesSelected = "tabbar/favourites_selected"
+        case favorites = "tabbar/favorites"
+        case favoritesSelected = "tabbar/favorites_selected"
         case add = "tabbar/add"
         case messages = "tabbar/messages"
         case messagesSelected = "tabbar/messages_selected"

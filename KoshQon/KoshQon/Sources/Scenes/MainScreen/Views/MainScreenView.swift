@@ -16,7 +16,7 @@ final class MainScreenView: BaseView {
     
     // MARK: - UI
     
-    private lazy var advertisementsTableView = UITableView(frame: .zero, style: .grouped).apply {
+    private lazy var announcementsTableView = UITableView(frame: .zero, style: .grouped).apply {
         $0.showsVerticalScrollIndicator = false
         $0.separatorStyle = .none
         $0.dataSource = self
@@ -24,7 +24,7 @@ final class MainScreenView: BaseView {
         $0.rowHeight = UITableView.automaticDimension
         $0.backgroundColor = AppColor.Theme.secondaryBackground.uiColor
         $0.register(type: MainNavigationCell.self)
-        $0.register(type: AdvertisementCell.self)
+        $0.register(type: AnnouncementCell.self)
     }
     
     // MARK: - Object Lifecycle
@@ -45,11 +45,11 @@ final class MainScreenView: BaseView {
 
 private extension MainScreenView {
     func setupViews() {
-        addSubview(advertisementsTableView)
+        addSubview(announcementsTableView)
     }
     
     func setupConstraints() {
-        advertisementsTableView.snp.makeConstraints { make in
+        announcementsTableView.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide.snp.top)
             make.leading.trailing.bottom.equalToSuperview()
         }
@@ -71,7 +71,7 @@ extension MainScreenView: UITableViewDelegate, UITableViewDataSource {
             return cell
         }
         if indexPath.section == 1 {
-            let cell = AdvertisementCell(viewModel: viewModel.adViewModels[indexPath.row])
+            let cell = AnnouncementCell(viewModel: viewModel.adViewModels[indexPath.row])
             return cell
         }
         return UITableViewCell()

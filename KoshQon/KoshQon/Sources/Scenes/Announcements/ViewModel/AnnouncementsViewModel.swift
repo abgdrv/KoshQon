@@ -1,5 +1,5 @@
 //
-//  MainScreenViewModel.swift
+//  AnnouncementsViewModel.swift
 //  KoshQon
 //
 //  Created by Almat Begaidarov on 12.03.2024.
@@ -7,14 +7,13 @@
 
 import Foundation
 
-final class MainScreenViewModel {
+final class AnnouncementsViewModel {
     
     // MARK: - Properties
     
-    var adViewModels: [AnnouncementViewModel] = []
-    var navigationItemViewModels: [MainNavigationCellViewModel] = []
+    private let type: AnnouncementsType
+    var items: [AnnouncementViewModel] = []
     
-    let navigationItems = MainNavigationType.allCases
     let ads = [
         Announcement(title: "Ищу сожителя", address: "Алматы, Бостандыкский район", date: "2 февраля", rating: 8.7),
         Announcement(title: "Ищу сожителя", address: "Алматы, Бостандыкский район", date: "2 февраля", rating: 8.7),
@@ -24,30 +23,22 @@ final class MainScreenViewModel {
     
     // MARK: - Object Lifecycle
     
-    init() {
+    init(type: AnnouncementsType) {
+        self.type = type
         getAnnouncements()
-        getNavigationItems()
     }
     
     // MARK: - Private methods
     
-    private func makeAnnouncementCellViewModels(items: [Announcement]) -> [AnnouncementViewModel] {
+    func makeCellViewModels(items: [Announcement]) -> [AnnouncementViewModel] {
         return items.compactMap { AnnouncementViewModel(announcement: $0) }
-    }
-    
-    private func makeNavigationCellViewModels(items: [MainNavigationType]) -> [MainNavigationCellViewModel] {
-        return items.compactMap { MainNavigationCellViewModel(type: $0) }
     }
 }
 
 // MARK: - Request
 
-private extension MainScreenViewModel {
+private extension AnnouncementsViewModel {
     func getAnnouncements() {
-        adViewModels = makeAnnouncementCellViewModels(items: ads)
-    }
-    
-    func getNavigationItems() {
-        navigationItemViewModels = makeNavigationCellViewModels(items: navigationItems)
+        items = makeCellViewModels(items: ads)
     }
 }

@@ -1,5 +1,5 @@
 //
-//  AdvertisementView.swift
+//  AnnouncementView.swift
 //  KoshQon
 //
 //  Created by Almat Begaidarov on 18.03.2024.
@@ -8,11 +8,11 @@
 import UIKit
 import SnapKit
 
-final class AdvertisementView: UIView {
+final class AnnouncementView: UIView {
 
     // MARK: - Properties
     
-    var viewModel: AdvertisementViewModel? {
+    var viewModel: AnnouncementViewModel? {
         didSet {
             if let vm = viewModel {
                 setup(vm)
@@ -26,7 +26,7 @@ final class AdvertisementView: UIView {
         $0.backgroundColor = AppColor.Theme.mainBackground.uiColor
     }
     
-    private lazy var adImageView = UIImageView(image: AppImage.Main.adBlank.uiImage).apply {
+    private lazy var announcementImageView = UIImageView(image: AppImage.Main.adBlank.uiImage).apply {
         $0.contentMode = .scaleAspectFit
         $0.clipsToBounds = true
     }
@@ -59,7 +59,7 @@ final class AdvertisementView: UIView {
     
     // MARK: - Object Lifecycle
     
-    init(viewModel: AdvertisementViewModel) {
+    init(viewModel: AnnouncementViewModel) {
         super.init(frame: .zero)
         defer {
             self.viewModel = viewModel
@@ -77,17 +77,17 @@ final class AdvertisementView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         containerView.layer.cornerRadius = 10
-        adImageView.layer.cornerRadius = 10
+        announcementImageView.layer.cornerRadius = 10
     }
 }
 
 // MARK: - Setup Views
 
-private extension AdvertisementView {
+private extension AnnouncementView {
     func setupViews() {
         backgroundColor = AppColor.Theme.mainBackground.uiColor
         addSubview(containerView)
-        containerView.addSubviews(adImageView, titleLabel, addressLabel, separatorView, bottomContainerView)
+        containerView.addSubviews(announcementImageView, titleLabel, addressLabel, separatorView, bottomContainerView)
         bottomContainerView.addSubviews(dateLabel, ratingImageView, ratingLabel)
     }
     
@@ -97,7 +97,7 @@ private extension AdvertisementView {
             make.top.bottom.equalToSuperview().inset(10)
         }
         
-        adImageView.snp.makeConstraints { make in
+        announcementImageView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(10)
             make.leading.equalToSuperview().offset(8)
             make.size.equalTo(150)
@@ -105,19 +105,19 @@ private extension AdvertisementView {
         
         titleLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(10)
-            make.leading.equalTo(adImageView.snp.trailing).offset(5)
+            make.leading.equalTo(announcementImageView.snp.trailing).offset(5)
             make.trailing.equalToSuperview().offset(-8)
         }
         
         addressLabel.snp.makeConstraints { make in
-            make.leading.equalTo(adImageView.snp.trailing).offset(5)
+            make.leading.equalTo(announcementImageView.snp.trailing).offset(5)
             make.trailing.equalToSuperview().offset(-8)
-            make.bottom.equalTo(adImageView.snp.bottom)
+            make.bottom.equalTo(announcementImageView.snp.bottom)
         }
         
         separatorView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(8)
-            make.top.equalTo(adImageView.snp.bottom).offset(10)
+            make.top.equalTo(announcementImageView.snp.bottom).offset(10)
         }
         
         bottomContainerView.snp.makeConstraints { make in
@@ -146,8 +146,8 @@ private extension AdvertisementView {
 
 // MARK: - Private methods
 
-private extension AdvertisementView {
-    func setup(_ vm: AdvertisementViewModel) {
+private extension AnnouncementView {
+    func setup(_ vm: AnnouncementViewModel) {
         titleLabel.text = vm.title
         dateLabel.text = vm.date
         addressLabel.text = vm.address

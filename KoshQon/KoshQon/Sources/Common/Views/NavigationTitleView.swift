@@ -21,6 +21,7 @@ enum NavigationTitleType {
     case friends
     case settings
     case registration
+    case myAnnouncements
 }
 
 final class NavigationTitleView: UIView {
@@ -132,6 +133,8 @@ private extension NavigationTitleView {
         case .registration:
             setupLabel(text: "ID")
             isIcon = true
+        case .myAnnouncements:
+            setupLabel(text: "Мои объявления")
         }
     }
     

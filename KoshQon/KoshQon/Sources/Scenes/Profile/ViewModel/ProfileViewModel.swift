@@ -11,7 +11,7 @@ final class ProfileViewModel {
     
     // MARK: - Properties
     
-    var items: [AdvertisementViewModel] = []
+    var items: [AnnouncementViewModel] = []
     
     let main = ProfileMainInfo(firstName: "Имя",
                                secondName: "Фамилия",
@@ -29,29 +29,29 @@ final class ProfileViewModel {
                                    characteristics: [.cook, .job, .student, .sport])
     
     let ads = [
-        Advertisement(title: "Ищу сожителя", address: "Алматы, Бостандыкский район", date: "2 февраля", rating: 8.7),
-        Advertisement(title: "Ищу сожителя", address: "Алматы, Бостандыкский район", date: "2 февраля", rating: 8.7),
-        Advertisement(title: "Ищу сожителя", address: "Алматы, Бостандыкский район", date: "2 февраля", rating: 8.7),
-        Advertisement(title: "Ищу сожителя", address: "Алматы, Бостандыкский район", date: "2 февраля", rating: 8.7)
+        Announcement(title: "Ищу сожителя", address: "Алматы, Бостандыкский район", date: "2 февраля", rating: 8.7),
+        Announcement(title: "Ищу сожителя", address: "Алматы, Бостандыкский район", date: "2 февраля", rating: 8.7),
+        Announcement(title: "Ищу сожителя", address: "Алматы, Бостандыкский район", date: "2 февраля", rating: 8.7),
+        Announcement(title: "Ищу сожителя", address: "Алматы, Бостандыкский район", date: "2 февраля", rating: 8.7)
     ]
     
     // MARK: - Object Lifecycle
     
     init() {
-        getAdvertisements()
+        getAnnouncements()
     }
     
     // MARK: - Private methods
     
-    func makeCellViewModels(items: [Advertisement]) -> [AdvertisementViewModel] {
-        return items.compactMap { AdvertisementViewModel(advertisement: $0) }
+    func makeCellViewModels(items: [Announcement]) -> [AnnouncementViewModel] {
+        return items.compactMap { AnnouncementViewModel(announcement: $0) }
     }
 }
 
 // MARK: - Request
 
 private extension ProfileViewModel {
-    func getAdvertisements() {
+    func getAnnouncements() {
         items = makeCellViewModels(items: ads)
     }
 }

@@ -1,5 +1,5 @@
 //
-//  FavoritesViewController.swift
+//  AnnouncementsViewController.swift
 //  KoshQon
 //
 //  Created by Almat Begaidarov on 12.03.2024.
@@ -7,20 +7,22 @@
 
 import UIKit
 
-final class FavoritesViewController: BaseViewController {
+final class AnnouncementsViewController: BaseViewController {
     
     // MARK: - Properties
     
-    private let viewModel: FavoritesViewModel
+    private let viewModel: AnnouncementsViewModel
+    private let type: AnnouncementsType
     
     // MARK: - UI
     
-    private lazy var favoritesView = FavoritesView(viewModel: viewModel)
+    private lazy var announcementsView = AnnouncementsView(viewModel: viewModel, type: type)
     
     // MARK: - Object Lifecycle
     
-    init(viewModel: FavoritesViewModel) {
+    init(viewModel: AnnouncementsViewModel, type: AnnouncementsType) {
         self.viewModel = viewModel
+        self.type = type
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -32,7 +34,7 @@ final class FavoritesViewController: BaseViewController {
     
     override func loadView() {
         super.loadView()
-        view = favoritesView
+        view = announcementsView
     }
 
     override func viewDidLoad() {
@@ -43,8 +45,8 @@ final class FavoritesViewController: BaseViewController {
 
 // MARK: - Navigation
 
-private extension FavoritesViewController {
+private extension AnnouncementsViewController {
     func setupNavigation() {
-        navigationItem.titleView = NavigationTitleView(type: .favorites)
+        navigationItem.titleView = NavigationTitleView(type: type == .favorites ? .favorites : .myAnnouncements)
     }
 }

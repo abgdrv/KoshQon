@@ -14,6 +14,7 @@ protocol CoordinatorFactoryProtocol {
                              coordinatorFactory: CoordinatorFactoryProtocol) -> Coordinator & AuthOutputCoordinator
     func makeRegisterCoordinator(router: RouterProtocol) -> Coordinator & RegisterOutputCoordinator
     func makeForgotPasswordCoordinator(router: RouterProtocol) -> Coordinator & ForgotPasswordOutputCoordinator
+    func makeMainScreenCoordinator(navController: UINavigationController) -> Coordinator & MainScreenOutputCoordinator
 }
 
 final class CoordinatorFactory: CoordinatorFactoryProtocol {
@@ -37,6 +38,11 @@ final class CoordinatorFactory: CoordinatorFactoryProtocol {
     
     func makeForgotPasswordCoordinator(router: RouterProtocol) -> Coordinator & ForgotPasswordOutputCoordinator {
         let coordinator = ForgotPasswordCoordinator(router: router, factory: FlowFactory.shared)
+        return coordinator
+    }
+    
+    func makeMainScreenCoordinator(navController: UINavigationController) -> Coordinator & MainScreenOutputCoordinator {
+        let coordinator = MainScreenCoordinator(router: router(navController), factory: FlowFactory.shared, coordinatorFactory: self)
         return coordinator
     }
     

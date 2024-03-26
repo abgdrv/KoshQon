@@ -10,7 +10,7 @@ import UIKit
 
 enum MainNavigationType: CaseIterable {
     case search
-    case advertisements
+    case announcements
     case guide
 }
 
@@ -33,7 +33,7 @@ extension MainNavigationCellViewModel: IMainNavigationItemViewModel {
         switch type {
         case .search:
             "Найти"
-        case .advertisements:
+        case .announcements:
             "Мои объявления"
         case .guide:
             "Гид"
@@ -44,8 +44,8 @@ extension MainNavigationCellViewModel: IMainNavigationItemViewModel {
         switch type {
         case .search:
             AppImage.Main.search.uiImage?.withTintColor(AppColor.Theme.mainTitle.uiColor)
-        case .advertisements:
-            AppImage.Main.advertisement.uiImage?.withTintColor(AppColor.Theme.mainTitle.uiColor)
+        case .announcements:
+            AppImage.Main.announcement.uiImage?.withTintColor(AppColor.Theme.mainTitle.uiColor)
         case .guide:
             AppImage.Main.guide.uiImage?.withTintColor(AppColor.Theme.mainTitle.uiColor)
         }

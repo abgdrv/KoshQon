@@ -1,5 +1,5 @@
 //
-//  ProfileAdvertisementsView.swift
+//  ProfileAnnouncementsView.swift
 //  KoshQon
 //
 //  Created by Almat Begaidarov on 18.03.2024.
@@ -8,11 +8,11 @@
 import UIKit
 import SnapKit
 
-final class ProfileAdvertisementsView: UIView {
+final class ProfileAnnouncementsView: UIView {
         
     // MARK: - Properties
     
-    private var advertisements: [AdvertisementViewModel]
+    private var announcements: [AnnouncementViewModel]
     
     // MARK: - UI
     
@@ -31,8 +31,8 @@ final class ProfileAdvertisementsView: UIView {
     
     // MARK: - Object Lifecycle
     
-    init(advertisements: [AdvertisementViewModel]) {
-        self.advertisements = advertisements
+    init(announcements: [AnnouncementViewModel]) {
+        self.announcements = announcements
         super.init(frame: .zero)
         setupViews()
         setupConstraints()
@@ -52,7 +52,7 @@ final class ProfileAdvertisementsView: UIView {
 
 // MARK: - Setup Views
 
-private extension ProfileAdvertisementsView {
+private extension ProfileAnnouncementsView {
     func setupViews() {
         addSubview(containerView)
         containerView.addSubviews(advertisementsTitleLabel, advertisementsStackView)
@@ -79,11 +79,11 @@ private extension ProfileAdvertisementsView {
 
 // MARK: - Private methods
 
-private extension ProfileAdvertisementsView {
-    func getAdvertisements() -> [AdvertisementView] {
-        var views: [AdvertisementView] = []
-        advertisements.forEach {
-            let view = AdvertisementView(viewModel: $0)
+private extension ProfileAnnouncementsView {
+    func getAdvertisements() -> [AnnouncementView] {
+        var views: [AnnouncementView] = []
+        announcements.forEach {
+            let view = AnnouncementView(viewModel: $0)
             views.append(view)
         }
         return views

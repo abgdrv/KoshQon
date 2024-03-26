@@ -1,5 +1,5 @@
 //
-//  FavoritesView.swift
+//  AnnouncementsView.swift
 //  KoshQon
 //
 //  Created by Almat Begaidarov on 12.03.2024.
@@ -8,22 +8,23 @@
 import UIKit
 import SnapKit
 
-final class FavoritesView: BaseView {
+final class AnnouncementsView: BaseView {
 
     // MARK: - Properties
     
-    private let viewModel: FavoritesViewModel
+    private let viewModel: AnnouncementsViewModel
+    private let type: AnnouncementsType
     
     // MARK: - UI
     
-    private lazy var advertisementsTableView = UITableView(frame: .zero, style: .plain).apply {
+    private lazy var announcementsTableView = UITableView(frame: .zero, style: .plain).apply {
         $0.showsVerticalScrollIndicator = false
         $0.separatorStyle = .none
         $0.dataSource = self
         $0.delegate = self
         $0.rowHeight = UITableView.automaticDimension
         $0.backgroundColor = AppColor.Theme.secondaryBackground.uiColor
-        $0.register(type: AdvertisementCell.self)
+        $0.register(type: AnnouncementCell.self)
     }
     
     private lazy var heartImageView = UIImageView(image: AppImage.Favorites.heart.uiImage).apply {
@@ -45,8 +46,9 @@ final class FavoritesView: BaseView {
     
     // MARK: - Object Lifecycle
     
-    init(viewModel: FavoritesViewModel) {
+    init(viewModel: AnnouncementsViewModel, type: AnnouncementsType) {
         self.viewModel = viewModel
+        self.type = type
         super.init(frame: .zero)
         setupViews()
         setupConstraints()
@@ -66,12 +68,12 @@ final class FavoritesView: BaseView {
 
 // MARK: - Setup Views
 
-private extension FavoritesView {
+private extension AnnouncementsView {
     func setupViews() {
         if viewModel.ads.isEmpty {
             addSubviews(heartImageView, titleLabel, infoLabel, findButton)
         } else {
-            addSubview(advertisementsTableView)
+            addSubview(announcementsTableView)
         }
     }
     
@@ -100,7 +102,7 @@ private extension FavoritesView {
                 make.centerX.equalToSuperview()
             }
         } else {
-            advertisementsTableView.snp.makeConstraints { make in
+            announcementsTableView.snp.makeConstraints { make in
                 make.top.equalTo(safeAreaLayoutGuide.snp.top)
                 make.leading.trailing.bottom.equalToSuperview()
             }
@@ -110,20 +112,20 @@ private extension FavoritesView {
 
 // MARK: - UITableViewDelegate, UITableViewDataSource
 
-extension FavoritesView: UITableViewDelegate, UITableViewDataSource {
+extension AnnouncementsView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel.items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = AdvertisementCell(viewModel: viewModel.items[indexPath.row])
+        let cell = AnnouncementCell(viewModel: viewModel.items[indexPath.row])
         return cell
     }
 }
 
 // MARK: - Actions
 
-private extension FavoritesView {
+private extension AnnouncementsView {
     @objc func findButtonTapped() {
         
     }

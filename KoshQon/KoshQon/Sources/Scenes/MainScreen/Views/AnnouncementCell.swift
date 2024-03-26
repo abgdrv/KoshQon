@@ -1,5 +1,5 @@
 //
-//  AdvertisementCell.swift
+//  AnnouncementCell.swift
 //  KoshQon
 //
 //  Created by Almat Begaidarov on 09.03.2024.
@@ -8,11 +8,11 @@
 import UIKit
 import SnapKit
 
-final class AdvertisementCell: UITableViewCell {
+final class AnnouncementCell: UITableViewCell {
     
     // MARK: - Properties
     
-    private var viewModel: AdvertisementViewModel? {
+    private var viewModel: AnnouncementViewModel? {
         didSet {
             if let vm = viewModel {
                 setup(vm)
@@ -59,8 +59,8 @@ final class AdvertisementCell: UITableViewCell {
     
     // MARK: - Object Lifecycle
     
-    init(viewModel: AdvertisementViewModel) {
-        super.init(style: .default, reuseIdentifier: AdvertisementCell.reuseID)
+    init(viewModel: AnnouncementViewModel) {
+        super.init(style: .default, reuseIdentifier: AnnouncementCell.reuseID)
         defer {
             self.viewModel = viewModel
         }
@@ -94,7 +94,7 @@ final class AdvertisementCell: UITableViewCell {
 
 // MARK: - Setup Views
 
-private extension AdvertisementCell {
+private extension AnnouncementCell {
     func setupViews() {
         backgroundColor = AppColor.Theme.secondaryBackground.uiColor
         contentView.addSubview(containerView)
@@ -157,8 +157,8 @@ private extension AdvertisementCell {
 
 // MARK: - Private methods
 
-private extension AdvertisementCell {
-    func setup(_ vm: AdvertisementViewModel) {
+private extension AnnouncementCell {
+    func setup(_ vm: AnnouncementViewModel) {
         titleLabel.text = vm.title
         dateLabel.text = vm.date
         addressLabel.text = vm.address

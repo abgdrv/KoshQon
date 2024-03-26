@@ -22,7 +22,9 @@ final class FlowFactory {
 extension FlowFactory: AlertFlowFactory,
                        SplashScreenFlowFactory,
                        AuthFlowFactory,
-                       RegisterFlowFactory {
+                       RegisterFlowFactory,
+                       TabBarFlowFactory,
+                       MainScreenFlowFactory {
     func makeAlert(title: String, message: String, with actions: [UIAlertAction]) -> UIAlertController {
         let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
         actions.forEach {
@@ -71,6 +73,18 @@ extension FlowFactory: AlertFlowFactory,
     func makeSetPasswordView(type: SetPasswordType) -> SetPasswordViewController {
         let vm = SetPasswordViewModel(type: type)
         let vc = SetPasswordViewController(viewModel: vm, type: type)
+        return vc
+    }
+    
+    func makeTabBarView() -> TabBarController {
+        let vm = TabBarViewModel()
+        let vc = TabBarController(viewModel: vm)
+        return vc
+    }
+    
+    func makeMainScreenView() -> MainScreenViewController {
+        let vm = MainScreenViewModel()
+        let vc = MainScreenViewController(viewModel: vm)
         return vc
     }
 }
