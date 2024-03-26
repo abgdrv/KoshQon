@@ -91,6 +91,9 @@
 		47C01DFF2BB1B3BB00D1B2F2 /* MainScreenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01DFE2BB1B3BB00D1B2F2 /* MainScreenCoordinator.swift */; };
 		47C01E012BB1B41100D1B2F2 /* MainScreenFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01E002BB1B41100D1B2F2 /* MainScreenFlowFactory.swift */; };
 		47C01E042BB2890400D1B2F2 /* AnnouncementsType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01E032BB2890400D1B2F2 /* AnnouncementsType.swift */; };
+		47C01E0C2BB28C4600D1B2F2 /* FavoritesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01E0B2BB28C4600D1B2F2 /* FavoritesCoordinator.swift */; };
+		47C01E0E2BB28C5200D1B2F2 /* FavoritesOutputCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01E0D2BB28C5200D1B2F2 /* FavoritesOutputCoordinator.swift */; };
+		47C01E102BB28CCD00D1B2F2 /* FavoritesFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01E0F2BB28CCD00D1B2F2 /* FavoritesFlowFactory.swift */; };
 		47C7B3772B812A3700125172 /* AppColorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C7B3762B812A3700125172 /* AppColorProtocol.swift */; };
 		47C7B3792B812AF000125172 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C7B3782B812AF000125172 /* AppColor.swift */; };
 		47C7B37E2B81321800125172 /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 47C7B37A2B81321700125172 /* SF-Pro-Display-Semibold.otf */; };
@@ -214,6 +217,9 @@
 		47C01DFE2BB1B3BB00D1B2F2 /* MainScreenCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenCoordinator.swift; sourceTree = "<group>"; };
 		47C01E002BB1B41100D1B2F2 /* MainScreenFlowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenFlowFactory.swift; sourceTree = "<group>"; };
 		47C01E032BB2890400D1B2F2 /* AnnouncementsType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementsType.swift; sourceTree = "<group>"; };
+		47C01E0B2BB28C4600D1B2F2 /* FavoritesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCoordinator.swift; sourceTree = "<group>"; };
+		47C01E0D2BB28C5200D1B2F2 /* FavoritesOutputCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesOutputCoordinator.swift; sourceTree = "<group>"; };
+		47C01E0F2BB28CCD00D1B2F2 /* FavoritesFlowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesFlowFactory.swift; sourceTree = "<group>"; };
 		47C7B3762B812A3700125172 /* AppColorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColorProtocol.swift; sourceTree = "<group>"; };
 		47C7B3782B812AF000125172 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
 		47C7B37A2B81321700125172 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
@@ -525,8 +531,9 @@
 		475224992BA04EC5000DAE1B /* Announcements */ = {
 			isa = PBXGroup;
 			children = (
-				47C01E052BB28AC700D1B2F2 /* Coordinator */,
 				47C01E022BB288ED00D1B2F2 /* Helper */,
+				47C01E052BB28AC700D1B2F2 /* Coordinator */,
+				47C01E092BB28BE900D1B2F2 /* Factory */,
 				4752249A2BA0503F000DAE1B /* Views */,
 				4752249B2BA05087000DAE1B /* ViewController */,
 				475224A02BA057B1000DAE1B /* ViewModel */,
@@ -780,6 +787,8 @@
 		47C01E052BB28AC700D1B2F2 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				47C01E0B2BB28C4600D1B2F2 /* FavoritesCoordinator.swift */,
+				47C01E0D2BB28C5200D1B2F2 /* FavoritesOutputCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -800,6 +809,14 @@
 			children = (
 				47C01DD72BADC49A00D1B2F2 /* RegisterFlowFactory.swift */,
 				47C01DE62BAE094B00D1B2F2 /* ForgotPasswordFlowFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		47C01E092BB28BE900D1B2F2 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				47C01E0F2BB28CCD00D1B2F2 /* FavoritesFlowFactory.swift */,
 			);
 			path = Factory;
 			sourceTree = "<group>";
@@ -1213,6 +1230,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47C01E102BB28CCD00D1B2F2 /* FavoritesFlowFactory.swift in Sources */,
 				475224E42BA9D5CC000DAE1B /* Router.swift in Sources */,
 				47D54CE82B963F5900021FA7 /* NSObject+Extensions.swift in Sources */,
 				475224942BA04E79000DAE1B /* MainScreenViewModel.swift in Sources */,
@@ -1229,6 +1247,7 @@
 				475225032BAB5B28000DAE1B /* MenuButton.swift in Sources */,
 				475224962BA04E94000DAE1B /* MainNavigationCellViewModel.swift in Sources */,
 				475224C92BA89450000DAE1B /* AnnouncementView.swift in Sources */,
+				47C01E0C2BB28C4600D1B2F2 /* FavoritesCoordinator.swift in Sources */,
 				475224E22BA9D515000DAE1B /* RouterProtocol.swift in Sources */,
 				475224D82BA9CBBA000DAE1B /* FlowFactory.swift in Sources */,
 				47CD67402B8DE0D40035DCB6 /* EnterPhoneViewController.swift in Sources */,
@@ -1298,6 +1317,7 @@
 				47CD670E2B8759EB0035DCB6 /* Typealias.swift in Sources */,
 				4756A0292B7FCC56003F9675 /* SceneDelegate.swift in Sources */,
 				472E1B372B8364E1005BF649 /* LoginViewController.swift in Sources */,
+				47C01E0E2BB28C5200D1B2F2 /* FavoritesOutputCoordinator.swift in Sources */,
 				472E1B402B837AAE005BF649 /* ProceedButton.swift in Sources */,
 				47D54CC32B91EC5800021FA7 /* MainScreenView.swift in Sources */,
 				4752249F2BA051EA000DAE1B /* AnnouncementsView.swift in Sources */,

@@ -38,6 +38,7 @@ private extension TabBarCoordinator {
     func showTabBar() {
         let tabBarView = factory.makeTabBarView()
         tabBarView.didMainScreenSelect = showMainScreenFlow()
+        tabBarView.didFavoritesSelect = showFavorites()
         router.setRootModule(tabBarView, hideNavBar: true)
     }
     
@@ -65,16 +66,12 @@ private extension TabBarCoordinator {
         return { [unowned self] navController in
             self.navController = navController
             if navController.viewControllers.isEmpty {
-                var coordinator = self.coordinatorFactory.makeMainScreenCoordinator(navController: navController)
+                var coordinator = self.coordinatorFactory.makeFavoritesCoordinator(navController: navController)
                 self.addDependency(coordinator)
                 coordinator.finishFlow = { [weak self] in
                     guard let self = self else { return }
                     self.removeDependency(coordinator)
                     self.finishFlow?()
-                }
-                coordinator.reloadFlow = { [weak self] in
-                    guard let self = self else { return }
-                    self.start()
                 }
                 coordinator.start()
             }
