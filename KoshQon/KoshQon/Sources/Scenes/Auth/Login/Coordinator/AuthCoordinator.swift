@@ -40,7 +40,7 @@ private extension AuthCoordinator {
         }
         view.didLogin = { [weak self] in
             guard let self = self else { return }
-            
+            self.finishFlow?()
         }
         view.didRegister = { [weak self] in
             guard let self = self else { return }

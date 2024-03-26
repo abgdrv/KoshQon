@@ -39,7 +39,7 @@ enum TabBarItemType: Int, CaseIterable {
         case .favorites:
             Image.favorites.uiImage
         case .add:
-            Image.add.uiImage
+            Image.add.uiImage?.withRenderingMode(.alwaysOriginal)
         case .messages:
             Image.messages.uiImage
         case .profile:
@@ -54,7 +54,7 @@ enum TabBarItemType: Int, CaseIterable {
         case .favorites:
             Image.favoritesSelected.uiImage
         case .add:
-            Image.add.uiImage
+            Image.add.uiImage?.withRenderingMode(.alwaysOriginal)
         case .messages:
             Image.messagesSelected.uiImage
         case .profile:

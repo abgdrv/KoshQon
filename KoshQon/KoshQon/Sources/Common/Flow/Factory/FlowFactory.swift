@@ -25,7 +25,8 @@ extension FlowFactory: AlertFlowFactory,
                        RegisterFlowFactory,
                        TabBarFlowFactory,
                        MainScreenFlowFactory,
-                       FavoritesFlowFactory {
+                       FavoritesFlowFactory,
+                       AddAnnouncementFlowFactory {
     func makeAlert(title: String, message: String, with actions: [UIAlertAction]) -> UIAlertController {
         let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
         actions.forEach {
@@ -92,6 +93,12 @@ extension FlowFactory: AlertFlowFactory,
     func makeFavoritesView(type: AnnouncementsType) -> AnnouncementsViewController {
         let vm = AnnouncementsViewModel(type: type)
         let vc = AnnouncementsViewController(viewModel: vm, type: type)
+        return vc
+    }
+    
+    func makeAddAnnouncementView() -> AddAnnouncementViewController {
+        let vm = AddAnnouncementViewModel()
+        let vc = AddAnnouncementViewController(viewModel: vm)
         return vc
     }
 }

@@ -34,8 +34,9 @@ private extension AppCoordinator {
     func runSplashScreenFlow() {
         var coordinator = coordinatorFactory.makeSplashScreenCoordinator(router: router)
         coordinator.finishFlow = { [weak self] in
-            self?.removeDependency(coordinator)
-            self?.runAuthFlow()
+            guard let self = self else { return }
+            self.removeDependency(coordinator)
+            self.runAuthFlow()
         }
         addDependency(coordinator)
         coordinator.start()
@@ -45,7 +46,20 @@ private extension AppCoordinator {
         var coordinator = coordinatorFactory.makeAuthCoordinator(router: router,
                                                                  coordinatorFactory: coordinatorFactory)
         coordinator.finishFlow = { [weak self] in
-            self?.removeDependency(coordinator)
+            guard let self = self else { return }
+            self.removeDependency(coordinator)
+            self.runTabBarFlow()
+        }
+        addDependency(coordinator)
+        coordinator.start()
+    }
+    
+    func runTabBarFlow() {
+        var coordinator = coordinatorFactory.makeTabBarCoordinator(router: router, coordinatorFactory: coordinatorFactory)
+        coordinator.finishFlow = { [weak self] in
+            guard let self = self else { return }
+            self.removeDependency(coordinator)
+            self.runAuthFlow()
         }
         addDependency(coordinator)
         coordinator.start()

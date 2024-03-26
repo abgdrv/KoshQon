@@ -11,10 +11,13 @@ final class AddAnnouncementViewController: BaseViewController {
     
     // MARK: - Properties
     
+    var didClose: VoidCallback?
+    
     private let viewModel: AddAnnouncementViewModel
     
     // MARK: - UI
     
+    private lazy var addAnnouncementView = AddAnnouncementView()
     
     // MARK: - Object Lifecycle
     
@@ -27,9 +30,31 @@ final class AddAnnouncementViewController: BaseViewController {
     
     override func loadView() {
         super.loadView()
+        view = addAnnouncementView
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavigation()
     }
 }
+
+// MARK: - Setup
+
+private extension AddAnnouncementViewController {
+    func setupNavigation() {
+        let closeButton = UIBarButtonItem(title: "Закрыть", style: .plain, target: self,
+                                          action: #selector(closeButtonTapped))
+        closeButton.tintColor = AppColor.Static.orange.uiColor
+        navigationItem.rightBarButtonItem = closeButton
+    }
+}
+
+// MARK: - Actions
+
+private extension AddAnnouncementViewController {
+    @objc func closeButtonTapped() {
+        didClose?()
+    }
+}
+

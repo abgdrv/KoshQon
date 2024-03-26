@@ -96,6 +96,10 @@
 		47C01E102BB28CCD00D1B2F2 /* FavoritesFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01E0F2BB28CCD00D1B2F2 /* FavoritesFlowFactory.swift */; };
 		47C01E1A2BB297E300D1B2F2 /* AddAnnouncementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01E192BB297E300D1B2F2 /* AddAnnouncementViewController.swift */; };
 		47C01E1C2BB2981800D1B2F2 /* AddAnnouncementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01E1B2BB2981800D1B2F2 /* AddAnnouncementViewModel.swift */; };
+		47C01E202BB2B26D00D1B2F2 /* AddAnnouncementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01E1F2BB2B26D00D1B2F2 /* AddAnnouncementView.swift */; };
+		47C01E222BB2B5C500D1B2F2 /* AddAnnouncementFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01E212BB2B5C500D1B2F2 /* AddAnnouncementFlowFactory.swift */; };
+		47C01E242BB2B5E700D1B2F2 /* AddAnnouncementCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01E232BB2B5E700D1B2F2 /* AddAnnouncementCoordinator.swift */; };
+		47C01E262BB2B5F400D1B2F2 /* AddAnnouncementOutputCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01E252BB2B5F400D1B2F2 /* AddAnnouncementOutputCoordinator.swift */; };
 		47C7B3772B812A3700125172 /* AppColorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C7B3762B812A3700125172 /* AppColorProtocol.swift */; };
 		47C7B3792B812AF000125172 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C7B3782B812AF000125172 /* AppColor.swift */; };
 		47C7B37E2B81321800125172 /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 47C7B37A2B81321700125172 /* SF-Pro-Display-Semibold.otf */; };
@@ -224,6 +228,10 @@
 		47C01E0F2BB28CCD00D1B2F2 /* FavoritesFlowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesFlowFactory.swift; sourceTree = "<group>"; };
 		47C01E192BB297E300D1B2F2 /* AddAnnouncementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnnouncementViewController.swift; sourceTree = "<group>"; };
 		47C01E1B2BB2981800D1B2F2 /* AddAnnouncementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnnouncementViewModel.swift; sourceTree = "<group>"; };
+		47C01E1F2BB2B26D00D1B2F2 /* AddAnnouncementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnnouncementView.swift; sourceTree = "<group>"; };
+		47C01E212BB2B5C500D1B2F2 /* AddAnnouncementFlowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnnouncementFlowFactory.swift; sourceTree = "<group>"; };
+		47C01E232BB2B5E700D1B2F2 /* AddAnnouncementCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnnouncementCoordinator.swift; sourceTree = "<group>"; };
+		47C01E252BB2B5F400D1B2F2 /* AddAnnouncementOutputCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnnouncementOutputCoordinator.swift; sourceTree = "<group>"; };
 		47C7B3762B812A3700125172 /* AppColorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColorProtocol.swift; sourceTree = "<group>"; };
 		47C7B3782B812AF000125172 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
 		47C7B37A2B81321700125172 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
@@ -858,6 +866,7 @@
 		47C01E142BB2978600D1B2F2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				47C01E1F2BB2B26D00D1B2F2 /* AddAnnouncementView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -872,6 +881,7 @@
 		47C01E162BB2979F00D1B2F2 /* Factory */ = {
 			isa = PBXGroup;
 			children = (
+				47C01E212BB2B5C500D1B2F2 /* AddAnnouncementFlowFactory.swift */,
 			);
 			path = Factory;
 			sourceTree = "<group>";
@@ -879,6 +889,8 @@
 		47C01E172BB297A500D1B2F2 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				47C01E232BB2B5E700D1B2F2 /* AddAnnouncementCoordinator.swift */,
+				47C01E252BB2B5F400D1B2F2 /* AddAnnouncementOutputCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -1329,11 +1341,13 @@
 				47CD672D2B8C3DD50035DCB6 /* BaseViewController.swift in Sources */,
 				475224DB2BA9CE4B000DAE1B /* Presentable.swift in Sources */,
 				47C01DE72BAE094B00D1B2F2 /* ForgotPasswordFlowFactory.swift in Sources */,
+				47C01E262BB2B5F400D1B2F2 /* AddAnnouncementOutputCoordinator.swift in Sources */,
 				47D54CC52B91EC7200021FA7 /* MainScreenViewController.swift in Sources */,
 				475224FA2BA9FECB000DAE1B /* AuthFlowFactory.swift in Sources */,
 				47C01E1C2BB2981800D1B2F2 /* AddAnnouncementViewModel.swift in Sources */,
 				47C01E1A2BB297E300D1B2F2 /* AddAnnouncementViewController.swift in Sources */,
 				47CD67242B88A8E10035DCB6 /* SetPasswordViewModel.swift in Sources */,
+				47C01E242BB2B5E700D1B2F2 /* AddAnnouncementCoordinator.swift in Sources */,
 				475224AE2BA40963000DAE1B /* ProfileView.swift in Sources */,
 				47D54CB82B9196B200021FA7 /* BottomSheetCell.swift in Sources */,
 				47C01DF92BB1A6ED00D1B2F2 /* TabBarItemType.swift in Sources */,
@@ -1347,6 +1361,7 @@
 				475224CB2BA99242000DAE1B /* TabBarViewModel.swift in Sources */,
 				47C01DFD2BB1B35C00D1B2F2 /* MainScreenOutputCoordinator.swift in Sources */,
 				47C01E042BB2890400D1B2F2 /* AnnouncementsType.swift in Sources */,
+				47C01E222BB2B5C500D1B2F2 /* AddAnnouncementFlowFactory.swift in Sources */,
 				47C01DEB2BAEF2D600D1B2F2 /* UIDevice+Extensions.swift in Sources */,
 				475224B42BA41AED000DAE1B /* ProfileAboutView.swift in Sources */,
 				471086522B9E42E100556C2D /* TabBarController.swift in Sources */,
@@ -1375,6 +1390,7 @@
 				475224CF2BA9CA21000DAE1B /* Coordinator.swift in Sources */,
 				4764D5952B85A0A500D15A2E /* LoginViewModel.swift in Sources */,
 				4752249D2BA05187000DAE1B /* AnnouncementsViewController.swift in Sources */,
+				47C01E202BB2B26D00D1B2F2 /* AddAnnouncementView.swift in Sources */,
 				47C01DE02BAE07C300D1B2F2 /* ForgotPasswordOutputCoordinator.swift in Sources */,
 				47C01DEF2BB09BE500D1B2F2 /* AlertFlowFactory.swift in Sources */,
 				475224ED2BA9E882000DAE1B /* SplashScreenOutputCoordinator.swift in Sources */,

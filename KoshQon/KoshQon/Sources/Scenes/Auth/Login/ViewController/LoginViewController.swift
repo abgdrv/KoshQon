@@ -53,6 +53,7 @@ private extension LoginViewController {
         loginView.didLogin = { [weak self] model in
             guard let self = self else { return }
             self.viewModel.login(loginModel: model)
+            self.didLogin?()
         }
         
         loginView.didRegister = { [weak self] in

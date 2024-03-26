@@ -13,19 +13,20 @@ final class TabBarController: UITabBarController {
     
     var didMainScreenSelect: Callback<UINavigationController>?
     var didFavoritesSelect: Callback<UINavigationController>?
-    var didAddSelect: Callback<UINavigationController>?
+    var didAddAnnouncementSelect: Callback<UINavigationController>?
     var didMessagesSelect: Callback<UINavigationController>?
     var didProfileSelect: Callback<UINavigationController>?
+    var didViewAppear: Callback<UINavigationController>?
     
     private let viewModel: TabBarViewModel
-//    private let defaultVC: UINavigationController
+    private let defaultVC: UINavigationController
     private let tabBarItems = TabBarItemType.allCases
     
     // MARK: - Object Lifecycle
     
     init(viewModel: TabBarViewModel) {
         self.viewModel = viewModel
-//        self.defaultVC = UINavigationController()
+        self.defaultVC = UINavigationController()
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -40,6 +41,11 @@ final class TabBarController: UITabBarController {
         setup()
         setupControllers()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        didViewAppear?(defaultVC)
+    }
 }
 
 // MARK: - UITabBarControllerDelegate
@@ -49,15 +55,8 @@ extension TabBarController: UITabBarControllerDelegate {
                           shouldSelect viewController: UIViewController) -> Bool {
         let index = viewControllers?.firstIndex(of: viewController)
         if index == 2 {
-//            let addController = UIViewController().apply {
-//                $0.view.backgroundColor = .red
-//            }
-//            addController.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Закрыть", style: .plain, target: self, action: #selector(close))
-//            let someNavController = UINavigationController(rootViewController: addController)
-//            someNavController.modalPresentationStyle = .overFullScreen
-//            self.present(someNavController, animated: true, completion: nil)
             if let controller = viewController as? UINavigationController {
-                didAddSelect?(controller)
+                didAddAnnouncementSelect?(controller)
             }
             return false
         }
@@ -88,7 +87,6 @@ private extension TabBarController {
         tabBar.tintColor = AppColor.Theme.mainTitle.uiColor
         tabBar.unselectedItemTintColor = AppColor.Static.darkGray.uiColor
         tabBar.backgroundColor = AppColor.Theme.mainBackground.uiColor
-        selectedViewController = viewControllers?.first
         delegate = self
     }
     
@@ -97,16 +95,18 @@ private extension TabBarController {
         tabBarItems.forEach { item in
             let vc: UINavigationController
             switch item {
-            case .add:
-                vc = UINavigationController()
-                vc.tabBarItem.setTitleTextAttributes(
-                    [NSAttributedString.Key.foregroundColor: AppColor.Static.orange.uiColor],
-                    for: .normal
-                )
+            case .main:
+                vc = defaultVC
             default:
                 vc = UINavigationController()
             }
             vc.tabBarItem = UITabBarItem(title: item.title, image: item.icon, selectedImage: item.selectedIcon)
+            if item == .add {
+                vc.tabBarItem.setTitleTextAttributes(
+                    [NSAttributedString.Key.foregroundColor: AppColor.Static.orange.uiColor],
+                    for: .normal
+                )
+            }
             vc.tabBarItem.tag = item.rawValue
             vcs.append(vc)
         }

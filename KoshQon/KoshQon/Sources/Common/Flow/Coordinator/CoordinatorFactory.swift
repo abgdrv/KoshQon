@@ -14,8 +14,10 @@ protocol CoordinatorFactoryProtocol {
                              coordinatorFactory: CoordinatorFactoryProtocol) -> Coordinator & AuthOutputCoordinator
     func makeRegisterCoordinator(router: RouterProtocol) -> Coordinator & RegisterOutputCoordinator
     func makeForgotPasswordCoordinator(router: RouterProtocol) -> Coordinator & ForgotPasswordOutputCoordinator
+    func makeTabBarCoordinator(router: RouterProtocol, coordinatorFactory: CoordinatorFactoryProtocol) -> Coordinator & TabBarOutputCoordinator
     func makeMainScreenCoordinator(navController: UINavigationController) -> Coordinator & MainScreenOutputCoordinator
     func makeFavoritesCoordinator(navController: UINavigationController) -> Coordinator & FavoritesOutputCoordinator
+    func makeAddAnnouncementCoordinator(navController: UINavigationController) -> Coordinator & AddAnnouncementOutputCoordinator
 }
 
 final class CoordinatorFactory: CoordinatorFactoryProtocol {
@@ -42,6 +44,11 @@ final class CoordinatorFactory: CoordinatorFactoryProtocol {
         return coordinator
     }
     
+    func makeTabBarCoordinator(router: RouterProtocol, coordinatorFactory: CoordinatorFactoryProtocol) -> Coordinator & TabBarOutputCoordinator {
+        let coordinator = TabBarCoordinator(router: router, factory: FlowFactory.shared, coordinatorFactory: coordinatorFactory)
+        return coordinator
+    }
+    
     func makeMainScreenCoordinator(navController: UINavigationController) -> Coordinator & MainScreenOutputCoordinator {
         let coordinator = MainScreenCoordinator(router: router(navController), factory: FlowFactory.shared, coordinatorFactory: self)
         return coordinator
@@ -49,6 +56,11 @@ final class CoordinatorFactory: CoordinatorFactoryProtocol {
     
     func makeFavoritesCoordinator(navController: UINavigationController) -> any Coordinator & FavoritesOutputCoordinator {
         let coordinator = FavoritesCoordinator(router: router(navController), factory: FlowFactory.shared, coordinatorFactory: self)
+        return coordinator
+    }
+    
+    func makeAddAnnouncementCoordinator(navController: UINavigationController) -> any AddAnnouncementOutputCoordinator & Coordinator {
+        let coordinator = AddAnnouncementCoordinator(router: router(navController), factory: FlowFactory.shared)
         return coordinator
     }
 }

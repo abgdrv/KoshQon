@@ -37,8 +37,10 @@ final class TabBarCoordinator: BaseCoordinator, TabBarOutputCoordinator {
 private extension TabBarCoordinator {
     func showTabBar() {
         let tabBarView = factory.makeTabBarView()
+        tabBarView.didViewAppear = showMainScreenFlow()
         tabBarView.didMainScreenSelect = showMainScreenFlow()
         tabBarView.didFavoritesSelect = showFavorites()
+        tabBarView.didAddAnnouncementSelect = showAddAnnouncement()
         router.setRootModule(tabBarView, hideNavBar: true)
     }
     
@@ -47,7 +49,6 @@ private extension TabBarCoordinator {
             self.navController = navController
             if navController.viewControllers.isEmpty {
                 var coordinator = self.coordinatorFactory.makeMainScreenCoordinator(navController: navController)
-                self.addDependency(coordinator)
                 coordinator.finishFlow = { [weak self] in
                     guard let self = self else { return }
                     self.removeDependency(coordinator)
@@ -57,6 +58,7 @@ private extension TabBarCoordinator {
                     guard let self = self else { return }
                     self.start()
                 }
+                self.addDependency(coordinator)
                 coordinator.start()
             }
         }
@@ -67,28 +69,29 @@ private extension TabBarCoordinator {
             self.navController = navController
             if navController.viewControllers.isEmpty {
                 var coordinator = self.coordinatorFactory.makeFavoritesCoordinator(navController: navController)
-                self.addDependency(coordinator)
                 coordinator.finishFlow = { [weak self] in
                     guard let self = self else { return }
                     self.removeDependency(coordinator)
                     self.finishFlow?()
                 }
+                self.addDependency(coordinator)
                 coordinator.start()
             }
         }
     }
     
-    func showAdd() -> Callback<UINavigationController> {
+    func showAddAnnouncement() -> Callback<UINavigationController> {
         return { [unowned self] navController in
             self.navController = navController
+            let view = factory.makeAddAnnouncementView()
             if navController.viewControllers.isEmpty {
-                var coordinator = self.coordinatorFactory.makeFavoritesCoordinator(navController: navController)
-                self.addDependency(coordinator)
+                var coordinator = self.coordinatorFactory.makeAddAnnouncementCoordinator(navController: navController)
                 coordinator.finishFlow = { [weak self] in
                     guard let self = self else { return }
                     self.removeDependency(coordinator)
                     self.finishFlow?()
                 }
+                self.addDependency(coordinator)
                 coordinator.start()
             }
         }
