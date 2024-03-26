@@ -16,6 +16,10 @@ final class SetPasswordViewController: BaseViewController {
     private let viewModel: SetPasswordViewModel
     private let type: SetPasswordType
     
+    override var navigationType: NavigationTitleType? {
+        return .createPassword
+    }
+    
     // MARK: - UI
     
     private lazy var setPasswordView = SetPasswordView(type: type)
@@ -27,11 +31,7 @@ final class SetPasswordViewController: BaseViewController {
         self.type = type
         super.init(nibName: nil, bundle: nil)
     }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
+
     // MARK: - View Lifecycle
     
     override func loadView() {
@@ -41,7 +41,6 @@ final class SetPasswordViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupNavigation()
         setupBindings()
     }
 }
@@ -49,10 +48,6 @@ final class SetPasswordViewController: BaseViewController {
 // MARK: - Setup
 
 private extension SetPasswordViewController {
-    func setupNavigation() {
-        navigationItem.titleView = NavigationTitleView(type: .createPassword)
-    }
-    
     func setupBindings() {
         setPasswordView.didFinish = { [weak self] in
             guard let self = self else { return }

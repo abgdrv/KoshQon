@@ -15,6 +15,10 @@ final class SmsCodeViewController: BaseViewController {
     
     private let viewModel: SmsCodeViewModel
     
+    override var navigationType: NavigationTitleType? {
+        return .sms
+    }
+    
     // MARK: - UI
     
     private lazy var smsCodeView = SmsCodeView(viewModel: viewModel)
@@ -25,11 +29,7 @@ final class SmsCodeViewController: BaseViewController {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
+
     // MARK: - View Lifecycle
     
     override func loadView() {
@@ -39,7 +39,6 @@ final class SmsCodeViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupNavigation()
         setupBindings()
     }
 }
@@ -47,10 +46,6 @@ final class SmsCodeViewController: BaseViewController {
 // MARK: - Setup
 
 private extension SmsCodeViewController {
-    func setupNavigation() {
-        navigationItem.titleView = NavigationTitleView(type: .sms)
-    }
-    
     func setupBindings() {
         smsCodeView.didFinish = { [weak self] in
             guard let self = self else { return }

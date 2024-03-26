@@ -72,10 +72,6 @@ final class LoginView: BaseView {
         setupBindings()
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     // MARK: - View Lifecycle
     
     override func layoutSubviews() {
@@ -98,7 +94,7 @@ private extension LoginView {
     
     func setupConstraints() {
         appNameLabel.snp.makeConstraints { make in
-            make.bottom.equalTo(formView.snp.top).offset(-50)
+            make.centerY.equalToSuperview().multipliedBy(0.33)
             make.centerX.equalToSuperview()
         }
         

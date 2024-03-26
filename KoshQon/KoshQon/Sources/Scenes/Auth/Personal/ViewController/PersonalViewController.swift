@@ -20,6 +20,10 @@ final class PersonalViewController: BaseViewController {
     
     private let viewModel: PersonalViewModel
     
+    override var navigationType: NavigationTitleType? {
+        return .personalInfo
+    }
+    
     // MARK: - UI
     
     private lazy var personalView = PersonalView()
@@ -32,10 +36,6 @@ final class PersonalViewController: BaseViewController {
         super.init(nibName: nil, bundle: nil)
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     // MARK: - View Lifecycle
     
     override func loadView() {
@@ -45,7 +45,6 @@ final class PersonalViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupNavigation()
         setupBindings()
     }
 }
@@ -53,10 +52,6 @@ final class PersonalViewController: BaseViewController {
 // MARK: - Setup
 
 private extension PersonalViewController {
-    func setupNavigation() {
-        navigationItem.titleView = NavigationTitleView(type: .personalInfo)
-    }
-    
     func setupBindings() {
         personalView.didFinish = { [weak self] in
             guard let self = self else { return }

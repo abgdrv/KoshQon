@@ -13,8 +13,10 @@ final class MainScreenViewController: BaseViewController {
     
     private let viewModel: MainScreenViewModel
     
-    // TODO: VM
-    
+    override var navigationType: NavigationTitleType? {
+        return .main
+    }
+        
     // MARK: - UI
     
     private lazy var mainScreenView = MainScreenView(viewModel: viewModel)
@@ -25,11 +27,7 @@ final class MainScreenViewController: BaseViewController {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
+
     // MARK: - View Lifecycle
     
     override func loadView() {
@@ -39,14 +37,5 @@ final class MainScreenViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupNavigation()
-    }
-}
-
-// MARK: - Setup
-
-private extension MainScreenViewController {
-    func setupNavigation() {
-        navigationItem.titleView = NavigationTitleView(type: .main)
     }
 }

@@ -63,7 +63,7 @@ final class PersonalView: BaseView {
         components.month = 0
         let maxDate = calendar.date(byAdding: components, to: currentDate)
         
-        components.year = -50
+        components.year = -94
         let minDate = calendar.date(byAdding: components, to: currentDate)
         
         $0.maximumDate = maxDate
@@ -77,10 +77,6 @@ final class PersonalView: BaseView {
         setupViews()
         setupConstraints()
         setupBindings()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
     // MARK: - View Lifecycle

@@ -13,6 +13,10 @@ final class ProfileViewViewController: BaseViewController {
     
     private let viewModel: ProfileViewModel
     
+    override var navigationType: NavigationTitleType? {
+        return .profile
+    }
+    
     // MARK: - UI
     
     private lazy var profileView = ProfileView(viewModel: viewModel)
@@ -23,11 +27,7 @@ final class ProfileViewViewController: BaseViewController {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
+
     // MARK: - View Lifecycle
     
     override func loadView() {
@@ -45,7 +45,6 @@ final class ProfileViewViewController: BaseViewController {
 
 private extension ProfileViewViewController {
     func setupNavigation() {
-        navigationItem.titleView = NavigationTitleView(type: .profile)
         let editImage = AppImage.Profile.edit.uiImage?.withRenderingMode(.alwaysOriginal)
         let editButton = UIBarButtonItem(image: editImage,
                                          style: .plain,

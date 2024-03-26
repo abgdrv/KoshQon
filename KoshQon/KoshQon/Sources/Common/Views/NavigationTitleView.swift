@@ -28,8 +28,9 @@ final class NavigationTitleView: UIView {
     
     // MARK: - Properties
     
-    private let type: NavigationTitleType
-    private let title: String?
+    var title: String?
+    
+    private let type: NavigationTitleType?
     private var isIcon = false
     
     override var intrinsicContentSize: CGSize {
@@ -52,7 +53,7 @@ final class NavigationTitleView: UIView {
         
     // MARK: - Object Lifecycle
     
-    init(type: NavigationTitleType, title: String? = nil) {
+    init(type: NavigationTitleType?, title: String? = nil) {
         self.type = type
         self.title = title
         super.init(frame: .zero)
@@ -135,11 +136,14 @@ private extension NavigationTitleView {
             isIcon = true
         case .myAnnouncements:
             setupLabel(text: "Мои объявления")
+        case .none:
+            break
         }
     }
     
     func setupLabel(text: String?, font: UIFont = AppFont.medium.s20) {
         titleLabel.set(font: font, textColor: AppColor.Theme.mainTitle.uiColor)
         titleLabel.text = text
+        title = text
     }
 }

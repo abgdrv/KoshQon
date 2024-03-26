@@ -16,6 +16,10 @@ final class EnterPhoneViewController: BaseViewController {
     private let viewModel: EnterPhoneViewModel
     private let type: EnterPhoneType
     
+    override var navigationType: NavigationTitleType? {
+        return type == .register ? .registration : .forgotPassword
+    }
+    
     // MARK: - UI
     
     private lazy var enterPhoneView = EnterPhoneView(type: type)
@@ -28,10 +32,6 @@ final class EnterPhoneViewController: BaseViewController {
         super.init(nibName: nil, bundle: nil)
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     // MARK: - View Lifecycle
     
     override func loadView() {
@@ -41,7 +41,6 @@ final class EnterPhoneViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupNavigation()
         setupBindings()
     }
 }
@@ -49,12 +48,6 @@ final class EnterPhoneViewController: BaseViewController {
 // MARK: - Setup
 
 private extension EnterPhoneViewController {
-    func setupNavigation() {
-        navigationItem.titleView = NavigationTitleView(type: type == .register
-                                                       ? .registration
-                                                       : .forgotPassword)
-    }
-    
     func setupBindings() {
         enterPhoneView.didFinish = { [weak self] in
             guard let self = self else { return }
