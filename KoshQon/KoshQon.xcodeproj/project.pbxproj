@@ -94,6 +94,8 @@
 		47C01E0C2BB28C4600D1B2F2 /* FavoritesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01E0B2BB28C4600D1B2F2 /* FavoritesCoordinator.swift */; };
 		47C01E0E2BB28C5200D1B2F2 /* FavoritesOutputCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01E0D2BB28C5200D1B2F2 /* FavoritesOutputCoordinator.swift */; };
 		47C01E102BB28CCD00D1B2F2 /* FavoritesFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01E0F2BB28CCD00D1B2F2 /* FavoritesFlowFactory.swift */; };
+		47C01E1A2BB297E300D1B2F2 /* AddAnnouncementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01E192BB297E300D1B2F2 /* AddAnnouncementViewController.swift */; };
+		47C01E1C2BB2981800D1B2F2 /* AddAnnouncementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01E1B2BB2981800D1B2F2 /* AddAnnouncementViewModel.swift */; };
 		47C7B3772B812A3700125172 /* AppColorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C7B3762B812A3700125172 /* AppColorProtocol.swift */; };
 		47C7B3792B812AF000125172 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C7B3782B812AF000125172 /* AppColor.swift */; };
 		47C7B37E2B81321800125172 /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 47C7B37A2B81321700125172 /* SF-Pro-Display-Semibold.otf */; };
@@ -220,6 +222,8 @@
 		47C01E0B2BB28C4600D1B2F2 /* FavoritesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCoordinator.swift; sourceTree = "<group>"; };
 		47C01E0D2BB28C5200D1B2F2 /* FavoritesOutputCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesOutputCoordinator.swift; sourceTree = "<group>"; };
 		47C01E0F2BB28CCD00D1B2F2 /* FavoritesFlowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesFlowFactory.swift; sourceTree = "<group>"; };
+		47C01E192BB297E300D1B2F2 /* AddAnnouncementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnnouncementViewController.swift; sourceTree = "<group>"; };
+		47C01E1B2BB2981800D1B2F2 /* AddAnnouncementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnnouncementViewModel.swift; sourceTree = "<group>"; };
 		47C7B3762B812A3700125172 /* AppColorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColorProtocol.swift; sourceTree = "<group>"; };
 		47C7B3782B812AF000125172 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
 		47C7B37A2B81321700125172 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
@@ -500,6 +504,7 @@
 				4710864D2B9E3FF400556C2D /* TabBar */,
 				47D54CBC2B91E8F800021FA7 /* MainScreen */,
 				475224992BA04EC5000DAE1B /* Announcements */,
+				47C01E112BB2973900D1B2F2 /* AddAnnouncement */,
 				475224A62BA40726000DAE1B /* Profile */,
 			);
 			path = Scenes;
@@ -819,6 +824,63 @@
 				47C01E0F2BB28CCD00D1B2F2 /* FavoritesFlowFactory.swift */,
 			);
 			path = Factory;
+			sourceTree = "<group>";
+		};
+		47C01E112BB2973900D1B2F2 /* AddAnnouncement */ = {
+			isa = PBXGroup;
+			children = (
+				47C01E172BB297A500D1B2F2 /* Coordinator */,
+				47C01E162BB2979F00D1B2F2 /* Factory */,
+				47C01E152BB2979500D1B2F2 /* Model */,
+				47C01E142BB2978600D1B2F2 /* Views */,
+				47C01E132BB2977100D1B2F2 /* ViewController */,
+				47C01E122BB2975F00D1B2F2 /* ViewModel */,
+			);
+			path = AddAnnouncement;
+			sourceTree = "<group>";
+		};
+		47C01E122BB2975F00D1B2F2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				47C01E1B2BB2981800D1B2F2 /* AddAnnouncementViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		47C01E132BB2977100D1B2F2 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				47C01E192BB297E300D1B2F2 /* AddAnnouncementViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		47C01E142BB2978600D1B2F2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		47C01E152BB2979500D1B2F2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		47C01E162BB2979F00D1B2F2 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		47C01E172BB297A500D1B2F2 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		47C7B3752B8129E800125172 /* Extensions */ = {
@@ -1269,6 +1331,8 @@
 				47C01DE72BAE094B00D1B2F2 /* ForgotPasswordFlowFactory.swift in Sources */,
 				47D54CC52B91EC7200021FA7 /* MainScreenViewController.swift in Sources */,
 				475224FA2BA9FECB000DAE1B /* AuthFlowFactory.swift in Sources */,
+				47C01E1C2BB2981800D1B2F2 /* AddAnnouncementViewModel.swift in Sources */,
+				47C01E1A2BB297E300D1B2F2 /* AddAnnouncementViewController.swift in Sources */,
 				47CD67242B88A8E10035DCB6 /* SetPasswordViewModel.swift in Sources */,
 				475224AE2BA40963000DAE1B /* ProfileView.swift in Sources */,
 				47D54CB82B9196B200021FA7 /* BottomSheetCell.swift in Sources */,

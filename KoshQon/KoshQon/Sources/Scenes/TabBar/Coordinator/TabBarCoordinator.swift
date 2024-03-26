@@ -77,4 +77,20 @@ private extension TabBarCoordinator {
             }
         }
     }
+    
+    func showAdd() -> Callback<UINavigationController> {
+        return { [unowned self] navController in
+            self.navController = navController
+            if navController.viewControllers.isEmpty {
+                var coordinator = self.coordinatorFactory.makeFavoritesCoordinator(navController: navController)
+                self.addDependency(coordinator)
+                coordinator.finishFlow = { [weak self] in
+                    guard let self = self else { return }
+                    self.removeDependency(coordinator)
+                    self.finishFlow?()
+                }
+                coordinator.start()
+            }
+        }
+    }
 }
