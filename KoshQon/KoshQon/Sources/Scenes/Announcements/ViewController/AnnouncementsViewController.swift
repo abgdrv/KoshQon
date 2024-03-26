@@ -14,6 +14,10 @@ final class AnnouncementsViewController: BaseViewController {
     private let viewModel: AnnouncementsViewModel
     private let type: AnnouncementsType
     
+    override var navigationType: NavigationTitleType? {
+        return type == .favorites ? .favorites : .myAnnouncements
+    }
+    
     // MARK: - UI
     
     private lazy var announcementsView = AnnouncementsView(viewModel: viewModel, type: type)
@@ -25,11 +29,7 @@ final class AnnouncementsViewController: BaseViewController {
         self.type = type
         super.init(nibName: nil, bundle: nil)
     }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
+
     // MARK: - View Lifecycle
     
     override func loadView() {
@@ -39,14 +39,5 @@ final class AnnouncementsViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupNavigation()
-    }
-}
-
-// MARK: - Navigation
-
-private extension AnnouncementsViewController {
-    func setupNavigation() {
-        navigationItem.titleView = NavigationTitleView(type: type == .favorites ? .favorites : .myAnnouncements)
     }
 }
