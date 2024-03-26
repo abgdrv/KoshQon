@@ -15,7 +15,7 @@ enum TabBarItemType: Int, CaseIterable {
     case favorites = 1
     case add = 2
     case messages = 3
-    case profile = 5
+    case profile = 4
     
     var title: String {
         switch self {

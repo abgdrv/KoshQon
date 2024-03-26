@@ -1,5 +1,5 @@
 //
-//  ProfileViewViewController.swift
+//  ProfileViewController.swift
 //  KoshQon
 //
 //  Created by Almat Begaidarov on 15.03.2024.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ProfileViewViewController: BaseViewController {
+final class ProfileViewController: BaseViewController {
     
     // MARK: - Properties
     
@@ -43,7 +43,7 @@ final class ProfileViewViewController: BaseViewController {
 
 // MARK: - Navigation
 
-private extension ProfileViewViewController {
+private extension ProfileViewController {
     func setupNavigation() {
         let editImage = AppImage.Profile.edit.uiImage?.withRenderingMode(.alwaysOriginal)
         let editButton = UIBarButtonItem(image: editImage,
@@ -62,7 +62,7 @@ private extension ProfileViewViewController {
 
 // MARK: - Actions
 
-private extension ProfileViewViewController {
+private extension ProfileViewController {
     @objc func editButtonTapped() {
         
     }

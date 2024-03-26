@@ -27,7 +27,7 @@
 		4752249F2BA051EA000DAE1B /* AnnouncementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4752249E2BA051EA000DAE1B /* AnnouncementsView.swift */; };
 		475224A22BA05800000DAE1B /* AnnouncementsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475224A12BA05800000DAE1B /* AnnouncementsViewModel.swift */; };
 		475224A52BA162A4000DAE1B /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475224A42BA162A4000DAE1B /* Reusable.swift */; };
-		475224AC2BA407E6000DAE1B /* ProfileViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475224AB2BA407E6000DAE1B /* ProfileViewViewController.swift */; };
+		475224AC2BA407E6000DAE1B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475224AB2BA407E6000DAE1B /* ProfileViewController.swift */; };
 		475224AE2BA40963000DAE1B /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475224AD2BA40963000DAE1B /* ProfileView.swift */; };
 		475224B22BA40E28000DAE1B /* ProfileTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475224B12BA40E28000DAE1B /* ProfileTopView.swift */; };
 		475224B42BA41AED000DAE1B /* ProfileAboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475224B32BA41AED000DAE1B /* ProfileAboutView.swift */; };
@@ -100,6 +100,9 @@
 		47C01E222BB2B5C500D1B2F2 /* AddAnnouncementFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01E212BB2B5C500D1B2F2 /* AddAnnouncementFlowFactory.swift */; };
 		47C01E242BB2B5E700D1B2F2 /* AddAnnouncementCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01E232BB2B5E700D1B2F2 /* AddAnnouncementCoordinator.swift */; };
 		47C01E262BB2B5F400D1B2F2 /* AddAnnouncementOutputCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01E252BB2B5F400D1B2F2 /* AddAnnouncementOutputCoordinator.swift */; };
+		47C01E2C2BB2D9B800D1B2F2 /* ProfileOutputCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01E2B2BB2D9B800D1B2F2 /* ProfileOutputCoordinator.swift */; };
+		47C01E2E2BB2D9D100D1B2F2 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01E2D2BB2D9D100D1B2F2 /* ProfileCoordinator.swift */; };
+		47C01E302BB2DA1400D1B2F2 /* ProfileFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01E2F2BB2DA1400D1B2F2 /* ProfileFlowFactory.swift */; };
 		47C7B3772B812A3700125172 /* AppColorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C7B3762B812A3700125172 /* AppColorProtocol.swift */; };
 		47C7B3792B812AF000125172 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C7B3782B812AF000125172 /* AppColor.swift */; };
 		47C7B37E2B81321800125172 /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 47C7B37A2B81321700125172 /* SF-Pro-Display-Semibold.otf */; };
@@ -157,7 +160,7 @@
 		4752249E2BA051EA000DAE1B /* AnnouncementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementsView.swift; sourceTree = "<group>"; };
 		475224A12BA05800000DAE1B /* AnnouncementsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementsViewModel.swift; sourceTree = "<group>"; };
 		475224A42BA162A4000DAE1B /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
-		475224AB2BA407E6000DAE1B /* ProfileViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewViewController.swift; sourceTree = "<group>"; };
+		475224AB2BA407E6000DAE1B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		475224AD2BA40963000DAE1B /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		475224B12BA40E28000DAE1B /* ProfileTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTopView.swift; sourceTree = "<group>"; };
 		475224B32BA41AED000DAE1B /* ProfileAboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAboutView.swift; sourceTree = "<group>"; };
@@ -232,6 +235,9 @@
 		47C01E212BB2B5C500D1B2F2 /* AddAnnouncementFlowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnnouncementFlowFactory.swift; sourceTree = "<group>"; };
 		47C01E232BB2B5E700D1B2F2 /* AddAnnouncementCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnnouncementCoordinator.swift; sourceTree = "<group>"; };
 		47C01E252BB2B5F400D1B2F2 /* AddAnnouncementOutputCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnnouncementOutputCoordinator.swift; sourceTree = "<group>"; };
+		47C01E2B2BB2D9B800D1B2F2 /* ProfileOutputCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOutputCoordinator.swift; sourceTree = "<group>"; };
+		47C01E2D2BB2D9D100D1B2F2 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
+		47C01E2F2BB2DA1400D1B2F2 /* ProfileFlowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFlowFactory.swift; sourceTree = "<group>"; };
 		47C7B3762B812A3700125172 /* AppColorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColorProtocol.swift; sourceTree = "<group>"; };
 		47C7B3782B812AF000125172 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
 		47C7B37A2B81321700125172 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
@@ -513,6 +519,7 @@
 				47D54CBC2B91E8F800021FA7 /* MainScreen */,
 				475224992BA04EC5000DAE1B /* Announcements */,
 				47C01E112BB2973900D1B2F2 /* AddAnnouncement */,
+				47C01E282BB2D91A00D1B2F2 /* Messages */,
 				475224A62BA40726000DAE1B /* Profile */,
 			);
 			path = Scenes;
@@ -590,6 +597,8 @@
 		475224A62BA40726000DAE1B /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				47C01E2A2BB2D9A800D1B2F2 /* Coordinator */,
+				47C01E292BB2D99D00D1B2F2 /* Factory */,
 				475224AA2BA407A1000DAE1B /* Model */,
 				475224A72BA4074F000DAE1B /* Views */,
 				475224A82BA4077D000DAE1B /* ViewController */,
@@ -616,7 +625,7 @@
 		475224A82BA4077D000DAE1B /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				475224AB2BA407E6000DAE1B /* ProfileViewViewController.swift */,
+				475224AB2BA407E6000DAE1B /* ProfileViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -891,6 +900,30 @@
 			children = (
 				47C01E232BB2B5E700D1B2F2 /* AddAnnouncementCoordinator.swift */,
 				47C01E252BB2B5F400D1B2F2 /* AddAnnouncementOutputCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		47C01E282BB2D91A00D1B2F2 /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Messages;
+			sourceTree = "<group>";
+		};
+		47C01E292BB2D99D00D1B2F2 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				47C01E2F2BB2DA1400D1B2F2 /* ProfileFlowFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		47C01E2A2BB2D9A800D1B2F2 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				47C01E2D2BB2D9D100D1B2F2 /* ProfileCoordinator.swift */,
+				47C01E2B2BB2D9B800D1B2F2 /* ProfileOutputCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -1316,7 +1349,7 @@
 				475224F22BA9ECAF000DAE1B /* SplashScreenCoordinator.swift in Sources */,
 				47C01DF12BB19AAB00D1B2F2 /* TabBarOutputCoordinator.swift in Sources */,
 				475224F02BA9EC78000DAE1B /* SplashScreenFlowFactory.swift in Sources */,
-				475224AC2BA407E6000DAE1B /* ProfileViewViewController.swift in Sources */,
+				475224AC2BA407E6000DAE1B /* ProfileViewController.swift in Sources */,
 				475224BE2BA45A4A000DAE1B /* ProfileCommonView.swift in Sources */,
 				475225032BAB5B28000DAE1B /* MenuButton.swift in Sources */,
 				475224962BA04E94000DAE1B /* MainNavigationCellViewModel.swift in Sources */,
@@ -1358,6 +1391,7 @@
 				47C7B3772B812A3700125172 /* AppColorProtocol.swift in Sources */,
 				47CD67162B8762F70035DCB6 /* SmsCodeView.swift in Sources */,
 				475224B82BA443F0000DAE1B /* ProfileAboutInfo.swift in Sources */,
+				47C01E302BB2DA1400D1B2F2 /* ProfileFlowFactory.swift in Sources */,
 				475224CB2BA99242000DAE1B /* TabBarViewModel.swift in Sources */,
 				47C01DFD2BB1B35C00D1B2F2 /* MainScreenOutputCoordinator.swift in Sources */,
 				47C01E042BB2890400D1B2F2 /* AnnouncementsType.swift in Sources */,
@@ -1383,6 +1417,7 @@
 				47D54CE62B963E6B00021FA7 /* UILabel+Extensions.swift in Sources */,
 				475224EB2BA9DE6F000DAE1B /* UIApplication+Extensions.swift in Sources */,
 				47D54CEA2B9640C900021FA7 /* SeparatorView.swift in Sources */,
+				47C01E2C2BB2D9B800D1B2F2 /* ProfileOutputCoordinator.swift in Sources */,
 				47D54CB42B918FA800021FA7 /* BottomSheetViewController.swift in Sources */,
 				47CD675C2B90950E0035DCB6 /* PersonalViewController.swift in Sources */,
 				47CD67182B87635C0035DCB6 /* SmsCodeViewModel.swift in Sources */,
@@ -1402,6 +1437,7 @@
 				47D54CC32B91EC5800021FA7 /* MainScreenView.swift in Sources */,
 				4752249F2BA051EA000DAE1B /* AnnouncementsView.swift in Sources */,
 				47C01DFF2BB1B3BB00D1B2F2 /* MainScreenCoordinator.swift in Sources */,
+				47C01E2E2BB2D9D100D1B2F2 /* ProfileCoordinator.swift in Sources */,
 				47CD67222B88A7AE0035DCB6 /* SetPasswordView.swift in Sources */,
 				475224D32BA9CB15000DAE1B /* CoordinatorFactory.swift in Sources */,
 				475225012BAB37E5000DAE1B /* Gender.swift in Sources */,

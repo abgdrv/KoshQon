@@ -41,6 +41,7 @@ private extension TabBarCoordinator {
         tabBarView.didMainScreenSelect = showMainScreenFlow()
         tabBarView.didFavoritesSelect = showFavorites()
         tabBarView.didAddAnnouncementSelect = showAddAnnouncement()
+        tabBarView.didProfileSelect = showProfile()
         router.setRootModule(tabBarView, hideNavBar: true)
     }
     
@@ -83,9 +84,24 @@ private extension TabBarCoordinator {
     func showAddAnnouncement() -> Callback<UINavigationController> {
         return { [unowned self] navController in
             self.navController = navController
-            let view = factory.makeAddAnnouncementView()
             if navController.viewControllers.isEmpty {
                 var coordinator = self.coordinatorFactory.makeAddAnnouncementCoordinator(navController: navController)
+                coordinator.finishFlow = { [weak self] in
+                    guard let self = self else { return }
+                    self.removeDependency(coordinator)
+                    self.finishFlow?()
+                }
+                self.addDependency(coordinator)
+                coordinator.start()
+            }
+        }
+    }
+    
+    func showProfile() -> Callback<UINavigationController> {
+        return { [unowned self] navController in
+            self.navController = navController
+            if navController.viewControllers.isEmpty {
+                var coordinator = self.coordinatorFactory.makeProfileCoordinator(navController: navController)
                 coordinator.finishFlow = { [weak self] in
                     guard let self = self else { return }
                     self.removeDependency(coordinator)

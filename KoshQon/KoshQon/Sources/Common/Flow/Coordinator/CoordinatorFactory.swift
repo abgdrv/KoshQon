@@ -18,10 +18,10 @@ protocol CoordinatorFactoryProtocol {
     func makeMainScreenCoordinator(navController: UINavigationController) -> Coordinator & MainScreenOutputCoordinator
     func makeFavoritesCoordinator(navController: UINavigationController) -> Coordinator & FavoritesOutputCoordinator
     func makeAddAnnouncementCoordinator(navController: UINavigationController) -> Coordinator & AddAnnouncementOutputCoordinator
+    func makeProfileCoordinator(navController: UINavigationController) -> Coordinator & ProfileOutputCoordinator
 }
 
 final class CoordinatorFactory: CoordinatorFactoryProtocol {
-    
     func makeSplashScreenCoordinator(router: RouterProtocol) -> Coordinator & SplashScreenOutputCoordinator {
         let coordinator = SplashScreenCoordinator(router: router, factory: FlowFactory.shared)
         return coordinator
@@ -61,6 +61,11 @@ final class CoordinatorFactory: CoordinatorFactoryProtocol {
     
     func makeAddAnnouncementCoordinator(navController: UINavigationController) -> any AddAnnouncementOutputCoordinator & Coordinator {
         let coordinator = AddAnnouncementCoordinator(router: router(navController), factory: FlowFactory.shared)
+        return coordinator
+    }
+    
+    func makeProfileCoordinator(navController: UINavigationController) -> any Coordinator & ProfileOutputCoordinator {
+        let coordinator = ProfileCoordinator(router: router(navController), factory: FlowFactory.shared, coordinatorFactory: self)
         return coordinator
     }
 }
