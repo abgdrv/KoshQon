@@ -25,7 +25,7 @@ final class AddAnnouncementViewController: BaseViewController {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
-
+    
     // MARK: - View Lifecycle
     
     override func loadView() {
@@ -37,14 +37,28 @@ final class AddAnnouncementViewController: BaseViewController {
         super.viewDidLoad()
         setupNavigation()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = false
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.navigationBar.isHidden = true
+    }
 }
 
 // MARK: - Setup
 
 private extension AddAnnouncementViewController {
     func setupNavigation() {
-        let closeButton = UIBarButtonItem(title: "Закрыть", style: .plain, target: self,
-                                          action: #selector(closeButtonTapped))
+        let closeButton = UIBarButtonItem(
+            title: "Закрыть",
+            style: .plain,
+            target: self,
+            action: #selector(closeButtonTapped)
+        )
         closeButton.tintColor = AppColor.Static.orange.uiColor
         navigationItem.rightBarButtonItem = closeButton
     }

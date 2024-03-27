@@ -39,9 +39,9 @@ private extension TabBarCoordinator {
         let tabBarView = factory.makeTabBarView()
         tabBarView.didViewAppear = showMainScreenFlow()
         tabBarView.didMainScreenSelect = showMainScreenFlow()
-        tabBarView.didFavoritesSelect = showFavorites()
-        tabBarView.didAddAnnouncementSelect = showAddAnnouncement()
-        tabBarView.didProfileSelect = showProfile()
+        tabBarView.didFavoritesSelect = showFavoritesFlow()
+        tabBarView.didAddAnnouncementSelect = showAddAnnouncementFlow()
+        tabBarView.didProfileSelect = showProfileFlow()
         router.setRootModule(tabBarView, hideNavBar: true)
     }
     
@@ -65,7 +65,7 @@ private extension TabBarCoordinator {
         }
     }
     
-    func showFavorites() -> Callback<UINavigationController> {
+    func showFavoritesFlow() -> Callback<UINavigationController> {
         return { [unowned self] navController in
             self.navController = navController
             if navController.viewControllers.isEmpty {
@@ -80,8 +80,8 @@ private extension TabBarCoordinator {
             }
         }
     }
-    
-    func showAddAnnouncement() -> Callback<UINavigationController> {
+    // Repetition
+    func showAddAnnouncementFlow() -> Callback<UINavigationController> {
         return { [unowned self] navController in
             self.navController = navController
             if navController.viewControllers.isEmpty {
@@ -97,7 +97,7 @@ private extension TabBarCoordinator {
         }
     }
     
-    func showProfile() -> Callback<UINavigationController> {
+    func showProfileFlow() -> Callback<UINavigationController> {
         return { [unowned self] navController in
             self.navController = navController
             if navController.viewControllers.isEmpty {

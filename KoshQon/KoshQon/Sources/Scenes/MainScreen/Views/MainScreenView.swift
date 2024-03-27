@@ -23,7 +23,7 @@ final class MainScreenView: BaseView {
         $0.delegate = self
         $0.rowHeight = UITableView.automaticDimension
         $0.backgroundColor = AppColor.Theme.secondaryBackground.uiColor
-        $0.register(type: MainNavigationCell.self)
+        $0.register(type: NavigationCell.self)
         $0.register(type: AnnouncementCell.self)
     }
     
@@ -63,7 +63,7 @@ extension MainScreenView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
-            let cell = MainNavigationCell(viewModel: viewModel.navigationItemViewModels[indexPath.row])
+            let cell = NavigationCell(viewModel: viewModel.navigationItemViewModels[indexPath.row])
             return cell
         }
         if indexPath.section == 1 {

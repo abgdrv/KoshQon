@@ -1,5 +1,5 @@
 //
-//  MainNavigationCell.swift
+//  NavigationCell.swift
 //  KoshQon
 //
 //  Created by Almat Begaidarov on 04.03.2024.
@@ -8,11 +8,11 @@
 import UIKit
 import SnapKit
 
-final class MainNavigationCell: UITableViewCell {
+final class NavigationCell: UITableViewCell {
 
     // MARK: - Properties
     
-    private var viewModel: MainNavigationCellViewModel? {
+    private var viewModel: NavigationCellViewModel? {
         didSet {
             if let vm = viewModel {
                 setup(vm)
@@ -40,8 +40,8 @@ final class MainNavigationCell: UITableViewCell {
     
     // MARK: - Object Lifecycle
 
-    init(viewModel: MainNavigationCellViewModel) {
-        super.init(style: .default, reuseIdentifier: MainNavigationCell.reuseID)
+    init(viewModel: NavigationCellViewModel) {
+        super.init(style: .default, reuseIdentifier: NavigationCell.reuseID)
         defer {
             self.viewModel = viewModel
             setupViews()
@@ -64,7 +64,7 @@ final class MainNavigationCell: UITableViewCell {
 
 // MARK: - Setup Views
 
-private extension MainNavigationCell {
+private extension NavigationCell {
     func setupViews() {
         backgroundColor = AppColor.Theme.mainBackground.uiColor
         contentView.addSubviews(iconImageView, containerView)
@@ -105,8 +105,8 @@ private extension MainNavigationCell {
 
 // MARK: - Private methods
 
-private extension MainNavigationCell {
-    func setup(_ vm: MainNavigationCellViewModel) {
+private extension NavigationCell {
+    func setup(_ vm: NavigationCellViewModel) {
         titleLabel.text = vm.title
         iconImageView.image = vm.image
         isLast = vm.isLast

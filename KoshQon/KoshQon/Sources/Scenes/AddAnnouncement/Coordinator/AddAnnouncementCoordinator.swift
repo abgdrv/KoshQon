@@ -36,7 +36,6 @@ private extension AddAnnouncementCoordinator {
             guard let self = self else { return }
             self.router.dismissModule()
         }
-        view.modalPresentationStyle = .fullScreen
         router.toPresent()?.present(view, animated: true)
     }
 }

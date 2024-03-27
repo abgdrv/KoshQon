@@ -12,9 +12,9 @@ final class MainScreenViewModel {
     // MARK: - Properties
     
     var adViewModels: [AnnouncementViewModel] = []
-    var navigationItemViewModels: [MainNavigationCellViewModel] = []
+    var navigationItemViewModels: [NavigationCellViewModel] = []
     
-    let navigationItems = MainNavigationType.allCases
+    let navigationItems: [NavigationCellType] = [.search, .announcements, .guide]
     let ads = [
         Announcement(title: "Ищу сожителя", address: "Алматы, Бостандыкский район", date: "2 февраля", rating: 8.7),
         Announcement(title: "Ищу сожителя", address: "Алматы, Бостандыкский район", date: "2 февраля", rating: 8.7),
@@ -35,8 +35,8 @@ final class MainScreenViewModel {
         return items.compactMap { AnnouncementViewModel(announcement: $0) }
     }
     
-    private func makeNavigationCellViewModels(items: [MainNavigationType]) -> [MainNavigationCellViewModel] {
-        return items.compactMap { MainNavigationCellViewModel(type: $0) }
+    private func makeNavigationCellViewModels(items: [NavigationCellType]) -> [NavigationCellViewModel] {
+        return items.compactMap { NavigationCellViewModel(type: $0) }
     }
 }
 
