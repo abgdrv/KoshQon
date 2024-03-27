@@ -1,5 +1,5 @@
 //
-//  MainNavigationCellViewModel.swift
+//  NavigationCellViewModel.swift
 //  KoshQon
 //
 //  Created by Almat Begaidarov on 12.03.2024.
@@ -8,27 +8,21 @@
 import Foundation
 import UIKit
 
-enum MainNavigationType: CaseIterable {
-    case search
-    case announcements
-    case guide
-}
-
 protocol IMainNavigationItemViewModel {
     var title: String { get }
     var image: UIImage? { get }
     var isLast: Bool { get }
 }
 
-final class MainNavigationCellViewModel {
-    let type: MainNavigationType
+final class NavigationCellViewModel {
+    let type: NavigationCellType
     
-    init(type: MainNavigationType) {
+    init(type: NavigationCellType) {
         self.type = type
     }
 }
 
-extension MainNavigationCellViewModel: IMainNavigationItemViewModel {
+extension NavigationCellViewModel: IMainNavigationItemViewModel {
     var title: String {
         switch type {
         case .search:
@@ -37,6 +31,18 @@ extension MainNavigationCellViewModel: IMainNavigationItemViewModel {
             "Мои объявления"
         case .guide:
             "Гид"
+        case .personal:
+            <#code#>
+        case .privacy:
+            <#code#>
+        case .theme:
+            <#code#>
+        case .language:
+            <#code#>
+        case .about:
+            <#code#>
+        case .quit:
+            <#code#>
         }
     }
     
@@ -48,6 +54,18 @@ extension MainNavigationCellViewModel: IMainNavigationItemViewModel {
             AppImage.Main.announcement.uiImage?.withTintColor(AppColor.Theme.mainTitle.uiColor)
         case .guide:
             AppImage.Main.guide.uiImage?.withTintColor(AppColor.Theme.mainTitle.uiColor)
+        case .personal:
+            <#code#>
+        case .privacy:
+            <#code#>
+        case .theme:
+            <#code#>
+        case .language:
+            <#code#>
+        case .about:
+            <#code#>
+        case .quit:
+            <#code#>
         }
     }
     
