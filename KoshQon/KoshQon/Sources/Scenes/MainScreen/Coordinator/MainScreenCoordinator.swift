@@ -35,6 +35,6 @@ final class MainScreenCoordinator: BaseCoordinator, MainScreenOutputCoordinator 
 private extension MainScreenCoordinator {
     func showMainScreen() {
         let view = factory.makeMainScreenView()
-        router.setRootModule(view)
+        router.setRoodModule(view, hideNavBar: false, isAnimated: false)
     }
 }

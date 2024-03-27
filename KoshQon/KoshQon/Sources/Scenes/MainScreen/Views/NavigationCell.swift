@@ -82,7 +82,7 @@ private extension NavigationCell {
         
         containerView.snp.makeConstraints { make in
             make.leading.equalTo(iconImageView.snp.trailing).offset(8)
-            make.trailing.height.equalToSuperview()
+            make.top.bottom.trailing.equalToSuperview()
         }
         
         titleLabel.snp.makeConstraints { make in
@@ -92,7 +92,7 @@ private extension NavigationCell {
         
         if !isLast {
             separatorView.snp.makeConstraints { make in
-                make.bottom.width.equalToSuperview()
+                make.leading.trailing.bottom.equalToSuperview()
             }
         }
         

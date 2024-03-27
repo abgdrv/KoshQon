@@ -20,7 +20,7 @@ final class TabBarController: UITabBarController {
     
     private let viewModel: TabBarViewModel
     private let defaultVC: UINavigationController
-    private let tabBarItems = TabBarItemType.allCases
+    private let tabBarItems = TabBarItem.allCases
     
     // MARK: - Object Lifecycle
     
@@ -65,7 +65,7 @@ extension TabBarController: UITabBarControllerDelegate {
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         guard let controller = viewControllers?[item.tag] as? UINavigationController else { return }
-        switch TabBarItemType(rawValue: item.tag) {
+        switch TabBarItem(rawValue: item.tag) {
         case .main:
             didMainScreenSelect?(controller)
         case .favorites:

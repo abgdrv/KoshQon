@@ -34,6 +34,6 @@ final class FavoritesCoordinator: BaseCoordinator, FavoritesOutputCoordinator {
 private extension FavoritesCoordinator {
     func showFavorites() {
         let view = factory.makeFavoritesView(type: .favorites)
-        router.setRootModule(view)
+        router.setRoodModule(view, hideNavBar: false, isAnimated: false)
     }
 }

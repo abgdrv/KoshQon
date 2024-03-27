@@ -17,15 +17,15 @@ final class ProfileAnnouncementsView: UIView {
     // MARK: - UI
     
     private lazy var containerView = UIView().apply {
-        $0.backgroundColor = AppColor.Theme.mainBackground.uiColor
+        $0.backgroundColor = AppColor.Theme.blockBackground.uiColor
     }
     
-    private lazy var advertisementsTitleLabel = UILabel().apply {
+    private lazy var announcementsTitleLabel = UILabel().apply {
         $0.set(font: AppFont.medium.s20, textColor: AppColor.Theme.mainTitle.uiColor)
         $0.text = "Объявления"
     }
     
-    private lazy var advertisementsStackView = UIStackView(arrangedSubviews: getAdvertisements()).apply {
+    private lazy var announcementsStackView = UIStackView(arrangedSubviews: getAnnouncements()).apply {
         $0.axis = .vertical
     }
     
@@ -55,7 +55,7 @@ final class ProfileAnnouncementsView: UIView {
 private extension ProfileAnnouncementsView {
     func setupViews() {
         addSubview(containerView)
-        containerView.addSubviews(advertisementsTitleLabel, advertisementsStackView)
+        containerView.addSubviews(announcementsTitleLabel, announcementsStackView)
     }
     
     func setupConstraints() {
@@ -64,13 +64,13 @@ private extension ProfileAnnouncementsView {
             make.leading.trailing.equalToSuperview().inset(8)
         }
         
-        advertisementsTitleLabel.snp.makeConstraints { make in
+        announcementsTitleLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(8)
             make.leading.equalToSuperview().offset(16)
         }
         
-        advertisementsStackView.snp.makeConstraints { make in
-            make.top.equalTo(advertisementsTitleLabel.snp.bottom).offset(8)
+        announcementsStackView.snp.makeConstraints { make in
+            make.top.equalTo(announcementsTitleLabel.snp.bottom).offset(8)
             make.leading.trailing.equalToSuperview()
             make.bottom.equalToSuperview().inset(8)
         }
@@ -80,7 +80,7 @@ private extension ProfileAnnouncementsView {
 // MARK: - Private methods
 
 private extension ProfileAnnouncementsView {
-    func getAdvertisements() -> [AnnouncementView] {
+    func getAnnouncements() -> [AnnouncementView] {
         var views: [AnnouncementView] = []
         announcements.forEach {
             let view = AnnouncementView(viewModel: $0)

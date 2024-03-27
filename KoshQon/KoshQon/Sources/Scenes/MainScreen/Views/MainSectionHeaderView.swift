@@ -34,14 +34,13 @@ final class MainSectionHeaderView: UIView {
 
 private extension MainSectionHeaderView {
     func setupViews() {
-        backgroundColor = AppColor.Theme.secondaryBackground.uiColor
         addSubview(titleLabel)
     }
     
     func setupConstraints() {
         titleLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(8)
-            make.top.bottom.equalToSuperview()
+            make.centerY.equalToSuperview()
         }
     }
 }

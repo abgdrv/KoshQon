@@ -18,7 +18,7 @@ final class ProfileCommonView: UIView {
     // MARK: - UI
     
     private lazy var containerView = UIView().apply {
-        $0.backgroundColor = AppColor.Theme.mainBackground.uiColor
+        $0.backgroundColor = AppColor.Theme.blockBackground.uiColor
     }
     
     private lazy var contentView = UIView()

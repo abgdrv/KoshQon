@@ -37,6 +37,7 @@ protocol RouterProtocol: Presentable {
     
     func setRootModule(_ module: Presentable?)
     func setRootModule(_ module: Presentable?, hideNavBar: Bool)
+    func setRoodModule(_ module: Presentable?, hideNavBar: Bool, isAnimated: Bool)
     
     func popToRootModule(animated: Bool)
 }

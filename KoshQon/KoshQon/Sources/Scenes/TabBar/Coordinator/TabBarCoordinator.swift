@@ -37,11 +37,15 @@ final class TabBarCoordinator: BaseCoordinator, TabBarOutputCoordinator {
 private extension TabBarCoordinator {
     func showTabBar() {
         let tabBarView = factory.makeTabBarView()
-        tabBarView.didViewAppear = showMainScreenFlow()
-        tabBarView.didMainScreenSelect = showMainScreenFlow()
-        tabBarView.didFavoritesSelect = showFavoritesFlow()
-        tabBarView.didAddAnnouncementSelect = showAddAnnouncementFlow()
-        tabBarView.didProfileSelect = showProfileFlow()
+        let showMainScreenFlow = showMainScreenFlow()
+        let showFavoritesFlow = showFavoritesFlow()
+        let showAddAnnouncementFlow = showAddAnnouncementFlow()
+        let showProfileFlow = showProfileFlow()
+        tabBarView.didViewAppear = showMainScreenFlow
+        tabBarView.didMainScreenSelect = showMainScreenFlow
+        tabBarView.didFavoritesSelect = showFavoritesFlow
+        tabBarView.didAddAnnouncementSelect = showAddAnnouncementFlow
+        tabBarView.didProfileSelect = showProfileFlow
         router.setRootModule(tabBarView, hideNavBar: true)
     }
     

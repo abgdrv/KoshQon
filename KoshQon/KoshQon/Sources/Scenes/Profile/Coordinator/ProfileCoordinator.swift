@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 final class ProfileCoordinator: BaseCoordinator, ProfileOutputCoordinator {
     
@@ -34,6 +35,6 @@ final class ProfileCoordinator: BaseCoordinator, ProfileOutputCoordinator {
 private extension ProfileCoordinator {
     func showProfile() {
         let view = factory.makeProfileView()
-        router.setRootModule(view)
+        router.setRoodModule(view, hideNavBar: false, isAnimated: false)
     }
 }

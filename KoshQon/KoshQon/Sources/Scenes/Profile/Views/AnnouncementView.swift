@@ -23,7 +23,7 @@ final class AnnouncementView: UIView {
     // MARK: - UI
     
     private lazy var containerView = UIView().apply {
-        $0.backgroundColor = AppColor.Theme.mainBackground.uiColor
+        $0.backgroundColor = AppColor.Theme.blockBackground.uiColor
     }
     
     private lazy var announcementImageView = UIImageView(image: AppImage.Main.adBlank.uiImage).apply {
@@ -85,7 +85,7 @@ final class AnnouncementView: UIView {
 
 private extension AnnouncementView {
     func setupViews() {
-        backgroundColor = AppColor.Theme.mainBackground.uiColor
+        backgroundColor = AppColor.Theme.blockBackground.uiColor
         addSubview(containerView)
         containerView.addSubviews(announcementImageView, titleLabel, addressLabel, separatorView, bottomContainerView)
         bottomContainerView.addSubviews(dateLabel, ratingImageView, ratingLabel)

@@ -86,7 +86,7 @@
 		47C01DF12BB19AAB00D1B2F2 /* TabBarOutputCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01DF02BB19AAB00D1B2F2 /* TabBarOutputCoordinator.swift */; };
 		47C01DF32BB19ACE00D1B2F2 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01DF22BB19ACE00D1B2F2 /* TabBarCoordinator.swift */; };
 		47C01DF62BB19B3300D1B2F2 /* TabBarFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01DF52BB19B3300D1B2F2 /* TabBarFlowFactory.swift */; };
-		47C01DF92BB1A6ED00D1B2F2 /* TabBarItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01DF82BB1A6ED00D1B2F2 /* TabBarItemType.swift */; };
+		47C01DF92BB1A6ED00D1B2F2 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01DF82BB1A6ED00D1B2F2 /* TabBarItem.swift */; };
 		47C01DFD2BB1B35C00D1B2F2 /* MainScreenOutputCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01DFC2BB1B35C00D1B2F2 /* MainScreenOutputCoordinator.swift */; };
 		47C01DFF2BB1B3BB00D1B2F2 /* MainScreenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01DFE2BB1B3BB00D1B2F2 /* MainScreenCoordinator.swift */; };
 		47C01E012BB1B41100D1B2F2 /* MainScreenFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01E002BB1B41100D1B2F2 /* MainScreenFlowFactory.swift */; };
@@ -225,7 +225,7 @@
 		47C01DF02BB19AAB00D1B2F2 /* TabBarOutputCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarOutputCoordinator.swift; sourceTree = "<group>"; };
 		47C01DF22BB19ACE00D1B2F2 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
 		47C01DF52BB19B3300D1B2F2 /* TabBarFlowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarFlowFactory.swift; sourceTree = "<group>"; };
-		47C01DF82BB1A6ED00D1B2F2 /* TabBarItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemType.swift; sourceTree = "<group>"; };
+		47C01DF82BB1A6ED00D1B2F2 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 		47C01DFC2BB1B35C00D1B2F2 /* MainScreenOutputCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenOutputCoordinator.swift; sourceTree = "<group>"; };
 		47C01DFE2BB1B3BB00D1B2F2 /* MainScreenCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenCoordinator.swift; sourceTree = "<group>"; };
 		47C01E002BB1B41100D1B2F2 /* MainScreenFlowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenFlowFactory.swift; sourceTree = "<group>"; };
@@ -785,7 +785,7 @@
 		47C01DF72BB1A6BD00D1B2F2 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				47C01DF82BB1A6ED00D1B2F2 /* TabBarItemType.swift */,
+				47C01DF82BB1A6ED00D1B2F2 /* TabBarItem.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -1459,7 +1459,7 @@
 				47C01E242BB2B5E700D1B2F2 /* AddAnnouncementCoordinator.swift in Sources */,
 				475224AE2BA40963000DAE1B /* ProfileView.swift in Sources */,
 				47D54CB82B9196B200021FA7 /* BottomSheetCell.swift in Sources */,
-				47C01DF92BB1A6ED00D1B2F2 /* TabBarItemType.swift in Sources */,
+				47C01DF92BB1A6ED00D1B2F2 /* TabBarItem.swift in Sources */,
 				47C01E402BB2E08400D1B2F2 /* NavigationCellType.swift in Sources */,
 				475224DD2BA9D405000DAE1B /* AppCoordinator.swift in Sources */,
 				472E1B242B8305EF005BF649 /* SplashScreenView.swift in Sources */,

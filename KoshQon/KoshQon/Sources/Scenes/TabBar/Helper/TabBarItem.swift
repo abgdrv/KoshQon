@@ -1,5 +1,5 @@
 //
-//  TabBarItemType.swift
+//  TabBarItem.swift
 //  KoshQon
 //
 //  Created by Almat Begaidarov on 25.03.2024.
@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-enum TabBarItemType: Int, CaseIterable {
+enum TabBarItem: Int, CaseIterable {
     private typealias Image = AppImage.Tabbar
     
     case main = 0

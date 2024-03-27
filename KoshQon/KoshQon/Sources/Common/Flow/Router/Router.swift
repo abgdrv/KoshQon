@@ -135,13 +135,17 @@ extension Router: RouterProtocol, UIViewControllerTransitioningDelegate {
     }
     
     func setRootModule(_ module: Presentable?, hideNavBar: Bool) {
+        setRoodModule(module, hideNavBar: hideNavBar, isAnimated: true)
+    }
+    
+    func setRoodModule(_ module: Presentable?, hideNavBar: Bool, isAnimated: Bool) {
         guard let controller = module?.toPresent() else { return }
         
         self.rootController?.setViewControllers([controller], animated: false)
         self.rootController?.isNavigationBarHidden = hideNavBar
         
         let options: UIView.AnimationOptions = .transitionCrossDissolve
-        let duration: TimeInterval = 0.3
+        let duration: TimeInterval = isAnimated ? 0.3 : 0.0
         if let window = UIApplication.shared.keyWindow {
             UIView.transition(with: window, duration: duration, options: options, animations: {})
         }

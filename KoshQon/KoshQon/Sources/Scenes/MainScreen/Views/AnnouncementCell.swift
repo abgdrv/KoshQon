@@ -23,7 +23,7 @@ final class AnnouncementCell: UITableViewCell {
     // MARK: - UI
     
     private lazy var containerView = UIView().apply {
-        $0.backgroundColor = AppColor.Theme.mainBackground.uiColor
+        $0.backgroundColor = AppColor.Theme.blockBackground.uiColor
     }
     
     private lazy var adImageView = UIImageView(image: AppImage.Main.adBlank.uiImage).apply {

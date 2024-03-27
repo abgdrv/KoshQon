@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 final class AddAnnouncementCoordinator: BaseCoordinator, AddAnnouncementOutputCoordinator {
     
@@ -36,6 +37,7 @@ private extension AddAnnouncementCoordinator {
             guard let self = self else { return }
             self.router.dismissModule()
         }
-        router.toPresent()?.present(view, animated: true)
+        let root = UINavigationController(rootViewController: view)
+        router.present(root)
     }
 }
