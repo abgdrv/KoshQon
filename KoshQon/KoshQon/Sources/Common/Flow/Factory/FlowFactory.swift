@@ -7,28 +7,10 @@
 
 import Foundation
 import UIKit
+import ProgressHUD
 
-final class FlowFactory {
+final class FlowFactory: AlertFlowFactory {
     
-    // MARK: - Properties
-    
-    static let shared = FlowFactory()
-    
-    // MARK: - Object Lifecycle
-    
-    private init() {}
-}
-
-extension FlowFactory: AlertFlowFactory,
-                       SplashScreenFlowFactory,
-                       AuthFlowFactory,
-                       RegisterFlowFactory,
-                       TabBarFlowFactory,
-                       MainScreenFlowFactory,
-                       FavoritesFlowFactory,
-                       AddAnnouncementFlowFactory,
-                       ProfileFlowFactory,
-                       SettingsFlowFactory {
     func makeAlert(title: String, message: String, with actions: [UIAlertAction]) -> UIAlertController {
         let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
         actions.forEach {
@@ -44,6 +26,23 @@ extension FlowFactory: AlertFlowFactory,
         }
         return ac
     }
+    
+    func makeBanner(title: String?, message: String?, delay: TimeInterval) {
+        ProgressHUD.banner(title, message, delay: delay)
+    }
+    
+}
+
+extension FlowFactory: SplashScreenFlowFactory,
+                       AuthFlowFactory,
+                       RegisterFlowFactory,
+                       TabBarFlowFactory,
+                       MainScreenFlowFactory,
+                       FavoritesFlowFactory,
+                       AddAnnouncementFlowFactory,
+                       ProfileFlowFactory,
+                       SettingsFlowFactory,
+                       EditProfileFlowFactory {
     
     func makeSplashScreen() -> SplashScreenViewController {
         let vc = SplashScreenViewController()
@@ -113,6 +112,12 @@ extension FlowFactory: AlertFlowFactory,
     func makeSettingsView() -> SettingsViewController {
         let vm = SettingsViewModel()
         let vc = SettingsViewController(viewModel: vm)
+        return vc
+    }
+    
+    func makeEditProfileView(profile: Profile) -> EditProfileViewController {
+        let vm = EditProfileViewModel(profile: profile)
+        let vc = EditProfileViewController(viewModel: vm)
         return vc
     }
 }

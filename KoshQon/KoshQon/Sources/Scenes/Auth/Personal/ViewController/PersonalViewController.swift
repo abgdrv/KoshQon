@@ -20,7 +20,7 @@ final class PersonalViewController: BaseViewController {
     
     private let viewModel: PersonalViewModel
     
-    override var navigationType: NavigationTitleType? {
+    override var navigationTitleType: NavigationTitleType? {
         return .personalInfo
     }
     
@@ -33,7 +33,7 @@ final class PersonalViewController: BaseViewController {
     
     init(viewModel: PersonalViewModel) {
         self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
+        super.init()
     }
     
     // MARK: - View Lifecycle
@@ -58,12 +58,10 @@ private extension PersonalViewController {
             self.didFinish?()
         }
         
-        personalView.imageDidTap = { [weak self] in
+        personalView.didImageTap = { [weak self] in
             guard let self = self else { return }
             self.didShowImagePickerOptions?(self.imagePicker)
-        }
-        
-        personalView.setupDatePickerTarget(target: self, action: #selector(dateChanged))
+        }        
     }
 }
 
@@ -93,13 +91,5 @@ extension PersonalViewController: UIImagePickerControllerDelegate,
             imageCropVC.delegate = self
             self.didShowCropImage?(imageCropVC)
         }
-    }
-}
-
-// MARK: - Actions
-
-private extension PersonalViewController {
-    @objc func dateChanged() {
-        personalView.birthdayString = viewModel.formattedDate(date: personalView.date)
     }
 }

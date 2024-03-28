@@ -11,4 +11,5 @@ import UIKit
 protocol AlertFlowFactory {
     func makeAlert(title: String, message: String, with actions: [UIAlertAction]) -> UIAlertController
     func makeAlertSheet(title: String, message: String, with actions: [UIAlertAction]) -> UIAlertController
+    func makeBanner(title: String?, message: String?, delay: TimeInterval)
 }

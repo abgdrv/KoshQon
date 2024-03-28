@@ -13,7 +13,7 @@ final class MainScreenViewController: BaseViewController {
     
     private let viewModel: MainScreenViewModel
     
-    override var navigationType: NavigationTitleType? {
+    override var navigationTitleType: NavigationTitleType? {
         return .main
     }
         
@@ -25,7 +25,7 @@ final class MainScreenViewController: BaseViewController {
     
     init(viewModel: MainScreenViewModel) {
         self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
+        super.init()
     }
 
     // MARK: - View Lifecycle

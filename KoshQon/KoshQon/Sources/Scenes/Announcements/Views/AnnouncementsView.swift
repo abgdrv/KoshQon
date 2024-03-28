@@ -49,7 +49,7 @@ final class AnnouncementsView: BaseView {
     init(viewModel: AnnouncementsViewModel, type: AnnouncementsType) {
         self.viewModel = viewModel
         self.type = type
-        super.init(frame: .zero)
+        super.init()
         setupViews()
         setupConstraints()
     }

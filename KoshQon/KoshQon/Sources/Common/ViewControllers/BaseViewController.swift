@@ -11,7 +11,7 @@ class BaseViewController: UIViewController {
     
     // MARK: - Properties
     
-    var navigationType: NavigationTitleType? {
+    var navigationTitleType: NavigationTitleType? {
         return nil
     }
     
@@ -21,8 +21,8 @@ class BaseViewController: UIViewController {
     
     // MARK: - Object Lifecycle
     
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    init() {
+        super.init(nibName: nil, bundle: nil)
     }
     
     @available(*, unavailable)
@@ -51,8 +51,8 @@ private extension BaseViewController {
         navigationController?.navigationBar.tintColor = AppColor.Theme.mainTitle.uiColor
         navigationController?.navigationBar.backgroundColor = AppColor.Theme.mainBackground.uiColor
         
-        let titleView = NavigationTitleView(type: navigationType)
-        if navigationType == .directMessages {
+        let titleView = NavigationTitleView(type: navigationTitleType)
+        if navigationTitleType == .directMessages {
             titleView.title = navigationTitle
         }
         navigationItem.titleView = titleView

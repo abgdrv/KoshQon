@@ -145,7 +145,7 @@ extension Router: RouterProtocol, UIViewControllerTransitioningDelegate {
         self.rootController?.isNavigationBarHidden = hideNavBar
         
         let options: UIView.AnimationOptions = .transitionCrossDissolve
-        let duration: TimeInterval = isAnimated ? 0.3 : 0.0
+        let duration: TimeInterval = isAnimated ? 0.4 : 0.0
         if let window = UIApplication.shared.keyWindow {
             UIView.transition(with: window, duration: duration, options: options, animations: {})
         }

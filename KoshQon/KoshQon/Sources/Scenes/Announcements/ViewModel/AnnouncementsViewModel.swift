@@ -27,18 +27,17 @@ final class AnnouncementsViewModel {
         self.type = type
         getAnnouncements()
     }
-    
-    // MARK: - Private methods
-    
-    func makeCellViewModels(items: [Announcement]) -> [AnnouncementViewModel] {
-        return items.compactMap { AnnouncementViewModel(announcement: $0) }
-    }
+
 }
 
-// MARK: - Request
+// MARK: - Private methods
 
 private extension AnnouncementsViewModel {
     func getAnnouncements() {
         items = makeCellViewModels(items: ads)
+    }
+    
+    func makeCellViewModels(items: [Announcement]) -> [AnnouncementViewModel] {
+        return items.compactMap { AnnouncementViewModel(announcement: $0) }
     }
 }

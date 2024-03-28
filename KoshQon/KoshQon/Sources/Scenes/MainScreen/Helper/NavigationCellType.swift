@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum NavigationCellType: CaseIterable {
+enum NavigationCellType: String, CaseIterable {
     case search
     case announcements
     case guide

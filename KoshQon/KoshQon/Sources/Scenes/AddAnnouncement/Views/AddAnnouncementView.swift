@@ -26,8 +26,8 @@ final class AddAnnouncementView: BaseView {
     
     // MARK: - Object Lifecycle
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override init() {
+        super.init()
         setupViews()
         setupConstraints()
     }

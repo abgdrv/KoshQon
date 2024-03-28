@@ -68,7 +68,7 @@ final class SmsCodeView: BaseView {
     
     init(viewModel: SmsCodeViewModel) {
         self.viewModel = viewModel
-        super.init(frame: .zero)
+        super.init()
         setupViews()
         setupConstraints()
         setupTimer()

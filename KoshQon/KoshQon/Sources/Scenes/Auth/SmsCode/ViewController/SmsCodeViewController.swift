@@ -15,7 +15,7 @@ final class SmsCodeViewController: BaseViewController {
     
     private let viewModel: SmsCodeViewModel
     
-    override var navigationType: NavigationTitleType? {
+    override var navigationTitleType: NavigationTitleType? {
         return .sms
     }
     
@@ -27,7 +27,7 @@ final class SmsCodeViewController: BaseViewController {
     
     init(viewModel: SmsCodeViewModel) {
         self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
+        super.init()
     }
 
     // MARK: - View Lifecycle

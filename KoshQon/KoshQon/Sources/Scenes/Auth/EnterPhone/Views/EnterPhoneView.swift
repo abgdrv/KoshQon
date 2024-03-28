@@ -40,7 +40,7 @@ final class EnterPhoneView: BaseView {
     
     init(type: EnterPhoneType) {
         self.type = type
-        super.init(frame: .zero)
+        super.init()
         setupViews()
         setupConstraints()
     }

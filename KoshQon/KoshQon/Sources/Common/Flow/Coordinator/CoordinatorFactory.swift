@@ -8,70 +8,61 @@
 import Foundation
 import UIKit
 
-protocol CoordinatorFactoryProtocol {
-    func makeSplashScreenCoordinator(router: RouterProtocol) -> Coordinator & SplashScreenOutputCoordinator
-    func makeAuthCoordinator(router: RouterProtocol,
-                             coordinatorFactory: CoordinatorFactoryProtocol) -> Coordinator & AuthOutputCoordinator
-    func makeRegisterCoordinator(router: RouterProtocol) -> Coordinator & RegisterOutputCoordinator
-    func makeForgotPasswordCoordinator(router: RouterProtocol) -> Coordinator & ForgotPasswordOutputCoordinator
-    func makeTabBarCoordinator(router: RouterProtocol, coordinatorFactory: CoordinatorFactoryProtocol) -> Coordinator & TabBarOutputCoordinator
-    func makeMainScreenCoordinator(navController: UINavigationController) -> Coordinator & MainScreenOutputCoordinator
-    func makeFavoritesCoordinator(navController: UINavigationController) -> Coordinator & FavoritesOutputCoordinator
-    func makeAddAnnouncementCoordinator(navController: UINavigationController) -> Coordinator & AddAnnouncementOutputCoordinator
-    func makeProfileCoordinator(navController: UINavigationController) -> Coordinator & ProfileOutputCoordinator
-    func makeSettingsCoordinator(router: RouterProtocol) -> Coordinator & SettingsOutputCoordinator
-}
-
 final class CoordinatorFactory: CoordinatorFactoryProtocol {
     func makeSplashScreenCoordinator(router: RouterProtocol) -> Coordinator & SplashScreenOutputCoordinator {
-        let coordinator = SplashScreenCoordinator(router: router, factory: FlowFactory.shared)
+        let coordinator = SplashScreenCoordinator(router: router, factory: FlowFactory())
         return coordinator
     }
     
     func makeAuthCoordinator(router: RouterProtocol,
                              coordinatorFactory: CoordinatorFactoryProtocol) -> Coordinator & AuthOutputCoordinator {
-        let coordinator = AuthCoordinator(router: router, factory: FlowFactory.shared,
+        let coordinator = AuthCoordinator(router: router, factory: FlowFactory(),
                                           coordinatorFactory: coordinatorFactory)
         return coordinator
     }
     
     func makeRegisterCoordinator(router: RouterProtocol) -> Coordinator & RegisterOutputCoordinator {
-        let coordinator = RegisterCoordinator(router: router, factory: FlowFactory.shared)
+        let coordinator = RegisterCoordinator(router: router, factory: FlowFactory())
         return coordinator
     }
     
     func makeForgotPasswordCoordinator(router: RouterProtocol) -> Coordinator & ForgotPasswordOutputCoordinator {
-        let coordinator = ForgotPasswordCoordinator(router: router, factory: FlowFactory.shared)
+        let coordinator = ForgotPasswordCoordinator(router: router, factory: FlowFactory())
         return coordinator
     }
     
     func makeTabBarCoordinator(router: RouterProtocol, coordinatorFactory: CoordinatorFactoryProtocol) -> Coordinator & TabBarOutputCoordinator {
-        let coordinator = TabBarCoordinator(router: router, factory: FlowFactory.shared, coordinatorFactory: coordinatorFactory)
+        let coordinator = TabBarCoordinator(router: router, factory: FlowFactory(), coordinatorFactory: coordinatorFactory)
         return coordinator
     }
     
     func makeMainScreenCoordinator(navController: UINavigationController) -> Coordinator & MainScreenOutputCoordinator {
-        let coordinator = MainScreenCoordinator(router: router(navController), factory: FlowFactory.shared, coordinatorFactory: self)
+        let coordinator = MainScreenCoordinator(router: router(navController), factory: FlowFactory(), coordinatorFactory: self)
         return coordinator
     }
     
     func makeFavoritesCoordinator(navController: UINavigationController) -> any Coordinator & FavoritesOutputCoordinator {
-        let coordinator = FavoritesCoordinator(router: router(navController), factory: FlowFactory.shared, coordinatorFactory: self)
+        let coordinator = FavoritesCoordinator(router: router(navController), factory: FlowFactory(), coordinatorFactory: self)
         return coordinator
     }
     
     func makeAddAnnouncementCoordinator(navController: UINavigationController) -> any AddAnnouncementOutputCoordinator & Coordinator {
-        let coordinator = AddAnnouncementCoordinator(router: router(navController), factory: FlowFactory.shared)
+        let coordinator = AddAnnouncementCoordinator(router: router(navController), factory: FlowFactory())
         return coordinator
     }
     
     func makeProfileCoordinator(navController: UINavigationController) -> any Coordinator & ProfileOutputCoordinator {
-        let coordinator = ProfileCoordinator(router: router(navController), factory: FlowFactory.shared, coordinatorFactory: self)
+        let coordinator = ProfileCoordinator(router: router(navController), factory: FlowFactory(), coordinatorFactory: self)
         return coordinator
     }
     
     func makeSettingsCoordinator(router: RouterProtocol) -> Coordinator & SettingsOutputCoordinator {
-        let coordinator = SettingsCoordinator(router: router, factory: FlowFactory.shared)
+        let coordinator = SettingsCoordinator(router: router, factory: FlowFactory())
+        return coordinator
+    }
+    
+    func makeEditProfileCoordinator(router: RouterProtocol) -> Coordinator & EditProfileOutputCoordinator {
+        let coordinator = EditProfileCoordinator(router: router, factory: FlowFactory())
         return coordinator
     }
 }

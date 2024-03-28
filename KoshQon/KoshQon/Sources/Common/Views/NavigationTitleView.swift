@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-enum NavigationTitleType {
+enum NavigationTitleType: String {
     case forgotPassword
     case sms
     case createPassword

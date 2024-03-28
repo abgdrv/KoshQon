@@ -18,6 +18,7 @@ enum ProceedButtonType {
     case call
     case write
     case add
+    case save
 }
 
 final class ProceedButton: UIButton {
@@ -61,6 +62,8 @@ final class ProceedButton: UIButton {
             setup(backgroundColor: orange, title: "Перейти на страницу", font: font14)
         case .add:
             setup(backgroundColor: orange, font: font14, image: nil)
+        case .save:
+            setup(backgroundColor: orange, title: "Сохранить", font: font14)
         case .none:
             break
         }

@@ -42,7 +42,7 @@ final class ProfileAboutView: UIView {
     
     // MARK: - Object Lifecycle
     
-    init(info: ProfileAboutInfo) {
+    init(info: ProfileAboutInfo?) {
         defer {
             self.info = info
         }

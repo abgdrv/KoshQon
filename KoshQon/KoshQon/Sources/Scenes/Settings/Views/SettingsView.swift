@@ -32,7 +32,7 @@ final class SettingsView: BaseView {
     
     init(viewModel: SettingsViewModel) {
         self.viewModel = viewModel
-        super.init(frame: .zero)
+        super.init()
         setupViews()
         setupConstraints()
     }

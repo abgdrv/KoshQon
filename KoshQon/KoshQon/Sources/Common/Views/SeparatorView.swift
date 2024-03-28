@@ -9,15 +9,20 @@ import UIKit
 import SnapKit
 
 final class SeparatorView: UIView {
+    
+    // MARK: - Properties
+    
+    private let color: UIColor?
 
     // MARK: - UI
     
-    private lazy var lineView = UIView().apply { $0.backgroundColor = AppColor.Static.lightGray.uiColor }
+    private lazy var lineView = UIView().apply { $0.backgroundColor = color }
     
     // MARK: - Object Lifecycle
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init(color: UIColor? = nil) {
+        self.color = color ?? AppColor.Static.lightGray.uiColor
+        super.init(frame: .zero)
         setupViews()
         setupConstraints()
     }

@@ -16,7 +16,7 @@ final class SetPasswordViewController: BaseViewController {
     private let viewModel: SetPasswordViewModel
     private let type: SetPasswordType
     
-    override var navigationType: NavigationTitleType? {
+    override var navigationTitleType: NavigationTitleType? {
         return .createPassword
     }
     
@@ -29,7 +29,7 @@ final class SetPasswordViewController: BaseViewController {
     init(viewModel: SetPasswordViewModel, type: SetPasswordType) {
         self.viewModel = viewModel
         self.type = type
-        super.init(nibName: nil, bundle: nil)
+        super.init()
     }
 
     // MARK: - View Lifecycle

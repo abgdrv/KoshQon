@@ -15,7 +15,7 @@ final class SettingsViewController: BaseViewController {
     
     private let viewModel: SettingsViewModel
     
-    override var navigationType: NavigationTitleType? {
+    override var navigationTitleType: NavigationTitleType? {
         return .settings
     }
     
@@ -27,7 +27,7 @@ final class SettingsViewController: BaseViewController {
     
     init(viewModel: SettingsViewModel) {
         self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
+        super.init()
     }
     
     // MARK: - View Lifecycle
@@ -40,6 +40,16 @@ final class SettingsViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupBindings()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tabBarController?.tabBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        tabBarController?.tabBar.isHidden = false
     }
 }
 

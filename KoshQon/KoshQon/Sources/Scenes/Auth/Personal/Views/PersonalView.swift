@@ -14,17 +14,7 @@ final class PersonalView: BaseView {
     // MARK: - Properties
     
     var didFinish: VoidCallback?
-    var imageDidTap: VoidCallback?
-    
-    var birthdayString: String? {
-        didSet {
-            birthdayTextField.text = birthdayString
-        }
-    }
-    
-    var date: Date {
-        datePicker.date
-    }
+    var didImageTap: VoidCallback?
     
     override var keyboardHandlingButton: ProceedButton? {
         continueButton
@@ -32,12 +22,7 @@ final class PersonalView: BaseView {
     
     // MARK: - UI
     
-    private lazy var profileImageView = UIImageView(image: AppImage.Personal.defaultProfile.uiImage).apply {
-        $0.isUserInteractionEnabled = true
-        $0.clipsToBounds = true
-    }
-    
-    private lazy var plusImageView = UIImageView(image: AppImage.Personal.plus.uiImage)
+    private lazy var profileImageView = ProfileImageView(isEditable: true)
     private lazy var firstNameTextField = InputTextField(inputType: .regular, placeholder: "Имя")
     private lazy var secondNameTextField = InputTextField(inputType: .regular, placeholder: "Фамилия")
     private lazy var birthdayTextField = InputTextField(inputType: .date).apply { $0.inputView = datePicker }
@@ -54,6 +39,7 @@ final class PersonalView: BaseView {
         $0.datePickerMode = .date
         $0.preferredDatePickerStyle = .wheels
         $0.backgroundColor = AppColor.Theme.mainBackground.uiColor
+        $0.addTarget(self, action: #selector(datePickerValueChanged), for: .valueChanged)
         
         let calendar = Calendar(identifier: .gregorian)
         let currentDate = Date()
@@ -72,8 +58,8 @@ final class PersonalView: BaseView {
     
     // MARK: - Object Lifecycle
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override init() {
+        super.init()
         setupViews()
         setupConstraints()
         setupBindings()
@@ -84,8 +70,6 @@ final class PersonalView: BaseView {
     override func layoutSubviews() {
         super.layoutSubviews()
         profileImageView.layer.cornerRadius = profileImageView.frame.height / 2
-        plusImageView.layer.cornerRadius = plusImageView.frame.height / 2
-        plusImageView.bezierPathBorder(color: AppColor.Theme.mainBackground.uiColor, width: 5)
         firstNameTextField.layer.cornerRadius = 8
         secondNameTextField.layer.cornerRadius = 8
         birthdayTextField.layer.cornerRadius = 8
@@ -100,17 +84,13 @@ final class PersonalView: BaseView {
     func setProfileImage(image: UIImage) {
         profileImageView.image = image
     }
-    
-    func setupDatePickerTarget(target: Any?, action: Selector) {
-        datePicker.addTarget(target, action: action, for: .valueChanged)
-    }
 }
 
 // MARK: - Setup Views
 
 private extension PersonalView {
     func setupViews() {
-        addSubviews(profileImageView, plusImageView, firstNameTextField, secondNameTextField,
+        addSubviews(profileImageView, firstNameTextField, secondNameTextField,
                     birthdayTextField, genderTextField, countryTextField, continueButton)
     }
     
@@ -118,13 +98,6 @@ private extension PersonalView {
         profileImageView.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(30)
             make.leading.equalToSuperview().offset(16)
-            make.size.equalTo(116)
-        }
-        
-        plusImageView.snp.makeConstraints { make in
-            make.trailing.equalTo(profileImageView.snp.trailing)
-            make.bottom.equalTo(profileImageView.snp.bottom)
-            make.size.equalTo(32)
         }
         
         firstNameTextField.snp.makeConstraints { make in
@@ -180,7 +153,7 @@ private extension PersonalView {
             make.leading.trailing.equalToSuperview().inset(16)
             make.height.equalTo(50)
         }
-        UIView.animate(withDuration: 0.2) {
+        UIView.animate(withDuration: 0.3) {
             self.cityTextField.alpha = 1
         }
     }
@@ -191,9 +164,10 @@ private extension PersonalView {
             self.setupCityTextField()
         }
         
-        profileImageView.addGestureRecognizer(
-            UITapGestureRecognizer(target: self, action: #selector(profileImageViewTapped))
-        )
+        profileImageView.didImageTap = { [weak self] in
+            guard let self = self else { return }
+            self.didImageTap?()
+        }
     }
 }
 
@@ -204,7 +178,7 @@ private extension PersonalView {
         didFinish?()
     }
     
-    @objc func profileImageViewTapped() {
-        imageDidTap?()
+    @objc func datePickerValueChanged() {
+        birthdayTextField.text = datePicker.date.toString(format: "dd.MM.yyyy")
     }
 }

@@ -25,7 +25,7 @@ final class LoginViewController: BaseViewController {
     
     init(viewModel: LoginViewModel) {
         self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
+        super.init()
     }
     
     // MARK: - View Lifecycle

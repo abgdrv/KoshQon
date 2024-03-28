@@ -12,7 +12,7 @@ final class ProfileCommonView: UIView {
 
     // MARK: - Properties
     
-    private let info: ProfileCommonInfo
+    private let info: ProfileCommonInfo?
     private var characteristicsViews: [UIView] = []
     
     // MARK: - UI
@@ -35,7 +35,7 @@ final class ProfileCommonView: UIView {
     
     private lazy var ratingLabel = UILabel().apply {
         $0.set(font: AppFont.medium.s40, textColor: AppColor.Theme.mainTitle.uiColor)
-        $0.text = "\(info.rating)"
+        $0.text = "\(info?.rating ?? 0)"
     }
     
     private lazy var starImageView = UIImageView(image: AppImage.Common.star.uiImage).apply {
@@ -60,10 +60,10 @@ final class ProfileCommonView: UIView {
     
     // MARK: - Object Lifecycle
     
-    init(info: ProfileCommonInfo) {
+    init(info: ProfileCommonInfo?) {
         self.info = info
         super.init(frame: .zero)
-        self.characteristicsViews = getCharacteristicViews(enabledChars: info.characteristics)
+        self.characteristicsViews = getCharacteristicViews(enabledChars: info?.characteristics ?? [])
         setupViews()
         setupConstraints()
 
@@ -158,11 +158,11 @@ private extension ProfileCommonView {
             let view: UIView
             switch caseValue {
             case .good:
-                view = ProfileCharacteristicProgressView(type: caseValue, progress: info.good)
+                view = ProfileCharacteristicProgressView(type: caseValue, progress: info?.good ?? 0)
             case .responsible:
-                view = ProfileCharacteristicProgressView(type: caseValue, progress: info.responsible)
+                view = ProfileCharacteristicProgressView(type: caseValue, progress: info?.responsible ?? 0)
             case .clean:
-                view = ProfileCharacteristicProgressView(type: caseValue, progress: info.clean)
+                view = ProfileCharacteristicProgressView(type: caseValue, progress: info?.clean ?? 0)
             default:
                 view = ProfileCharacteristicView(type: caseValue, isEnabled: enabledChars.contains(caseValue))
             }

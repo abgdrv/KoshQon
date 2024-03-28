@@ -23,7 +23,7 @@ final class AddAnnouncementViewController: BaseViewController {
     
     init(viewModel: AddAnnouncementViewModel) {
         self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
+        super.init()
     }
     
     // MARK: - View Lifecycle

@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-final class AnnouncementCell: UITableViewCell {
+final class AnnouncementCell: BaseCell {
     
     // MARK: - Properties
     
@@ -60,16 +60,12 @@ final class AnnouncementCell: UITableViewCell {
     // MARK: - Object Lifecycle
     
     init(viewModel: AnnouncementViewModel) {
-        super.init(style: .default, reuseIdentifier: AnnouncementCell.reuseID)
         defer {
             self.viewModel = viewModel
         }
+        super.init()
         setupViews()
         setupConstraints()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
     // MARK: - View Lifecycle

@@ -31,7 +31,7 @@ final class MainScreenView: BaseView {
     
     init(viewModel: MainScreenViewModel) {
         self.viewModel = viewModel
-        super.init(frame: .zero)
+        super.init()
         setupViews()
         setupConstraints()
     }

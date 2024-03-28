@@ -21,9 +21,9 @@ final class ProfileView: BaseView {
         $0.showsVerticalScrollIndicator = false
     }
     
-    private lazy var topView = ProfileTopView(info: viewModel.main)
-    private lazy var aboutView = ProfileAboutView(info: viewModel.about)
-    private lazy var commonView = ProfileCommonView(info: viewModel.common)
+    private lazy var topView = ProfileTopView(info: viewModel.profile?.mainInfo)
+    private lazy var aboutView = ProfileAboutView(info: viewModel.profile?.aboutInfo)
+    private lazy var commonView = ProfileCommonView(info: viewModel.profile?.commonInfo)
     private lazy var announcementsView = ProfileAnnouncementsView(announcements: viewModel.items)
     
     private lazy var contentView = UIStackView(arrangedSubviews: [topView, aboutView,
@@ -36,7 +36,7 @@ final class ProfileView: BaseView {
     
     init(viewModel: ProfileViewModel) {
         self.viewModel = viewModel
-        super.init(frame: .zero)
+        super.init()
         setupViews()
         setupConstraints()
     }
@@ -61,8 +61,4 @@ private extension ProfileView {
             make.width.equalToSuperview()
         }
     }
-}
-
-extension ProfileView: UIScrollViewDelegate {
-    
 }

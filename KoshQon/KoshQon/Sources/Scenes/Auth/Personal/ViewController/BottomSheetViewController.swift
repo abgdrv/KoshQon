@@ -34,7 +34,7 @@ final class BottomSheetViewController: BaseViewController {
     init(options: [BottomSheetOption], isLong: Bool) {
         self.options = options
         self.isLong = isLong
-        super.init(nibName: nil, bundle: nil)
+        super.init()
     }
 
     // MARK: - View Lifecycle

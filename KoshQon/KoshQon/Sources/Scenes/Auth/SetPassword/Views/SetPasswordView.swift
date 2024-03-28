@@ -45,7 +45,7 @@ final class SetPasswordView: BaseView {
     
     init(type: SetPasswordType) {
         self.type = type
-        super.init(frame: .zero)
+        super.init()
         setupViews()
         setupConstraints()
     }

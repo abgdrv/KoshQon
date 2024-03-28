@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-final class NavigationCell: UITableViewCell {
+final class NavigationCell: BaseCell {
 
     // MARK: - Properties
     
@@ -20,11 +20,11 @@ final class NavigationCell: UITableViewCell {
         }
     }
     
-    private var isLast = false
+    private let isLast: Bool
         
     // MARK: - UI
     
-    private lazy var iconImageView = UIImageView().apply { $0.contentMode = .scaleAspectFit }
+    private lazy var iconImageView = UIImageView()
     private lazy var containerView = UIView()
     
     private lazy var titleLabel = UILabel().apply {
@@ -33,26 +33,22 @@ final class NavigationCell: UITableViewCell {
     
     private lazy var separatorView = SeparatorView()
     
-    private lazy var expandRightIconImageView = UIImageView().apply {
-        $0.image = AppImage.Common.expandRight.uiImage
+    private lazy var expandRightIconImageView = UIImageView(image: AppImage.Common.expandRight.uiImage).apply {
         $0.contentMode = .scaleAspectFit
     }
     
     // MARK: - Object Lifecycle
 
     init(viewModel: NavigationCellViewModel) {
-        super.init(style: .default, reuseIdentifier: NavigationCell.reuseID)
+        self.isLast = viewModel.isLast
         defer {
             self.viewModel = viewModel
-            setupViews()
-            setupConstraints()
         }
+        super.init()
+        setupViews()
+        setupConstraints()
     }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
+
     // MARK: - Override methods
     
     override func prepareForReuse() {
@@ -109,6 +105,5 @@ private extension NavigationCell {
     func setup(_ vm: NavigationCellViewModel) {
         titleLabel.text = vm.title
         iconImageView.image = vm.image
-        isLast = vm.isLast
     }
 }

@@ -16,7 +16,7 @@ final class EnterPhoneViewController: BaseViewController {
     private let viewModel: EnterPhoneViewModel
     private let type: EnterPhoneType
     
-    override var navigationType: NavigationTitleType? {
+    override var navigationTitleType: NavigationTitleType? {
         return type == .register ? .registration : .forgotPassword
     }
     
@@ -29,7 +29,7 @@ final class EnterPhoneViewController: BaseViewController {
     init(viewModel: EnterPhoneViewModel, type: EnterPhoneType) {
         self.viewModel = viewModel
         self.type = type
-        super.init(nibName: nil, bundle: nil)
+        super.init()
     }
     
     // MARK: - View Lifecycle

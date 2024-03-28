@@ -31,7 +31,7 @@ extension UIView {
         }) as? [CAShapeLayer])?.first
     }
     
-    func bezierPathBorder(color: UIColor = .white, width: CGFloat = 1) {
+    func bezierPathBorder(color: UIColor, width: CGFloat = 1) {
         var border = self.bezierPathBorder
         let path = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.layer.cornerRadius)
         let mask = CAShapeLayer()

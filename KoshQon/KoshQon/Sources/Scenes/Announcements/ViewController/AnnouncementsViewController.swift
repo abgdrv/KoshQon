@@ -14,7 +14,7 @@ final class AnnouncementsViewController: BaseViewController {
     private let viewModel: AnnouncementsViewModel
     private let type: AnnouncementsType
     
-    override var navigationType: NavigationTitleType? {
+    override var navigationTitleType: NavigationTitleType? {
         return type == .favorites ? .favorites : .myAnnouncements
     }
     
@@ -27,7 +27,7 @@ final class AnnouncementsViewController: BaseViewController {
     init(viewModel: AnnouncementsViewModel, type: AnnouncementsType) {
         self.viewModel = viewModel
         self.type = type
-        super.init(nibName: nil, bundle: nil)
+        super.init()
     }
 
     // MARK: - View Lifecycle

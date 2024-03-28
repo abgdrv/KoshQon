@@ -12,10 +12,11 @@ final class ProfileViewController: BaseViewController {
     // MARK: - Properties
     
     var didSettingsTap: VoidCallback?
+    var didEditProfileTap: Callback<Profile>?
     
     private let viewModel: ProfileViewModel
     
-    override var navigationType: NavigationTitleType? {
+    override var navigationTitleType: NavigationTitleType? {
         return .profile
     }
     
@@ -27,7 +28,7 @@ final class ProfileViewController: BaseViewController {
     
     init(viewModel: ProfileViewModel) {
         self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
+        super.init()
     }
 
     // MARK: - View Lifecycle
@@ -40,6 +41,11 @@ final class ProfileViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigation()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        hidesBottomBarWhenPushed = true
     }
 }
 
@@ -66,7 +72,9 @@ private extension ProfileViewController {
 
 private extension ProfileViewController {
     @objc func editButtonTapped() {
-        
+        if let profile = viewModel.profile {
+            didEditProfileTap?(profile)
+        }
     }
     
     @objc func settingsButtonTapped() {
