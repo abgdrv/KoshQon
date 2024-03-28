@@ -31,8 +31,18 @@ extension NavigationCellViewModel: INavigationCellViewModel {
             "Мои объявления"
         case .guide:
             "Гид"
-        default:
-            ""
+        case .personal:
+            "Личная информация"
+        case .privacy:
+            "Конфиденциальность"
+        case .theme:
+            "Тема приложения"
+        case .language:
+            "Язык"
+        case .about:
+            "О приложении"
+        case .quit:
+            "Выйти"
         }
     }
     
@@ -44,8 +54,18 @@ extension NavigationCellViewModel: INavigationCellViewModel {
             AppImage.Main.announcement.uiImage?.withTintColor(AppColor.Theme.mainTitle.uiColor)
         case .guide:
             AppImage.Main.guide.uiImage?.withTintColor(AppColor.Theme.mainTitle.uiColor)
-        default:
-            nil
+        case .personal:
+            AppImage.Settings.personal.uiImage?.withRenderingMode(.alwaysOriginal)
+        case .privacy:
+            AppImage.Settings.privacy.uiImage?.withRenderingMode(.alwaysOriginal)
+        case .theme:
+            AppImage.Settings.theme.uiImage?.withRenderingMode(.alwaysOriginal)
+        case .language:
+            AppImage.Settings.language.uiImage?.withRenderingMode(.alwaysOriginal)
+        case .about:
+            AppImage.Settings.about.uiImage?.withRenderingMode(.alwaysOriginal)
+        case .quit:
+            AppImage.Settings.quit.uiImage?.withRenderingMode(.alwaysOriginal)
         }
     }
     

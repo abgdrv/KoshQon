@@ -19,6 +19,7 @@ protocol CoordinatorFactoryProtocol {
     func makeFavoritesCoordinator(navController: UINavigationController) -> Coordinator & FavoritesOutputCoordinator
     func makeAddAnnouncementCoordinator(navController: UINavigationController) -> Coordinator & AddAnnouncementOutputCoordinator
     func makeProfileCoordinator(navController: UINavigationController) -> Coordinator & ProfileOutputCoordinator
+    func makeSettingsCoordinator(router: RouterProtocol) -> Coordinator & SettingsOutputCoordinator
 }
 
 final class CoordinatorFactory: CoordinatorFactoryProtocol {
@@ -66,6 +67,11 @@ final class CoordinatorFactory: CoordinatorFactoryProtocol {
     
     func makeProfileCoordinator(navController: UINavigationController) -> any Coordinator & ProfileOutputCoordinator {
         let coordinator = ProfileCoordinator(router: router(navController), factory: FlowFactory.shared, coordinatorFactory: self)
+        return coordinator
+    }
+    
+    func makeSettingsCoordinator(router: RouterProtocol) -> Coordinator & SettingsOutputCoordinator {
+        let coordinator = SettingsCoordinator(router: router, factory: FlowFactory.shared)
         return coordinator
     }
 }

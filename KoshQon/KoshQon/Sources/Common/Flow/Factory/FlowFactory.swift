@@ -27,7 +27,8 @@ extension FlowFactory: AlertFlowFactory,
                        MainScreenFlowFactory,
                        FavoritesFlowFactory,
                        AddAnnouncementFlowFactory,
-                       ProfileFlowFactory {
+                       ProfileFlowFactory,
+                       SettingsFlowFactory {
     func makeAlert(title: String, message: String, with actions: [UIAlertAction]) -> UIAlertController {
         let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
         actions.forEach {
@@ -106,6 +107,12 @@ extension FlowFactory: AlertFlowFactory,
     func makeProfileView() -> ProfileViewController {
         let vm = ProfileViewModel()
         let vc = ProfileViewController(viewModel: vm)
+        return vc
+    }
+    
+    func makeSettingsView() -> SettingsViewController {
+        let vm = SettingsViewModel()
+        let vc = SettingsViewController(viewModel: vm)
         return vc
     }
 }

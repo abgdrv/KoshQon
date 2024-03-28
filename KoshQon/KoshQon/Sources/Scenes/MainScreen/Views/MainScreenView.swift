@@ -54,31 +54,31 @@ private extension MainScreenView {
 
 extension MainScreenView: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        2
+        return 2
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        section == 0 ? viewModel.navigationItems.count : viewModel.adViewModels.count
+        return section == 0 ? viewModel.navigationItems.count : viewModel.announcementViewModels.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
-            let cell = NavigationCell(viewModel: viewModel.navigationItemViewModels[indexPath.row])
+            let cell = NavigationCell(viewModel: viewModel.navigationCellViewModels[indexPath.row])
             return cell
         }
         if indexPath.section == 1 {
-            let cell = AnnouncementCell(viewModel: viewModel.adViewModels[indexPath.row])
+            let cell = AnnouncementCell(viewModel: viewModel.announcementViewModels[indexPath.row])
             return cell
         }
         return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        section == 0 ? nil : MainSectionHeaderView()
+        return section == 0 ? nil : MainSectionHeaderView()
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        section == 0 ? 0 : 20
+        return section == 0 ? 0 : 20
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

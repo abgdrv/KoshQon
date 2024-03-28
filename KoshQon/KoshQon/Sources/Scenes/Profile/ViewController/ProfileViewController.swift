@@ -11,6 +11,8 @@ final class ProfileViewController: BaseViewController {
     
     // MARK: - Properties
     
+    var didSettingsTap: VoidCallback?
+    
     private let viewModel: ProfileViewModel
     
     override var navigationType: NavigationTitleType? {
@@ -68,6 +70,6 @@ private extension ProfileViewController {
     }
     
     @objc func settingsButtonTapped() {
-        
+        didSettingsTap?()
     }
 }

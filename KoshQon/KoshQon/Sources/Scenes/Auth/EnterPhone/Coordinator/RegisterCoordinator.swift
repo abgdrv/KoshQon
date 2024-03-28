@@ -120,7 +120,7 @@ private extension RegisterCoordinator {
         let actions: [UIAlertAction] = [
             UIAlertAction(title: "Закрыть", style: .cancel, handler: nil),
             UIAlertAction(title: "Настройки", style: .default) { [weak self] _ in
-                guard let self = self else { return }
+                guard let _ = self else { return }
                 if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
                     UIApplication.shared.open(settingsURL)
                 }

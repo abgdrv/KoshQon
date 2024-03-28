@@ -11,10 +11,10 @@ final class MainScreenViewModel {
     
     // MARK: - Properties
     
-    var adViewModels: [AnnouncementViewModel] = []
-    var navigationItemViewModels: [NavigationCellViewModel] = []
+    var announcementViewModels: [AnnouncementViewModel] = []
+    var navigationCellViewModels: [NavigationCellViewModel] = []
     
-    let navigationItems: [NavigationCellType] = [.search, .announcements, .guide]
+    let navigationItems: [NavigationCellType] = Array(NavigationCellType.allCases[0..<3])
     let ads = [
         Announcement(title: "Ищу сожителя", address: "Алматы, Бостандыкский район", date: "2 февраля", rating: 8.7),
         Announcement(title: "Ищу сожителя", address: "Алматы, Бостандыкский район", date: "2 февраля", rating: 8.7),
@@ -44,10 +44,10 @@ final class MainScreenViewModel {
 
 private extension MainScreenViewModel {
     func getAnnouncements() {
-        adViewModels = makeAnnouncementCellViewModels(items: ads)
+        announcementViewModels = makeAnnouncementCellViewModels(items: ads)
     }
     
     func getNavigationItems() {
-        navigationItemViewModels = makeNavigationCellViewModels(items: navigationItems)
+        navigationCellViewModels = makeNavigationCellViewModels(items: navigationItems)
     }
 }

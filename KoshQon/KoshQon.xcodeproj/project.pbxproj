@@ -107,6 +107,9 @@
 		47C01E3B2BB2DF1C00D1B2F2 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01E3A2BB2DF1C00D1B2F2 /* SettingsViewModel.swift */; };
 		47C01E3D2BB2DF9E00D1B2F2 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01E3C2BB2DF9E00D1B2F2 /* SettingsView.swift */; };
 		47C01E402BB2E08400D1B2F2 /* NavigationCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01E3F2BB2E08400D1B2F2 /* NavigationCellType.swift */; };
+		47C01E462BB4413100D1B2F2 /* SettingsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01E452BB4413100D1B2F2 /* SettingsCoordinator.swift */; };
+		47C01E482BB4414100D1B2F2 /* SettingsOutputCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01E472BB4414100D1B2F2 /* SettingsOutputCoordinator.swift */; };
+		47C01E4A2BB4416500D1B2F2 /* SettingsFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01E492BB4416500D1B2F2 /* SettingsFlowFactory.swift */; };
 		47C7B3772B812A3700125172 /* AppColorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C7B3762B812A3700125172 /* AppColorProtocol.swift */; };
 		47C7B3792B812AF000125172 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C7B3782B812AF000125172 /* AppColor.swift */; };
 		47C7B37E2B81321800125172 /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 47C7B37A2B81321700125172 /* SF-Pro-Display-Semibold.otf */; };
@@ -246,6 +249,9 @@
 		47C01E3A2BB2DF1C00D1B2F2 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		47C01E3C2BB2DF9E00D1B2F2 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		47C01E3F2BB2E08400D1B2F2 /* NavigationCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationCellType.swift; sourceTree = "<group>"; };
+		47C01E452BB4413100D1B2F2 /* SettingsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCoordinator.swift; sourceTree = "<group>"; };
+		47C01E472BB4414100D1B2F2 /* SettingsOutputCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsOutputCoordinator.swift; sourceTree = "<group>"; };
+		47C01E492BB4416500D1B2F2 /* SettingsFlowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFlowFactory.swift; sourceTree = "<group>"; };
 		47C7B3762B812A3700125172 /* AppColorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColorProtocol.swift; sourceTree = "<group>"; };
 		47C7B3782B812AF000125172 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
 		47C7B37A2B81321700125172 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
@@ -984,6 +990,7 @@
 		47C01E362BB2DECB00D1B2F2 /* Factory */ = {
 			isa = PBXGroup;
 			children = (
+				47C01E492BB4416500D1B2F2 /* SettingsFlowFactory.swift */,
 			);
 			path = Factory;
 			sourceTree = "<group>";
@@ -991,6 +998,8 @@
 		47C01E372BB2DED300D1B2F2 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				47C01E452BB4413100D1B2F2 /* SettingsCoordinator.swift */,
+				47C01E472BB4414100D1B2F2 /* SettingsOutputCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -1437,6 +1446,7 @@
 				475224BA2BA44414000DAE1B /* ProfileViewModel.swift in Sources */,
 				475224E02BA9D4BD000DAE1B /* UIViewController+Extensions.swift in Sources */,
 				47D54CB62B91919200021FA7 /* BottomSheetOption.swift in Sources */,
+				47C01E462BB4413100D1B2F2 /* SettingsCoordinator.swift in Sources */,
 				4764D5982B85A50000D15A2E /* LoginView.swift in Sources */,
 				47D54CE42B963A6700021FA7 /* NavigationCell.swift in Sources */,
 				471086462B9C9AA900556C2D /* AnnouncementCell.swift in Sources */,
@@ -1472,6 +1482,7 @@
 				475224CB2BA99242000DAE1B /* TabBarViewModel.swift in Sources */,
 				47C01DFD2BB1B35C00D1B2F2 /* MainScreenOutputCoordinator.swift in Sources */,
 				47C01E042BB2890400D1B2F2 /* AnnouncementsType.swift in Sources */,
+				47C01E4A2BB4416500D1B2F2 /* SettingsFlowFactory.swift in Sources */,
 				47C01E222BB2B5C500D1B2F2 /* AddAnnouncementFlowFactory.swift in Sources */,
 				47C01DEB2BAEF2D600D1B2F2 /* UIDevice+Extensions.swift in Sources */,
 				475224B42BA41AED000DAE1B /* ProfileAboutView.swift in Sources */,
@@ -1508,6 +1519,7 @@
 				47C01DEF2BB09BE500D1B2F2 /* AlertFlowFactory.swift in Sources */,
 				475224ED2BA9E882000DAE1B /* SplashScreenOutputCoordinator.swift in Sources */,
 				47CD670E2B8759EB0035DCB6 /* Typealias.swift in Sources */,
+				47C01E482BB4414100D1B2F2 /* SettingsOutputCoordinator.swift in Sources */,
 				4756A0292B7FCC56003F9675 /* SceneDelegate.swift in Sources */,
 				472E1B372B8364E1005BF649 /* LoginViewController.swift in Sources */,
 				47C01E0E2BB28C5200D1B2F2 /* FavoritesOutputCoordinator.swift in Sources */,

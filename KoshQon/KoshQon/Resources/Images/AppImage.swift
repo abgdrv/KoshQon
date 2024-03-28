@@ -83,4 +83,15 @@ enum AppImage {
         case edit = "profile/edit"
         case settings = "profile/settings"
     }
+    
+    // MARK: - Settings
+    
+    enum Settings: String, AppImageProtocol {
+        case personal = "settings/personal"
+        case privacy = "settings/privacy"
+        case theme = "settings/theme"
+        case language = "settings/language"
+        case about = "settings/about"
+        case quit = "settings/quit"
+    }
 }
