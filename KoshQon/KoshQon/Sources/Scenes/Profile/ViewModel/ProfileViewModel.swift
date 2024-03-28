@@ -15,12 +15,13 @@ final class ProfileViewModel {
     
     var profile: Profile?
     
-    private let main = ProfileMainInfo(firstName: "Имя",
-                                       secondName: "Фамилия",
+    private let main = ProfileMainInfo(firstName: "Алмат",
+                                       secondName: "Бегайдаров", gender: .male,
                                        country: Country.kz,
                                        city: Country.kz.cities[0],
                                        birthday: "23.03.2002".toDate(format: "dd.MM.yyyy") ?? Date(),
-                                       friends: 50, phoneNumber: "+77775817773")
+                                       friends: 50,
+                                       phoneNumber: "+77775817773")
     
     private let about = ProfileAboutInfo(text: "Я ответственный, проактивный, стрессоустойчивый, коммуникабельный, честный. Мои сильные стороны — хорошие управленческие и лидерские навыки, клиентоориентированность, системное мышление, позитивный настрой. Не пью, не курю, есть права категории «B».")
     

@@ -13,6 +13,13 @@ enum Gender: String, CaseIterable {
     case female = "female"
     
     var title: String {
-        self.rawValue
+        switch self {
+        case .none:
+            "Не выбрано"
+        case .male:
+            "Мужской"
+        case .female:
+            "Женский"
+        }
     }
 }

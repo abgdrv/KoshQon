@@ -23,7 +23,7 @@ final class AnnouncementsView: BaseView {
         $0.dataSource = self
         $0.delegate = self
         $0.rowHeight = UITableView.automaticDimension
-        $0.backgroundColor = AppColor.Theme.mainBackground.uiColor
+        $0.backgroundColor = AppColor.Theme.secondaryBackground.uiColor
         $0.register(type: AnnouncementCell.self)
     }
     

@@ -25,11 +25,10 @@ final class EditProfileView: BaseView {
     }
     
     private lazy var detailsTableView = DynamicTableView(style: .plain).apply {
-        $0.showsVerticalScrollIndicator = false
         $0.separatorStyle = .none
         $0.dataSource = self
         $0.delegate = self
-        $0.rowHeight = 50
+        $0.rowHeight = UIDevice.current.isSmall ? 40 : 50
         $0.isScrollEnabled = false
         $0.register(type: ProfileDetailsCell.self)
     }

@@ -14,17 +14,14 @@ final class EditProfileViewModel {
     private let profile: Profile
     
     var items: [ProfileDetailsCellViewModel] = []
-    lazy var details: [ProfileDetails] = [
-        .init(title: "Имя", value: profile.mainInfo.fullName, isEditable: false),
-        .init(title: "День рождения", value: profile.mainInfo.birthdayString, isEditable: true),
-        .init(title: "Номер телефона", value: profile.mainInfo.phoneNumber, isEditable: true),
-//        .init(title: String, value: <#T##String#>, isEditable: <#T##Bool#>)
-    ]
+    private let detailTypes = ProfileDetailType.allCases
+    private var details: [ProfileDetail] = []
         
     // MARK: - Object Lifecycle
     
     init(profile: Profile) {
         self.profile = profile
+        getDetails()
         getProfileDetailsCellViewModels()
     }
 }
@@ -34,7 +31,34 @@ private extension EditProfileViewModel {
         items = makeCellViewModels(items: details)
     }
     
-    func makeCellViewModels(items: [ProfileDetails]) -> [ProfileDetailsCellViewModel] {
+    func makeCellViewModels(items: [ProfileDetail]) -> [ProfileDetailsCellViewModel] {
         return items.compactMap { ProfileDetailsCellViewModel(details: $0) }
+    }
+    
+    func getDetails() {
+        var details: [ProfileDetail] = []
+        detailTypes.forEach { type in
+            let detail: ProfileDetail
+            switch type {
+            case .name:
+                detail = .init(type: type, value: profile.mainInfo.fullName)
+            case .birthday:
+                detail = .init(type: type, value: profile.mainInfo.birthdayString)
+            case .gender:
+                detail = .init(type: type, value: profile.mainInfo.gender.title)
+            case .phone:
+                detail = .init(type: type, value: profile.mainInfo.phoneNumber)
+            case .country:
+                detail = .init(type: type, value: profile.mainInfo.country.title)
+            case .city:
+                detail = .init(type: type, value: profile.mainInfo.country.cities[3])
+            case .characteristics:
+                detail = .init(type: type, value: "")
+            case .about:
+                detail = .init(type: type, value: "")
+            }
+            details.append(detail)
+        }
+        self.details = details
     }
 }

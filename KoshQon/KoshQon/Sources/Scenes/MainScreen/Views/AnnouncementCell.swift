@@ -92,7 +92,7 @@ final class AnnouncementCell: BaseCell {
 
 private extension AnnouncementCell {
     func setupViews() {
-        backgroundColor = AppColor.Theme.secondaryBackground.uiColor
+        backgroundColor = .clear
         contentView.addSubview(containerView)
         containerView.addSubviews(adImageView, titleLabel, addressLabel, separatorView, bottomContainerView)
         bottomContainerView.addSubviews(dateLabel, ratingImageView, ratingLabel)

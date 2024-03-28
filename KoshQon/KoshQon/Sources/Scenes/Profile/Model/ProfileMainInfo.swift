@@ -10,9 +10,11 @@ import Foundation
 struct ProfileMainInfo {
     private let firstName: String
     private let secondName: String
-    private let country: Country
-    private let city: String
+    let country: Country
+    let city: String
     private let birthday: Date
+    
+    let gender: Gender
     
     var birthdayString: String {
         return birthday.toString(format: "dd.MM.yyyy")
@@ -39,9 +41,10 @@ struct ProfileMainInfo {
         return city + ", " + country.title
     }
     
-    init(firstName: String, secondName: String, country: Country, city: String, birthday: Date, friends: Int, phoneNumber: String) {
+    init(firstName: String, secondName: String, gender: Gender, country: Country, city: String, birthday: Date, friends: Int, phoneNumber: String) {
         self.firstName = firstName
         self.secondName = secondName
+        self.gender = gender
         self.country = country
         self.city = city
         self.birthday = birthday

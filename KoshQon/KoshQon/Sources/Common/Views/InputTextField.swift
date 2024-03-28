@@ -43,6 +43,7 @@ final class InputTextField: UITextField {
     
     private let type: InputType
     private let _placeholder: String?
+    private let color = AppColor.Theme.separation.uiColor
     
     private var padding = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
     private var placeholderPadding = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
@@ -53,8 +54,8 @@ final class InputTextField: UITextField {
     private lazy var menuContainer = UIStackView()
     
     private lazy var hidePasswordButton = UIButton(type: .custom).apply {
-        $0.setImage(AppImage.Auth.eyeOn.uiImage, for: .normal)
-        $0.setImage(AppImage.Auth.eyeOff.uiImage, for: .selected)
+        $0.setImage(AppImage.Auth.eyeOn.uiImage?.withTintColor(color), for: .normal)
+        $0.setImage(AppImage.Auth.eyeOff.uiImage?.withTintColor(color), for: .selected)
         $0.addTarget(self, action: #selector(hidePasswordButtonTapped), for: .touchUpInside)
     }
     
@@ -82,7 +83,7 @@ final class InputTextField: UITextField {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        bezierPathBorder(color: AppColor.Static.orange.uiColor, width: 1)
+        bezierPathBorder(color: color)
     }
     
     // MARK: - Override methods
@@ -242,7 +243,7 @@ private extension InputTextField {
         self.backgroundColor = backgroundColor
         self.textAlignment = textAlignment
         self.isEnabled = isEnabled
-        iconImageView.image = image
+        iconImageView.image = image?.withTintColor(color)
         delegate = self
     }
     

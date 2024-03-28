@@ -21,7 +21,7 @@ final class ProfileDetailsCell: BaseCell {
     }
     
     private let isEditable: Bool
-    private var isLast = false
+    private var isLast: Bool
     
     // MARK: - UI
     
@@ -37,7 +37,7 @@ final class ProfileDetailsCell: BaseCell {
         $0.contentMode = .scaleAspectFit
     }
     
-    private lazy var separatorView = SeparatorView(color: AppColor.Static.orange.uiColor)
+    private lazy var separatorView = SeparatorView()
     
     // MARK: - Object Lifecycle
     
@@ -46,6 +46,7 @@ final class ProfileDetailsCell: BaseCell {
             self.viewModel = viewModel
         }
         self.isEditable = viewModel.isEditable
+        self.isLast = viewModel.isLast
         super.init()
         setupViews()
         setupConstraints()
@@ -61,7 +62,7 @@ private extension ProfileDetailsCell {
         if isEditable {
             contentView.addSubview(expandRightIconImageView)
         }
-        if isLast {
+        if !isLast {
             contentView.addSubview(separatorView)
         }
     }
@@ -91,7 +92,7 @@ private extension ProfileDetailsCell {
             }
         }
         
-        if isLast {
+        if !isLast {
             separatorView.snp.makeConstraints { make in
                 make.leading.trailing.equalToSuperview().inset(10)
                 make.bottom.equalToSuperview()

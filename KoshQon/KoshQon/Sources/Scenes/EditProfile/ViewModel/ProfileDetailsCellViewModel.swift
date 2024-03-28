@@ -11,31 +11,41 @@ protocol IProfileDetailsCellViewModel {
     var title: String { get }
     var value: String { get }
     var isEditable: Bool { get }
+    var isLast: Bool { get }
 }
 
 final class ProfileDetailsCellViewModel {
     
     // MARK: - Properties
     
-    private let details: ProfileDetails
+    private let detail: ProfileDetail
     
     // MARK: - Object Lifecycle
     
-    init(details: ProfileDetails) {
-        self.details = details
+    init(details: ProfileDetail) {
+        self.detail = details
     }
 }
 
 extension ProfileDetailsCellViewModel: IProfileDetailsCellViewModel {
     var title: String {
-        return details.title
+        return detail.title
     }
     
     var value: String {
-        return details.value
+        return detail.value
     }
     
     var isEditable: Bool {
-        return details.isEditable
+        return detail.isEditable
+    }
+    
+    var isLast: Bool {
+        switch detail.type {
+        case .about:
+            true
+        default:
+            false
+        }
     }
 }
