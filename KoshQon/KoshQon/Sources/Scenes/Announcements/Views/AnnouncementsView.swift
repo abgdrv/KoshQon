@@ -62,6 +62,35 @@ final class AnnouncementsView: BaseView {
     }
 }
 
+// MARK: - UITableViewDelegate, UITableViewDataSource
+
+extension AnnouncementsView: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        viewModel.items.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = AnnouncementCell(viewModel: viewModel.items[indexPath.row])
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   contextMenuConfigurationForRowAt indexPath: IndexPath,
+                   point: CGPoint) -> UIContextMenuConfiguration? {
+        let children: [UIAction] = [
+            UIAction(title: "Поделиться", image: UIImage(systemName: "square.and.arrow.up"), handler: { action in
+                
+            }),
+            UIAction(title: "Удалить", image: UIImage(systemName: "trash"), handler: { action in
+                
+            })
+        ]
+        return UIContextMenuConfiguration(identifier: nil, previewProvider: nil, actionProvider: { _ in
+            return UIMenu(children: children)
+        })
+    }
+}
+
 // MARK: - Setup Views
 
 private extension AnnouncementsView {
@@ -103,19 +132,6 @@ private extension AnnouncementsView {
                 make.leading.trailing.bottom.equalToSuperview()
             }
         }
-    }
-}
-
-// MARK: - UITableViewDelegate, UITableViewDataSource
-
-extension AnnouncementsView: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.items.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = AnnouncementCell(viewModel: viewModel.items[indexPath.row])
-        return cell
     }
 }
 

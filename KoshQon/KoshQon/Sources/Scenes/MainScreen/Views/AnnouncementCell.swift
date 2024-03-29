@@ -72,6 +72,7 @@ final class AnnouncementCell: BaseCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        self.layer.cornerRadius = 10
         containerView.layer.cornerRadius = 10
         adImageView.layer.cornerRadius = 10
     }
@@ -93,6 +94,7 @@ final class AnnouncementCell: BaseCell {
 private extension AnnouncementCell {
     func setupViews() {
         backgroundColor = .clear
+        selectionStyle = .none
         contentView.addSubview(containerView)
         containerView.addSubviews(adImageView, titleLabel, addressLabel, separatorView, bottomContainerView)
         bottomContainerView.addSubviews(dateLabel, ratingImageView, ratingLabel)

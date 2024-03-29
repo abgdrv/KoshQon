@@ -9,5 +9,5 @@ import Foundation
 
 enum AnnouncementsType: String {
     case favorites
-    case my
+    case myAnnouncements
 }

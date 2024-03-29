@@ -11,7 +11,7 @@ import ProgressHUD
 
 final class FlowFactory: AlertFlowFactory {
     
-    func makeAlert(title: String, message: String, with actions: [UIAlertAction]) -> UIAlertController {
+    func makeAlert(title: String?, message: String?, with actions: [UIAlertAction]) -> UIAlertController {
         let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
         actions.forEach {
             ac.addAction($0)

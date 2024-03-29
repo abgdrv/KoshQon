@@ -78,10 +78,11 @@ extension MainScreenView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return section == 0 ? 0 : 20
+        return section == 0 ? 0 : 25
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath)
+           print("section: \(indexPath.section)")
+           print("row: \(indexPath.row)")
     }
 }

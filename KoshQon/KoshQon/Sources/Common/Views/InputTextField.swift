@@ -62,6 +62,17 @@ final class InputTextField: UITextField {
     private lazy var iconImageView = UIImageView().apply { $0.contentMode = .center }
     private lazy var menuButton = MenuButton(type: .custom).apply {  $0.menuType = type.menuType }
     
+    private lazy var toolbar = UIToolbar(
+        frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 40)
+    ).apply {
+        let doneButton = UIBarButtonItem(
+            barButtonSystemItem: .done, target: self, action: #selector(doneButtonTapped)
+        )
+        let flexible = UIBarButtonItem(systemItem: .flexibleSpace)
+        $0.items = [flexible, doneButton]
+        $0.sizeToFit()
+    }
+    
     // MARK: - Object Lifecycle
     
     init(inputType: InputType, placeholder: String? = nil) {
@@ -130,7 +141,7 @@ private extension InputTextField {
         }
         
         if let clearButton = value(forKeyPath: "_clearButton") as? UIButton {
-            clearButton.setImage(AppImage.Auth.clear.uiImage, for: .normal)
+            clearButton.setImage(AppImage.Auth.clear.uiImage?.withTintColor(color), for: .normal)
         }
     }
     
@@ -204,24 +215,42 @@ private extension InputTextField {
     func setup() {
         switch type {
         case .password:
-            setupTextField(placeholder: "Введите пароль", isSecureTextEntry: true)
+            setupTextField(placeholder: "Введите пароль",
+                           isSecureTextEntry: true,
+                           textContentType: .password)
         case .date:
-            setupTextField(placeholder: "Дата рождения", image: AppImage.Auth.calendar.uiImage)
+            setupTextField(placeholder: "Дата рождения",
+                           textContentType: .dateTime,
+                           image: AppImage.Auth.calendar.uiImage)
         case .phone:
             setupTextField(placeholder: "Введите номер телефона",
-                           keyboardType: .phonePad, clearButtonMode: .whileEditing)
+                           keyboardType: .phonePad,
+                           clearButtonMode: .whileEditing,
+                           textContentType: .telephoneNumber)
         case .sms:
-            setupTextField(keyboardType: .numberPad, font: AppFont.bold.s24, textAlignment: .center)
-            textContentType = .oneTimeCode
+            setupTextField(keyboardType: .numberPad,
+                           font: AppFont.bold.s24,
+                           textAlignment: .center,
+                           textContentType: .oneTimeCode)
         case .regular:
-            setupTextField(placeholder: _placeholder, clearButtonMode: .whileEditing)
+            setupTextField(placeholder: _placeholder,
+                           clearButtonMode: .whileEditing,
+                           textContentType: .name)
         case .gender:
-            setupTextField(placeholder: "Пол", image: AppImage.Auth.expandDown.uiImage)
+            setupTextField(placeholder: "Пол",
+                           textContentType: .name,
+                           image: AppImage.Auth.expandDown.uiImage)
         case .city:
-            setupTextField(placeholder: "Город", image: AppImage.Auth.expandDown.uiImage)
+            setupTextField(placeholder: "Город",
+                           textContentType: .addressCity,
+                           image: AppImage.Auth.expandDown.uiImage)
         case .country:
-            setupTextField(placeholder: "Страна", image: AppImage.Auth.expandDown.uiImage)
+            setupTextField(placeholder: "Страна",
+                           textContentType: .countryName,
+                           image: AppImage.Auth.expandDown.uiImage)
         }
+        textContentType = .oneTimeCode
+
     }
     
     func setupTextField(placeholder: String? = nil,
@@ -233,6 +262,7 @@ private extension InputTextField {
                         backgroundColor: UIColor = AppColor.Theme.mainBackground.uiColor,
                         textAlignment: NSTextAlignment = .natural,
                         isEnabled: Bool = true,
+                        textContentType: UITextContentType,
                         image: UIImage? = nil) {
         self.placeholder = placeholder
         self.keyboardType = keyboardType
@@ -243,7 +273,9 @@ private extension InputTextField {
         self.backgroundColor = backgroundColor
         self.textAlignment = textAlignment
         self.isEnabled = isEnabled
+        self.textContentType = textContentType
         iconImageView.image = image?.withTintColor(color)
+        inputAccessoryView = toolbar
         delegate = self
     }
     
@@ -289,5 +321,9 @@ private extension InputTextField {
     @objc func hidePasswordButtonTapped() {
         isSecureTextEntry.toggle()
         hidePasswordButton.isSelected.toggle()
+    }
+    
+    @objc func doneButtonTapped() {
+        endEditing(true)
     }
 }

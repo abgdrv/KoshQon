@@ -16,10 +16,6 @@ final class PersonalView: BaseView {
     var didFinish: VoidCallback?
     var didImageTap: VoidCallback?
     
-    override var keyboardHandlingButton: ProceedButton? {
-        continueButton
-    }
-    
     // MARK: - UI
     
     private lazy var profileImageView = ProfileImageView(isEditable: true)
