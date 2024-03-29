@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-final class ProfileCommonView: UIView {
+final class ProfileCommonView: HighlightView {
 
     // MARK: - Properties
     

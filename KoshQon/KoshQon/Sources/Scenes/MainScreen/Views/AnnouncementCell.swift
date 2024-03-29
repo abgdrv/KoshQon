@@ -12,6 +12,8 @@ final class AnnouncementCell: BaseCell {
     
     // MARK: - Properties
     
+    var didAnnouncementCellTap: Callback<AnnouncementViewModel>?
+    
     private var viewModel: AnnouncementViewModel? {
         didSet {
             if let vm = viewModel {
@@ -66,6 +68,7 @@ final class AnnouncementCell: BaseCell {
         super.init()
         setupViews()
         setupConstraints()
+        setupBindings()
     }
     
     // MARK: - View Lifecycle
@@ -94,7 +97,6 @@ final class AnnouncementCell: BaseCell {
 private extension AnnouncementCell {
     func setupViews() {
         backgroundColor = .clear
-        selectionStyle = .none
         contentView.addSubview(containerView)
         containerView.addSubviews(adImageView, titleLabel, addressLabel, separatorView, bottomContainerView)
         bottomContainerView.addSubviews(dateLabel, ratingImageView, ratingLabel)
@@ -151,6 +153,10 @@ private extension AnnouncementCell {
             make.top.bottom.equalToSuperview().inset(10)
         }
     }
+    
+    func setupBindings() {
+        contentView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(cellTapped)))
+    }
 }
 
 // MARK: - Private methods
@@ -161,5 +167,15 @@ private extension AnnouncementCell {
         dateLabel.text = vm.date
         addressLabel.text = vm.address
         ratingLabel.text = vm.rating
+    }
+}
+
+// MARK: - Actions
+
+private extension AnnouncementCell {
+    @objc func cellTapped() {
+        if let viewModel = viewModel {
+            didAnnouncementCellTap?(viewModel)
+        }
     }
 }

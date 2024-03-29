@@ -24,10 +24,11 @@ final class ProfileView: BaseView {
     private lazy var topView = ProfileTopView(info: viewModel.profile?.mainInfo)
     private lazy var aboutView = ProfileAboutView(info: viewModel.profile?.aboutInfo)
     private lazy var commonView = ProfileCommonView(info: viewModel.profile?.commonInfo)
-    private lazy var announcementsView = ProfileAnnouncementsView(announcements: viewModel.items)
+    private lazy var announcementsView = ProfileAnnouncementsView(announcementViewModels: viewModel.items)
     
-    private lazy var contentView = UIStackView(arrangedSubviews: [topView, aboutView,
-                                                                  commonView, announcementsView]).apply {
+    private lazy var contentView = UIStackView(
+        arrangedSubviews: [topView, aboutView, commonView, announcementsView]
+    ).apply {
         $0.axis = .vertical
         $0.spacing = 16
     }

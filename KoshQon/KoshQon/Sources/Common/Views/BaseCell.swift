@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BaseCell: UITableViewCell {
+class BaseCell: HighlightCell {
             
     // MARK: - Object Lifecycle
     

@@ -9,7 +9,7 @@ import Foundation
 
 enum NavigationCellType: String, CaseIterable {
     case search
-    case announcements
+    case myAnnouncements
     case guide
     
     case personal

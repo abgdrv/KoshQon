@@ -8,11 +8,11 @@
 import UIKit
 import SnapKit
 
-final class ProfileAnnouncementsView: UIView {
+final class ProfileAnnouncementsView: HighlightView {
         
     // MARK: - Properties
     
-    private var announcements: [AnnouncementViewModel]
+    private var announcementViewModels: [AnnouncementViewModel]
     
     // MARK: - UI
     
@@ -25,14 +25,20 @@ final class ProfileAnnouncementsView: UIView {
         $0.text = "Объявления"
     }
     
-    private lazy var announcementsStackView = UIStackView(arrangedSubviews: getAnnouncements()).apply {
-        $0.axis = .vertical
+    private lazy var announcementsTableView = DynamicTableView(style: .plain).apply {
+        $0.isScrollEnabled = false
+        $0.separatorStyle = .none
+        $0.dataSource = self
+        $0.delegate = self
+        $0.rowHeight = UITableView.automaticDimension
+        $0.backgroundColor = AppColor.Theme.blockBackground.uiColor
+        $0.register(type: AnnouncementCell.self)
     }
     
     // MARK: - Object Lifecycle
     
-    init(announcements: [AnnouncementViewModel]) {
-        self.announcements = announcements
+    init(announcementViewModels: [AnnouncementViewModel]) {
+        self.announcementViewModels = announcementViewModels
         super.init(frame: .zero)
         setupViews()
         setupConstraints()
@@ -50,12 +56,30 @@ final class ProfileAnnouncementsView: UIView {
     }
 }
 
+// MARK: - UITableViewDelegate, UITableViewDataSource
+
+extension ProfileAnnouncementsView: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return announcementViewModels.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = AnnouncementCell(viewModel: announcementViewModels[indexPath.row])
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+           print("section: \(indexPath.section)")
+           print("row: \(indexPath.row)")
+    }
+}
+
 // MARK: - Setup Views
 
 private extension ProfileAnnouncementsView {
     func setupViews() {
         addSubview(containerView)
-        containerView.addSubviews(announcementsTitleLabel, announcementsStackView)
+        containerView.addSubviews(announcementsTitleLabel, announcementsTableView)
     }
     
     func setupConstraints() {
@@ -69,7 +93,7 @@ private extension ProfileAnnouncementsView {
             make.leading.equalToSuperview().offset(16)
         }
         
-        announcementsStackView.snp.makeConstraints { make in
+        announcementsTableView.snp.makeConstraints { make in
             make.top.equalTo(announcementsTitleLabel.snp.bottom).offset(8)
             make.leading.trailing.equalToSuperview()
             make.bottom.equalToSuperview().inset(8)
@@ -82,7 +106,7 @@ private extension ProfileAnnouncementsView {
 private extension ProfileAnnouncementsView {
     func getAnnouncements() -> [AnnouncementView] {
         var views: [AnnouncementView] = []
-        announcements.forEach {
+        announcementViewModels.forEach {
             let view = AnnouncementView(viewModel: $0)
             views.append(view)
         }

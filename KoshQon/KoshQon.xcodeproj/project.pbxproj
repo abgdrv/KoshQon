@@ -151,6 +151,8 @@
 		47D1BDE92BB5E25E004992AA /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D1BDE82BB5E25E004992AA /* Date+Extensions.swift */; };
 		47D1BDEB2BB5EE04004992AA /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D1BDEA2BB5EE04004992AA /* String+Extensions.swift */; };
 		47D1BDEE2BB5F254004992AA /* ProfileDetailType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D1BDED2BB5F254004992AA /* ProfileDetailType.swift */; };
+		47D1BDF22BB6CBC4004992AA /* HighlightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D1BDF12BB6CBC4004992AA /* HighlightView.swift */; };
+		47D1BDF42BB6CC09004992AA /* HighlightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D1BDF32BB6CC09004992AA /* HighlightCell.swift */; };
 		47D54CB42B918FA800021FA7 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D54CB32B918FA800021FA7 /* BottomSheetViewController.swift */; };
 		47D54CB62B91919200021FA7 /* BottomSheetOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D54CB52B91919200021FA7 /* BottomSheetOption.swift */; };
 		47D54CB82B9196B200021FA7 /* BottomSheetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D54CB72B9196B200021FA7 /* BottomSheetCell.swift */; };
@@ -310,6 +312,8 @@
 		47D1BDE82BB5E25E004992AA /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		47D1BDEA2BB5EE04004992AA /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		47D1BDED2BB5F254004992AA /* ProfileDetailType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailType.swift; sourceTree = "<group>"; };
+		47D1BDF12BB6CBC4004992AA /* HighlightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightView.swift; sourceTree = "<group>"; };
+		47D1BDF32BB6CC09004992AA /* HighlightCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightCell.swift; sourceTree = "<group>"; };
 		47D54CB32B918FA800021FA7 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
 		47D54CB52B91919200021FA7 /* BottomSheetOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetOption.swift; sourceTree = "<group>"; };
 		47D54CB72B9196B200021FA7 /* BottomSheetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetCell.swift; sourceTree = "<group>"; };
@@ -503,6 +507,8 @@
 				475225022BAB5B28000DAE1B /* MenuButton.swift */,
 				47D1BDCD2BB52F1B004992AA /* ProfileImageView.swift */,
 				47D1BDE62BB5DB2D004992AA /* DynamicTableView.swift */,
+				47D1BDF12BB6CBC4004992AA /* HighlightView.swift */,
+				47D1BDF32BB6CC09004992AA /* HighlightCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1557,6 +1563,7 @@
 				47D1BDE72BB5DB2D004992AA /* DynamicTableView.swift in Sources */,
 				475224F52BA9FC0C000DAE1B /* AuthCoordinator.swift in Sources */,
 				475224F22BA9ECAF000DAE1B /* SplashScreenCoordinator.swift in Sources */,
+				47D1BDF22BB6CBC4004992AA /* HighlightView.swift in Sources */,
 				47C01DF12BB19AAB00D1B2F2 /* TabBarOutputCoordinator.swift in Sources */,
 				475224F02BA9EC78000DAE1B /* SplashScreenFlowFactory.swift in Sources */,
 				47D1BDD22BB54BD8004992AA /* BaseCell.swift in Sources */,
@@ -1570,6 +1577,7 @@
 				47D1BDEE2BB5F254004992AA /* ProfileDetailType.swift in Sources */,
 				475224D82BA9CBBA000DAE1B /* FlowFactory.swift in Sources */,
 				47CD67402B8DE0D40035DCB6 /* EnterPhoneViewController.swift in Sources */,
+				47D1BDF42BB6CC09004992AA /* HighlightCell.swift in Sources */,
 				475224BA2BA44414000DAE1B /* ProfileViewModel.swift in Sources */,
 				475224E02BA9D4BD000DAE1B /* UIViewController+Extensions.swift in Sources */,
 				47D54CB62B91919200021FA7 /* BottomSheetOption.swift in Sources */,

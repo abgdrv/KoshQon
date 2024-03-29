@@ -12,7 +12,7 @@ final class SettingsView: BaseView {
     
     // MARK: - Properties
     
-    var didNavigationCellSelect: Callback<NavigationCellType>?
+    var didNavigationCellTap: Callback<NavigationCellType>?
     
     private let viewModel: SettingsViewModel
     
@@ -67,7 +67,9 @@ extension SettingsView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         var index = indexPath.row
         index += indexPath.section == 0 ? 0 : 4
-        didNavigationCellSelect?(viewModel.navigationCellViewModels[index].type)
+        print("section: \(indexPath.section)")
+        print("row: \(indexPath.row)")
+        didNavigationCellTap?(viewModel.navigationCellViewModels[index].type)
     }
 }
 

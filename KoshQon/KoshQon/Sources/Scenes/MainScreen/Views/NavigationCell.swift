@@ -12,6 +12,8 @@ final class NavigationCell: BaseCell {
 
     // MARK: - Properties
     
+    var didNavigationCellTap: Callback<NavigationCellType>?
+    
     private var viewModel: NavigationCellViewModel? {
         didSet {
             if let vm = viewModel {
@@ -47,6 +49,7 @@ final class NavigationCell: BaseCell {
         super.init()
         setupViews()
         setupConstraints()
+        setupBindings()
     }
 
     // MARK: - Override methods
@@ -97,6 +100,10 @@ private extension NavigationCell {
             make.top.bottom.equalToSuperview().inset(10)
         }
     }
+    
+    func setupBindings() {
+        contentView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(cellTapped)))
+    }
 }
 
 // MARK: - Private methods
@@ -105,5 +112,15 @@ private extension NavigationCell {
     func setup(_ vm: NavigationCellViewModel) {
         titleLabel.text = vm.title
         iconImageView.image = vm.image
+    }
+}
+
+// MARK: - Actions
+
+private extension NavigationCell {
+    @objc func cellTapped() {
+        if let viewModel = viewModel {
+            didNavigationCellTap?(viewModel.type)
+        }
     }
 }

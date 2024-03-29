@@ -32,7 +32,7 @@ final class SettingsCoordinator: BaseCoordinator, SettingsOutputCoordinator {
 private extension SettingsCoordinator {
     func showSettings() {
         let view = factory.makeSettingsView()
-        view.didNavigationCellSelect = { [weak self] type in
+        view.didNavigationCellTap = { [weak self] type in
             guard let self = self else { return }
             self.openNavigationCell(type: type)
         }

@@ -11,7 +11,7 @@ final class SettingsViewController: BaseViewController {
     
     // MARK: - Properties
     
-    var didNavigationCellSelect: Callback<NavigationCellType>?
+    var didNavigationCellTap: Callback<NavigationCellType>?
     
     private let viewModel: SettingsViewModel
     
@@ -57,9 +57,9 @@ final class SettingsViewController: BaseViewController {
 
 private extension SettingsViewController {
     func setupBindings() {
-        settingsView.didNavigationCellSelect = { [weak self] type in
+        settingsView.didNavigationCellTap = { [weak self] type in
             guard let self = self else { return }
-            self.didNavigationCellSelect?(type)
+            self.didNavigationCellTap?(type)
         }
     }
 }

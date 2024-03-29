@@ -27,7 +27,7 @@ extension NavigationCellViewModel: INavigationCellViewModel {
         switch type {
         case .search:
             "Найти"
-        case .announcements:
+        case .myAnnouncements:
             "Мои объявления"
         case .guide:
             "Гид"
@@ -50,7 +50,7 @@ extension NavigationCellViewModel: INavigationCellViewModel {
         switch type {
         case .search:
             AppImage.Main.search.uiImage?.withTintColor(AppColor.Theme.mainTitle.uiColor)
-        case .announcements:
+        case .myAnnouncements:
             AppImage.Main.announcement.uiImage?.withTintColor(AppColor.Theme.mainTitle.uiColor)
         case .guide:
             AppImage.Main.guide.uiImage?.withTintColor(AppColor.Theme.mainTitle.uiColor)

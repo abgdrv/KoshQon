@@ -11,6 +11,9 @@ final class MainScreenViewController: BaseViewController {
     
     // MARK: - Properties
     
+    var didNavigationCellTap: Callback<NavigationCellType>?
+    var didAnnouncementCellTap: Callback<AnnouncementViewModel>?
+    
     private let viewModel: MainScreenViewModel
     
     override var navigationTitleType: NavigationTitleType? {
@@ -37,5 +40,20 @@ final class MainScreenViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupBindings()
+    }
+}
+
+private extension MainScreenViewController {
+    func setupBindings() {
+        mainScreenView.didNavigationCellTap = { [weak self] type in
+            guard let self = self else { return }
+            self.didNavigationCellTap?(type)
+        }
+        
+        mainScreenView.didAnnouncementCellTap = { [weak self] viewModel in
+            guard let self = self else { return }
+            self.didAnnouncementCellTap?(viewModel)
+        }
     }
 }

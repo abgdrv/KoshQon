@@ -35,6 +35,35 @@ final class MainScreenCoordinator: BaseCoordinator, MainScreenOutputCoordinator 
 private extension MainScreenCoordinator {
     func showMainScreen() {
         let view = factory.makeMainScreenView()
+        view.didNavigationCellTap = { [weak self] type in
+            guard let self = self else { return }
+            self.openNavigationCell(type: type)
+        }
         router.setRoodModule(view, hideNavBar: false, isAnimated: false)
+    }
+    
+    func showSearch() {
+        
+    }
+    
+    func showMyAnnouncements() {
+        
+    }
+    
+    func showGuide() {
+        
+    }
+    
+    func openNavigationCell(type: NavigationCellType) {
+        switch type {
+        case .search:
+            showSearch()
+        case .myAnnouncements:
+            showMyAnnouncements()
+        case .guide:
+            showGuide()
+        default:
+            break
+        }
     }
 }
