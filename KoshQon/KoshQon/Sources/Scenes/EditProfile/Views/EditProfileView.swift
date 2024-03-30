@@ -13,7 +13,8 @@ final class EditProfileView: BaseView {
     // MARK: - Properties
     
     var didFinish: VoidCallback?
-    
+    var didImageTap: VoidCallback?
+
     private let viewModel: EditProfileViewModel
     
     // MARK: - UI
@@ -30,7 +31,7 @@ final class EditProfileView: BaseView {
         $0.delegate = self
         $0.rowHeight = UIDevice.current.isSmall ? 40 : 50
         $0.isScrollEnabled = false
-        $0.register(type: ProfileDetailsCell.self)
+        $0.register(type: ProfileDetailCell.self)
     }
     
     private lazy var saveButton = ProceedButton(type: .system).apply {
@@ -45,6 +46,7 @@ final class EditProfileView: BaseView {
         super.init()
         setupViews()
         setupConstraints()
+        setupBindings()
     }
     
     // MARK: - View Lifecycle
@@ -53,6 +55,12 @@ final class EditProfileView: BaseView {
         super.layoutSubviews()
         detailsTableView.layer.cornerRadius = 10
         saveButton.layer.cornerRadius = saveButton.frame.height / 2
+    }
+    
+    // MARK: - Public methods
+    
+    func setProfileImage(image: UIImage) {
+        profileImageView.image = image
     }
 }
 
@@ -64,7 +72,7 @@ extension EditProfileView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = ProfileDetailsCell(viewModel: viewModel.items[indexPath.row])
+        let cell = ProfileDetailCell(viewModel: viewModel.items[indexPath.row])
         return cell
     }
 }
@@ -97,6 +105,13 @@ private extension EditProfileView {
             make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).inset(8)
             make.leading.trailing.equalToSuperview().inset(16)
             make.height.equalTo(50)
+        }
+    }
+    
+    func setupBindings() {
+        profileImageView.didImageTap = { [weak self] in
+            guard let self = self else { return }
+            self.didImageTap?()
         }
     }
 }

@@ -13,7 +13,7 @@ final class EditProfileViewModel {
     
     private let profile: Profile
     
-    var items: [ProfileDetailsCellViewModel] = []
+    var items: [ProfileDetailCellViewModel] = []
     private let detailTypes = ProfileDetailType.allCases
     private var details: [ProfileDetail] = []
         
@@ -31,8 +31,8 @@ private extension EditProfileViewModel {
         items = makeCellViewModels(items: details)
     }
     
-    func makeCellViewModels(items: [ProfileDetail]) -> [ProfileDetailsCellViewModel] {
-        return items.compactMap { ProfileDetailsCellViewModel(details: $0) }
+    func makeCellViewModels(items: [ProfileDetail]) -> [ProfileDetailCellViewModel] {
+        return items.compactMap { ProfileDetailCellViewModel(details: $0) }
     }
     
     func getDetails() {

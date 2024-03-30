@@ -20,6 +20,7 @@ enum InfoLabelType {
     case registerPhone
     case forgotPassword
     case favorites
+    case empty
 }
 
 final class InfoLabel: UILabel {
@@ -76,6 +77,8 @@ final class InfoLabel: UILabel {
             setup(text: "Нажимайте на сердечко возле объявлений, чтобы не потерять их",
                   textColor: AppColor.Theme.mainTitle.uiColor,
                   textAlignment: .center)
+        case .empty:
+            setup(text: "Пусто", font: AppFont.medium.s16)
         }
     }
     

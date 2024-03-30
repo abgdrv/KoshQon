@@ -86,7 +86,7 @@ private extension TabBarController {
     func setup() {
         tabBar.tintColor = AppColor.Theme.mainTitle.uiColor
         tabBar.unselectedItemTintColor = AppColor.Static.darkGray.uiColor
-        tabBar.backgroundColor = AppColor.Theme.mainBackground.uiColor
+        tabBar.backgroundColor = AppColor.Theme.blockBackground.uiColor
         delegate = self
     }
     

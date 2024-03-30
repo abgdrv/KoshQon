@@ -1,5 +1,5 @@
 //
-//  ProfileDetailsCell.swift
+//  ProfileDetailCell.swift
 //  KoshQon
 //
 //  Created by Almat Begaidarov on 28.03.2024.
@@ -8,11 +8,13 @@
 import UIKit
 import SnapKit
 
-final class ProfileDetailsCell: BaseCell {
+final class ProfileDetailCell: BaseCell {
 
     // MARK: - Properties
     
-    private var viewModel: ProfileDetailsCellViewModel? {
+    var didProfileDetailCellTap: Callback<ProfileDetailType>?
+    
+    private var viewModel: ProfileDetailCellViewModel? {
         didSet {
             if let vm = viewModel {
                 setup(vm)
@@ -30,7 +32,7 @@ final class ProfileDetailsCell: BaseCell {
     }
     
     private lazy var valueLabel = UILabel().apply {
-        $0.set(font: AppFont.regular.s16, textColor: AppColor.Theme.mainTitle.uiColor)
+        $0.set(font: AppFont.regular.s16, textColor: AppColor.Static.darkGray.uiColor)
     }
     
     private lazy var expandRightIconImageView = UIImageView(image: AppImage.Common.expandRight.uiImage).apply {
@@ -41,7 +43,7 @@ final class ProfileDetailsCell: BaseCell {
     
     // MARK: - Object Lifecycle
     
-    init(viewModel: ProfileDetailsCellViewModel) {
+    init(viewModel: ProfileDetailCellViewModel) {
         defer {
             self.viewModel = viewModel
         }
@@ -50,12 +52,13 @@ final class ProfileDetailsCell: BaseCell {
         super.init()
         setupViews()
         setupConstraints()
+        setupBindings()
     }
 }
 
 // MARK: - Setup Views
 
-private extension ProfileDetailsCell {
+private extension ProfileDetailCell {
     func setupViews() {
         backgroundColor = AppColor.Theme.blockBackground.uiColor
         contentView.addSubviews(titleLabel, valueLabel)
@@ -99,13 +102,27 @@ private extension ProfileDetailsCell {
             }
         }
     }
+    
+    func setupBindings() {
+        contentView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(cellTapped)))
+    }
 }
 
 // MARK: - Private methods
 
-private extension ProfileDetailsCell {
-    func setup(_ vm: ProfileDetailsCellViewModel) {
+private extension ProfileDetailCell {
+    func setup(_ vm: ProfileDetailCellViewModel) {
         titleLabel.text = vm.title
         valueLabel.text = vm.value
+    }
+}
+
+// MARK: - Actions
+
+private extension ProfileDetailCell {
+    @objc func cellTapped() {
+        if let type = viewModel?.detail.type {
+            didProfileDetailCellTap?(type)
+        }
     }
 }

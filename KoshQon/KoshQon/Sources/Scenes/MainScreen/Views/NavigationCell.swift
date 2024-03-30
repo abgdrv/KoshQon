@@ -119,8 +119,8 @@ private extension NavigationCell {
 
 private extension NavigationCell {
     @objc func cellTapped() {
-        if let viewModel = viewModel {
-            didNavigationCellTap?(viewModel.type)
+        if let type = viewModel?.type {
+            didNavigationCellTap?(type)
         }
     }
 }

@@ -1,5 +1,5 @@
 //
-//  ProfileDetailsCellViewModel.swift
+//  ProfileDetailCellViewModel.swift
 //  KoshQon
 //
 //  Created by Almat Begaidarov on 28.03.2024.
@@ -7,18 +7,18 @@
 
 import Foundation
 
-protocol IProfileDetailsCellViewModel {
+protocol IProfileDetailCellViewModel {
     var title: String { get }
     var value: String { get }
     var isEditable: Bool { get }
     var isLast: Bool { get }
 }
 
-final class ProfileDetailsCellViewModel {
+final class ProfileDetailCellViewModel {
     
     // MARK: - Properties
     
-    private let detail: ProfileDetail
+    let detail: ProfileDetail
     
     // MARK: - Object Lifecycle
     
@@ -27,7 +27,7 @@ final class ProfileDetailsCellViewModel {
     }
 }
 
-extension ProfileDetailsCellViewModel: IProfileDetailsCellViewModel {
+extension ProfileDetailCellViewModel: IProfileDetailCellViewModel {
     var title: String {
         return detail.title
     }
