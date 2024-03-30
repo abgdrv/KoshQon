@@ -45,7 +45,7 @@ final class ProfileViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        hidesBottomBarWhenPushed = true
+        tabBarController?.tabBar.isHidden = false
     }
 }
 

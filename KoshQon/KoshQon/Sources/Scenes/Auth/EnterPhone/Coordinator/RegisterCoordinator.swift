@@ -56,19 +56,19 @@ private extension RegisterCoordinator {
             guard let self = self else { return }
             self.showCreatePassword()
         }
-        view.didShowImagePickerOptions = { [weak self] picker in
+        view.didImagePickerOptionsShow = { [weak self] picker in
             guard let self = self else { return }
-            self.showImagePickerOptions(picker: picker)
+            self.showImagePickerOptions(picker: picker, view: view)
         }
-        view.didCancelCrop = { [weak self] in
-            guard let self = self else { return }
-            self.router.popModule()
-        }
-        view.didCropImage = { [weak self] in
+        view.didCropCancel = { [weak self] in
             guard let self = self else { return }
             self.router.popModule()
         }
-        view.didShowCropImage = { [weak self] cropImage in
+        view.didImageCrop = { [weak self] in
+            guard let self = self else { return }
+            self.router.popModule()
+        }
+        view.didCropImageShow = { [weak self] cropImage in
             guard let self = self else { return }
             self.router.push(cropImage)
         }
@@ -86,7 +86,7 @@ private extension RegisterCoordinator {
 }
 
 private extension RegisterCoordinator {
-    func showImagePickerOptions(picker: UIImagePickerController) {
+    func showImagePickerOptions(picker: UIImagePickerController, view: PersonalViewController) {
         let actions: [UIAlertAction] = [
             UIAlertAction(title: "Камера", style: .default) { [weak self] _ in
                 guard let self = self else { return }
@@ -100,7 +100,11 @@ private extension RegisterCoordinator {
                 picker.sourceType = .photoLibrary
                 self.openImagePicker(picker: picker)
             },
-            UIAlertAction(title: "Закрыть", style: .cancel, handler: nil)
+            UIAlertAction(title: "Удалить фото", style: .destructive, handler: { [weak self] _ in
+                guard let _ = self else { return }
+                view.didImageDelete = {}
+            }),
+            UIAlertAction(title: "Закрыть", style: .cancel)
         ]
         let alertSheet = factory.makeAlertSheet(title: "Выберите фото",
                                                 message: "Выберите фото из галереи или откройте камеру",
@@ -111,7 +115,7 @@ private extension RegisterCoordinator {
     func openImagePicker(picker: UIImagePickerController) {
         checkPermission() { [weak self] in
             guard let self = self else { return }
-            self.router.toPresent()?.present(picker, animated: true)
+            router.toPresent()?.present(picker, animated: true)
         }
     }
     
@@ -119,7 +123,7 @@ private extension RegisterCoordinator {
                          onAccessHasBeenDenied: VoidCallback? = nil) {
         let actions: [UIAlertAction] = [
             UIAlertAction(title: "Закрыть", style: .cancel, handler: nil),
-            UIAlertAction(title: "Настройки", style: .default) { [weak self] _ in
+            UIAlertAction(title: "Настройки", style: .default) { [weak self] action in
                 guard let _ = self else { return }
                 if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
                     UIApplication.shared.open(settingsURL)
@@ -131,7 +135,7 @@ private extension RegisterCoordinator {
             let alert = self.factory.makeAlert(title: "Unable to load your album groups",
                                                message: "You can enable access in Privacy Settings",
                                                with: actions)
-            self.router.toPresent()?.present(alert, animated: true)
+            self.router.present(alert, animated: true)
         }
         
         let status = PHPhotoLibrary.authorizationStatus()

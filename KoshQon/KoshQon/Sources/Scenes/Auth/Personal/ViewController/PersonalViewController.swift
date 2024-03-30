@@ -13,10 +13,15 @@ final class PersonalViewController: BaseViewController {
     // MARK: - Properties
     
     var didFinish: VoidCallback?
-    var didShowImagePickerOptions: Callback<UIImagePickerController>?
-    var didCancelCrop: VoidCallback?
-    var didCropImage: VoidCallback?
-    var didShowCropImage: Callback<RSKImageCropViewController>?
+    var didImagePickerOptionsShow: Callback<UIImagePickerController>?
+    var didCropCancel: VoidCallback?
+    var didImageCrop: VoidCallback?
+    var didCropImageShow: Callback<RSKImageCropViewController>?
+    var didImageDelete: VoidCallback? {
+        didSet {
+            personalView.setProfileImage(image: AppImage.Personal.defaultProfile.uiImage)
+        }
+    }
     
     private let viewModel: PersonalViewModel
     
@@ -60,7 +65,7 @@ private extension PersonalViewController {
         
         personalView.didImageTap = { [weak self] in
             guard let self = self else { return }
-            self.didShowImagePickerOptions?(self.imagePicker)
+            self.didImagePickerOptionsShow?(self.imagePicker)
         }        
     }
 }
@@ -71,7 +76,7 @@ extension PersonalViewController: UIImagePickerControllerDelegate,
                                   RSKImageCropViewControllerDelegate,
                                   UINavigationControllerDelegate {
     func imageCropViewControllerDidCancelCrop(_ controller: RSKImageCropViewController) {
-        didCancelCrop?()
+        didCropCancel?()
     }
     
     func imageCropViewController(_ controller: RSKImageCropViewController,
@@ -79,17 +84,17 @@ extension PersonalViewController: UIImagePickerControllerDelegate,
                                  usingCropRect cropRect: CGRect,
                                  rotationAngle: CGFloat) {
         personalView.setProfileImage(image: croppedImage)
-        didCropImage?()
+        didImageCrop?()
     }
     
     func imagePickerController(_ picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage ?? UIImage()
-        picker.dismiss(animated: false) { [weak self] in
+        picker.dismiss(animated: true) { [weak self] in
             guard let self = self else { return }
             let imageCropVC = RSKImageCropViewController(image: image, cropMode: .circle)
             imageCropVC.delegate = self
-            self.didShowCropImage?(imageCropVC)
+            self.didCropImageShow?(imageCropVC)
         }
     }
 }

@@ -13,10 +13,15 @@ final class EditProfileViewController: BaseViewController {
     // MARK: - Properties
     
     var didFinish: VoidCallback?
-    var didShowImagePickerOptions: Callback<UIImagePickerController>?
-    var didCancelCrop: VoidCallback?
-    var didCropImage: VoidCallback?
-    var didShowCropImage: Callback<RSKImageCropViewController>?
+    var didImagePickerOptionsShow: Callback<UIImagePickerController>?
+    var didCropCancel: VoidCallback?
+    var didImageCrop: VoidCallback?
+    var didCropImageShow: Callback<RSKImageCropViewController>?
+    var didImageDelete: VoidCallback? {
+        didSet {
+            editProfileView.setProfileImage(image: AppImage.Personal.defaultProfile.uiImage)
+        }
+    }
     
     private let viewModel: EditProfileViewModel
     
@@ -52,11 +57,6 @@ final class EditProfileViewController: BaseViewController {
         super.viewWillAppear(animated)
         tabBarController?.tabBar.isHidden = true
     }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        tabBarController?.tabBar.isHidden = false
-    }
 }
 
 // MARK: - UIImagePickerControllerDelegate, UINavigationControllerDelegate, RSKImageCropViewControllerDelegate
@@ -65,7 +65,7 @@ extension EditProfileViewController: UIImagePickerControllerDelegate,
                                   RSKImageCropViewControllerDelegate,
                                   UINavigationControllerDelegate {
     func imageCropViewControllerDidCancelCrop(_ controller: RSKImageCropViewController) {
-        didCancelCrop?()
+        didCropCancel?()
     }
     
     func imageCropViewController(_ controller: RSKImageCropViewController,
@@ -73,17 +73,17 @@ extension EditProfileViewController: UIImagePickerControllerDelegate,
                                  usingCropRect cropRect: CGRect,
                                  rotationAngle: CGFloat) {
         editProfileView.setProfileImage(image: croppedImage)
-        didCropImage?()
+        didImageCrop?()
     }
     
     func imagePickerController(_ picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage ?? UIImage()
-        picker.dismiss(animated: false) { [weak self] in
+        picker.dismiss(animated: true) { [weak self] in
             guard let self = self else { return }
             let imageCropVC = RSKImageCropViewController(image: image, cropMode: .circle)
             imageCropVC.delegate = self
-            self.didShowCropImage?(imageCropVC)
+            self.didCropImageShow?(imageCropVC)
         }
     }
 }
@@ -94,7 +94,7 @@ private extension EditProfileViewController {
     func setupBindings() {
         editProfileView.didImageTap = { [weak self] in
             guard let self = self else { return }
-            self.didShowImagePickerOptions?(self.imagePicker)
+            self.didImagePickerOptionsShow?(self.imagePicker)
         }
     }
 }

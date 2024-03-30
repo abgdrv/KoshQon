@@ -77,7 +77,7 @@ final class PersonalView: BaseView {
     
     // MARK: - Public methods
     
-    func setProfileImage(image: UIImage) {
+    func setProfileImage(image: UIImage?) {
         profileImageView.image = image
     }
 }
