@@ -29,6 +29,7 @@ protocol RouterProtocol: Presentable {
     
     func popModule()
     func popModule(animated: Bool)
+    func popModule(times: Int)
     
     func dismiss(_ module: Presentable?)
     

@@ -116,6 +116,16 @@ extension Router: RouterProtocol, UIViewControllerTransitioningDelegate {
         }
     }
     
+    func popModule(times: Int) {
+        for _ in 0..<times {
+            if let controller = rootController?.popViewController(animated: false) {
+                runCompletion(for: controller)
+            } else {
+                break
+            }
+        }
+    }
+    
     func dismiss(_ module: Presentable?) {
         guard let controller = module?.toPresent() else { return }
         self.presentedViewController = controller.presentingViewController

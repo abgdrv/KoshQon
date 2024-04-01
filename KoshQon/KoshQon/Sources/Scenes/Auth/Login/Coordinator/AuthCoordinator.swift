@@ -50,18 +50,22 @@ private extension AuthCoordinator {
     }
     
     func showRegisterFlow() {
-        var coordinator = coordinatorFactory.makeRegisterCoordinator(router: router)
+        var coordinator = coordinatorFactory.makeEnterPhoneCoordinator(type: .registration, router: router)
         coordinator.finishFlow = { [weak self] in
-            self?.removeDependency(coordinator)
+            guard let self = self else { return }
+            self.router.popToRootModule(animated: true)
+            self.removeDependency(coordinator)
         }
         addDependency(coordinator)
         coordinator.start()
     }
     
     func showForgotPasswordFlow() {
-        var coordinator = coordinatorFactory.makeForgotPasswordCoordinator(router: router)
+        var coordinator = coordinatorFactory.makeEnterPhoneCoordinator(type: .forgotPassword, router: router)
         coordinator.finishFlow = { [weak self] in
-            self?.removeDependency(coordinator)
+            guard let self = self else { return }
+            self.router.popToRootModule(animated: true)
+            self.removeDependency(coordinator)
         }
         addDependency(coordinator)
         coordinator.start()

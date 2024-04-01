@@ -72,12 +72,9 @@
 		4764D59A2B85AC9500D15A2E /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4764D5992B85AC9500D15A2E /* LoginModel.swift */; };
 		478F5FFE2B99823B00A07ECD /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478F5FFD2B99823B00A07ECD /* UITableView+Extensions.swift */; };
 		47C01DD22BAD9D7500D1B2F2 /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01DD12BAD9D7500D1B2F2 /* UIButton+Extensions.swift */; };
-		47C01DD82BADC49A00D1B2F2 /* RegisterFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01DD72BADC49A00D1B2F2 /* RegisterFlowFactory.swift */; };
-		47C01DDA2BADC99000D1B2F2 /* RegisterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01DD92BADC99000D1B2F2 /* RegisterCoordinator.swift */; };
-		47C01DDC2BADC9A900D1B2F2 /* RegisterOutputCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01DDB2BADC9A900D1B2F2 /* RegisterOutputCoordinator.swift */; };
-		47C01DE02BAE07C300D1B2F2 /* ForgotPasswordOutputCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01DDF2BAE07C300D1B2F2 /* ForgotPasswordOutputCoordinator.swift */; };
-		47C01DE72BAE094B00D1B2F2 /* ForgotPasswordFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01DE62BAE094B00D1B2F2 /* ForgotPasswordFlowFactory.swift */; };
-		47C01DE92BAE09C300D1B2F2 /* ForgotPasswordCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01DE82BAE09C300D1B2F2 /* ForgotPasswordCoordinator.swift */; };
+		47C01DD82BADC49A00D1B2F2 /* EnterPhoneFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01DD72BADC49A00D1B2F2 /* EnterPhoneFlowFactory.swift */; };
+		47C01DDA2BADC99000D1B2F2 /* EnterPhoneCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01DD92BADC99000D1B2F2 /* EnterPhoneCoordinator.swift */; };
+		47C01DDC2BADC9A900D1B2F2 /* EnterPhoneOutputCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01DDB2BADC9A900D1B2F2 /* EnterPhoneOutputCoordinator.swift */; };
 		47C01DEB2BAEF2D600D1B2F2 /* UIDevice+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01DEA2BAEF2D600D1B2F2 /* UIDevice+Extensions.swift */; };
 		47C01DED2BAF5FE700D1B2F2 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01DEC2BAF5FE700D1B2F2 /* KeychainService.swift */; };
 		47C01DEF2BB09BE500D1B2F2 /* AlertFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01DEE2BB09BE500D1B2F2 /* AlertFlowFactory.swift */; };
@@ -153,6 +150,7 @@
 		47D1BDF22BB6CBC4004992AA /* HighlightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D1BDF12BB6CBC4004992AA /* HighlightView.swift */; };
 		47D1BDF42BB6CC09004992AA /* HighlightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D1BDF32BB6CC09004992AA /* HighlightCell.swift */; };
 		47D1BDFA2BBA6E07004992AA /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D1BDF92BBA6E07004992AA /* City.swift */; };
+		47D1BDFF2BBAC8F1004992AA /* DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D1BDFE2BBAC8F1004992AA /* DatePicker.swift */; };
 		47D54CB42B918FA800021FA7 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D54CB32B918FA800021FA7 /* BottomSheetViewController.swift */; };
 		47D54CB62B91919200021FA7 /* BottomSheetOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D54CB52B91919200021FA7 /* BottomSheetOption.swift */; };
 		47D54CB82B9196B200021FA7 /* BottomSheetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D54CB72B9196B200021FA7 /* BottomSheetCell.swift */; };
@@ -233,12 +231,9 @@
 		4764D5992B85AC9500D15A2E /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		478F5FFD2B99823B00A07ECD /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		47C01DD12BAD9D7500D1B2F2 /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
-		47C01DD72BADC49A00D1B2F2 /* RegisterFlowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterFlowFactory.swift; sourceTree = "<group>"; };
-		47C01DD92BADC99000D1B2F2 /* RegisterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCoordinator.swift; sourceTree = "<group>"; };
-		47C01DDB2BADC9A900D1B2F2 /* RegisterOutputCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterOutputCoordinator.swift; sourceTree = "<group>"; };
-		47C01DDF2BAE07C300D1B2F2 /* ForgotPasswordOutputCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordOutputCoordinator.swift; sourceTree = "<group>"; };
-		47C01DE62BAE094B00D1B2F2 /* ForgotPasswordFlowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordFlowFactory.swift; sourceTree = "<group>"; };
-		47C01DE82BAE09C300D1B2F2 /* ForgotPasswordCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordCoordinator.swift; sourceTree = "<group>"; };
+		47C01DD72BADC49A00D1B2F2 /* EnterPhoneFlowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPhoneFlowFactory.swift; sourceTree = "<group>"; };
+		47C01DD92BADC99000D1B2F2 /* EnterPhoneCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPhoneCoordinator.swift; sourceTree = "<group>"; };
+		47C01DDB2BADC9A900D1B2F2 /* EnterPhoneOutputCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPhoneOutputCoordinator.swift; sourceTree = "<group>"; };
 		47C01DEA2BAEF2D600D1B2F2 /* UIDevice+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extensions.swift"; sourceTree = "<group>"; };
 		47C01DEC2BAF5FE700D1B2F2 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		47C01DEE2BB09BE500D1B2F2 /* AlertFlowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertFlowFactory.swift; sourceTree = "<group>"; };
@@ -314,6 +309,7 @@
 		47D1BDF12BB6CBC4004992AA /* HighlightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightView.swift; sourceTree = "<group>"; };
 		47D1BDF32BB6CC09004992AA /* HighlightCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightCell.swift; sourceTree = "<group>"; };
 		47D1BDF92BBA6E07004992AA /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		47D1BDFE2BBAC8F1004992AA /* DatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
 		47D54CB32B918FA800021FA7 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
 		47D54CB52B91919200021FA7 /* BottomSheetOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetOption.swift; sourceTree = "<group>"; };
 		47D54CB72B9196B200021FA7 /* BottomSheetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetCell.swift; sourceTree = "<group>"; };
@@ -509,6 +505,7 @@
 				47D1BDE62BB5DB2D004992AA /* DynamicTableView.swift */,
 				47D1BDF12BB6CBC4004992AA /* HighlightView.swift */,
 				47D1BDF32BB6CC09004992AA /* HighlightCell.swift */,
+				47D1BDFE2BBAC8F1004992AA /* DatePicker.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -883,10 +880,8 @@
 		47C01E062BB28AF000D1B2F2 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				47C01DD92BADC99000D1B2F2 /* RegisterCoordinator.swift */,
-				47C01DDB2BADC9A900D1B2F2 /* RegisterOutputCoordinator.swift */,
-				47C01DE82BAE09C300D1B2F2 /* ForgotPasswordCoordinator.swift */,
-				47C01DDF2BAE07C300D1B2F2 /* ForgotPasswordOutputCoordinator.swift */,
+				47C01DD92BADC99000D1B2F2 /* EnterPhoneCoordinator.swift */,
+				47C01DDB2BADC9A900D1B2F2 /* EnterPhoneOutputCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -894,8 +889,7 @@
 		47C01E072BB28B0C00D1B2F2 /* Factory */ = {
 			isa = PBXGroup;
 			children = (
-				47C01DD72BADC49A00D1B2F2 /* RegisterFlowFactory.swift */,
-				47C01DE62BAE094B00D1B2F2 /* ForgotPasswordFlowFactory.swift */,
+				47C01DD72BADC49A00D1B2F2 /* EnterPhoneFlowFactory.swift */,
 			);
 			path = Factory;
 			sourceTree = "<group>";
@@ -1594,17 +1588,16 @@
 				471086462B9C9AA900556C2D /* AnnouncementCell.swift in Sources */,
 				475224D52BA9CB56000DAE1B /* BaseCoordinator.swift in Sources */,
 				47CD67382B8DA33E0035DCB6 /* NavigationTitleView.swift in Sources */,
-				47C01DD82BADC49A00D1B2F2 /* RegisterFlowFactory.swift in Sources */,
+				47C01DD82BADC49A00D1B2F2 /* EnterPhoneFlowFactory.swift in Sources */,
 				47C7B3792B812AF000125172 /* AppColor.swift in Sources */,
 				47D1BDDE2BB570F0004992AA /* EditProfileFlowFactory.swift in Sources */,
 				47C7B3852B8132C800125172 /* AppFont.swift in Sources */,
-				47C01DDA2BADC99000D1B2F2 /* RegisterCoordinator.swift in Sources */,
+				47C01DDA2BADC99000D1B2F2 /* EnterPhoneCoordinator.swift in Sources */,
 				47D1BDE32BB57857004992AA /* EditProfileOutputCoordinator.swift in Sources */,
 				475224B62BA441C3000DAE1B /* ProfileMainInfo.swift in Sources */,
 				47D1BDD42BB550B1004992AA /* ProfileDetailCellViewModel.swift in Sources */,
 				47CD672D2B8C3DD50035DCB6 /* BaseViewController.swift in Sources */,
 				475224DB2BA9CE4B000DAE1B /* Presentable.swift in Sources */,
-				47C01DE72BAE094B00D1B2F2 /* ForgotPasswordFlowFactory.swift in Sources */,
 				47C01E262BB2B5F400D1B2F2 /* AddAnnouncementOutputCoordinator.swift in Sources */,
 				47D54CC52B91EC7200021FA7 /* MainScreenViewController.swift in Sources */,
 				475224FA2BA9FECB000DAE1B /* AuthFlowFactory.swift in Sources */,
@@ -1648,7 +1641,7 @@
 				47C01DF32BB19ACE00D1B2F2 /* TabBarCoordinator.swift in Sources */,
 				47CD67262B88A9980035DCB6 /* BaseView.swift in Sources */,
 				47CD67282B88BB070035DCB6 /* SetPasswordViewController.swift in Sources */,
-				47C01DDC2BADC9A900D1B2F2 /* RegisterOutputCoordinator.swift in Sources */,
+				47C01DDC2BADC9A900D1B2F2 /* EnterPhoneOutputCoordinator.swift in Sources */,
 				475224A22BA05800000DAE1B /* AnnouncementsViewModel.swift in Sources */,
 				47D54CEC2B96419700021FA7 /* UIView+Extensions.swift in Sources */,
 				47D1BDC82BB529D7004992AA /* EditProfileViewController.swift in Sources */,
@@ -1667,7 +1660,6 @@
 				4752249D2BA05187000DAE1B /* AnnouncementsViewController.swift in Sources */,
 				47C01E202BB2B26D00D1B2F2 /* AddAnnouncementView.swift in Sources */,
 				47C01E392BB2DEEE00D1B2F2 /* SettingsViewController.swift in Sources */,
-				47C01DE02BAE07C300D1B2F2 /* ForgotPasswordOutputCoordinator.swift in Sources */,
 				47C01DEF2BB09BE500D1B2F2 /* AlertFlowFactory.swift in Sources */,
 				475224ED2BA9E882000DAE1B /* SplashScreenOutputCoordinator.swift in Sources */,
 				47CD670E2B8759EB0035DCB6 /* Typealias.swift in Sources */,
@@ -1694,7 +1686,6 @@
 				47C01E3B2BB2DF1C00D1B2F2 /* SettingsViewModel.swift in Sources */,
 				475224FC2BAA0FFF000DAE1B /* EnterPhoneViewModel.swift in Sources */,
 				475224C52BA7FE1A000DAE1B /* ProfileCharacteristicView.swift in Sources */,
-				47C01DE92BAE09C300D1B2F2 /* ForgotPasswordCoordinator.swift in Sources */,
 				47C01E3D2BB2DF9E00D1B2F2 /* SettingsView.swift in Sources */,
 				47CD673E2B8DDB2B0035DCB6 /* EnterPhoneView.swift in Sources */,
 				4764D59A2B85AC9500D15A2E /* LoginModel.swift in Sources */,
@@ -1705,6 +1696,7 @@
 				47D1BDEB2BB5EE04004992AA /* String+Extensions.swift in Sources */,
 				475224FF2BAB2055000DAE1B /* Country.swift in Sources */,
 				475224C22BA76649000DAE1B /* ProfileCharacteristicProgressView.swift in Sources */,
+				47D1BDFF2BBAC8F1004992AA /* DatePicker.swift in Sources */,
 				47C7B3982B81377400125172 /* AppImage.swift in Sources */,
 				475224F72BA9FC45000DAE1B /* AuthOutputCoordinator.swift in Sources */,
 			);

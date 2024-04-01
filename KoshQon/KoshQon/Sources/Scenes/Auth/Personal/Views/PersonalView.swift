@@ -31,26 +31,7 @@ final class PersonalView: BaseView {
         $0.addTarget(self, action: #selector(continueButtonTapped), for: .touchUpInside)
     }
     
-    private lazy var datePicker = UIDatePicker().apply {
-        $0.datePickerMode = .date
-        $0.preferredDatePickerStyle = .wheels
-        $0.backgroundColor = AppColor.Theme.mainBackground.uiColor
-        $0.addTarget(self, action: #selector(datePickerValueChanged), for: .valueChanged)
-        
-        let calendar = Calendar(identifier: .gregorian)
-        let currentDate = Date()
-        var components = DateComponents()
-        components.calendar = calendar
-        components.year = -18
-        components.month = 0
-        let maxDate = calendar.date(byAdding: components, to: currentDate)
-        
-        components.year = -94
-        let minDate = calendar.date(byAdding: components, to: currentDate)
-        
-        $0.maximumDate = maxDate
-        $0.minimumDate = minDate
-    }
+    private lazy var datePicker = DatePicker(format: "dd.MM.yyyy")
     
     // MARK: - Object Lifecycle
     
@@ -164,6 +145,11 @@ private extension PersonalView {
             guard let self = self else { return }
             self.didImageTap?()
         }
+        
+        datePicker.didDateChange = { [weak self] selectedDate in
+            guard let self = self else { return }
+            birthdayTextField.text = selectedDate
+        }
     }
 }
 
@@ -172,9 +158,5 @@ private extension PersonalView {
 private extension PersonalView {
     @objc func continueButtonTapped() {
         didFinish?()
-    }
-    
-    @objc func datePickerValueChanged() {
-        birthdayTextField.text = datePicker.date.toString(format: "dd.MM.yyyy")
     }
 }

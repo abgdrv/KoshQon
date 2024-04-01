@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import Photos
+import ProgressHUD
 
 final class EditProfileCoordinator: BaseCoordinator, EditProfileOutputCoordinator {
     
@@ -18,12 +19,14 @@ final class EditProfileCoordinator: BaseCoordinator, EditProfileOutputCoordinato
     
     private let router: RouterProtocol
     private let factory: EditProfileFlowFactory
+    private let coordinatorFactory: CoordinatorFactory
         
     // MARK: - Object Lifecycle
     
-    init(router: RouterProtocol, factory: EditProfileFlowFactory) {
+    init(router: RouterProtocol, factory: EditProfileFlowFactory, coordinatorFactory: CoordinatorFactory) {
         self.router = router
         self.factory = factory
+        self.coordinatorFactory = coordinatorFactory
         super.init(alertFlowFactory: factory)
     }
     
@@ -60,12 +63,15 @@ private extension EditProfileCoordinator {
     }
     
     func showPhoneDetail() {
-        let view = factory.makeEnterPhoneView(type: .changePhone)
-        view.didFinish = { [weak self] in
+        var coordinator = coordinatorFactory.makeEnterPhoneCoordinator(type: .changePhone, router: router)
+        coordinator.finishFlow = { [weak self] in
             guard let self = self else { return }
-            
+            self.removeDependency(coordinator)
+            self.router.popModule(times: 2)
+            ProgressHUD.success("Номер изменен")
         }
-        router.push(view)
+        addDependency(coordinator)
+        coordinator.start()
     }
     
     func showCharacteristicsDetail() {

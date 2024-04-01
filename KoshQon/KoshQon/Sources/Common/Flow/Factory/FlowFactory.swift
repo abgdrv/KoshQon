@@ -35,7 +35,7 @@ final class FlowFactory: AlertFlowFactory {
 
 extension FlowFactory: SplashScreenFlowFactory,
                        AuthFlowFactory,
-                       RegisterFlowFactory,
+                       EnterPhoneFlowFactory,
                        TabBarFlowFactory,
                        MainScreenFlowFactory,
                        FavoritesFlowFactory,

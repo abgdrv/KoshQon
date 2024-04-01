@@ -21,13 +21,8 @@ final class CoordinatorFactory: CoordinatorFactoryProtocol {
         return coordinator
     }
     
-    func makeRegisterCoordinator(router: RouterProtocol) -> Coordinator & RegisterOutputCoordinator {
-        let coordinator = RegisterCoordinator(router: router, factory: FlowFactory())
-        return coordinator
-    }
-    
-    func makeForgotPasswordCoordinator(router: RouterProtocol) -> Coordinator & ForgotPasswordOutputCoordinator {
-        let coordinator = ForgotPasswordCoordinator(router: router, factory: FlowFactory())
+    func makeEnterPhoneCoordinator(type: EnterPhoneType, router: RouterProtocol) -> Coordinator & EnterPhoneOutputCoordinator {
+        let coordinator = EnterPhoneCoordinator(type: type, router: router, factory: FlowFactory())
         return coordinator
     }
     
@@ -41,17 +36,17 @@ final class CoordinatorFactory: CoordinatorFactoryProtocol {
         return coordinator
     }
     
-    func makeFavoritesCoordinator(navController: UINavigationController) -> any Coordinator & FavoritesOutputCoordinator {
+    func makeFavoritesCoordinator(navController: UINavigationController) -> Coordinator & FavoritesOutputCoordinator {
         let coordinator = FavoritesCoordinator(router: router(navController), factory: FlowFactory(), coordinatorFactory: self)
         return coordinator
     }
     
-    func makeAddAnnouncementCoordinator(navController: UINavigationController) -> any AddAnnouncementOutputCoordinator & Coordinator {
+    func makeAddAnnouncementCoordinator(navController: UINavigationController) -> AddAnnouncementOutputCoordinator & Coordinator {
         let coordinator = AddAnnouncementCoordinator(router: router(navController), factory: FlowFactory())
         return coordinator
     }
     
-    func makeProfileCoordinator(navController: UINavigationController) -> any Coordinator & ProfileOutputCoordinator {
+    func makeProfileCoordinator(navController: UINavigationController) -> Coordinator & ProfileOutputCoordinator {
         let coordinator = ProfileCoordinator(router: router(navController), factory: FlowFactory(), coordinatorFactory: self)
         return coordinator
     }
@@ -62,7 +57,7 @@ final class CoordinatorFactory: CoordinatorFactoryProtocol {
     }
     
     func makeEditProfileCoordinator(router: RouterProtocol) -> Coordinator & EditProfileOutputCoordinator {
-        let coordinator = EditProfileCoordinator(router: router, factory: FlowFactory())
+        let coordinator = EditProfileCoordinator(router: router, factory: FlowFactory(), coordinatorFactory: self)
         return coordinator
     }
 }

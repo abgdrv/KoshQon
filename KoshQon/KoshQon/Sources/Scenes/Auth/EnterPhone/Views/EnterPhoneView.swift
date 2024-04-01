@@ -28,7 +28,7 @@ final class EnterPhoneView: BaseView {
     
     // MARK: - UI
     
-    private lazy var infoLabel = InfoLabel(type: type == .registration ? .registerPhone : .forgotPassword)
+    private lazy var infoLabel = InfoLabel(type: InfoLabelType(rawValue: type.rawValue) ?? .registration)
     private lazy var phoneLabel = InfoLabel(type: .phone)
     private lazy var phoneTextField = InputTextField(inputType: .phone)
     

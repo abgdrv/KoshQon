@@ -12,7 +12,7 @@ final class EditProfileView: BaseView {
     
     // MARK: - Properties
     
-    var didFinish: VoidCallback?
+    var didSave: VoidCallback?
     var didImageTap: VoidCallback?
     var didProfileDetailCellTap: Callback<ProfileDetailType>?
 
@@ -87,7 +87,7 @@ extension EditProfileView: UITableViewDelegate, UITableViewDataSource {
 private extension EditProfileView {
     func setupViews() {
         addSubviews(profileImageView, detailsContainerView, saveButton)
-        detailsContainerView.addSubviews(detailsTableView)
+        detailsContainerView.addSubview(detailsTableView)
     }
     
     func setupConstraints() {
@@ -125,6 +125,6 @@ private extension EditProfileView {
 
 private extension EditProfileView {
     @objc func saveButtonTapped() {
-        didFinish?()
+        didSave?()
     }
 }

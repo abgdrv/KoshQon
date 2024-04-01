@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum InfoLabelType {
+enum InfoLabelType: String {
     case phone
     case password
     case noAccount
@@ -17,8 +17,9 @@ enum InfoLabelType {
     case resend
     case passwordContain
     case passwordRequirements
-    case registerPhone
+    case registration
     case forgotPassword
+    case changePhone
     case favorites
     case empty
 }
@@ -67,11 +68,14 @@ final class InfoLabel: UILabel {
             let options = ["Не менее 8 символов", "Цифры","Заглавные и строчные буквы"]
             setup(text: options.map { "· " + $0 }.joined(separator: "\n"),
                   textColor: AppColor.Theme.mainTitle.uiColor)
-        case .registerPhone:
+        case .registration:
             setup(text: "Ваш номер телефона будет использоваться для входа в вашу учетную запись",
                   textAlignment: .center)
         case .forgotPassword:
             setup(text: "Для восстановления вашего пароля требуется ваш номер телефона, связанный с учетной записью",
+                  textAlignment: .center)
+        case .changePhone:
+            setup(text: "Введите новый номер телефона, он будет связан с вашей учетной записью", 
                   textAlignment: .center)
         case .favorites:
             setup(text: "Нажимайте на сердечко возле объявлений, чтобы не потерять их",

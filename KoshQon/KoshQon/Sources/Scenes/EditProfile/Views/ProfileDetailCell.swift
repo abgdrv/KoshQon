@@ -41,33 +41,9 @@ final class ProfileDetailCell: BaseCell {
         $0.contentMode = .scaleAspectFit
     }
     
-    private lazy var menuButton = MenuButton(type: .system).apply {
-        $0.menuType = type.menuType
-    }
-    
+    private lazy var menuButton = MenuButton(type: .system).apply { $0.menuType = type.menuType }
     private lazy var dateTextField = InputTextField(inputType: .detailDate).apply { $0.inputView = datePicker }
-    
-    private lazy var datePicker = UIDatePicker().apply {
-        $0.datePickerMode = .date
-        $0.preferredDatePickerStyle = .wheels
-        $0.backgroundColor = AppColor.Theme.blockBackground.uiColor
-        $0.addTarget(self, action: #selector(datePickerValueChanged), for: .valueChanged)
-        
-        let calendar = Calendar(identifier: .gregorian)
-        let currentDate = Date()
-        var components = DateComponents()
-        components.calendar = calendar
-        components.year = -18
-        components.month = 0
-        let maxDate = calendar.date(byAdding: components, to: currentDate)
-        
-        components.year = -94
-        let minDate = calendar.date(byAdding: components, to: currentDate)
-        
-        $0.maximumDate = maxDate
-        $0.minimumDate = minDate
-    }
-
+    private lazy var datePicker = DatePicker(format: "dd.MM.yyyy")
     private lazy var separatorView = SeparatorView()
     
     // MARK: - Object Lifecycle
@@ -157,6 +133,11 @@ private extension ProfileDetailCell {
             guard let self = self else { return }
             self.value = value
         }
+        
+        datePicker.didDateChange = { [weak self] selectedDate in
+            guard let self = self else { return }
+            self.value = selectedDate
+        }
     }
 }
 
@@ -177,16 +158,5 @@ private extension ProfileDetailCell {
         if type == .birthday {
             dateTextField.becomeFirstResponder()
         }
-        if type == .gender || type == .country || type == .city {
-            menuButton.snp.remakeConstraints { make in
-                make.edges.equalToSuperview()
-            }
-            menuButton.sendActions(for: .allTouchEvents)
-        }
-        didProfileDetailCellTap?(type)
-    }
-    
-    @objc func datePickerValueChanged() {
-        value = datePicker.date.toString(format: "dd.MM.yyyy")
     }
 }

@@ -1,5 +1,5 @@
 //
-//  RegisterCoordinator.swift
+//  EnterPhoneCoordinator.swift
 //  KoshQon
 //
 //  Created by Almat Begaidarov on 22.03.2024.
@@ -9,31 +9,34 @@ import Foundation
 import UIKit
 import Photos
 
-final class RegisterCoordinator: BaseCoordinator, RegisterOutputCoordinator {
+final class EnterPhoneCoordinator: BaseCoordinator, EnterPhoneOutputCoordinator {
     
     // MARK: - Properties
     
     var finishFlow: VoidCallback?
     
+    private let type: EnterPhoneType
+    
     private let router: RouterProtocol
-    private let factory: RegisterFlowFactory
+    private let factory: EnterPhoneFlowFactory
     
     // MARK: - Object Lifecycle
     
-    init(router: RouterProtocol, factory: RegisterFlowFactory) {
+    init(type: EnterPhoneType, router: RouterProtocol, factory: EnterPhoneFlowFactory) {
+        self.type = type
         self.router = router
         self.factory = factory
         super.init(alertFlowFactory: factory)
     }
     
     override func start() {
-        showRegister()
+        showEnterPhone()
     }
 }
 
-private extension RegisterCoordinator {
-    func showRegister() {
-        let view = factory.makeEnterPhoneView(type: .registration)
+private extension EnterPhoneCoordinator {
+    func showEnterPhone() {
+        let view = factory.makeEnterPhoneView(type: type)
         view.didFinish = { [weak self] in
             guard let self = self else { return }
             self.showSms()
@@ -45,7 +48,14 @@ private extension RegisterCoordinator {
         let view = factory.makeSmsCodeView()
         view.didFinish = { [weak self] in
             guard let self = self else { return }
-            self.showPersonal()
+            switch self.type {
+            case .registration:
+                self.showPersonal()
+            case .forgotPassword:
+                self.showSetPassword()
+            case .changePhone:
+                self.finishFlow?()
+            }
         }
         router.push(view)
     }
@@ -54,7 +64,7 @@ private extension RegisterCoordinator {
         let view = factory.makePersonalView()
         view.didFinish = { [weak self] in
             guard let self = self else { return }
-            self.showCreatePassword()
+            self.showSetPassword()
         }
         view.didImagePickerOptionsShow = { [weak self] picker in
             guard let self = self else { return }
@@ -75,17 +85,17 @@ private extension RegisterCoordinator {
         router.push(view)
     }
     
-    func showCreatePassword() {
-        let view = factory.makeSetPasswordView(type: .create)
+    func showSetPassword() {
+        let view = factory.makeSetPasswordView(type: type == .registration ? .create : .change)
         view.didFinish = { [weak self] in
             guard let self = self else { return }
-            self.router.popToRootModule(animated: true)
+            self.finishFlow?()
         }
         router.push(view)
     }
 }
 
-private extension RegisterCoordinator {
+private extension EnterPhoneCoordinator {
     func showImagePickerOptions(picker: UIImagePickerController) {
         let actions: [UIAlertAction] = [
             UIAlertAction(title: "Камера", style: .default) { [weak self] _ in
