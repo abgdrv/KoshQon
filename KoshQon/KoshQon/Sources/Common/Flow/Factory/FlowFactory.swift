@@ -27,7 +27,7 @@ final class FlowFactory: AlertFlowFactory {
         return ac
     }
     
-    func makeBanner(title: String?, message: String?, delay: TimeInterval) {
+    func showBanner(title: String?, message: String?, delay: TimeInterval) {
         ProgressHUD.banner(title, message, delay: delay)
     }
     

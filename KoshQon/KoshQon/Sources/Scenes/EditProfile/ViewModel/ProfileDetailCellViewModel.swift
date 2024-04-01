@@ -18,7 +18,7 @@ final class ProfileDetailCellViewModel {
     
     // MARK: - Properties
     
-    let detail: ProfileDetail
+    var detail: ProfileDetail
     
     // MARK: - Object Lifecycle
     

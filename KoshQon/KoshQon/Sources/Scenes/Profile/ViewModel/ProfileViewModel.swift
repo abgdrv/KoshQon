@@ -18,7 +18,7 @@ final class ProfileViewModel {
     private let main = ProfileMainInfo(firstName: "Алмат",
                                        secondName: "Бегайдаров", gender: .male,
                                        country: Country.kz,
-                                       city: Country.kz.cities[0],
+                                       city: City.kostanay,
                                        birthday: "23.03.2002".toDate(format: "dd.MM.yyyy") ?? Date(),
                                        friends: 50,
                                        phoneNumber: "+77775817773")

@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 final class AnnouncementsView: BaseView {
-
+    
     // MARK: - Properties
     
     private let viewModel: AnnouncementsViewModel
@@ -27,25 +27,26 @@ final class AnnouncementsView: BaseView {
         $0.dataSource = self
         $0.delegate = self
         $0.rowHeight = UITableView.automaticDimension
+        $0.backgroundColor = .clear
         $0.register(type: AnnouncementCell.self)
     }
     
-//    private lazy var heartImageView = UIImageView(image: AppImage.Favorites.heart.uiImage).apply {
-//        $0.contentMode = .scaleAspectFit
-//    }
-//    
-//    private lazy var titleLabel = UILabel().apply {
-//        $0.set(font: AppFont.semibold.s24, textColor: AppColor.Theme.mainTitle.uiColor)
-//        $0.text = "Место для избранного"
-//        $0.textAlignment = .center
-//    }
-//    
-//    private lazy var infoLabel = InfoLabel(type: .favorites)
-//    
-//    private lazy var findButton = ProceedButton(type: .system).apply {
-//        $0.type = .find
-//        $0.addTarget(self, action: #selector(findButtonTapped), for: .touchUpInside)
-//    }
+    //    private lazy var heartImageView = UIImageView(image: AppImage.Favorites.heart.uiImage).apply {
+    //        $0.contentMode = .scaleAspectFit
+    //    }
+    //
+    //    private lazy var titleLabel = UILabel().apply {
+    //        $0.set(font: AppFont.semibold.s24, textColor: AppColor.Theme.mainTitle.uiColor)
+    //        $0.text = "Место для избранного"
+    //        $0.textAlignment = .center
+    //    }
+    //
+    //    private lazy var infoLabel = InfoLabel(type: .favorites)
+    //
+    //    private lazy var findButton = ProceedButton(type: .system).apply {
+    //        $0.type = .find
+    //        $0.addTarget(self, action: #selector(findButtonTapped), for: .touchUpInside)
+    //    }
     
     private lazy var emptyLabel = InfoLabel(type: .empty)
     
@@ -57,13 +58,6 @@ final class AnnouncementsView: BaseView {
         super.init()
         setupViews()
         setupConstraints()
-    }
-
-    // MARK: - View Lifecycle
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-//        findButton.layer.cornerRadius = 10
     }
 }
 
@@ -82,7 +76,7 @@ extension AnnouncementsView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView,
                    contextMenuConfigurationForRowAt indexPath: IndexPath,
                    point: CGPoint) -> UIContextMenuConfiguration? {
-        let children: [UIAction] = [
+        let actions: [UIAction] = [
             UIAction(title: "Поделиться", image: UIImage(systemName: "square.and.arrow.up"), handler: { action in
                 
             }),
@@ -90,8 +84,9 @@ extension AnnouncementsView: UITableViewDelegate, UITableViewDataSource {
                 
             })
         ]
-        return UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { _ in
-            return UIMenu(children: children)
+        
+        return UIContextMenuConfiguration( identifier: nil, previewProvider: nil) { action in
+            return UIMenu(title: "", children: actions)
         }
     }
 }
@@ -103,7 +98,7 @@ private extension AnnouncementsView {
         addSubview(contentView)
         if viewModel.ads.isEmpty {
             contentView.addSubview(emptyLabel)
-//            addSubviews(heartImageView, titleLabel, infoLabel, findButton)
+            //            addSubviews(heartImageView, titleLabel, infoLabel, findButton)
         } else {
             contentView.addSubview(announcementsTableView)
         }
@@ -122,28 +117,28 @@ private extension AnnouncementsView {
                 make.center.equalTo(center)
             }
             
-//            findButton.snp.makeConstraints { make in
-//                make.centerY.equalToSuperview()
-//                make.leading.trailing.equalToSuperview().inset(16)
-//                make.height.equalTo(50)
-//            }
-//            
-//            infoLabel.snp.makeConstraints { make in
-//                make.bottom.equalTo(findButton.snp.top).offset(-8)
-//                make.leading.equalTo(findButton.snp.leading).offset(10)
-//                make.trailing.equalTo(findButton.snp.trailing).offset(-10)
-//            }
-//            
-//            titleLabel.snp.makeConstraints { make in
-//                make.bottom.equalTo(infoLabel.snp.top).offset(-8)
-//                make.leading.equalTo(findButton.snp.leading).offset(32)
-//                make.trailing.equalTo(findButton.snp.trailing).offset(-32)
-//            }
-//            
-//            heartImageView.snp.makeConstraints { make in
-//                make.bottom.equalTo(titleLabel.snp.top).offset(-8)
-//                make.centerX.equalToSuperview()
-//            }
+            //            findButton.snp.makeConstraints { make in
+            //                make.centerY.equalToSuperview()
+            //                make.leading.trailing.equalToSuperview().inset(16)
+            //                make.height.equalTo(50)
+            //            }
+            //
+            //            infoLabel.snp.makeConstraints { make in
+            //                make.bottom.equalTo(findButton.snp.top).offset(-8)
+            //                make.leading.equalTo(findButton.snp.leading).offset(10)
+            //                make.trailing.equalTo(findButton.snp.trailing).offset(-10)
+            //            }
+            //
+            //            titleLabel.snp.makeConstraints { make in
+            //                make.bottom.equalTo(infoLabel.snp.top).offset(-8)
+            //                make.leading.equalTo(findButton.snp.leading).offset(32)
+            //                make.trailing.equalTo(findButton.snp.trailing).offset(-32)
+            //            }
+            //
+            //            heartImageView.snp.makeConstraints { make in
+            //                make.bottom.equalTo(titleLabel.snp.top).offset(-8)
+            //                make.centerX.equalToSuperview()
+            //            }
         } else {
             announcementsTableView.snp.makeConstraints { make in
                 make.edges.equalToSuperview()

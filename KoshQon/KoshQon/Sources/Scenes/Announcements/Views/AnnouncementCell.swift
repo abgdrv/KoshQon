@@ -14,13 +14,7 @@ final class AnnouncementCell: BaseCell {
     
     var didAnnouncementCellTap: Callback<AnnouncementViewModel>?
     
-    private var viewModel: AnnouncementViewModel? {
-        didSet {
-            if let vm = viewModel {
-                setup(vm)
-            }
-        }
-    }
+    private let viewModel: AnnouncementViewModel
     
     // MARK: - UI
     
@@ -62,20 +56,19 @@ final class AnnouncementCell: BaseCell {
     // MARK: - Object Lifecycle
     
     init(viewModel: AnnouncementViewModel) {
-        defer {
-            self.viewModel = viewModel
-        }
+        self.viewModel = viewModel
         super.init()
         setupViews()
         setupConstraints()
         setupBindings()
+        setup(viewModel)
     }
     
     // MARK: - View Lifecycle
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.layer.cornerRadius = 10
+        layer.backgroundColor = AppColor.Theme.secondaryBackground.cgColor
         containerView.layer.cornerRadius = 10
         adImageView.layer.cornerRadius = 10
     }
@@ -174,8 +167,6 @@ private extension AnnouncementCell {
 
 private extension AnnouncementCell {
     @objc func cellTapped() {
-        if let viewModel = viewModel {
-            didAnnouncementCellTap?(viewModel)
-        }
+        didAnnouncementCellTap?(viewModel)
     }
 }

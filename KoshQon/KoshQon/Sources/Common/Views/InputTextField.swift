@@ -17,6 +17,7 @@ enum InputType {
     case country
     case regular
     case sms
+    case detailDate
     
     var menuType: MenuType? {
         switch self {
@@ -94,7 +95,7 @@ final class InputTextField: UITextField {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        bezierPathBorder(color: color)
+        type != .detailDate ? bezierPathBorder(color: color) : ()
     }
     
     // MARK: - Override methods
@@ -117,7 +118,7 @@ final class InputTextField: UITextField {
     }
     
     override func caretRect(for position: UITextPosition) -> CGRect {
-        return (type == .date || type == .sms) ? .zero : super.caretRect(for: position)
+        return (type == .date || type == .sms || type == .detailDate)  ? .zero : super.caretRect(for: position)
     }
 }
 
@@ -132,11 +133,14 @@ private extension InputTextField {
         case .phone:
             addSubview(menuContainer)
             menuContainer.addArrangedSubview(menuButton)
-        case .gender,.city, .country, .date:
+        case .date:
+            addSubview(containerView)
+            containerView.addArrangedSubview(iconImageView)
+        case .gender,.city, .country:
             addSubviews(containerView, menuContainer)
             menuContainer.addArrangedSubview(menuButton)
             containerView.addArrangedSubview(iconImageView)
-        case .regular, .sms:
+        default:
             break
         }
         
@@ -248,9 +252,9 @@ private extension InputTextField {
             setupTextField(placeholder: "Страна",
                            textContentType: .countryName,
                            image: AppImage.Auth.expandDown.uiImage)
+        case .detailDate:
+            setupTextField(backgroundColor: .clear, textContentType: .dateTime)
         }
-        textContentType = .oneTimeCode
-
     }
     
     func setupTextField(placeholder: String? = nil,

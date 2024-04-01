@@ -11,7 +11,7 @@ struct ProfileMainInfo {
     private let firstName: String
     private let secondName: String
     let country: Country
-    let city: String
+    let city: City
     private let birthday: Date
     
     let gender: Gender
@@ -38,10 +38,10 @@ struct ProfileMainInfo {
     }
     
     var location: String {
-        return city + ", " + country.title
+        return city.name + ", " + country.title
     }
     
-    init(firstName: String, secondName: String, gender: Gender, country: Country, city: String, birthday: Date, friends: Int, phoneNumber: String) {
+    init(firstName: String, secondName: String, gender: Gender, country: Country, city: City, birthday: Date, friends: Int, phoneNumber: String) {
         self.firstName = firstName
         self.secondName = secondName
         self.gender = gender

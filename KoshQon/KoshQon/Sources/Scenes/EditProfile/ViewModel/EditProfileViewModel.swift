@@ -51,7 +51,7 @@ private extension EditProfileViewModel {
             case .country:
                 detail = .init(type: type, value: profile.mainInfo.country.title)
             case .city:
-                detail = .init(type: type, value: profile.mainInfo.country.cities[3])
+                detail = .init(type: type, value: profile.mainInfo.city.name)
             case .characteristics:
                 detail = .init(type: type, value: "")
             case .about:

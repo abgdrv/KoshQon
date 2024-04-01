@@ -16,4 +16,17 @@ enum ProfileDetailType: String, CaseIterable {
     case city
     case characteristics
     case about
+    
+    var menuType: MenuType? {
+        switch self {
+        case .gender:
+            .gender
+        case .country:
+            .country
+        case .city:
+            .city
+        default:
+            nil
+        }
+    }
 }

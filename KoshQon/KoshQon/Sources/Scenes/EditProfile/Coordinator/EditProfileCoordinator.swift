@@ -36,6 +36,10 @@ private extension EditProfileCoordinator {
     func showEditProfile() {
         guard let profile = profile else { return }
         let view = factory.makeEditProfileView(profile: profile)
+        view.didProfileDetailCellTap = { [weak self] type in
+            guard let self = self else { return }
+            self.showProfileDetailCell(type: type)
+        }
         view.didImagePickerOptionsShow = { [weak self] picker in
             guard let self = self else { return }
             self.showImagePickerOptions(picker: picker, view: view)
@@ -53,6 +57,35 @@ private extension EditProfileCoordinator {
             self.router.push(cropImage)
         }
         router.push(view)
+    }
+    
+    func showPhoneDetail() {
+        
+    }
+    
+    func showCharacteristicsDetail() {
+        
+    }
+    
+    func showAboutDetail() {
+        
+    }
+    
+    func showProfileDetailCell(type: ProfileDetailType) {
+        switch type {
+        case .name:
+            factory.showBanner(title: "Хотите изменить имя?",
+                               message: "Для этого вы можете обратиться в техподдержку",
+                               delay: 3)
+        case .phone:
+            showPhoneDetail()
+        case .characteristics:
+            showCharacteristicsDetail()
+        case .about:
+            showAboutDetail()
+        default:
+            break
+        }
     }
 }
 

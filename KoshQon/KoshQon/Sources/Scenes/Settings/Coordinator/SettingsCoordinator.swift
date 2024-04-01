@@ -34,7 +34,7 @@ private extension SettingsCoordinator {
         let view = factory.makeSettingsView()
         view.didNavigationCellTap = { [weak self] type in
             guard let self = self else { return }
-            self.openNavigationCell(type: type)
+            self.showNavigationCell(type: type)
         }
         router.push(view)
     }
@@ -63,7 +63,7 @@ private extension SettingsCoordinator {
         
     }
     
-    func openNavigationCell(type: NavigationCellType) {
+    func showNavigationCell(type: NavigationCellType) {
         switch type {
         case .personal:
             showPersonal()

@@ -19,11 +19,36 @@ enum Country: String, CaseIterable {
     case md = "Moldova"
     case tm = "Turkmenistan"
     
-    var fullTitle: String {
+    var title: String {
+        switch self {
+        case .kz:
+            "Казахстан"
+        case .ru:
+            "Россия"
+        case .tj:
+            "Таджикистан"
+        case .uz:
+            "Узбекистан"
+        case .az:
+            "Азербайджан"
+        case .am:
+            "Армения"
+        case .by:
+            "Беларусь"
+        case .kg:
+            "Кыргызстан"
+        case .md:
+            "Молдова"
+        case .tm:
+            "Туркменистан"
+        }
+    }
+    
+    var fullPhoneCodeTitle: String {
         flag + " " + phoneCode + " " + title
     }
     
-    var phoneCodeTitle: String {
+    var shortPhoneCodeTitle: String {
         flag + " " + phoneCode
     }
     
@@ -31,7 +56,7 @@ enum Country: String, CaseIterable {
         flag + " " + title
     }
     
-    var flag: String {
+    private var flag: String {
         switch self {
         case .kz:
             "🇰🇿"
@@ -56,10 +81,6 @@ enum Country: String, CaseIterable {
         }
     }
     
-    var title: String {
-        self.rawValue
-    }
-    
     var phoneCode: String {
         switch self {
         case .kz:
@@ -82,20 +103,6 @@ enum Country: String, CaseIterable {
             "+373"
         case .tm:
             "+993"
-        }
-    }
-    
-    var cities: [String] {
-        switch self {
-        case .kz:
-            ["Aktau", "Aktobe", "Almaty", "Astana", "Arkalyk", "Atyrau", "Baikonur", "Balqash", "Jezkazgan",
-             "Karaganda", "Kentau", "Kyzylorda", "Kokshetau", "Kostanay", "Janaozen", "Pavlodar", "Petropavl",
-             "Ridder", "Saran", "Satpayev", "Semey", "Stepnogorsk", "Taldykorgan", "Taraz", "Temirtau",
-             "Turkistan", "Oral", "Oskemen", "Shymkent", "Shakhtinsk", "Schuchinsk", "Ekibastuz"]
-        case .ru:
-            []
-        default:
-            []
         }
     }
 }

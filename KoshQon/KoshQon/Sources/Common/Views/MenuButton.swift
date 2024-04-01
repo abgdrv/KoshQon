@@ -28,42 +28,38 @@ final class MenuButton: UIButton {
         }
     }
     
-    private static var country: Country?
-    
-    private lazy var countries = Country.allCases
-    private lazy var genders: [Gender] = [.male, .female]
+    private static var country: Country = .kz
+    private static var countries = Country.allCases
+    private static var cities = City.allCases
+    private static var genders = Gender.allCases
     
     private var menuItems: [UIAction] {
         var menuItems: [UIAction] = []
         switch menuType {
         case .phone:
-            countries.forEach { country in
-                menuItems.append(UIAction(title: country.fullTitle, handler: { action in
-                    self.setTitle(country.phoneCodeTitle, for: .normal)
+            MenuButton.countries.forEach { country in
+                menuItems.append(UIAction(title: country.fullPhoneCodeTitle, handler: { action in
+                    self.setTitle(country.shortPhoneCodeTitle, for: .normal)
                     self.didPhoneCodeSelect?(country.phoneCode)
                 }))
             }
         case .gender:
-            genders.forEach { gender in
+            MenuButton.genders.forEach { gender in
                 menuItems.append(UIAction(title: gender.title, handler: { action in
                     self.didSelect?(gender.title)
                 }))
             }
         case .city:
-            guard let country = MenuButton.country else { return [] }
-            country.cities.forEach { city in
-                menuItems.append(UIAction(title: city, handler: { action in
-                    self.didSelect?(city)
+            MenuButton.cities.forEach { city in
+                menuItems.append(UIAction(title: city.name, handler: { action in
+                    self.didSelect?(city.name)
                 }))
             }
         case .country:
-            countries.forEach { country in
-                menuItems.append(UIAction(title: country.countryTitle, handler: { action in
-                    MenuButton.country = country
-                    self.didSelect?(country.title)
-                    self.didCountrySelect?()
-                }))
-            }
+            menuItems.append(UIAction(title: MenuButton.country.countryTitle, handler: { action in
+                self.didSelect?(MenuButton.country.title)
+                self.didCountrySelect?()
+            }))
         case .none:
             break
         }
@@ -88,7 +84,7 @@ final class MenuButton: UIButton {
     private var title: String {
         switch menuType {
         case .phone:
-            Country.kz.phoneCodeTitle
+            Country.kz.shortPhoneCodeTitle
         default:
             ""
         }

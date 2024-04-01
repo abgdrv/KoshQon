@@ -67,11 +67,6 @@ extension ProfileAnnouncementsView: UITableViewDelegate, UITableViewDataSource {
         let cell = AnnouncementCell(viewModel: announcementViewModels[indexPath.row])
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-           print("section: \(indexPath.section)")
-           print("row: \(indexPath.row)")
-    }
 }
 
 // MARK: - Setup Views
@@ -98,18 +93,5 @@ private extension ProfileAnnouncementsView {
             make.leading.trailing.equalToSuperview()
             make.bottom.equalToSuperview().inset(8)
         }
-    }
-}
-
-// MARK: - Private methods
-
-private extension ProfileAnnouncementsView {
-    func getAnnouncements() -> [AnnouncementView] {
-        var views: [AnnouncementView] = []
-        announcementViewModels.forEach {
-            let view = AnnouncementView(viewModel: $0)
-            views.append(view)
-        }
-        return views
     }
 }

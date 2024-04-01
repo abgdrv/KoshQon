@@ -63,14 +63,6 @@ extension SettingsView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return section == 0 ? 0 : 50
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        var index = indexPath.row
-        index += indexPath.section == 0 ? 0 : 4
-        print("section: \(indexPath.section)")
-        print("row: \(indexPath.row)")
-        didNavigationCellTap?(viewModel.navigationCellViewModels[index].type)
-    }
 }
 
 // MARK: - Setup Views

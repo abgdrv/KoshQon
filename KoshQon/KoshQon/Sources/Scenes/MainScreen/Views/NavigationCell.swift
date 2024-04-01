@@ -14,13 +14,7 @@ final class NavigationCell: BaseCell {
     
     var didNavigationCellTap: Callback<NavigationCellType>?
     
-    private var viewModel: NavigationCellViewModel? {
-        didSet {
-            if let vm = viewModel {
-                setup(vm)
-            }
-        }
-    }
+    private let viewModel: NavigationCellViewModel
     
     private let isLast: Bool
         
@@ -42,14 +36,13 @@ final class NavigationCell: BaseCell {
     // MARK: - Object Lifecycle
 
     init(viewModel: NavigationCellViewModel) {
+        self.viewModel = viewModel
         self.isLast = viewModel.isLast
-        defer {
-            self.viewModel = viewModel
-        }
         super.init()
         setupViews()
         setupConstraints()
         setupBindings()
+        setup(viewModel)
     }
 
     // MARK: - Override methods
@@ -119,8 +112,6 @@ private extension NavigationCell {
 
 private extension NavigationCell {
     @objc func cellTapped() {
-        if let type = viewModel?.type {
-            didNavigationCellTap?(type)
-        }
+        didNavigationCellTap?(viewModel.type)
     }
 }
