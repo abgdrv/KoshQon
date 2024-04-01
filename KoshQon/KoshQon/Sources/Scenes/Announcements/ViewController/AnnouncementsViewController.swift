@@ -20,7 +20,7 @@ final class AnnouncementsViewController: BaseViewController {
     private let type: AnnouncementsType
     
     override var navigationTitleType: NavigationTitleType? {
-        return type == .favorites ? .favorites : .myAnnouncements
+        return NavigationTitleType(rawValue: type.rawValue)
     }
     
     // MARK: - UI

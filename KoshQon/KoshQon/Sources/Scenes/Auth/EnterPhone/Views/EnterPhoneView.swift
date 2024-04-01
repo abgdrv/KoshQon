@@ -8,9 +8,10 @@
 import UIKit
 import SnapKit
 
-enum EnterPhoneType {
-    case register
+enum EnterPhoneType: String {
+    case registration
     case forgotPassword
+    case changePhone
 }
 
 final class EnterPhoneView: BaseView {
@@ -27,7 +28,7 @@ final class EnterPhoneView: BaseView {
     
     // MARK: - UI
     
-    private lazy var infoLabel = InfoLabel(type: type == .register ? .registerPhone : .forgotPassword)
+    private lazy var infoLabel = InfoLabel(type: type == .registration ? .registerPhone : .forgotPassword)
     private lazy var phoneLabel = InfoLabel(type: .phone)
     private lazy var phoneTextField = InputTextField(inputType: .phone)
     

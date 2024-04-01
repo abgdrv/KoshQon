@@ -33,7 +33,7 @@ final class RegisterCoordinator: BaseCoordinator, RegisterOutputCoordinator {
 
 private extension RegisterCoordinator {
     func showRegister() {
-        let view = factory.makeEnterPhoneView(type: .register)
+        let view = factory.makeEnterPhoneView(type: .registration)
         view.didFinish = { [weak self] in
             guard let self = self else { return }
             self.showSms()
@@ -58,7 +58,7 @@ private extension RegisterCoordinator {
         }
         view.didImagePickerOptionsShow = { [weak self] picker in
             guard let self = self else { return }
-            self.showImagePickerOptions(picker: picker, view: view)
+            self.showImagePickerOptions(picker: picker)
         }
         view.didCropCancel = { [weak self] in
             guard let self = self else { return }
@@ -86,7 +86,7 @@ private extension RegisterCoordinator {
 }
 
 private extension RegisterCoordinator {
-    func showImagePickerOptions(picker: UIImagePickerController, view: PersonalViewController) {
+    func showImagePickerOptions(picker: UIImagePickerController) {
         let actions: [UIAlertAction] = [
             UIAlertAction(title: "Камера", style: .default) { [weak self] _ in
                 guard let self = self else { return }
@@ -100,11 +100,7 @@ private extension RegisterCoordinator {
                 picker.sourceType = .photoLibrary
                 self.openImagePicker(picker: picker)
             },
-            UIAlertAction(title: "Удалить фото", style: .destructive, handler: { [weak self] _ in
-                guard let _ = self else { return }
-                view.didImageDelete = {}
-            }),
-            UIAlertAction(title: "Закрыть", style: .cancel)
+            UIAlertAction(title: "Закрыть", style: .cancel, handler: nil)
         ]
         let alertSheet = factory.makeAlertSheet(title: "Выберите фото",
                                                 message: "Выберите фото из галереи или откройте камеру",
@@ -115,7 +111,7 @@ private extension RegisterCoordinator {
     func openImagePicker(picker: UIImagePickerController) {
         checkPermission() { [weak self] in
             guard let self = self else { return }
-            router.toPresent()?.present(picker, animated: true)
+            self.router.toPresent()?.present(picker, animated: true)
         }
     }
     
@@ -123,7 +119,7 @@ private extension RegisterCoordinator {
                          onAccessHasBeenDenied: VoidCallback? = nil) {
         let actions: [UIAlertAction] = [
             UIAlertAction(title: "Закрыть", style: .cancel, handler: nil),
-            UIAlertAction(title: "Настройки", style: .default) { [weak self] action in
+            UIAlertAction(title: "Настройки", style: .default) { [weak self] _ in
                 guard let _ = self else { return }
                 if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
                     UIApplication.shared.open(settingsURL)
@@ -135,7 +131,7 @@ private extension RegisterCoordinator {
             let alert = self.factory.makeAlert(title: "Unable to load your album groups",
                                                message: "You can enable access in Privacy Settings",
                                                with: actions)
-            self.router.present(alert, animated: true)
+            self.router.toPresent()?.present(alert, animated: true)
         }
         
         let status = PHPhotoLibrary.authorizationStatus()

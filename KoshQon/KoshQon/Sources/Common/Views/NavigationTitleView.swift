@@ -22,6 +22,7 @@ enum NavigationTitleType: String {
     case settings
     case registration
     case myAnnouncements
+    case changePhone
 }
 
 final class NavigationTitleView: UIView {
@@ -136,6 +137,8 @@ private extension NavigationTitleView {
             isIcon = true
         case .myAnnouncements:
             setupLabel(text: "Мои объявления")
+        case .changePhone:
+            setupLabel(text: "Изменить номер телефона")
         case .none:
             break
         }

@@ -17,7 +17,7 @@ final class EnterPhoneViewController: BaseViewController {
     private let type: EnterPhoneType
     
     override var navigationTitleType: NavigationTitleType? {
-        return type == .register ? .registration : .forgotPassword
+        return NavigationTitleType(rawValue: type.rawValue)
     }
     
     // MARK: - UI

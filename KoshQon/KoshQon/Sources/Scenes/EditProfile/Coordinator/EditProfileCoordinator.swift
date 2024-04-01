@@ -60,7 +60,12 @@ private extension EditProfileCoordinator {
     }
     
     func showPhoneDetail() {
-        
+        let view = factory.makeEnterPhoneView(type: .changePhone)
+        view.didFinish = { [weak self] in
+            guard let self = self else { return }
+            
+        }
+        router.push(view)
     }
     
     func showCharacteristicsDetail() {
