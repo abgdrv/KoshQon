@@ -68,7 +68,9 @@ final class AnnouncementCell: BaseCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        layer.backgroundColor = AppColor.Theme.secondaryBackground.cgColor
+        layer.backgroundColor = viewModel.isProfile
+                                ? AppColor.Theme.blockBackground.cgColor
+                                : AppColor.Theme.secondaryBackground.cgColor
         containerView.layer.cornerRadius = 10
         adImageView.layer.cornerRadius = 10
     }

@@ -1,4 +1,5 @@
 PODS:
+  - ContextMenuSwift (1.0.0)
   - KeychainSwift (21.0.0)
   - PanModal (1.2.7)
   - ProgressHUD (14.1.1)
@@ -6,6 +7,7 @@ PODS:
   - SnapKit (5.7.1)
 
 DEPENDENCIES:
+  - ContextMenuSwift
   - KeychainSwift
   - PanModal
   - ProgressHUD
@@ -14,6 +16,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - ContextMenuSwift
     - KeychainSwift
     - PanModal
     - ProgressHUD
@@ -21,12 +24,13 @@ SPEC REPOS:
     - SnapKit
 
 SPEC CHECKSUMS:
+  ContextMenuSwift: c89068a89ccd9210dfcaee3bdc558e65aa74899b
   KeychainSwift: 4a71a45c802fd9e73906457c2dcbdbdc06c9419d
   PanModal: 3e16ead1a907fb06f4df3f13492fd00149fa4974
   ProgressHUD: abb9136ae23c85204236828562cb9a8ec98efb44
   RSKImageCropper: 90dfe482402fb8a40cabd5fea65186d9102cc425
   SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
 
-PODFILE CHECKSUM: 27291303a1c41a04362b35a3190430d49dda8897
+PODFILE CHECKSUM: c08b02cdbbfda072d117145f9336fe9b9dec1ba4
 
 COCOAPODS: 1.13.0

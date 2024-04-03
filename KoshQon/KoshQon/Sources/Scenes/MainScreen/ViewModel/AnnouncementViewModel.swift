@@ -16,9 +16,11 @@ protocol IAnnouncementCellViewModel {
 
 final class AnnouncementViewModel {
     let announcement: Announcement
+    let isProfile: Bool
     
-    init(announcement: Announcement) {
+    init(announcement: Announcement, isProfile: Bool = false) {
         self.announcement = announcement
+        self.isProfile = isProfile
     }
 }
 

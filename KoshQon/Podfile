@@ -11,5 +11,6 @@ pod 'PanModal'
 pod 'ProgressHUD'
 pod 'RSKImageCropper'
 pod 'KeychainSwift'
+pod 'ContextMenuSwift'
 
 end

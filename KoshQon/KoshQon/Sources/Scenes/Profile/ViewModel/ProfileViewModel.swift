@@ -54,7 +54,7 @@ private extension ProfileViewModel {
     }
     
     func makeCellViewModels(items: [Announcement]) -> [AnnouncementViewModel] {
-        return items.compactMap { AnnouncementViewModel(announcement: $0) }
+        return items.compactMap { AnnouncementViewModel(announcement: $0, isProfile: true) }
     }
     
     func makeProfile() -> Profile {

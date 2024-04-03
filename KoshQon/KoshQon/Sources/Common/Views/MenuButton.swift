@@ -6,12 +6,17 @@
 //
 
 import UIKit
+import ContextMenuSwift
 
-enum MenuType {
-    case phone
-    case gender
-    case country
-    case city
+enum MenuType: String {
+    case phone = "Код страны"
+    case gender = "Пол"
+    case country = "Страна"
+    case city = "Город"
+    
+    var title: String {
+        return self.rawValue
+    }
 }
 
 final class MenuButton: UIButton {
@@ -28,88 +33,107 @@ final class MenuButton: UIButton {
         }
     }
     
+    private var menuValues: [String] = []
+    
     private static var country: Country = .kz
     private static var countries = Country.allCases
     private static var cities = City.allCases
     private static var genders = Gender.allCases
     
-    private var menuItems: [UIAction] {
-        var menuItems: [UIAction] = []
+    private var menuItems: [ContextMenuItem] {
+        var menuItems: [ContextMenuItem] = []
         switch menuType {
         case .phone:
             MenuButton.countries.forEach { country in
-                menuItems.append(UIAction(title: country.fullPhoneCodeTitle, handler: { action in
-                    self.setTitle(country.shortPhoneCodeTitle, for: .normal)
-                    self.didPhoneCodeSelect?(country.phoneCode)
-                }))
+                menuItems.append(country.fullPhoneCodeTitle)
+                menuValues.append(country.shortPhoneCodeTitle)
             }
         case .gender:
             MenuButton.genders.forEach { gender in
-                menuItems.append(UIAction(title: gender.title, handler: { action in
-                    self.didSelect?(gender.title)
-                }))
+                menuItems.append(gender.title)
+                menuValues.append(gender.title)
             }
         case .city:
             MenuButton.cities.forEach { city in
-                menuItems.append(UIAction(title: city.name, handler: { action in
-                    self.didSelect?(city.name)
-                }))
+                menuItems.append(city.name)
+                menuValues.append(city.name)
             }
         case .country:
-            menuItems.append(UIAction(title: MenuButton.country.countryTitle, handler: { action in
-                self.didSelect?(MenuButton.country.title)
-                self.didCountrySelect?()
-            }))
+            menuItems.append(MenuButton.country.countryTitle)
+            menuValues.append(MenuButton.country.countryTitle)
         case .none:
             break
         }
         return menuItems
     }
     
-    private var menuTitle: String {
-        switch menuType {
-        case .phone:
-            "Код страны"
-        case .gender:
-            "Пол"
-        case .country:
-            "Страна"
-        case .city:
-            "Город"
-        case .none:
-            ""
-        }
-    }
-    
     private var title: String {
         switch menuType {
         case .phone:
-            Country.kz.shortPhoneCodeTitle
+            MenuButton.country.shortPhoneCodeTitle
         default:
             ""
         }
-    }
-    
-    private var font: UIFont {
-        switch menuType {
-        case .phone:
-            AppFont.medium.s14
-        default:
-            AppFont.medium.s16
-        }
-    }
-    
-    override func menuAttachmentPoint(for configuration: UIContextMenuConfiguration) -> CGPoint {
-        let original = super.menuAttachmentPoint(for: configuration)
-        return menuType == .phone ? original : CGPoint(x: 16, y: original.y)
     }
 }
 
 private extension MenuButton {
     func setup() {
-        showsMenuAsPrimaryAction = true
-        menu = UIMenu(title: menuTitle, children: menuItems)
+        CM.items = menuItems
         setTitle(title, for: .normal)
-        set(font: font, titleColor: AppColor.Static.darkGray.uiColor)
+        set(font: AppFont.medium.s14, titleColor: AppColor.Static.darkGray.uiColor)
+        addTarget(self, action: #selector(showMenu), for: .touchUpInside)
+        
+        CM.MenuConstants.BlurEffectEnabled = false
+        CM.MenuConstants.MenuCornerRadius = 8
+        CM.MenuConstants.LabelDefaultFont = AppFont.medium.s16
+        CM.MenuConstants.LabelDefaultColor = AppColor.Theme.mainTitle.uiColor
+        CM.MenuConstants.MaxZoom = 0.95
+        CM.MenuConstants.MinZoom = 1
+        CM.MenuConstants.ItemDefaultColor = AppColor.Theme.mainBackground.uiColor
+        CM.MenuConstants.ItemDefaultHeight = UIDevice.current.isSmall ? 40 : 44
+        CM.tableView.tableHeaderView = UILabel().apply({
+            $0.text = self.menuType?.title
+        })
+    }
+}
+
+extension MenuButton: ContextMenuDelegate {
+    func contextMenuDidSelect(_ contextMenu: ContextMenuSwift.ContextMenu,
+                              cell: ContextMenuSwift.ContextMenuCell,
+                              targetedView: UIView,
+                              didSelect item: any ContextMenuSwift.ContextMenuItem,
+                              forRowAt index: Int) -> Bool {
+        switch menuType {
+        case .phone:
+            self.didPhoneCodeSelect?(menuValues[index])
+            setTitle(menuValues[index], for: .normal)
+        case .gender:
+            self.didSelect?(menuValues[index])
+        case .city:
+            self.didSelect?(menuValues[index])
+        case .country:
+            self.didSelect?(menuValues[index])
+            self.didCountrySelect?()
+        case .none:
+            break
+        }
+        return true
+    }
+    
+    func contextMenuDidDeselect(_ contextMenu: ContextMenuSwift.ContextMenu, cell: ContextMenuSwift.ContextMenuCell, targetedView: UIView, didSelect item: any ContextMenuSwift.ContextMenuItem, forRowAt index: Int) {
+    }
+    
+    func contextMenuDidAppear(_ contextMenu: ContextMenuSwift.ContextMenu) {
+    }
+    
+    func contextMenuDidDisappear(_ contextMenu: ContextMenuSwift.ContextMenu) {
+    }
+}
+
+private extension MenuButton {
+    @objc func showMenu() {
+        CM.items = menuItems
+        CM.showMenu(viewTargeted: self, delegate: self, animated: false)
     }
 }
