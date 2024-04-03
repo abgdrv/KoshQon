@@ -39,13 +39,13 @@ private extension EditProfileCoordinator {
     func showEditProfile() {
         guard let profile = profile else { return }
         let view = factory.makeEditProfileView(profile: profile)
-        view.didProfileDetailCellTap = { [weak self] viewModel in
+        view.didProfileDetailCellTap = { [weak self] type, value in
             guard let self = self else { return }
-            self.showProfileDetailCell(type: viewModel.detail.type, value: viewModel.value)
+            self.showProfileDetailCell(type: type, value: value)
         }
-        view.didImagePickerOptionsShow = { [weak self] picker in
+        view.didImagePickerOptionsShow = { [weak self] picker, isImageSelected in
             guard let self = self else { return }
-            self.showImagePickerOptions(picker: picker, view: view)
+            self.showImagePickerOptions(picker: picker, view: view, isImageSelected: isImageSelected)
         }
         view.didCropCancel = { [weak self] in
             guard let self = self else { return }
@@ -106,8 +106,9 @@ private extension EditProfileCoordinator {
 }
 
 private extension EditProfileCoordinator {
-    func showImagePickerOptions(picker: UIImagePickerController, view: EditProfileViewController) {
-        let actions: [UIAlertAction] = [
+    func showImagePickerOptions(picker: UIImagePickerController,
+                                view: EditProfileViewController, isImageSelected: Bool) {
+        var actions: [UIAlertAction] = [
             UIAlertAction(title: "Камера", style: .default) { [weak self] _ in
                 guard let self = self else { return }
                 if UIImagePickerController.isSourceTypeAvailable(.camera) {
@@ -120,12 +121,17 @@ private extension EditProfileCoordinator {
                 picker.sourceType = .photoLibrary
                 self.openImagePicker(picker: picker)
             },
-            UIAlertAction(title: "Удалить фото", style: .destructive, handler: { [weak self] _ in
-                guard let _ = self else { return }
-                view.didImageDelete = {}
-            }),
             UIAlertAction(title: "Закрыть", style: .cancel)
         ]
+        
+        if isImageSelected {
+            actions.insert(
+                UIAlertAction(title: "Удалить фото", style: .destructive) { [weak self] _ in
+                guard let _ = self else { return }
+                view.didImageDelete = {}
+            }, at: 2)
+        }
+        
         let alertSheet = factory.makeAlertSheet(title: "Выберите фото",
                                                 message: "Выберите фото из галереи или откройте камеру",
                                                 with: actions)

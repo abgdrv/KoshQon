@@ -13,7 +13,7 @@ final class PersonalViewController: BaseViewController {
     // MARK: - Properties
     
     var didFinish: VoidCallback?
-    var didImagePickerOptionsShow: Callback<UIImagePickerController>?
+    var didImagePickerOptionsShow: PairCallback<UIImagePickerController, Bool>?
     var didCropCancel: VoidCallback?
     var didImageCrop: VoidCallback?
     var didCropImageShow: Callback<RSKImageCropViewController>?
@@ -63,9 +63,9 @@ private extension PersonalViewController {
             self.didFinish?()
         }
         
-        personalView.didImageTap = { [weak self] in
+        personalView.didImageTap = { [weak self] isImageSelected in
             guard let self = self else { return }
-            self.didImagePickerOptionsShow?(self.imagePicker)
+            self.didImagePickerOptionsShow?(self.imagePicker, isImageSelected)
         }        
     }
 }

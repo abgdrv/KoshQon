@@ -13,10 +13,14 @@ final class EditProfileView: BaseView {
     // MARK: - Properties
     
     var didSave: VoidCallback?
-    var didImageTap: VoidCallback?
-    var didProfileDetailCellTap: Callback<ProfileDetailCellViewModel>?
+    var didImageTap: Callback<Bool>?
+    var didProfileDetailCellTap: PairCallback<ProfileDetailType, String>?
 
     private let viewModel: EditProfileViewModel
+    
+    private var isImageSelected: Bool {
+        profileImageView.image != AppImage.Personal.defaultProfile.uiImage
+    }
     
     // MARK: - UI
     
@@ -74,9 +78,9 @@ extension EditProfileView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = ProfileDetailCell(viewModel: viewModel.items[indexPath.row])
-        cell.didProfileDetailCellTap = { [weak self] viewModel in
+        cell.didProfileDetailCellTap = { [weak self] type, value in
             guard let self = self else { return }
-            self.didProfileDetailCellTap?(viewModel)
+            self.didProfileDetailCellTap?(type, value)
         }
         return cell
     }
@@ -116,7 +120,7 @@ private extension EditProfileView {
     func setupBindings() {
         profileImageView.didImageTap = { [weak self] in
             guard let self = self else { return }
-            self.didImageTap?()
+            self.didImageTap?(self.isImageSelected)
         }
     }
 }

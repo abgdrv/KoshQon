@@ -66,9 +66,9 @@ private extension EnterPhoneCoordinator {
             guard let self = self else { return }
             self.showSetPassword()
         }
-        view.didImagePickerOptionsShow = { [weak self] picker in
+        view.didImagePickerOptionsShow = { [weak self] picker, isImageSelected in
             guard let self = self else { return }
-            self.showImagePickerOptions(picker: picker)
+            self.showImagePickerOptions(picker: picker, view: view, isImageSelected: isImageSelected)
         }
         view.didCropCancel = { [weak self] in
             guard let self = self else { return }
@@ -96,8 +96,10 @@ private extension EnterPhoneCoordinator {
 }
 
 private extension EnterPhoneCoordinator {
-    func showImagePickerOptions(picker: UIImagePickerController) {
-        let actions: [UIAlertAction] = [
+    func showImagePickerOptions(picker: UIImagePickerController,
+                                view: PersonalViewController,
+                                isImageSelected: Bool) {
+        var actions: [UIAlertAction] = [
             UIAlertAction(title: "Камера", style: .default) { [weak self] _ in
                 guard let self = self else { return }
                 if UIImagePickerController.isSourceTypeAvailable(.camera) {
@@ -112,6 +114,15 @@ private extension EnterPhoneCoordinator {
             },
             UIAlertAction(title: "Закрыть", style: .cancel, handler: nil)
         ]
+        
+        if isImageSelected {
+            actions.insert(
+                UIAlertAction(title: "Удалить фото", style: .destructive) { [weak self] _ in
+                guard let _ = self else { return }
+                view.didImageDelete = {}
+            }, at: 2)
+        }
+        
         let alertSheet = factory.makeAlertSheet(title: "Выберите фото",
                                                 message: "Выберите фото из галереи или откройте камеру",
                                                 with: actions)

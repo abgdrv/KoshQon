@@ -14,7 +14,11 @@ final class PersonalView: BaseView {
     // MARK: - Properties
     
     var didFinish: VoidCallback?
-    var didImageTap: VoidCallback?
+    var didImageTap: Callback<Bool>?
+    
+    private var isImageSelected: Bool {
+        return profileImageView.image != AppImage.Personal.defaultProfile.uiImage
+    }
     
     // MARK: - UI
     
@@ -143,7 +147,7 @@ private extension PersonalView {
         
         profileImageView.didImageTap = { [weak self] in
             guard let self = self else { return }
-            self.didImageTap?()
+            self.didImageTap?(self.isImageSelected)
         }
         
         datePicker.didDateChange = { [weak self] selectedDate in

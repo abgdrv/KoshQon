@@ -9,3 +9,4 @@ import Foundation
 
 typealias Callback<T> = (T) -> Void
 typealias VoidCallback = () -> Void
+typealias PairCallback<T, E> = (T, E) -> Void

@@ -13,8 +13,8 @@ final class EditProfileViewController: BaseViewController {
     // MARK: - Properties
     
     var didFinish: VoidCallback?
-    var didProfileDetailCellTap: Callback<ProfileDetailCellViewModel>?
-    var didImagePickerOptionsShow: Callback<UIImagePickerController>?
+    var didProfileDetailCellTap: PairCallback<ProfileDetailType, String>?
+    var didImagePickerOptionsShow: PairCallback<UIImagePickerController, Bool>?
     var didCropCancel: VoidCallback?
     var didImageCrop: VoidCallback?
     var didCropImageShow: Callback<RSKImageCropViewController>?
@@ -93,14 +93,14 @@ extension EditProfileViewController: UIImagePickerControllerDelegate,
 
 private extension EditProfileViewController {
     func setupBindings() {
-        editProfileView.didImageTap = { [weak self] in
+        editProfileView.didImageTap = { [weak self] isImageSelected in
             guard let self = self else { return }
-            self.didImagePickerOptionsShow?(self.imagePicker)
+            self.didImagePickerOptionsShow?(self.imagePicker, isImageSelected)
         }
         
-        editProfileView.didProfileDetailCellTap = { [weak self] viewModel in
+        editProfileView.didProfileDetailCellTap = { [weak self] type, value in
             guard let self = self else { return }
-            self.didProfileDetailCellTap?(viewModel)
+            self.didProfileDetailCellTap?(type, value)
         }
     }
 }

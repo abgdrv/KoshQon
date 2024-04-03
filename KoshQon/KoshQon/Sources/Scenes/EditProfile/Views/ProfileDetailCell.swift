@@ -12,7 +12,7 @@ final class ProfileDetailCell: BaseCell {
 
     // MARK: - Properties
     
-    var didProfileDetailCellTap: Callback<ProfileDetailCellViewModel>?
+    var didProfileDetailCellTap: PairCallback<ProfileDetailType, String>?
     
     private let viewModel: ProfileDetailCellViewModel
     
@@ -158,5 +158,6 @@ private extension ProfileDetailCell {
         if type == .birthday {
             dateTextField.becomeFirstResponder()
         }
+        didProfileDetailCellTap?(viewModel.detail.type, value ?? "")
     }
 }
