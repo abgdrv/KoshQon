@@ -151,6 +151,8 @@
 		47D1BDF42BB6CC09004992AA /* HighlightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D1BDF32BB6CC09004992AA /* HighlightCell.swift */; };
 		47D1BDFA2BBA6E07004992AA /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D1BDF92BBA6E07004992AA /* City.swift */; };
 		47D1BDFF2BBAC8F1004992AA /* DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D1BDFE2BBAC8F1004992AA /* DatePicker.swift */; };
+		47D1BE012BBACF5A004992AA /* ProfileAboutMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D1BE002BBACF5A004992AA /* ProfileAboutMeViewController.swift */; };
+		47D1BE032BBAD1A9004992AA /* ProfileAboutMeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D1BE022BBAD1A9004992AA /* ProfileAboutMeView.swift */; };
 		47D54CB42B918FA800021FA7 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D54CB32B918FA800021FA7 /* BottomSheetViewController.swift */; };
 		47D54CB62B91919200021FA7 /* BottomSheetOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D54CB52B91919200021FA7 /* BottomSheetOption.swift */; };
 		47D54CB82B9196B200021FA7 /* BottomSheetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D54CB72B9196B200021FA7 /* BottomSheetCell.swift */; };
@@ -310,6 +312,8 @@
 		47D1BDF32BB6CC09004992AA /* HighlightCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightCell.swift; sourceTree = "<group>"; };
 		47D1BDF92BBA6E07004992AA /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		47D1BDFE2BBAC8F1004992AA /* DatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
+		47D1BE002BBACF5A004992AA /* ProfileAboutMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAboutMeViewController.swift; sourceTree = "<group>"; };
+		47D1BE022BBAD1A9004992AA /* ProfileAboutMeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAboutMeView.swift; sourceTree = "<group>"; };
 		47D54CB32B918FA800021FA7 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
 		47D54CB52B91919200021FA7 /* BottomSheetOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetOption.swift; sourceTree = "<group>"; };
 		47D54CB72B9196B200021FA7 /* BottomSheetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetCell.swift; sourceTree = "<group>"; };
@@ -1296,6 +1300,7 @@
 			isa = PBXGroup;
 			children = (
 				47D1BDC72BB529D7004992AA /* EditProfileViewController.swift */,
+				47D1BE002BBACF5A004992AA /* ProfileAboutMeViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1305,6 +1310,7 @@
 			children = (
 				47D1BDCB2BB52CB4004992AA /* EditProfileView.swift */,
 				47D1BDCF2BB54BAB004992AA /* ProfileDetailCell.swift */,
+				47D1BE022BBAD1A9004992AA /* ProfileAboutMeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1626,6 +1632,7 @@
 				47D1BDE12BB5783F004992AA /* EditProfileCoordinator.swift in Sources */,
 				47C01E042BB2890400D1B2F2 /* AnnouncementsType.swift in Sources */,
 				47C01E4A2BB4416500D1B2F2 /* SettingsFlowFactory.swift in Sources */,
+				47D1BE012BBACF5A004992AA /* ProfileAboutMeViewController.swift in Sources */,
 				47C01E222BB2B5C500D1B2F2 /* AddAnnouncementFlowFactory.swift in Sources */,
 				47C01DEB2BAEF2D600D1B2F2 /* UIDevice+Extensions.swift in Sources */,
 				47D1BDCE2BB52F1B004992AA /* ProfileImageView.swift in Sources */,
@@ -1680,6 +1687,7 @@
 				472E1B3C2B836A75005BF649 /* InputTextField.swift in Sources */,
 				47C01DD22BAD9D7500D1B2F2 /* UIButton+Extensions.swift in Sources */,
 				475224E72BA9DB7F000DAE1B /* UserDefaultsService.swift in Sources */,
+				47D1BE032BBAD1A9004992AA /* ProfileAboutMeView.swift in Sources */,
 				475224982BA04EAC000DAE1B /* AnnouncementViewModel.swift in Sources */,
 				47C01E012BB1B41100D1B2F2 /* MainScreenFlowFactory.swift in Sources */,
 				47C7B3872B8132E100125172 /* AppFontProtocol.swift in Sources */,

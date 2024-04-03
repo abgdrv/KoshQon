@@ -23,7 +23,7 @@ final class EnterPhoneView: BaseView {
     private let type: EnterPhoneType
     
     override var keyboardHandlingButton: ProceedButton? {
-        continueButton
+        return continueButton
     }
     
     // MARK: - UI

@@ -120,4 +120,9 @@ extension FlowFactory: SplashScreenFlowFactory,
         let vc = EditProfileViewController(viewModel: vm)
         return vc
     }
+    
+    func makeAboutMeView(existingText: String?) -> ProfileAboutMeViewController {
+        let vc = ProfileAboutMeViewController(existingText: existingText)
+        return vc
+    }
 }

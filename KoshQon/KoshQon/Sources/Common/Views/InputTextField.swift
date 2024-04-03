@@ -18,6 +18,7 @@ enum InputType {
     case regular
     case sms
     case detailDate
+    case aboutMe
     
     var menuType: MenuType? {
         switch self {
@@ -238,11 +239,9 @@ private extension InputTextField {
                            textContentType: .oneTimeCode)
         case .regular:
             setupTextField(placeholder: _placeholder,
-                           clearButtonMode: .whileEditing,
-                           textContentType: .name)
+                           clearButtonMode: .whileEditing)
         case .gender:
             setupTextField(placeholder: "Пол",
-                           textContentType: .name,
                            image: AppImage.Auth.expandDown.uiImage)
         case .city:
             setupTextField(placeholder: "Город",
@@ -253,7 +252,9 @@ private extension InputTextField {
                            textContentType: .countryName,
                            image: AppImage.Auth.expandDown.uiImage)
         case .detailDate:
-            setupTextField(backgroundColor: .clear, textContentType: .dateTime)
+            setupTextField(textContentType: .dateTime)
+        case .aboutMe:
+            setupTextField(placeholder: "Я люблю заниматья спортом и читать книги")
         }
     }
     
@@ -266,7 +267,7 @@ private extension InputTextField {
                         backgroundColor: UIColor = AppColor.Theme.mainBackground.uiColor,
                         textAlignment: NSTextAlignment = .natural,
                         isEnabled: Bool = true,
-                        textContentType: UITextContentType,
+                        textContentType: UITextContentType = .name,
                         image: UIImage? = nil) {
         self.placeholder = placeholder
         self.keyboardType = keyboardType
@@ -313,6 +314,11 @@ extension InputTextField: UITextFieldDelegate {
             let newString = (text as NSString).replacingCharacters(in: range, with: string)
             textField.text = formattedNumber(number: newString)
             return false
+        case .aboutMe:
+            let maxLength = 100
+            let currentString = (textField.text ?? "") as NSString
+            let newString = currentString.replacingCharacters(in: range, with: string)
+            return newString.count <= maxLength
         default:
             return false
         }

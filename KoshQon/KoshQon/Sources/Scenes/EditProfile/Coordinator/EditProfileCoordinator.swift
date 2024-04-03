@@ -39,9 +39,9 @@ private extension EditProfileCoordinator {
     func showEditProfile() {
         guard let profile = profile else { return }
         let view = factory.makeEditProfileView(profile: profile)
-        view.didProfileDetailCellTap = { [weak self] type in
+        view.didProfileDetailCellTap = { [weak self] viewModel in
             guard let self = self else { return }
-            self.showProfileDetailCell(type: type)
+            self.showProfileDetailCell(type: viewModel.detail.type, value: viewModel.value)
         }
         view.didImagePickerOptionsShow = { [weak self] picker in
             guard let self = self else { return }
@@ -78,11 +78,16 @@ private extension EditProfileCoordinator {
         
     }
     
-    func showAboutDetail() {
-        
+    func showAboutDetail(existingText: String?) {
+        let view = factory.makeAboutMeView(existingText: existingText)
+        view.didSave = { [weak self] in
+            guard let self = self else { return }
+            
+        }
+        router.push(view)
     }
     
-    func showProfileDetailCell(type: ProfileDetailType) {
+    func showProfileDetailCell(type: ProfileDetailType, value: String?) {
         switch type {
         case .name:
             factory.showBanner(title: "Хотите изменить имя?",
@@ -93,7 +98,7 @@ private extension EditProfileCoordinator {
         case .characteristics:
             showCharacteristicsDetail()
         case .about:
-            showAboutDetail()
+            showAboutDetail(existingText: value)
         default:
             break
         }

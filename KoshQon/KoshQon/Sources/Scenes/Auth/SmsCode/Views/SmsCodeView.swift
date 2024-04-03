@@ -18,7 +18,7 @@ final class SmsCodeView: BaseView {
     private var codeTextFields: [UITextField] = []
     
     override var keyboardHandlingButton: ProceedButton? {
-        continueButton
+        return continueButton
     }
     
     private var resendTimer = Timer()

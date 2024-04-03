@@ -14,7 +14,7 @@ final class EditProfileView: BaseView {
     
     var didSave: VoidCallback?
     var didImageTap: VoidCallback?
-    var didProfileDetailCellTap: Callback<ProfileDetailType>?
+    var didProfileDetailCellTap: Callback<ProfileDetailCellViewModel>?
 
     private let viewModel: EditProfileViewModel
     
@@ -74,9 +74,9 @@ extension EditProfileView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = ProfileDetailCell(viewModel: viewModel.items[indexPath.row])
-        cell.didProfileDetailCellTap = { [weak self] type in
+        cell.didProfileDetailCellTap = { [weak self] viewModel in
             guard let self = self else { return }
-            self.didProfileDetailCellTap?(type)
+            self.didProfileDetailCellTap?(viewModel)
         }
         return cell
     }

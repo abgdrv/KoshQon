@@ -23,7 +23,7 @@ final class SetPasswordView: BaseView {
     private let type: SetPasswordType
     
     override var keyboardHandlingButton: ProceedButton? {
-        changePasswordButton
+        return changePasswordButton
     }
     
     // MARK: - UI

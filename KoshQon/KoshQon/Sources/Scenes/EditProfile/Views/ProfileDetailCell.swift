@@ -12,7 +12,7 @@ final class ProfileDetailCell: BaseCell {
 
     // MARK: - Properties
     
-    var didProfileDetailCellTap: Callback<ProfileDetailType>?
+    var didProfileDetailCellTap: Callback<ProfileDetailCellViewModel>?
     
     private let viewModel: ProfileDetailCellViewModel
     

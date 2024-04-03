@@ -13,7 +13,7 @@ final class EditProfileViewController: BaseViewController {
     // MARK: - Properties
     
     var didFinish: VoidCallback?
-    var didProfileDetailCellTap: Callback<ProfileDetailType>?
+    var didProfileDetailCellTap: Callback<ProfileDetailCellViewModel>?
     var didImagePickerOptionsShow: Callback<UIImagePickerController>?
     var didCropCancel: VoidCallback?
     var didImageCrop: VoidCallback?
@@ -98,9 +98,9 @@ private extension EditProfileViewController {
             self.didImagePickerOptionsShow?(self.imagePicker)
         }
         
-        editProfileView.didProfileDetailCellTap = { [weak self] type in
+        editProfileView.didProfileDetailCellTap = { [weak self] viewModel in
             guard let self = self else { return }
-            self.didProfileDetailCellTap?(type)
+            self.didProfileDetailCellTap?(viewModel)
         }
     }
 }
