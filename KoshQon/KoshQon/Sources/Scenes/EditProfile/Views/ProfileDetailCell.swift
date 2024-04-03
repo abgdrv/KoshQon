@@ -120,8 +120,7 @@ private extension ProfileDetailCell {
         
         if type.menuType != nil {
             menuButton.snp.makeConstraints { make in
-                make.leading.equalTo(titleLabel.snp.trailing).offset(10)
-                make.trailing.top.bottom.equalToSuperview()
+                make.bottom.equalToSuperview()
             }
         }
     }
@@ -155,9 +154,13 @@ private extension ProfileDetailCell {
 
 private extension ProfileDetailCell {
     @objc func cellTapped() {
-        if type == .birthday {
+        switch type {
+        case .birthday:
             dateTextField.becomeFirstResponder()
+        case .gender, .country, .city:
+            menuButton.sendActions(for: .touchUpInside)
+        default:
+            didProfileDetailCellTap?(viewModel.detail.type, value ?? "")
         }
-        didProfileDetailCellTap?(viewModel.detail.type, value ?? "")
     }
 }

@@ -13,7 +13,7 @@ final class ProfileAboutMeViewController: BaseViewController {
     
     var didSave: VoidCallback?
     
-    private let existingText: String
+    private let existingText: String?
     
     override var navigationTitleType: NavigationTitleType? {
         return .aboutMe
@@ -26,7 +26,7 @@ final class ProfileAboutMeViewController: BaseViewController {
     // MARK: - Object Lifecycle
     
     init(existingText: String? = nil) {
-        self.existingText = existingText ?? ""
+        self.existingText = existingText
         super.init()
     }
     

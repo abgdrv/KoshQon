@@ -32,7 +32,7 @@ final class MenuButton: UIButton {
             setup()
         }
     }
-    
+        
     private var menuValues: [String] = []
     
     private static var country: Country = .kz
@@ -79,7 +79,6 @@ final class MenuButton: UIButton {
 
 private extension MenuButton {
     func setup() {
-        CM.items = menuItems
         setTitle(title, for: .normal)
         set(font: AppFont.medium.s14, titleColor: AppColor.Static.darkGray.uiColor)
         addTarget(self, action: #selector(showMenu), for: .touchUpInside)
@@ -90,11 +89,9 @@ private extension MenuButton {
         CM.MenuConstants.LabelDefaultColor = AppColor.Theme.mainTitle.uiColor
         CM.MenuConstants.MaxZoom = 0.95
         CM.MenuConstants.MinZoom = 1
-        CM.MenuConstants.ItemDefaultColor = AppColor.Theme.mainBackground.uiColor
+        CM.MenuConstants.ItemDefaultColor = AppColor.Theme.blockBackground.uiColor
         CM.MenuConstants.ItemDefaultHeight = UIDevice.current.isSmall ? 40 : 44
-        CM.tableView.tableHeaderView = UILabel().apply({
-            $0.text = self.menuType?.title
-        })
+        CM.MenuConstants.MenuMarginSpace = 0
     }
 }
 
@@ -134,6 +131,7 @@ extension MenuButton: ContextMenuDelegate {
 private extension MenuButton {
     @objc func showMenu() {
         CM.items = menuItems
-        CM.showMenu(viewTargeted: self, delegate: self, animated: false)
+        CM.headerView = MenuHeaderView(menuType: menuType ?? .phone)
+        CM.showMenu(viewTargeted: self, delegate: self, animated: true)
     }
 }

@@ -18,7 +18,6 @@ enum InputType {
     case regular
     case sms
     case detailDate
-    case aboutMe
     
     var menuType: MenuType? {
         switch self {
@@ -62,7 +61,7 @@ final class InputTextField: UITextField {
     }
     
     private lazy var iconImageView = UIImageView().apply { $0.contentMode = .center }
-    private lazy var menuButton = MenuButton(type: .custom).apply {  $0.menuType = type.menuType }
+    private lazy var menuButton = MenuButton(type: .custom).apply { $0.menuType = type.menuType }
     
     private lazy var toolbar = UIToolbar(
         frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 40)
@@ -96,7 +95,10 @@ final class InputTextField: UITextField {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        type != .detailDate ? bezierPathBorder(color: color) : ()
+        bezierPathBorder(color: color)
+        if type == .detailDate {
+            removeBezierPathBorder()
+        }
     }
     
     // MARK: - Override methods
@@ -253,8 +255,6 @@ private extension InputTextField {
                            image: AppImage.Auth.expandDown.uiImage)
         case .detailDate:
             setupTextField(textContentType: .dateTime)
-        case .aboutMe:
-            setupTextField(placeholder: "Я люблю заниматья спортом и читать книги")
         }
     }
     
@@ -313,12 +313,7 @@ extension InputTextField: UITextFieldDelegate {
         case .phone:
             let newString = (text as NSString).replacingCharacters(in: range, with: string)
             textField.text = formattedNumber(number: newString)
-            return false
-        case .aboutMe:
-            let maxLength = 100
-            let currentString = (textField.text ?? "") as NSString
-            let newString = currentString.replacingCharacters(in: range, with: string)
-            return newString.count <= maxLength
+            return false            
         default:
             return false
         }

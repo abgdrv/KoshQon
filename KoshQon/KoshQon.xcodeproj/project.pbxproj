@@ -153,6 +153,7 @@
 		47D1BDFF2BBAC8F1004992AA /* DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D1BDFE2BBAC8F1004992AA /* DatePicker.swift */; };
 		47D1BE012BBACF5A004992AA /* ProfileAboutMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D1BE002BBACF5A004992AA /* ProfileAboutMeViewController.swift */; };
 		47D1BE032BBAD1A9004992AA /* ProfileAboutMeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D1BE022BBAD1A9004992AA /* ProfileAboutMeView.swift */; };
+		47D1BE052BBD5D5C004992AA /* MenuHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D1BE042BBD5D5C004992AA /* MenuHeaderView.swift */; };
 		47D54CB42B918FA800021FA7 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D54CB32B918FA800021FA7 /* BottomSheetViewController.swift */; };
 		47D54CB62B91919200021FA7 /* BottomSheetOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D54CB52B91919200021FA7 /* BottomSheetOption.swift */; };
 		47D54CB82B9196B200021FA7 /* BottomSheetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D54CB72B9196B200021FA7 /* BottomSheetCell.swift */; };
@@ -314,6 +315,7 @@
 		47D1BDFE2BBAC8F1004992AA /* DatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
 		47D1BE002BBACF5A004992AA /* ProfileAboutMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAboutMeViewController.swift; sourceTree = "<group>"; };
 		47D1BE022BBAD1A9004992AA /* ProfileAboutMeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAboutMeView.swift; sourceTree = "<group>"; };
+		47D1BE042BBD5D5C004992AA /* MenuHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHeaderView.swift; sourceTree = "<group>"; };
 		47D54CB32B918FA800021FA7 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
 		47D54CB52B91919200021FA7 /* BottomSheetOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetOption.swift; sourceTree = "<group>"; };
 		47D54CB72B9196B200021FA7 /* BottomSheetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetCell.swift; sourceTree = "<group>"; };
@@ -505,6 +507,7 @@
 				47CD67372B8DA33E0035DCB6 /* NavigationTitleView.swift */,
 				47D54CE92B9640C900021FA7 /* SeparatorView.swift */,
 				475225022BAB5B28000DAE1B /* MenuButton.swift */,
+				47D1BE042BBD5D5C004992AA /* MenuHeaderView.swift */,
 				47D1BDCD2BB52F1B004992AA /* ProfileImageView.swift */,
 				47D1BDE62BB5DB2D004992AA /* DynamicTableView.swift */,
 				47D1BDF12BB6CBC4004992AA /* HighlightView.swift */,
@@ -1649,6 +1652,7 @@
 				47CD67262B88A9980035DCB6 /* BaseView.swift in Sources */,
 				47CD67282B88BB070035DCB6 /* SetPasswordViewController.swift in Sources */,
 				47C01DDC2BADC9A900D1B2F2 /* EnterPhoneOutputCoordinator.swift in Sources */,
+				47D1BE052BBD5D5C004992AA /* MenuHeaderView.swift in Sources */,
 				475224A22BA05800000DAE1B /* AnnouncementsViewModel.swift in Sources */,
 				47D54CEC2B96419700021FA7 /* UIView+Extensions.swift in Sources */,
 				47D1BDC82BB529D7004992AA /* EditProfileViewController.swift in Sources */,
