@@ -12,7 +12,7 @@ final class ProfileViewController: BaseViewController {
     // MARK: - Properties
     
     var didSettingsTap: VoidCallback?
-    var didEditProfileTap: Callback<Profile>?
+    var didEditProfileTap: VoidCallback?
     
     private let viewModel: ProfileViewModel
     
@@ -72,9 +72,7 @@ private extension ProfileViewController {
 
 private extension ProfileViewController {
     @objc func editButtonTapped() {
-        if let profile = viewModel.profile {
-            didEditProfileTap?(profile)
-        }
+        didEditProfileTap?()
     }
     
     @objc func settingsButtonTapped() {

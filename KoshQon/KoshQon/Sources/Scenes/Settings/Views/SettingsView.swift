@@ -53,6 +53,10 @@ extension SettingsView: UITableViewDelegate, UITableViewDataSource {
         var index = indexPath.row
         index += indexPath.section == 0 ? 0 : 4
         let cell = NavigationCell(viewModel: viewModel.navigationCellViewModels[index])
+        cell.didNavigationCellTap = { [weak self] type in
+            guard let self = self else { return }
+            self.didNavigationCellTap?(type)
+        }
         return cell
     }
     

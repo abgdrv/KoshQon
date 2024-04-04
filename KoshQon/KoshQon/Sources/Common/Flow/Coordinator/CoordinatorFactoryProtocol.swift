@@ -18,6 +18,6 @@ protocol CoordinatorFactoryProtocol {
     func makeFavoritesCoordinator(navController: UINavigationController) -> Coordinator & FavoritesOutputCoordinator
     func makeAddAnnouncementCoordinator(navController: UINavigationController) -> Coordinator & AddAnnouncementOutputCoordinator
     func makeProfileCoordinator(navController: UINavigationController) -> Coordinator & ProfileOutputCoordinator
-    func makeSettingsCoordinator(router: RouterProtocol) -> Coordinator & SettingsOutputCoordinator
+    func makeSettingsCoordinator(router: RouterProtocol, coordinatorFactory: CoordinatorFactory) -> Coordinator & SettingsOutputCoordinator
     func makeEditProfileCoordinator(router: RouterProtocol) -> Coordinator & EditProfileOutputCoordinator
 }

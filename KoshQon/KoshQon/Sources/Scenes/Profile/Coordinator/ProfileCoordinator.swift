@@ -39,15 +39,15 @@ private extension ProfileCoordinator {
             guard let self = self else { return }
             self.showSettingsFlow()
         }
-        view.didEditProfileTap = { [weak self] profile in
+        view.didEditProfileTap = { [weak self] in
             guard let self = self else { return }
-            self.showEditProfileFlow(profile: profile)
+            self.showEditProfileFlow()
         }
         router.setRoodModule(view, hideNavBar: false, isAnimated: false)
     }
     
     func showSettingsFlow() {
-        var coordinator = coordinatorFactory.makeSettingsCoordinator(router: router)
+        var coordinator = coordinatorFactory.makeSettingsCoordinator(router: router, coordinatorFactory: coordinatorFactory)
         coordinator.finishFlow = { [weak self] in
             guard let self = self else { return }
             self.removeDependency(coordinator)
@@ -56,13 +56,13 @@ private extension ProfileCoordinator {
         coordinator.start()
     }
     
-    func showEditProfileFlow(profile: Profile) {
+    func showEditProfileFlow() {
         var coordinator = coordinatorFactory.makeEditProfileCoordinator(router: router)
         coordinator.finishFlow = { [weak self] in
             guard let self = self else { return }
             self.removeDependency(coordinator)
         }
-        coordinator.profile = profile
+        coordinator.profile = ProfileViewModel().profile
         addDependency(coordinator)
         coordinator.start()
     }

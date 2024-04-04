@@ -51,8 +51,8 @@ final class CoordinatorFactory: CoordinatorFactoryProtocol {
         return coordinator
     }
     
-    func makeSettingsCoordinator(router: RouterProtocol) -> Coordinator & SettingsOutputCoordinator {
-        let coordinator = SettingsCoordinator(router: router, factory: FlowFactory())
+    func makeSettingsCoordinator(router: RouterProtocol, coordinatorFactory: CoordinatorFactory) -> Coordinator & SettingsOutputCoordinator {
+        let coordinator = SettingsCoordinator(router: router, factory: FlowFactory(), coordinatorFactory: coordinatorFactory)
         return coordinator
     }
     

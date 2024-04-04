@@ -67,7 +67,7 @@ final class ProfileAboutMeView: BaseView {
         super.init()
         setupViews()
         setupConstraints()
-        bind()
+        setupBindings()
     }
     
     // MARK: - View Lifecycle

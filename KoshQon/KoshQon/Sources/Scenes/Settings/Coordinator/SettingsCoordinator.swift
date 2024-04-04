@@ -15,12 +15,14 @@ final class SettingsCoordinator: BaseCoordinator, SettingsOutputCoordinator {
     
     private let router: RouterProtocol
     private let factory: SettingsFlowFactory
+    private let coordinatorFactory: CoordinatorFactory
         
     // MARK: - Object Lifecycle
     
-    init(router: RouterProtocol, factory: SettingsFlowFactory) {
+    init(router: RouterProtocol, factory: SettingsFlowFactory, coordinatorFactory: CoordinatorFactory) {
         self.router = router
         self.factory = factory
+        self.coordinatorFactory = coordinatorFactory
         super.init(alertFlowFactory: factory)
     }
     
@@ -39,8 +41,15 @@ private extension SettingsCoordinator {
         router.push(view)
     }
     
-    func showPersonal() {
-        
+    func showEditProfile() {
+        var coordinator = coordinatorFactory.makeEditProfileCoordinator(router: router)
+        coordinator.finishFlow = { [weak self] in
+            guard let self = self else { return }
+            self.removeDependency(coordinator)
+        }
+        coordinator.profile = ProfileViewModel().profile
+        addDependency(coordinator)
+        coordinator.start()
     }
     
     func showPrivacy() {
@@ -66,7 +75,7 @@ private extension SettingsCoordinator {
     func showNavigationCell(type: NavigationCellType) {
         switch type {
         case .personal:
-            showPersonal()
+            showEditProfile()
         case .privacy:
             showPrivacy()
         case .theme:
