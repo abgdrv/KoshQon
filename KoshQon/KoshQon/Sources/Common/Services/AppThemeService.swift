@@ -84,21 +84,24 @@ extension AppThemeService: AppThemeServiceProtocol {
     }
     
     func updateThemeState(with theme: Theme) {
-        let window = UIApplication.shared.keyWindow ?? UIWindow()
-        
-        UIView.transition(with: window, duration: 0.4, options: .transitionCrossDissolve, animations: {
-            switch theme {
-            case .light:
-                window.overrideUserInterfaceStyle = .light
-            case .dark:
-                window.overrideUserInterfaceStyle = .dark
-            case .phone:
-                self.applySystemTheme()
-            }
-        }, completion: nil)
-        
-        userDefaultsService.set(value: theme.rawValue, for: UserDefaultsKey.theme.key)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            guard let window = UIApplication.shared.keyWindow else { return }
+            
+            UIView.transition(with: window, duration: 0.4, options: .transitionCrossDissolve, animations: {
+                switch theme {
+                case .light:
+                    window.overrideUserInterfaceStyle = .light
+                case .dark:
+                    window.overrideUserInterfaceStyle = .dark
+                case .phone:
+                    self.applySystemTheme()
+                }
+            }, completion: nil)
+            
+            self.userDefaultsService.set(value: theme.rawValue, for: UserDefaultsKey.theme.key)
+        }
     }
+
 }
 
 // MARK: - Actions

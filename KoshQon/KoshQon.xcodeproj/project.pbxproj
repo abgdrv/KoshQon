@@ -156,6 +156,7 @@
 		47D1BE072BBE756E004992AA /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D1BE062BBE756E004992AA /* PrivacyViewController.swift */; };
 		47D1BE092BBE8194004992AA /* NavigationTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D1BE082BBE8194004992AA /* NavigationTableView.swift */; };
 		47D1BE142BBEA356004992AA /* NavigationTableViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D1BE132BBEA356004992AA /* NavigationTableViewType.swift */; };
+		47D1BE162BBEA876004992AA /* ThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D1BE152BBEA876004992AA /* ThemeViewController.swift */; };
 		47D54CB42B918FA800021FA7 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D54CB32B918FA800021FA7 /* BottomSheetViewController.swift */; };
 		47D54CB62B91919200021FA7 /* BottomSheetOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D54CB52B91919200021FA7 /* BottomSheetOption.swift */; };
 		47D54CB82B9196B200021FA7 /* BottomSheetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D54CB72B9196B200021FA7 /* BottomSheetCell.swift */; };
@@ -320,6 +321,7 @@
 		47D1BE062BBE756E004992AA /* PrivacyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = "<group>"; };
 		47D1BE082BBE8194004992AA /* NavigationTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTableView.swift; sourceTree = "<group>"; };
 		47D1BE132BBEA356004992AA /* NavigationTableViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTableViewType.swift; sourceTree = "<group>"; };
+		47D1BE152BBEA876004992AA /* ThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeViewController.swift; sourceTree = "<group>"; };
 		47D54CB32B918FA800021FA7 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
 		47D54CB52B91919200021FA7 /* BottomSheetOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetOption.swift; sourceTree = "<group>"; };
 		47D54CB72B9196B200021FA7 /* BottomSheetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetCell.swift; sourceTree = "<group>"; };
@@ -1025,6 +1027,7 @@
 			children = (
 				47C01E382BB2DEEE00D1B2F2 /* SettingsViewController.swift */,
 				47D1BE062BBE756E004992AA /* PrivacyViewController.swift */,
+				47D1BE152BBEA876004992AA /* ThemeViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1646,6 +1649,7 @@
 				47D1BDFA2BBA6E07004992AA /* City.swift in Sources */,
 				475224B82BA443F0000DAE1B /* ProfileAboutInfo.swift in Sources */,
 				47C01E302BB2DA1400D1B2F2 /* ProfileFlowFactory.swift in Sources */,
+				47D1BE162BBEA876004992AA /* ThemeViewController.swift in Sources */,
 				475224CB2BA99242000DAE1B /* TabBarViewModel.swift in Sources */,
 				47C01DFD2BB1B35C00D1B2F2 /* MainScreenOutputCoordinator.swift in Sources */,
 				47D1BDE12BB5783F004992AA /* EditProfileCoordinator.swift in Sources */,

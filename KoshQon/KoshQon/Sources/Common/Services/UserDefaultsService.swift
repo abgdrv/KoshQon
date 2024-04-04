@@ -36,6 +36,8 @@ enum UserDefaultsKey: String {
     case pinCode
     case services
     case theme
+    case themeSection
+    case themeRow
     case language
     
     var key: String {

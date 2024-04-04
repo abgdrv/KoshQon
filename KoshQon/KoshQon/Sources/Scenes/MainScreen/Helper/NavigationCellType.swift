@@ -28,4 +28,17 @@ enum NavigationCellType: String, CaseIterable {
     case languageKazakh
     case languageRussian
     case languageEnglish
+    
+    var theme: Theme {
+        switch self {
+        case .themeLight:
+            .light
+        case .themeDark:
+            .dark
+        case .themeDefault:
+            .phone
+        default:
+            .phone
+        }
+    }
 }

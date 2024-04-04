@@ -8,8 +8,8 @@
 import UIKit
 import SnapKit
 
-final class NavigationTableView: BaseView {
-
+final class NavigationTableView: UIView {
+    
     // MARK: - Properties
     
     var didNavigationCellTap: Callback<NavigationCellType>?
@@ -17,6 +17,12 @@ final class NavigationTableView: BaseView {
     private let type: NavigationTableViewType
     private let navigationCellViewModels: [NavigationCellViewModel]
     
+    private var selectedIndexPath: IndexPath? {
+        didSet {
+            navigationTableView.reloadData()
+        }
+    }
+        
     // MARK: - UI
     
     private lazy var navigationTableView = UITableView(frame: .zero, style: .grouped).apply {
@@ -34,9 +40,16 @@ final class NavigationTableView: BaseView {
     init(type: NavigationTableViewType, viewModels: [NavigationCellViewModel]) {
         self.type = type
         self.navigationCellViewModels = viewModels
-        super.init()
+        super.init(frame: .zero)
         setupViews()
         setupConstraints()
+        if type == .theme {
+            selectedIndexPath = getSelectedCell()
+        }
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
 
@@ -60,7 +73,14 @@ extension NavigationTableView: UITableViewDelegate, UITableViewDataSource {
         let cell = NavigationCell(viewModel: navigationCellViewModels[index])
         cell.didNavigationCellTap = { [weak self] type in
             guard let self = self else { return }
+            if type == .themeLight || type == .themeDark || type == .themeDefault {
+                AppThemeService.shared.updateThemeState(with: type.theme)
+                selectCell(indexPath: indexPath)
+            }
             self.didNavigationCellTap?(type)
+        }
+        if type == .theme  {
+            cell.accessoryType = selectedIndexPath == indexPath ? .checkmark : .none
         }
         return cell
     }
@@ -78,7 +98,23 @@ extension NavigationTableView: UITableViewDelegate, UITableViewDataSource {
         }
         return 0
     }
+    
+    func selectCell(indexPath: IndexPath) {
+        selectedIndexPath = indexPath
+        UserDefaultsService.shared.set(value: indexPath.section, for: UserDefaultsKey.themeSection.key)
+        UserDefaultsService.shared.set(value: indexPath.row, for: UserDefaultsKey.themeRow.key)
+    }
+
+    func getSelectedCell() -> IndexPath? {
+        if let section = UserDefaultsService.shared.value(for: UserDefaultsKey.themeSection.key) as? Int,
+           let row = UserDefaultsService.shared.value(for: UserDefaultsKey.themeRow.key) as? Int {
+            return IndexPath(row: row, section: section)
+        }
+        return IndexPath(row: 2, section: 0)
+    }
 }
+
+// MARK: - Setup Views
 
 private extension NavigationTableView {
     func setupViews() {

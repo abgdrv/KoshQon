@@ -121,6 +121,12 @@ extension FlowFactory: SplashScreenFlowFactory,
         return vc
     }
     
+    func makeThemeView() -> ThemeViewController {
+        let vm = SettingsViewModel(type: .theme)
+        let vc = ThemeViewController(viewModel: vm)
+        return vc
+    }
+    
     func makeEditProfileView(profile: Profile) -> EditProfileViewController {
         let vm = EditProfileViewModel(profile: profile)
         let vc = EditProfileViewController(viewModel: vm)

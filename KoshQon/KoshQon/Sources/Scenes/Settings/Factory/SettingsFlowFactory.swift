@@ -10,4 +10,5 @@ import Foundation
 protocol SettingsFlowFactory: AlertFlowFactory {
     func makeSettingsView() -> SettingsViewController
     func makePrivacyView() -> PrivacyViewController
+    func makeThemeView() -> ThemeViewController
 }

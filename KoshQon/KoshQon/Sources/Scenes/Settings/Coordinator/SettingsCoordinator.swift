@@ -63,7 +63,8 @@ private extension SettingsCoordinator {
     }
     
     func showTheme() {
-        
+        let view = factory.makeThemeView()
+        router.push(view)
     }
     
     func showLanguage() {
@@ -102,9 +103,7 @@ private extension SettingsCoordinator {
             UIAlertAction(title: "Деактивировать", style: .destructive, handler: { action in
                 completion()
             }),
-            UIAlertAction(title: "Отмена", style: .cancel, handler: { action in
-                self.router.dismissModule()
-            })
+            UIAlertAction(title: "Отмена", style: .cancel)
         ]
         let alert = factory.makeAlert(title: "Деактивировать аккаунт?", message: nil, with: actions)
         router.toPresent()?.present(alert, animated: true)
