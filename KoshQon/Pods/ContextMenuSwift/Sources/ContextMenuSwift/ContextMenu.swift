@@ -846,12 +846,12 @@ open class ContextMenu: NSObject {
             height: weakSelf.mH
         )
         
-        weakSelf.targetedImageView.frame = CGRect(
-            x: weakSelf.tvX,
-            y: weakSelf.tvY,
-            width: weakSelf.tvW,
-            height: weakSelf.tvH
-        )
+//        weakSelf.targetedImageView.frame = CGRect(
+//            x: weakSelf.tvX,
+//            y: weakSelf.tvY,
+//            width: weakSelf.tvW,
+//            height: weakSelf.tvH
+//        )
         
         weakSelf.blurEffectView.frame = CGRect(
             x: weakSelf.mainViewRect.origin.x,

@@ -35,7 +35,7 @@ class BaseView: UIView {
     }
 }
 
-// MARK: - Setup Views, Gestures
+// MARK: - Setup Views
 
 private extension BaseView {
     func setupViews() {

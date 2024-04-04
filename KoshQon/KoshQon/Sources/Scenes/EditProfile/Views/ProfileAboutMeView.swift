@@ -17,7 +17,7 @@ final class ProfileAboutMeView: BaseView {
     
     private var existingText: String?
     
-    @Published private var counterString: String = "150"
+    @Published private var counterString: String
     
     private var cancellables = Set<AnyCancellable>()
     
@@ -64,6 +64,7 @@ final class ProfileAboutMeView: BaseView {
     
     init(existingText: String?) {
         self.existingText = existingText ?? "Я люблю заниматься спортом и читать книги..."
+        self.counterString = "\(150 - (existingText?.count ?? 0))"
         super.init()
         setupViews()
         setupConstraints()

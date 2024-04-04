@@ -80,10 +80,6 @@ private extension EditProfileCoordinator {
     
     func showAboutDetail(existingText: String?) {
         let view = factory.makeAboutMeView(existingText: nil)
-        view.didSave = { [weak self] in
-            guard let self = self else { return }
-            
-        }
         router.push(view)
     }
     

@@ -59,22 +59,37 @@ final class NavigationCell: BaseCell {
 private extension NavigationCell {
     func setupViews() {
         backgroundColor = AppColor.Theme.mainBackground.uiColor
-        contentView.addSubviews(iconImageView, containerView)
-        containerView.addSubviews(titleLabel, expandRightIconImageView)
+        if viewModel.image != nil {
+            contentView.addSubviews(iconImageView, expandRightIconImageView)
+        }
+        contentView.addSubview(containerView)
+        containerView.addSubview(titleLabel)
         if !isLast {
             containerView.addSubview(separatorView)
         }
     }
     
     func setupConstraints() {
-        iconImageView.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(10)
-            make.top.bottom.equalToSuperview().inset(10)
-        }
-        
-        containerView.snp.makeConstraints { make in
-            make.leading.equalTo(iconImageView.snp.trailing).offset(8)
-            make.top.bottom.trailing.equalToSuperview()
+        if viewModel.image != nil {
+            iconImageView.snp.makeConstraints { make in
+                make.leading.equalToSuperview().offset(10)
+                make.top.bottom.equalToSuperview().inset(10)
+            }
+            
+            containerView.snp.makeConstraints { make in
+                make.leading.equalTo(iconImageView.snp.trailing).offset(8)
+                make.top.bottom.trailing.equalToSuperview()
+            }
+            
+            expandRightIconImageView.snp.makeConstraints { make in
+                make.trailing.equalToSuperview().inset(10)
+                make.top.bottom.equalToSuperview().inset(10)
+            }
+        } else {
+            containerView.snp.makeConstraints { make in
+                make.leading.equalToSuperview().offset(10)
+                make.top.bottom.trailing.equalToSuperview()
+            }
         }
         
         titleLabel.snp.makeConstraints { make in
@@ -86,11 +101,6 @@ private extension NavigationCell {
             separatorView.snp.makeConstraints { make in
                 make.leading.trailing.bottom.equalToSuperview()
             }
-        }
-        
-        expandRightIconImageView.snp.makeConstraints { make in
-            make.trailing.equalToSuperview().inset(10)
-            make.top.bottom.equalToSuperview().inset(10)
         }
     }
     

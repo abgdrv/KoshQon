@@ -18,4 +18,14 @@ enum NavigationCellType: String, CaseIterable {
     case language
     case about
     case quit
+    
+    case deactivate
+    
+    case themeLight
+    case themeDark
+    case themeDefault
+    
+    case languageKazakh
+    case languageRussian
+    case languageEnglish
 }

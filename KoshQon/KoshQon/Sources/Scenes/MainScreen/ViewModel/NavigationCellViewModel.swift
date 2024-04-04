@@ -43,6 +43,20 @@ extension NavigationCellViewModel: INavigationCellViewModel {
             "О приложении"
         case .quit:
             "Выйти"
+        case .deactivate:
+            "Деактивировать аккаунт"
+        case .themeLight:
+            "Светлая"
+        case .themeDark:
+            "Темная"
+        case .themeDefault:
+            "Системная"
+        case .languageKazakh:
+            "Казахский"
+        case .languageRussian:
+            "Русский"
+        case .languageEnglish:
+            "Английский"
         }
     }
     
@@ -66,6 +80,10 @@ extension NavigationCellViewModel: INavigationCellViewModel {
             AppImage.Settings.about.uiImage?.withRenderingMode(.alwaysOriginal)
         case .quit:
             AppImage.Settings.quit.uiImage?.withRenderingMode(.alwaysOriginal)
+        case .deactivate:
+            AppImage.Settings.deactivate.uiImage?.withRenderingMode(.alwaysOriginal)
+        default:
+            nil
         }
     }
     

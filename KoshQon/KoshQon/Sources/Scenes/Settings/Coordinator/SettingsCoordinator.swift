@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 final class SettingsCoordinator: BaseCoordinator, SettingsOutputCoordinator {
     
@@ -53,7 +54,12 @@ private extension SettingsCoordinator {
     }
     
     func showPrivacy() {
-        
+        let view = factory.makePrivacyView()
+        view.didDeactivateCellTap = { [weak self] completion in
+            guard let self = self else { return }
+            self.showDeactivateAlert(completion: completion)
+        }
+        router.push(view)
     }
     
     func showTheme() {
@@ -89,5 +95,18 @@ private extension SettingsCoordinator {
         default:
             break
         }
+    }
+    
+    func showDeactivateAlert(completion: @escaping VoidCallback) {
+        let actions: [UIAlertAction] = [
+            UIAlertAction(title: "Деактивировать", style: .destructive, handler: { action in
+                completion()
+            }),
+            UIAlertAction(title: "Отмена", style: .cancel, handler: { action in
+                self.router.dismissModule()
+            })
+        ]
+        let alert = factory.makeAlert(title: "Деактивировать аккаунт?", message: nil, with: actions)
+        router.toPresent()?.present(alert, animated: true)
     }
 }

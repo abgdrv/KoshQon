@@ -12,11 +12,26 @@ final class SettingsViewModel {
     // MARK: - Properties
     
     var navigationCellViewModels: [NavigationCellViewModel] = []
-    let navigationItems: [NavigationCellType] = Array(NavigationCellType.allCases.dropFirst(3))
+    
+    private let type: NavigationTableViewType
+    
+    private var navigationItems: [NavigationCellType] {
+        switch type {
+        case .settings:
+            Array(NavigationCellType.allCases[3..<9])
+        case .privacy:
+            Array(NavigationCellType.allCases[9..<10])
+        case .theme:
+            Array(NavigationCellType.allCases[10..<13])
+        case .language:
+            Array(NavigationCellType.allCases[13..<16])
+        }
+    }
     
     // MARK: - Object Lifecycle
     
-    init() {
+    init(type: NavigationTableViewType) {
+        self.type = type
         getNavigationItems()
     }
 }

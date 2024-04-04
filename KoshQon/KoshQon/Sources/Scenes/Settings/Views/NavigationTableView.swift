@@ -1,20 +1,21 @@
 //
-//  SettingsView.swift
+//  NavigationTableView.swift
 //  KoshQon
 //
-//  Created by Almat Begaidarov on 26.03.2024.
+//  Created by Almat Begaidarov on 04.04.2024.
 //
 
 import UIKit
 import SnapKit
 
-final class SettingsView: BaseView {
-    
+final class NavigationTableView: BaseView {
+
     // MARK: - Properties
     
     var didNavigationCellTap: Callback<NavigationCellType>?
     
-    private let viewModel: SettingsViewModel
+    private let type: NavigationTableViewType
+    private let navigationCellViewModels: [NavigationCellViewModel]
     
     // MARK: - UI
     
@@ -24,35 +25,39 @@ final class SettingsView: BaseView {
         $0.dataSource = self
         $0.delegate = self
         $0.rowHeight = UITableView.automaticDimension
-        $0.backgroundColor = AppColor.Theme.mainBackground.uiColor
+        $0.backgroundColor = .clear
         $0.register(type: NavigationCell.self)
     }
     
     // MARK: - Object Lifecycle
     
-    init(viewModel: SettingsViewModel) {
-        self.viewModel = viewModel
+    init(type: NavigationTableViewType, viewModels: [NavigationCellViewModel]) {
+        self.type = type
+        self.navigationCellViewModels = viewModels
         super.init()
         setupViews()
         setupConstraints()
     }
 }
 
-// MARK: - UITableViewDelegate, UITableViewDataSource
-
-extension SettingsView: UITableViewDelegate, UITableViewDataSource {
+extension NavigationTableView: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return type == .settings ? 2 : 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return section == 0 ? 4 : 2
+        if type == .settings {
+            return section == 0 ? 4 : 2
+        }
+        return navigationCellViewModels.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var index = indexPath.row
-        index += indexPath.section == 0 ? 0 : 4
-        let cell = NavigationCell(viewModel: viewModel.navigationCellViewModels[index])
+        if type == .settings {
+            index += indexPath.section == 0 ? 0 : 4
+        }
+        let cell = NavigationCell(viewModel: navigationCellViewModels[index])
         cell.didNavigationCellTap = { [weak self] type in
             guard let self = self else { return }
             self.didNavigationCellTap?(type)
@@ -61,25 +66,28 @@ extension SettingsView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return section == 0 ? nil : UIView()
+        if type == .settings {
+            return section == 0 ? nil : UIView()
+        }
+        return nil
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return section == 0 ? 0 : 50
+        if type == .settings {
+            return section == 0 ? 0 : 50
+        }
+        return 0
     }
 }
 
-// MARK: - Setup Views
-
-private extension SettingsView {
+private extension NavigationTableView {
     func setupViews() {
         addSubview(navigationTableView)
     }
     
     func setupConstraints() {
         navigationTableView.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide.snp.top)
-            make.leading.trailing.bottom.equalToSuperview()
+            make.edges.equalToSuperview()
         }
     }
 }

@@ -1,29 +1,29 @@
 //
-//  SettingsViewController.swift
+//  PrivacyViewController.swift
 //  KoshQon
 //
-//  Created by Almat Begaidarov on 26.03.2024.
+//  Created by Almat Begaidarov on 04.04.2024.
 //
 
 import UIKit
 import SnapKit
 
-final class SettingsViewController: BaseViewController {
+final class PrivacyViewController: BaseViewController {
     
     // MARK: - Properties
     
-    var didNavigationCellTap: Callback<NavigationCellType>?
+    var didDeactivateCellTap: Callback<VoidCallback>?
     
     private let viewModel: SettingsViewModel
     
     override var navigationTitleType: NavigationTitleType? {
-        return .settings
+        return .privacy
     }
     
     // MARK: - UI
     
-    private lazy var settingsTableView = NavigationTableView(type: .settings,
-                                                             viewModels: viewModel.navigationCellViewModels)
+    private lazy var privacyTableView = NavigationTableView(type: .privacy,
+                                                            viewModels: viewModel.navigationCellViewModels)
     
     // MARK: - Object Lifecycle
     
@@ -33,7 +33,7 @@ final class SettingsViewController: BaseViewController {
     }
     
     // MARK: - View Lifecycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
@@ -45,31 +45,24 @@ final class SettingsViewController: BaseViewController {
         super.viewWillAppear(animated)
         tabBarController?.tabBar.isHidden = true
     }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        tabBarController?.tabBar.isHidden = false
-    }
 }
 
-// MARK: - Setup Views
-
-private extension SettingsViewController {
+private extension PrivacyViewController {
     func setupViews() {
-        view.addSubview(settingsTableView)
+        view.addSubview(privacyTableView)
     }
     
     func setupConstraints() {
-        settingsTableView.snp.makeConstraints { make in
+        privacyTableView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
             make.leading.trailing.bottom.equalToSuperview()
         }
     }
     
     func setupBindings() {
-        settingsTableView.didNavigationCellTap = { [weak self] type in
+        privacyTableView.didNavigationCellTap = { [weak self] type in
             guard let self = self else { return }
-            self.didNavigationCellTap?(type)
+            self.didDeactivateCellTap?({})
         }
     }
 }

@@ -93,5 +93,6 @@ enum AppImage {
         case language = "settings/language"
         case about = "settings/about"
         case quit = "settings/quit"
+        case deactivate = "settings/deactivate"
     }
 }

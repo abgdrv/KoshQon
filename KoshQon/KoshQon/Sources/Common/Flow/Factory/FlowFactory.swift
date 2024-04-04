@@ -110,8 +110,14 @@ extension FlowFactory: SplashScreenFlowFactory,
     }
     
     func makeSettingsView() -> SettingsViewController {
-        let vm = SettingsViewModel()
+        let vm = SettingsViewModel(type: .settings)
         let vc = SettingsViewController(viewModel: vm)
+        return vc
+    }
+    
+    func makePrivacyView() -> PrivacyViewController {
+        let vm = SettingsViewModel(type: .privacy)
+        let vc = PrivacyViewController(viewModel: vm)
         return vc
     }
     

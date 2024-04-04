@@ -100,27 +100,26 @@ private extension EnterPhoneCoordinator {
                                 view: PersonalViewController,
                                 isImageSelected: Bool) {
         var actions: [UIAlertAction] = [
-            UIAlertAction(title: "Камера", style: .default) { [weak self] _ in
-                guard let self = self else { return }
+            UIAlertAction(title: "Камера", style: .default) { action in
                 if UIImagePickerController.isSourceTypeAvailable(.camera) {
                     picker.sourceType = .camera
                     self.openImagePicker(picker: picker)
                 }
             },
-            UIAlertAction(title: "Галерея", style: .default) { [weak self] _ in
-                guard let self = self else { return }
+            UIAlertAction(title: "Галерея", style: .default) { action in
                 picker.sourceType = .photoLibrary
                 self.openImagePicker(picker: picker)
             },
-            UIAlertAction(title: "Закрыть", style: .cancel, handler: nil)
+            UIAlertAction(title: "Закрыть", style: .cancel)
         ]
         
         if isImageSelected {
             actions.insert(
-                UIAlertAction(title: "Удалить фото", style: .destructive) { [weak self] _ in
-                guard let _ = self else { return }
-                view.didImageDelete = {}
-            }, at: 2)
+                UIAlertAction(title: "Удалить фото", style: .destructive) { action in
+                    view.didImageDelete = {}
+                }, 
+                at: 2
+            )
         }
         
         let alertSheet = factory.makeAlertSheet(title: "Выберите фото",
