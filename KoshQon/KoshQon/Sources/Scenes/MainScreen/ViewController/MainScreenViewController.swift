@@ -55,5 +55,15 @@ private extension MainScreenViewController {
             guard let self = self else { return }
             self.didAnnouncementCellTap?(viewModel)
         }
+        
+        mainScreenView.didScrollDown = { [weak self] in
+            guard let self = self else { return }
+            self.navigationController?.setNavigationBarHidden(true, animated: true)
+        }
+        
+        mainScreenView.didScrollUp = { [weak self] in
+            guard let self = self else { return }
+            self.navigationController?.setNavigationBarHidden(false, animated: true)
+        }
     }
 }

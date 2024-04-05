@@ -15,7 +15,12 @@ final class MainScreenView: BaseView {
     var didAnnouncementCellTap: Callback<AnnouncementViewModel>?
     var didNavigationCellTap: Callback<NavigationCellType>?
     
+    var didScrollDown: VoidCallback?
+    var didScrollUp: VoidCallback?
+        
     private let viewModel: MainScreenViewModel
+    
+    private var lastVelocityYSign = 0
     
     // MARK: - UI
     
@@ -55,6 +60,8 @@ private extension MainScreenView {
     }
 }
 
+// MARK: - UITableViewDelegate, UITableViewDataSource
+
 extension MainScreenView: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
@@ -73,15 +80,13 @@ extension MainScreenView: UITableViewDelegate, UITableViewDataSource {
             }
             return cell
         }
-        if indexPath.section == 1 {
-            let cell = AnnouncementCell(viewModel: viewModel.announcementViewModels[indexPath.row])
-            cell.didAnnouncementCellTap = { [weak self] viewModel in
-                guard let self = self else { return }
-                self.didAnnouncementCellTap?(viewModel)
-            }
-            return cell
+        
+        let cell = AnnouncementCell(viewModel: viewModel.announcementViewModels[indexPath.row])
+        cell.didAnnouncementCellTap = { [weak self] viewModel in
+            guard let self = self else { return }
+            self.didAnnouncementCellTap?(viewModel)
         }
-        return UITableViewCell()
+        return cell
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -90,5 +95,23 @@ extension MainScreenView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return section == 0 ? 0 : 25
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let currentVelocityY =  scrollView.panGestureRecognizer.velocity(in: scrollView.superview).y
+        let currentVelocityYSign = Int(currentVelocityY).signum()
+        if currentVelocityYSign != lastVelocityYSign && currentVelocityYSign != 0 {
+            lastVelocityYSign = currentVelocityYSign
+        }
+        
+        if lastVelocityYSign < 0 {
+            UIView.animate(withDuration: 0.4, delay: 0, options: .allowAnimatedContent, animations: {
+                self.didScrollDown?()
+            }, completion: nil)
+        } else if lastVelocityYSign > 0 {
+            UIView.animate(withDuration: 0.4, delay: 0, options: .allowAnimatedContent, animations: {
+                self.didScrollUp?()
+            }, completion: nil)
+        }
     }
 }
