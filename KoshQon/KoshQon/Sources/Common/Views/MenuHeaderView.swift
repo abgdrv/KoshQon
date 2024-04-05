@@ -41,7 +41,7 @@ final class MenuHeaderView: UIView {
 
 private extension MenuHeaderView {
     func setupViews() {
-        backgroundColor = AppColor.Theme.blockBackground.uiColor
+        backgroundColor = AppColor.Theme.menuBackground.uiColor
         addSubviews(titleLabel, separatorView)
     }
     

@@ -34,5 +34,6 @@ enum AppColor {
         case secondaryTitle = "theme/secondary_title"
         case blockBackground = "theme/block_background"
         case separation = "theme/separation"
+        case menuBackground = "theme/menu_background"
     }
 }

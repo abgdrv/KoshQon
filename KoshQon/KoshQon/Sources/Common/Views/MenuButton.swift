@@ -89,9 +89,10 @@ private extension MenuButton {
         CM.MenuConstants.LabelDefaultColor = AppColor.Theme.mainTitle.uiColor
         CM.MenuConstants.MaxZoom = 0.95
         CM.MenuConstants.MinZoom = 1
-        CM.MenuConstants.ItemDefaultColor = AppColor.Theme.blockBackground.uiColor
+        CM.MenuConstants.ItemDefaultColor = AppColor.Theme.menuBackground.uiColor
         CM.MenuConstants.ItemDefaultHeight = UIDevice.current.isSmall ? 40 : 44
         CM.MenuConstants.MenuMarginSpace = 0
+        CM.headerView = MenuHeaderView(menuType: menuType ?? .phone)
     }
 }
 
@@ -131,7 +132,6 @@ extension MenuButton: ContextMenuDelegate {
 private extension MenuButton {
     @objc func showMenu() {
         CM.items = menuItems
-        CM.headerView = MenuHeaderView(menuType: menuType ?? .phone)
         CM.showMenu(viewTargeted: self, delegate: self, animated: true)
     }
 }
