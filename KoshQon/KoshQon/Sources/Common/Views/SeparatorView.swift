@@ -25,6 +25,13 @@ final class SeparatorView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - View Lifecycle
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        lineView.layer.cornerRadius = lineView.frame.height / 2
+    }
 }
 
 // MARK: - Setup Views

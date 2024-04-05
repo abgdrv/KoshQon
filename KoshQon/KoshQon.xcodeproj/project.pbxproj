@@ -157,6 +157,8 @@
 		47D1BE092BBE8194004992AA /* NavigationTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D1BE082BBE8194004992AA /* NavigationTableView.swift */; };
 		47D1BE142BBEA356004992AA /* NavigationTableViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D1BE132BBEA356004992AA /* NavigationTableViewType.swift */; };
 		47D1BE162BBEA876004992AA /* ThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D1BE152BBEA876004992AA /* ThemeViewController.swift */; };
+		47D1BE182BBF230F004992AA /* ImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D1BE172BBF230F004992AA /* ImageDetailViewController.swift */; };
+		47D1BE1A2BBF2E5B004992AA /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D1BE192BBF2E5B004992AA /* UIImageView+Extensions.swift */; };
 		47D54CB42B918FA800021FA7 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D54CB32B918FA800021FA7 /* BottomSheetViewController.swift */; };
 		47D54CB62B91919200021FA7 /* BottomSheetOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D54CB52B91919200021FA7 /* BottomSheetOption.swift */; };
 		47D54CB82B9196B200021FA7 /* BottomSheetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D54CB72B9196B200021FA7 /* BottomSheetCell.swift */; };
@@ -322,6 +324,8 @@
 		47D1BE082BBE8194004992AA /* NavigationTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTableView.swift; sourceTree = "<group>"; };
 		47D1BE132BBEA356004992AA /* NavigationTableViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTableViewType.swift; sourceTree = "<group>"; };
 		47D1BE152BBEA876004992AA /* ThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeViewController.swift; sourceTree = "<group>"; };
+		47D1BE172BBF230F004992AA /* ImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewController.swift; sourceTree = "<group>"; };
+		47D1BE192BBF2E5B004992AA /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		47D54CB32B918FA800021FA7 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
 		47D54CB52B91919200021FA7 /* BottomSheetOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetOption.swift; sourceTree = "<group>"; };
 		47D54CB72B9196B200021FA7 /* BottomSheetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetCell.swift; sourceTree = "<group>"; };
@@ -408,6 +412,7 @@
 				475224EA2BA9DE6F000DAE1B /* UIApplication+Extensions.swift */,
 				47C01DD12BAD9D7500D1B2F2 /* UIButton+Extensions.swift */,
 				47C01DEA2BAEF2D600D1B2F2 /* UIDevice+Extensions.swift */,
+				47D1BE192BBF2E5B004992AA /* UIImageView+Extensions.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -1205,6 +1210,7 @@
 			isa = PBXGroup;
 			children = (
 				47CD672C2B8C3DD50035DCB6 /* BaseViewController.swift */,
+				47D1BE172BBF230F004992AA /* ImageDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1708,10 +1714,12 @@
 				47CD67222B88A7AE0035DCB6 /* SetPasswordView.swift in Sources */,
 				475224D32BA9CB15000DAE1B /* CoordinatorFactory.swift in Sources */,
 				475225012BAB37E5000DAE1B /* Gender.swift in Sources */,
+				47D1BE182BBF230F004992AA /* ImageDetailViewController.swift in Sources */,
 				47D1BDDB2BB56A75004992AA /* CharacteristicType.swift in Sources */,
 				472E1B3C2B836A75005BF649 /* InputTextField.swift in Sources */,
 				47C01DD22BAD9D7500D1B2F2 /* UIButton+Extensions.swift in Sources */,
 				475224E72BA9DB7F000DAE1B /* UserDefaultsService.swift in Sources */,
+				47D1BE1A2BBF2E5B004992AA /* UIImageView+Extensions.swift in Sources */,
 				47D1BE032BBAD1A9004992AA /* ProfileAboutMeView.swift in Sources */,
 				475224982BA04EAC000DAE1B /* AnnouncementViewModel.swift in Sources */,
 				47C01E012BB1B41100D1B2F2 /* MainScreenFlowFactory.swift in Sources */,

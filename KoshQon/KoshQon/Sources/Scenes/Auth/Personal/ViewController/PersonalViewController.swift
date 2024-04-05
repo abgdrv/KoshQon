@@ -23,6 +23,10 @@ final class PersonalViewController: BaseViewController {
         }
     }
     
+    var image: UIImage? {
+        return personalView.image
+    }
+    
     private let viewModel: PersonalViewModel
     
     override var navigationTitleType: NavigationTitleType? {

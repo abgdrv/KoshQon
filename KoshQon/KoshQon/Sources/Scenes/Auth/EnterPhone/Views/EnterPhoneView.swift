@@ -30,7 +30,10 @@ final class EnterPhoneView: BaseView {
     
     private lazy var infoLabel = InfoLabel(type: InfoLabelType(rawValue: type.rawValue) ?? .registration)
     private lazy var phoneLabel = InfoLabel(type: .phone)
-    private lazy var phoneTextField = InputTextField(inputType: .phone)
+    
+    private lazy var phoneTextField = InputTextField(inputType: .phone).apply {
+        $0.becomeFirstResponder()
+    }
     
     private lazy var continueButton = ProceedButton(type: .system).apply {
         $0.type = .continue

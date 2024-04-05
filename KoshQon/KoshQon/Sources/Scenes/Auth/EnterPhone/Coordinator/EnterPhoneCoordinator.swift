@@ -93,6 +93,15 @@ private extension EnterPhoneCoordinator {
         }
         router.push(view)
     }
+    
+    func showImageZoom(image: UIImage?) {
+        let view = factory.makeImageZoomView(image: image)
+        view.didCancel = { [weak self] in
+            guard let self = self else { return }
+            self.router.dismissModule()
+        }
+        router.toPresent()?.present(view, animated: true)
+    }
 }
 
 private extension EnterPhoneCoordinator {
@@ -115,10 +124,16 @@ private extension EnterPhoneCoordinator {
         
         if isImageSelected {
             actions.insert(
+                UIAlertAction(title: "Посмотреть", style: .default) { action in
+                    self.showImageZoom(image: view.image)
+                },
+                at: 2
+            )
+            actions.insert(
                 UIAlertAction(title: "Удалить фото", style: .destructive) { action in
                     view.didImageDelete = {}
                 }, 
-                at: 2
+                at: 3
             )
         }
         

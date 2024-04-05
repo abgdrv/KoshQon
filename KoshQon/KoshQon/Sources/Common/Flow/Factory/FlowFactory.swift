@@ -73,6 +73,11 @@ extension FlowFactory: SplashScreenFlowFactory,
         return vc
     }
     
+    func makeImageZoomView(image: UIImage?) -> ImageDetailViewController {
+        let vc = ImageDetailViewController(image: image)
+        return vc
+    }
+    
     func makeSetPasswordView(type: SetPasswordType) -> SetPasswordViewController {
         let vm = SetPasswordViewModel(type: type)
         let vc = SetPasswordViewController(viewModel: vm, type: type)

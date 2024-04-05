@@ -16,6 +16,10 @@ final class PersonalView: BaseView {
     var didFinish: VoidCallback?
     var didImageTap: Callback<Bool>?
     
+    var image: UIImage? {
+        return profileImageView.image
+    }
+    
     private var isImageSelected: Bool {
         return profileImageView.image != AppImage.Personal.defaultProfile.uiImage
     }
