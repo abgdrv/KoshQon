@@ -98,18 +98,18 @@ extension MainScreenView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let currentVelocityY =  scrollView.panGestureRecognizer.velocity(in: scrollView.superview).y
+        let currentVelocityY = scrollView.panGestureRecognizer.velocity(in: scrollView.superview).y
         let currentVelocityYSign = Int(currentVelocityY).signum()
-        if currentVelocityYSign != lastVelocityYSign && currentVelocityYSign != 0 {
+        if currentVelocityYSign != lastVelocityYSign, currentVelocityYSign != 0 {
             lastVelocityYSign = currentVelocityYSign
         }
         
         if lastVelocityYSign < 0 {
-            UIView.animate(withDuration: 0.4, delay: 0, options: .allowAnimatedContent, animations: {
+            UIView.animate(withDuration: 0.3, animations: {
                 self.didScrollDown?()
             }, completion: nil)
         } else if lastVelocityYSign > 0 {
-            UIView.animate(withDuration: 0.4, delay: 0, options: .allowAnimatedContent, animations: {
+            UIView.animate(withDuration: 0.3, animations: {
                 self.didScrollUp?()
             }, completion: nil)
         }
