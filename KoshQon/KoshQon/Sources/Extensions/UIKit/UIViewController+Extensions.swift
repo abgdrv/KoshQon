@@ -15,14 +15,14 @@ extension UIViewController: Presentable {
 }
 
 extension UIViewController {
-    func presentInKeyWindow(animated: Bool = true, completion: (() -> Void)? = nil) {
+    func presentInKeyWindow(animated: Bool = true, completion: VoidCallback? = nil) {
         DispatchQueue.main.async {
             UIApplication.shared.keyWindow?.rootViewController?
                 .present(self, animated: animated, completion: completion)
         }
     }
     
-    func presentInKeyWindowPresentedController(animated: Bool = true, completion: (() -> Void)? = nil) {
+    func presentInKeyWindowPresentedController(animated: Bool = true, completion: VoidCallback? = nil) {
         DispatchQueue.main.async {
             UIApplication.shared.keyWindowPresentedController?
                 .present(self, animated: animated, completion: completion)

@@ -76,9 +76,18 @@ private extension SettingsCoordinator {
     }
     
     func showQuit() {
-        
+        let actions: [UIAlertAction] = [
+            UIAlertAction(title: "Выйти", style: .destructive, handler: { action in
+                self.finishFlow?()
+            }),
+            UIAlertAction(title: "Отмена", style: .cancel)
+        ]
+        let alert = factory.makeAlert(title: "Выйти?", message: nil, with: actions)
+        router.toPresent()?.present(alert, animated: true)
     }
-    
+}
+
+private extension SettingsCoordinator {
     func showNavigationCell(type: NavigationCellType) {
         switch type {
         case .personal:

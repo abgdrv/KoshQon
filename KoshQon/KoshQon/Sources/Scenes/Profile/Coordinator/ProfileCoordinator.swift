@@ -51,6 +51,7 @@ private extension ProfileCoordinator {
         coordinator.finishFlow = { [weak self] in
             guard let self = self else { return }
             self.removeDependency(coordinator)
+            self.finishFlow?()
         }
         addDependency(coordinator)
         coordinator.start()
