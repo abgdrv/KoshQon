@@ -142,4 +142,9 @@ extension FlowFactory: SplashScreenFlowFactory,
         let vc = ProfileAboutMeViewController(existingText: existingText)
         return vc
     }
+    
+    func makeCharacteristicsView(enabledChars: [CharacteristicType]) -> ProfileCharacteristicsViewController {
+        let vc = ProfileCharacteristicsViewController(enabledChars: enabledChars)
+        return vc
+    }
 }

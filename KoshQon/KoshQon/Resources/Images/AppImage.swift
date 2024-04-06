@@ -16,6 +16,8 @@ enum AppImage {
         case backArrow = "common/back_arrow"
         case expandRight = "common/expand_right"
         case star = "common/star"
+        case checkbox = "common/checkbox"
+        case checkboxSelected = "common/сheck"
     }
     
     // MARK: - Auth

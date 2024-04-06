@@ -75,11 +75,18 @@ private extension EditProfileCoordinator {
     }
     
     func showCharacteristicsDetail() {
-        
+        let view = factory.makeCharacteristicsView(enabledChars: [])
+        view.didSave = { [weak self] in
+            guard let self = self else { return }
+        }
+        router.push(view)
     }
     
     func showAboutDetail(existingText: String?) {
         let view = factory.makeAboutMeView(existingText: nil)
+        view.didSave = { [weak self] in
+            guard let self = self else { return }
+        }
         router.push(view)
     }
     

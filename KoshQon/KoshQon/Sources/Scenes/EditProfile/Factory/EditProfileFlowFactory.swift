@@ -11,4 +11,5 @@ protocol EditProfileFlowFactory: AlertFlowFactory {
     func makeEditProfileView(profile: Profile) -> EditProfileViewController
     func makeEnterPhoneView(type: EnterPhoneType) -> EnterPhoneViewController
     func makeAboutMeView(existingText: String?) -> ProfileAboutMeViewController
+    func makeCharacteristicsView(enabledChars: [CharacteristicType]) -> ProfileCharacteristicsViewController
 }
