@@ -8,7 +8,7 @@
 import UIKit
 import RSKImageCropper
 
-final class EditProfileViewController: BaseViewController {
+final class EditProfileViewController: BaseViewController, ImageSettable {
     
     // MARK: - Properties
     
@@ -22,6 +22,10 @@ final class EditProfileViewController: BaseViewController {
         didSet {
             editProfileView.setProfileImage(image: AppImage.Personal.defaultProfile.uiImage)
         }
+    }
+    
+    var image: UIImage? {
+        return editProfileView.image
     }
     
     private let viewModel: EditProfileViewModel

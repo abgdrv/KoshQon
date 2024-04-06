@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol EditProfileFlowFactory: AlertFlowFactory {
+protocol EditProfileFlowFactory: ImageSetFlowFactory {
     func makeEditProfileView(profile: Profile) -> EditProfileViewController
     func makeEnterPhoneView(type: EnterPhoneType) -> EnterPhoneViewController
     func makeAboutMeView(existingText: String?) -> ProfileAboutMeViewController

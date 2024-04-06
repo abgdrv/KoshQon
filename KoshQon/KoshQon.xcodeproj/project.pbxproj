@@ -160,6 +160,9 @@
 		47D1BE182BBF230F004992AA /* ImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D1BE172BBF230F004992AA /* ImageDetailViewController.swift */; };
 		47D1BE252BC1BA19004992AA /* ProfileCharacteristicsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D1BE242BC1BA19004992AA /* ProfileCharacteristicsView.swift */; };
 		47D1BE272BC1C6C3004992AA /* ProfileCharacteristicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D1BE262BC1C6C3004992AA /* ProfileCharacteristicsViewController.swift */; };
+		47D1BE292BC1E2A4004992AA /* ImageSettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D1BE282BC1E2A4004992AA /* ImageSettable.swift */; };
+		47D1BE2D2BC1E4B1004992AA /* ImageSetCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D1BE2C2BC1E4B1004992AA /* ImageSetCoordinator.swift */; };
+		47D1BE2F2BC1EF56004992AA /* ImageSetFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D1BE2E2BC1EF56004992AA /* ImageSetFlowFactory.swift */; };
 		47D54CB42B918FA800021FA7 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D54CB32B918FA800021FA7 /* BottomSheetViewController.swift */; };
 		47D54CB62B91919200021FA7 /* BottomSheetOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D54CB52B91919200021FA7 /* BottomSheetOption.swift */; };
 		47D54CB82B9196B200021FA7 /* BottomSheetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D54CB72B9196B200021FA7 /* BottomSheetCell.swift */; };
@@ -328,6 +331,9 @@
 		47D1BE172BBF230F004992AA /* ImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewController.swift; sourceTree = "<group>"; };
 		47D1BE242BC1BA19004992AA /* ProfileCharacteristicsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCharacteristicsView.swift; sourceTree = "<group>"; };
 		47D1BE262BC1C6C3004992AA /* ProfileCharacteristicsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCharacteristicsViewController.swift; sourceTree = "<group>"; };
+		47D1BE282BC1E2A4004992AA /* ImageSettable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSettable.swift; sourceTree = "<group>"; };
+		47D1BE2C2BC1E4B1004992AA /* ImageSetCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSetCoordinator.swift; sourceTree = "<group>"; };
+		47D1BE2E2BC1EF56004992AA /* ImageSetFlowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSetFlowFactory.swift; sourceTree = "<group>"; };
 		47D54CB32B918FA800021FA7 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
 		47D54CB52B91919200021FA7 /* BottomSheetOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetOption.swift; sourceTree = "<group>"; };
 		47D54CB72B9196B200021FA7 /* BottomSheetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetCell.swift; sourceTree = "<group>"; };
@@ -668,6 +674,7 @@
 			children = (
 				475224DA2BA9CE4B000DAE1B /* Presentable.swift */,
 				475224A42BA162A4000DAE1B /* Reusable.swift */,
+				47D1BE282BC1E2A4004992AA /* ImageSettable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -744,6 +751,7 @@
 				475224D42BA9CB56000DAE1B /* BaseCoordinator.swift */,
 				47D1BDE42BB57933004992AA /* CoordinatorFactoryProtocol.swift */,
 				475224D22BA9CB15000DAE1B /* CoordinatorFactory.swift */,
+				47D1BE2C2BC1E4B1004992AA /* ImageSetCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -753,6 +761,7 @@
 			children = (
 				475224D72BA9CBBA000DAE1B /* FlowFactory.swift */,
 				47C01DEE2BB09BE500D1B2F2 /* AlertFlowFactory.swift */,
+				47D1BE2E2BC1EF56004992AA /* ImageSetFlowFactory.swift */,
 			);
 			path = Factory;
 			sourceTree = "<group>";
@@ -1572,6 +1581,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47D1BE2D2BC1E4B1004992AA /* ImageSetCoordinator.swift in Sources */,
 				47C01E102BB28CCD00D1B2F2 /* FavoritesFlowFactory.swift in Sources */,
 				475224E42BA9D5CC000DAE1B /* Router.swift in Sources */,
 				47D54CE82B963F5900021FA7 /* NSObject+Extensions.swift in Sources */,
@@ -1581,6 +1591,7 @@
 				475224E92BA9DC5E000DAE1B /* AppThemeService.swift in Sources */,
 				475224C72BA814F9000DAE1B /* ProfileAnnouncementsView.swift in Sources */,
 				47D1BDD02BB54BAB004992AA /* ProfileDetailCell.swift in Sources */,
+				47D1BE2F2BC1EF56004992AA /* ImageSetFlowFactory.swift in Sources */,
 				47D1BDE72BB5DB2D004992AA /* DynamicTableView.swift in Sources */,
 				475224F52BA9FC0C000DAE1B /* AuthCoordinator.swift in Sources */,
 				475224F22BA9ECAF000DAE1B /* SplashScreenCoordinator.swift in Sources */,
@@ -1697,6 +1708,7 @@
 				472E1B402B837AAE005BF649 /* ProceedButton.swift in Sources */,
 				47D54CC32B91EC5800021FA7 /* MainScreenView.swift in Sources */,
 				4752249F2BA051EA000DAE1B /* AnnouncementsView.swift in Sources */,
+				47D1BE292BC1E2A4004992AA /* ImageSettable.swift in Sources */,
 				47D1BE142BBEA356004992AA /* NavigationTableViewType.swift in Sources */,
 				47C01DFF2BB1B3BB00D1B2F2 /* MainScreenCoordinator.swift in Sources */,
 				47C01E2E2BB2D9D100D1B2F2 /* ProfileCoordinator.swift in Sources */,

@@ -15,6 +15,10 @@ final class EditProfileView: BaseView {
     var didSave: VoidCallback?
     var didImageTap: Callback<Bool>?
     var didProfileDetailCellTap: PairCallback<ProfileDetailType, String>?
+    
+    var image: UIImage? {
+        return profileImageView.image
+    }
 
     private let viewModel: EditProfileViewModel
     

@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-protocol EnterPhoneFlowFactory: AlertFlowFactory {
+protocol EnterPhoneFlowFactory: ImageSetFlowFactory {
     func makePersonalView() -> PersonalViewController
     func makeEnterPhoneView(type: EnterPhoneType) -> EnterPhoneViewController
     func makeSmsCodeView() -> SmsCodeViewController

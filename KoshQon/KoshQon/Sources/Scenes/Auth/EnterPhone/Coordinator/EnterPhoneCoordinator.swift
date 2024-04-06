@@ -6,10 +6,8 @@
 //
 
 import Foundation
-import UIKit
-import Photos
 
-final class EnterPhoneCoordinator: BaseCoordinator, EnterPhoneOutputCoordinator {
+final class EnterPhoneCoordinator: ImageSetCoordinator, EnterPhoneOutputCoordinator {
     
     // MARK: - Properties
     
@@ -26,7 +24,7 @@ final class EnterPhoneCoordinator: BaseCoordinator, EnterPhoneOutputCoordinator 
         self.type = type
         self.router = router
         self.factory = factory
-        super.init(alertFlowFactory: factory)
+        super.init(router: router, factory: factory)
     }
     
     override func start() {
@@ -92,113 +90,5 @@ private extension EnterPhoneCoordinator {
             self.finishFlow?()
         }
         router.push(view)
-    }
-    
-    func showImageZoom(image: UIImage?) {
-        let view = factory.makeImageZoomView(image: image)
-        view.didCancel = { [weak self] in
-            guard let self = self else { return }
-            self.router.dismissModule()
-        }
-        router.toPresent()?.present(view, animated: true)
-    }
-}
-
-private extension EnterPhoneCoordinator {
-    func showImagePickerOptions(picker: UIImagePickerController,
-                                view: PersonalViewController,
-                                isImageSelected: Bool) {
-        var actions: [UIAlertAction] = [
-            UIAlertAction(title: "Камера", style: .default) { action in
-                if UIImagePickerController.isSourceTypeAvailable(.camera) {
-                    picker.sourceType = .camera
-                    self.openImagePicker(picker: picker)
-                }
-            },
-            UIAlertAction(title: "Галерея", style: .default) { action in
-                picker.sourceType = .photoLibrary
-                self.openImagePicker(picker: picker)
-            },
-            UIAlertAction(title: "Закрыть", style: .cancel)
-        ]
-        
-        if isImageSelected {
-            actions.insert(
-                UIAlertAction(title: "Посмотреть", style: .default) { action in
-                    self.showImageZoom(image: view.image)
-                },
-                at: 2
-            )
-            actions.insert(
-                UIAlertAction(title: "Удалить фото", style: .destructive) { action in
-                    view.didImageDelete = {}
-                }, 
-                at: 3
-            )
-        }
-        
-        let alertSheet = factory.makeAlertSheet(title: "Выберите фото",
-                                                message: "Выберите фото из галереи или откройте камеру",
-                                                with: actions)
-        router.toPresent()?.present(alertSheet, animated: true)
-    }
-    
-    func openImagePicker(picker: UIImagePickerController) {
-        checkPermission() { [weak self] in
-            guard let self = self else { return }
-            self.router.toPresent()?.present(picker, animated: true)
-        }
-    }
-    
-    func checkPermission(onAccessHasBeenGranted: @escaping VoidCallback,
-                         onAccessHasBeenDenied: VoidCallback? = nil) {
-        let actions: [UIAlertAction] = [
-            UIAlertAction(title: "Закрыть", style: .cancel, handler: nil),
-            UIAlertAction(title: "Настройки", style: .default) { [weak self] _ in
-                guard let _ = self else { return }
-                if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
-                    UIApplication.shared.open(settingsURL)
-                }
-            }
-        ]
-        let onDeniedOrRestricted = onAccessHasBeenDenied ?? { [weak self] in
-            guard let self = self else { return }
-            let alert = self.factory.makeAlert(title: "Unable to load your album groups",
-                                               message: "You can enable access in Privacy Settings",
-                                               with: actions)
-            self.router.toPresent()?.present(alert, animated: true)
-        }
-        
-        let status = PHPhotoLibrary.authorizationStatus()
-        switch status {
-        case .notDetermined:
-            onNotDetermined(onDeniedOrRestricted, onAccessHasBeenGranted)
-        case .denied, .restricted:
-            onDeniedOrRestricted()
-        case .authorized:
-            onAccessHasBeenGranted()
-        case .limited:
-            onDeniedOrRestricted()
-        default:
-            break
-        }
-    }
-    
-    func onNotDetermined(_ onDeniedOrRestricted: @escaping VoidCallback,
-                         _ onAuthorized: @escaping VoidCallback) {
-        PHPhotoLibrary.requestAuthorization { status in
-            switch status {
-            case .notDetermined:
-                self.onNotDetermined(onDeniedOrRestricted, onAuthorized)
-            case .denied, .restricted:
-                onDeniedOrRestricted()
-            case .authorized:
-                onAuthorized()
-            case .limited:
-                onDeniedOrRestricted()
-            default:
-                break
-            }
-        }
     }
 }

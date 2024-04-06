@@ -8,7 +8,7 @@
 import UIKit
 import RSKImageCropper
 
-final class PersonalViewController: BaseViewController {
+final class PersonalViewController: BaseViewController, ImageSettable {
     
     // MARK: - Properties
     
