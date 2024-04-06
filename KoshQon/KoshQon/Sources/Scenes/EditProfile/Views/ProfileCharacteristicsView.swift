@@ -21,12 +21,12 @@ final class ProfileCharacteristicsView: BaseView {
     
     private lazy var characteristicsContainerView = UIStackView(arrangedSubviews: characteristicsViews).apply {
         $0.axis = .vertical
-        $0.spacing = 10
+        $0.spacing = 15
     }
     
     private lazy var checkboxButtonsContainerView = UIStackView(arrangedSubviews: checkboxButtons).apply {
         $0.axis = .vertical
-        $0.spacing = 10
+        $0.spacing = 15
         $0.distribution = .fillEqually
     }
 
