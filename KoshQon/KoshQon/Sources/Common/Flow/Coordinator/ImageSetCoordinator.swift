@@ -67,9 +67,12 @@ class ImageSetCoordinator: BaseCoordinator {
             )
         }
         
-        guard let alertSheet = alertFlowFactory?.makeAlertSheet(title: "Выберите фото",
-                                                                message: "Выберите фото из галереи или откройте камеру",
-                                                                with: actions) else { return }
+        guard let alertSheet = alertFlowFactory?.makeAlertSheet(
+            title: "Выберите фото",
+            message: "Выберите фото из галереи или откройте камеру",
+            with: actions
+        ) else { return }
+        
         router.toPresent()?.present(alertSheet, animated: true)
     }
     
@@ -94,10 +97,14 @@ class ImageSetCoordinator: BaseCoordinator {
         
         let onDeniedOrRestricted = onAccessHasBeenDenied ?? { [weak self] in
             guard let self = self else { return }
-            guard let alert = self.alertFlowFactory?.makeAlert(title: "Unable to load your album groups",
-                                                               message: "You can enable access in Privacy Settings",
-                                                               with: actions) else { return }
-            self.router.present(alert, animated: true)
+            
+            guard let alert = self.alertFlowFactory?.makeAlert(
+                title: "Unable to load your album groups",
+                message: "You can enable access in Privacy Settings",
+                with: actions
+            ) else { return }
+            
+            router.toPresent()?.present(alert, animated: true)
         }
         
         let status = PHPhotoLibrary.authorizationStatus()
