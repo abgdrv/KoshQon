@@ -18,17 +18,6 @@ enum Theme: String, CaseIterable {
     case light
     case dark
     case phone
-    
-    var title: String {
-        switch self {
-        case .light:
-            "Светлая"
-        case .dark:
-            "Темная"
-        case .phone:
-            "Системная"
-        }
-    }
 }
 
 final class AppThemeService {
@@ -44,7 +33,7 @@ final class AppThemeService {
         self.userDefaultsService = userDefaultsService
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(handleSystemChange),
-                                               name: Constants.NotificationNameConstants.theme.name,
+                                               name: Constants.NotificationName.theme.name,
                                                object: nil)
     }
     

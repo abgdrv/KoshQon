@@ -32,7 +32,7 @@ enum Constants {
     
     // MARK: - NotificationName
     
-    enum NotificationNameConstants: String {
+    enum NotificationName: String {
         case theme
         
         var name: Notification.Name {
