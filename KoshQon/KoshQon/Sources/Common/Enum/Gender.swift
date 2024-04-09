@@ -10,12 +10,9 @@ import Foundation
 enum Gender: String, CaseIterable {
     case male = "gender.male"
     case female = "gender.female"
-    case other = "gender.other"
     
     var title: String {
         switch self {
-        case .other:
-            "Другое"
         case .male:
             "Мужской"
         case .female:

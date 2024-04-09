@@ -39,23 +39,24 @@ private extension EditProfileViewModel {
         var details: [ProfileDetail] = []
         detailTypes.forEach { type in
             let detail: ProfileDetail
+            var characteristics: [CharacteristicType] = [.cook, .job, .student, .sport]
             switch type {
             case .name:
-                detail = .init(type: type, value: profile.mainInfo.fullName)
+                detail = .init(type: type, value: [profile.mainInfo.fullName])
             case .birthday:
-                detail = .init(type: type, value: profile.mainInfo.birthdayString)
+                detail = .init(type: type, value: [profile.mainInfo.birthdayString])
             case .gender:
-                detail = .init(type: type, value: profile.mainInfo.gender.title)
+                detail = .init(type: type, value: [profile.mainInfo.gender.title])
             case .phone:
-                detail = .init(type: type, value: profile.mainInfo.phoneNumber)
+                detail = .init(type: type, value: [profile.mainInfo.phoneNumber])
             case .country:
-                detail = .init(type: type, value: profile.mainInfo.country.title)
+                detail = .init(type: type, value: [profile.mainInfo.country.title])
             case .city:
-                detail = .init(type: type, value: profile.mainInfo.city.name)
+                detail = .init(type: type, value: [profile.mainInfo.city.name])
             case .characteristics:
-                detail = .init(type: type, value: "")
+                detail = .init(type: type, value: characteristics.map { $0.rawValue } )
             case .about:
-                detail = .init(type: type, value: "")
+                detail = .init(type: type, value: ["Я - ChatGPT, модель искусственного интеллекта от OpenAI. Готов помочь с вопросами, текстами, программированием и многим другим."])
             }
             details.append(detail)
         }

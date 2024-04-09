@@ -9,7 +9,7 @@ import Foundation
 
 protocol IProfileDetailCellViewModel {
     var title: String { get }
-    var value: String { get }
+    var value: [String] { get }
     var isEditable: Bool { get }
     var isLast: Bool { get }
 }
@@ -32,7 +32,7 @@ extension ProfileDetailCellViewModel: IProfileDetailCellViewModel {
         return detail.title
     }
     
-    var value: String {
+    var value: [String] {
         return detail.value
     }
     

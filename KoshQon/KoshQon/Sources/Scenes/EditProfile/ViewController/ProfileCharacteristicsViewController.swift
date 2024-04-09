@@ -50,7 +50,7 @@ private extension ProfileCharacteristicsViewController {
     func setupBindings() {
         profileCharacteristicsView.didSave = { [weak self] chars in
             guard let self = self else { return }
-            print(chars)
+            self.didSave?()
         }
     }
 }

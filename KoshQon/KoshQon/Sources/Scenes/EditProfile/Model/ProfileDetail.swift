@@ -9,7 +9,7 @@ import Foundation
 
 struct ProfileDetail {
     let type: ProfileDetailType
-    var value: String
+    var value: [String]
     
     var title: String {
         switch type {

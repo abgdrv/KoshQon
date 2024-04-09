@@ -13,11 +13,9 @@ final class ProfileAboutMeView: BaseView {
     
     // MARK: - Properties
     
-    var didSave: VoidCallback?
+    var didSave: Callback<String>?
     
     private var existingText: String?
-    
-    @Published private var counterString: String
     
     private var cancellables = Set<AnyCancellable>()
     
@@ -25,34 +23,30 @@ final class ProfileAboutMeView: BaseView {
         return saveButton
     }
     
+    private let placeholder = "Я люблю заниматься спортом и читать книги..."
+    
     // MARK: - UI
     
     private lazy var aboutMeContainer = UIView()
     
     private lazy var aboutMeTextView = UITextView().apply {
         $0.delegate = self
-        $0.textColor = UIColor.lightGray
-        $0.text = existingText
+        $0.textColor = AppColor.Static.darkGray.uiColor
+        $0.text = existingText ?? ""
         $0.isEditable = true
         $0.font = AppFont.regular.s18
         $0.backgroundColor = .clear
-        $0.selectedTextRange = $0.textRange(from: $0.beginningOfDocument, to: $0.beginningOfDocument)
+        if $0.text.isEmpty {
+            $0.text = placeholder
+            $0.textColor = .lightGray
+            $0.selectedRange = NSRange(location: 0, length: 0)
+        }
         $0.becomeFirstResponder()
-        
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.minimumLineHeight = 5
-        let attributedString = NSAttributedString(
-            string: $0.text,
-            attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle,
-                         NSAttributedString.Key.foregroundColor: UIColor.lightGray,
-                         NSAttributedString.Key.font: AppFont.regular.s18]
-        )
-        $0.attributedText = attributedString
     }
     
     private lazy var counterLabel = UILabel().apply {
         $0.set(font: AppFont.regular.s16, textColor: AppColor.Static.darkGray.uiColor)
-        $0.text = counterString
+        $0.text = "\(150 - (existingText?.count ?? 0))"
     }
     
     private lazy var saveButton = ProceedButton(type: .system).apply {
@@ -63,8 +57,7 @@ final class ProfileAboutMeView: BaseView {
     // MARK: - Object Lifecycle
     
     init(existingText: String?) {
-        self.existingText = existingText ?? "Я люблю заниматься спортом и читать книги..."
-        self.counterString = "\(150 - (existingText?.count ?? 0))"
+        self.existingText = existingText
         super.init()
         setupViews()
         setupConstraints()
@@ -83,28 +76,29 @@ final class ProfileAboutMeView: BaseView {
 
 extension ProfileAboutMeView: UITextViewDelegate {
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        let currentText: String = textView.text
-        let updatedText = (currentText as NSString).replacingCharacters(in: range, with: text)
+        guard let currentText = textView.text, let textRange = Range(range, in: currentText) else { return false }
         
-        if updatedText.count > 150 {
+        let updatedText = currentText.replacingCharacters(in: textRange, with: text)
+        
+        guard updatedText.count <= 150 else { return false }
+        
+        if textView.text == placeholder && !text.isEmpty {
+            textView.text = text
+            textView.textColor = AppColor.Static.darkGray.uiColor
+            textView.selectedRange = NSRange(location: text.count, length: 0)
             return false
         }
-        if updatedText.isEmpty {
-            textView.text = "Я люблю заниматься спортом и читать книги..."
-            textView.textColor = UIColor.lightGray
-            textView.selectedTextRange = textView.textRange(from: textView.beginningOfDocument, to: textView.beginningOfDocument)
-        } else if textView.textColor == UIColor.lightGray && !text.isEmpty {
-            textView.textColor = AppColor.Static.darkGray.uiColor
-            textView.text = text
-        } else {
-            return true
-        }
-        return false
+        
+        return true
     }
     
-    func textViewDidChangeSelection(_ textView: UITextView) {
-        if textView.textColor == UIColor.lightGray {
-            textView.selectedTextRange = textView.textRange(from: textView.beginningOfDocument, to: textView.beginningOfDocument)
+    func textViewDidChange(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = placeholder
+            textView.textColor = .lightGray
+            textView.selectedRange = NSRange(location: 0, length: 0)
+        } else if textView.text == placeholder {
+            textView.textColor = AppColor.Static.darkGray.uiColor
         }
     }
 }
@@ -141,11 +135,16 @@ private extension ProfileAboutMeView {
     }
     
     func setupBindings() {
-        NotificationCenter.default.publisher(for: UITextView.textDidChangeNotification,
-                                             object: aboutMeTextView)
+        NotificationCenter.default.publisher(
+            for: UITextView.textDidChangeNotification,
+            object: aboutMeTextView
+        )
         .sink { [weak self] _ in
             guard let self = self else { return }
-            let remainingCharacters = 150 - (self.aboutMeTextView.text.count)
+            var remainingCharacters = 150 - (self.aboutMeTextView.text.count)
+            if aboutMeTextView.text == placeholder {
+                remainingCharacters = 150
+            }
             self.counterLabel.text = "\(remainingCharacters)"
         }
         .store(in: &cancellables)
@@ -156,6 +155,6 @@ private extension ProfileAboutMeView {
 
 private extension ProfileAboutMeView {
     @objc func saveButtonTapped() {
-        didSave?()
+        didSave?(aboutMeTextView.text == placeholder ? "" : aboutMeTextView.text)
     }
 }

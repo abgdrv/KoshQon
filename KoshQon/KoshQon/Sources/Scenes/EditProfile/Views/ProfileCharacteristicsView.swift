@@ -86,6 +86,7 @@ private extension ProfileCharacteristicsView {
 private extension ProfileCharacteristicsView {
     func getCharacteristicViews(enabledChars: [CharacteristicType]) -> [ProfileCharacteristicView] {
         var views: [ProfileCharacteristicView] = []
+        print(enabledChars)
         
         for caseValue in CharacteristicType.allCases {
             let view: ProfileCharacteristicView

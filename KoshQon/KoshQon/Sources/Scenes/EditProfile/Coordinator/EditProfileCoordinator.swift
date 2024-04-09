@@ -72,23 +72,25 @@ private extension EditProfileCoordinator {
         coordinator.start()
     }
     
-    func showCharacteristicsDetail() {
-        let view = factory.makeCharacteristicsView(enabledChars: [])
+    func showCharacteristicsDetail(enabledChars: [CharacteristicType]) {
+        let view = factory.makeCharacteristicsView(enabledChars: enabledChars)
         view.didSave = { [weak self] in
             guard let self = self else { return }
+            self.router.popModule()
         }
         router.push(view)
     }
     
     func showAboutDetail(existingText: String?) {
-        let view = factory.makeAboutMeView(existingText: nil)
+        let view = factory.makeAboutMeView(existingText: existingText)
         view.didSave = { [weak self] in
             guard let self = self else { return }
+            self.router.popModule()
         }
         router.push(view)
     }
     
-    func showProfileDetailCell(type: ProfileDetailType, value: String?) {
+    func showProfileDetailCell(type: ProfileDetailType, value: [String]) {
         switch type {
         case .name:
             factory.showBanner(title: "Хотите изменить имя?",
@@ -97,9 +99,9 @@ private extension EditProfileCoordinator {
         case .phone:
             showPhoneDetail()
         case .characteristics:
-            showCharacteristicsDetail()
+            showCharacteristicsDetail(enabledChars: value.map { CharacteristicType(rawValue: $0) ?? .alcohol })
         case .about:
-            showAboutDetail(existingText: value)
+            showAboutDetail(existingText: value[0])
         default:
             break
         }

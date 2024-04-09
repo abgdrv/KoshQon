@@ -23,7 +23,7 @@ final class ProfileViewModel {
                                        friends: 50,
                                        phoneNumber: "+77775817773")
     
-    private let about = ProfileAboutInfo(text: "Я ответственный, проактивный, стрессоустойчивый, коммуникабельный, честный. Мои сильные стороны — хорошие управленческие и лидерские навыки, клиентоориентированность, системное мышление, позитивный настрой. Не пью, не курю, есть права категории «B».")
+    private let about = ProfileAboutInfo(text: "Я - ChatGPT, модель искусственного интеллекта от OpenAI. Готов помочь с вопросами, текстами, программированием и многим другим.")
     
     private let common = ProfileCommonInfo(rating: 6.2,
                                            good: 8.5,

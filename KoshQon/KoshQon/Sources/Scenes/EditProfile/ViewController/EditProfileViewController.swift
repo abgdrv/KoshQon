@@ -14,7 +14,7 @@ final class EditProfileViewController: BaseViewController, ImageSettable {
     // MARK: - Properties
     
     var didFinish: VoidCallback?
-    var didProfileDetailCellTap: PairCallback<ProfileDetailType, String>?
+    var didProfileDetailCellTap: PairCallback<ProfileDetailType, [String]>?
     var didImagePickerOptionsShow: PairCallback<UIImagePickerController, Bool>?
     var didCropCancel: VoidCallback?
     var didImageCrop: VoidCallback?

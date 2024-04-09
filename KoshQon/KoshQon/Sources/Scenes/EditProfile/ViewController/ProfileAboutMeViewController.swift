@@ -47,7 +47,7 @@ final class ProfileAboutMeViewController: BaseViewController {
 
 private extension ProfileAboutMeViewController {
     func setupBindings() {
-        profileAboutMeView.didSave = { [weak self] in
+        profileAboutMeView.didSave = { [weak self] text in
             guard let self = self else { return }
             self.didSave?()
         }

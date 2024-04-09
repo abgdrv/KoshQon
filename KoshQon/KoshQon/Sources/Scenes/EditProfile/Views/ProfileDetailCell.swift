@@ -12,7 +12,7 @@ final class ProfileDetailCell: BaseCell {
 
     // MARK: - Properties
     
-    var didProfileDetailCellTap: PairCallback<ProfileDetailType, String>?
+    var didProfileDetailCellTap: PairCallback<ProfileDetailType, [String]>?
     
     private let viewModel: ProfileDetailCellViewModel
     
@@ -20,10 +20,12 @@ final class ProfileDetailCell: BaseCell {
     private let isLast: Bool
     private let type: ProfileDetailType
     
-    private var value: String? {
+    private var value: [String]? {
         didSet {
-            valueLabel.text = value
-            viewModel.detail.value = value ?? ""
+            if type != .characteristics {
+                valueLabel.text = value?[0]
+            }
+            viewModel.detail.value = value ?? []
         }
     }
     
@@ -31,6 +33,12 @@ final class ProfileDetailCell: BaseCell {
     
     private lazy var titleLabel = UILabel().apply {
         $0.set(font: AppFont.medium.s16, textColor: AppColor.Theme.mainTitle.uiColor)
+    }
+    
+    private lazy var valueContainerView = UIStackView().apply {
+        $0.axis = .horizontal
+        $0.alignment = .trailing
+        $0.spacing = 5
     }
     
     private lazy var valueLabel = UILabel().apply {
@@ -66,7 +74,7 @@ final class ProfileDetailCell: BaseCell {
 private extension ProfileDetailCell {
     func setupViews() {
         backgroundColor = AppColor.Theme.blockBackground.uiColor
-        contentView.addSubviews(titleLabel, valueLabel)
+        contentView.addSubviews(titleLabel, type == .characteristics ? valueContainerView : valueLabel)
         
         if isEditable {
             contentView.addSubview(expandRightIconImageView)
@@ -98,10 +106,18 @@ private extension ProfileDetailCell {
                 make.size.equalTo(24)
             }
             
-            valueLabel.snp.makeConstraints { make in
-                make.leading.equalTo(titleLabel.snp.trailing).offset(10)
-                make.trailing.equalTo(expandRightIconImageView.snp.leading).offset(-5)
-                make.centerY.equalToSuperview()
+            if type == .characteristics {
+                valueContainerView.snp.makeConstraints { make in
+                    make.leading.equalTo(titleLabel.snp.trailing).offset(10)
+                    make.trailing.equalTo(expandRightIconImageView.snp.leading).offset(-5)
+                    make.centerY.equalToSuperview()
+                }
+            } else {
+                valueLabel.snp.makeConstraints { make in
+                    make.leading.equalTo(titleLabel.snp.trailing).offset(10)
+                    make.trailing.equalTo(expandRightIconImageView.snp.leading).offset(-5)
+                    make.centerY.equalToSuperview()
+                }
             }
         } else {
             valueLabel.snp.makeConstraints { make in
@@ -130,12 +146,12 @@ private extension ProfileDetailCell {
         
         menuButton.didSelect = { [weak self] value in
             guard let self = self else { return }
-            self.value = value
+            self.value = [value]
         }
         
         datePicker.didDateChange = { [weak self] selectedDate in
             guard let self = self else { return }
-            self.value = selectedDate
+            self.value = [selectedDate]
         }
     }
 }
@@ -145,8 +161,17 @@ private extension ProfileDetailCell {
 private extension ProfileDetailCell {
     func setup(_ vm: ProfileDetailCellViewModel) {
         titleLabel.text = vm.title
-        valueLabel.text = vm.value
-        datePicker.date = vm.detail.value.toDate(format: "dd.MM.yyyy") ?? Date()
+        if type != .characteristics {
+            valueLabel.text = vm.value[0]
+            datePicker.date = vm.detail.value[0].toDate(format: "dd.MM.yyyy") ?? Date()
+        } else {
+            vm.value.forEach { value in
+                valueContainerView.addArrangedSubview(
+                    UIImageView(image: CharacteristicType(rawValue: value)?.image)
+                )
+            }
+        }
+        value = vm.value
     }
 }
 
@@ -160,7 +185,7 @@ private extension ProfileDetailCell {
         case .gender, .country, .city:
             menuButton.sendActions(for: .touchUpInside)
         default:
-            didProfileDetailCellTap?(viewModel.detail.type, value ?? "")
+            didProfileDetailCellTap?(viewModel.detail.type, value ?? [])
         }
     }
 }
