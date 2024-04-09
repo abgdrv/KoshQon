@@ -19,7 +19,7 @@ final class MainScreenViewController: BaseViewController {
     override var navigationTitleType: NavigationTitleType? {
         return .main
     }
-        
+    
     // MARK: - UI
     
     private lazy var mainScreenView = MainScreenView(viewModel: viewModel)
@@ -30,14 +30,14 @@ final class MainScreenViewController: BaseViewController {
         self.viewModel = viewModel
         super.init()
     }
-
+    
     // MARK: - View Lifecycle
     
     override func loadView() {
         super.loadView()
         view = mainScreenView
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupBindings()
@@ -58,12 +58,20 @@ private extension MainScreenViewController {
         
         mainScreenView.didScrollDown = { [weak self] in
             guard let self = self else { return }
-            self.navigationController?.setNavigationBarHidden(true, animated: true)
+            UIView.animate(withDuration: 0.3, animations: {
+                self.navigationController?.navigationBar.alpha = 0
+            }) { _ in
+                self.navigationController?.setNavigationBarHidden(true, animated: false)
+            }
         }
-        
+
         mainScreenView.didScrollUp = { [weak self] in
             guard let self = self else { return }
-            self.navigationController?.setNavigationBarHidden(false, animated: true)
+            UIView.animate(withDuration: 0.7, animations: {
+                self.navigationController?.navigationBar.alpha = 1
+            }) { _ in
+                self.navigationController?.setNavigationBarHidden(false, animated: true)
+            }
         }
     }
 }

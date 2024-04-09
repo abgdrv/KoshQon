@@ -105,13 +105,9 @@ extension MainScreenView: UITableViewDelegate, UITableViewDataSource {
         }
         
         if lastVelocityYSign < 0 {
-            UIView.animate(withDuration: 0.3) {
-                self.didScrollDown?()
-            }
+            didScrollDown?()
         } else if lastVelocityYSign > 0 {
-            UIView.animate(withDuration: 0.3) {
-                self.didScrollUp?()
-            }
+            didScrollUp?()
         }
     }
 }
