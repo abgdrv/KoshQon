@@ -42,7 +42,7 @@ final class PersonalViewController: BaseViewController, ImageSettable {
         
     private lazy var profileImageView = ProfileImageView(isEditable: true)
     private lazy var firstNameTextField = InputTextField(inputType: .regular, placeholder: "Имя")
-    private lazy var secondNameTextField = InputTextField(inputType: .regular, placeholder: "Фамилия")
+    private lazy var lastNameTextField = InputTextField(inputType: .regular, placeholder: "Фамилия")
     private lazy var birthdayTextField = InputTextField(inputType: .date).apply { $0.inputView = datePicker }
     private lazy var genderTextField = InputTextField(inputType: .gender)
     private lazy var countryTextField = InputTextField(inputType: .country)
@@ -76,7 +76,7 @@ final class PersonalViewController: BaseViewController, ImageSettable {
         super.viewDidLayoutSubviews()
         profileImageView.layer.cornerRadius = profileImageView.frame.height / 2
         firstNameTextField.layer.cornerRadius = 8
-        secondNameTextField.layer.cornerRadius = 8
+        lastNameTextField.layer.cornerRadius = 8
         birthdayTextField.layer.cornerRadius = 8
         genderTextField.layer.cornerRadius = 8
         countryTextField.layer.cornerRadius = 8
@@ -89,7 +89,7 @@ final class PersonalViewController: BaseViewController, ImageSettable {
 
 private extension PersonalViewController {
     func setupViews() {
-        view.addSubviews(profileImageView, firstNameTextField, secondNameTextField,
+        view.addSubviews(profileImageView, firstNameTextField, lastNameTextField,
                          birthdayTextField, genderTextField, countryTextField, continueButton)
     }
     
@@ -106,7 +106,7 @@ private extension PersonalViewController {
             make.height.equalTo(50)
         }
         
-        secondNameTextField.snp.makeConstraints { make in
+        lastNameTextField.snp.makeConstraints { make in
             make.top.equalTo(firstNameTextField.snp.bottom).offset(16)
             make.leading.equalTo(profileImageView.snp.trailing).offset(8)
             make.trailing.equalToSuperview().inset(16)

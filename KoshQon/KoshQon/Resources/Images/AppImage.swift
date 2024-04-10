@@ -97,4 +97,11 @@ enum AppImage {
         case quit = "settings/quit"
         case deactivate = "settings/deactivate"
     }
+    
+    // MARK: - Friends
+    
+    enum Friends: String, AppImageProtocol {
+        case more = "friends/more"
+    }
+
 }

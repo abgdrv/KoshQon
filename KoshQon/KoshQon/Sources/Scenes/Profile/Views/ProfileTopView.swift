@@ -12,6 +12,8 @@ final class ProfileTopView: UIView {
 
     // MARK: - Properties
     
+    var didFriendsTap: VoidCallback?
+    
     private let info: ProfileMainInfo?
     
     // MARK: - UI
@@ -36,6 +38,7 @@ final class ProfileTopView: UIView {
     private lazy var friendsButton = UIButton(type: .system).apply {
         $0.setTitleColor(AppColor.Static.orange.uiColor, for: .normal)
         $0.setTitle("\(info?.friends ?? 0) друзей", for: .normal)
+        $0.addTarget(self, action: #selector(friendsButtonTapped), for: .touchUpInside)
     }
     
     // MARK: - Object Lifecycle
@@ -88,5 +91,13 @@ private extension ProfileTopView {
             make.leading.equalTo(profileImageView.snp.trailing).offset(16)
             make.bottom.equalTo(profileImageView.snp.bottom)
         }
+    }
+}
+
+// MARK: - Actions
+
+private extension ProfileTopView {
+    @objc func friendsButtonTapped() {
+        didFriendsTap?()
     }
 }

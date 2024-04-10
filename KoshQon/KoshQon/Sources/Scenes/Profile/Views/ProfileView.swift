@@ -12,6 +12,8 @@ final class ProfileView: BaseView {
 
     // MARK: - Properties
     
+    var didFriendsTap: VoidCallback?
+    
     private let viewModel: ProfileViewModel
     
     // MARK: - UI
@@ -40,6 +42,7 @@ final class ProfileView: BaseView {
         super.init()
         setupViews()
         setupConstraints()
+        setupBindings()
     }
 }
 
@@ -61,6 +64,13 @@ private extension ProfileView {
             make.top.leading.trailing.equalToSuperview()
             make.bottom.equalToSuperview().inset(16)
             make.width.equalToSuperview()
+        }
+    }
+    
+    func setupBindings() {
+        topView.didFriendsTap = { [weak self] in
+            guard let self = self else { return }
+            self.didFriendsTap?()
         }
     }
 }

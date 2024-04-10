@@ -43,6 +43,10 @@ private extension ProfileCoordinator {
             guard let self = self else { return }
             self.showEditProfileFlow()
         }
+        view.didFriendsTap = { [weak self] in
+            guard let self = self else { return }
+            self.showFriendsFlow()
+        }
         router.setRoodModule(view, hideNavBar: false, isAnimated: false)
     }
     
@@ -64,6 +68,16 @@ private extension ProfileCoordinator {
             self.removeDependency(coordinator)
         }
         coordinator.profile = ProfileViewModel().profile
+        addDependency(coordinator)
+        coordinator.start()
+    }
+    
+    func showFriendsFlow() {
+        var coordinator = coordinatorFactory.makeFriendsCoordinator(router: router, coordinatorFactory: coordinatorFactory)
+        coordinator.finishFlow = { [weak self] in
+            guard let self = self else { return }
+            self.removeDependency(coordinator)
+        }
         addDependency(coordinator)
         coordinator.start()
     }

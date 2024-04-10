@@ -16,7 +16,8 @@ final class ProfileViewModel {
     var profile: Profile?
     
     private let main = ProfileMainInfo(firstName: "Алмат",
-                                       secondName: "Бегайдаров", gender: .male,
+                                       lastName: "Бегайдаров",
+                                       gender: .male,
                                        country: Country.kz,
                                        city: City.kostanay,
                                        birthday: "23.03.2002".toDate(format: "dd.MM.yyyy") ?? Date(),

@@ -51,6 +51,11 @@ final class CoordinatorFactory: CoordinatorFactoryProtocol {
         return coordinator
     }
     
+    func makeProfileCoordinator(router: RouterProtocol) -> Coordinator & ProfileOutputCoordinator {
+        let coordinator = ProfileCoordinator(router: router, factory: FlowFactory(), coordinatorFactory: self)
+        return coordinator
+    }
+    
     func makeSettingsCoordinator(router: RouterProtocol, coordinatorFactory: CoordinatorFactory) -> Coordinator & SettingsOutputCoordinator {
         let coordinator = SettingsCoordinator(router: router, factory: FlowFactory(), coordinatorFactory: coordinatorFactory)
         return coordinator
@@ -58,6 +63,11 @@ final class CoordinatorFactory: CoordinatorFactoryProtocol {
     
     func makeEditProfileCoordinator(router: RouterProtocol) -> Coordinator & EditProfileOutputCoordinator {
         let coordinator = EditProfileCoordinator(router: router, factory: FlowFactory(), coordinatorFactory: self)
+        return coordinator
+    }
+    
+    func makeFriendsCoordinator(router: RouterProtocol, coordinatorFactory: CoordinatorFactory) -> Coordinator & FriendsOutputCoordinator {
+        let coordinator = FriendsCoordinator(router: router, factory: FlowFactory(), coordinatorFactory: coordinatorFactory)
         return coordinator
     }
 }

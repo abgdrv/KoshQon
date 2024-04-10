@@ -161,9 +161,17 @@
 		47D1BE292BC1E2A4004992AA /* ImageSettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D1BE282BC1E2A4004992AA /* ImageSettable.swift */; };
 		47D1BE2D2BC1E4B1004992AA /* ImageSetCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D1BE2C2BC1E4B1004992AA /* ImageSetCoordinator.swift */; };
 		47D1BE2F2BC1EF56004992AA /* ImageSetFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D1BE2E2BC1EF56004992AA /* ImageSetFlowFactory.swift */; };
+		47D1BE332BC58069004992AA /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D1BE322BC58069004992AA /* FriendsViewController.swift */; };
+		47D1BE362BC64B37004992AA /* FriendsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D1BE352BC64B37004992AA /* FriendsViewModel.swift */; };
+		47D1BE392BC64BED004992AA /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D1BE382BC64BED004992AA /* FriendCell.swift */; };
+		47D1BE3B2BC64C55004992AA /* FriendCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D1BE3A2BC64C55004992AA /* FriendCellViewModel.swift */; };
+		47D1BE3E2BC64DDB004992AA /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D1BE3D2BC64DDB004992AA /* Friend.swift */; };
+		47D1BE412BC6637D004992AA /* FriendsFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D1BE402BC6637D004992AA /* FriendsFlowFactory.swift */; };
+		47D1BE442BC6647A004992AA /* FriendsOutputCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D1BE432BC6647A004992AA /* FriendsOutputCoordinator.swift */; };
+		47D1BE462BC664D4004992AA /* FriendsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D1BE452BC664D4004992AA /* FriendsCoordinator.swift */; };
+		47D1BE482BC6AE05004992AA /* MoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D1BE472BC6AE05004992AA /* MoreCell.swift */; };
+		47D1BE4B2BC6AEE5004992AA /* MoreCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D1BE4A2BC6AEE5004992AA /* MoreCellType.swift */; };
 		47D54CB42B918FA800021FA7 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D54CB32B918FA800021FA7 /* BottomSheetViewController.swift */; };
-		47D54CB62B91919200021FA7 /* BottomSheetOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D54CB52B91919200021FA7 /* BottomSheetOption.swift */; };
-		47D54CB82B9196B200021FA7 /* BottomSheetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D54CB72B9196B200021FA7 /* BottomSheetCell.swift */; };
 		47D54CBB2B91D22F00021FA7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D54CBA2B91D22F00021FA7 /* Constants.swift */; };
 		47D54CC32B91EC5800021FA7 /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D54CC22B91EC5800021FA7 /* MainScreenView.swift */; };
 		47D54CC52B91EC7200021FA7 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D54CC42B91EC7200021FA7 /* MainScreenViewController.swift */; };
@@ -330,9 +338,17 @@
 		47D1BE282BC1E2A4004992AA /* ImageSettable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSettable.swift; sourceTree = "<group>"; };
 		47D1BE2C2BC1E4B1004992AA /* ImageSetCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSetCoordinator.swift; sourceTree = "<group>"; };
 		47D1BE2E2BC1EF56004992AA /* ImageSetFlowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSetFlowFactory.swift; sourceTree = "<group>"; };
+		47D1BE322BC58069004992AA /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		47D1BE352BC64B37004992AA /* FriendsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewModel.swift; sourceTree = "<group>"; };
+		47D1BE382BC64BED004992AA /* FriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
+		47D1BE3A2BC64C55004992AA /* FriendCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCellViewModel.swift; sourceTree = "<group>"; };
+		47D1BE3D2BC64DDB004992AA /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		47D1BE402BC6637D004992AA /* FriendsFlowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsFlowFactory.swift; sourceTree = "<group>"; };
+		47D1BE432BC6647A004992AA /* FriendsOutputCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsOutputCoordinator.swift; sourceTree = "<group>"; };
+		47D1BE452BC664D4004992AA /* FriendsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsCoordinator.swift; sourceTree = "<group>"; };
+		47D1BE472BC6AE05004992AA /* MoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreCell.swift; sourceTree = "<group>"; };
+		47D1BE4A2BC6AEE5004992AA /* MoreCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreCellType.swift; sourceTree = "<group>"; };
 		47D54CB32B918FA800021FA7 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
-		47D54CB52B91919200021FA7 /* BottomSheetOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetOption.swift; sourceTree = "<group>"; };
-		47D54CB72B9196B200021FA7 /* BottomSheetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetCell.swift; sourceTree = "<group>"; };
 		47D54CBA2B91D22F00021FA7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		47D54CC22B91EC5800021FA7 /* MainScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenView.swift; sourceTree = "<group>"; };
 		47D54CC42B91EC7200021FA7 /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
@@ -599,6 +615,7 @@
 				475224A62BA40726000DAE1B /* Profile */,
 				47D1BDC22BB52975004992AA /* EditProfile */,
 				47C01E312BB2DE7C00D1B2F2 /* Settings */,
+				47D1BE302BC58033004992AA /* Friends */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -1201,6 +1218,7 @@
 			children = (
 				47CD672C2B8C3DD50035DCB6 /* BaseViewController.swift */,
 				47D1BE172BBF230F004992AA /* ImageDetailViewController.swift */,
+				47D54CB32B918FA800021FA7 /* BottomSheetViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1259,7 +1277,6 @@
 			isa = PBXGroup;
 			children = (
 				47CD675B2B90950D0035DCB6 /* PersonalViewController.swift */,
-				47D54CB32B918FA800021FA7 /* BottomSheetViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1267,7 +1284,6 @@
 		47CD67562B9085D90035DCB6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				47D54CB72B9196B200021FA7 /* BottomSheetCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1275,7 +1291,6 @@
 		47CD67572B9085E00035DCB6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				47D54CB52B91919200021FA7 /* BottomSheetOption.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1376,6 +1391,79 @@
 			isa = PBXGroup;
 			children = (
 				47D1BE132BBEA356004992AA /* NavigationTableViewType.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		47D1BE302BC58033004992AA /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				47D1BE492BC6AED7004992AA /* Helper */,
+				47D1BE422BC6645F004992AA /* Coordinator */,
+				47D1BE3F2BC6636D004992AA /* Factory */,
+				47D1BE3C2BC64DD0004992AA /* Model */,
+				47D1BE372BC64BDA004992AA /* Views */,
+				47D1BE312BC58045004992AA /* ViewController */,
+				47D1BE342BC64B26004992AA /* ViewModel */,
+			);
+			path = Friends;
+			sourceTree = "<group>";
+		};
+		47D1BE312BC58045004992AA /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				47D1BE322BC58069004992AA /* FriendsViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		47D1BE342BC64B26004992AA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				47D1BE352BC64B37004992AA /* FriendsViewModel.swift */,
+				47D1BE3A2BC64C55004992AA /* FriendCellViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		47D1BE372BC64BDA004992AA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				47D1BE382BC64BED004992AA /* FriendCell.swift */,
+				47D1BE472BC6AE05004992AA /* MoreCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		47D1BE3C2BC64DD0004992AA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				47D1BE3D2BC64DDB004992AA /* Friend.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		47D1BE3F2BC6636D004992AA /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				47D1BE402BC6637D004992AA /* FriendsFlowFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		47D1BE422BC6645F004992AA /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				47D1BE452BC664D4004992AA /* FriendsCoordinator.swift */,
+				47D1BE432BC6647A004992AA /* FriendsOutputCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		47D1BE492BC6AED7004992AA /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				47D1BE4A2BC6AEE5004992AA /* MoreCellType.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -1575,6 +1663,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47D1BE362BC64B37004992AA /* FriendsViewModel.swift in Sources */,
 				47D1BE2D2BC1E4B1004992AA /* ImageSetCoordinator.swift in Sources */,
 				47C01E102BB28CCD00D1B2F2 /* FavoritesFlowFactory.swift in Sources */,
 				475224E42BA9D5CC000DAE1B /* Router.swift in Sources */,
@@ -1592,6 +1681,7 @@
 				47D1BDF22BB6CBC4004992AA /* HighlightView.swift in Sources */,
 				47C01DF12BB19AAB00D1B2F2 /* TabBarOutputCoordinator.swift in Sources */,
 				47D1BE092BBE8194004992AA /* NavigationTableView.swift in Sources */,
+				47D1BE442BC6647A004992AA /* FriendsOutputCoordinator.swift in Sources */,
 				475224F02BA9EC78000DAE1B /* SplashScreenFlowFactory.swift in Sources */,
 				47D1BDD22BB54BD8004992AA /* BaseCell.swift in Sources */,
 				475224AC2BA407E6000DAE1B /* ProfileViewController.swift in Sources */,
@@ -1607,7 +1697,7 @@
 				47D1BDF42BB6CC09004992AA /* HighlightCell.swift in Sources */,
 				475224BA2BA44414000DAE1B /* ProfileViewModel.swift in Sources */,
 				475224E02BA9D4BD000DAE1B /* UIViewController+Extensions.swift in Sources */,
-				47D54CB62B91919200021FA7 /* BottomSheetOption.swift in Sources */,
+				47D1BE4B2BC6AEE5004992AA /* MoreCellType.swift in Sources */,
 				47C01E462BB4413100D1B2F2 /* SettingsCoordinator.swift in Sources */,
 				4764D5982B85A50000D15A2E /* LoginView.swift in Sources */,
 				47D54CE42B963A6700021FA7 /* NavigationCell.swift in Sources */,
@@ -1622,6 +1712,7 @@
 				47D1BDE32BB57857004992AA /* EditProfileOutputCoordinator.swift in Sources */,
 				475224B62BA441C3000DAE1B /* ProfileMainInfo.swift in Sources */,
 				47D1BDD42BB550B1004992AA /* ProfileDetailCellViewModel.swift in Sources */,
+				47D1BE412BC6637D004992AA /* FriendsFlowFactory.swift in Sources */,
 				47CD672D2B8C3DD50035DCB6 /* BaseViewController.swift in Sources */,
 				475224DB2BA9CE4B000DAE1B /* Presentable.swift in Sources */,
 				47C01E262BB2B5F400D1B2F2 /* AddAnnouncementOutputCoordinator.swift in Sources */,
@@ -1633,7 +1724,6 @@
 				47C01E242BB2B5E700D1B2F2 /* AddAnnouncementCoordinator.swift in Sources */,
 				475224AE2BA40963000DAE1B /* ProfileView.swift in Sources */,
 				47D1BDD82BB56A20004992AA /* Profile.swift in Sources */,
-				47D54CB82B9196B200021FA7 /* BottomSheetCell.swift in Sources */,
 				47C01DF92BB1A6ED00D1B2F2 /* TabBarItem.swift in Sources */,
 				47D1BDCA2BB52AA1004992AA /* EditProfileViewModel.swift in Sources */,
 				47C01E402BB2E08400D1B2F2 /* NavigationCellType.swift in Sources */,
@@ -1662,10 +1752,12 @@
 				47D1BDD62BB553BC004992AA /* ProfileDetail.swift in Sources */,
 				471086522B9E42E100556C2D /* TabBarController.swift in Sources */,
 				475224A52BA162A4000DAE1B /* Reusable.swift in Sources */,
+				47D1BE3B2BC64C55004992AA /* FriendCellViewModel.swift in Sources */,
 				47CD671A2B8796060035DCB6 /* SmsCodeViewController.swift in Sources */,
 				47C01DED2BAF5FE700D1B2F2 /* KeychainService.swift in Sources */,
 				475224BC2BA447D4000DAE1B /* ProfileCommonInfo.swift in Sources */,
 				475224B22BA40E28000DAE1B /* ProfileTopView.swift in Sources */,
+				47D1BE332BC58069004992AA /* FriendsViewController.swift in Sources */,
 				47C01DF32BB19ACE00D1B2F2 /* TabBarCoordinator.swift in Sources */,
 				47CD67262B88A9980035DCB6 /* BaseView.swift in Sources */,
 				47CD67282B88BB070035DCB6 /* SetPasswordViewController.swift in Sources */,
@@ -1696,15 +1788,19 @@
 				4756A0292B7FCC56003F9675 /* SceneDelegate.swift in Sources */,
 				47D1BE252BC1BA19004992AA /* ProfileCharacteristicsView.swift in Sources */,
 				472E1B372B8364E1005BF649 /* LoginViewController.swift in Sources */,
+				47D1BE462BC664D4004992AA /* FriendsCoordinator.swift in Sources */,
 				47C01E0E2BB28C5200D1B2F2 /* FavoritesOutputCoordinator.swift in Sources */,
 				472E1B402B837AAE005BF649 /* ProceedButton.swift in Sources */,
 				47D54CC32B91EC5800021FA7 /* MainScreenView.swift in Sources */,
 				4752249F2BA051EA000DAE1B /* AnnouncementsView.swift in Sources */,
+				47D1BE392BC64BED004992AA /* FriendCell.swift in Sources */,
 				47D1BE292BC1E2A4004992AA /* ImageSettable.swift in Sources */,
 				47D1BE142BBEA356004992AA /* NavigationTableViewType.swift in Sources */,
+				47D1BE482BC6AE05004992AA /* MoreCell.swift in Sources */,
 				47C01DFF2BB1B3BB00D1B2F2 /* MainScreenCoordinator.swift in Sources */,
 				47C01E2E2BB2D9D100D1B2F2 /* ProfileCoordinator.swift in Sources */,
 				47CD67222B88A7AE0035DCB6 /* SetPasswordView.swift in Sources */,
+				47D1BE3E2BC64DDB004992AA /* Friend.swift in Sources */,
 				475224D32BA9CB15000DAE1B /* CoordinatorFactory.swift in Sources */,
 				475225012BAB37E5000DAE1B /* Gender.swift in Sources */,
 				47D1BE182BBF230F004992AA /* ImageDetailViewController.swift in Sources */,

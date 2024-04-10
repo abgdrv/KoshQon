@@ -9,7 +9,7 @@ import Foundation
 
 struct ProfileMainInfo {
     private let firstName: String
-    private let secondName: String
+    private let lastName: String
     let country: Country
     let city: City
     private let birthday: Date
@@ -34,16 +34,16 @@ struct ProfileMainInfo {
     let phoneNumber: String
     
     var fullName: String {
-        return secondName + " " + firstName
+        return lastName + " " + firstName
     }
     
     var location: String {
         return city.name + ", " + country.title
     }
     
-    init(firstName: String, secondName: String, gender: Gender, country: Country, city: City, birthday: Date, friends: Int, phoneNumber: String) {
+    init(firstName: String, lastName: String, gender: Gender, country: Country, city: City, birthday: Date, friends: Int, phoneNumber: String) {
         self.firstName = firstName
-        self.secondName = secondName
+        self.lastName = lastName
         self.gender = gender
         self.country = country
         self.city = city

@@ -42,7 +42,8 @@ extension FlowFactory: SplashScreenFlowFactory,
                        AddAnnouncementFlowFactory,
                        ProfileFlowFactory,
                        SettingsFlowFactory,
-                       EditProfileFlowFactory {
+                       EditProfileFlowFactory,
+                       FriendsFlowFactory {
     
     func makeSplashScreen() -> SplashScreenViewController {
         let vc = SplashScreenViewController()
@@ -145,6 +146,12 @@ extension FlowFactory: SplashScreenFlowFactory,
     
     func makeCharacteristicsView(enabledChars: [CharacteristicType]) -> ProfileCharacteristicsViewController {
         let vc = ProfileCharacteristicsViewController(enabledChars: enabledChars)
+        return vc
+    }
+    
+    func makeFriendsView() -> FriendsViewController {
+        let vm = FriendsViewModel()
+        let vc = FriendsViewController(viewModel: vm)
         return vc
     }
 }

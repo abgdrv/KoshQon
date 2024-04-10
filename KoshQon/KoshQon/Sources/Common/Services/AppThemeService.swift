@@ -9,12 +9,12 @@ import Foundation
 import UIKit
 
 protocol AppThemeServiceProtocol {
-    func getCurrentTheme() -> Theme
-    func updateThemeState(with theme: Theme)
+    func getCurrentTheme() -> AppTheme
+    func updateThemeState(with theme: AppTheme)
     func getUserInterfaceStyle() -> UIUserInterfaceStyle
 }
 
-enum Theme: String, CaseIterable {
+enum AppTheme: String, CaseIterable {
     case light
     case dark
     case phone
@@ -64,15 +64,15 @@ extension AppThemeService: AppThemeServiceProtocol {
         }
     }
     
-    func getCurrentTheme() -> Theme {
+    func getCurrentTheme() -> AppTheme {
         if let themeRawValue = userDefaultsService.value(for: UserDefaultsKey.theme.key) as? String,
-           let theme = Theme(rawValue: themeRawValue) {
+           let theme = AppTheme(rawValue: themeRawValue) {
             return theme
         }
         return .phone
     }
     
-    func updateThemeState(with theme: Theme) {
+    func updateThemeState(with theme: AppTheme) {
         let scenes = UIApplication.shared.connectedScenes
         let windowScene = scenes.first as? UIWindowScene
         

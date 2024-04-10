@@ -13,26 +13,25 @@ final class BottomSheetViewController: BaseViewController {
     
     // MARK: - Properties
     
-    private let options: [BottomSheetOption]
     private let isLong: Bool
     private var selectedDayIndexPath: IndexPath?
     
     // MARK: - UI
     
-    private lazy var optionsTableView: UITableView = {
-        let tableView = UITableView()
-        tableView.rowHeight = Constants.PanModal.short / 2
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(type: BottomSheetCell.self)
-        tableView.separatorStyle = .none
-        return tableView
-    }()
+    private lazy var optionsTableView = UITableView(frame: .zero, style: .plain).apply {
+        $0.showsVerticalScrollIndicator = false
+        $0.separatorStyle = .none
+        $0.dataSource = self
+        $0.delegate = self
+        $0.rowHeight = UITableView.automaticDimension
+        $0.backgroundColor = AppColor.Theme.secondaryBackground.uiColor
+        $0.register(type: NavigationCell.self)
+        $0.register(type: AnnouncementCell.self)
+    }
     
     // MARK: - Object Lifecycle
     
-    init(options: [BottomSheetOption], isLong: Bool) {
-        self.options = options
+    init(isLong: Bool) {
         self.isLong = isLong
         super.init()
     }
@@ -65,14 +64,11 @@ private extension BottomSheetViewController {
 
 extension BottomSheetViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return options.count
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeue(type: BottomSheetCell.self, for: indexPath)
-        cell.configure(option: options[indexPath.row])
-        cell.accessoryType = indexPath == selectedDayIndexPath ? .checkmark : .none
-        return cell
+        return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

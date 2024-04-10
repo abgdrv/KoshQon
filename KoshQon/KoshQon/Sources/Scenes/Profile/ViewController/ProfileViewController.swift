@@ -13,6 +13,7 @@ final class ProfileViewController: BaseViewController {
     
     var didSettingsTap: VoidCallback?
     var didEditProfileTap: VoidCallback?
+    var didFriendsTap: VoidCallback?
     
     private let viewModel: ProfileViewModel
     
@@ -41,6 +42,7 @@ final class ProfileViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigation()
+        setupBindings()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,7 +51,7 @@ final class ProfileViewController: BaseViewController {
     }
 }
 
-// MARK: - Navigation
+// MARK: - Setup
 
 private extension ProfileViewController {
     func setupNavigation() {
@@ -65,6 +67,13 @@ private extension ProfileViewController {
                                              action: #selector(settingsButtonTapped))
         editButton.imageInsets = UIEdgeInsets(top: 0, left: 25, bottom: 0, right: 0)
         navigationItem.rightBarButtonItems = [settingsButton, editButton]
+    }
+    
+    func setupBindings() {
+        profileView.didFriendsTap = { [weak self] in
+            guard let self = self else { return }
+            self.didFriendsTap?()
+        }
     }
 }
 
