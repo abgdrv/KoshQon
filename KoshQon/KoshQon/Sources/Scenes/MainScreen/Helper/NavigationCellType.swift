@@ -29,7 +29,7 @@ enum NavigationCellType: String, CaseIterable {
     case languageRussian
     case languageEnglish
     
-    var theme: Theme {
+    var theme: AppTheme {
         switch self {
         case .themeLight:
             .light

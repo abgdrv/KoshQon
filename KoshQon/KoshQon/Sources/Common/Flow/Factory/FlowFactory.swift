@@ -154,4 +154,8 @@ extension FlowFactory: SplashScreenFlowFactory,
         let vc = FriendsViewController(viewModel: vm)
         return vc
     }
+    
+    func makeBottomSheetView() -> BottomSheetViewController {
+        return BottomSheetViewController(isLong: false)
+    }
 }

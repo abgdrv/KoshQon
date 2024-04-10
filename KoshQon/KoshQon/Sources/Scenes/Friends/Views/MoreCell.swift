@@ -14,7 +14,7 @@ final class MoreCell: BaseCell {
     
     // MARK: - Properties
     
-    private let
+//    private let
     
     // MARK: - UI
     
