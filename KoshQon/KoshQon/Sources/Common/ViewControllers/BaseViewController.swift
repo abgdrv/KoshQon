@@ -30,6 +30,10 @@ class BaseViewController: UIViewController {
         fatalError("Not implemented!")
     }
     
+    deinit {
+        print("💀: View Controller \(self) deinited")
+    }
+    
     // MARK: - View Lifecycle
     
     override func viewDidLoad() {

@@ -32,6 +32,7 @@ class BaseView: UIView {
     
     deinit {
         NotificationCenter.default.removeObserver(self)
+        print("💀: View \(self) deinited")
     }
 }
 

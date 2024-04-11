@@ -109,8 +109,8 @@ extension FlowFactory: SplashScreenFlowFactory,
         return vc
     }
     
-    func makeProfileView() -> ProfileViewController {
-        let vm = ProfileViewModel()
+    func makeProfileView(type: ProfileType) -> ProfileViewController {
+        let vm = ProfileViewModel(profileType: type)
         let vc = ProfileViewController(viewModel: vm)
         return vc
     }

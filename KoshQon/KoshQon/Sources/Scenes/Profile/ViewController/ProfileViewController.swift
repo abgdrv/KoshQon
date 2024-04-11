@@ -18,12 +18,35 @@ final class ProfileViewController: BaseViewController {
     private let viewModel: ProfileViewModel
     
     override var navigationTitleType: NavigationTitleType? {
-        return .profile
+        return viewModel.profileType == .myProfile ? .profile : nil
     }
     
     // MARK: - UI
     
     private lazy var profileView = ProfileView(viewModel: viewModel)
+    
+    private lazy var editButton = UIBarButtonItem(
+        image: AppImage.Profile.edit.uiImage?.withRenderingMode(.alwaysOriginal),
+        style: .plain,
+        target: self,
+        action: #selector(editButtonTapped)
+    ).apply {
+        $0.imageInsets = UIEdgeInsets(top: 0, left: 25, bottom: 0, right: 0)
+    }
+    
+    private lazy var settingsButton = UIBarButtonItem(
+        image: AppImage.Profile.settings.uiImage?.withRenderingMode(.alwaysOriginal),
+        style: .plain,
+        target: self,
+        action: #selector(settingsButtonTapped)
+    )
+    
+    private lazy var shareButton = UIBarButtonItem(
+        image: AppImage.Common.share.uiImage?.withRenderingMode(.alwaysOriginal),
+        style: .plain,
+        target: self,
+        action: #selector(shareButtonTapped)
+    )
     
     // MARK: - Object Lifecycle
     
@@ -31,14 +54,14 @@ final class ProfileViewController: BaseViewController {
         self.viewModel = viewModel
         super.init()
     }
-
+    
     // MARK: - View Lifecycle
     
     override func loadView() {
         super.loadView()
         view = profileView
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigation()
@@ -47,7 +70,9 @@ final class ProfileViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        tabBarController?.tabBar.isHidden = false
+        if viewModel.profileType == .myProfile {
+            tabBarController?.tabBar.isHidden = false
+        }
     }
 }
 
@@ -55,18 +80,7 @@ final class ProfileViewController: BaseViewController {
 
 private extension ProfileViewController {
     func setupNavigation() {
-        let editImage = AppImage.Profile.edit.uiImage?.withRenderingMode(.alwaysOriginal)
-        let editButton = UIBarButtonItem(image: editImage,
-                                         style: .plain,
-                                         target: self,
-                                         action: #selector(editButtonTapped))
-        let settingsImage = AppImage.Profile.settings.uiImage?.withRenderingMode(.alwaysOriginal)
-        let settingsButton = UIBarButtonItem(image: settingsImage,
-                                             style: .plain,
-                                             target: self,
-                                             action: #selector(settingsButtonTapped))
-        editButton.imageInsets = UIEdgeInsets(top: 0, left: 25, bottom: 0, right: 0)
-        navigationItem.rightBarButtonItems = [settingsButton, editButton]
+        navigationItem.rightBarButtonItems = viewModel.profileType == .myProfile ? [settingsButton, editButton] : [shareButton]
     }
     
     func setupBindings() {
@@ -86,5 +100,9 @@ private extension ProfileViewController {
     
     @objc func settingsButtonTapped() {
         didSettingsTap?()
+    }
+    
+    @objc func shareButtonTapped() {
+        
     }
 }

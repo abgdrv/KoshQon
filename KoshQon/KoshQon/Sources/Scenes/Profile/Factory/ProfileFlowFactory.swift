@@ -8,5 +8,5 @@
 import Foundation
 
 protocol ProfileFlowFactory: AlertFlowFactory {
-    func makeProfileView() -> ProfileViewController
+    func makeProfileView(type: ProfileType) -> ProfileViewController
 }

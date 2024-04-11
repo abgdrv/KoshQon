@@ -17,8 +17,8 @@ protocol CoordinatorFactoryProtocol {
     func makeMainScreenCoordinator(navController: UINavigationController) -> Coordinator & MainScreenOutputCoordinator
     func makeFavoritesCoordinator(navController: UINavigationController) -> Coordinator & FavoritesOutputCoordinator
     func makeAddAnnouncementCoordinator(navController: UINavigationController) -> Coordinator & AddAnnouncementOutputCoordinator
-    func makeProfileCoordinator(navController: UINavigationController) -> Coordinator & ProfileOutputCoordinator
-    func makeProfileCoordinator(router: RouterProtocol) -> Coordinator & ProfileOutputCoordinator
+    func makeProfileCoordinator(profileType: ProfileType, navController: UINavigationController) -> Coordinator & ProfileOutputCoordinator
+    func makeProfileCoordinator(profileType: ProfileType, router: RouterProtocol) -> Coordinator & ProfileOutputCoordinator
     func makeSettingsCoordinator(router: RouterProtocol, coordinatorFactory: CoordinatorFactory) -> Coordinator & SettingsOutputCoordinator
     func makeEditProfileCoordinator(router: RouterProtocol) -> Coordinator & EditProfileOutputCoordinator
     func makeFriendsCoordinator(router: RouterProtocol, coordinatorFactory: CoordinatorFactory) -> Coordinator & FriendsOutputCoordinator

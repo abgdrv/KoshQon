@@ -46,13 +46,13 @@ final class CoordinatorFactory: CoordinatorFactoryProtocol {
         return coordinator
     }
     
-    func makeProfileCoordinator(navController: UINavigationController) -> Coordinator & ProfileOutputCoordinator {
-        let coordinator = ProfileCoordinator(router: router(navController), factory: FlowFactory(), coordinatorFactory: self)
+    func makeProfileCoordinator(profileType: ProfileType, navController: UINavigationController) -> Coordinator & ProfileOutputCoordinator {
+        let coordinator = ProfileCoordinator(router: router(navController), factory: FlowFactory(), coordinatorFactory: self, profileType: profileType)
         return coordinator
     }
     
-    func makeProfileCoordinator(router: RouterProtocol) -> Coordinator & ProfileOutputCoordinator {
-        let coordinator = ProfileCoordinator(router: router, factory: FlowFactory(), coordinatorFactory: self)
+    func makeProfileCoordinator(profileType: ProfileType, router: RouterProtocol) -> Coordinator & ProfileOutputCoordinator {
+        let coordinator = ProfileCoordinator(router: router, factory: FlowFactory(), coordinatorFactory: self, profileType: profileType)
         return coordinator
     }
     

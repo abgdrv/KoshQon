@@ -105,7 +105,7 @@ private extension TabBarCoordinator {
         return { [unowned self] navController in
             self.navController = navController
             if navController.viewControllers.isEmpty {
-                var coordinator = self.coordinatorFactory.makeProfileCoordinator(navController: navController)
+                var coordinator = self.coordinatorFactory.makeProfileCoordinator(profileType: .myProfile, navController: navController)
                 coordinator.finishFlow = { [weak self] in
                     guard let self = self else { return }
                     self.removeDependency(coordinator)

@@ -48,7 +48,7 @@ private extension SettingsCoordinator {
             guard let self = self else { return }
             self.removeDependency(coordinator)
         }
-        coordinator.profile = ProfileViewModel().profile
+        coordinator.profile = ProfileViewModel(profileType: .myProfile).profile
         addDependency(coordinator)
         coordinator.start()
     }

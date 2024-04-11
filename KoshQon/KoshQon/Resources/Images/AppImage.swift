@@ -18,6 +18,7 @@ enum AppImage {
         case star = "common/star"
         case checkbox = "common/checkbox"
         case checkboxSelected = "common/сheck"
+        case share = "common/share"
     }
     
     // MARK: - Auth

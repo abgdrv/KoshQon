@@ -7,9 +7,16 @@
 
 import Foundation
 
+enum ProfileType {
+    case myProfile
+    case userProfile
+}
+
 final class ProfileViewModel {
     
     // MARK: - Properties
+    
+    let profileType: ProfileType
     
     var items: [AnnouncementViewModel] = []
     
@@ -41,7 +48,8 @@ final class ProfileViewModel {
     
     // MARK: - Object Lifecycle
     
-    init() {
+    init(profileType: ProfileType) {
+        self.profileType = profileType
         getAnnouncements()
         getProfile()
     }

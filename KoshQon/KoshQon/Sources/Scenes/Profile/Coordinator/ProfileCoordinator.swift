@@ -18,12 +18,15 @@ final class ProfileCoordinator: BaseCoordinator, ProfileOutputCoordinator {
     private let factory: ProfileFlowFactory
     private let coordinatorFactory: CoordinatorFactory
     
+    private let profileType: ProfileType
+    
     // MARK: - Object Lifecycle
     
-    init(router: RouterProtocol, factory: ProfileFlowFactory, coordinatorFactory: CoordinatorFactory) {
+    init(router: RouterProtocol, factory: ProfileFlowFactory, coordinatorFactory: CoordinatorFactory, profileType: ProfileType) {
         self.router = router
         self.factory = factory
         self.coordinatorFactory = coordinatorFactory
+        self.profileType = profileType
         super.init(alertFlowFactory: factory)
     }
     
@@ -34,7 +37,7 @@ final class ProfileCoordinator: BaseCoordinator, ProfileOutputCoordinator {
 
 private extension ProfileCoordinator {
     func showProfile() {
-        let view = factory.makeProfileView()
+        let view = factory.makeProfileView(type: profileType)
         view.didSettingsTap = { [weak self] in
             guard let self = self else { return }
             self.showSettingsFlow()
@@ -47,7 +50,11 @@ private extension ProfileCoordinator {
             guard let self = self else { return }
             self.showFriendsFlow()
         }
-        router.setRoodModule(view, hideNavBar: false, isAnimated: false)
+        if profileType == .myProfile {
+            router.setRoodModule(view, hideNavBar: false, isAnimated: false)
+        } else {
+            router.push(view)
+        }
     }
     
     func showSettingsFlow() {
@@ -67,7 +74,7 @@ private extension ProfileCoordinator {
             guard let self = self else { return }
             self.removeDependency(coordinator)
         }
-        coordinator.profile = ProfileViewModel().profile
+        coordinator.profile = ProfileViewModel(profileType: .myProfile).profile
         addDependency(coordinator)
         coordinator.start()
     }
