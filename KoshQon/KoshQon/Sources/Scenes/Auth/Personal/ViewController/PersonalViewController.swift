@@ -97,6 +97,7 @@ private extension PersonalViewController {
         profileImageView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(30)
             make.leading.equalToSuperview().offset(16)
+            make.size.equalTo(116)
         }
         
         firstNameTextField.snp.makeConstraints { make in

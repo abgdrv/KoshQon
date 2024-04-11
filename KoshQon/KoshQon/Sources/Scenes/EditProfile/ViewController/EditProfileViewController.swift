@@ -149,6 +149,7 @@ private extension EditProfileViewController {
         profileImageView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(10)
             make.centerX.equalToSuperview()
+            make.size.equalTo(116)
         }
         
         detailsContainerView.snp.makeConstraints { make in

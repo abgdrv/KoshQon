@@ -67,6 +67,7 @@ private extension ProfileTopView {
         profileImageView.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview().inset(10)
             make.leading.equalToSuperview().offset(16)
+            make.size.equalTo(116)
         }
         
         nameLabel.snp.makeConstraints { make in

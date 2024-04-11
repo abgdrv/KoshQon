@@ -68,7 +68,6 @@ private extension ProfileImageView {
     func setupConstraints() {
         profileImageView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
-            make.size.equalTo(116)
         }
         
         if isEditable {
