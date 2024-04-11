@@ -15,9 +15,6 @@ enum ProceedButtonType {
     case edit
     case find
     case account
-    case call
-    case write
-    case add
     case save
 }
 
@@ -33,14 +30,10 @@ final class ProceedButton: UIButton {
     
     // MARK: - Private Methods
     
-    private func setup() {        
+    private func setup() {
         switch type {
         case .signIn:
             setup(title: "Войти")
-        case .call:
-            setup(backgroundColor: AppColor.Static.green.uiColor, title: "Позвонить", font: AppFont.medium.s14)
-        case .write:
-            setup(backgroundColor: AppColor.Static.darkBlue.uiColor, title: "Написать", font: AppFont.medium.s14)
         case .signUp:
             setup(title: "Создать аккаунт")
         case .continue:
@@ -53,8 +46,6 @@ final class ProceedButton: UIButton {
             setup(title: "Искать объявления")
         case .account:
             setup(title: "Перейти на страницу", font: AppFont.medium.s14)
-        case .add:
-            setup(font: AppFont.medium.s14, image: nil)
         case .save:
             setup(title: "Сохранить")
         case .none:
@@ -62,13 +53,13 @@ final class ProceedButton: UIButton {
         }
     }
     
-    private func setup(backgroundColor: UIColor = AppColor.Static.orange.uiColor,
-                       title: String? = nil,
-                       font: UIFont = AppFont.medium.s16,
-                       image: UIImage? = nil) {
+    private func setup(
+        backgroundColor: UIColor = AppColor.Static.orange.uiColor,
+        title: String? = nil,
+        font: UIFont = AppFont.medium.s16
+    ) {
         self.backgroundColor = backgroundColor
         setTitle(title, for: .normal)
         set(font: font, titleColor: AppColor.Static.white.uiColor)
-        setImage(image, for: .normal)
     }
 }

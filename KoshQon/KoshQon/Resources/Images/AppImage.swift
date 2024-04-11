@@ -19,6 +19,7 @@ enum AppImage {
         case checkbox = "common/checkbox"
         case checkboxSelected = "common/сheck"
         case share = "common/share"
+        case more = "common/more"
     }
     
     // MARK: - Auth
@@ -85,6 +86,9 @@ enum AppImage {
         case religion = "profile/religion"
         case edit = "profile/edit"
         case settings = "profile/settings"
+        case addFriend = "profile/add_friend"
+        case removeFriend = "profile/remove_friend"
+        case pending = "profile/pending"
     }
     
     // MARK: - Settings
@@ -98,11 +102,4 @@ enum AppImage {
         case quit = "settings/quit"
         case deactivate = "settings/deactivate"
     }
-    
-    // MARK: - Friends
-    
-    enum Friends: String, AppImageProtocol {
-        case more = "friends/more"
-    }
-
 }

@@ -30,8 +30,8 @@ final class FriendCell: BaseCell {
         $0.set(font: AppFont.medium.s12, textColor: AppColor.Static.darkGray.uiColor)
     }
     
-    private lazy var menuButton = UIButton(type: .custom).apply {
-        $0.setImage(AppImage.Friends.more.uiImage, for: .normal)
+    private lazy var moreButton = UIButton(type: .custom).apply {
+        $0.setImage(AppImage.Common.more.uiImage, for: .normal)
         $0.addTarget(self, action: #selector(moreButtonTapped), for: .touchUpInside)
     }
     
@@ -55,7 +55,7 @@ private extension FriendCell {
     func setupViews() {
         backgroundColor = .clear
         contentView.addSubviews(profileImageView, containerView)
-        containerView.addSubviews(fullNameLabel, locationLabel, menuButton, separatorView)
+        containerView.addSubviews(fullNameLabel, locationLabel, moreButton, separatorView)
     }
     
     func setupConstraints() {
@@ -80,7 +80,7 @@ private extension FriendCell {
             make.leading.equalToSuperview()
         }
         
-        menuButton.snp.makeConstraints { make in
+        moreButton.snp.makeConstraints { make in
             make.trailing.equalToSuperview().inset(16)
             make.centerY.equalToSuperview()
         }

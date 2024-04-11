@@ -171,6 +171,7 @@
 		47D1BE462BC664D4004992AA /* FriendsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D1BE452BC664D4004992AA /* FriendsCoordinator.swift */; };
 		47D1BE482BC6AE05004992AA /* MoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D1BE472BC6AE05004992AA /* MoreCell.swift */; };
 		47D1BE4B2BC6AEE5004992AA /* MoreCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D1BE4A2BC6AEE5004992AA /* MoreCellType.swift */; };
+		47D1BE4F2BC7E3F2004992AA /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D1BE4E2BC7E3F2004992AA /* ActionButton.swift */; };
 		47D54CB42B918FA800021FA7 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D54CB32B918FA800021FA7 /* BottomSheetViewController.swift */; };
 		47D54CBB2B91D22F00021FA7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D54CBA2B91D22F00021FA7 /* Constants.swift */; };
 		47D54CC32B91EC5800021FA7 /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D54CC22B91EC5800021FA7 /* MainScreenView.swift */; };
@@ -348,6 +349,7 @@
 		47D1BE452BC664D4004992AA /* FriendsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsCoordinator.swift; sourceTree = "<group>"; };
 		47D1BE472BC6AE05004992AA /* MoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreCell.swift; sourceTree = "<group>"; };
 		47D1BE4A2BC6AEE5004992AA /* MoreCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreCellType.swift; sourceTree = "<group>"; };
+		47D1BE4E2BC7E3F2004992AA /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		47D54CB32B918FA800021FA7 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
 		47D54CBA2B91D22F00021FA7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		47D54CC22B91EC5800021FA7 /* MainScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenView.swift; sourceTree = "<group>"; };
@@ -543,6 +545,7 @@
 				47D1BDF12BB6CBC4004992AA /* HighlightView.swift */,
 				47D1BDF32BB6CC09004992AA /* HighlightCell.swift */,
 				47D1BDFE2BBAC8F1004992AA /* DatePicker.swift */,
+				47D1BE4E2BC7E3F2004992AA /* ActionButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1677,6 +1680,7 @@
 				47D1BE2F2BC1EF56004992AA /* ImageSetFlowFactory.swift in Sources */,
 				47D1BDE72BB5DB2D004992AA /* DynamicTableView.swift in Sources */,
 				475224F52BA9FC0C000DAE1B /* AuthCoordinator.swift in Sources */,
+				47D1BE4F2BC7E3F2004992AA /* ActionButton.swift in Sources */,
 				475224F22BA9ECAF000DAE1B /* SplashScreenCoordinator.swift in Sources */,
 				47D1BDF22BB6CBC4004992AA /* HighlightView.swift in Sources */,
 				47C01DF12BB19AAB00D1B2F2 /* TabBarOutputCoordinator.swift in Sources */,
