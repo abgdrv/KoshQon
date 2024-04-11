@@ -56,12 +56,15 @@ private extension MainScreenCoordinator {
     
     func openNavigationCell(type: NavigationCellType) {
         switch type {
-        case .search:
-            showSearch()
-        case .myAnnouncements:
-            showMyAnnouncements()
-        case .guide:
-            showGuide()
+        case .main(let mainType):
+            switch mainType {
+            case .search:
+                showSearch()
+            case .myAnnouncements:
+                showMyAnnouncements()
+            case .guide:
+                showGuide()
+            }
         default:
             break
         }

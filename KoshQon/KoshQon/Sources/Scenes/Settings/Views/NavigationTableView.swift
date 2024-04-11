@@ -73,9 +73,12 @@ extension NavigationTableView: UITableViewDelegate, UITableViewDataSource {
         let cell = NavigationCell(viewModel: navigationCellViewModels[index])
         cell.didNavigationCellTap = { [weak self] type in
             guard let self = self else { return }
-            if type == .themeLight || type == .themeDark || type == .themeDefault {
-                AppThemeService.shared.updateThemeState(with: type.theme)
+            switch type {
+            case .theme(let themeType):
+                AppThemeService.shared.updateThemeState(with: themeType.appTheme)
                 selectCell(indexPath: indexPath)
+            default:
+                break
             }
             self.didNavigationCellTap?(type)
         }

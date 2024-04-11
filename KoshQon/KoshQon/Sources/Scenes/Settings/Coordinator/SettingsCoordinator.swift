@@ -17,7 +17,7 @@ final class SettingsCoordinator: BaseCoordinator, SettingsOutputCoordinator {
     private let router: RouterProtocol
     private let factory: SettingsFlowFactory
     private let coordinatorFactory: CoordinatorFactory
-        
+    
     // MARK: - Object Lifecycle
     
     init(router: RouterProtocol, factory: SettingsFlowFactory, coordinatorFactory: CoordinatorFactory) {
@@ -90,18 +90,21 @@ private extension SettingsCoordinator {
 private extension SettingsCoordinator {
     func showNavigationCell(type: NavigationCellType) {
         switch type {
-        case .personal:
-            showEditProfile()
-        case .privacy:
-            showPrivacy()
-        case .theme:
-            showTheme()
-        case .language:
-            showLanguage()
-        case .about:
-            showAbout()
-        case .quit:
-            showQuit()
+        case .settings(let settingsType):
+            switch settingsType {
+            case .personal:
+                showEditProfile()
+            case .privacy:
+                showPrivacy()
+            case .theme:
+                showTheme()
+            case .language:
+                showLanguage()
+            case .about:
+                showAbout()
+            case .quit:
+                showQuit()
+            }
         default:
             break
         }

@@ -25,74 +25,103 @@ final class NavigationCellViewModel {
 extension NavigationCellViewModel: INavigationCellViewModel {
     var title: String {
         switch type {
-        case .search:
-            "Найти"
-        case .myAnnouncements:
-            "Мои объявления"
-        case .guide:
-            "Гид"
-        case .personal:
-            "Личная информация"
-        case .privacy:
-            "Конфиденциальность"
-        case .theme:
-            "Тема приложения"
-        case .language:
-            "Язык"
-        case .about:
-            "О приложении"
-        case .quit:
-            "Выйти"
-        case .deactivate:
-            "Деактивировать аккаунт"
-        case .themeLight:
-            "Светлая"
-        case .themeDark:
-            "Темная"
-        case .themeDefault:
-            "Системная"
-        case .languageKazakh:
-            "Казахский"
-        case .languageRussian:
-            "Русский"
-        case .languageEnglish:
-            "Английский"
+        case .main(let mainType):
+            switch mainType {
+            case .search:
+                return "Найти"
+            case .myAnnouncements:
+                return "Мои объявления"
+            case .guide:
+                return "Гид"
+            }
+        case .settings(let settingsType):
+            switch settingsType {
+            case .personal:
+                return "Личная информация"
+            case .privacy:
+                return "Конфиденциальность"
+            case .theme:
+                return "Тема приложения"
+            case .language:
+                return "Язык"
+            case .about:
+                return "О приложении"
+            case .quit:
+                return "Выйти"
+            }
+        case .privacy(let privacyType):
+            switch privacyType {
+            case .deactivate:
+                return "Деактивировать аккаунт"
+            }
+        case .theme(let themeType):
+            switch themeType {
+            case .themeLight:
+                return "Светлая"
+            case .themeDark:
+                return "Темная"
+            case .themeDefault:
+                return "Системная"
+            }
+        case .language(let languageType):
+            switch languageType {
+            case .languageKazakh:
+                return "Казахский"
+            case .languageRussian:
+                return "Русский"
+            case .languageEnglish:
+                return "Английский"
+            }
         }
     }
     
     var image: UIImage? {
         switch type {
-        case .search:
-            AppImage.Main.search.uiImage?.withTintColor(AppColor.Theme.mainTitle.uiColor)
-        case .myAnnouncements:
-            AppImage.Main.announcement.uiImage?.withTintColor(AppColor.Theme.mainTitle.uiColor)
-        case .guide:
-            AppImage.Main.guide.uiImage?.withTintColor(AppColor.Theme.mainTitle.uiColor)
-        case .personal:
-            AppImage.Settings.personal.uiImage?.withRenderingMode(.alwaysOriginal)
-        case .privacy:
-            AppImage.Settings.privacy.uiImage?.withRenderingMode(.alwaysOriginal)
-        case .theme:
-            AppImage.Settings.theme.uiImage?.withRenderingMode(.alwaysOriginal)
-        case .language:
-            AppImage.Settings.language.uiImage?.withRenderingMode(.alwaysOriginal)
-        case .about:
-            AppImage.Settings.about.uiImage?.withRenderingMode(.alwaysOriginal)
-        case .quit:
-            AppImage.Settings.quit.uiImage?.withRenderingMode(.alwaysOriginal)
-        case .deactivate:
-            AppImage.Settings.deactivate.uiImage?.withRenderingMode(.alwaysOriginal)
+        case .main(let mainType):
+            switch mainType {
+            case .search:
+                return AppImage.Main.search.uiImage?.withTintColor(AppColor.Theme.mainTitle.uiColor)
+            case .myAnnouncements:
+                return AppImage.Main.announcement.uiImage?.withTintColor(AppColor.Theme.mainTitle.uiColor)
+            case .guide:
+                return AppImage.Main.guide.uiImage?.withTintColor(AppColor.Theme.mainTitle.uiColor)
+            }
+        case .settings(let settingsType):
+            switch settingsType {
+            case .personal:
+                return AppImage.Settings.personal.uiImage?.withRenderingMode(.alwaysOriginal)
+            case .privacy:
+                return AppImage.Settings.privacy.uiImage?.withRenderingMode(.alwaysOriginal)
+            case .theme:
+                return AppImage.Settings.theme.uiImage?.withRenderingMode(.alwaysOriginal)
+            case .language:
+                return AppImage.Settings.language.uiImage?.withRenderingMode(.alwaysOriginal)
+            case .about:
+                return AppImage.Settings.about.uiImage?.withRenderingMode(.alwaysOriginal)
+            case .quit:
+                return AppImage.Settings.quit.uiImage?.withRenderingMode(.alwaysOriginal)
+            }
+        case .privacy(let privacyType):
+            switch privacyType {
+            case .deactivate:
+                return AppImage.Settings.deactivate.uiImage?.withRenderingMode(.alwaysOriginal)
+            }
         default:
-            nil
+            return nil
         }
     }
     
     var isLast: Bool {
         switch type {
-        case .guide:
-            true
+        case .main(let mainType):
+            switch mainType {
+            case .guide:
+                return true
+            default:
+                return false
+            }
         default:
-            false
+            return false
         }
     }
 }

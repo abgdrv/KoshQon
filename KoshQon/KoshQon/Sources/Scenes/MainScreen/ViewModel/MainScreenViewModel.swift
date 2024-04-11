@@ -14,7 +14,7 @@ final class MainScreenViewModel {
     var announcementViewModels: [AnnouncementViewModel] = []
     var navigationCellViewModels: [NavigationCellViewModel] = []
     
-    let navigationItems: [NavigationCellType] = Array(NavigationCellType.allCases[0..<3])
+    let navigationItems: [NavigationCellType] = NavigationCellType.Main.allCases.map { NavigationCellType.main($0) }
     let ads = [
         Announcement(title: "Ищу сожителя", address: "Алматы, Бостандыкский район", date: "2 февраля", rating: 8.7),
         Announcement(title: "Ищу сожителя", address: "Алматы, Бостандыкский район", date: "2 февраля", rating: 8.7),

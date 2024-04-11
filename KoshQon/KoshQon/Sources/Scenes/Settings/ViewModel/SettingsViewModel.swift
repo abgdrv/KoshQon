@@ -18,13 +18,13 @@ final class SettingsViewModel {
     private var navigationItems: [NavigationCellType] {
         switch type {
         case .settings:
-            Array(NavigationCellType.allCases[3..<9])
+            NavigationCellType.Settings.allCases.map { NavigationCellType.settings($0) }
         case .privacy:
-            Array(NavigationCellType.allCases[9..<10])
+            NavigationCellType.Privacy.allCases.map { NavigationCellType.privacy($0) }
         case .theme:
-            Array(NavigationCellType.allCases[10..<13])
+            NavigationCellType.Theme.allCases.map { NavigationCellType.theme($0) }
         case .language:
-            Array(NavigationCellType.allCases[13..<16])
+            NavigationCellType.Language.allCases.map { NavigationCellType.language($0) }
         }
     }
     
