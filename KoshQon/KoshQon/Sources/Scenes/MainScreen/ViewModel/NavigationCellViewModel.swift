@@ -56,21 +56,30 @@ extension NavigationCellViewModel: INavigationCellViewModel {
             }
         case .theme(let themeType):
             switch themeType {
-            case .themeLight:
+            case .light:
                 return "Светлая"
-            case .themeDark:
+            case .dark:
                 return "Темная"
-            case .themeDefault:
+            case .system:
                 return "Системная"
             }
         case .language(let languageType):
             switch languageType {
-            case .languageKazakh:
+            case .kazakh:
                 return "Казахский"
-            case .languageRussian:
+            case .russian:
                 return "Русский"
-            case .languageEnglish:
+            case .language:
                 return "Английский"
+            }
+        case .more(let moreType):
+            switch moreType {
+            case .unfriend:
+                return "Удалить из контактов"
+            case .write:
+                return "Написать"
+            case .call:
+                return "Позвонить"
             }
         }
     }
@@ -105,6 +114,15 @@ extension NavigationCellViewModel: INavigationCellViewModel {
             switch privacyType {
             case .deactivate:
                 return AppImage.Settings.deactivate.uiImage?.withRenderingMode(.alwaysOriginal)
+            }
+        case .more(let moreType):
+            switch moreType {
+            case .unfriend:
+                return AppImage.Settings.deactivate.uiImage?.withRenderingMode(.alwaysOriginal)
+            case .write:
+                return AppImage.Common.letter.uiImage?.withRenderingMode(.alwaysOriginal)
+            case .call:
+                return AppImage.Common.phone.uiImage?.withRenderingMode(.alwaysOriginal)
             }
         default:
             return nil

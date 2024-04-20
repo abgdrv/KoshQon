@@ -19,6 +19,15 @@ final class AddAnnouncementViewController: BaseViewController {
     
     private lazy var addAnnouncementView = AddAnnouncementView()
     
+    private lazy var closeButton = UIBarButtonItem(
+        title: "Закрыть",
+        style: .plain,
+        target: self,
+        action: #selector(closeButtonTapped)
+    ).apply {
+        $0.tintColor = AppColor.Static.orange.uiColor
+    }
+    
     // MARK: - Object Lifecycle
     
     init(viewModel: AddAnnouncementViewModel) {
@@ -53,13 +62,6 @@ final class AddAnnouncementViewController: BaseViewController {
 
 private extension AddAnnouncementViewController {
     func setupNavigation() {
-        let closeButton = UIBarButtonItem(
-            title: "Закрыть",
-            style: .plain,
-            target: self,
-            action: #selector(closeButtonTapped)
-        )
-        closeButton.tintColor = AppColor.Static.orange.uiColor
         navigationItem.rightBarButtonItem = closeButton
     }
 }

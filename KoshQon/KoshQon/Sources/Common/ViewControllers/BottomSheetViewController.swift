@@ -14,7 +14,6 @@ final class BottomSheetViewController: BaseViewController {
     // MARK: - Properties
     
     private let isLong: Bool
-    private var selectedDayIndexPath: IndexPath?
     
     // MARK: - UI
     
@@ -24,9 +23,8 @@ final class BottomSheetViewController: BaseViewController {
         $0.dataSource = self
         $0.delegate = self
         $0.rowHeight = UITableView.automaticDimension
-        $0.backgroundColor = AppColor.Theme.secondaryBackground.uiColor
+        $0.backgroundColor = .clear
         $0.register(type: NavigationCell.self)
-        $0.register(type: AnnouncementCell.self)
     }
     
     // MARK: - Object Lifecycle
@@ -69,13 +67,6 @@ extension BottomSheetViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return UITableViewCell()
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        selectedDayIndexPath = indexPath
-        tableView.reloadData()
-        dismiss(animated: true)
     }
 }
 

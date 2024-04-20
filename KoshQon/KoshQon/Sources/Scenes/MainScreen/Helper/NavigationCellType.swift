@@ -1,9 +1,19 @@
+//
+//  NavigationCellType.swift
+//  KoshQon
+//
+//  Created by Almat Begaidarov on 26.03.2024.
+//
+
+import Foundation
+
 enum NavigationCellType: CaseIterable {
     case main(Main)
     case settings(Settings)
     case privacy(Privacy)
     case theme(Theme)
     case language(Language)
+    case more(More)
     
     static var allCases: [NavigationCellType] {
         var cases: [NavigationCellType] = []
@@ -12,6 +22,7 @@ enum NavigationCellType: CaseIterable {
         cases.append(contentsOf: Privacy.allCases.map { NavigationCellType.privacy($0) })
         cases.append(contentsOf: Theme.allCases.map { NavigationCellType.theme($0) })
         cases.append(contentsOf: Language.allCases.map { NavigationCellType.language($0) })
+        cases.append(contentsOf: More.allCases.map { NavigationCellType.more($0) })
         return cases
     }
     
@@ -35,25 +46,50 @@ enum NavigationCellType: CaseIterable {
     }
     
     enum Theme: String, CaseIterable {
-        case themeLight
-        case themeDark
-        case themeDefault
+        case light
+        case dark
+        case system
         
         var appTheme: AppTheme {
             switch self {
-            case .themeLight:
+            case .light:
                 return .light
-            case .themeDark:
+            case .dark:
                 return .dark
-            case .themeDefault:
+            case .system:
                 return .phone
             }
         }
     }
     
     enum Language: String, CaseIterable {
-        case languageKazakh
-        case languageRussian
-        case languageEnglish
+        case kazakh
+        case russian
+        case language
+    }
+    
+    enum More: String, CaseIterable {
+        case unfriend
+        case write
+        case call
+    }
+}
+
+extension NavigationCellType {
+    var associatedCases: [NavigationCellType] {
+        switch self {
+        case .main:
+            return Main.allCases.map { NavigationCellType.main($0) }
+        case .settings:
+            return Settings.allCases.map { NavigationCellType.settings($0) }
+        case .privacy:
+            return Privacy.allCases.map { NavigationCellType.privacy($0) }
+        case .theme:
+            return Theme.allCases.map { NavigationCellType.theme($0) }
+        case .language:
+            return Language.allCases.map { NavigationCellType.language($0) }
+        case .more:
+            return More.allCases.map { NavigationCellType.more($0) }
+        }
     }
 }

@@ -64,8 +64,9 @@ final class InputTextField: UITextField {
     private lazy var menuButton = MenuButton(type: .custom).apply { $0.menuType = type.menuType }
     
     private lazy var toolbar = UIToolbar(
-        frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 40)
+        frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 45)
     ).apply {
+        $0.barStyle = .default
         let doneButton = UIBarButtonItem(
             barButtonSystemItem: .done, target: self, action: #selector(doneButtonTapped)
         )

@@ -27,6 +27,12 @@ final class AnnouncementsViewController: BaseViewController {
     
     private lazy var announcementsView = AnnouncementsView(viewModel: viewModel, type: type)
     
+    private lazy var deleteButton = UIBarButtonItem(
+        barButtonSystemItem: .trash,
+        target: self,
+        action: #selector(deleteButtonTapped)
+    )
+    
     // MARK: - Object Lifecycle
     
     init(viewModel: AnnouncementsViewModel, type: AnnouncementsType) {
@@ -54,9 +60,6 @@ final class AnnouncementsViewController: BaseViewController {
 private extension AnnouncementsViewController {
     func setupNavigation() {
         if type == .favorites {
-            let deleteButton = UIBarButtonItem(
-                barButtonSystemItem: .trash, target: self, action: #selector(deleteButtonTapped)
-            )
             deleteButton.isEnabled = !viewModel.items.isEmpty
             navigationItem.rightBarButtonItem = deleteButton
         }

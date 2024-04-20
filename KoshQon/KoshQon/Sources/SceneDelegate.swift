@@ -56,8 +56,11 @@ private extension SceneDelegate {
         self.window?.rootViewController = rootController
         self.window?.makeKeyAndVisible()
         
-        let coordinator = AppCoordinator(router: Router(rootController: rootController),
-                                         coordinatorFactory: CoordinatorFactory())
+        let coordinator = AppCoordinator(
+            router: Router(rootController: rootController),
+            coordinatorFactory: CoordinatorFactory()
+        )
+        
         return coordinator
     }
 }
