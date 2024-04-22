@@ -1,0 +1,6 @@
+framework module Pods_KoshQon_KoshQonUITests {
+  umbrella header "Pods-KoshQon-KoshQonUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
