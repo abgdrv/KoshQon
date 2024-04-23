@@ -11,20 +11,21 @@ import KeychainSwift
 enum KeychainKeys: String {
     case tokenKey
     case expiryKey
+    case entryType
 }
 
 protocol KeychainServiceProtocol {
-    func setAuthToken(token: String, expiry: Date)
-    func getAuthToken() -> String?
-    func isTokenValid() -> Bool
-    func removeToken() -> Bool
+    func set(value: String, key: String)
+    func get(key: String) -> String?
+    func remove(key: String)
 }
 
-final class KeychainService {
+final class KeychainService: KeychainServiceProtocol {
     
     // MARK: - Properties
     
     static let shared = KeychainService(keychain: KeychainSwift())
+    
     private let keychain: KeychainSwift
     
     // MARK: - Object Lifecycle
@@ -32,16 +33,30 @@ final class KeychainService {
     private init(keychain: KeychainSwift) {
         self.keychain = keychain
     }
+    
+    // MARK: - Methods
+    
+    func set(value: String, key: String) {
+        keychain.set(value, forKey: key)
+    }
+    
+    func get(key: String) -> String? {
+        return keychain.get(key)
+    }
+    
+    func remove(key: String) {
+        keychain.delete(key)
+    }
 }
 
-extension KeychainService: KeychainServiceProtocol {
+extension KeychainService {
     func setAuthToken(token: String, expiry: Date) {
-        keychain.set(token, forKey: KeychainKeys.tokenKey.rawValue)
-        keychain.set("\(expiry.timeIntervalSince1970)", forKey: KeychainKeys.expiryKey.rawValue)
+        set(value: token, key: KeychainKeys.tokenKey.rawValue)
+        set(value: "\(expiry.timeIntervalSince1970)", key: KeychainKeys.expiryKey.rawValue)
     }
     
     func getAuthToken() -> String? {
-        return keychain.get(KeychainKeys.tokenKey.rawValue)
+        return get(key: KeychainKeys.tokenKey.rawValue)
     }
     
     func isTokenValid() -> Bool {
@@ -54,10 +69,8 @@ extension KeychainService: KeychainServiceProtocol {
         return expiryDate > Date()
     }
     
-    func removeToken() -> Bool {
-        let tokenRemoved = keychain.delete(KeychainKeys.tokenKey.rawValue)
-        let expiryRemoved = keychain.delete(KeychainKeys.expiryKey.rawValue)
-        
-        return tokenRemoved && expiryRemoved
+    func removeToken() {
+        remove(key: KeychainKeys.tokenKey.rawValue)
+        remove(key: KeychainKeys.expiryKey.rawValue)
     }
 }
