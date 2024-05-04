@@ -8,7 +8,7 @@
 #import "KoshQonUITests-Swift.h"
 
 __attribute__((constructor))
-void CucumberishInit() {
+void CucumberishInit(void) {
     
     [CucumberishInitializer setupCucumberish];
 }
