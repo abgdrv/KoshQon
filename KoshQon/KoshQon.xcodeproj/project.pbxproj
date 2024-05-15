@@ -183,6 +183,12 @@
 		47D1BE4F2BC7E3F2004992AA /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D1BE4E2BC7E3F2004992AA /* ActionButton.swift */; };
 		47D1BE512BC80B8F004992AA /* ProfileInteractionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D1BE502BC80B8F004992AA /* ProfileInteractionView.swift */; };
 		47D1BF292BD28A0C004992AA /* BottomSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D1BF282BD28A0C004992AA /* BottomSheetViewModel.swift */; };
+		47D1BF312BD3AA10004992AA /* KoshQonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D1BF302BD3AA10004992AA /* KoshQonUITests.swift */; };
+		47D1BF332BD3AA10004992AA /* KoshQonUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D1BF322BD3AA10004992AA /* KoshQonUITestsLaunchTests.swift */; };
+		47D1BF4D2BD3ACB2004992AA /* KoshQonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D1BF4C2BD3ACB2004992AA /* KoshQonTests.swift */; };
+		47D1BF542BD3AF02004992AA /* Features in Resources */ = {isa = PBXBuildFile; fileRef = 47D1BF532BD3AF02004992AA /* Features */; };
+		47D1BF572BD3B1C3004992AA /* CucumberishLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D1BF562BD3B1C3004992AA /* CucumberishLoader.m */; };
+		47D1BF592BD3B2E0004992AA /* CucumberishInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D1BF582BD3B2E0004992AA /* CucumberishInitializer.swift */; };
 		47D54CB42B918FA800021FA7 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D54CB32B918FA800021FA7 /* BottomSheetViewController.swift */; };
 		47D54CBB2B91D22F00021FA7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D54CBA2B91D22F00021FA7 /* Constants.swift */; };
 		47D54CC32B91EC5800021FA7 /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D54CC22B91EC5800021FA7 /* MainScreenView.swift */; };
@@ -192,9 +198,28 @@
 		47D54CE82B963F5900021FA7 /* NSObject+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D54CE72B963F5900021FA7 /* NSObject+Extensions.swift */; };
 		47D54CEA2B9640C900021FA7 /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D54CE92B9640C900021FA7 /* SeparatorView.swift */; };
 		47D54CEC2B96419700021FA7 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D54CEB2B96419700021FA7 /* UIView+Extensions.swift */; };
+		A2BFAC16081DDB0F2EAD971E /* Pods_KoshQon_KoshQonUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42CE84A5574DC805229D129B /* Pods_KoshQon_KoshQonUITests.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		47D1BF342BD3AA10004992AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4756A01B2B7FCC56003F9675 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4756A0222B7FCC56003F9675;
+			remoteInfo = KoshQon;
+		};
+		47D1BF4E2BD3ACB2004992AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4756A01B2B7FCC56003F9675 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4756A0222B7FCC56003F9675;
+			remoteInfo = KoshQon;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		42CE84A5574DC805229D129B /* Pods_KoshQon_KoshQonUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KoshQon_KoshQonUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		471086452B9C9AA900556C2D /* AnnouncementCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementCell.swift; sourceTree = "<group>"; };
 		471086472B9E299900556C2D /* Announcement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Announcement.swift; sourceTree = "<group>"; };
 		471086492B9E308F00556C2D /* MainSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSectionHeaderView.swift; sourceTree = "<group>"; };
@@ -372,6 +397,15 @@
 		47D1BE4E2BC7E3F2004992AA /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		47D1BE502BC80B8F004992AA /* ProfileInteractionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInteractionView.swift; sourceTree = "<group>"; };
 		47D1BF282BD28A0C004992AA /* BottomSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewModel.swift; sourceTree = "<group>"; };
+		47D1BF2E2BD3AA10004992AA /* KoshQonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KoshQonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		47D1BF302BD3AA10004992AA /* KoshQonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoshQonUITests.swift; sourceTree = "<group>"; };
+		47D1BF322BD3AA10004992AA /* KoshQonUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoshQonUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		47D1BF4A2BD3ACB2004992AA /* KoshQonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KoshQonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		47D1BF4C2BD3ACB2004992AA /* KoshQonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoshQonTests.swift; sourceTree = "<group>"; };
+		47D1BF532BD3AF02004992AA /* Features */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Features; path = ../../../Downloads/Features; sourceTree = "<group>"; };
+		47D1BF552BD3B1C3004992AA /* KoshQonUITests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KoshQonUITests-Bridging-Header.h"; sourceTree = "<group>"; };
+		47D1BF562BD3B1C3004992AA /* CucumberishLoader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CucumberishLoader.m; sourceTree = "<group>"; };
+		47D1BF582BD3B2E0004992AA /* CucumberishInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CucumberishInitializer.swift; sourceTree = "<group>"; };
 		47D54CB32B918FA800021FA7 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
 		47D54CBA2B91D22F00021FA7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		47D54CC22B91EC5800021FA7 /* MainScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenView.swift; sourceTree = "<group>"; };
@@ -383,8 +417,10 @@
 		47D54CE92B9640C900021FA7 /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
 		47D54CEB2B96419700021FA7 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		4B1CB0D67C4284B3386A5D17 /* Pods_KoshQon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KoshQon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A64B66AF75DD7EB3AA05FD9 /* Pods-KoshQon-KoshQonUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KoshQon-KoshQonUITests.debug.xcconfig"; path = "Target Support Files/Pods-KoshQon-KoshQonUITests/Pods-KoshQon-KoshQonUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5F34D042224D89E307A460AA /* Pods-KoshQon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KoshQon.release.xcconfig"; path = "Target Support Files/Pods-KoshQon/Pods-KoshQon.release.xcconfig"; sourceTree = "<group>"; };
 		6D25178508F65D3C6D2EDA43 /* Pods-KoshQon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KoshQon.debug.xcconfig"; path = "Target Support Files/Pods-KoshQon/Pods-KoshQon.debug.xcconfig"; sourceTree = "<group>"; };
+		F30C6F289700564A4B99FF0F /* Pods-KoshQon-KoshQonUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KoshQon-KoshQonUITests.release.xcconfig"; path = "Target Support Files/Pods-KoshQon-KoshQonUITests/Pods-KoshQon-KoshQonUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -393,6 +429,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C449C9348E14F8AA92EF7E4 /* Pods_KoshQon.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47D1BF2B2BD3AA10004992AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2BFAC16081DDB0F2EAD971E /* Pods_KoshQon_KoshQonUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47D1BF472BD3ACB2004992AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -911,6 +962,8 @@
 			isa = PBXGroup;
 			children = (
 				4756A0252B7FCC56003F9675 /* KoshQon */,
+				47D1BF2F2BD3AA10004992AA /* KoshQonUITests */,
+				47D1BF4B2BD3ACB2004992AA /* KoshQonTests */,
 				4756A0242B7FCC56003F9675 /* Products */,
 				F4F4C04DC072056AA5C84DC2 /* Pods */,
 				859EE003E211FF3686884D56 /* Frameworks */,
@@ -921,6 +974,8 @@
 			isa = PBXGroup;
 			children = (
 				4756A0232B7FCC56003F9675 /* KoshQon.app */,
+				47D1BF2E2BD3AA10004992AA /* KoshQonUITests.xctest */,
+				47D1BF4A2BD3ACB2004992AA /* KoshQonTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1560,6 +1615,27 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		47D1BF2F2BD3AA10004992AA /* KoshQonUITests */ = {
+			isa = PBXGroup;
+			children = (
+				47D1BF532BD3AF02004992AA /* Features */,
+				47D1BF302BD3AA10004992AA /* KoshQonUITests.swift */,
+				47D1BF322BD3AA10004992AA /* KoshQonUITestsLaunchTests.swift */,
+				47D1BF562BD3B1C3004992AA /* CucumberishLoader.m */,
+				47D1BF552BD3B1C3004992AA /* KoshQonUITests-Bridging-Header.h */,
+				47D1BF582BD3B2E0004992AA /* CucumberishInitializer.swift */,
+			);
+			path = KoshQonUITests;
+			sourceTree = "<group>";
+		};
+		47D1BF4B2BD3ACB2004992AA /* KoshQonTests */ = {
+			isa = PBXGroup;
+			children = (
+				47D1BF4C2BD3ACB2004992AA /* KoshQonTests.swift */,
+			);
+			path = KoshQonTests;
+			sourceTree = "<group>";
+		};
 		47D54CB92B91D22100021FA7 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
@@ -1621,6 +1697,7 @@
 			isa = PBXGroup;
 			children = (
 				4B1CB0D67C4284B3386A5D17 /* Pods_KoshQon.framework */,
+				42CE84A5574DC805229D129B /* Pods_KoshQon_KoshQonUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1630,6 +1707,8 @@
 			children = (
 				6D25178508F65D3C6D2EDA43 /* Pods-KoshQon.debug.xcconfig */,
 				5F34D042224D89E307A460AA /* Pods-KoshQon.release.xcconfig */,
+				5A64B66AF75DD7EB3AA05FD9 /* Pods-KoshQon-KoshQonUITests.debug.xcconfig */,
+				F30C6F289700564A4B99FF0F /* Pods-KoshQon-KoshQonUITests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -1656,6 +1735,44 @@
 			productReference = 4756A0232B7FCC56003F9675 /* KoshQon.app */;
 			productType = "com.apple.product-type.application";
 		};
+		47D1BF2D2BD3AA10004992AA /* KoshQonUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 47D1BF362BD3AA10004992AA /* Build configuration list for PBXNativeTarget "KoshQonUITests" */;
+			buildPhases = (
+				B7F7B1DEC815EFE8E856EADD /* [CP] Check Pods Manifest.lock */,
+				47D1BF2A2BD3AA10004992AA /* Sources */,
+				47D1BF2B2BD3AA10004992AA /* Frameworks */,
+				47D1BF2C2BD3AA10004992AA /* Resources */,
+				3655FD5BFFDEF67523CA85CC /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				47D1BF352BD3AA10004992AA /* PBXTargetDependency */,
+			);
+			name = KoshQonUITests;
+			productName = KoshQonUITests;
+			productReference = 47D1BF2E2BD3AA10004992AA /* KoshQonUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		47D1BF492BD3ACB2004992AA /* KoshQonTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 47D1BF502BD3ACB2004992AA /* Build configuration list for PBXNativeTarget "KoshQonTests" */;
+			buildPhases = (
+				47D1BF462BD3ACB2004992AA /* Sources */,
+				47D1BF472BD3ACB2004992AA /* Frameworks */,
+				47D1BF482BD3ACB2004992AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				47D1BF4F2BD3ACB2004992AA /* PBXTargetDependency */,
+			);
+			name = KoshQonTests;
+			productName = KoshQonTests;
+			productReference = 47D1BF4A2BD3ACB2004992AA /* KoshQonTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1663,11 +1780,20 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1520;
+				LastSwiftUpdateCheck = 1530;
 				LastUpgradeCheck = 1520;
 				TargetAttributes = {
 					4756A0222B7FCC56003F9675 = {
 						CreatedOnToolsVersion = 15.2;
+					};
+					47D1BF2D2BD3AA10004992AA = {
+						CreatedOnToolsVersion = 15.3;
+						LastSwiftMigration = 1530;
+						TestTargetID = 4756A0222B7FCC56003F9675;
+					};
+					47D1BF492BD3ACB2004992AA = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 4756A0222B7FCC56003F9675;
 					};
 				};
 			};
@@ -1686,6 +1812,8 @@
 			projectRoot = "";
 			targets = (
 				4756A0222B7FCC56003F9675 /* KoshQon */,
+				47D1BF2D2BD3AA10004992AA /* KoshQonUITests */,
+				47D1BF492BD3ACB2004992AA /* KoshQonTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1703,6 +1831,21 @@
 				47C7B3812B81321800125172 /* SF-Pro-Display-Regular.otf in Resources */,
 				4764D5882B84D47900D15A2E /* Anta-Regular.ttf in Resources */,
 				47C7B37F2B81321800125172 /* SF-Pro-Display-Medium.otf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47D1BF2C2BD3AA10004992AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47D1BF542BD3AF02004992AA /* Features in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47D1BF482BD3ACB2004992AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1726,6 +1869,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KoshQon/Pods-KoshQon-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		3655FD5BFFDEF67523CA85CC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KoshQon-KoshQonUITests/Pods-KoshQon-KoshQonUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KoshQon-KoshQonUITests/Pods-KoshQon-KoshQonUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KoshQon-KoshQonUITests/Pods-KoshQon-KoshQonUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		9216BE3942CAB8A76E0F2D3C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1742,6 +1902,28 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-KoshQon-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B7F7B1DEC815EFE8E856EADD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KoshQon-KoshQonUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1934,7 +2116,39 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		47D1BF2A2BD3AA10004992AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47D1BF332BD3AA10004992AA /* KoshQonUITestsLaunchTests.swift in Sources */,
+				47D1BF592BD3B2E0004992AA /* CucumberishInitializer.swift in Sources */,
+				47D1BF572BD3B1C3004992AA /* CucumberishLoader.m in Sources */,
+				47D1BF312BD3AA10004992AA /* KoshQonUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47D1BF462BD3ACB2004992AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47D1BF4D2BD3ACB2004992AA /* KoshQonTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		47D1BF352BD3AA10004992AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4756A0222B7FCC56003F9675 /* KoshQon */;
+			targetProxy = 47D1BF342BD3AA10004992AA /* PBXContainerItemProxy */;
+		};
+		47D1BF4F2BD3ACB2004992AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4756A0222B7FCC56003F9675 /* KoshQon */;
+			targetProxy = 47D1BF4E2BD3ACB2004992AA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4756A0312B7FCC57003F9675 /* LaunchScreen.storyboard */ = {
@@ -2131,6 +2345,93 @@
 			};
 			name = Release;
 		};
+		47D1BF372BD3AA10004992AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A64B66AF75DD7EB3AA05FD9 /* Pods-KoshQon-KoshQonUITests.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 9QVR9UVA7V;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.abgdrv.KoshQonUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "KoshQonUITests/KoshQonUITests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = KoshQon;
+			};
+			name = Debug;
+		};
+		47D1BF382BD3AA10004992AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F30C6F289700564A4B99FF0F /* Pods-KoshQon-KoshQonUITests.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 9QVR9UVA7V;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.abgdrv.KoshQonUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "KoshQonUITests/KoshQonUITests-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = KoshQon;
+			};
+			name = Release;
+		};
+		47D1BF512BD3ACB2004992AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9QVR9UVA7V;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.abgdrv.KoshQonTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KoshQon.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/KoshQon";
+			};
+			name = Debug;
+		};
+		47D1BF522BD3ACB2004992AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9QVR9UVA7V;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.abgdrv.KoshQonTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KoshQon.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/KoshQon";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -2148,6 +2449,24 @@
 			buildConfigurations = (
 				4756A0382B7FCC57003F9675 /* Debug */,
 				4756A0392B7FCC57003F9675 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		47D1BF362BD3AA10004992AA /* Build configuration list for PBXNativeTarget "KoshQonUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47D1BF372BD3AA10004992AA /* Debug */,
+				47D1BF382BD3AA10004992AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		47D1BF502BD3ACB2004992AA /* Build configuration list for PBXNativeTarget "KoshQonTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47D1BF512BD3ACB2004992AA /* Debug */,
+				47D1BF522BD3ACB2004992AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
