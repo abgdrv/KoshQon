@@ -43,7 +43,8 @@ extension FlowFactory: SplashScreenFlowFactory,
                        ProfileFlowFactory,
                        SettingsFlowFactory,
                        EditProfileFlowFactory,
-                       FriendsFlowFactory {
+                       FriendsFlowFactory,
+                       PassCodeFlowFactory {
     
     func makeSplashScreen() -> SplashScreenViewController {
         let vc = SplashScreenViewController()
@@ -157,5 +158,11 @@ extension FlowFactory: SplashScreenFlowFactory,
     
     func makeBottomSheetView() -> BottomSheetViewController {
         return BottomSheetViewController(isLong: false)
+    }
+    
+    func makePasscodeView(type: PassCodeType) -> PassCodeViewController {
+        let vm = PassCodeViewModel(type: type)
+        let vc = PassCodeViewController(viewModel: vm)
+        return vc
     }
 }

@@ -12,11 +12,14 @@ class PassCodeViewController: BaseViewController {
     
     // MARK: - Properties
     
+    var passcodeDidEnter: Callback<Bool>?
+    
     private let viewModel: PassCodeViewModel
     
     // MARK: - UI
     
-    private lazy var hostingController = UIHostingController(rootView: PassCodeView(viewModel: viewModel))
+    private lazy var passcodeView = PassCodeView(viewModel: viewModel)
+    private lazy var hostingController = UIHostingController(rootView: passcodeView)
     private lazy var passCodeView = hostingController.view ?? UIView()
     
     // MARK: - Object Lifecycle
@@ -30,6 +33,7 @@ class PassCodeViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupBindings()
         setupViews()
         setupConstraints()
     }
@@ -45,6 +49,13 @@ private extension PassCodeViewController {
     func setupConstraints() {
         passCodeView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
+        }
+    }
+    
+    func setupBindings() {
+        passcodeView.passwordDidEnter = { [weak self] isVerify in
+            guard let self = self else { return }
+            self.passcodeDidEnter?(isVerify)
         }
     }
 }

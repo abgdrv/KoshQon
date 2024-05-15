@@ -12,6 +12,9 @@
 		471086482B9E299900556C2D /* Announcement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471086472B9E299900556C2D /* Announcement.swift */; };
 		4710864A2B9E308F00556C2D /* MainSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471086492B9E308F00556C2D /* MainSectionHeaderView.swift */; };
 		471086522B9E42E100556C2D /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471086512B9E42E100556C2D /* TabBarController.swift */; };
+		471599682BF1D0F200022D62 /* PassCodeFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471599672BF1D0F200022D62 /* PassCodeFlowFactory.swift */; };
+		4715996A2BF1D68200022D62 /* PassCodeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471599692BF1D68200022D62 /* PassCodeCoordinator.swift */; };
+		4715996C2BF1D69100022D62 /* PassCodeOutputCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4715996B2BF1D69100022D62 /* PassCodeOutputCoordinator.swift */; };
 		4715D0442BD64D7900DF7868 /* NumberPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4715D0432BD64D7900DF7868 /* NumberPadView.swift */; };
 		4715D0462BD64E9700DF7868 /* NumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4715D0452BD64E9700DF7868 /* NumberView.swift */; };
 		4715D0482BD650A100DF7868 /* PasscodeIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4715D0472BD650A100DF7868 /* PasscodeIndicatorView.swift */; };
@@ -224,6 +227,9 @@
 		471086472B9E299900556C2D /* Announcement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Announcement.swift; sourceTree = "<group>"; };
 		471086492B9E308F00556C2D /* MainSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSectionHeaderView.swift; sourceTree = "<group>"; };
 		471086512B9E42E100556C2D /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		471599672BF1D0F200022D62 /* PassCodeFlowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassCodeFlowFactory.swift; sourceTree = "<group>"; };
+		471599692BF1D68200022D62 /* PassCodeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassCodeCoordinator.swift; sourceTree = "<group>"; };
+		4715996B2BF1D69100022D62 /* PassCodeOutputCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassCodeOutputCoordinator.swift; sourceTree = "<group>"; };
 		4715D0432BD64D7900DF7868 /* NumberPadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberPadView.swift; sourceTree = "<group>"; };
 		4715D0452BD64E9700DF7868 /* NumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberView.swift; sourceTree = "<group>"; };
 		4715D0472BD650A100DF7868 /* PasscodeIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeIndicatorView.swift; sourceTree = "<group>"; };
@@ -487,10 +493,29 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		471599652BF1D0BA00022D62 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				471599692BF1D68200022D62 /* PassCodeCoordinator.swift */,
+				4715996B2BF1D69100022D62 /* PassCodeOutputCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		471599662BF1D0DC00022D62 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				471599672BF1D0F200022D62 /* PassCodeFlowFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
 		4715D0402BD64CE200DF7868 /* PassCode */ = {
 			isa = PBXGroup;
 			children = (
 				4715D0502BD66C2700DF7868 /* Helper */,
+				471599652BF1D0BA00022D62 /* Coordinator */,
+				471599662BF1D0DC00022D62 /* Factory */,
 				4715D0422BD64D6700DF7868 /* Views */,
 				4715D0412BD64CFC00DF7868 /* ViewController */,
 				4715D0532BD67A4000DF7868 /* ViewModel */,
@@ -574,12 +599,12 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		472E1B2E2B8348B5005BF649 /* View Controller */ = {
+		472E1B2E2B8348B5005BF649 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				472E1B2B2B83215C005BF649 /* SplashScreenViewController.swift */,
 			);
-			path = "View Controller";
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		472E1B2F2B8348CA005BF649 /* Coordinator */ = {
@@ -758,7 +783,7 @@
 				472E1B2F2B8348CA005BF649 /* Coordinator */,
 				475224EE2BA9EC61000DAE1B /* Factory */,
 				472E1B2D2B834832005BF649 /* Views */,
-				472E1B2E2B8348B5005BF649 /* View Controller */,
+				472E1B2E2B8348B5005BF649 /* ViewController */,
 			);
 			path = SplashScreen;
 			sourceTree = "<group>";
@@ -1940,6 +1965,7 @@
 				47D1BE362BC64B37004992AA /* FriendsViewModel.swift in Sources */,
 				47D1BE2D2BC1E4B1004992AA /* ImageSetCoordinator.swift in Sources */,
 				47C01E102BB28CCD00D1B2F2 /* FavoritesFlowFactory.swift in Sources */,
+				4715996C2BF1D69100022D62 /* PassCodeOutputCoordinator.swift in Sources */,
 				475224E42BA9D5CC000DAE1B /* Router.swift in Sources */,
 				47D54CE82B963F5900021FA7 /* NSObject+Extensions.swift in Sources */,
 				475224942BA04E79000DAE1B /* MainScreenViewModel.swift in Sources */,
@@ -2031,6 +2057,7 @@
 				475224B42BA41AED000DAE1B /* ProfileAboutView.swift in Sources */,
 				47D1BDD62BB553BC004992AA /* ProfileDetail.swift in Sources */,
 				471086522B9E42E100556C2D /* TabBarController.swift in Sources */,
+				4715996A2BF1D68200022D62 /* PassCodeCoordinator.swift in Sources */,
 				475224A52BA162A4000DAE1B /* Reusable.swift in Sources */,
 				47D1BE3B2BC64C55004992AA /* FriendCellViewModel.swift in Sources */,
 				47CD671A2B8796060035DCB6 /* SmsCodeViewController.swift in Sources */,
@@ -2054,6 +2081,7 @@
 				47C01E2C2BB2D9B800D1B2F2 /* ProfileOutputCoordinator.swift in Sources */,
 				47D54CB42B918FA800021FA7 /* BottomSheetViewController.swift in Sources */,
 				47CD675C2B90950E0035DCB6 /* PersonalViewController.swift in Sources */,
+				471599682BF1D0F200022D62 /* PassCodeFlowFactory.swift in Sources */,
 				47CD67182B87635C0035DCB6 /* SmsCodeViewModel.swift in Sources */,
 				4756A0272B7FCC56003F9675 /* AppDelegate.swift in Sources */,
 				475224CF2BA9CA21000DAE1B /* Coordinator.swift in Sources */,

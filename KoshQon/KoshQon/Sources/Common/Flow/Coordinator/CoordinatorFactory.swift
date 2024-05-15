@@ -70,6 +70,11 @@ final class CoordinatorFactory: CoordinatorFactoryProtocol {
         let coordinator = FriendsCoordinator(router: router, factory: FlowFactory(), coordinatorFactory: coordinatorFactory)
         return coordinator
     }
+    
+    func makePassCodeCoordinator(passcodeType: PassCodeType, router: RouterProtocol) -> Coordinator & PassCodeOutputCoordinator {
+        let coordinator = PassCodeCoordinator(passcodeType: passcodeType, router: router, factory: FlowFactory())
+        return coordinator
+    }
 }
 
 private extension CoordinatorFactory {

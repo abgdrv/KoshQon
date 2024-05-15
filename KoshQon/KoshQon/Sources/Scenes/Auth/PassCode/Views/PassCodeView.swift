@@ -14,33 +14,36 @@ struct PassCodeView: View {
     
     private let viewModel: PassCodeViewModel
     
+    var passwordDidEnter: Callback<Bool>?
+        
     init(viewModel: PassCodeViewModel) {
         self.viewModel = viewModel
     }
     
     var body: some View {
         VStack(spacing: 50) {
-            Text("Вв")
+            Text(viewModel.title)
             PasscodeIndicatorView(passcode: $passcode)
                 .shake($shake)
             NumberPadView(passcode: $passcode)
                 .padding()
         }.onChange(of: passcode, perform: { value in
-            verifyPasscode()
+            submitPasscode()
         })
     }
     
-    private func verifyPasscode(){
+    private func submitPasscode() {
         guard passcode.count == 4 else { return }
         
-        Task{
+        Task {
             try? await Task.sleep(nanoseconds: 125_000_000)
-            shake = passcode != "1111"
+            shake = viewModel.checkPasscode(code: passcode)
+            viewModel.submitPasscode(code: passcode) { isVerify in 
+                DispatchQueue.main.async {
+                    self.passwordDidEnter?(isVerify)
+                }
+            }
             passcode = ""
         }
     }
-}
-
-#Preview {
-    PassCodeView(viewModel: PassCodeViewModel())
 }

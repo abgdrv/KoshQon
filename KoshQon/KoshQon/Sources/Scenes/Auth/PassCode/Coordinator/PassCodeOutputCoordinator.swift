@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+protocol PassCodeOutputCoordinator {
+    var finishFlow: VoidCallback? { get set }
+}

@@ -38,6 +38,7 @@ class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        modalPresentationCapturesStatusBarAppearance = true
         view.backgroundColor = AppColor.Theme.mainBackground.uiColor
         setupNavigation()
     }

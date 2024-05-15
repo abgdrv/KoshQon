@@ -22,4 +22,5 @@ protocol CoordinatorFactoryProtocol {
     func makeSettingsCoordinator(router: RouterProtocol, coordinatorFactory: CoordinatorFactory) -> Coordinator & SettingsOutputCoordinator
     func makeEditProfileCoordinator(router: RouterProtocol) -> Coordinator & EditProfileOutputCoordinator
     func makeFriendsCoordinator(router: RouterProtocol, coordinatorFactory: CoordinatorFactory) -> Coordinator & FriendsOutputCoordinator
+    func makePassCodeCoordinator(passcodeType: PassCodeType ,router: RouterProtocol) -> Coordinator & PassCodeOutputCoordinator
 }

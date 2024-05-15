@@ -43,7 +43,3 @@ struct NumberPadView: View {
         }
     }
 }
-
-#Preview {
-    NumberPadView(passcode: .constant(""))
-}

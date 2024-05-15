@@ -12,6 +12,7 @@ enum KeychainKeys: String {
     case tokenKey
     case expiryKey
     case entryType
+    case passcode
 }
 
 protocol KeychainServiceProtocol {

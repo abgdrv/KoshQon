@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+protocol PassCodeFlowFactory: AlertFlowFactory {
+    func makePasscodeView(type: PassCodeType) -> PassCodeViewController
+}

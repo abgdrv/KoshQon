@@ -43,8 +43,25 @@ private extension AppCoordinator {
     }
     
     func runAuthFlow() {
-        var coordinator = coordinatorFactory.makeAuthCoordinator(router: router,
-                                                                 coordinatorFactory: coordinatorFactory)
+        var coordinator = coordinatorFactory.makeAuthCoordinator(router: router, coordinatorFactory: coordinatorFactory)
+        coordinator.finishFlow = { [weak self] in
+            guard let self = self else { return }
+            self.removeDependency(coordinator)
+            self.runPasscodeFlow()
+        }
+        addDependency(coordinator)
+        coordinator.start()
+    }
+    
+    func runPasscodeFlow() {
+        let passcodeType: PassCodeType
+        if let passcode = UserDefaultsService.shared.value(for: KeychainKeys.passcode.rawValue) as? String {
+            passcodeType = .verify
+        } else {
+            passcodeType = .enter
+        }
+        
+        var coordinator = coordinatorFactory.makePassCodeCoordinator(passcodeType: passcodeType, router: router)
         coordinator.finishFlow = { [weak self] in
             guard let self = self else { return }
             self.removeDependency(coordinator)

@@ -78,6 +78,7 @@ private extension SettingsCoordinator {
     func showQuit() {
         let actions: [UIAlertAction] = [
             UIAlertAction(title: "Выйти", style: .destructive, handler: { action in
+                UserDefaultsService.shared.removeObject(for: KeychainKeys.passcode.rawValue)
                 self.finishFlow?()
             }),
             UIAlertAction(title: "Отмена", style: .cancel)
