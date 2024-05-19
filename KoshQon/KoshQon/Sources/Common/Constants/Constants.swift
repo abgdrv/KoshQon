@@ -9,6 +9,10 @@ import UIKit
 
 enum Constants {
     
+    static let url = ""
+    static let authToken = "authToken"
+    static var isExpired = false
+    
     // MARK: - App
     
     enum App {

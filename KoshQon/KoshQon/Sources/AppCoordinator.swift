@@ -55,7 +55,7 @@ private extension AppCoordinator {
     
     func runPasscodeFlow() {
         let passcodeType: PassCodeType
-        if let passcode = UserDefaultsService.shared.value(for: KeychainKeys.passcode.rawValue) as? String {
+        if let _ = UserDefaultsService.shared.value(for: KeychainKeys.passcode.rawValue) as? String {
             passcodeType = .verify
         } else {
             passcodeType = .enter

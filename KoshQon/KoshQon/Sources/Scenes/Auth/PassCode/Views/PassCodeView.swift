@@ -37,7 +37,7 @@ struct PassCodeView: View {
         
         Task {
             try? await Task.sleep(nanoseconds: 125_000_000)
-            shake = viewModel.checkPasscode(code: passcode)
+            shake = !viewModel.checkPasscode(code: passcode)
             viewModel.submitPasscode(code: passcode) { isVerify in 
                 DispatchQueue.main.async {
                     self.passwordDidEnter?(isVerify)

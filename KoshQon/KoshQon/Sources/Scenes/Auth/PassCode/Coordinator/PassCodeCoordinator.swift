@@ -38,13 +38,11 @@ private extension PassCodeCoordinator {
         view.passcodeDidEnter = { [weak self] isVerify in
             guard let self = self else { return }
             if type == .enter {
-                router.dismiss(view)
                 showPasscode(type: .verify)
             } else {
-                router.dismiss(view)
                 self.finishFlow?()
             }
         }
-        router.present(view)
+        router.push(view)
     }
 }

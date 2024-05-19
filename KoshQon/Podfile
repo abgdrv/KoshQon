@@ -12,6 +12,8 @@ target 'KoshQon' do
   pod 'RSKImageCropper'
   pod 'KeychainSwift'
   pod 'ContextMenuSwift'
+  pod 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire.git', :branch => 'alamofire5'
+  pod 'SVProgressHUD'
 
   target 'KoshQonUITests' do
     # Pods for UI testing
