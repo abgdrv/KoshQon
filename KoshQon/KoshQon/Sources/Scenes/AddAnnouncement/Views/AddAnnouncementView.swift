@@ -5,50 +5,30 @@
 //  Created by Almat Begaidarov on 26.03.2024.
 //
 
-import UIKit
-import SnapKit
+import SwiftUI
+import PhotosUI
 
-final class AddAnnouncementView: BaseView {
-
-    // MARK: - Properties
+struct AddAnnouncementView: View {
     
-    // MARK: - UI
+    @ObservedObject var viewModel: AddAnnouncementViewModel
     
-    private lazy var mainTitleLabel = UILabel().apply {
-        $0.text = "Подать"
-        $0.set(font: AppFont.medium.s24, textColor: AppColor.Theme.mainTitle.uiColor)
-    }
-    
-    private lazy var newAnnouncementTitleLabel = UILabel().apply {
-        $0.text = "Новое объявление"
-        $0.set(font: AppFont.medium.s16, textColor: AppColor.Theme.mainTitle.uiColor)
-    }
-    
-    // MARK: - Object Lifecycle
-    
-    override init() {
-        super.init()
-        setupViews()
-        setupConstraints()
-    }
-}
-
-// MARK: - Setup Views
-
-private extension AddAnnouncementView {
-    func setupViews() {
-        addSubviews(mainTitleLabel, newAnnouncementTitleLabel)
-    }
-    
-    func setupConstraints() {
-        mainTitleLabel.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide.snp.top)
-            make.leading.equalToSuperview().offset(16)
+    var body: some View {
+        ScrollView(showsIndicators: false) {
+            VStack(alignment: .leading, spacing: 16) {
+                VStack(alignment: .leading, spacing: 10) {
+                    Text("Подать")
+                        .font(AppFont.medium.s24.swiftUIFont)
+                    
+                    Text("Новое объявление")
+                        .font(AppFont.medium.s16.swiftUIFont)
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .foregroundStyle(AppColor.Theme.mainTitle.swiftUIColor)
+                
+                Spacer()
+            }
+            .padding(.horizontal)
         }
-        
-        newAnnouncementTitleLabel.snp.makeConstraints { make in
-            make.top.equalTo(mainTitleLabel.snp.bottom).offset(10)
-            make.leading.equalToSuperview().offset(16)
-        }
+        .ignoresSafeArea(.keyboard)
     }
 }

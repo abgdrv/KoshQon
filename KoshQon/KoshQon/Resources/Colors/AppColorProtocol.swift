@@ -5,7 +5,7 @@
 //  Created by Almat Begaidarov on 17.02.2024.
 //
 
-import UIKit
+import SwiftUI
 
 protocol AppColorProtocol {
     var rawValue: String { get }
@@ -21,5 +21,9 @@ extension AppColorProtocol {
     
     var cgColor: CGColor {
         return uiColor.cgColor
+    }
+    
+    var swiftUIColor: Color {
+        return Color(uiColor: uiColor)
     }
 }

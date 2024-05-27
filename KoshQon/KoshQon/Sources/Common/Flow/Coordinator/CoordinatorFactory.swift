@@ -75,6 +75,11 @@ final class CoordinatorFactory: CoordinatorFactoryProtocol {
         let coordinator = PassCodeCoordinator(passcodeType: passcodeType, router: router, factory: FlowFactory())
         return coordinator
     }
+    
+    func makeMessagesCoordinator(navController: UINavigationController) -> any Coordinator & MessagesOutputCoordinator {
+        let coordinator = MessagesCoordinator(router: router(navController), factory: FlowFactory(), coordinatorFactory: self)
+        return coordinator
+    }
 }
 
 private extension CoordinatorFactory {

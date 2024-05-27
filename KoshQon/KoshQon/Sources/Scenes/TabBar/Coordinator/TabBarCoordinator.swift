@@ -40,11 +40,13 @@ private extension TabBarCoordinator {
         let showMainScreenFlow = showMainScreenFlow()
         let showFavoritesFlow = showFavoritesFlow()
         let showAddAnnouncementFlow = showAddAnnouncementFlow()
+        let showMessagesFlow = showMessagesFlow()
         let showProfileFlow = showProfileFlow()
         tabBarView.didViewAppear = showMainScreenFlow
         tabBarView.didMainScreenSelect = showMainScreenFlow
         tabBarView.didFavoritesSelect = showFavoritesFlow
         tabBarView.didAddAnnouncementSelect = showAddAnnouncementFlow
+        tabBarView.didMessagesSelect = showMessagesFlow
         tabBarView.didProfileSelect = showProfileFlow
         router.setRootModule(tabBarView, hideNavBar: true)
     }
@@ -106,6 +108,22 @@ private extension TabBarCoordinator {
             self.navController = navController
             if navController.viewControllers.isEmpty {
                 var coordinator = self.coordinatorFactory.makeProfileCoordinator(profileType: .myProfile, navController: navController)
+                coordinator.finishFlow = { [weak self] in
+                    guard let self = self else { return }
+                    self.removeDependency(coordinator)
+                    self.finishFlow?()
+                }
+                self.addDependency(coordinator)
+                coordinator.start()
+            }
+        }
+    }
+    
+    func showMessagesFlow() -> Callback<UINavigationController> {
+        return { [unowned self] navController in
+            self.navController = navController
+            if navController.viewControllers.isEmpty {
+                var coordinator = self.coordinatorFactory.makeMessagesCoordinator(navController: navController)
                 coordinator.finishFlow = { [weak self] in
                     guard let self = self else { return }
                     self.removeDependency(coordinator)

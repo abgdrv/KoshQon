@@ -5,7 +5,8 @@
 //  Created by Almat Begaidarov on 26.03.2024.
 //
 
-import UIKit
+import SwiftUI
+import SnapKit
 
 final class AddAnnouncementViewController: BaseViewController {
     
@@ -17,7 +18,8 @@ final class AddAnnouncementViewController: BaseViewController {
     
     // MARK: - UI
     
-    private lazy var addAnnouncementView = AddAnnouncementView()
+    private lazy var hostingController = UIHostingController(rootView: AddAnnouncementView(viewModel: viewModel))
+    private lazy var addAnnouncementView = hostingController.view ?? UIView()
     
     private lazy var closeButton = UIBarButtonItem(
         title: "Закрыть",
@@ -36,14 +38,11 @@ final class AddAnnouncementViewController: BaseViewController {
     }
     
     // MARK: - View Lifecycle
-    
-    override func loadView() {
-        super.loadView()
-        view = addAnnouncementView
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupViews()
+        setupConstraints()
         setupNavigation()
     }
     
@@ -61,6 +60,17 @@ final class AddAnnouncementViewController: BaseViewController {
 // MARK: - Setup
 
 private extension AddAnnouncementViewController {
+    func setupViews() {
+        view.addSubview(addAnnouncementView)
+    }
+    
+    func setupConstraints() {
+        addAnnouncementView.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            make.leading.trailing.bottom.equalToSuperview()
+        }
+    }
+    
     func setupNavigation() {
         navigationItem.rightBarButtonItem = closeButton
     }
@@ -73,4 +83,3 @@ private extension AddAnnouncementViewController {
         didClose?()
     }
 }
-

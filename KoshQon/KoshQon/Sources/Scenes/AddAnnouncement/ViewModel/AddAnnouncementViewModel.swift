@@ -7,6 +7,6 @@
 
 import Foundation
 
-final class AddAnnouncementViewModel {
+final class AddAnnouncementViewModel: ObservableObject {
     
 }
