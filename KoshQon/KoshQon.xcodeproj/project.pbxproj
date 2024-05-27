@@ -306,6 +306,8 @@
 		47F5712A2C038B6F008DCA81 /* ATCViewControllerContainerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570CA2C038B6E008DCA81 /* ATCViewControllerContainerCollectionViewCell.swift */; };
 		47F5712B2C038B6F008DCA81 /* ATCViewControllerContainerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47F570CB2C038B6E008DCA81 /* ATCViewControllerContainerCollectionViewCell.xib */; };
 		47F5712E2C044143008DCA81 /* MessagessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F5712D2C044143008DCA81 /* MessagessViewController.swift */; };
+		47F571302C044946008DCA81 /* LanguageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F5712F2C044946008DCA81 /* LanguageService.swift */; };
+		47F571322C0449B6008DCA81 /* LanguageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F571312C0449B6008DCA81 /* LanguageType.swift */; };
 		A2BFAC16081DDB0F2EAD971E /* Pods_KoshQon_KoshQonUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42CE84A5574DC805229D129B /* Pods_KoshQon_KoshQonUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -633,6 +635,8 @@
 		47F570CA2C038B6E008DCA81 /* ATCViewControllerContainerCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCViewControllerContainerCollectionViewCell.swift; sourceTree = "<group>"; };
 		47F570CB2C038B6E008DCA81 /* ATCViewControllerContainerCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ATCViewControllerContainerCollectionViewCell.xib; sourceTree = "<group>"; };
 		47F5712D2C044143008DCA81 /* MessagessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagessViewController.swift; sourceTree = "<group>"; };
+		47F5712F2C044946008DCA81 /* LanguageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageService.swift; sourceTree = "<group>"; };
+		47F571312C0449B6008DCA81 /* LanguageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageType.swift; sourceTree = "<group>"; };
 		4B1CB0D67C4284B3386A5D17 /* Pods_KoshQon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KoshQon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A64B66AF75DD7EB3AA05FD9 /* Pods-KoshQon-KoshQonUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KoshQon-KoshQonUITests.debug.xcconfig"; path = "Target Support Files/Pods-KoshQon-KoshQonUITests/Pods-KoshQon-KoshQonUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5F34D042224D89E307A460AA /* Pods-KoshQon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KoshQon.release.xcconfig"; path = "Target Support Files/Pods-KoshQon/Pods-KoshQon.release.xcconfig"; sourceTree = "<group>"; };
@@ -1172,6 +1176,7 @@
 				475224E82BA9DC5E000DAE1B /* AppThemeService.swift */,
 				47C01DEC2BAF5FE700D1B2F2 /* KeychainService.swift */,
 				4715D04E2BD66B9200DF7868 /* BiometricService.swift */,
+				47F5712F2C044946008DCA81 /* LanguageService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1264,6 +1269,7 @@
 				475224FE2BAB2055000DAE1B /* Country.swift */,
 				475225002BAB37E5000DAE1B /* Gender.swift */,
 				47D1BDF92BBA6E07004992AA /* City.swift */,
+				47F571312C0449B6008DCA81 /* LanguageType.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -2588,6 +2594,7 @@
 				47F570E32C038B6F008DCA81 /* ATCGenericLocalHeteroDataSource.swift in Sources */,
 				47F570F72C038B6F008DCA81 /* ConstraintLayoutSupportDSL.swift in Sources */,
 				475224D52BA9CB56000DAE1B /* BaseCoordinator.swift in Sources */,
+				47F571302C044946008DCA81 /* LanguageService.swift in Sources */,
 				4715D0482BD650A100DF7868 /* PasscodeIndicatorView.swift in Sources */,
 				47F570FA2C038B6F008DCA81 /* ConstraintMakerExtendable.swift in Sources */,
 				47CD67382B8DA33E0035DCB6 /* NavigationTitleView.swift in Sources */,
@@ -2655,6 +2662,7 @@
 				47F571082C038B6F008DCA81 /* LayoutConstraint.swift in Sources */,
 				475224B42BA41AED000DAE1B /* ProfileAboutView.swift in Sources */,
 				47D1BDD62BB553BC004992AA /* ProfileDetail.swift in Sources */,
+				47F571322C0449B6008DCA81 /* LanguageType.swift in Sources */,
 				47F570532C0388C7008DCA81 /* MessagesCoordinator.swift in Sources */,
 				471086522B9E42E100556C2D /* TabBarController.swift in Sources */,
 				4715996A2BF1D68200022D62 /* PassCodeCoordinator.swift in Sources */,

@@ -47,6 +47,10 @@ enum UserDefaultsKey: String {
 
 final class UserDefaultsService {
     
+    private enum Constants {
+        static let languageKey = "languageUserDefaultsKey"
+    }
+    
     // MARK: - Properties
     
     static let shared = UserDefaultsService()
@@ -55,6 +59,17 @@ final class UserDefaultsService {
     // MARK: - Object Lifecycle
     
     private init() {}
+    
+    public var language: LanguageType {
+        set {
+            defaults.setValue(newValue.rawValue, forKey: Constants.languageKey)
+        }
+        
+        get {
+            let storedLanguage = (defaults.value(forKey: Constants.languageKey) as? String) ?? LanguageType.ru.rawValue
+            return LanguageType(rawValue: storedLanguage) ?? .ru
+        }
+    }
 }
 
 // MARK: - UserDefaultsServiceProtocol
