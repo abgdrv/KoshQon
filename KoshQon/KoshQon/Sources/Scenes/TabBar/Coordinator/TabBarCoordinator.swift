@@ -7,13 +7,14 @@
 
 import Foundation
 import UIKit
+import ProgressHUD
 
 final class TabBarCoordinator: BaseCoordinator, TabBarOutputCoordinator {
     
     // MARK: - Properties
     
     var didSessionExpired: VoidCallback?
-    var finishFlow: VoidCallback?
+    var finishFlow: Callback<Bool>?
     
     private let router: RouterProtocol
     private let factory: TabBarFlowFactory
@@ -59,7 +60,7 @@ private extension TabBarCoordinator {
                 coordinator.finishFlow = { [weak self] in
                     guard let self = self else { return }
                     self.removeDependency(coordinator)
-                    self.finishFlow?()
+                    self.finishFlow?(true)
                 }
                 coordinator.reloadFlow = { [weak self] in
                     guard let self = self else { return }
@@ -79,7 +80,7 @@ private extension TabBarCoordinator {
                 coordinator.finishFlow = { [weak self] in
                     guard let self = self else { return }
                     self.removeDependency(coordinator)
-                    self.finishFlow?()
+                    self.finishFlow?(true)
                 }
                 self.addDependency(coordinator)
                 coordinator.start()
@@ -95,7 +96,7 @@ private extension TabBarCoordinator {
                 coordinator.finishFlow = { [weak self] in
                     guard let self = self else { return }
                     self.removeDependency(coordinator)
-                    self.finishFlow?()
+                    self.finishFlow?(true)
                 }
                 self.addDependency(coordinator)
                 coordinator.start()
@@ -108,10 +109,14 @@ private extension TabBarCoordinator {
             self.navController = navController
             if navController.viewControllers.isEmpty {
                 var coordinator = self.coordinatorFactory.makeProfileCoordinator(profileType: .myProfile, navController: navController)
-                coordinator.finishFlow = { [weak self] in
+                coordinator.finishFlow = { [weak self] isQuit in
                     guard let self = self else { return }
-                    self.removeDependency(coordinator)
-                    self.finishFlow?()
+                    ProgressHUD.animate()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        ProgressHUD.dismiss()
+                        self.removeDependency(coordinator)
+                        self.finishFlow?(isQuit)
+                    }
                 }
                 self.addDependency(coordinator)
                 coordinator.start()
@@ -127,7 +132,7 @@ private extension TabBarCoordinator {
                 coordinator.finishFlow = { [weak self] in
                     guard let self = self else { return }
                     self.removeDependency(coordinator)
-                    self.finishFlow?()
+                    self.finishFlow?(true)
                 }
                 self.addDependency(coordinator)
                 coordinator.start()

@@ -39,6 +39,8 @@ enum UserDefaultsKey: String {
     case themeSection
     case themeRow
     case language
+    case languageSection
+    case languageRow
     
     var key: String {
         return self.rawValue

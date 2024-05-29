@@ -81,10 +81,14 @@ private extension AppCoordinator {
     
     func runTabBarFlow() {
         var coordinator = coordinatorFactory.makeTabBarCoordinator(router: router, coordinatorFactory: coordinatorFactory)
-        coordinator.finishFlow = { [weak self] in
+        coordinator.finishFlow = { [weak self] isQuit in
             guard let self = self else { return }
             self.removeDependency(coordinator)
-            self.runAuthFlow()
+            if isQuit {
+                self.runAuthFlow()
+            } else {
+                self.runTabBarFlow()
+            }
         }
         addDependency(coordinator)
         coordinator.start()

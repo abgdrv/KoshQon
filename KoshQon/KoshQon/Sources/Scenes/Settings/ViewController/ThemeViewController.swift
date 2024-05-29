@@ -20,8 +20,7 @@ final class ThemeViewController: BaseViewController {
     
     // MARK: - UI
     
-    private lazy var themeTableView = NavigationTableView(type: .theme,
-                                                          viewModels: viewModel.navigationCellViewModels)
+    private lazy var themeTableView = NavigationTableView(type: .theme, viewModels: viewModel.navigationCellViewModels)
     
     // MARK: - Object Lifecycle
     

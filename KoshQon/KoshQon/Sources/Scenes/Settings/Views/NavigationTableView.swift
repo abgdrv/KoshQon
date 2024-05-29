@@ -44,7 +44,10 @@ final class NavigationTableView: UIView {
         setupViews()
         setupConstraints()
         if type == .theme {
-            selectedIndexPath = getSelectedCell()
+            selectedIndexPath = getSelectedCell(isTheme: true)
+        }
+        if type == .language {
+            selectedIndexPath = getSelectedCell(isTheme: false)
         }
     }
     
@@ -76,13 +79,16 @@ extension NavigationTableView: UITableViewDelegate, UITableViewDataSource {
             switch type {
             case .theme(let themeType):
                 AppThemeService.shared.updateThemeState(with: themeType.appTheme)
-                selectCell(indexPath: indexPath)
+                selectCell(isTheme: true, indexPath: indexPath)
+            case .language(let languageType):
+                LanguageService.shared.setLanguage(languageType.languageType)
+                selectCell(isTheme: false, indexPath: indexPath)
             default:
                 break
             }
             self.didNavigationCellTap?(type)
         }
-        if type == .theme  {
+        if type == .theme || type == .language  {
             cell.accessoryType = selectedIndexPath == indexPath ? .checkmark : .none
         }
         return cell
@@ -102,16 +108,28 @@ extension NavigationTableView: UITableViewDelegate, UITableViewDataSource {
         return 0
     }
     
-    func selectCell(indexPath: IndexPath) {
+    func selectCell(isTheme: Bool, indexPath: IndexPath) {
         selectedIndexPath = indexPath
-        UserDefaultsService.shared.set(value: indexPath.section, for: UserDefaultsKey.themeSection.key)
-        UserDefaultsService.shared.set(value: indexPath.row, for: UserDefaultsKey.themeRow.key)
+        if isTheme {
+            UserDefaultsService.shared.set(value: indexPath.section, for: UserDefaultsKey.themeSection.key)
+            UserDefaultsService.shared.set(value: indexPath.row, for: UserDefaultsKey.themeRow.key)
+        } else {
+            UserDefaultsService.shared.set(value: indexPath.section, for: UserDefaultsKey.languageSection.key)
+            UserDefaultsService.shared.set(value: indexPath.row, for: UserDefaultsKey.languageRow.key)
+        }
     }
 
-    func getSelectedCell() -> IndexPath? {
-        if let section = UserDefaultsService.shared.value(for: UserDefaultsKey.themeSection.key) as? Int,
-           let row = UserDefaultsService.shared.value(for: UserDefaultsKey.themeRow.key) as? Int {
-            return IndexPath(row: row, section: section)
+    func getSelectedCell(isTheme: Bool) -> IndexPath? {
+        if isTheme {
+            if let section = UserDefaultsService.shared.value(for: UserDefaultsKey.themeSection.key) as? Int,
+               let row = UserDefaultsService.shared.value(for: UserDefaultsKey.themeRow.key) as? Int {
+                return IndexPath(row: row, section: section)
+            }
+        } else {
+            if let section = UserDefaultsService.shared.value(for: UserDefaultsKey.languageSection.key) as? Int,
+               let row = UserDefaultsService.shared.value(for: UserDefaultsKey.languageRow.key) as? Int {
+                return IndexPath(row: row, section: section)
+            }
         }
         return IndexPath(row: 2, section: 0)
     }

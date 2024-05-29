@@ -60,6 +60,7 @@ enum LocalizableKeys {
         case appTheme = "app_theme"
         case characteristics = "characteristics"
         case add = "add_announcement"
+        case language = "language"
     }
     
     enum Helpers: String {
@@ -95,7 +96,6 @@ enum LocalizableKeys {
     enum NavigationCell: String {
         case find = "find"
         case guide = "guide"
-        case language = "language"
         case aboutApp = "about_app"
         case quit = "quit"
         case deactivateAccount = "deactivate_account"

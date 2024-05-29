@@ -311,6 +311,7 @@
 		47F5714C2C04FF1C008DCA81 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 47F5714A2C04FF1C008DCA81 /* Localizable.strings */; };
 		47F571502C0500AD008DCA81 /* LocalizableKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F5714F2C0500AD008DCA81 /* LocalizableKeys.swift */; };
 		47F571522C05A49D008DCA81 /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F571512C05A49D008DCA81 /* Int+Extensions.swift */; };
+		47F571612C074407008DCA81 /* LanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F571602C074407008DCA81 /* LanguageViewController.swift */; };
 		A2BFAC16081DDB0F2EAD971E /* Pods_KoshQon_KoshQonUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42CE84A5574DC805229D129B /* Pods_KoshQon_KoshQonUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -647,6 +648,7 @@
 		47F5714E2C04FF23008DCA81 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		47F5714F2C0500AD008DCA81 /* LocalizableKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizableKeys.swift; sourceTree = "<group>"; };
 		47F571512C05A49D008DCA81 /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
+		47F571602C074407008DCA81 /* LanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageViewController.swift; sourceTree = "<group>"; };
 		4B1CB0D67C4284B3386A5D17 /* Pods_KoshQon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KoshQon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A64B66AF75DD7EB3AA05FD9 /* Pods-KoshQon-KoshQonUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KoshQon-KoshQonUITests.debug.xcconfig"; path = "Target Support Files/Pods-KoshQon-KoshQonUITests/Pods-KoshQon-KoshQonUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5F34D042224D89E307A460AA /* Pods-KoshQon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KoshQon.release.xcconfig"; path = "Target Support Files/Pods-KoshQon/Pods-KoshQon.release.xcconfig"; sourceTree = "<group>"; };
@@ -1466,6 +1468,7 @@
 				47C01E382BB2DEEE00D1B2F2 /* SettingsViewController.swift */,
 				47D1BE062BBE756E004992AA /* PrivacyViewController.swift */,
 				47D1BE152BBEA876004992AA /* ThemeViewController.swift */,
+				47F571602C074407008DCA81 /* LanguageViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -2636,6 +2639,7 @@
 				47F571092C038B6F008DCA81 /* LayoutConstraintItem.swift in Sources */,
 				47C01E1C2BB2981800D1B2F2 /* AddAnnouncementViewModel.swift in Sources */,
 				47C01E1A2BB297E300D1B2F2 /* AddAnnouncementViewController.swift in Sources */,
+				47F571612C074407008DCA81 /* LanguageViewController.swift in Sources */,
 				47CD67242B88A8E10035DCB6 /* SetPasswordViewModel.swift in Sources */,
 				47C01E242BB2B5E700D1B2F2 /* AddAnnouncementCoordinator.swift in Sources */,
 				475224AE2BA40963000DAE1B /* ProfileView.swift in Sources */,

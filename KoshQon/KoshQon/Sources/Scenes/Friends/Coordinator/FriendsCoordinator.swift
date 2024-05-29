@@ -43,7 +43,7 @@ private extension FriendsCoordinator {
     
     func showProfile(id: Int) {
         var coordinator = coordinatorFactory.makeProfileCoordinator(profileType: .userProfile, router: router)
-        coordinator.finishFlow = { [weak self] in
+        coordinator.finishFlow = { [weak self] isQuit in
             guard let self = self else { return }
             self.removeDependency(coordinator)
         }

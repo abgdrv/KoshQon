@@ -11,4 +11,5 @@ protocol SettingsFlowFactory: AlertFlowFactory {
     func makeSettingsView() -> SettingsViewController
     func makePrivacyView() -> PrivacyViewController
     func makeThemeView() -> ThemeViewController
+    func makeLanguageView() -> LanguageViewController
 }

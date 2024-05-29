@@ -9,5 +9,5 @@ import Foundation
 
 protocol TabBarOutputCoordinator {
     var didSessionExpired: VoidCallback? { get set }
-    var finishFlow: VoidCallback? { get set }
+    var finishFlow: Callback<Bool>? { get set }
 }

@@ -27,6 +27,7 @@ enum NavigationTitleType: String {
     case privacy
     case theme
     case characteristics
+    case language
 }
 
 final class NavigationTitleView: UIView {
@@ -151,6 +152,8 @@ private extension NavigationTitleView {
             setupLabel(text: LocalizableKeys.NavigationBar.appTheme.localized())
         case .characteristics:
             setupLabel(text: LocalizableKeys.NavigationBar.characteristics.localized())
+        case .language:
+            setupLabel(text: LocalizableKeys.NavigationBar.language.localized())
         case .none:
             break
         }

@@ -43,7 +43,7 @@ extension NavigationCellViewModel: INavigationCellViewModel {
             case .theme:
                 return LocalizableKeys.NavigationBar.appTheme.localized()
             case .language:
-                return LocalizableKeys.NavigationCell.language.localized()
+                return LocalizableKeys.NavigationBar.language.localized()
             case .about:
                 return LocalizableKeys.NavigationCell.aboutApp.localized()
             case .quit:
@@ -69,7 +69,7 @@ extension NavigationCellViewModel: INavigationCellViewModel {
                 return LocalizableKeys.NavigationCell.kz.localized()
             case .russian:
                 return LocalizableKeys.NavigationCell.ru.localized()
-            case .language:
+            case .english:
                 return LocalizableKeys.NavigationCell.en.localized()
             }
         case .more(let moreType):

@@ -135,6 +135,12 @@ extension FlowFactory: SplashScreenFlowFactory,
         return vc
     }
     
+    func makeLanguageView() -> LanguageViewController {
+        let vm = SettingsViewModel(type: .language)
+        let vc = LanguageViewController(viewModel: vm)
+        return vc
+    }
+    
     func makeEditProfileView(profile: Profile) -> EditProfileViewController {
         let vm = EditProfileViewModel(profile: profile)
         let vc = EditProfileViewController(viewModel: vm)

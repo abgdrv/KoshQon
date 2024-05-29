@@ -40,6 +40,10 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
         modalPresentationCapturesStatusBarAppearance = true
         view.backgroundColor = AppColor.Theme.mainBackground.uiColor
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         setupNavigation()
     }
 }

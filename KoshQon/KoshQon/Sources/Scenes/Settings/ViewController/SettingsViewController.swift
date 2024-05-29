@@ -22,8 +22,7 @@ final class SettingsViewController: BaseViewController {
     
     // MARK: - UI
     
-    private lazy var settingsTableView = NavigationTableView(type: .settings,
-                                                             viewModels: viewModel.navigationCellViewModels)
+    private lazy var settingsTableView = NavigationTableView(type: .settings, viewModels: viewModel.navigationCellViewModels)
     
     // MARK: - Object Lifecycle
     

@@ -12,7 +12,7 @@ final class SettingsCoordinator: BaseCoordinator, SettingsOutputCoordinator {
     
     // MARK: - Properties
     
-    var finishFlow: VoidCallback?
+    var finishFlow: Callback<Bool>?
     
     private let router: RouterProtocol
     private let factory: SettingsFlowFactory
@@ -68,7 +68,12 @@ private extension SettingsCoordinator {
     }
     
     func showLanguage() {
-        
+        let view = factory.makeLanguageView()
+        view.didLanguageChange = { [weak self] in
+            guard let self = self else { return }
+            self.finishFlow?(false)
+        }
+        router.push(view)
     }
     
     func showAbout() {
@@ -79,11 +84,11 @@ private extension SettingsCoordinator {
         let actions: [UIAlertAction] = [
             UIAlertAction(title: LocalizableKeys.NavigationCell.quit.localized(), style: .destructive, handler: { action in
                 UserDefaultsService.shared.removeObject(for: KeychainKeys.passcode.rawValue)
-                self.finishFlow?()
+                self.finishFlow?(true)
             }),
             UIAlertAction(title: LocalizableKeys.Alert.cancel.localized(), style: .cancel)
         ]
-        let alert = factory.makeAlert(title: "\(LocalizableKeys.Alert.camera.localized())?", message: nil, with: actions)
+        let alert = factory.makeAlert(title: "\(LocalizableKeys.NavigationCell.quit.localized())?", message: nil, with: actions)
         router.toPresent()?.present(alert, animated: true)
     }
 }

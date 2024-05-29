@@ -65,7 +65,18 @@ enum NavigationCellType: CaseIterable {
     enum Language: String, CaseIterable {
         case kazakh
         case russian
-        case language
+        case english
+        
+        var languageType: LanguageType {
+            switch self {
+            case .kazakh:
+                return .kz
+            case .russian:
+                return .ru
+            case .english:
+                return .en
+            }
+        }
     }
     
     enum More: String, CaseIterable {

@@ -8,5 +8,5 @@
 import Foundation
 
 protocol SettingsOutputCoordinator {
-    var finishFlow: VoidCallback? { get set }
+    var finishFlow: Callback<Bool>? { get set }
 }

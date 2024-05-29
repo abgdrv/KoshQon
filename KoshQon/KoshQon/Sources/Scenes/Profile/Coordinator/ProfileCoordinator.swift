@@ -12,7 +12,7 @@ final class ProfileCoordinator: BaseCoordinator, ProfileOutputCoordinator {
     
     // MARK: - Properties
     
-    var finishFlow: VoidCallback?
+    var finishFlow: Callback<Bool>?
     
     private let router: RouterProtocol
     private let factory: ProfileFlowFactory
@@ -59,10 +59,10 @@ private extension ProfileCoordinator {
     
     func showSettingsFlow() {
         var coordinator = coordinatorFactory.makeSettingsCoordinator(router: router, coordinatorFactory: coordinatorFactory)
-        coordinator.finishFlow = { [weak self] in
+        coordinator.finishFlow = { [weak self] isQuit in
             guard let self = self else { return }
             self.removeDependency(coordinator)
-            self.finishFlow?()
+            self.finishFlow?(isQuit)
         }
         addDependency(coordinator)
         coordinator.start()
