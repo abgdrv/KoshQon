@@ -223,15 +223,15 @@ private extension InputTextField {
     func setup() {
         switch type {
         case .password:
-            setupTextField(placeholder: "Введите пароль",
+            setupTextField(placeholder: LocalizableKeys.Auth.enterPaasword.localized(),
                            isSecureTextEntry: true,
                            textContentType: .password)
         case .date:
-            setupTextField(placeholder: "Дата рождения",
+            setupTextField(placeholder: LocalizableKeys.Auth.birthday.localized(),
                            textContentType: .dateTime,
                            image: AppImage.Auth.calendar.uiImage)
         case .phone:
-            setupTextField(placeholder: "Введите номер телефона",
+            setupTextField(placeholder: LocalizableKeys.Auth.enterPhone.localized(),
                            keyboardType: .phonePad,
                            clearButtonMode: .whileEditing,
                            textContentType: .telephoneNumber)
@@ -244,14 +244,14 @@ private extension InputTextField {
             setupTextField(placeholder: _placeholder,
                            clearButtonMode: .whileEditing)
         case .gender:
-            setupTextField(placeholder: "Пол",
+            setupTextField(placeholder: LocalizableKeys.Helpers.gender.localized(),
                            image: AppImage.Auth.expandDown.uiImage)
         case .city:
-            setupTextField(placeholder: "Город",
+            setupTextField(placeholder: LocalizableKeys.Helpers.city.localized(),
                            textContentType: .addressCity,
                            image: AppImage.Auth.expandDown.uiImage)
         case .country:
-            setupTextField(placeholder: "Страна",
+            setupTextField(placeholder: LocalizableKeys.Helpers.country.localized(),
                            textContentType: .countryName,
                            image: AppImage.Auth.expandDown.uiImage)
         case .detailDate:

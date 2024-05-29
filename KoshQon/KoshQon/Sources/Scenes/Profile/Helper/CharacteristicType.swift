@@ -9,44 +9,21 @@ import Foundation
 import UIKit
 
 enum CharacteristicType: String, CaseIterable {
-    case good
-    case responsible
-    case clean
+    case good = "decency"
+    case responsible = "responsibility"
+    case clean = "clean"
     
-    case smoke
-    case alcohol
-    case sport
-    case pet
-    case job
-    case student
-    case cook
-    case religion
+    case smoke = "smoke"
+    case alcohol = "alcohol"
+    case sport = "sport"
+    case pet = "pet"
+    case job = "job"
+    case student = "student"
+    case cook = "cook"
+    case religion = "religion"
     
     var title: String {
-        switch self {
-        case .good:
-            "Порядочность"
-        case .responsible:
-            "Ответственность"
-        case .clean:
-            "Чистоплотность"
-        case .smoke:
-            "Курение"
-        case .alcohol:
-            "Алкоголь"
-        case .sport:
-            "Спорт"
-        case .pet:
-            "Домашние животные"
-        case .job:
-            "Работа"
-        case .student:
-            "Студент"
-        case .cook:
-            "Кулинарные навыки"
-        case .religion:
-            "Религия"
-        }
+        return rawValue.localized
     }
     
     var image: UIImage? {

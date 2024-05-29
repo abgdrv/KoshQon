@@ -77,10 +77,10 @@ extension AnnouncementsView: UITableViewDelegate, UITableViewDataSource {
                    contextMenuConfigurationForRowAt indexPath: IndexPath,
                    point: CGPoint) -> UIContextMenuConfiguration? {
         let actions: [UIAction] = [
-            UIAction(title: "Поделиться", image: UIImage(systemName: "square.and.arrow.up"), handler: { action in
+            UIAction(title: LocalizableKeys.Alert.share.localized(), image: UIImage(systemName: "square.and.arrow.up"), handler: { action in
                 
             }),
-            UIAction(title: "Удалить", image: UIImage(systemName: "trash"), handler: { action in
+            UIAction(title: LocalizableKeys.Alert.delete.localized(), image: UIImage(systemName: "trash"), handler: { action in
                 
             })
         ]

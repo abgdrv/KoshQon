@@ -14,21 +14,21 @@ struct ProfileDetail {
     var title: String {
         switch type {
         case .name:
-            "Полное Имя"
+            return LocalizableKeys.Profile.fullName.localized()
         case .birthday:
-            "День рождения"
+            return LocalizableKeys.Auth.birthday.localized()
         case .gender:
-            "Пол"
+            return LocalizableKeys.Helpers.gender.localized()
         case .phone:
-            "Номер телефона"
+            return LocalizableKeys.InfoLabel.phoneNumber.localized()
         case .country:
-            "Страна"
+            return LocalizableKeys.Helpers.country.localized()
         case .city:
-            "Город"
+            return LocalizableKeys.Helpers.city.localized()
         case .characteristics:
-            "Характеристики"
+            return LocalizableKeys.NavigationBar.characteristics.localized()
         case .about:
-            "О себе"
+            return LocalizableKeys.NavigationBar.aboutMe.localized()
         }
     }
     

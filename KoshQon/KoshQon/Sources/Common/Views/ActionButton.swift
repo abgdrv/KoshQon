@@ -28,9 +28,9 @@ final class ActionButton: UIButton {
     private func setup() {
         switch type {
         case .write:
-            setup(backgroundColor: AppColor.Static.darkBlue.uiColor, title: "Написать")
+            setup(backgroundColor: AppColor.Static.darkBlue.uiColor, title: LocalizableKeys.ActionButton.write.localized())
         case .call:
-            setup(backgroundColor: AppColor.Static.green.uiColor, title: "Позвонить")
+            setup(backgroundColor: AppColor.Static.green.uiColor, title: LocalizableKeys.ActionButton.call.localized())
         case .friend:
             setup(backgroundColor: AppColor.Static.orange.uiColor)
         default:

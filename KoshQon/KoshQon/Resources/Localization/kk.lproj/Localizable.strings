@@ -1,0 +1,163 @@
+/* 
+  Localizable.strings
+  KoshQon
+
+  Created by Almat Begaidarov on 27.05.2024.
+  
+*/
+
+"phone_number" = "Телефон нөмірі";
+"password" = "Құпия сөз";
+"no_account" = "Есептік жазбаңыз жоқ па?";
+"create_password" = "Құпиясөзді құру";
+"repeat_password" = "Құпия сөзді қайталаңыз";
+"verification_code_sent" = "Растау коды жіберілді";
+"resend_after" = "Арқылы қайта жіберу";
+"password_must_contain" = "Құпия сөз мыналарды қамтуы керек:";
+"at_least_eight_digits" = "Кемінде 8 таңба";
+"digits" = "Сандар";
+"capital_lowercase_letters" = "Бас және кіші әріптер";
+"phone_number_login" = "Сіздің телефон нөміріңіз тіркелгіңізге кіру үшін пайдаланылады";
+"phone_number_recover" = "Құпия сөзді қалпына келтіру үшін тіркелгіңізге байланысты телефон нөміріңіз қажет";
+"phone_number_account" = "Жаңа телефон нөмірін енгізіңіз, ол сіздің есептік жазбаңызбен байланыстырылады";
+"click_heart" = "Жарнамаларды жоғалтпау үшін олардың жанындағы жүрекшені басыңыз";
+"empty" = "Бос";
+
+"sign_in" = "Кіру";
+"create_account" = "Аккаунты құру";
+"continue" = "Жалғастыру";
+"change_password" = "Құпия сөзді өзгерту";
+"edit" = "Өңдеу";
+"search_announcements" = "Жарнамаларды іздеу";
+"go_to_page" = "Бетке өту";
+"save" = "Сақтау";
+
+"forgot_password" = "Құпия сөзді ұмыттым";
+"confirmation_code" = "Растау коды";
+"password_creation" = "Құпия сөз жасау";
+"personal_info" = "Жеке ақпарат";
+"favorites" = "Таңдаулылар";
+"messages" = "Хабарламалар";
+"profile" = "Профиль";
+"friends" = "Достар";
+"settings" = "Параметрлер";
+"my_announcements" = "Менің хабарландыруларым";
+"change_phone_number" = "Телефон нөмірін өзгерту";
+"about_me" = "Өзім туралы";
+"confidentiality" = "Құпиялылық";
+"app_theme" = "Қолданба тақырыбы";
+"characteristics" = "Сипаттамалары";
+"add_announcement" = "Add";
+
+"country_code" = "Ел коды";
+"gender" = "Еден";
+"country" = "Ел";
+"city" = "Қала";
+
+"kazakhstan" = "Казахстан";
+"russia" = "Россия";
+"tajikistan" = "Таджикистан";
+"uzbekistan" = "Узбекистан";
+"azerbaijan" = "Азербайджан";
+"armenia" = "Армения";
+"belarus" = "Беларусь";
+"kyrgyzstan" = "Кыргызстан";
+"moldova" = "Молдова";
+"turkmenistan" = "Туркменистан";
+
+"gender.male" = "Еркек";
+"gender.female" = "Әйел";
+
+"almaty" = "Алматы";
+"astana" = "Астана";
+"shymkent" = "Шымкент";
+"aktau" = "Ақтау";
+"aktobe" = "Ақтөбе";
+"atyrau" = "Атырау";
+"karaganda" = "Қарағанды";
+"kokshetau" = "Көкшетау";
+"kostanay" = "Қостанай";
+"pavlodar" = "Павлодар";
+"petropavlovsk" = "Петропавл";
+"taldykorgan" = "Талдықорған";
+"taraz" = "Тараз";
+"uralsk" = "Орал";
+"ust_kamenogorsk" = "Өскемен";
+"shakhtinsk" = "Шахтинск";
+"ekibastuz" = "Екібастұз";
+"temirtau" = "Теміртау";
+
+"about_placeholder" = "Мен спортпен шұғылданғанды және кітап оқығанды жақсы көремін...";
+
+"year_singular" = "жыл";
+"year_plural" = "жыл";
+"years_plural" = "жыл";
+
+"general_info" = "Жалпы мәліметтер";
+"rating" = "Рейтинг";
+"announcements" = "Хабарландырулар";
+"recent_announcements" = "Соңғы хабарландырулар";
+"full_name" = "Толық аты";
+
+"find" = "Табу";
+"guide" = "Нұсқаулық";
+"language" = "Тіл";
+"about_app" = "Қолданба туралы";
+"quit" = "Шығу";
+"deactivate_account" = "Есептік жазбаны өшіру";
+"theme_light" = "Жарық";
+"theme_dark" = "Караңғы";
+"theme_system" = "Жүйелік";
+"language_kz" = "Қазақ";
+"language_ru" = "Орыс";
+"language_en" = "Ағылшын";
+"remove_connection" = "Контактілерден жою";
+
+"version" = "нұсқа";
+
+"enter_access_code" = "Кіру кодын енгізіңіз";
+"confirm_access_code" = "Кіру кодын растаңыз";
+
+"forgot_password" = "Құпия сөзді ұмыттым";
+"sign_up" = "Тіркелу";
+"enter_password" = "Құпия сөзді енгізіңіз";
+"birthday" = "Туған күн";
+"enter_phone" = "Телефон нөмірін енгізіңіз";
+
+"error" = "Қате!";
+"empty_fields" = "Кейбір өрістер бос!";
+"incorrect_phone_number" = "Дұрыс емес телефон нөмірі!";
+"incorrect_password" = "Қате құпия сөз!";
+"delete" = "Жою";
+"cancel" = "Болдырмау";
+"delete_favorites" = "Барлық таңдаулыларды жою керек пе?";
+"share" = "Бөлісу";
+"camera" = "Камера";
+"gallery" = "Галерея";
+"close" = "Жабу";
+"look" = "Қарау";
+"delete_photo" = "Фотосуретті жою";
+"select_photo" = "Фотосуретті таңдау";
+"select_photo_open_camera" = "Галереядан фотосуретті таңдаңыз немесе камераны ашыңыз";
+"load_album_fail" = "Альбом топтарын жүктеу мүмкін емес";
+"enable_access_settings" = "Құпиялылық параметрлерінде кіруді қосуға болады";
+"deactivate" = "Өшіру";
+"deactivate_account" = "Есептік жазбаны өшіру керек пе?";
+"change_name" = "Атауды өзгерткіңіз келе ме?";
+"support" = "Ол үшін Сіз техникалық қолдауға жүгіне аласыз";
+"phone_number_changed" = "Нөмір өзгертілді";
+
+"first_name" = "Аты";
+"last_name" = "Тегі";
+
+"decency" = "Әдептілік";
+"responsibility" = "Жауапкершілік";
+"clean" = "Тазалық";
+"smoke" = "Темекі шегу";
+"alcohol" = "Алкоголь";
+"sport" = "Спорт";
+"pet" = "Үй жануарлары";
+"job" = "Жұмыс";
+"student" = "Студент";
+"cook" = "Аспаздық дағдылар";
+"religion" = "Дін";

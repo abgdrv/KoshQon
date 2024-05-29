@@ -41,8 +41,8 @@ final class PersonalViewController: BaseViewController, ImageSettable {
     // MARK: - UI
         
     private lazy var profileImageView = ProfileImageView(isEditable: true)
-    private lazy var firstNameTextField = InputTextField(inputType: .regular, placeholder: "Имя")
-    private lazy var lastNameTextField = InputTextField(inputType: .regular, placeholder: "Фамилия")
+    private lazy var firstNameTextField = InputTextField(inputType: .regular, placeholder: LocalizableKeys.Auth.fname.localized())
+    private lazy var lastNameTextField = InputTextField(inputType: .regular, placeholder: LocalizableKeys.Auth.lname.localized())
     private lazy var birthdayTextField = InputTextField(inputType: .date).apply { $0.inputView = datePicker }
     private lazy var genderTextField = InputTextField(inputType: .gender)
     private lazy var countryTextField = InputTextField(inputType: .country)

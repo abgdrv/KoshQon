@@ -36,10 +36,18 @@ private extension AppCoordinator {
         coordinator.finishFlow = { [weak self] in
             guard let self = self else { return }
             self.removeDependency(coordinator)
-            self.runAuthFlow()
+            self.checkAuth()
         }
         addDependency(coordinator)
         coordinator.start()
+    }
+    
+    func checkAuth() {
+        if let _ = UserDefaultsService.shared.value(for: KeychainKeys.passcode.rawValue) as? String {
+            runPasscodeFlow()
+        } else {
+            runAuthFlow()
+        }
     }
     
     func runAuthFlow() {

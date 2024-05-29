@@ -33,21 +33,21 @@ final class ProceedButton: UIButton {
     private func setup() {
         switch type {
         case .signIn:
-            setup(title: "Войти")
+            setup(title: LocalizableKeys.ProceedButton.signIn.localized())
         case .signUp:
-            setup(title: "Создать аккаунт")
+            setup(title: LocalizableKeys.ProceedButton.createAccount.localized())
         case .continue:
-            setup(title: "Продолжить")
+            setup(title: LocalizableKeys.ProceedButton.continue.localized())
         case .changePassword:
-            setup(title: "Изменить пароль")
+            setup(title: LocalizableKeys.ProceedButton.changePassword.localized())
         case .edit:
-            setup(title: "Редактировать")
+            setup(title: LocalizableKeys.ProceedButton.edit.localized())
         case .find:
-            setup(title: "Искать объявления")
+            setup(title: LocalizableKeys.ProceedButton.searchAnnouncements.localized())
         case .account:
-            setup(title: "Перейти на страницу", font: AppFont.medium.s14)
+            setup(title: LocalizableKeys.ProceedButton.goToPage.localized(), font: AppFont.medium.s14)
         case .save:
-            setup(title: "Сохранить")
+            setup(title: LocalizableKeys.ProceedButton.save.localized())
         case .none:
             break
         }

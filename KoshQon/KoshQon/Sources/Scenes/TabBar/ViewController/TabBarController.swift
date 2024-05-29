@@ -87,9 +87,7 @@ private extension TabBarController {
         tabBar.tintColor = AppColor.Theme.mainTitle.uiColor
         tabBar.unselectedItemTintColor = AppColor.Static.darkGray.uiColor
         tabBar.backgroundColor = AppColor.Theme.blockBackground.uiColor
-        let tabBarAppearance = UITabBarAppearance()
-        tabBarAppearance.configureWithDefaultBackground()
-        UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
+        tabBar.barTintColor = AppColor.Theme.blockBackground.uiColor
         delegate = self
     }
     

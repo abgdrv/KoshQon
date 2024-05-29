@@ -22,13 +22,13 @@ enum TabBarItem: Int, CaseIterable {
         case .main:
             Constants.App.name ?? ""
         case .favorites:
-            "Избранное"
+            LocalizableKeys.NavigationBar.favorites.localized()
         case .add:
-            "Подать"
+            LocalizableKeys.NavigationBar.add.localized()
         case .messages:
-            "Сообщения"
+            LocalizableKeys.NavigationBar.messages.localized()
         case .profile:
-            "Профиль"
+            LocalizableKeys.NavigationBar.profile.localized()
         }
     }
     

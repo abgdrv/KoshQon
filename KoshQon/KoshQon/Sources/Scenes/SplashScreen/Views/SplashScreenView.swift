@@ -73,7 +73,7 @@ struct SplashScreenView: View {
     var versionView: some View {
         HStack {
             Text(Constants.App.version ?? "")
-            Text("версия")
+            Text(LocalizableKeys.App.version.localized())
         }
         .font(versionFont)
         .foregroundColor(logoColor.opacity(0.5))

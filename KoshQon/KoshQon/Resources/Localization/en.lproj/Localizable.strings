@@ -1,0 +1,169 @@
+/* 
+  Localizable.strings
+  KoshQon
+
+  Created by Almat Begaidarov on 27.05.2024.
+  
+*/
+
+"phone_number" = "Phone number";
+"password" = "Password";
+"no_account" = "Don't have an account?";
+"create_password" = "Create a password";
+"repeat_password" = "Repeat password";
+"verification_code_sent" = "Confirmation code sent to";
+"resend_after" = "Resend in";
+"password_must_contain" = "Password must contain:";
+"at_least_eight_digits" = "At least 8 characters";
+"digits" = "Digits";
+"capital_lowercase_letters" = "Capital and lowercase letters";
+"phone_number_login" = "Your phone number will be used to log into your account";
+"phone_number_recover" = "Your phone number associated with your account is required to recover your password";
+"phone_number_account" = "Enter a new phone number, it will be associated with your account";
+"click_heart" = "Click on the heart next to advertisements so as not to lose them";
+"empty" = "Empty";
+
+"sign_in" = "Sign in";
+"create_account" = "Create an account";
+"continue" = "Continue";
+"change_password" = "Change password";
+"edit" = "Edit";
+"search_announcements" = "Search announcements";
+"go_to_page" = "Go to page";
+"save" = "Save";
+
+"forgot_password" = "Forgot password";
+"confirmation_code" = "Confirmation code";
+"password_creation" = "Password creation";
+"personal_info" = "Personal information";
+"favorites" = "Favorites";
+"messages" = "Messages";
+"profile" = "Profile";
+"friends" = "Friends";
+"settings" = "Settings";
+"my_announcements" = "My announcements";
+"change_phone_number" = "Change phone number";
+"about_me" = "About me";
+"confidentiality" = "Confidentiality";
+"app_theme" = "Application theme";
+"characteristics" = "Characteristics";
+"add_announcement" = "Add";
+
+"country_code" = "Country code";
+"gender" = "Gender";
+"country" = "Country";
+"city" = "City";
+
+"write" = "Write";
+"call" = "Call";
+
+"write" = "Жазу";
+"call" = "Қоңырау шалу";
+
+"kazakhstan" = "Kazakhstan";
+"russia" = "Russia";
+"tajikistan" = "Tajikistan";
+"uzbekistan" = "Uzbekistan";
+"azerbaijan" = "Azerbaijan";
+"armenia" = "Armenia";
+"belarus" = "Belarus";
+"kyrgyzstan" = "Kyrgyzstan";
+"moldova" = "Moldova";
+"turkmenistan" = "Turkmenistan";
+
+"gender.male" = "Male";
+"gender.female" = "Female";
+
+"almaty" = "Almaty";
+"astana" = "Astana";
+"shymkent" = "Shymkent";
+"aktau" = "Aktau";
+"aktobe" = "Aktobe";
+"atyrau" = "Atyrau";
+"karaganda" = "Karaganda";
+"kokshetau" = "Kokshetau";
+"kostanay" = "Kostanay";
+"pavlodar" = "Pavlodar";
+"petropavlovsk" = "Petropavlovsk";
+"taldykorgan" = "Taldykorgan";
+"taraz" = "Taraz";
+"uralsk" = "Uralsk";
+"ust_kamenogorsk" = "Ust-Kamenogorsk";
+"shakhtinsk" = "Shakhtinsk";
+"ekibastuz" = "Ekibastuz";
+"temirtau" = "Temirtau";
+
+"about_placeholder" = "I like to play sports and read books...";
+
+"year_singular" = "year";
+"year_plural" = "years";
+"years_plural" = "years";
+
+"general_info" = "General information";
+"rating" = "Rating";
+"announcements" = "Announcements";
+"recent_announcements" = "Recent announcements";
+"full_name" = "Full name";
+
+"find" = "Find";
+"guide" = "Guide";
+"language" = "Language";
+"about_app" = "About the application";
+"quit" = "Log out";
+"deactivate_account" = "Deactivate account";
+"theme_light" = "Light";
+"theme_dark" = "Dark";
+"theme_system" = "System";
+"language_kz" = "Kazakh";
+"language_ru"= "Russian";
+"language_en" = "English";
+"remove_connection" = "Remove from contacts";
+
+"version" = "version";
+
+"enter_access_code" = "Enter the access code";
+"confirm_access_code" = "Confirm the access code";
+
+"forgot_password" = "Forgot password";
+"sign_up" = "Sign up";
+"enter_password" = "Enter the password";
+"birthday" = "Date of birth";
+"enter_phone" = "Enter the phone number";
+
+"error" = "Error!";
+"empty_fields" = "Some of the fields are empty!";
+"incorrect_phone_number" = "Incorrect phone number!";
+"incorrect_password" = "Incorrect password!";
+"delete" = "Delete";
+"cancel" = "Cancel";
+"delete_favorites" = "Delete all favorites?";
+"share" = "Share";
+"camera" = "Camera";
+"gallery" = "Gallery";
+"close" = "Close";
+"look" = "Look";
+"delete_photo" = "Delete photo";
+"select_photo" = "Select photo";
+"select_photo_open_camera" = "Select a photo from the gallery or open the camera";
+"load_album_fail" = "Unable to load your album groups";
+"enable_access_settings" = "You can enable access in Privacy Settings";
+"deactivate" = "Deactivate";
+"deactivate_account" = "Deactivate account?";
+"change_name" = "Do you want to change the name?";
+"support" = "You can contact technical support for this";
+"phone_number_changed" = "Number changed";
+
+"first_name" = "Name";
+"last_name" = "Last name";
+
+"decency" = "Decency";
+"responsibility" = "Responsibility";
+"clean" = "Cleanliness";
+"smoke" = "Smoking";
+"alcohol" = "Alcohol";
+"sport" = "Sports";
+"pet" = "Pets";
+"job" = "Job";
+"student" = "Student";
+"cook" = "Culinary skills";
+"religion" = "Religion";

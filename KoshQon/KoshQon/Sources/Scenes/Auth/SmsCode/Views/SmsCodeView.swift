@@ -165,16 +165,24 @@ private extension SmsCodeView {
     @objc func updateTimer() {
         guard viewModel.isTimerRunning() else {
             resendTimer.invalidate()
-            resendButton.setTitle("Отправить", for: .normal)
-            resendButton.isEnabled = true
+            UIView.transition(with: resendButton, duration: 0.3, options: .transitionCrossDissolve, animations: {
+                self.resendButton.setTitle("Отправить", for: .normal)
+                self.resendButton.isEnabled = true
+            }, completion: nil)
             return
         }
         viewModel.secondsDecrement()
-        resendButton.setTitle(viewModel.timeString, for: .normal)
+        UIView.transition(with: resendButton, duration: 0.3, options: .transitionCrossDissolve, animations: {
+            self.resendButton.setTitle(self.viewModel.timeString, for: .normal)
+        }, completion: nil)
     }
+
     
     @objc func resendButtonTapped() {
         // api call
+        for index in codeTextFields.indices {
+            codeTextFields[index].text = ""
+        }
         viewModel.resetTimer()
         setupTimer()
         resendButton.setTitle(viewModel.timeString, for: .normal)

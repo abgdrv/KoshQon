@@ -14,7 +14,7 @@ final class MainSectionHeaderView: UIView {
     
     private lazy var titleLabel = UILabel().apply {
         $0.set(font: AppFont.regular.s20, textColor: AppColor.Theme.mainTitle.uiColor)
-        $0.text = "Последние объявления"
+        $0.text = LocalizableKeys.Main.recentAnnouncements.localized()
     }
     
     // MARK: - Object Lifecycle

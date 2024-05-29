@@ -32,14 +32,14 @@ final class ProfileTopView: UIView {
     
     private lazy var ageLabel = UILabel().apply {
         $0.set(font: AppFont.medium.s12, textColor: AppColor.Static.darkGray.uiColor)
-        $0.text = "\(info?.age ?? 0) лет"
+        $0.text = (info?.age ?? 0).age
     }
     
-    private lazy var friendsButton = UIButton(type: .system).apply {
-        $0.setTitleColor(AppColor.Static.orange.uiColor, for: .normal)
-        $0.setTitle("\(info?.friends ?? 0) друзей", for: .normal)
-        $0.addTarget(self, action: #selector(friendsButtonTapped), for: .touchUpInside)
-    }
+//    private lazy var friendsButton = UIButton(type: .system).apply {
+//        $0.setTitleColor(AppColor.Static.orange.uiColor, for: .normal)
+//        $0.setTitle("\(info?.friends ?? 0) друзей", for: .normal)
+//        $0.addTarget(self, action: #selector(friendsButtonTapped), for: .touchUpInside)
+//    }
     
     // MARK: - Object Lifecycle
     
@@ -60,7 +60,7 @@ final class ProfileTopView: UIView {
 private extension ProfileTopView {
     func setupViews() {
         backgroundColor = AppColor.Theme.mainBackground.uiColor
-        addSubviews(profileImageView, nameLabel, locationLabel, ageLabel, friendsButton)
+        addSubviews(profileImageView, nameLabel, locationLabel, ageLabel /*friendsButton*/)
     }
     
     func setupConstraints() {
@@ -88,10 +88,10 @@ private extension ProfileTopView {
             make.trailing.equalToSuperview().offset(-16)
         }
         
-        friendsButton.snp.makeConstraints { make in
-            make.leading.equalTo(profileImageView.snp.trailing).offset(16)
-            make.bottom.equalTo(profileImageView.snp.bottom)
-        }
+//        friendsButton.snp.makeConstraints { make in
+//            make.leading.equalTo(profileImageView.snp.trailing).offset(16)
+//            make.bottom.equalTo(profileImageView.snp.bottom)
+//        }
     }
 }
 

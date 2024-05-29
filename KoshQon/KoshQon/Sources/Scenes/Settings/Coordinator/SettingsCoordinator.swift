@@ -77,13 +77,13 @@ private extension SettingsCoordinator {
     
     func showQuit() {
         let actions: [UIAlertAction] = [
-            UIAlertAction(title: "Выйти", style: .destructive, handler: { action in
+            UIAlertAction(title: LocalizableKeys.NavigationCell.quit.localized(), style: .destructive, handler: { action in
                 UserDefaultsService.shared.removeObject(for: KeychainKeys.passcode.rawValue)
                 self.finishFlow?()
             }),
-            UIAlertAction(title: "Отмена", style: .cancel)
+            UIAlertAction(title: LocalizableKeys.Alert.cancel.localized(), style: .cancel)
         ]
-        let alert = factory.makeAlert(title: "Выйти?", message: nil, with: actions)
+        let alert = factory.makeAlert(title: "\(LocalizableKeys.Alert.camera.localized())?", message: nil, with: actions)
         router.toPresent()?.present(alert, animated: true)
     }
 }
@@ -113,12 +113,12 @@ private extension SettingsCoordinator {
     
     func showDeactivateAlert(completion: @escaping VoidCallback) {
         let actions: [UIAlertAction] = [
-            UIAlertAction(title: "Деактивировать", style: .destructive, handler: { action in
+            UIAlertAction(title: LocalizableKeys.Alert.deactivate.localized(), style: .destructive, handler: { action in
                 completion()
             }),
-            UIAlertAction(title: "Отмена", style: .cancel)
+            UIAlertAction(title: LocalizableKeys.Alert.cancel.localized(), style: .cancel)
         ]
-        let alert = factory.makeAlert(title: "Деактивировать аккаунт?", message: nil, with: actions)
+        let alert = factory.makeAlert(title: LocalizableKeys.Alert.deactivateAccount.localized(), message: nil, with: actions)
         router.toPresent()?.present(alert, animated: true)
     }
 }

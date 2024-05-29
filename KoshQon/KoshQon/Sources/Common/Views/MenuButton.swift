@@ -9,13 +9,13 @@ import UIKit
 import ContextMenuSwift
 
 enum MenuType: String {
-    case phone = "Код страны"
-    case gender = "Пол"
-    case country = "Страна"
-    case city = "Город"
+    case phone = "country_code"
+    case gender = "gender"
+    case country = "country"
+    case city = "city"
     
     var title: String {
-        return self.rawValue
+        return rawValue.localized
     }
 }
 

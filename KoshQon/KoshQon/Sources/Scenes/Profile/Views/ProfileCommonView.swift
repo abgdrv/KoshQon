@@ -25,12 +25,12 @@ final class ProfileCommonView: HighlightView {
     
     private lazy var commonTitleLabel = UILabel().apply {
         $0.set(font: AppFont.medium.s20, textColor: AppColor.Theme.mainTitle.uiColor)
-        $0.text = "Общие сведения"
+        $0.text = LocalizableKeys.Profile.generalInfo.localized()
     }
     
     private lazy var ratingTitleLabel = UILabel().apply {
         $0.set(font: AppFont.medium.s14, textColor: AppColor.Theme.mainTitle.uiColor)
-        $0.text = "Рейтинг"
+        $0.text = LocalizableKeys.Profile.rating.localized()
     }
     
     private lazy var ratingLabel = UILabel().apply {

@@ -27,7 +27,3 @@ struct PasscodeIndicatorView: View {
         }
     }
 }
-
-#Preview {
-    PasscodeIndicatorView(passcode: .constant(""))
-}

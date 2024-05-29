@@ -115,42 +115,42 @@ private extension NavigationTitleView {
     func setup() {
         switch type {
         case .forgotPassword:
-            setupLabel(text: "Забыл пароль")
+            setupLabel(text: LocalizableKeys.NavigationBar.forgotPassword.localized())
         case .sms:
-            setupLabel(text: "Код подтверждения")
+            setupLabel(text: LocalizableKeys.NavigationBar.confirmationCode.localized())
         case .createPassword:
-            setupLabel(text: "Создание пароля")
+            setupLabel(text: LocalizableKeys.NavigationBar.passwordCreation.localized())
         case .personalInfo:
-            setupLabel(text: "Личная информация")
+            setupLabel(text: LocalizableKeys.NavigationBar.personalInfo.localized())
         case .main:
-            setupLabel(text: "KoshQon", font: AppFont.anta.s28)
+            setupLabel(text: Constants.App.name, font: AppFont.anta.s28)
         case .favorites:
-            setupLabel(text: "Избранное")
+            setupLabel(text: LocalizableKeys.NavigationBar.favorites.localized())
         case .messages:
-            setupLabel(text: "Сообщения")
+            setupLabel(text: LocalizableKeys.NavigationBar.messages.localized())
         case .directMessages:
             setupLabel(text: title)
         case .profile:
-            setupLabel(text: "Профиль")
+            setupLabel(text: LocalizableKeys.NavigationBar.profile.localized())
         case .friends:
-            setupLabel(text: "Друзья")
+            setupLabel(text: LocalizableKeys.NavigationBar.friends.localized())
         case .settings:
-            setupLabel(text: "Настройки")
+            setupLabel(text: LocalizableKeys.NavigationBar.settings.localized())
         case .registration:
             setupLabel(text: "ID")
             isIcon = true
         case .myAnnouncements:
-            setupLabel(text: "Мои объявления")
+            setupLabel(text: LocalizableKeys.NavigationBar.myAnnouncements.localized())
         case .changePhone:
-            setupLabel(text: "Изменить номер телефона")
+            setupLabel(text: LocalizableKeys.NavigationBar.changePhoneNumber.localized())
         case .aboutMe:
-            setupLabel(text: "О себе")
+            setupLabel(text: LocalizableKeys.NavigationBar.aboutMe.localized())
         case .privacy:
-            setupLabel(text: "Конфиденциальность")
+            setupLabel(text: LocalizableKeys.NavigationBar.confidentiality.localized())
         case .theme:
-            setupLabel(text: "Тема приложения")
+            setupLabel(text: LocalizableKeys.NavigationBar.appTheme.localized())
         case .characteristics:
-            setupLabel(text: "Характеристики")
+            setupLabel(text: LocalizableKeys.NavigationBar.characteristics.localized())
         case .none:
             break
         }

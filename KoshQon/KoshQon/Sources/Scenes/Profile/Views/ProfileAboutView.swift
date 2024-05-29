@@ -26,7 +26,7 @@ final class ProfileAboutView: HighlightView {
         
     private lazy var aboutTitleLabel = UILabel().apply {
         $0.set(font: AppFont.medium.s20, textColor: AppColor.Theme.mainTitle.uiColor)
-        $0.text = "О себе"
+        $0.text = LocalizableKeys.NavigationBar.aboutMe.localized()
     }
     
     private lazy var aboutTextLabel = UILabel().apply {

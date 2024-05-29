@@ -34,7 +34,7 @@ final class LoginView: BaseView {
     private lazy var passwordTextField = InputTextField(inputType: .password)
     
     private lazy var forgotPasswordButton = UIButton(type: .system).apply {
-        $0.setTitle("Забыл пароль", for: .normal)
+        $0.setTitle(LocalizableKeys.Auth.forgotPassword.localized(), for: .normal)
         $0.set(font: AppFont.regular.s14, titleColor: AppColor.Static.darkBlue.uiColor)
         $0.addTarget(self, action: #selector(forgotPasswordButtonTapped), for: .touchUpInside)
     }
@@ -48,20 +48,14 @@ final class LoginView: BaseView {
     
     private lazy var registerButton = UIButton(type: .system).apply {
         $0.set(font: AppFont.regular.s16, titleColor: AppColor.Static.orange.uiColor)
-        $0.contentHorizontalAlignment = .left
-        let title = NSMutableAttributedString(string: "Зарегистрироваться")
+        let title = NSMutableAttributedString(string: LocalizableKeys.Auth.signUp.localized())
         title.addAttributes([.underlineStyle: NSUnderlineStyle.single.rawValue],
                             range: NSRange(location: 0, length: title.length))
         $0.setAttributedTitle(title, for: .normal)
         $0.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
     }
     
-    private lazy var registerContainerView = UIStackView(arrangedSubviews: [registerLabel,
-                                                                            registerButton]).apply {
-        $0.axis = .horizontal
-        $0.spacing = 5
-        $0.distribution = .fillEqually
-    }
+    private lazy var registerContainerView = UIView()
     
     // MARK: - Object Lifecycle
     
@@ -90,6 +84,7 @@ private extension LoginView {
         addSubviews(appNameLabel, formView)
         formView.addSubviews(phoneLabel, phoneTextField, passwordLabel, passwordTextField,
                              forgotPasswordButton, loginButton, registerContainerView)
+        registerContainerView.addSubviews(registerLabel, registerButton)
     }
     
     func setupConstraints() {
@@ -138,8 +133,19 @@ private extension LoginView {
         
         registerContainerView.snp.makeConstraints { make in
             make.top.equalTo(loginButton.snp.bottom).offset(20)
-            make.leading.trailing.equalToSuperview()
+            make.centerX.equalToSuperview()
             make.bottom.equalToSuperview().inset(20)
+        }
+                
+        registerLabel.snp.makeConstraints { make in
+            make.leading.top.bottom.equalToSuperview()
+            make.width.equalTo(registerLabel.intrinsicContentSize.width)
+        }
+        
+        registerButton.snp.makeConstraints { make in
+            make.width.equalTo(registerButton.intrinsicContentSize.width)
+            make.leading.equalTo(registerLabel.snp.trailing).offset(5)
+            make.trailing.top.bottom.equalToSuperview()
         }
     }
     
@@ -165,17 +171,17 @@ private extension LoginView {
     @objc func loginButtonTapped() {
         guard let phoneNumber = phoneTextField.text, !phoneNumber.isEmpty,
               let password = passwordTextField.text, !password.isEmpty else {
-            ProgressHUD.banner("Ошибка!", "Некоторые из полей пустые!", delay: 3)
+            ProgressHUD.banner(LocalizableKeys.Alert.error.localized(), LocalizableKeys.Alert.emptyFields.localized(), delay: 3)
             return
         }
         
         if phoneNumber.count < 10 {
-            ProgressHUD.banner("Ошибка!", "Неккоректный номер телефона!", delay: 3)
+            ProgressHUD.banner(LocalizableKeys.Alert.error.localized(), LocalizableKeys.Alert.incorrectPhone.localized(), delay: 3)
             return
         }
         
         if password.count < 8 {
-            ProgressHUD.banner("Ошибка!", "Неккоректный пароль!", delay: 3)
+            ProgressHUD.banner(LocalizableKeys.Alert.error.localized(), LocalizableKeys.Alert.incorrectPassword.localized(), delay: 3)
             return
         }
         

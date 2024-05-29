@@ -8,40 +8,19 @@
 import Foundation
 
 enum Country: String, CaseIterable {
-    case kz = "Kazakhstan"
-    case ru = "Russia"
-    case tj = "Tajikistan"
-    case uz = "Uzbekistan"
-    case az = "Azerbaijan"
-    case am = "Armenia"
-    case by = "Belarus"
-    case kg = "Kyrgyzstan"
-    case md = "Moldova"
-    case tm = "Turkmenistan"
+    case kz = "kazakhstan"
+    case ru = "russia"
+    case tj = "tajikistan"
+    case uz = "uzbekistan"
+    case az = "azerbaijan"
+    case am = "armenia"
+    case by = "belarus"
+    case kg = "kyrgyzstan"
+    case md = "moldova"
+    case tm = "turkmenistan"
     
     var title: String {
-        switch self {
-        case .kz:
-            "Казахстан"
-        case .ru:
-            "Россия"
-        case .tj:
-            "Таджикистан"
-        case .uz:
-            "Узбекистан"
-        case .az:
-            "Азербайджан"
-        case .am:
-            "Армения"
-        case .by:
-            "Беларусь"
-        case .kg:
-            "Кыргызстан"
-        case .md:
-            "Молдова"
-        case .tm:
-            "Туркменистан"
-        }
+        return rawValue.localized
     }
     
     var fullPhoneCodeTitle: String {

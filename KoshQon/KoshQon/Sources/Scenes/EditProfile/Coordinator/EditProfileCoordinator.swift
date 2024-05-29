@@ -66,7 +66,7 @@ private extension EditProfileCoordinator {
             guard let self = self else { return }
             self.removeDependency(coordinator)
             self.router.popModule(times: 2)
-            ProgressHUD.success("Номер изменен")
+            ProgressHUD.success(LocalizableKeys.Alert.phoneChanged.localized())
         }
         addDependency(coordinator)
         coordinator.start()
@@ -93,8 +93,8 @@ private extension EditProfileCoordinator {
     func showProfileDetailCell(type: ProfileDetailType, value: [String]) {
         switch type {
         case .name:
-            factory.showBanner(title: "Хотите изменить имя?",
-                               message: "Для этого вы можете обратиться в техподдержку",
+            factory.showBanner(title: LocalizableKeys.Alert.changeName.localized(),
+                               message: LocalizableKeys.Alert.support.localized(),
                                delay: 3)
         case .phone:
             showPhoneDetail()

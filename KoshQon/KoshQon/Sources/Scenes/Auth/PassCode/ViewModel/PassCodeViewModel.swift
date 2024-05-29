@@ -15,7 +15,7 @@ final class PassCodeViewModel: ObservableObject {
 //    private let biometricService: BiometricService
     
     var title: String {
-        return type == .enter ? "Введите код доступа" : "Подтвердите код доступа"
+        return type == .enter ? LocalizableKeys.PassCode.enter.localized() : LocalizableKeys.PassCode.confirm.localized()
     }
     
     private var isPasscode: Bool {

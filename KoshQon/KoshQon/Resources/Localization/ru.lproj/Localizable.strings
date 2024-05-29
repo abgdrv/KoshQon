@@ -1,0 +1,166 @@
+/* 
+  Localizable.strings
+  KoshQon
+
+  Created by Almat Begaidarov on 27.05.2024.
+  
+*/
+
+"phone_number" = "Номер телефона";
+"password" = "Пароль";
+"no_account" = "У вас нет аккаунта?";
+"create_password" = "Придумайте пароль";
+"repeat_password" = "Повторите пароль";
+"verification_code_sent" = "Код подтверждения отправлен на";
+"resend_after" = "Переотправить через";
+"password_must_contain" = "Пароль должен содержать:";
+"at_least_eight_digits" = "Не менее 8 символов";
+"digits" = "Цифры";
+"capital_lowercase_letters" = "Заглавные и строчные буквы";
+"phone_number_login" = "Ваш номер телефона будет использоваться для входа в вашу учетную запись";
+"phone_number_recover" = "Для восстановления вашего пароля требуется ваш номер телефона, связанный с учетной записью";
+"phone_number_account" = "Введите новый номер телефона, он будет связан с вашей учетной записью";
+"click_heart" = "Нажимайте на сердечко возле объявлений, чтобы не потерять их";
+"empty" = "Пусто";
+
+"sign_in" = "Войти";
+"create_account" = "Создать аккаунт";
+"continue" = "Продолжить";
+"change_password" = "Изменить пароль";
+"edit" = "Редактировать";
+"search_announcements" = "Искать объявления";
+"go_to_page" = "Перейти на страницу";
+"save" = "Сохранить";
+
+"forgot_password" = "Забыл пароль";
+"confirmation_code" = "Код подтверждения";
+"password_creation" = "Создание пароля";
+"personal_info" = "Личная информация";
+"favorites" = "Избранное";
+"messages" = "Сообщения";
+"profile" = "Профиль";
+"friends" = "Друзья";
+"settings" = "Настройки";
+"my_announcements" = "Мои объявления";
+"change_phone_number" = "Изменить номер телефона";
+"about_me" = "О себе";
+"confidentiality" = "Конфиденциальность";
+"app_theme" = "Тема приложения";
+"characteristics" = "Характеристики";
+"add_announcement" = "Подать";
+
+"country_code" = "Код страны";
+"gender" = "Пол";
+"country" = "Страна";
+"city" = "Город";
+
+"write" = "Написать";
+"call" = "Позвонить";
+
+"kazakhstan" = "Казахстан";
+"russia" = "Россия";
+"tajikistan" = "Таджикистан";
+"uzbekistan" = "Узбекистан";
+"azerbaijan" = "Азербайджан";
+"armenia" = "Армения";
+"belarus" = "Беларусь";
+"kyrgyzstan" = "Кыргызстан";
+"moldova" = "Молдова";
+"turkmenistan" = "Туркменистан";
+
+"gender.male" = "Мужской";
+"gender.female" = "Женский";
+
+"almaty" = "Алматы";
+"astana" = "Астана";
+"shymkent" = "Шымкент";
+"aktau" = "Актау";
+"aktobe" = "Актобе";
+"atyrau" = "Атырау";
+"karaganda" = "Караганда";
+"kokshetau" = "Кокшетау";
+"kostanay" = "Костанай";
+"pavlodar" = "Павлодар";
+"petropavlovsk" = "Петропавловск";
+"taldykorgan" = "Талдыкорган";
+"taraz" = "Тараз";
+"uralsk" = "Уральск";
+"ust_kamenogorsk" = "Усть-Каменогорск";
+"shakhtinsk" = "Шахтинск";
+"ekibastuz" = "Экибастуз";
+"temirtau" = "Темиртау";
+
+"about_placeholder" = "Я люблю заниматься спортом и читать книги...";
+
+"year_singular" = "год";
+"year_plural" = "года";
+"years_plural" = "лет";
+
+"general_info" = "Общие сведения";
+"rating" = "Рейтинг";
+"announcements" = "Объявления";
+"recent_announcements" = "Последние объявления";
+"full_name" = "Полное Имя";
+
+"find" = "Найти";
+"guide" = "Гид";
+"language" = "Язык";
+"about_app" = "О приложении";
+"quit" = "Выйти";
+"deactivate_account" = "Деактивировать аккаунт";
+"theme_light" = "Светлая";
+"theme_dark" = "Темная";
+"theme_system" = "Системная";
+"language_kz" = "Казахский";
+"language_ru"= "Русский";
+"language_en" = "Английский";
+"remove_connection" = "Удалить из контактов";
+
+"version" = "версия";
+
+"enter_access_code" = "Введите код доступа";
+"confirm_access_code" = "Подтвердите код доступа";
+
+"forgot_password" = "Забыл пароль";
+"sign_up" = "Зарегистрироваться";
+"enter_password" = "Введите пароль";
+"birthday" = "Дата рождения";
+"enter_phone" = "Введите номер телефона";
+
+"error" = "Ошибка!";
+"empty_fields" = "Некоторые из полей пустые!";
+"incorrect_phone_number" = "Неккоректный номер телефона!";
+"incorrect_password" = "Неккоректный пароль!";
+"delete" = "Удалить";
+"cancel" = "Отмена";
+"delete_favorites" = "Удалить все избранное?";
+"share" = "Поделиться";
+"camera" = "Камера";
+"gallery" = "Галерея";
+"close" = "Закрыть";
+"look" = "Посмотреть";
+"delete_photo" = "Удалить фото";
+"select_photo" = "Выберите фото";
+"select_photo_open_camera" = "Выберите фото из галереи или откройте камеру";
+"load_album_fail" = "Не удается загрузить ваши группы альбомов";
+"enable_access_settings" = "Вы можете включить доступ в настройках конфиденциальности";
+"deactivate" = "Деактивировать";
+"deactivate_account" = "Деактивировать аккаунт?";
+"change_name" = "Хотите изменить имя?";
+"support" = "Для этого вы можете обратиться в техподдержку";
+"phone_number_changed" = "Номер изменен";
+
+"first_name" = "Имя";
+"last_name" = "Фамилия";
+
+"decency" = "Порядочность";
+"responsibility" = "Ответственность";
+"clean" = "Чистоплотность";
+"smoke" = "Курение";
+"alcohol" = "Алкоголь";
+"sport" = "Спорт";
+"pet" = "Домашние животные";
+"job" = "Работа";
+"student" = "Студент";
+"cook" = "Кулинарные навыки";
+"religion" = "Религия";

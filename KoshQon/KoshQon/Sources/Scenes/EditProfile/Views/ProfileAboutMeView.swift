@@ -23,7 +23,7 @@ final class ProfileAboutMeView: BaseView {
         return saveButton
     }
     
-    private let placeholder = "Я люблю заниматься спортом и читать книги..."
+    private let placeholder = LocalizableKeys.Profile.aboutPlaceholder.localized()
     
     // MARK: - UI
     

@@ -28,58 +28,58 @@ extension NavigationCellViewModel: INavigationCellViewModel {
         case .main(let mainType):
             switch mainType {
             case .search:
-                return "Найти"
+                return LocalizableKeys.NavigationCell.find.localized()
             case .myAnnouncements:
-                return "Мои объявления"
+                return LocalizableKeys.NavigationBar.myAnnouncements.localized()
             case .guide:
-                return "Гид"
+                return LocalizableKeys.NavigationCell.guide.localized()
             }
         case .settings(let settingsType):
             switch settingsType {
             case .personal:
-                return "Личная информация"
+                return LocalizableKeys.NavigationBar.personalInfo.localized()
             case .privacy:
-                return "Конфиденциальность"
+                return LocalizableKeys.NavigationBar.confidentiality.localized()
             case .theme:
-                return "Тема приложения"
+                return LocalizableKeys.NavigationBar.appTheme.localized()
             case .language:
-                return "Язык"
+                return LocalizableKeys.NavigationCell.language.localized()
             case .about:
-                return "О приложении"
+                return LocalizableKeys.NavigationCell.aboutApp.localized()
             case .quit:
-                return "Выйти"
+                return LocalizableKeys.NavigationCell.quit.localized()
             }
         case .privacy(let privacyType):
             switch privacyType {
             case .deactivate:
-                return "Деактивировать аккаунт"
+                return LocalizableKeys.NavigationCell.deactivateAccount.localized()
             }
         case .theme(let themeType):
             switch themeType {
             case .light:
-                return "Светлая"
+                return LocalizableKeys.NavigationCell.themeLight.localized()
             case .dark:
-                return "Темная"
+                return LocalizableKeys.NavigationCell.themeDark.localized()
             case .system:
-                return "Системная"
+                return LocalizableKeys.NavigationCell.themeSystem.localized()
             }
         case .language(let languageType):
             switch languageType {
             case .kazakh:
-                return "Казахский"
+                return LocalizableKeys.NavigationCell.kz.localized()
             case .russian:
-                return "Русский"
+                return LocalizableKeys.NavigationCell.ru.localized()
             case .language:
-                return "Английский"
+                return LocalizableKeys.NavigationCell.en.localized()
             }
         case .more(let moreType):
             switch moreType {
             case .unfriend:
-                return "Удалить из контактов"
+                return LocalizableKeys.NavigationCell.removeConnection.localized()
             case .write:
-                return "Написать"
+                return LocalizableKeys.ActionButton.write.localized()
             case .call:
-                return "Позвонить"
+                return LocalizableKeys.ActionButton.call.localized()
             }
         }
     }

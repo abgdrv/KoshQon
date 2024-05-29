@@ -36,30 +36,30 @@ class ImageSetCoordinator: BaseCoordinator {
     
     func showImagePickerOptions(picker: UIImagePickerController, view: ImageSettable, isImageSelected: Bool) {
         var actions: [UIAlertAction] = [
-            UIAlertAction(title: "Камера", style: .default) { [weak self] _ in
+            UIAlertAction(title: LocalizableKeys.Alert.camera.localized(), style: .default) { [weak self] _ in
                 guard let self = self else { return }
                 if UIImagePickerController.isSourceTypeAvailable(.camera) {
                     picker.sourceType = .camera
                     self.openImagePicker(picker: picker)
                 }
             },
-            UIAlertAction(title: "Галерея", style: .default) { [weak self] _ in
+            UIAlertAction(title: LocalizableKeys.Alert.gallery.localized(), style: .default) { [weak self] _ in
                 guard let self = self else { return }
                 picker.sourceType = .photoLibrary
                 self.openImagePicker(picker: picker)
             },
-            UIAlertAction(title: "Закрыть", style: .cancel)
+            UIAlertAction(title: LocalizableKeys.Alert.close.localized(), style: .cancel)
         ]
         
         if isImageSelected {
             actions.insert(
-                UIAlertAction(title: "Посмотреть", style: .default) { action in
+                UIAlertAction(title: LocalizableKeys.Alert.look.localized(), style: .default) { action in
                     self.showImageZoom(image: view.image)
                 },
                 at: 2
             )
             actions.insert(
-                UIAlertAction(title: "Удалить фото", style: .destructive) { action in
+                UIAlertAction(title: LocalizableKeys.Alert.deletePhoto.localized(), style: .destructive) { action in
                     var view = view
                     view.didImageDelete = {}
                 },
@@ -68,8 +68,8 @@ class ImageSetCoordinator: BaseCoordinator {
         }
         
         guard let alertSheet = alertFlowFactory?.makeAlertSheet(
-            title: "Выберите фото",
-            message: "Выберите фото из галереи или откройте камеру",
+            title: LocalizableKeys.Alert.selectPhoto.localized(),
+            message: LocalizableKeys.Alert.selectPhotoOrOpenCamera.localized(),
             with: actions
         ) else { return }
         
@@ -86,8 +86,8 @@ class ImageSetCoordinator: BaseCoordinator {
     func checkPermission(onAccessHasBeenGranted: @escaping VoidCallback,
                          onAccessHasBeenDenied: VoidCallback? = nil) {
         let actions: [UIAlertAction] = [
-            UIAlertAction(title: "Закрыть", style: .cancel),
-            UIAlertAction(title: "Настройки", style: .default) { [weak self] action in
+            UIAlertAction(title: LocalizableKeys.Alert.close.localized(), style: .cancel),
+            UIAlertAction(title: LocalizableKeys.NavigationBar.settings.localized(), style: .default) { [weak self] action in
                 guard let _ = self else { return }
                 if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
                     UIApplication.shared.open(settingsURL)
@@ -99,8 +99,8 @@ class ImageSetCoordinator: BaseCoordinator {
             guard let self = self else { return }
             
             guard let alert = self.alertFlowFactory?.makeAlert(
-                title: "Unable to load your album groups",
-                message: "You can enable access in Privacy Settings",
+                title: LocalizableKeys.Alert.unableToLoadAlbum.localized(),
+                message: LocalizableKeys.Alert.enableAccessInSettings.localized(),
                 with: actions
             ) else { return }
             

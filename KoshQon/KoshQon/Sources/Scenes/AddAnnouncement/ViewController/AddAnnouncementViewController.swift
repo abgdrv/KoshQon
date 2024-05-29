@@ -22,7 +22,7 @@ final class AddAnnouncementViewController: BaseViewController {
     private lazy var addAnnouncementView = hostingController.view ?? UIView()
     
     private lazy var closeButton = UIBarButtonItem(
-        title: "Закрыть",
+        title: LocalizableKeys.Alert.close.localized(),
         style: .plain,
         target: self,
         action: #selector(closeButtonTapped)

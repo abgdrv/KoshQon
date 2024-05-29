@@ -47,42 +47,45 @@ final class InfoLabel: UILabel {
     private func configure() {
         switch type {
         case .phone:
-            setup(text: "Номер телефона")
+            setup(text: LocalizableKeys.InfoLabel.phoneNumber.localized())
         case .password:
-            setup(text: "Пароль")
+            setup(text: LocalizableKeys.InfoLabel.password.localized())
         case .noAccount:
-            setup(text: "У вас нет аккаунта?",
-                  textColor: AppColor.Theme.mainTitle.uiColor,
-                  textAlignment: .right)
+            setup(text: LocalizableKeys.InfoLabel.noAccount.localized(),
+                  textColor: AppColor.Theme.mainTitle.uiColor, textAlignment: .center)
         case .createPassword:
-            setup(text: "Придумайте пароль")
+            setup(text: LocalizableKeys.InfoLabel.createPassword.localized())
         case .repeatPassword:
-            setup(text: "Повторите пароль")
+            setup(text: LocalizableKeys.InfoLabel.repeatPassword.localized())
         case .sms:
-            setup(text: "Код подтверждения отправлен на")
+            setup(text: LocalizableKeys.InfoLabel.verificationCodeSent.localized())
         case .resend:
-            setup(text: "Переотправить через")
+            setup(text: LocalizableKeys.InfoLabel.resendAfter.localized())
         case .passwordContain:
-            setup(text: "Пароль должен содержать:")
+            setup(text: LocalizableKeys.InfoLabel.passwordMustContain.localized())
         case .passwordRequirements:
-            let options = ["Не менее 8 символов", "Цифры","Заглавные и строчные буквы"]
+            let options = [
+                LocalizableKeys.InfoLabel.atLeastEightDigits.localized(),
+                LocalizableKeys.InfoLabel.digits.localized(),
+                LocalizableKeys.InfoLabel.capitalAndLowercaseLetter.localized()
+            ]
             setup(text: options.map { "· " + $0 }.joined(separator: "\n"),
                   textColor: AppColor.Theme.mainTitle.uiColor)
         case .registration:
-            setup(text: "Ваш номер телефона будет использоваться для входа в вашу учетную запись",
+            setup(text: LocalizableKeys.InfoLabel.phoneNumberLogin.localized(),
                   textAlignment: .center)
         case .forgotPassword:
-            setup(text: "Для восстановления вашего пароля требуется ваш номер телефона, связанный с учетной записью",
+            setup(text: LocalizableKeys.InfoLabel.phoneNumberRecover.localized(),
                   textAlignment: .center)
         case .changePhone:
-            setup(text: "Введите новый номер телефона, он будет связан с вашей учетной записью", 
+            setup(text: LocalizableKeys.InfoLabel.phoneNumberAccount.localized(),
                   textAlignment: .center)
         case .favorites:
-            setup(text: "Нажимайте на сердечко возле объявлений, чтобы не потерять их",
+            setup(text: LocalizableKeys.InfoLabel.clickHeart.localized(),
                   textColor: AppColor.Theme.mainTitle.uiColor,
                   textAlignment: .center)
         case .empty:
-            setup(text: "Пусто", font: AppFont.medium.s16)
+            setup(text: LocalizableKeys.InfoLabel.empty.localized(), font: AppFont.medium.s16)
         }
     }
     

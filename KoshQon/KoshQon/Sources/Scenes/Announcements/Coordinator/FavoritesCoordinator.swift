@@ -44,14 +44,14 @@ private extension FavoritesCoordinator {
     
     func showDeleteAlert(completion: @escaping VoidCallback) {
         let actions: [UIAlertAction] = [
-            UIAlertAction(title: "Удалить", style: .destructive, handler: { action in
+            UIAlertAction(title: LocalizableKeys.Alert.delete.localized(), style: .destructive, handler: { action in
                 completion()
             }),
-            UIAlertAction(title: "Отмена", style: .cancel, handler: { action in
+            UIAlertAction(title: LocalizableKeys.Alert.cancel.localized(), style: .cancel, handler: { action in
                 self.router.dismissModule()
             })
         ]
-        let alert = factory.makeAlert(title: "Удалить все избранное?", message: nil, with: actions)
+        let alert = factory.makeAlert(title: LocalizableKeys.Alert.deleteFavorites.localized(), message: nil, with: actions)
         router.toPresent()?.present(alert, animated: true)
     }
 }

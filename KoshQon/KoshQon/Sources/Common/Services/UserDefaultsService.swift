@@ -64,10 +64,9 @@ final class UserDefaultsService {
         set {
             defaults.setValue(newValue.rawValue, forKey: Constants.languageKey)
         }
-        
         get {
-            let storedLanguage = (defaults.value(forKey: Constants.languageKey) as? String) ?? LanguageType.ru.rawValue
-            return LanguageType(rawValue: storedLanguage) ?? .ru
+            let storedLanguage = (defaults.value(forKey: Constants.languageKey) as? String) ?? LanguageType.en.rawValue
+            return LanguageType(rawValue: storedLanguage) ?? .en
         }
     }
 }

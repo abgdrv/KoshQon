@@ -22,7 +22,7 @@ final class ProfileAnnouncementsView: HighlightView {
     
     private lazy var announcementsTitleLabel = UILabel().apply {
         $0.set(font: AppFont.medium.s20, textColor: AppColor.Theme.mainTitle.uiColor)
-        $0.text = "Объявления"
+        $0.text = LocalizableKeys.Profile.announcements.localized()
     }
     
     private lazy var announcementsTableView = DynamicTableView(style: .plain).apply {

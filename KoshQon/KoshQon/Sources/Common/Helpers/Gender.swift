@@ -12,11 +12,6 @@ enum Gender: String, CaseIterable {
     case female = "gender.female"
     
     var title: String {
-        switch self {
-        case .male:
-            "Мужской"
-        case .female:
-            "Женский"
-        }
+        return rawValue.localized
     }
 }
