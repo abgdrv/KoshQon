@@ -47,7 +47,7 @@
 "confidentiality" = "Құпиялылық";
 "app_theme" = "Қолданба тақырыбы";
 "characteristics" = "Сипаттамалары";
-"add_announcement" = "Add";
+"add_announcement" = "Қосу";
 
 "country_code" = "Ел коды";
 "gender" = "Еден";
@@ -161,3 +161,7 @@
 "student" = "Студент";
 "cook" = "Аспаздық дағдылар";
 "religion" = "Дін";
+
+"new_announcement" = "Жаңа хабарландыру";
+"residence_place" = "Тұрғылықты жері";
+"add_photo" = "Фотосурет қосу";

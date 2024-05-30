@@ -62,6 +62,7 @@ final class AddAnnouncementViewController: BaseViewController {
 private extension AddAnnouncementViewController {
     func setupViews() {
         view.addSubview(addAnnouncementView)
+        addAnnouncementView.backgroundColor = AppColor.Theme.mainBackground.uiColor
     }
     
     func setupConstraints() {

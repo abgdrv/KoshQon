@@ -312,6 +312,8 @@
 		47F571502C0500AD008DCA81 /* LocalizableKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F5714F2C0500AD008DCA81 /* LocalizableKeys.swift */; };
 		47F571522C05A49D008DCA81 /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F571512C05A49D008DCA81 /* Int+Extensions.swift */; };
 		47F571612C074407008DCA81 /* LanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F571602C074407008DCA81 /* LanguageViewController.swift */; };
+		47F571652C079FE4008DCA81 /* InputTextFieldWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F571642C079FE4008DCA81 /* InputTextFieldWrapper.swift */; };
+		47F571672C083520008DCA81 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F571662C083520008DCA81 /* ImagePicker.swift */; };
 		A2BFAC16081DDB0F2EAD971E /* Pods_KoshQon_KoshQonUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42CE84A5574DC805229D129B /* Pods_KoshQon_KoshQonUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -649,6 +651,8 @@
 		47F5714F2C0500AD008DCA81 /* LocalizableKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizableKeys.swift; sourceTree = "<group>"; };
 		47F571512C05A49D008DCA81 /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
 		47F571602C074407008DCA81 /* LanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageViewController.swift; sourceTree = "<group>"; };
+		47F571642C079FE4008DCA81 /* InputTextFieldWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextFieldWrapper.swift; sourceTree = "<group>"; };
+		47F571662C083520008DCA81 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		4B1CB0D67C4284B3386A5D17 /* Pods_KoshQon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KoshQon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A64B66AF75DD7EB3AA05FD9 /* Pods-KoshQon-KoshQonUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KoshQon-KoshQonUITests.debug.xcconfig"; path = "Target Support Files/Pods-KoshQon-KoshQonUITests/Pods-KoshQon-KoshQonUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5F34D042224D89E307A460AA /* Pods-KoshQon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KoshQon.release.xcconfig"; path = "Target Support Files/Pods-KoshQon/Pods-KoshQon.release.xcconfig"; sourceTree = "<group>"; };
@@ -933,6 +937,8 @@
 				47D1BDF32BB6CC09004992AA /* HighlightCell.swift */,
 				47D1BDFE2BBAC8F1004992AA /* DatePicker.swift */,
 				47D1BE4E2BC7E3F2004992AA /* ActionButton.swift */,
+				47F571642C079FE4008DCA81 /* InputTextFieldWrapper.swift */,
+				47F571662C083520008DCA81 /* ImagePicker.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2617,6 +2623,7 @@
 				4715D0482BD650A100DF7868 /* PasscodeIndicatorView.swift in Sources */,
 				47F570FA2C038B6F008DCA81 /* ConstraintMakerExtendable.swift in Sources */,
 				47CD67382B8DA33E0035DCB6 /* NavigationTitleView.swift in Sources */,
+				47F571652C079FE4008DCA81 /* InputTextFieldWrapper.swift in Sources */,
 				47C01DD82BADC49A00D1B2F2 /* EnterPhoneFlowFactory.swift in Sources */,
 				47C7B3792B812AF000125172 /* AppColor.swift in Sources */,
 				47D1BDDE2BB570F0004992AA /* EditProfileFlowFactory.swift in Sources */,
@@ -2685,6 +2692,7 @@
 				47F571322C0449B6008DCA81 /* LanguageType.swift in Sources */,
 				47F570532C0388C7008DCA81 /* MessagesCoordinator.swift in Sources */,
 				471086522B9E42E100556C2D /* TabBarController.swift in Sources */,
+				47F571672C083520008DCA81 /* ImagePicker.swift in Sources */,
 				4715996A2BF1D68200022D62 /* PassCodeCoordinator.swift in Sources */,
 				475224A52BA162A4000DAE1B /* Reusable.swift in Sources */,
 				47D1BE3B2BC64C55004992AA /* FriendCellViewModel.swift in Sources */,

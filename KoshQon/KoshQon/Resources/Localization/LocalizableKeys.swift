@@ -147,6 +147,12 @@ enum LocalizableKeys {
         case support = "support"
         case phoneChanged = "phone_number_changed"
     }
+    
+    enum AddAnnouncement: String {
+        case newAnnouncement = "new_announcement"
+        case residencePlace = "residence_place"
+        case addPhoto = "add_photo"
+    }
 }
 
 extension RawRepresentable where RawValue == String {
