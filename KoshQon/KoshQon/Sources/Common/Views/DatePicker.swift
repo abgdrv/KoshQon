@@ -41,6 +41,8 @@ private extension DatePicker {
         backgroundColor = AppColor.Theme.blockBackground.uiColor
         addTarget(self, action: #selector(datePickerValueChanged), for: .valueChanged)
         
+        locale = UserDefaultsService.shared.language.locale
+        
         let calendar = Calendar(identifier: .gregorian)
         let currentDate = Date()
         var components = DateComponents()

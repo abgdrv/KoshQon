@@ -10,19 +10,19 @@ import SwiftUI
 struct SplashScreenView: View {
     
     @State private var shouldTransition = false
-    @State private var font = Font(AppFont.anta.s32)
+    @State private var font = AppFont.anta.s32.swiftUIFont
     
-    private let minScaleFont = Font(AppFont.anta.s10)
-    private let maxScaleFont = Font(AppFont.anta.s64)
-    private let versionFont = Font(AppFont.medium.s20)
+    private let minScaleFont = AppFont.anta.s10.swiftUIFont
+    private let maxScaleFont = AppFont.anta.s64.swiftUIFont
+    private let versionFont = AppFont.medium.s20.swiftUIFont
     
     private let maxScaleEffect = 4.0
     private let minScaleEffect = 0.0
     private let animationDuration = 1.0
     private let animationDelay = 0.5
     
-    private let color = Color(AppColor.Static.orange.uiColor)
-    private let logoColor = Color(AppColor.Theme.mainTitle.uiColor)
+    private let color = AppColor.Static.orange.swiftUIColor
+    private let logoColor = AppColor.Theme.mainTitle.swiftUIColor
     
     var body: some View {
         GeometryReader(content: { geometry in

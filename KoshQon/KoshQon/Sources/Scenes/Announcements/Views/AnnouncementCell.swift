@@ -161,7 +161,6 @@ private extension AnnouncementCell {
         titleLabel.text = vm.title
         dateLabel.text = vm.date
         addressLabel.text = vm.address
-        ratingLabel.text = vm.rating
     }
 }
 

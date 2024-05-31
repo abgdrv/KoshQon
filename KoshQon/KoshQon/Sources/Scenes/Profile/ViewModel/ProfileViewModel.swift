@@ -39,11 +39,8 @@ final class ProfileViewModel {
                                            clean: 3.8,
                                            characteristics: [.cook, .job, .student, .sport])
     
-    private let ads = [
-        Announcement(title: "Ищу сожителя", address: "Алматы, Бостандыкский район", date: "2 февраля", rating: 8.7),
-        Announcement(title: "Ищу сожителя", address: "Алматы, Бостандыкский район", date: "2 февраля", rating: 8.7),
-        Announcement(title: "Ищу сожителя", address: "Алматы, Бостандыкский район", date: "2 февраля", rating: 8.7),
-        Announcement(title: "Ищу сожителя", address: "Алматы, Бостандыкский район", date: "2 февраля", rating: 8.7)
+    private let ads: [Announcement] = [
+        
     ]
     
     // MARK: - Object Lifecycle

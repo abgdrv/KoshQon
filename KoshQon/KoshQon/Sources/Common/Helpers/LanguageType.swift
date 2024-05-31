@@ -22,8 +22,10 @@ extension LanguageType {
         switch self {
         case .ru:
             return Locale(identifier: "ru_RU")
-        default:
-            return .current
+        case .en:
+            return Locale(identifier: "en_US")
+        case .kz:
+            return Locale(identifier: "kk_KZ")
         }
     }
 }

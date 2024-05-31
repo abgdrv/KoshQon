@@ -15,11 +15,8 @@ final class MainScreenViewModel {
     var navigationCellViewModels: [NavigationCellViewModel] = []
     
     let navigationItems: [NavigationCellType] = NavigationCellType.Main.allCases.map { NavigationCellType.main($0) }
-    let ads = [
-        Announcement(title: "Ищу сожителя", address: "Алматы, Бостандыкский район", date: "2 февраля", rating: 8.7),
-        Announcement(title: "Ищу сожителя", address: "Алматы, Бостандыкский район", date: "2 февраля", rating: 8.7),
-        Announcement(title: "Ищу сожителя", address: "Алматы, Бостандыкский район", date: "2 февраля", rating: 8.7),
-        Announcement(title: "Ищу сожителя", address: "Алматы, Бостандыкский район", date: "2 февраля", rating: 8.7)
+    let ads: [Announcement] = [
+        
     ]
     
     // MARK: - Object Lifecycle

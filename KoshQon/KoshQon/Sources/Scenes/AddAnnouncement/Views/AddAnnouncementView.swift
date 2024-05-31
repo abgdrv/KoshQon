@@ -10,7 +10,7 @@ import SwiftUI
 struct AddAnnouncementView: View {
     
     @ObservedObject var viewModel: AddAnnouncementViewModel
-    @State private var selectedImages: [UIImage] = []
+    
     @State private var showImagePicker: Bool = false
     
     private let columns = [GridItem(.flexible(), spacing: 16), GridItem(.flexible(), spacing: 16)]
@@ -27,14 +27,14 @@ struct AddAnnouncementView: View {
                 }
                 .foregroundStyle(AppColor.Theme.mainTitle.swiftUIColor)
                 
-                VStack(alignment: .leading, spacing: 10) {
+                VStack(alignment: .leading, spacing: 16) {
                     Text(LocalizableKeys.AddAnnouncement.residencePlace.localized())
                         .font(AppFont.medium.s20.swiftUIFont)
                     
                     LazyVGrid(columns: columns, spacing: 16) {
-                        ForEach(selectedImages.indices, id: \.self) { index in
+                        ForEach(viewModel.selectedImages.indices, id: \.self) { index in
                             ZStack(alignment: .topTrailing) {
-                                Image(uiImage: selectedImages[index])
+                                Image(uiImage: viewModel.selectedImages[index])
                                     .resizable()
                                     .scaledToFill()
                                     .frame(width: (UIScreen.main.bounds.width - 48) / 2, height: 100) // Rectangular frame, 2 items in a row
@@ -42,7 +42,7 @@ struct AddAnnouncementView: View {
                                 
                                 Button(action: {
                                     // Delete the selected image
-                                    selectedImages.remove(at: index)
+                                    viewModel.selectedImages.remove(at: index)
                                 }) {
                                     Image(systemName: "xmark.circle.fill")
                                         .foregroundColor(Color.red)
@@ -51,12 +51,11 @@ struct AddAnnouncementView: View {
                                         .clipShape(Circle())
                                         .offset(x: 10, y: -10)
                                 }
-                                .opacity(selectedImages.isEmpty ? 0 : 1)
+                                .opacity($viewModel.selectedImages.isEmpty ? 0 : 1)
                             }
                         }
                         
-                        // Add Photo Button
-                        if selectedImages.count < 9 {
+                        if viewModel.selectedImages.count < 9 {
                             Button(action: {
                                 // Toggle the image picker
                                 showImagePicker.toggle()
@@ -76,12 +75,15 @@ struct AddAnnouncementView: View {
                             }
                             .buttonStyle(PlainButtonStyle())
                             .sheet(isPresented: $showImagePicker) {
-                                ImagePicker(selectedImages: $selectedImages)
+                                ImagePicker(selectedImages: $viewModel.selectedImages)
                             }
                         }
                     }
                 }
                 
+                RoundedBlock(title: "Aдрес") {
+                    InputTextFieldWrapper(text: .constant(""), inputType: .city)
+                }
                 
                 
                 Spacer()

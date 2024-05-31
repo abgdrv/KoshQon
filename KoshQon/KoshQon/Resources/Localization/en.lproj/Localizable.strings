@@ -171,3 +171,19 @@
 "new_announcement" = "New announcement";
 "residence_place" = "Place of residence";
 "add_photo" = "Add photo";
+
+"sanuzel_vmeste" = "Combined";
+"sanuzel_otdelno" = "Separate";
+
+"alatau" = "Alatau district";
+"almaly" = "Almaly district ";
+"auez" = "Auez district";
+"bostandyk" = "Bostandyk district";
+"medeu" = "Medeu district";
+"nauryzbay" = "Nauryzbay district";
+"turksib" = "Turksib district";
+"zhetysu" = "Zhetysu district";
+
+"condition_high" = "Fresh renovation, new furniture";
+"condition_middle" = "Not new, but neat and clean repair";
+"condition_low" = "Without repair";

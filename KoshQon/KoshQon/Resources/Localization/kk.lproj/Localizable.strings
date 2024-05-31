@@ -54,16 +54,16 @@
 "country" = "Ел";
 "city" = "Қала";
 
-"kazakhstan" = "Казахстан";
-"russia" = "Россия";
-"tajikistan" = "Таджикистан";
-"uzbekistan" = "Узбекистан";
-"azerbaijan" = "Азербайджан";
+"kazakhstan" = "Қазақстан";
+"russia" = "Ресей";
+"tajikistan" = "Тәжікстан";
+"uzbekistan" = "Өзбекстан";
+"azerbaijan" = "Әзірбайжан";
 "armenia" = "Армения";
 "belarus" = "Беларусь";
-"kyrgyzstan" = "Кыргызстан";
+"kyrgyzstan" = "Қырғызстан";
 "moldova" = "Молдова";
-"turkmenistan" = "Туркменистан";
+"turkmenistan" = "Түрікменстан";
 
 "gender.male" = "Еркек";
 "gender.female" = "Әйел";
@@ -165,3 +165,19 @@
 "new_announcement" = "Жаңа хабарландыру";
 "residence_place" = "Тұрғылықты жері";
 "add_photo" = "Фотосурет қосу";
+
+"sanuzel_vmeste" = "Біріктірілген";
+"sanuzel_otdelno" = "Бөлек";
+
+"alatau" = "Алатау ауданы";
+"almaly" = "Алмалы ауданы";
+"auez" = "Әуезов ауданы";
+"bostandyk" = "Бостандық ауданы";
+"medeu" = "Медеу ауданы";
+"nauryzbay" = "Наурызбай ауданы";
+"turksib" = "Түрксіб ауданы";
+"zhetysu" = "Жетісу ауданы";
+
+"condition_high" = "Жаңа жөндеу, жаңа жиһаз";
+"condition_middle" = "Жаңа емес, бірақ ұқыпты және таза жөндеу";
+"condition_low" = "Жөндеусіз";

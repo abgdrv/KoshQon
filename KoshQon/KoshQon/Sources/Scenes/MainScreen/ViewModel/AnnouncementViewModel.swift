@@ -5,13 +5,12 @@
 //  Created by Almat Begaidarov on 12.03.2024.
 //
 
-import Foundation
+import UIKit
 
 protocol IAnnouncementCellViewModel {
     var title: String { get }
     var address: String { get }
     var date: String { get }
-    var rating: String { get }
 }
 
 final class AnnouncementViewModel {
@@ -33,11 +32,27 @@ extension AnnouncementViewModel: IAnnouncementCellViewModel {
         announcement.address
     }
     
-    var date: String {
-        announcement.date
+    var condtion: String {
+        announcement.condition.title
     }
     
-    var rating: String {
-        "\(announcement.rating)"
+    var age: String {
+        return "\(announcement.age.0) - \(announcement.age.1)"
+    }
+    
+    var gender: String {
+        return announcement.gender.title
+    }
+    
+    var budget: String {
+        return "\(announcement.budget.0) - \(announcement.budget.1)"
+    }
+    
+    var date: String {
+        announcement.date.toString(format: "d MMMM")
+    }
+    
+    var mainImage: UIImage? {
+        announcement.images[0]
     }
 }

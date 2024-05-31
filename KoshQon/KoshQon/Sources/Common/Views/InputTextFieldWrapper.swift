@@ -13,6 +13,12 @@ struct InputTextFieldWrapper: UIViewRepresentable {
     
     let inputType: InputType
     let placeholder: String?
+    
+    init(text: Binding<String>, inputType: InputType, placeholder: String? = nil) {
+        self._text = text
+        self.inputType = inputType
+        self.placeholder = placeholder
+    }
 
     func makeUIView(context: Context) -> InputTextField {
         let textField = InputTextField(inputType: inputType, placeholder: placeholder)
