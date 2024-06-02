@@ -69,7 +69,7 @@ extension AnnouncementsView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = AnnouncementCell(viewModel: viewModel.items[indexPath.row])
+        let cell = AnnouncementCell(viewModel: viewModel.items[indexPath.row], isGradient: false)
         return cell
     }
     

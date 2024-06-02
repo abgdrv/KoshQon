@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import SkeletonView
 
 final class AnnouncementCell: BaseCell {
     
@@ -25,28 +26,36 @@ final class AnnouncementCell: BaseCell {
     private lazy var adImageView = UIImageView(image: AppImage.Main.adBlank.uiImage).apply {
         $0.contentMode = .scaleAspectFill
         $0.clipsToBounds = true
+        $0.isSkeletonable = true
+        $0.skeletonCornerRadius = 10
     }
     
     private lazy var titleLabel = UILabel().apply {
         $0.set(font: AppFont.regular.s16, textColor: AppColor.Theme.mainTitle.uiColor)
         $0.numberOfLines = 0
+        $0.isSkeletonable = true
     }
     
     private lazy var addressLabel = UILabel().apply {
         $0.set(font: AppFont.regular.s12, textColor: AppColor.Static.darkGray.uiColor)
         $0.textAlignment = .right
+        $0.isSkeletonable = true
     }
     
     private lazy var ageLabel = UILabel().apply {
         $0.set(font: AppFont.regular.s12, textColor: AppColor.Static.darkGray.uiColor)
+        $0.isSkeletonable = true
     }
     
     private lazy var genderLabel = UILabel().apply {
         $0.set(font: AppFont.regular.s12, textColor: AppColor.Static.darkGray.uiColor)
+        $0.isSkeletonable = true
+
     }
     
     private lazy var budgetLabel = UILabel().apply {
         $0.set(font: AppFont.regular.s12, textColor: AppColor.Static.darkGray.uiColor)
+        $0.isSkeletonable = true
     }
     
     private lazy var separatorView = SeparatorView()
@@ -55,18 +64,30 @@ final class AnnouncementCell: BaseCell {
     
     private lazy var dateLabel = UILabel().apply {
         $0.set(font: AppFont.regular.s12, textColor: AppColor.Static.darkGray.uiColor)
+        $0.isSkeletonable = true
     }
     
     
     // MARK: - Object Lifecycle
     
-    init(viewModel: AnnouncementViewModel) {
+    init(viewModel: AnnouncementViewModel, isGradient: Bool) {
         self.viewModel = viewModel
         super.init()
+        setup(viewModel)
         setupViews()
         setupConstraints()
         setupBindings()
-        setup(viewModel)
+        
+        
+        if isGradient {
+            setupSkeleton()
+
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                self.stopSkeleton()
+                self.setup(viewModel)
+            }
+        }
+        
     }
     
     // MARK: - View Lifecycle
@@ -84,6 +105,7 @@ final class AnnouncementCell: BaseCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
+        stopSkeleton()
         adImageView.image = nil
         titleLabel.text = nil
         addressLabel.text = nil
@@ -163,13 +185,32 @@ private extension AnnouncementCell {
     func setupBindings() {
         contentView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(cellTapped)))
     }
+    
+    func setupSkeleton() {
+        [titleLabel, ageLabel, genderLabel, budgetLabel, dateLabel, addressLabel, adImageView].forEach {
+            $0.showAnimatedGradientSkeleton()
+        }
+    }
+    
+    func stopSkeleton() {
+        adImageView.hideSkeleton()
+        adImageView.layer.cornerRadius = 10
+        titleLabel.hideSkeleton()
+        addressLabel.hideSkeleton()
+        ageLabel.hideSkeleton()
+        genderLabel.hideSkeleton()
+        budgetLabel.hideSkeleton()
+        dateLabel.hideSkeleton()
+    }
 }
 
 // MARK: - Private methods
 
 private extension AnnouncementCell {
     func setup(_ vm: AnnouncementViewModel) {
-        adImageView.image = vm.mainImage
+        if vm.mainImage != nil {
+            adImageView.image = vm.mainImage
+        }
         titleLabel.text = vm.title
         dateLabel.text = vm.date
         ageLabel.text = "\(LocalizableKeys.AddAnnouncement.age.localized()): \(vm.age)"

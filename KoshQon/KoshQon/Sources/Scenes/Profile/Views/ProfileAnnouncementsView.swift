@@ -64,7 +64,7 @@ extension ProfileAnnouncementsView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = AnnouncementCell(viewModel: announcementViewModels[indexPath.row])
+        let cell = AnnouncementCell(viewModel: announcementViewModels[indexPath.row], isGradient: false)
         return cell
     }
 }

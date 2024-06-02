@@ -53,6 +53,9 @@ extension AnnouncementViewModel: IAnnouncementCellViewModel {
     }
     
     var mainImage: UIImage? {
-        announcement.images[0]
+        if announcement.images.isEmpty {
+            return nil
+        }
+        return announcement.images[0]
     }
 }

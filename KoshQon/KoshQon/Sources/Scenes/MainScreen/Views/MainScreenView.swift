@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import SkeletonView
 
 final class MainScreenView: BaseView {
     
@@ -17,6 +18,8 @@ final class MainScreenView: BaseView {
     
     var didScrollDown: VoidCallback?
     var didScrollUp: VoidCallback?
+    
+    var shouldAnimate = true
         
     private let viewModel: MainScreenViewModel
     
@@ -42,6 +45,11 @@ final class MainScreenView: BaseView {
         super.init()
         setupViews()
         setupConstraints()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.shouldAnimate = false
+            self.announcementsTableView.reloadData()
+        }
     }
 }
 
@@ -80,8 +88,8 @@ extension MainScreenView: UITableViewDelegate, UITableViewDataSource {
             }
             return cell
         }
-        
-        let cell = AnnouncementCell(viewModel: viewModel.announcementViewModels[indexPath.row])
+                
+        let cell = AnnouncementCell(viewModel: viewModel.announcementViewModels[indexPath.row], isGradient: true)
         cell.didAnnouncementCellTap = { [weak self] viewModel in
             guard let self = self else { return }
             self.didAnnouncementCellTap?(viewModel)
