@@ -53,6 +53,10 @@
 "gender" = "Еден";
 "country" = "Ел";
 "city" = "Қала";
+"district" = "Аудан";
+"condition" = "Жағдайы";
+"apartment_type" = "Түрі";
+"sanuzel" = "Жуынатын бөлме";
 
 "kazakhstan" = "Қазақстан";
 "russia" = "Ресей";
@@ -181,3 +185,20 @@
 "condition_high" = "Жаңа жөндеу, жаңа жиһаз";
 "condition_middle" = "Жаңа емес, бірақ ұқыпты және таза жөндеу";
 "condition_low" = "Жөндеусіз";
+
+"flat" = "Пәтер";
+"house" = "Жеке үй";
+
+"room_amount" = "Бөлмелер саны";
+"area" = "Шаршы";
+"floor" = "Қабат";
+"of" = "-тан";
+"internet" = "ғаламтор";
+"est" = "Бар";
+"location" = "Орналасу";
+"street" = "Көше";
+"house_number" = "үй нөмірі";
+"rommate_char" = "Бірге тұратын адамның сипаттамалары";
+"age" = "жас";
+"budget" = "Бюджет";
+"description" = "Сипаттама";

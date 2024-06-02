@@ -8,7 +8,7 @@
 import UIKit
 
 struct User {
-    let id: Int
+    let id: UUID = UUID()
     let phoneNumber: String
     var password: String
     var image: UIImage?

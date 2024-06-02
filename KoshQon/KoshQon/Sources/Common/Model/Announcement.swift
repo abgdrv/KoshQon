@@ -8,30 +8,32 @@
 import UIKit
 
 struct Announcement {
-    let userId: Int
+    let id: UUID = UUID()
+    let user: User?
     var images: [UIImage] = []
-    let city: City
-    let district: District
+    let type: String
+    let city: String
+    let district: String
     let street: String
-    let houseNumber: Int
-    let rooms: Int
-    let area: Int
-    let floor: (Int, Int)
-    let sanuzel: Sanuzel
-    let condition: Condition
+    let houseNumber: String
+    let rooms: String
+    let area: String
+    let floor: (String, String)
+    let sanuzel: String
+    let condition: String
     let isInternet: Bool
     let description: String
-    let date: Date
+    let date: Date = Date()
     
-    let age: (Int, Int)
-    let gender: Gender
-    let budget: (Int, Int)
+    let age: (String, String)
+    let gender: String
+    let budget: (String, String)
     
     var title: String {
         return street + ", " + String(houseNumber)
     }
     
     var address: String {
-        return city.name + ", " + street
+        return city + ", " + district
     }
 }

@@ -13,6 +13,7 @@ final class AddAnnouncementViewController: BaseViewController {
     // MARK: - Properties
     
     var didClose: VoidCallback?
+    var didCreate: VoidCallback?
     
     private let viewModel: AddAnnouncementViewModel
     
@@ -44,6 +45,7 @@ final class AddAnnouncementViewController: BaseViewController {
         setupViews()
         setupConstraints()
         setupNavigation()
+        setupBindings()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -74,6 +76,12 @@ private extension AddAnnouncementViewController {
     
     func setupNavigation() {
         navigationItem.rightBarButtonItem = closeButton
+    }
+    
+    func setupBindings() {
+        viewModel.didCreate = { [weak self] in
+            self?.didCreate?()
+        }
     }
 }
 

@@ -15,9 +15,7 @@ final class MainScreenViewModel {
     var navigationCellViewModels: [NavigationCellViewModel] = []
     
     let navigationItems: [NavigationCellType] = NavigationCellType.Main.allCases.map { NavigationCellType.main($0) }
-    let ads: [Announcement] = [
-        
-    ]
+    let ads: [Announcement] = AppData.shared.announcements
     
     // MARK: - Object Lifecycle
     

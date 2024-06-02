@@ -16,6 +16,7 @@ enum ProceedButtonType {
     case find
     case account
     case save
+    case create
 }
 
 final class ProceedButton: UIButton {
@@ -48,6 +49,8 @@ final class ProceedButton: UIButton {
             setup(title: LocalizableKeys.ProceedButton.goToPage.localized(), font: AppFont.medium.s14)
         case .save:
             setup(title: LocalizableKeys.ProceedButton.save.localized())
+        case .create:
+            setup(title: "Создать")
         case .none:
             break
         }

@@ -5,7 +5,7 @@
 //  Created by Almat Begaidarov on 18.02.2024.
 //
 
-import UIKit
+import SwiftUI
 
 protocol AppImageProtocol {
     var rawValue: String { get }
@@ -25,6 +25,13 @@ extension AppImageProtocol {
             fatalError("Could not find image with name \(rawValue)")
         }
         return image
+    }
+    
+    var swiftUIImage: Image {
+        guard let image = UIImage(named: rawValue) else {
+            fatalError("Could not find image with name \(rawValue)")
+        }
+        return Image(uiImage: image)
     }
     
 }

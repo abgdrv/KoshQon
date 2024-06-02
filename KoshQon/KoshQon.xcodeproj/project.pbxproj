@@ -211,99 +211,6 @@
 		47F570532C0388C7008DCA81 /* MessagesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570522C0388C7008DCA81 /* MessagesCoordinator.swift */; };
 		47F570552C0388E4008DCA81 /* MessagesOutputCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570542C0388E4008DCA81 /* MessagesOutputCoordinator.swift */; };
 		47F570582C038954008DCA81 /* MessagesFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570572C038954008DCA81 /* MessagesFlowFactory.swift */; };
-		47F570CF2C038B6F008DCA81 /* ATCCarouselAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F5705B2C038B6E008DCA81 /* ATCCarouselAdapter.swift */; };
-		47F570D02C038B6F008DCA81 /* ATCStoryAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F5705C2C038B6E008DCA81 /* ATCStoryAdapter.swift */; };
-		47F570D12C038B6F008DCA81 /* ATCViewControllerContainerRowAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F5705D2C038B6E008DCA81 /* ATCViewControllerContainerRowAdapter.swift */; };
-		47F570D22C038B6F008DCA81 /* CoreImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47F5705F2C038B6E008DCA81 /* CoreImages.xcassets */; };
-		47F570D32C038B6F008DCA81 /* Misc.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47F570602C038B6E008DCA81 /* Misc.xcassets */; };
-		47F570D42C038B6F008DCA81 /* ATCChatThreadAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570622C038B6E008DCA81 /* ATCChatThreadAdapter.swift */; };
-		47F570D52C038B6F008DCA81 /* ATCChatUserStoryAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570632C038B6E008DCA81 /* ATCChatUserStoryAdapter.swift */; };
-		47F570D62C038B6F008DCA81 /* ATCChatChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570652C038B6E008DCA81 /* ATCChatChannel.swift */; };
-		47F570D72C038B6F008DCA81 /* ATChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570662C038B6E008DCA81 /* ATChatMessage.swift */; };
-		47F570D82C038B6F008DCA81 /* ATCChatMockStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570682C038B6E008DCA81 /* ATCChatMockStore.swift */; };
-		47F570D92C038B6F008DCA81 /* ATCRemoteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570692C038B6E008DCA81 /* ATCRemoteData.swift */; };
-		47F570DA2C038B6F008DCA81 /* ATCThreadCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F5706B2C038B6E008DCA81 /* ATCThreadCollectionViewCell.swift */; };
-		47F570DB2C038B6F008DCA81 /* ATCThreadCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47F5706C2C038B6E008DCA81 /* ATCThreadCollectionViewCell.xib */; };
-		47F570DC2C038B6F008DCA81 /* ATCUserStoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F5706D2C038B6E008DCA81 /* ATCUserStoryCollectionViewCell.swift */; };
-		47F570DD2C038B6F008DCA81 /* ATCUserStoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47F5706E2C038B6E008DCA81 /* ATCUserStoryCollectionViewCell.xib */; };
-		47F570DE2C038B6F008DCA81 /* ATCChatHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570712C038B6E008DCA81 /* ATCChatHomeViewController.swift */; };
-		47F570DF2C038B6F008DCA81 /* ATCChatThreadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570722C038B6E008DCA81 /* ATCChatThreadsViewController.swift */; };
-		47F570E02C038B6F008DCA81 /* ATCChatThreadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570732C038B6E008DCA81 /* ATCChatThreadViewController.swift */; };
-		47F570E12C038B6F008DCA81 /* ATCGenericFirebaseDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570762C038B6E008DCA81 /* ATCGenericFirebaseDataSource.swift */; };
-		47F570E22C038B6F008DCA81 /* ATCGenericLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570772C038B6E008DCA81 /* ATCGenericLocalDataSource.swift */; };
-		47F570E32C038B6F008DCA81 /* ATCGenericLocalHeteroDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570782C038B6E008DCA81 /* ATCGenericLocalHeteroDataSource.swift */; };
-		47F570E42C038B6F008DCA81 /* ATCUIGenericConfigurationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570792C038B6E008DCA81 /* ATCUIGenericConfigurationProtocol.swift */; };
-		47F570E52C038B6F008DCA81 /* TimeFormatHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F5707A2C038B6E008DCA81 /* TimeFormatHelper.swift */; };
-		47F570E62C038B6F008DCA81 /* UIImage+ATCAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F5707B2C038B6E008DCA81 /* UIImage+ATCAdditions.swift */; };
-		47F570E72C038B6F008DCA81 /* UITabBarItem+ATCAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F5707C2C038B6E008DCA81 /* UITabBarItem+ATCAdditions.swift */; };
-		47F570E82C038B6F008DCA81 /* ATCUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F5707E2C038B6E008DCA81 /* ATCUser.swift */; };
-		47F570E92C038B6F008DCA81 /* ATCViewControllerContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F5707F2C038B6E008DCA81 /* ATCViewControllerContainerViewModel.swift */; };
-		47F570EA2C038B6F008DCA81 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570812C038B6E008DCA81 /* Constraint.swift */; };
-		47F570EB2C038B6F008DCA81 /* ConstraintAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570822C038B6E008DCA81 /* ConstraintAttributes.swift */; };
-		47F570EC2C038B6F008DCA81 /* ConstraintConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570832C038B6E008DCA81 /* ConstraintConfig.swift */; };
-		47F570ED2C038B6F008DCA81 /* ConstraintConstantTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570842C038B6E008DCA81 /* ConstraintConstantTarget.swift */; };
-		47F570EE2C038B6F008DCA81 /* ConstraintDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570852C038B6E008DCA81 /* ConstraintDescription.swift */; };
-		47F570EF2C038B6F008DCA81 /* ConstraintDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570862C038B6E008DCA81 /* ConstraintDSL.swift */; };
-		47F570F02C038B6F008DCA81 /* ConstraintInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570872C038B6E008DCA81 /* ConstraintInsets.swift */; };
-		47F570F12C038B6F008DCA81 /* ConstraintInsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570882C038B6E008DCA81 /* ConstraintInsetTarget.swift */; };
-		47F570F22C038B6F008DCA81 /* ConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570892C038B6E008DCA81 /* ConstraintItem.swift */; };
-		47F570F32C038B6F008DCA81 /* ConstraintLayoutGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F5708A2C038B6E008DCA81 /* ConstraintLayoutGuide.swift */; };
-		47F570F42C038B6F008DCA81 /* ConstraintLayoutGuide+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F5708B2C038B6E008DCA81 /* ConstraintLayoutGuide+Extensions.swift */; };
-		47F570F52C038B6F008DCA81 /* ConstraintLayoutGuideDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F5708C2C038B6E008DCA81 /* ConstraintLayoutGuideDSL.swift */; };
-		47F570F62C038B6F008DCA81 /* ConstraintLayoutSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F5708D2C038B6E008DCA81 /* ConstraintLayoutSupport.swift */; };
-		47F570F72C038B6F008DCA81 /* ConstraintLayoutSupportDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F5708E2C038B6E008DCA81 /* ConstraintLayoutSupportDSL.swift */; };
-		47F570F82C038B6F008DCA81 /* ConstraintMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F5708F2C038B6E008DCA81 /* ConstraintMaker.swift */; };
-		47F570F92C038B6F008DCA81 /* ConstraintMakerEditable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570902C038B6E008DCA81 /* ConstraintMakerEditable.swift */; };
-		47F570FA2C038B6F008DCA81 /* ConstraintMakerExtendable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570912C038B6E008DCA81 /* ConstraintMakerExtendable.swift */; };
-		47F570FB2C038B6F008DCA81 /* ConstraintMakerFinalizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570922C038B6E008DCA81 /* ConstraintMakerFinalizable.swift */; };
-		47F570FC2C038B6F008DCA81 /* ConstraintMakerPriortizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570932C038B6E008DCA81 /* ConstraintMakerPriortizable.swift */; };
-		47F570FD2C038B6F008DCA81 /* ConstraintMakerRelatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570942C038B6E008DCA81 /* ConstraintMakerRelatable.swift */; };
-		47F570FE2C038B6F008DCA81 /* ConstraintMultiplierTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570952C038B6E008DCA81 /* ConstraintMultiplierTarget.swift */; };
-		47F570FF2C038B6F008DCA81 /* ConstraintOffsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570962C038B6E008DCA81 /* ConstraintOffsetTarget.swift */; };
-		47F571002C038B6F008DCA81 /* ConstraintPriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570972C038B6E008DCA81 /* ConstraintPriority.swift */; };
-		47F571012C038B6F008DCA81 /* ConstraintPriorityTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570982C038B6E008DCA81 /* ConstraintPriorityTarget.swift */; };
-		47F571022C038B6F008DCA81 /* ConstraintRelatableTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570992C038B6E008DCA81 /* ConstraintRelatableTarget.swift */; };
-		47F571032C038B6F008DCA81 /* ConstraintRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F5709A2C038B6E008DCA81 /* ConstraintRelation.swift */; };
-		47F571042C038B6F008DCA81 /* ConstraintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F5709B2C038B6E008DCA81 /* ConstraintView.swift */; };
-		47F571052C038B6F008DCA81 /* ConstraintView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F5709C2C038B6E008DCA81 /* ConstraintView+Extensions.swift */; };
-		47F571062C038B6F008DCA81 /* ConstraintViewDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F5709D2C038B6E008DCA81 /* ConstraintViewDSL.swift */; };
-		47F571072C038B6F008DCA81 /* Debugging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F5709E2C038B6E008DCA81 /* Debugging.swift */; };
-		47F571082C038B6F008DCA81 /* LayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F5709F2C038B6E008DCA81 /* LayoutConstraint.swift */; };
-		47F571092C038B6F008DCA81 /* LayoutConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570A02C038B6E008DCA81 /* LayoutConstraintItem.swift */; };
-		47F5710A2C038B6F008DCA81 /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570A22C038B6E008DCA81 /* Typealiases.swift */; };
-		47F5710B2C038B6F008DCA81 /* UILayoutSupport+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570A32C038B6E008DCA81 /* UILayoutSupport+Extensions.swift */; };
-		47F5710C2C038B6F008DCA81 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570A62C038B6E008DCA81 /* Date.swift */; };
-		47F5710D2C038B6F008DCA81 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570A72C038B6E008DCA81 /* String.swift */; };
-		47F5710E2C038B6F008DCA81 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570A82C038B6E008DCA81 /* UIColor.swift */; };
-		47F5710F2C038B6F008DCA81 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570A92C038B6E008DCA81 /* UIImage.swift */; };
-		47F571102C038B6F008DCA81 /* UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570AA2C038B6E008DCA81 /* UIScrollView.swift */; };
-		47F571112C038B6F008DCA81 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570AB2C038B6E008DCA81 /* UITextField.swift */; };
-		47F571122C038B6F008DCA81 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570AC2C038B6E008DCA81 /* UIView.swift */; };
-		47F571132C038B6F008DCA81 /* ATCCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570AE2C038B6E008DCA81 /* ATCCollectionViewFlowLayout.swift */; };
-		47F571142C038B6F008DCA81 /* ATCLiquidCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570AF2C038B6E008DCA81 /* ATCLiquidCollectionViewLayout.swift */; };
-		47F571152C038B6F008DCA81 /* ATCDrawerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570B12C038B6E008DCA81 /* ATCDrawerController.swift */; };
-		47F571162C038B6F008DCA81 /* ATCHostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570B22C038B6E008DCA81 /* ATCHostViewController.swift */; };
-		47F571172C038B6F008DCA81 /* ATCMenuCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570B32C038B6E008DCA81 /* ATCMenuCollectionViewController.swift */; };
-		47F571182C038B6F008DCA81 /* ATCMenuHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570B42C038B6E008DCA81 /* ATCMenuHeaderTableViewCell.swift */; };
-		47F571192C038B6F008DCA81 /* ATCMenuHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47F570B52C038B6E008DCA81 /* ATCMenuHeaderTableViewCell.xib */; };
-		47F5711A2C038B6F008DCA81 /* ATCMenuItemCollectionViewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570B62C038B6E008DCA81 /* ATCMenuItemCollectionViewCellProtocol.swift */; };
-		47F5711B2C038B6F008DCA81 /* ATCMenuItemRowAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570B72C038B6E008DCA81 /* ATCMenuItemRowAdapter.swift */; };
-		47F5711C2C038B6F008DCA81 /* ATCMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570B82C038B6E008DCA81 /* ATCMenuTableViewController.swift */; };
-		47F5711D2C038B6F008DCA81 /* ATCMenuTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47F570B92C038B6E008DCA81 /* ATCMenuTableViewController.xib */; };
-		47F5711E2C038B6F008DCA81 /* ATCNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570BA2C038B6E008DCA81 /* ATCNavigationController.swift */; };
-		47F5711F2C038B6F008DCA81 /* ATCGenericCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570BC2C038B6E008DCA81 /* ATCGenericCollectionViewController.swift */; };
-		47F571202C038B6F008DCA81 /* UIViewController+ATCAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570BD2C038B6E008DCA81 /* UIViewController+ATCAdditions.swift */; };
-		47F571212C038B6F008DCA81 /* ATCCircledIconMenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570BF2C038B6E008DCA81 /* ATCCircledIconMenuCollectionViewCell.swift */; };
-		47F571222C038B6F008DCA81 /* ATCCircledIconMenuCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47F570C02C038B6E008DCA81 /* ATCCircledIconMenuCollectionViewCell.xib */; };
-		47F571232C038B6F008DCA81 /* ATCMessengerUserAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570C22C038B6E008DCA81 /* ATCMessengerUserAdapter.swift */; };
-		47F571242C038B6F008DCA81 /* ATCMessengerUserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570C32C038B6E008DCA81 /* ATCMessengerUserCollectionViewCell.swift */; };
-		47F571252C038B6F008DCA81 /* ATCMessengerUserCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47F570C42C038B6E008DCA81 /* ATCMessengerUserCollectionViewCell.xib */; };
-		47F571262C038B6F008DCA81 /* ATCCarouselCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570C62C038B6E008DCA81 /* ATCCarouselCollectionViewCell.swift */; };
-		47F571272C038B6F008DCA81 /* ATCCarouselCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47F570C72C038B6E008DCA81 /* ATCCarouselCollectionViewCell.xib */; };
-		47F571282C038B6F008DCA81 /* ATCStoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570C82C038B6E008DCA81 /* ATCStoryCollectionViewCell.swift */; };
-		47F571292C038B6F008DCA81 /* ATCStoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47F570C92C038B6E008DCA81 /* ATCStoryCollectionViewCell.xib */; };
-		47F5712A2C038B6F008DCA81 /* ATCViewControllerContainerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F570CA2C038B6E008DCA81 /* ATCViewControllerContainerCollectionViewCell.swift */; };
-		47F5712B2C038B6F008DCA81 /* ATCViewControllerContainerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47F570CB2C038B6E008DCA81 /* ATCViewControllerContainerCollectionViewCell.xib */; };
 		47F5712E2C044143008DCA81 /* MessagessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F5712D2C044143008DCA81 /* MessagessViewController.swift */; };
 		47F571302C044946008DCA81 /* LanguageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F5712F2C044946008DCA81 /* LanguageService.swift */; };
 		47F571322C0449B6008DCA81 /* LanguageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F571312C0449B6008DCA81 /* LanguageType.swift */; };
@@ -319,6 +226,11 @@
 		47F571892C09DCF4008DCA81 /* District.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F571882C09DCF4008DCA81 /* District.swift */; };
 		47F5718B2C09DEAC008DCA81 /* Sanuzel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F5718A2C09DEAC008DCA81 /* Sanuzel.swift */; };
 		47F5718D2C09E6B7008DCA81 /* Condition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F5718C2C09E6B7008DCA81 /* Condition.swift */; };
+		47F5718F2C0B7E57008DCA81 /* ApartmentsType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F5718E2C0B7E57008DCA81 /* ApartmentsType.swift */; };
+		47F571912C0B8C11008DCA81 /* CheckboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F571902C0B8C11008DCA81 /* CheckboxView.swift */; };
+		47F571952C0B960F008DCA81 /* DynamicTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F571942C0B960F008DCA81 /* DynamicTextEditor.swift */; };
+		47F571972C0B9C37008DCA81 /* ProceedButtonWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F571962C0B9C37008DCA81 /* ProceedButtonWrapper.swift */; };
+		47F571992C0C505D008DCA81 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F571982C0C505D008DCA81 /* AppData.swift */; };
 		A2BFAC16081DDB0F2EAD971E /* Pods_KoshQon_KoshQonUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42CE84A5574DC805229D129B /* Pods_KoshQon_KoshQonUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -549,100 +461,6 @@
 		47F570522C0388C7008DCA81 /* MessagesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesCoordinator.swift; sourceTree = "<group>"; };
 		47F570542C0388E4008DCA81 /* MessagesOutputCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesOutputCoordinator.swift; sourceTree = "<group>"; };
 		47F570572C038954008DCA81 /* MessagesFlowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesFlowFactory.swift; sourceTree = "<group>"; };
-		47F5705B2C038B6E008DCA81 /* ATCCarouselAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCCarouselAdapter.swift; sourceTree = "<group>"; };
-		47F5705C2C038B6E008DCA81 /* ATCStoryAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCStoryAdapter.swift; sourceTree = "<group>"; };
-		47F5705D2C038B6E008DCA81 /* ATCViewControllerContainerRowAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCViewControllerContainerRowAdapter.swift; sourceTree = "<group>"; };
-		47F5705F2C038B6E008DCA81 /* CoreImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CoreImages.xcassets; sourceTree = "<group>"; };
-		47F570602C038B6E008DCA81 /* Misc.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Misc.xcassets; sourceTree = "<group>"; };
-		47F570622C038B6E008DCA81 /* ATCChatThreadAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCChatThreadAdapter.swift; sourceTree = "<group>"; };
-		47F570632C038B6E008DCA81 /* ATCChatUserStoryAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCChatUserStoryAdapter.swift; sourceTree = "<group>"; };
-		47F570652C038B6E008DCA81 /* ATCChatChannel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCChatChannel.swift; sourceTree = "<group>"; };
-		47F570662C038B6E008DCA81 /* ATChatMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATChatMessage.swift; sourceTree = "<group>"; };
-		47F570682C038B6E008DCA81 /* ATCChatMockStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCChatMockStore.swift; sourceTree = "<group>"; };
-		47F570692C038B6E008DCA81 /* ATCRemoteData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCRemoteData.swift; sourceTree = "<group>"; };
-		47F5706B2C038B6E008DCA81 /* ATCThreadCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCThreadCollectionViewCell.swift; sourceTree = "<group>"; };
-		47F5706C2C038B6E008DCA81 /* ATCThreadCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ATCThreadCollectionViewCell.xib; sourceTree = "<group>"; };
-		47F5706D2C038B6E008DCA81 /* ATCUserStoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCUserStoryCollectionViewCell.swift; sourceTree = "<group>"; };
-		47F5706E2C038B6E008DCA81 /* ATCUserStoryCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ATCUserStoryCollectionViewCell.xib; sourceTree = "<group>"; };
-		47F570712C038B6E008DCA81 /* ATCChatHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCChatHomeViewController.swift; sourceTree = "<group>"; };
-		47F570722C038B6E008DCA81 /* ATCChatThreadsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCChatThreadsViewController.swift; sourceTree = "<group>"; };
-		47F570732C038B6E008DCA81 /* ATCChatThreadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCChatThreadViewController.swift; sourceTree = "<group>"; };
-		47F570762C038B6E008DCA81 /* ATCGenericFirebaseDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCGenericFirebaseDataSource.swift; sourceTree = "<group>"; };
-		47F570772C038B6E008DCA81 /* ATCGenericLocalDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCGenericLocalDataSource.swift; sourceTree = "<group>"; };
-		47F570782C038B6E008DCA81 /* ATCGenericLocalHeteroDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCGenericLocalHeteroDataSource.swift; sourceTree = "<group>"; };
-		47F570792C038B6E008DCA81 /* ATCUIGenericConfigurationProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCUIGenericConfigurationProtocol.swift; sourceTree = "<group>"; };
-		47F5707A2C038B6E008DCA81 /* TimeFormatHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeFormatHelper.swift; sourceTree = "<group>"; };
-		47F5707B2C038B6E008DCA81 /* UIImage+ATCAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+ATCAdditions.swift"; sourceTree = "<group>"; };
-		47F5707C2C038B6E008DCA81 /* UITabBarItem+ATCAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITabBarItem+ATCAdditions.swift"; sourceTree = "<group>"; };
-		47F5707E2C038B6E008DCA81 /* ATCUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCUser.swift; sourceTree = "<group>"; };
-		47F5707F2C038B6E008DCA81 /* ATCViewControllerContainerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCViewControllerContainerViewModel.swift; sourceTree = "<group>"; };
-		47F570812C038B6E008DCA81 /* Constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; };
-		47F570822C038B6E008DCA81 /* ConstraintAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintAttributes.swift; sourceTree = "<group>"; };
-		47F570832C038B6E008DCA81 /* ConstraintConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintConfig.swift; sourceTree = "<group>"; };
-		47F570842C038B6E008DCA81 /* ConstraintConstantTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintConstantTarget.swift; sourceTree = "<group>"; };
-		47F570852C038B6E008DCA81 /* ConstraintDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintDescription.swift; sourceTree = "<group>"; };
-		47F570862C038B6E008DCA81 /* ConstraintDSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintDSL.swift; sourceTree = "<group>"; };
-		47F570872C038B6E008DCA81 /* ConstraintInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintInsets.swift; sourceTree = "<group>"; };
-		47F570882C038B6E008DCA81 /* ConstraintInsetTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintInsetTarget.swift; sourceTree = "<group>"; };
-		47F570892C038B6E008DCA81 /* ConstraintItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintItem.swift; sourceTree = "<group>"; };
-		47F5708A2C038B6E008DCA81 /* ConstraintLayoutGuide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintLayoutGuide.swift; sourceTree = "<group>"; };
-		47F5708B2C038B6E008DCA81 /* ConstraintLayoutGuide+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ConstraintLayoutGuide+Extensions.swift"; sourceTree = "<group>"; };
-		47F5708C2C038B6E008DCA81 /* ConstraintLayoutGuideDSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintLayoutGuideDSL.swift; sourceTree = "<group>"; };
-		47F5708D2C038B6E008DCA81 /* ConstraintLayoutSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintLayoutSupport.swift; sourceTree = "<group>"; };
-		47F5708E2C038B6E008DCA81 /* ConstraintLayoutSupportDSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintLayoutSupportDSL.swift; sourceTree = "<group>"; };
-		47F5708F2C038B6E008DCA81 /* ConstraintMaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintMaker.swift; sourceTree = "<group>"; };
-		47F570902C038B6E008DCA81 /* ConstraintMakerEditable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintMakerEditable.swift; sourceTree = "<group>"; };
-		47F570912C038B6E008DCA81 /* ConstraintMakerExtendable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintMakerExtendable.swift; sourceTree = "<group>"; };
-		47F570922C038B6E008DCA81 /* ConstraintMakerFinalizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintMakerFinalizable.swift; sourceTree = "<group>"; };
-		47F570932C038B6E008DCA81 /* ConstraintMakerPriortizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintMakerPriortizable.swift; sourceTree = "<group>"; };
-		47F570942C038B6E008DCA81 /* ConstraintMakerRelatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintMakerRelatable.swift; sourceTree = "<group>"; };
-		47F570952C038B6E008DCA81 /* ConstraintMultiplierTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintMultiplierTarget.swift; sourceTree = "<group>"; };
-		47F570962C038B6E008DCA81 /* ConstraintOffsetTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintOffsetTarget.swift; sourceTree = "<group>"; };
-		47F570972C038B6E008DCA81 /* ConstraintPriority.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintPriority.swift; sourceTree = "<group>"; };
-		47F570982C038B6E008DCA81 /* ConstraintPriorityTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintPriorityTarget.swift; sourceTree = "<group>"; };
-		47F570992C038B6E008DCA81 /* ConstraintRelatableTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintRelatableTarget.swift; sourceTree = "<group>"; };
-		47F5709A2C038B6E008DCA81 /* ConstraintRelation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintRelation.swift; sourceTree = "<group>"; };
-		47F5709B2C038B6E008DCA81 /* ConstraintView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintView.swift; sourceTree = "<group>"; };
-		47F5709C2C038B6E008DCA81 /* ConstraintView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ConstraintView+Extensions.swift"; sourceTree = "<group>"; };
-		47F5709D2C038B6E008DCA81 /* ConstraintViewDSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintViewDSL.swift; sourceTree = "<group>"; };
-		47F5709E2C038B6E008DCA81 /* Debugging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Debugging.swift; sourceTree = "<group>"; };
-		47F5709F2C038B6E008DCA81 /* LayoutConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutConstraint.swift; sourceTree = "<group>"; };
-		47F570A02C038B6E008DCA81 /* LayoutConstraintItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutConstraintItem.swift; sourceTree = "<group>"; };
-		47F570A12C038B6E008DCA81 /* SnapKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnapKit.h; sourceTree = "<group>"; };
-		47F570A22C038B6E008DCA81 /* Typealiases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Typealiases.swift; sourceTree = "<group>"; };
-		47F570A32C038B6E008DCA81 /* UILayoutSupport+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILayoutSupport+Extensions.swift"; sourceTree = "<group>"; };
-		47F570A62C038B6E008DCA81 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
-		47F570A72C038B6E008DCA81 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
-		47F570A82C038B6E008DCA81 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
-		47F570A92C038B6E008DCA81 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
-		47F570AA2C038B6E008DCA81 /* UIScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScrollView.swift; sourceTree = "<group>"; };
-		47F570AB2C038B6E008DCA81 /* UITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
-		47F570AC2C038B6E008DCA81 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
-		47F570AE2C038B6E008DCA81 /* ATCCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
-		47F570AF2C038B6E008DCA81 /* ATCLiquidCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCLiquidCollectionViewLayout.swift; sourceTree = "<group>"; };
-		47F570B12C038B6E008DCA81 /* ATCDrawerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCDrawerController.swift; sourceTree = "<group>"; };
-		47F570B22C038B6E008DCA81 /* ATCHostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCHostViewController.swift; sourceTree = "<group>"; };
-		47F570B32C038B6E008DCA81 /* ATCMenuCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCMenuCollectionViewController.swift; sourceTree = "<group>"; };
-		47F570B42C038B6E008DCA81 /* ATCMenuHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCMenuHeaderTableViewCell.swift; sourceTree = "<group>"; };
-		47F570B52C038B6E008DCA81 /* ATCMenuHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ATCMenuHeaderTableViewCell.xib; sourceTree = "<group>"; };
-		47F570B62C038B6E008DCA81 /* ATCMenuItemCollectionViewCellProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCMenuItemCollectionViewCellProtocol.swift; sourceTree = "<group>"; };
-		47F570B72C038B6E008DCA81 /* ATCMenuItemRowAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCMenuItemRowAdapter.swift; sourceTree = "<group>"; };
-		47F570B82C038B6E008DCA81 /* ATCMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCMenuTableViewController.swift; sourceTree = "<group>"; };
-		47F570B92C038B6E008DCA81 /* ATCMenuTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ATCMenuTableViewController.xib; sourceTree = "<group>"; };
-		47F570BA2C038B6E008DCA81 /* ATCNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCNavigationController.swift; sourceTree = "<group>"; };
-		47F570BC2C038B6E008DCA81 /* ATCGenericCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCGenericCollectionViewController.swift; sourceTree = "<group>"; };
-		47F570BD2C038B6E008DCA81 /* UIViewController+ATCAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+ATCAdditions.swift"; sourceTree = "<group>"; };
-		47F570BF2C038B6E008DCA81 /* ATCCircledIconMenuCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCCircledIconMenuCollectionViewCell.swift; sourceTree = "<group>"; };
-		47F570C02C038B6E008DCA81 /* ATCCircledIconMenuCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ATCCircledIconMenuCollectionViewCell.xib; sourceTree = "<group>"; };
-		47F570C22C038B6E008DCA81 /* ATCMessengerUserAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCMessengerUserAdapter.swift; sourceTree = "<group>"; };
-		47F570C32C038B6E008DCA81 /* ATCMessengerUserCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCMessengerUserCollectionViewCell.swift; sourceTree = "<group>"; };
-		47F570C42C038B6E008DCA81 /* ATCMessengerUserCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ATCMessengerUserCollectionViewCell.xib; sourceTree = "<group>"; };
-		47F570C62C038B6E008DCA81 /* ATCCarouselCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCCarouselCollectionViewCell.swift; sourceTree = "<group>"; };
-		47F570C72C038B6E008DCA81 /* ATCCarouselCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ATCCarouselCollectionViewCell.xib; sourceTree = "<group>"; };
-		47F570C82C038B6E008DCA81 /* ATCStoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCStoryCollectionViewCell.swift; sourceTree = "<group>"; };
-		47F570C92C038B6E008DCA81 /* ATCStoryCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ATCStoryCollectionViewCell.xib; sourceTree = "<group>"; };
-		47F570CA2C038B6E008DCA81 /* ATCViewControllerContainerCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCViewControllerContainerCollectionViewCell.swift; sourceTree = "<group>"; };
-		47F570CB2C038B6E008DCA81 /* ATCViewControllerContainerCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ATCViewControllerContainerCollectionViewCell.xib; sourceTree = "<group>"; };
 		47F5712D2C044143008DCA81 /* MessagessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagessViewController.swift; sourceTree = "<group>"; };
 		47F5712F2C044946008DCA81 /* LanguageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageService.swift; sourceTree = "<group>"; };
 		47F571312C0449B6008DCA81 /* LanguageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageType.swift; sourceTree = "<group>"; };
@@ -663,6 +481,11 @@
 		47F571882C09DCF4008DCA81 /* District.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = District.swift; sourceTree = "<group>"; };
 		47F5718A2C09DEAC008DCA81 /* Sanuzel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sanuzel.swift; sourceTree = "<group>"; };
 		47F5718C2C09E6B7008DCA81 /* Condition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Condition.swift; sourceTree = "<group>"; };
+		47F5718E2C0B7E57008DCA81 /* ApartmentsType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApartmentsType.swift; sourceTree = "<group>"; };
+		47F571902C0B8C11008DCA81 /* CheckboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxView.swift; sourceTree = "<group>"; };
+		47F571942C0B960F008DCA81 /* DynamicTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicTextEditor.swift; sourceTree = "<group>"; };
+		47F571962C0B9C37008DCA81 /* ProceedButtonWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProceedButtonWrapper.swift; sourceTree = "<group>"; };
+		47F571982C0C505D008DCA81 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		4B1CB0D67C4284B3386A5D17 /* Pods_KoshQon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KoshQon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A64B66AF75DD7EB3AA05FD9 /* Pods-KoshQon-KoshQonUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KoshQon-KoshQonUITests.debug.xcconfig"; path = "Target Support Files/Pods-KoshQon-KoshQonUITests/Pods-KoshQon-KoshQonUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5F34D042224D89E307A460AA /* Pods-KoshQon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KoshQon.release.xcconfig"; path = "Target Support Files/Pods-KoshQon/Pods-KoshQon.release.xcconfig"; sourceTree = "<group>"; };
@@ -950,6 +773,9 @@
 				47F571642C079FE4008DCA81 /* InputTextFieldWrapper.swift */,
 				47F571662C083520008DCA81 /* ImagePicker.swift */,
 				47F571802C0990A1008DCA81 /* RoundedBlock.swift */,
+				47F571902C0B8C11008DCA81 /* CheckboxView.swift */,
+				47F571942C0B960F008DCA81 /* DynamicTextEditor.swift */,
+				47F571962C0B9C37008DCA81 /* ProceedButtonWrapper.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -960,6 +786,7 @@
 				4756A0262B7FCC56003F9675 /* AppDelegate.swift */,
 				4756A0282B7FCC56003F9675 /* SceneDelegate.swift */,
 				475224DC2BA9D405000DAE1B /* AppCoordinator.swift */,
+				47F571982C0C505D008DCA81 /* AppData.swift */,
 				4743D06B2B81191200103C5E /* Scenes */,
 				472E1B392B83689A005BF649 /* Common */,
 				47C7B3752B8129E800125172 /* Extensions */,
@@ -1305,6 +1132,7 @@
 				47F571882C09DCF4008DCA81 /* District.swift */,
 				47F5718A2C09DEAC008DCA81 /* Sanuzel.swift */,
 				47F5718C2C09E6B7008DCA81 /* Condition.swift */,
+				47F5718E2C0B7E57008DCA81 /* ApartmentsType.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1992,7 +1820,6 @@
 			isa = PBXGroup;
 			children = (
 				47F5712C2C04412C008DCA81 /* ViewController */,
-				47F570CE2C038B6E008DCA81 /* Core */,
 				47F570562C038946008DCA81 /* Factory */,
 				47F570512C0388AF008DCA81 /* Coordinator */,
 			);
@@ -2014,275 +1841,6 @@
 				47F570572C038954008DCA81 /* MessagesFlowFactory.swift */,
 			);
 			path = Factory;
-			sourceTree = "<group>";
-		};
-		47F5705E2C038B6E008DCA81 /* Adapters */ = {
-			isa = PBXGroup;
-			children = (
-				47F5705B2C038B6E008DCA81 /* ATCCarouselAdapter.swift */,
-				47F5705C2C038B6E008DCA81 /* ATCStoryAdapter.swift */,
-				47F5705D2C038B6E008DCA81 /* ATCViewControllerContainerRowAdapter.swift */,
-			);
-			path = Adapters;
-			sourceTree = "<group>";
-		};
-		47F570612C038B6E008DCA81 /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				47F5705F2C038B6E008DCA81 /* CoreImages.xcassets */,
-				47F570602C038B6E008DCA81 /* Misc.xcassets */,
-			);
-			path = Assets;
-			sourceTree = "<group>";
-		};
-		47F570642C038B6E008DCA81 /* Adapters */ = {
-			isa = PBXGroup;
-			children = (
-				47F570622C038B6E008DCA81 /* ATCChatThreadAdapter.swift */,
-				47F570632C038B6E008DCA81 /* ATCChatUserStoryAdapter.swift */,
-			);
-			path = Adapters;
-			sourceTree = "<group>";
-		};
-		47F570672C038B6E008DCA81 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				47F570652C038B6E008DCA81 /* ATCChatChannel.swift */,
-				47F570662C038B6E008DCA81 /* ATChatMessage.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		47F5706A2C038B6E008DCA81 /* Store */ = {
-			isa = PBXGroup;
-			children = (
-				47F570682C038B6E008DCA81 /* ATCChatMockStore.swift */,
-				47F570692C038B6E008DCA81 /* ATCRemoteData.swift */,
-			);
-			path = Store;
-			sourceTree = "<group>";
-		};
-		47F5706F2C038B6E008DCA81 /* Messenger */ = {
-			isa = PBXGroup;
-			children = (
-				47F5706B2C038B6E008DCA81 /* ATCThreadCollectionViewCell.swift */,
-				47F5706C2C038B6E008DCA81 /* ATCThreadCollectionViewCell.xib */,
-				47F5706D2C038B6E008DCA81 /* ATCUserStoryCollectionViewCell.swift */,
-				47F5706E2C038B6E008DCA81 /* ATCUserStoryCollectionViewCell.xib */,
-			);
-			path = Messenger;
-			sourceTree = "<group>";
-		};
-		47F570702C038B6E008DCA81 /* Themes */ = {
-			isa = PBXGroup;
-			children = (
-				47F5706F2C038B6E008DCA81 /* Messenger */,
-			);
-			path = Themes;
-			sourceTree = "<group>";
-		};
-		47F570742C038B6E008DCA81 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				47F570712C038B6E008DCA81 /* ATCChatHomeViewController.swift */,
-				47F570722C038B6E008DCA81 /* ATCChatThreadsViewController.swift */,
-				47F570732C038B6E008DCA81 /* ATCChatThreadViewController.swift */,
-			);
-			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		47F570752C038B6E008DCA81 /* Chat */ = {
-			isa = PBXGroup;
-			children = (
-				47F570642C038B6E008DCA81 /* Adapters */,
-				47F570672C038B6E008DCA81 /* Models */,
-				47F5706A2C038B6E008DCA81 /* Store */,
-				47F570702C038B6E008DCA81 /* Themes */,
-				47F570742C038B6E008DCA81 /* ViewControllers */,
-			);
-			path = Chat;
-			sourceTree = "<group>";
-		};
-		47F5707D2C038B6E008DCA81 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				47F570762C038B6E008DCA81 /* ATCGenericFirebaseDataSource.swift */,
-				47F570772C038B6E008DCA81 /* ATCGenericLocalDataSource.swift */,
-				47F570782C038B6E008DCA81 /* ATCGenericLocalHeteroDataSource.swift */,
-				47F570792C038B6E008DCA81 /* ATCUIGenericConfigurationProtocol.swift */,
-				47F5707A2C038B6E008DCA81 /* TimeFormatHelper.swift */,
-				47F5707B2C038B6E008DCA81 /* UIImage+ATCAdditions.swift */,
-				47F5707C2C038B6E008DCA81 /* UITabBarItem+ATCAdditions.swift */,
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
-		47F570802C038B6E008DCA81 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				47F5707E2C038B6E008DCA81 /* ATCUser.swift */,
-				47F5707F2C038B6E008DCA81 /* ATCViewControllerContainerViewModel.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		47F570A42C038B6E008DCA81 /* SnapKit */ = {
-			isa = PBXGroup;
-			children = (
-				47F570812C038B6E008DCA81 /* Constraint.swift */,
-				47F570822C038B6E008DCA81 /* ConstraintAttributes.swift */,
-				47F570832C038B6E008DCA81 /* ConstraintConfig.swift */,
-				47F570842C038B6E008DCA81 /* ConstraintConstantTarget.swift */,
-				47F570852C038B6E008DCA81 /* ConstraintDescription.swift */,
-				47F570862C038B6E008DCA81 /* ConstraintDSL.swift */,
-				47F570872C038B6E008DCA81 /* ConstraintInsets.swift */,
-				47F570882C038B6E008DCA81 /* ConstraintInsetTarget.swift */,
-				47F570892C038B6E008DCA81 /* ConstraintItem.swift */,
-				47F5708A2C038B6E008DCA81 /* ConstraintLayoutGuide.swift */,
-				47F5708B2C038B6E008DCA81 /* ConstraintLayoutGuide+Extensions.swift */,
-				47F5708C2C038B6E008DCA81 /* ConstraintLayoutGuideDSL.swift */,
-				47F5708D2C038B6E008DCA81 /* ConstraintLayoutSupport.swift */,
-				47F5708E2C038B6E008DCA81 /* ConstraintLayoutSupportDSL.swift */,
-				47F5708F2C038B6E008DCA81 /* ConstraintMaker.swift */,
-				47F570902C038B6E008DCA81 /* ConstraintMakerEditable.swift */,
-				47F570912C038B6E008DCA81 /* ConstraintMakerExtendable.swift */,
-				47F570922C038B6E008DCA81 /* ConstraintMakerFinalizable.swift */,
-				47F570932C038B6E008DCA81 /* ConstraintMakerPriortizable.swift */,
-				47F570942C038B6E008DCA81 /* ConstraintMakerRelatable.swift */,
-				47F570952C038B6E008DCA81 /* ConstraintMultiplierTarget.swift */,
-				47F570962C038B6E008DCA81 /* ConstraintOffsetTarget.swift */,
-				47F570972C038B6E008DCA81 /* ConstraintPriority.swift */,
-				47F570982C038B6E008DCA81 /* ConstraintPriorityTarget.swift */,
-				47F570992C038B6E008DCA81 /* ConstraintRelatableTarget.swift */,
-				47F5709A2C038B6E008DCA81 /* ConstraintRelation.swift */,
-				47F5709B2C038B6E008DCA81 /* ConstraintView.swift */,
-				47F5709C2C038B6E008DCA81 /* ConstraintView+Extensions.swift */,
-				47F5709D2C038B6E008DCA81 /* ConstraintViewDSL.swift */,
-				47F5709E2C038B6E008DCA81 /* Debugging.swift */,
-				47F5709F2C038B6E008DCA81 /* LayoutConstraint.swift */,
-				47F570A02C038B6E008DCA81 /* LayoutConstraintItem.swift */,
-				47F570A12C038B6E008DCA81 /* SnapKit.h */,
-				47F570A22C038B6E008DCA81 /* Typealiases.swift */,
-				47F570A32C038B6E008DCA81 /* UILayoutSupport+Extensions.swift */,
-			);
-			path = SnapKit;
-			sourceTree = "<group>";
-		};
-		47F570A52C038B6E008DCA81 /* ThirdParty */ = {
-			isa = PBXGroup;
-			children = (
-				47F570A42C038B6E008DCA81 /* SnapKit */,
-			);
-			path = ThirdParty;
-			sourceTree = "<group>";
-		};
-		47F570AD2C038B6E008DCA81 /* UIExtensions */ = {
-			isa = PBXGroup;
-			children = (
-				47F570A62C038B6E008DCA81 /* Date.swift */,
-				47F570A72C038B6E008DCA81 /* String.swift */,
-				47F570A82C038B6E008DCA81 /* UIColor.swift */,
-				47F570A92C038B6E008DCA81 /* UIImage.swift */,
-				47F570AA2C038B6E008DCA81 /* UIScrollView.swift */,
-				47F570AB2C038B6E008DCA81 /* UITextField.swift */,
-				47F570AC2C038B6E008DCA81 /* UIView.swift */,
-			);
-			path = UIExtensions;
-			sourceTree = "<group>";
-		};
-		47F570B02C038B6E008DCA81 /* Layouts */ = {
-			isa = PBXGroup;
-			children = (
-				47F570AE2C038B6E008DCA81 /* ATCCollectionViewFlowLayout.swift */,
-				47F570AF2C038B6E008DCA81 /* ATCLiquidCollectionViewLayout.swift */,
-			);
-			path = Layouts;
-			sourceTree = "<group>";
-		};
-		47F570BB2C038B6E008DCA81 /* Navigation */ = {
-			isa = PBXGroup;
-			children = (
-				47F570B12C038B6E008DCA81 /* ATCDrawerController.swift */,
-				47F570B22C038B6E008DCA81 /* ATCHostViewController.swift */,
-				47F570B32C038B6E008DCA81 /* ATCMenuCollectionViewController.swift */,
-				47F570B42C038B6E008DCA81 /* ATCMenuHeaderTableViewCell.swift */,
-				47F570B52C038B6E008DCA81 /* ATCMenuHeaderTableViewCell.xib */,
-				47F570B62C038B6E008DCA81 /* ATCMenuItemCollectionViewCellProtocol.swift */,
-				47F570B72C038B6E008DCA81 /* ATCMenuItemRowAdapter.swift */,
-				47F570B82C038B6E008DCA81 /* ATCMenuTableViewController.swift */,
-				47F570B92C038B6E008DCA81 /* ATCMenuTableViewController.xib */,
-				47F570BA2C038B6E008DCA81 /* ATCNavigationController.swift */,
-			);
-			path = Navigation;
-			sourceTree = "<group>";
-		};
-		47F570BE2C038B6E008DCA81 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				47F570B02C038B6E008DCA81 /* Layouts */,
-				47F570BB2C038B6E008DCA81 /* Navigation */,
-				47F570BC2C038B6E008DCA81 /* ATCGenericCollectionViewController.swift */,
-				47F570BD2C038B6E008DCA81 /* UIViewController+ATCAdditions.swift */,
-			);
-			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		47F570C12C038B6E008DCA81 /* MenuCells */ = {
-			isa = PBXGroup;
-			children = (
-				47F570BF2C038B6E008DCA81 /* ATCCircledIconMenuCollectionViewCell.swift */,
-				47F570C02C038B6E008DCA81 /* ATCCircledIconMenuCollectionViewCell.xib */,
-			);
-			path = MenuCells;
-			sourceTree = "<group>";
-		};
-		47F570C52C038B6E008DCA81 /* Users */ = {
-			isa = PBXGroup;
-			children = (
-				47F570C22C038B6E008DCA81 /* ATCMessengerUserAdapter.swift */,
-				47F570C32C038B6E008DCA81 /* ATCMessengerUserCollectionViewCell.swift */,
-				47F570C42C038B6E008DCA81 /* ATCMessengerUserCollectionViewCell.xib */,
-			);
-			path = Users;
-			sourceTree = "<group>";
-		};
-		47F570CC2C038B6E008DCA81 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				47F570C12C038B6E008DCA81 /* MenuCells */,
-				47F570C52C038B6E008DCA81 /* Users */,
-				47F570C62C038B6E008DCA81 /* ATCCarouselCollectionViewCell.swift */,
-				47F570C72C038B6E008DCA81 /* ATCCarouselCollectionViewCell.xib */,
-				47F570C82C038B6E008DCA81 /* ATCStoryCollectionViewCell.swift */,
-				47F570C92C038B6E008DCA81 /* ATCStoryCollectionViewCell.xib */,
-				47F570CA2C038B6E008DCA81 /* ATCViewControllerContainerCollectionViewCell.swift */,
-				47F570CB2C038B6E008DCA81 /* ATCViewControllerContainerCollectionViewCell.xib */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
-		47F570CD2C038B6E008DCA81 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				47F570CC2C038B6E008DCA81 /* Cells */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		47F570CE2C038B6E008DCA81 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				47F5705E2C038B6E008DCA81 /* Adapters */,
-				47F570612C038B6E008DCA81 /* Assets */,
-				47F570752C038B6E008DCA81 /* Chat */,
-				47F5707D2C038B6E008DCA81 /* Helpers */,
-				47F570802C038B6E008DCA81 /* Models */,
-				47F570A52C038B6E008DCA81 /* ThirdParty */,
-				47F570AD2C038B6E008DCA81 /* UIExtensions */,
-				47F570BE2C038B6E008DCA81 /* ViewControllers */,
-				47F570CD2C038B6E008DCA81 /* Views */,
-			);
-			path = Core;
 			sourceTree = "<group>";
 		};
 		47F5712C2C04412C008DCA81 /* ViewController */ = {
@@ -2433,27 +1991,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				47F570D22C038B6F008DCA81 /* CoreImages.xcassets in Resources */,
-				47F571292C038B6F008DCA81 /* ATCStoryCollectionViewCell.xib in Resources */,
-				47F5712B2C038B6F008DCA81 /* ATCViewControllerContainerCollectionViewCell.xib in Resources */,
-				47F571272C038B6F008DCA81 /* ATCCarouselCollectionViewCell.xib in Resources */,
 				47C7B37E2B81321800125172 /* SF-Pro-Display-Semibold.otf in Resources */,
 				4743D06F2B81198800103C5E /* Colors.xcassets in Resources */,
-				47F571252C038B6F008DCA81 /* ATCMessengerUserCollectionViewCell.xib in Resources */,
 				47F5704D2C0382DE008DCA81 /* GoogleService-Info.plist in Resources */,
 				47C7B3802B81321800125172 /* SF-Pro-Display-Bold.otf in Resources */,
-				47F570DD2C038B6F008DCA81 /* ATCUserStoryCollectionViewCell.xib in Resources */,
 				47F5714C2C04FF1C008DCA81 /* Localizable.strings in Resources */,
 				4756A0332B7FCC57003F9675 /* LaunchScreen.storyboard in Resources */,
 				4756A0302B7FCC57003F9675 /* Images.xcassets in Resources */,
-				47F570D32C038B6F008DCA81 /* Misc.xcassets in Resources */,
-				47F5711D2C038B6F008DCA81 /* ATCMenuTableViewController.xib in Resources */,
 				47C7B3812B81321800125172 /* SF-Pro-Display-Regular.otf in Resources */,
-				47F571192C038B6F008DCA81 /* ATCMenuHeaderTableViewCell.xib in Resources */,
-				47F571222C038B6F008DCA81 /* ATCCircledIconMenuCollectionViewCell.xib in Resources */,
 				4764D5882B84D47900D15A2E /* Anta-Regular.ttf in Resources */,
 				47C7B37F2B81321800125172 /* SF-Pro-Display-Medium.otf in Resources */,
-				47F570DB2C038B6F008DCA81 /* ATCThreadCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2562,104 +2109,74 @@
 			files = (
 				47D1BE362BC64B37004992AA /* FriendsViewModel.swift in Sources */,
 				47D1BE2D2BC1E4B1004992AA /* ImageSetCoordinator.swift in Sources */,
-				47F570E12C038B6F008DCA81 /* ATCGenericFirebaseDataSource.swift in Sources */,
 				47C01E102BB28CCD00D1B2F2 /* FavoritesFlowFactory.swift in Sources */,
 				4715996C2BF1D69100022D62 /* PassCodeOutputCoordinator.swift in Sources */,
-				47F571052C038B6F008DCA81 /* ConstraintView+Extensions.swift in Sources */,
 				475224E42BA9D5CC000DAE1B /* Router.swift in Sources */,
 				47D54CE82B963F5900021FA7 /* NSObject+Extensions.swift in Sources */,
 				475224942BA04E79000DAE1B /* MainScreenViewModel.swift in Sources */,
 				4774CD322BF91C4800089B85 /* Parameters.swift in Sources */,
 				4774CD302BF919FD00089B85 /* Encodable+Extensions.swift in Sources */,
 				478F5FFE2B99823B00A07ECD /* UITableView+Extensions.swift in Sources */,
-				47F570E22C038B6F008DCA81 /* ATCGenericLocalDataSource.swift in Sources */,
 				475224E92BA9DC5E000DAE1B /* AppThemeService.swift in Sources */,
-				47F570E42C038B6F008DCA81 /* ATCUIGenericConfigurationProtocol.swift in Sources */,
-				47F571282C038B6F008DCA81 /* ATCStoryCollectionViewCell.swift in Sources */,
 				475224C72BA814F9000DAE1B /* ProfileAnnouncementsView.swift in Sources */,
 				47D1BDD02BB54BAB004992AA /* ProfileDetailCell.swift in Sources */,
 				47F570582C038954008DCA81 /* MessagesFlowFactory.swift in Sources */,
-				47F570E92C038B6F008DCA81 /* ATCViewControllerContainerViewModel.swift in Sources */,
 				47D1BE2F2BC1EF56004992AA /* ImageSetFlowFactory.swift in Sources */,
-				47F570EF2C038B6F008DCA81 /* ConstraintDSL.swift in Sources */,
-				47F570F02C038B6F008DCA81 /* ConstraintInsets.swift in Sources */,
+				47F571912C0B8C11008DCA81 /* CheckboxView.swift in Sources */,
 				47F571502C0500AD008DCA81 /* LocalizableKeys.swift in Sources */,
-				47F570F42C038B6F008DCA81 /* ConstraintLayoutGuide+Extensions.swift in Sources */,
 				47D1BDE72BB5DB2D004992AA /* DynamicTableView.swift in Sources */,
-				47F570EA2C038B6F008DCA81 /* Constraint.swift in Sources */,
-				47F571172C038B6F008DCA81 /* ATCMenuCollectionViewController.swift in Sources */,
 				475224F52BA9FC0C000DAE1B /* AuthCoordinator.swift in Sources */,
 				47D1BE4F2BC7E3F2004992AA /* ActionButton.swift in Sources */,
+				47F571972C0B9C37008DCA81 /* ProceedButtonWrapper.swift in Sources */,
 				475224F22BA9ECAF000DAE1B /* SplashScreenCoordinator.swift in Sources */,
-				47F570F62C038B6F008DCA81 /* ConstraintLayoutSupport.swift in Sources */,
 				47D1BDF22BB6CBC4004992AA /* HighlightView.swift in Sources */,
-				47F570EE2C038B6F008DCA81 /* ConstraintDescription.swift in Sources */,
 				4715D0592BD67B5C00DF7868 /* PassCodeType.swift in Sources */,
-				47F570E52C038B6F008DCA81 /* TimeFormatHelper.swift in Sources */,
 				47C01DF12BB19AAB00D1B2F2 /* TabBarOutputCoordinator.swift in Sources */,
 				47F571892C09DCF4008DCA81 /* District.swift in Sources */,
 				47D1BE092BBE8194004992AA /* NavigationTableView.swift in Sources */,
 				47D1BE442BC6647A004992AA /* FriendsOutputCoordinator.swift in Sources */,
-				47F571042C038B6F008DCA81 /* ConstraintView.swift in Sources */,
-				47F570DF2C038B6F008DCA81 /* ATCChatThreadsViewController.swift in Sources */,
 				475224F02BA9EC78000DAE1B /* SplashScreenFlowFactory.swift in Sources */,
-				47F571202C038B6F008DCA81 /* UIViewController+ATCAdditions.swift in Sources */,
 				47D1BDD22BB54BD8004992AA /* BaseCell.swift in Sources */,
 				475224AC2BA407E6000DAE1B /* ProfileViewController.swift in Sources */,
-				47F5710B2C038B6F008DCA81 /* UILayoutSupport+Extensions.swift in Sources */,
 				47D1BE072BBE756E004992AA /* PrivacyViewController.swift in Sources */,
-				47F570F32C038B6F008DCA81 /* ConstraintLayoutGuide.swift in Sources */,
 				475224BE2BA45A4A000DAE1B /* ProfileCommonView.swift in Sources */,
 				475225032BAB5B28000DAE1B /* MenuButton.swift in Sources */,
 				475224962BA04E94000DAE1B /* NavigationCellViewModel.swift in Sources */,
 				47C01E0C2BB28C4600D1B2F2 /* FavoritesCoordinator.swift in Sources */,
-				47F570D52C038B6F008DCA81 /* ATCChatUserStoryAdapter.swift in Sources */,
 				475224E22BA9D515000DAE1B /* RouterProtocol.swift in Sources */,
 				47D1BDEE2BB5F254004992AA /* ProfileDetailType.swift in Sources */,
 				475224D82BA9CBBA000DAE1B /* FlowFactory.swift in Sources */,
 				47CD67402B8DE0D40035DCB6 /* EnterPhoneViewController.swift in Sources */,
-				47F571012C038B6F008DCA81 /* ConstraintPriorityTarget.swift in Sources */,
-				47F570D02C038B6F008DCA81 /* ATCStoryAdapter.swift in Sources */,
 				4715D04F2BD66B9200DF7868 /* BiometricService.swift in Sources */,
 				47D1BDF42BB6CC09004992AA /* HighlightCell.swift in Sources */,
 				47D1BF292BD28A0C004992AA /* BottomSheetViewModel.swift in Sources */,
 				475224BA2BA44414000DAE1B /* ProfileViewModel.swift in Sources */,
 				475224E02BA9D4BD000DAE1B /* UIViewController+Extensions.swift in Sources */,
-				47F570F22C038B6F008DCA81 /* ConstraintItem.swift in Sources */,
 				47D1BE4B2BC6AEE5004992AA /* MoreCellType.swift in Sources */,
 				47C01E462BB4413100D1B2F2 /* SettingsCoordinator.swift in Sources */,
 				4764D5982B85A50000D15A2E /* LoginView.swift in Sources */,
 				47D54CE42B963A6700021FA7 /* NavigationCell.swift in Sources */,
 				471086462B9C9AA900556C2D /* AnnouncementCell.swift in Sources */,
-				47F570E32C038B6F008DCA81 /* ATCGenericLocalHeteroDataSource.swift in Sources */,
-				47F570F72C038B6F008DCA81 /* ConstraintLayoutSupportDSL.swift in Sources */,
 				475224D52BA9CB56000DAE1B /* BaseCoordinator.swift in Sources */,
 				47F571302C044946008DCA81 /* LanguageService.swift in Sources */,
 				4715D0482BD650A100DF7868 /* PasscodeIndicatorView.swift in Sources */,
-				47F570FA2C038B6F008DCA81 /* ConstraintMakerExtendable.swift in Sources */,
 				47CD67382B8DA33E0035DCB6 /* NavigationTitleView.swift in Sources */,
 				47F571652C079FE4008DCA81 /* InputTextFieldWrapper.swift in Sources */,
 				47C01DD82BADC49A00D1B2F2 /* EnterPhoneFlowFactory.swift in Sources */,
 				47C7B3792B812AF000125172 /* AppColor.swift in Sources */,
 				47D1BDDE2BB570F0004992AA /* EditProfileFlowFactory.swift in Sources */,
 				47C7B3852B8132C800125172 /* AppFont.swift in Sources */,
-				47F570D62C038B6F008DCA81 /* ATCChatChannel.swift in Sources */,
 				47C01DDA2BADC99000D1B2F2 /* EnterPhoneCoordinator.swift in Sources */,
-				47F570E82C038B6F008DCA81 /* ATCUser.swift in Sources */,
 				47D1BDE32BB57857004992AA /* EditProfileOutputCoordinator.swift in Sources */,
-				47F570E62C038B6F008DCA81 /* UIImage+ATCAdditions.swift in Sources */,
 				475224B62BA441C3000DAE1B /* ProfileMainInfo.swift in Sources */,
 				47D1BDD42BB550B1004992AA /* ProfileDetailCellViewModel.swift in Sources */,
 				47D1BE412BC6637D004992AA /* FriendsFlowFactory.swift in Sources */,
 				47F5718B2C09DEAC008DCA81 /* Sanuzel.swift in Sources */,
-				47F571002C038B6F008DCA81 /* ConstraintPriority.swift in Sources */,
 				47CD672D2B8C3DD50035DCB6 /* BaseViewController.swift in Sources */,
-				47F570FF2C038B6F008DCA81 /* ConstraintOffsetTarget.swift in Sources */,
 				475224DB2BA9CE4B000DAE1B /* Presentable.swift in Sources */,
 				47C01E262BB2B5F400D1B2F2 /* AddAnnouncementOutputCoordinator.swift in Sources */,
 				47D54CC52B91EC7200021FA7 /* MainScreenViewController.swift in Sources */,
 				475224FA2BA9FECB000DAE1B /* AuthFlowFactory.swift in Sources */,
-				47F571092C038B6F008DCA81 /* LayoutConstraintItem.swift in Sources */,
 				47C01E1C2BB2981800D1B2F2 /* AddAnnouncementViewModel.swift in Sources */,
 				47C01E1A2BB297E300D1B2F2 /* AddAnnouncementViewController.swift in Sources */,
 				47F571612C074407008DCA81 /* LanguageViewController.swift in Sources */,
@@ -2669,15 +2186,12 @@
 				47D1BDD82BB56A20004992AA /* Profile.swift in Sources */,
 				47C01DF92BB1A6ED00D1B2F2 /* TabBarItem.swift in Sources */,
 				47D1BDCA2BB52AA1004992AA /* EditProfileViewModel.swift in Sources */,
-				47F570F82C038B6F008DCA81 /* ConstraintMaker.swift in Sources */,
 				47C01E402BB2E08400D1B2F2 /* NavigationCellType.swift in Sources */,
 				475224DD2BA9D405000DAE1B /* AppCoordinator.swift in Sources */,
 				472E1B242B8305EF005BF649 /* SplashScreenView.swift in Sources */,
 				4774CD342BF91C7A00089B85 /* Data+Extensions.swift in Sources */,
 				472E1B3E2B8372DA005BF649 /* InfoLabel.swift in Sources */,
 				475225072BACA8A1000DAE1B /* PersonalViewModel.swift in Sources */,
-				47F570EB2C038B6F008DCA81 /* ConstraintAttributes.swift in Sources */,
-				47F570CF2C038B6F008DCA81 /* ATCCarouselAdapter.swift in Sources */,
 				47C7B3772B812A3700125172 /* AppColorProtocol.swift in Sources */,
 				47D1BDE52BB57933004992AA /* CoordinatorFactoryProtocol.swift in Sources */,
 				47F570552C0388E4008DCA81 /* MessagesOutputCoordinator.swift in Sources */,
@@ -2685,24 +2199,18 @@
 				47D1BDFA2BBA6E07004992AA /* City.swift in Sources */,
 				475224B82BA443F0000DAE1B /* ProfileAboutInfo.swift in Sources */,
 				47C01E302BB2DA1400D1B2F2 /* ProfileFlowFactory.swift in Sources */,
-				47F570D82C038B6F008DCA81 /* ATCChatMockStore.swift in Sources */,
-				47F570EC2C038B6F008DCA81 /* ConstraintConfig.swift in Sources */,
-				47F570F92C038B6F008DCA81 /* ConstraintMakerEditable.swift in Sources */,
 				47D1BE162BBEA876004992AA /* ThemeViewController.swift in Sources */,
-				47F570F52C038B6F008DCA81 /* ConstraintLayoutGuideDSL.swift in Sources */,
 				475224CB2BA99242000DAE1B /* TabBarViewModel.swift in Sources */,
 				47C01DFD2BB1B35C00D1B2F2 /* MainScreenOutputCoordinator.swift in Sources */,
 				4715D0442BD64D7900DF7868 /* NumberPadView.swift in Sources */,
 				47D1BDE12BB5783F004992AA /* EditProfileCoordinator.swift in Sources */,
 				47C01E042BB2890400D1B2F2 /* AnnouncementsType.swift in Sources */,
-				47F5710E2C038B6F008DCA81 /* UIColor.swift in Sources */,
 				47C01E4A2BB4416500D1B2F2 /* SettingsFlowFactory.swift in Sources */,
 				47D1BE012BBACF5A004992AA /* ProfileAboutMeViewController.swift in Sources */,
 				47D1BE272BC1C6C3004992AA /* ProfileCharacteristicsViewController.swift in Sources */,
 				47C01E222BB2B5C500D1B2F2 /* AddAnnouncementFlowFactory.swift in Sources */,
 				47C01DEB2BAEF2D600D1B2F2 /* UIDevice+Extensions.swift in Sources */,
 				47D1BDCE2BB52F1B004992AA /* ProfileImageView.swift in Sources */,
-				47F571082C038B6F008DCA81 /* LayoutConstraint.swift in Sources */,
 				475224B42BA41AED000DAE1B /* ProfileAboutView.swift in Sources */,
 				47F571852C09DA91008DCA81 /* Announcement.swift in Sources */,
 				47D1BDD62BB553BC004992AA /* ProfileDetail.swift in Sources */,
@@ -2714,37 +2222,25 @@
 				4715996A2BF1D68200022D62 /* PassCodeCoordinator.swift in Sources */,
 				475224A52BA162A4000DAE1B /* Reusable.swift in Sources */,
 				47F5718D2C09E6B7008DCA81 /* Condition.swift in Sources */,
+				47F571952C0B960F008DCA81 /* DynamicTextEditor.swift in Sources */,
+				47F571992C0C505D008DCA81 /* AppData.swift in Sources */,
 				47D1BE3B2BC64C55004992AA /* FriendCellViewModel.swift in Sources */,
 				47CD671A2B8796060035DCB6 /* SmsCodeViewController.swift in Sources */,
-				47F570DC2C038B6F008DCA81 /* ATCUserStoryCollectionViewCell.swift in Sources */,
 				47C01DED2BAF5FE700D1B2F2 /* KeychainService.swift in Sources */,
-				47F5711C2C038B6F008DCA81 /* ATCMenuTableViewController.swift in Sources */,
-				47F571122C038B6F008DCA81 /* UIView.swift in Sources */,
 				47F571522C05A49D008DCA81 /* Int+Extensions.swift in Sources */,
 				475224BC2BA447D4000DAE1B /* ProfileCommonInfo.swift in Sources */,
-				47F5711E2C038B6F008DCA81 /* ATCNavigationController.swift in Sources */,
 				475224B22BA40E28000DAE1B /* ProfileTopView.swift in Sources */,
-				47F570F12C038B6F008DCA81 /* ConstraintInsetTarget.swift in Sources */,
 				47D1BE332BC58069004992AA /* FriendsViewController.swift in Sources */,
-				47F570D92C038B6F008DCA81 /* ATCRemoteData.swift in Sources */,
 				47C01DF32BB19ACE00D1B2F2 /* TabBarCoordinator.swift in Sources */,
 				47CD67262B88A9980035DCB6 /* BaseView.swift in Sources */,
 				47CD67282B88BB070035DCB6 /* SetPasswordViewController.swift in Sources */,
 				4774CD2A2BF918E900089B85 /* ErrorModel.swift in Sources */,
 				47C01DDC2BADC9A900D1B2F2 /* EnterPhoneOutputCoordinator.swift in Sources */,
-				47F570E02C038B6F008DCA81 /* ATCChatThreadViewController.swift in Sources */,
 				47D1BE052BBD5D5C004992AA /* MenuHeaderView.swift in Sources */,
-				47F570ED2C038B6F008DCA81 /* ConstraintConstantTarget.swift in Sources */,
 				475224A22BA05800000DAE1B /* AnnouncementsViewModel.swift in Sources */,
-				47F5712A2C038B6F008DCA81 /* ATCViewControllerContainerCollectionViewCell.swift in Sources */,
-				47F570D42C038B6F008DCA81 /* ATCChatThreadAdapter.swift in Sources */,
 				47D54CEC2B96419700021FA7 /* UIView+Extensions.swift in Sources */,
 				4774CD2C2BF9195400089B85 /* ApiRouter.swift in Sources */,
-				47F571072C038B6F008DCA81 /* Debugging.swift in Sources */,
-				47F570D12C038B6F008DCA81 /* ATCViewControllerContainerRowAdapter.swift in Sources */,
-				47F571142C038B6F008DCA81 /* ATCLiquidCollectionViewLayout.swift in Sources */,
 				47D1BDC82BB529D7004992AA /* EditProfileViewController.swift in Sources */,
-				47F5711B2C038B6F008DCA81 /* ATCMenuItemRowAdapter.swift in Sources */,
 				47D54CBB2B91D22F00021FA7 /* Constants.swift in Sources */,
 				472E1B2C2B83215C005BF649 /* SplashScreenViewController.swift in Sources */,
 				47D54CE62B963E6B00021FA7 /* UILabel+Extensions.swift in Sources */,
@@ -2753,7 +2249,6 @@
 				47C01E2C2BB2D9B800D1B2F2 /* ProfileOutputCoordinator.swift in Sources */,
 				47D54CB42B918FA800021FA7 /* BottomSheetViewController.swift in Sources */,
 				47CD675C2B90950E0035DCB6 /* PersonalViewController.swift in Sources */,
-				47F5711F2C038B6F008DCA81 /* ATCGenericCollectionViewController.swift in Sources */,
 				4774CD272BF90B6800089B85 /* ApiClient.swift in Sources */,
 				471599682BF1D0F200022D62 /* PassCodeFlowFactory.swift in Sources */,
 				47CD67182B87635C0035DCB6 /* SmsCodeViewModel.swift in Sources */,
@@ -2764,40 +2259,26 @@
 				47F5712E2C044143008DCA81 /* MessagessViewController.swift in Sources */,
 				4715D0572BD67AAF00DF7868 /* PassCodeViewController.swift in Sources */,
 				47C01E202BB2B26D00D1B2F2 /* AddAnnouncementView.swift in Sources */,
-				47F570E72C038B6F008DCA81 /* UITabBarItem+ATCAdditions.swift in Sources */,
 				47C01E392BB2DEEE00D1B2F2 /* SettingsViewController.swift in Sources */,
 				47C01DEF2BB09BE500D1B2F2 /* AlertFlowFactory.swift in Sources */,
 				475224ED2BA9E882000DAE1B /* SplashScreenOutputCoordinator.swift in Sources */,
 				47CD670E2B8759EB0035DCB6 /* Typealias.swift in Sources */,
 				47C01E482BB4414100D1B2F2 /* SettingsOutputCoordinator.swift in Sources */,
-				47F571022C038B6F008DCA81 /* ConstraintRelatableTarget.swift in Sources */,
-				47F571102C038B6F008DCA81 /* UIScrollView.swift in Sources */,
-				47F570FD2C038B6F008DCA81 /* ConstraintMakerRelatable.swift in Sources */,
-				47F571112C038B6F008DCA81 /* UITextField.swift in Sources */,
-				47F571132C038B6F008DCA81 /* ATCCollectionViewFlowLayout.swift in Sources */,
 				4756A0292B7FCC56003F9675 /* SceneDelegate.swift in Sources */,
-				47F5710D2C038B6F008DCA81 /* String.swift in Sources */,
 				47D1BE252BC1BA19004992AA /* ProfileCharacteristicsView.swift in Sources */,
 				472E1B372B8364E1005BF649 /* LoginViewController.swift in Sources */,
 				47D1BE462BC664D4004992AA /* FriendsCoordinator.swift in Sources */,
-				47F571242C038B6F008DCA81 /* ATCMessengerUserCollectionViewCell.swift in Sources */,
-				47F570FB2C038B6F008DCA81 /* ConstraintMakerFinalizable.swift in Sources */,
-				47F571262C038B6F008DCA81 /* ATCCarouselCollectionViewCell.swift in Sources */,
 				47C01E0E2BB28C5200D1B2F2 /* FavoritesOutputCoordinator.swift in Sources */,
 				472E1B402B837AAE005BF649 /* ProceedButton.swift in Sources */,
-				47F571062C038B6F008DCA81 /* ConstraintViewDSL.swift in Sources */,
+				47F5718F2C0B7E57008DCA81 /* ApartmentsType.swift in Sources */,
 				47D54CC32B91EC5800021FA7 /* MainScreenView.swift in Sources */,
 				4752249F2BA051EA000DAE1B /* AnnouncementsView.swift in Sources */,
-				47F5710F2C038B6F008DCA81 /* UIImage.swift in Sources */,
 				47D1BE392BC64BED004992AA /* FriendCell.swift in Sources */,
 				47D1BE292BC1E2A4004992AA /* ImageSettable.swift in Sources */,
 				47D1BE142BBEA356004992AA /* NavigationTableViewType.swift in Sources */,
-				47F570FE2C038B6F008DCA81 /* ConstraintMultiplierTarget.swift in Sources */,
 				47C01DFF2BB1B3BB00D1B2F2 /* MainScreenCoordinator.swift in Sources */,
 				4715D04A2BD6516E00DF7868 /* PassCodeView.swift in Sources */,
-				47F571152C038B6F008DCA81 /* ATCDrawerController.swift in Sources */,
 				47C01E2E2BB2D9D100D1B2F2 /* ProfileCoordinator.swift in Sources */,
-				47F5710C2C038B6F008DCA81 /* Date.swift in Sources */,
 				47F571872C09DC02008DCA81 /* User.swift in Sources */,
 				47CD67222B88A7AE0035DCB6 /* SetPasswordView.swift in Sources */,
 				47D1BE3E2BC64DDB004992AA /* Friend.swift in Sources */,
@@ -2806,26 +2287,18 @@
 				47D1BE182BBF230F004992AA /* ImageDetailViewController.swift in Sources */,
 				47D1BDDB2BB56A75004992AA /* CharacteristicType.swift in Sources */,
 				472E1B3C2B836A75005BF649 /* InputTextField.swift in Sources */,
-				47F5710A2C038B6F008DCA81 /* Typealiases.swift in Sources */,
-				47F571032C038B6F008DCA81 /* ConstraintRelation.swift in Sources */,
 				47C01DD22BAD9D7500D1B2F2 /* UIButton+Extensions.swift in Sources */,
 				475224E72BA9DB7F000DAE1B /* UserDefaultsService.swift in Sources */,
 				47D1BE032BBAD1A9004992AA /* ProfileAboutMeView.swift in Sources */,
 				475224982BA04EAC000DAE1B /* AnnouncementViewModel.swift in Sources */,
-				47F571162C038B6F008DCA81 /* ATCHostViewController.swift in Sources */,
 				47C01E012BB1B41100D1B2F2 /* MainScreenFlowFactory.swift in Sources */,
 				47C7B3872B8132E100125172 /* AppFontProtocol.swift in Sources */,
-				47F570DA2C038B6F008DCA81 /* ATCThreadCollectionViewCell.swift in Sources */,
-				47F571182C038B6F008DCA81 /* ATCMenuHeaderTableViewCell.swift in Sources */,
 				47C01E3B2BB2DF1C00D1B2F2 /* SettingsViewModel.swift in Sources */,
 				4715D0522BD66C3100DF7868 /* EntryType.swift in Sources */,
 				475224FC2BAA0FFF000DAE1B /* EnterPhoneViewModel.swift in Sources */,
 				475224C52BA7FE1A000DAE1B /* ProfileCharacteristicView.swift in Sources */,
-				47F5711A2C038B6F008DCA81 /* ATCMenuItemCollectionViewCellProtocol.swift in Sources */,
 				4715D0552BD67A4E00DF7868 /* PassCodeViewModel.swift in Sources */,
-				47F570DE2C038B6F008DCA81 /* ATCChatHomeViewController.swift in Sources */,
 				47CD673E2B8DDB2B0035DCB6 /* EnterPhoneView.swift in Sources */,
-				47F570D72C038B6F008DCA81 /* ATChatMessage.swift in Sources */,
 				4764D59A2B85AC9500D15A2E /* LoginModel.swift in Sources */,
 				4710864A2B9E308F00556C2D /* MainSectionHeaderView.swift in Sources */,
 				47D1BDE92BB5E25E004992AA /* Date+Extensions.swift in Sources */,
@@ -2835,11 +2308,8 @@
 				4715D04D2BD65EAF00DF7868 /* View+Extensions.swift in Sources */,
 				47D1BDEB2BB5EE04004992AA /* String+Extensions.swift in Sources */,
 				475224FF2BAB2055000DAE1B /* Country.swift in Sources */,
-				47F571212C038B6F008DCA81 /* ATCCircledIconMenuCollectionViewCell.swift in Sources */,
-				47F570FC2C038B6F008DCA81 /* ConstraintMakerPriortizable.swift in Sources */,
 				475224C22BA76649000DAE1B /* ProfileCharacteristicProgressView.swift in Sources */,
 				47D1BDFF2BBAC8F1004992AA /* DatePicker.swift in Sources */,
-				47F571232C038B6F008DCA81 /* ATCMessengerUserAdapter.swift in Sources */,
 				47C7B3982B81377400125172 /* AppImage.swift in Sources */,
 				475224F72BA9FC45000DAE1B /* AuthOutputCoordinator.swift in Sources */,
 				47F5704B2C037CCA008DCA81 /* UIFont+Extensions.swift in Sources */,

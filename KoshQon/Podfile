@@ -14,13 +14,6 @@ target 'KoshQon' do
   pod 'ContextMenuSwift'
   pod 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire.git', :branch => 'alamofire5'
   pod 'SVProgressHUD'
-pod 'Firebase/Core'
-  pod 'Firebase/Auth'
-  pod 'Firebase/Database'
-  pod 'Firebase/Storage'
-  pod 'Firebase/Firestore'
-pod 'MessageKit'
-pod 'Kingfisher'
 
   target 'KoshQonUITests' do
     # Pods for UI testing

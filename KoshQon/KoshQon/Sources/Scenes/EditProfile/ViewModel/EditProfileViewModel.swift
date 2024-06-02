@@ -50,7 +50,7 @@ private extension EditProfileViewModel {
             case .phone:
                 detail = .init(type: type, value: [profile.mainInfo.phoneNumber])
             case .country:
-                detail = .init(type: type, value: [profile.mainInfo.country.title])
+                detail = .init(type: type, value: [profile.mainInfo.country.countryTitle])
             case .city:
                 detail = .init(type: type, value: [profile.mainInfo.city.name])
             case .characteristics:

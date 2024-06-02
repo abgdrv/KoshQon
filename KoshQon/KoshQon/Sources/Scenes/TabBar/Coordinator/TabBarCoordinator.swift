@@ -95,8 +95,12 @@ private extension TabBarCoordinator {
                 var coordinator = self.coordinatorFactory.makeAddAnnouncementCoordinator(navController: navController)
                 coordinator.finishFlow = { [weak self] in
                     guard let self = self else { return }
-                    self.removeDependency(coordinator)
-                    self.finishFlow?(true)
+                    ProgressHUD.animate()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        ProgressHUD.dismiss()
+                        self.removeDependency(coordinator)
+                        self.finishFlow?(false)
+                    }
                 }
                 self.addDependency(coordinator)
                 coordinator.start()

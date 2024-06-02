@@ -13,6 +13,10 @@ enum MenuType: String {
     case gender = "gender"
     case country = "country"
     case city = "city"
+    case district = "district"
+    case condition = "condition"
+    case apartmentType = "apartment_type"
+    case sanuzel = "sanuzel"
     
     var title: String {
         return rawValue.localized
@@ -39,6 +43,10 @@ final class MenuButton: UIButton {
     private static var countries = Country.allCases
     private static var cities = City.allCases
     private static var genders = Gender.allCases
+    private static var districts = District.allCases
+    private static var conditions = Condition.allCases
+    private static var apartmentTypes = ApartmentsType.allCases
+    private static var sanuzelTypes = Sanuzel.allCases
     
     private var menuItems: [ContextMenuItem] {
         var menuItems: [ContextMenuItem] = []
@@ -61,6 +69,26 @@ final class MenuButton: UIButton {
         case .country:
             menuItems.append(MenuButton.country.countryTitle)
             menuValues.append(MenuButton.country.countryTitle)
+        case .district:
+            MenuButton.districts.forEach { district in
+                menuItems.append(district.title)
+                menuValues.append(district.title)
+            }
+        case .condition:
+            MenuButton.conditions.forEach { condition in
+                menuItems.append(condition.title)
+                menuValues.append(condition.title)
+            }
+        case .apartmentType:
+            MenuButton.apartmentTypes.forEach { type in
+                menuItems.append(type.title)
+                menuValues.append(type.title)
+            }
+        case .sanuzel:
+            MenuButton.sanuzelTypes.forEach { type in
+                menuItems.append(type.title)
+                menuValues.append(type.title)
+            }
         case .none:
             break
         }
@@ -103,17 +131,13 @@ extension MenuButton: ContextMenuDelegate {
                               forRowAt index: Int) -> Bool {
         switch menuType {
         case .phone:
-            self.didPhoneCodeSelect?(menuValues[index])
+            didPhoneCodeSelect?(menuValues[index])
             setTitle(menuValues[index], for: .normal)
-        case .gender:
-            self.didSelect?(menuValues[index])
-        case .city:
-            self.didSelect?(menuValues[index])
         case .country:
-            self.didSelect?(menuValues[index])
-            self.didCountrySelect?()
-        case .none:
-            break
+            didSelect?(menuValues[index])
+            didCountrySelect?()
+        default:
+            didSelect?(menuValues[index])
         }
         return true
     }

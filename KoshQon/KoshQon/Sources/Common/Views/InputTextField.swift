@@ -18,17 +18,29 @@ enum InputType {
     case regular
     case sms
     case detailDate
+    case district
+    case condition
+    case apartmentType
+    case sanuzel
     
     var menuType: MenuType? {
         switch self {
         case .phone:
-            return MenuType.phone
+            return .phone
         case .gender:
-            return MenuType.gender
+            return .gender
         case .city:
-            return MenuType.city
+            return .city
         case .country:
-            return MenuType.country
+            return .country
+        case .district:
+            return .district
+        case .condition:
+            return .condition
+        case .apartmentType:
+            return .apartmentType
+        case .sanuzel:
+            return .sanuzel
         default:
             return nil
         }
@@ -41,6 +53,7 @@ final class InputTextField: UITextField {
     
     var didCountrySelect: VoidCallback?
     var didPhoneCodeSelect: Callback<String>?
+    var didSelect: Callback<String>?
     
     private let type: InputType
     private let _placeholder: String?
@@ -77,7 +90,7 @@ final class InputTextField: UITextField {
     
     // MARK: - Object Lifecycle
     
-    init(inputType: InputType, placeholder: String? = nil) {
+    init(inputType: InputType, placeholder: String? = nil, _keyboardType: UIKeyboardType? = nil) {
         self.type = inputType
         self._placeholder = placeholder
         super.init(frame: .zero)
@@ -86,6 +99,10 @@ final class InputTextField: UITextField {
         setupConstraints()
         setupPadding()
         setupBindings()
+        
+        if let _keyboardType = _keyboardType {
+            keyboardType = _keyboardType
+        }
     }
     
     required init?(coder: NSCoder) {
@@ -122,7 +139,7 @@ final class InputTextField: UITextField {
     }
     
     override func caretRect(for position: UITextPosition) -> CGRect {
-        return (type == .date || type == .sms || type == .detailDate)  ? .zero : super.caretRect(for: position)
+        return (type == .date || type == .detailDate) ? .zero : super.caretRect(for: position)
     }
 }
 
@@ -140,7 +157,7 @@ private extension InputTextField {
         case .date:
             addSubview(containerView)
             containerView.addArrangedSubview(iconImageView)
-        case .gender,.city, .country:
+        case .gender,.city, .country, .district, .condition, .apartmentType, .sanuzel:
             addSubviews(containerView, menuContainer)
             menuContainer.addArrangedSubview(menuButton)
             containerView.addArrangedSubview(iconImageView)
@@ -161,7 +178,7 @@ private extension InputTextField {
                 make.trailing.equalToSuperview()
                 make.width.equalTo(50)
             }
-        case .gender, .city, .country:
+        case .gender, .city, .country, .district, .condition, .apartmentType, .sanuzel:
             containerView.snp.makeConstraints { make in
                 make.top.bottom.equalToSuperview()
                 make.trailing.equalToSuperview()
@@ -203,6 +220,7 @@ private extension InputTextField {
         menuButton.didSelect = { [weak self] title in
             guard let self = self else { return }
             self.text = title
+            didSelect?(title)
         }
         
         menuButton.didCountrySelect = { [weak self] in
@@ -224,22 +242,19 @@ private extension InputTextField {
         switch type {
         case .password:
             setupTextField(placeholder: LocalizableKeys.Auth.enterPaasword.localized(),
-                           isSecureTextEntry: true,
-                           textContentType: .password)
+                           isSecureTextEntry: true)
         case .date:
             setupTextField(placeholder: LocalizableKeys.Auth.birthday.localized(),
-                           textContentType: .dateTime,
                            image: AppImage.Auth.calendar.uiImage)
         case .phone:
             setupTextField(placeholder: LocalizableKeys.Auth.enterPhone.localized(),
                            keyboardType: .phonePad,
-                           clearButtonMode: .whileEditing,
-                           textContentType: .telephoneNumber)
+                           clearButtonMode: .whileEditing)
         case .sms:
             setupTextField(keyboardType: .numberPad,
                            font: AppFont.bold.s24,
-                           textAlignment: .center,
-                           textContentType: .oneTimeCode)
+                           textAlignment: .center)
+            textContentType = .oneTimeCode
         case .regular:
             setupTextField(placeholder: _placeholder,
                            clearButtonMode: .whileEditing)
@@ -248,14 +263,20 @@ private extension InputTextField {
                            image: AppImage.Auth.expandDown.uiImage)
         case .city:
             setupTextField(placeholder: LocalizableKeys.Helpers.city.localized(),
-                           textContentType: .addressCity,
                            image: AppImage.Auth.expandDown.uiImage)
         case .country:
             setupTextField(placeholder: LocalizableKeys.Helpers.country.localized(),
-                           textContentType: .countryName,
                            image: AppImage.Auth.expandDown.uiImage)
-        case .detailDate:
-            setupTextField(textContentType: .dateTime)
+        case .district:
+            setupTextField(placeholder: LocalizableKeys.Helpers.district.localized(), image: AppImage.Auth.expandDown.uiImage)
+        case .condition:
+            setupTextField(placeholder: LocalizableKeys.Helpers.condition.localized(), image: AppImage.Auth.expandDown.uiImage)
+        case .apartmentType:
+            setupTextField(placeholder: LocalizableKeys.Helpers.apartmentType.localized(), image: AppImage.Auth.expandDown.uiImage)
+        case .sanuzel:
+            setupTextField(placeholder: LocalizableKeys.Helpers.sanuzel.localized(), image: AppImage.Auth.expandDown.uiImage)
+        default:
+            setupTextField()
         }
     }
     
@@ -268,7 +289,6 @@ private extension InputTextField {
                         backgroundColor: UIColor = AppColor.Theme.mainBackground.uiColor,
                         textAlignment: NSTextAlignment = .natural,
                         isEnabled: Bool = true,
-                        textContentType: UITextContentType = .name,
                         image: UIImage? = nil) {
         self.placeholder = placeholder
         self.keyboardType = keyboardType

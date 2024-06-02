@@ -12,7 +12,7 @@ struct AddAnnouncementView: View {
     @ObservedObject var viewModel: AddAnnouncementViewModel
     
     @State private var showImagePicker: Bool = false
-    
+        
     private let columns = [GridItem(.flexible(), spacing: 16), GridItem(.flexible(), spacing: 16)]
     
     var body: some View {
@@ -27,21 +27,17 @@ struct AddAnnouncementView: View {
                 }
                 .foregroundStyle(AppColor.Theme.mainTitle.swiftUIColor)
                 
-                VStack(alignment: .leading, spacing: 16) {
-                    Text(LocalizableKeys.AddAnnouncement.residencePlace.localized())
-                        .font(AppFont.medium.s20.swiftUIFont)
-                    
+                RoundedBlock(title: LocalizableKeys.AddAnnouncement.residencePlace.localized()) {
                     LazyVGrid(columns: columns, spacing: 16) {
                         ForEach(viewModel.selectedImages.indices, id: \.self) { index in
                             ZStack(alignment: .topTrailing) {
                                 Image(uiImage: viewModel.selectedImages[index])
                                     .resizable()
                                     .scaledToFill()
-                                    .frame(width: (UIScreen.main.bounds.width - 48) / 2, height: 100) // Rectangular frame, 2 items in a row
+                                    .frame(width: (UIScreen.main.bounds.width - 48 - CGFloat(columns.count - 1) * 16) / CGFloat(columns.count), height: 100)
                                     .clipShape(RoundedRectangle(cornerRadius: 10))
                                 
                                 Button(action: {
-                                    // Delete the selected image
                                     viewModel.selectedImages.remove(at: index)
                                 }) {
                                     Image(systemName: "xmark.circle.fill")
@@ -57,13 +53,12 @@ struct AddAnnouncementView: View {
                         
                         if viewModel.selectedImages.count < 9 {
                             Button(action: {
-                                // Toggle the image picker
                                 showImagePicker.toggle()
                             }) {
                                 ZStack(alignment: .center) {
                                     RoundedRectangle(cornerRadius: 10)
                                         .stroke(AppColor.Theme.separation.swiftUIColor, lineWidth: 1)
-                                        .frame(width: (UIScreen.main.bounds.width - 48) / 2, height: 100)
+                                        .frame(width: (UIScreen.main.bounds.width - 48 - CGFloat(columns.count - 1) * 16) / CGFloat(columns.count), height: 100)
                                     
                                     VStack(spacing: 5) {
                                         Image(systemName: "plus")
@@ -79,18 +74,121 @@ struct AddAnnouncementView: View {
                             }
                         }
                     }
+                    
+                    InputTextFieldWrapper(text: $viewModel.appartmentType, inputType: .apartmentType)
+                    
+                    HStack {
+                        InputTextFieldWrapper(text: $viewModel.roomNumber, inputType: .regular, placeholder: LocalizableKeys.AddAnnouncement.roomNumber.localized(), keyboardType: .numberPad)
+                        
+                        InputTextFieldWrapper(text: $viewModel.area, inputType: .regular, placeholder: LocalizableKeys.AddAnnouncement.area.localized(), keyboardType: .numberPad)
+                    }
+                    
+                    VStack(alignment: .leading, spacing: 5) {
+                        Text(LocalizableKeys.AddAnnouncement.floor.localized())
+                            .font(AppFont.medium.s16.swiftUIFont)
+                        
+                        HStack {
+                            InputTextFieldWrapper(text: $viewModel.floor1, inputType: .regular, keyboardType: .numberPad)
+                            
+                            Text(LocalizableKeys.AddAnnouncement.of.localized())
+                                .font(AppFont.medium.s16.swiftUIFont)
+                            
+                            InputTextFieldWrapper(text:$viewModel.floor2, inputType: .regular, keyboardType: .numberPad)
+                        }
+                    }
+                    .foregroundColor(AppColor.Static.darkGray.swiftUIColor)
+                    
+                    InputTextFieldWrapper(text: $viewModel.condition, inputType: .condition)
+                    
+                    HStack {
+                        Text(LocalizableKeys.AddAnnouncement.internet.localized())
+                            .font(AppFont.medium.s16.swiftUIFont)
+                        
+                        Spacer()
+                        
+                        HStack {
+                            CheckboxView(isChecked: $viewModel.isInternet)
+                            
+                            Text(LocalizableKeys.AddAnnouncement.est.localized())
+                        }
+                        
+                        Spacer()
+                    }
+                    .foregroundColor(AppColor.Static.darkGray.swiftUIColor)
+                    
+                    InputTextFieldWrapper(text: $viewModel.sanuzel, inputType: .sanuzel)
+                    
                 }
                 
-                RoundedBlock(title: "Aдрес") {
-                    InputTextFieldWrapper(text: .constant(""), inputType: .city)
+                RoundedBlock(title: LocalizableKeys.AddAnnouncement.location.localized()) {
+                    InputTextFieldWrapper(text: $viewModel.city, inputType: .city)
+                    
+                    InputTextFieldWrapper(text: $viewModel.district, inputType: .district)
+                    
+                    HStack {
+                        InputTextFieldWrapper(text: $viewModel.street, inputType: .regular, placeholder: LocalizableKeys.AddAnnouncement.street.localized())
+                        
+                        InputTextFieldWrapper(text: $viewModel.houseNumber, inputType: .regular, placeholder: LocalizableKeys.AddAnnouncement.houseNumber.localized(), keyboardType: .numberPad)
+                    }
                 }
                 
+                RoundedBlock(title: LocalizableKeys.AddAnnouncement.rommateChar.localized()) {
+                    VStack(alignment: .leading, spacing: 5) {
+                        Text(LocalizableKeys.AddAnnouncement.age.localized())
+                            .font(AppFont.medium.s16.swiftUIFont)
+                        
+                        HStack {
+                            InputTextFieldWrapper(text: $viewModel.age1, inputType: .regular, keyboardType: .numberPad)
+                            
+                            Text(" - ")
+                                .font(AppFont.medium.s16.swiftUIFont)
+                            
+                            InputTextFieldWrapper(text: $viewModel.age2, inputType: .regular, keyboardType: .numberPad)
+                        }
+                    }
+                    .foregroundColor(AppColor.Static.darkGray.swiftUIColor)
+                    
+                    InputTextFieldWrapper(text: $viewModel.gender, inputType: .gender)
+                    
+                    VStack(alignment: .leading, spacing: 5) {
+                        Text("\(LocalizableKeys.AddAnnouncement.budget.localized()) (₸)")
+                            .font(AppFont.medium.s16.swiftUIFont)
+                        
+                        HStack {
+                            InputTextFieldWrapper(text: $viewModel.budget1, inputType: .regular, keyboardType: .numberPad)
+                            
+                            Text(" - ")
+                                .font(AppFont.medium.s16.swiftUIFont)
+                            
+                            InputTextFieldWrapper(text: $viewModel.budget2, inputType: .regular, keyboardType: .numberPad)
+                            
+                        }
+                    }
+                    .foregroundColor(AppColor.Static.darkGray.swiftUIColor)
+                    
+                    VStack(alignment: .leading, spacing: 5) {
+                        Text(LocalizableKeys.AddAnnouncement.description.localized())
+                            .font(AppFont.medium.s16.swiftUIFont)
+                        
+                        DynamicTextEditor(text: $viewModel.description)
+                    }
+                    .foregroundColor(AppColor.Static.darkGray.swiftUIColor)
+                }
                 
-                Spacer()
+                Button {
+                    viewModel.createAnnouncement()
+                } label: {
+                    VStack {
+                        ProceedButtonWrapper(type: .create)
+                    }
+                    .frame(height: 50)
+                    .cornerRadius(25)
+                }
+                
             }
-            .padding(.top, 16)
-            .padding(.horizontal, 16)
+            .padding(.bottom, 32)
+            .padding(.top)
+            .padding(.horizontal)
         }
-        .ignoresSafeArea(.keyboard)
     }
 }

@@ -68,6 +68,10 @@ enum LocalizableKeys {
         case gender = "gender"
         case country = "country"
         case city = "city"
+        case district = "district"
+        case condition = "condition"
+        case apartmentType = "apartment_type"
+        case sanuzel = "sanuzel"
     }
     
     enum ActionButton: String {
@@ -152,6 +156,19 @@ enum LocalizableKeys {
         case newAnnouncement = "new_announcement"
         case residencePlace = "residence_place"
         case addPhoto = "add_photo"
+        case roomNumber = "room_number"
+        case area = "area"
+        case floor = "floor"
+        case of = "of"
+        case internet = "internet"
+        case est = "est"
+        case location = "location"
+        case street = "street"
+        case houseNumber = "house_number"
+        case rommateChar = "rommate_char"
+        case age = "age"
+        case budget = "budget"
+        case description = "description"
     }
 }
 

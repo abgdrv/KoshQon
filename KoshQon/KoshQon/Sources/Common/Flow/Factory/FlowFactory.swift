@@ -174,18 +174,6 @@ extension FlowFactory: SplashScreenFlowFactory,
     }
     
     func makeMessagesView(isATCChat: Bool) -> UIViewController {
-        if isATCChat {
-            let uiConfig = ATCChatUIConfiguration(primaryColor: UIColor(hexString: "#0084ff"),
-                                                  secondaryColor: UIColor(hexString: "#f0f0f0"),
-                                                  inputTextViewBgColor: UIColor(hexString: "#f4f4f6"),
-                                                  inputTextViewTextColor: .black,
-                                                  inputPlaceholderTextColor: UIColor(hexString: "#979797"))
-            let channel = ATCChatChannel(id: "channel_id", name: "Chat Title")
-            let viewer = ATCUser(firstName: "Almat", lastName: "Begaidarov")
-            let chatVC = ATCChatThreadViewController(user: viewer, channel: channel, uiConfig: uiConfig)
-            return chatVC
-        }
-        
         return MessagessViewController()
     }
 }

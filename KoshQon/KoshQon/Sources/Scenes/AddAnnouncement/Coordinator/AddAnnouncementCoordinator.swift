@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import ProgressHUD
 
 final class AddAnnouncementCoordinator: BaseCoordinator, AddAnnouncementOutputCoordinator {
     
@@ -33,10 +34,18 @@ final class AddAnnouncementCoordinator: BaseCoordinator, AddAnnouncementOutputCo
 private extension AddAnnouncementCoordinator {
     func showAddAnnouncement() {
         let view = factory.makeAddAnnouncementView()
+        
         view.didClose = { [weak self] in
             guard let self = self else { return }
             self.router.dismissModule()
         }
+        
+        view.didCreate = { [weak self] in
+            guard let self = self else { return }
+            self.router.dismissModule()
+            self.finishFlow?()
+        }
+        
         let root = UINavigationController(rootViewController: view)
         router.present(root)
     }

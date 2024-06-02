@@ -53,6 +53,10 @@
 "gender" = "Gender";
 "country" = "Country";
 "city" = "City";
+"district" = "District";
+"condition" = "Condition";
+"apartment_type" = "Type";
+"sanuzel" = "Bathroom";
 
 "write" = "Write";
 "call" = "Call";
@@ -187,3 +191,20 @@
 "condition_high" = "Fresh renovation, new furniture";
 "condition_middle" = "Not new, but neat and clean repair";
 "condition_low" = "Without repair";
+
+"flat" = "Apartment";
+"house" = "Private house";
+
+"room_number" = "Number of rooms";
+"area" = "Area";
+"floor" = "Floor";
+"of" = "of";
+"internet" = "Internet";
+"est" = "Have";
+"location" = "Location";
+"street" = "Street";
+"house_number" = "House number";
+"rommate_char" = "Characteristics of a roommate";
+"age" = "Age";
+"budget" = "Budget";
+"description" = "Description";
