@@ -18,6 +18,8 @@ final class ProfileAboutView: HighlightView {
         }
     }
     
+    let viewModel: ProfileViewModel
+    
     // MARK: - UI
     
     private lazy var containerView = UIView().apply {
@@ -29,10 +31,11 @@ final class ProfileAboutView: HighlightView {
         $0.text = LocalizableKeys.NavigationBar.aboutMe.localized()
     }
     
-    private lazy var aboutTextLabel = UILabel().apply {
+    lazy var aboutTextLabel = UILabel().apply {
         $0.font = AppFont.regular.s12
         $0.textColor = AppColor.Static.darkGray.uiColor
         $0.numberOfLines = 0
+        $0.text = viewModel.profileType == .myProfile ? AppData.shared.user.about : viewModel.user.about
     }
     
     private lazy var contentView = UIStackView(arrangedSubviews: [aboutTitleLabel, aboutTextLabel]).apply {
@@ -42,10 +45,8 @@ final class ProfileAboutView: HighlightView {
     
     // MARK: - Object Lifecycle
     
-    init(info: ProfileAboutInfo?) {
-        defer {
-            self.info = info
-        }
+    init(viewModel: ProfileViewModel) {
+        self.viewModel = viewModel
         super.init(frame: .zero)
         setupViews()
         setupConstraints()

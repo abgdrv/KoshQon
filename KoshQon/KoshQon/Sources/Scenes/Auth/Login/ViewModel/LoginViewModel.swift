@@ -20,7 +20,6 @@ final class LoginViewModel: LoginProtocol {
     // MARK: - Methods
     
     func login(loginModel: LoginModel) {
-        print(loginModel.fullNumber)
     }
     
 }

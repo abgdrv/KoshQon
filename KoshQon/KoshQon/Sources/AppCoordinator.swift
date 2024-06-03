@@ -73,21 +73,21 @@ private extension AppCoordinator {
         coordinator.finishFlow = { [weak self] in
             guard let self = self else { return }
             self.removeDependency(coordinator)
-            self.runTabBarFlow()
+            self.runTabBarFlow(isFirst: true)
         }
         addDependency(coordinator)
         coordinator.start()
     }
     
-    func runTabBarFlow() {
-        var coordinator = coordinatorFactory.makeTabBarCoordinator(router: router, coordinatorFactory: coordinatorFactory)
+    func runTabBarFlow(isFirst: Bool) {
+        var coordinator = coordinatorFactory.makeTabBarCoordinator(isFirst: isFirst, router: router, coordinatorFactory: coordinatorFactory)
         coordinator.finishFlow = { [weak self] isQuit in
             guard let self = self else { return }
             self.removeDependency(coordinator)
             if isQuit {
                 self.runAuthFlow()
             } else {
-                self.runTabBarFlow()
+                self.runTabBarFlow(isFirst: false)
             }
         }
         addDependency(coordinator)

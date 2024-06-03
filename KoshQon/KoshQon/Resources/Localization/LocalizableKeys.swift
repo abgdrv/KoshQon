@@ -41,6 +41,7 @@ enum LocalizableKeys {
         case searchAnnouncements = "search_announcements"
         case goToPage = "go_to_page"
         case save = "save"
+        case create = "create"
     }
     
     enum NavigationBar: String {
@@ -169,6 +170,12 @@ enum LocalizableKeys {
         case age = "age"
         case budget = "budget"
         case description = "description"
+    }
+    
+    enum AnnouncementDetails: String {
+        case author = "announcement_author"
+        case goToPage = "go_to_page"
+        case reportMessage = "report_message"
     }
 }
 

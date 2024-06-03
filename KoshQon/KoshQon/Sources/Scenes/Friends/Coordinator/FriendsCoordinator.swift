@@ -36,18 +36,7 @@ private extension FriendsCoordinator {
         let view = factory.makeFriendsView()
         view.didFriendCellTap = { [weak self] id in
             guard let self = self else { return }
-            self.showProfile(id: id)
         }
         router.push(view)
-    }
-    
-    func showProfile(id: Int) {
-        var coordinator = coordinatorFactory.makeProfileCoordinator(profileType: .userProfile, router: router)
-        coordinator.finishFlow = { [weak self] isQuit in
-            guard let self = self else { return }
-            self.removeDependency(coordinator)
-        }
-        addDependency(coordinator)
-        coordinator.start()
     }
 }

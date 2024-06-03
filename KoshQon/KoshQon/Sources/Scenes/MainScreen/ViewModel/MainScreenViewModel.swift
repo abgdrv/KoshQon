@@ -11,6 +11,8 @@ final class MainScreenViewModel {
     
     // MARK: - Properties
     
+    let isFirst: Bool
+    
     var announcementViewModels: [AnnouncementViewModel] = []
     var navigationCellViewModels: [NavigationCellViewModel] = []
     
@@ -19,7 +21,8 @@ final class MainScreenViewModel {
     
     // MARK: - Object Lifecycle
     
-    init() {
+    init(isFirst: Bool) {
+        self.isFirst = isFirst
         getAnnouncements()
         getNavigationItems()
     }

@@ -113,6 +113,8 @@ private extension SetPasswordView {
 
 private extension SetPasswordView {
     @objc func changePasswordButtonTapped() {
+        AppData.shared.user.password = passwordTextField.text ?? ""
+        
         didFinish?()
     }
 }

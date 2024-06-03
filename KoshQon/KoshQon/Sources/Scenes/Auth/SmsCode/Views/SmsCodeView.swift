@@ -34,7 +34,7 @@ final class SmsCodeView: BaseView {
     private lazy var infoLabel = InfoLabel(type: .sms)
     
     private lazy var phoneNumberLabel = UILabel().apply {
-        $0.text = "+7 (777) 777 77 77"
+        $0.text = AppData.shared.user.phoneNumber
         $0.set(font: AppFont.medium.s20, textColor: AppColor.Theme.mainTitle.uiColor)
     }
     
@@ -189,9 +189,6 @@ private extension SmsCodeView {
     }
     
     @objc func continueButtonTapped() {
-        guard code == "0000" else {
-            return
-        }
         didFinish?()
     }
 }

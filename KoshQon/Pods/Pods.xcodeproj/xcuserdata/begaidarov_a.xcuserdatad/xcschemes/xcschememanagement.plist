@@ -14,27 +14,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Cucumberish-GherkinLanguages.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Cucumberish.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>KeychainSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>PanModal.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-KoshQon-KoshQonUITests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -59,17 +44,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>SkeletonView.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>SnapKit-SnapKit_Privacy.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>SnapKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>UIView-Shimmer.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

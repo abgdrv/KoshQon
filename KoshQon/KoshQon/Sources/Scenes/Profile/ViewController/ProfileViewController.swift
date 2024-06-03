@@ -73,6 +73,13 @@ final class ProfileViewController: BaseViewController {
         if viewModel.profileType == .myProfile {
             tabBarController?.tabBar.isHidden = false
         }
+        
+        viewModel.getAnnouncements()
+        profileView = ProfileView(viewModel: viewModel)
+        profileView.commonView.update()
+        view = profileView
+        setupBindings()
+        setupNavigation()
     }
 }
 

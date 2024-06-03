@@ -49,6 +49,7 @@ private extension ProfileAboutMeViewController {
     func setupBindings() {
         profileAboutMeView.didSave = { [weak self] text in
             guard let self = self else { return }
+            AppData.shared.user.about = text
             self.didSave?()
         }
     }

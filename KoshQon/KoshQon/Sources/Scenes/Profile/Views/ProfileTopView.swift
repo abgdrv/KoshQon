@@ -14,25 +14,25 @@ final class ProfileTopView: UIView {
     
     var didFriendsTap: VoidCallback?
     
-    private let info: ProfileMainInfo?
-    
+    let viewModel: ProfileViewModel
+        
     // MARK: - UI
     
-    private lazy var profileImageView = ProfileImageView(image: nil, isEditable: false)
+    lazy var profileImageView = ProfileImageView(image: viewModel.profileType == .myProfile ? AppData.shared.user.image : viewModel.user.image, isEditable: false)
     
     private lazy var nameLabel = UILabel().apply {
         $0.set(font: AppFont.medium.s20, textColor: AppColor.Theme.mainTitle.uiColor)
-        $0.text = info?.fullName
+        $0.text = viewModel.profileType == .myProfile ? AppData.shared.user.fullName : viewModel.user.fullName
     }
     
     private lazy var locationLabel = UILabel().apply {
         $0.set(font: AppFont.medium.s12, textColor: AppColor.Static.darkGray.uiColor)
-        $0.text = info?.location
+        $0.text = viewModel.profileType == .myProfile ? AppData.shared.user.address : viewModel.user.address
     }
     
     private lazy var ageLabel = UILabel().apply {
         $0.set(font: AppFont.medium.s12, textColor: AppColor.Static.darkGray.uiColor)
-        $0.text = (info?.age ?? 0).age
+        $0.text = viewModel.profileType == .myProfile ? AppData.shared.user.age.age : viewModel.user.age.age
     }
     
 //    private lazy var friendsButton = UIButton(type: .system).apply {
@@ -43,8 +43,8 @@ final class ProfileTopView: UIView {
     
     // MARK: - Object Lifecycle
     
-    init(info: ProfileMainInfo?) {
-        self.info = info
+    init(viewModel: ProfileViewModel) {
+        self.viewModel = viewModel
         super.init(frame: .zero)
         setupViews()
         setupConstraints()

@@ -8,7 +8,7 @@
 import Foundation
 
 protocol EditProfileFlowFactory: ImageSetFlowFactory {
-    func makeEditProfileView(profile: Profile) -> EditProfileViewController
+    func makeEditProfileView() -> EditProfileViewController
     func makeEnterPhoneView(type: EnterPhoneType) -> EnterPhoneViewController
     func makeAboutMeView(existingText: String?) -> ProfileAboutMeViewController
     func makeCharacteristicsView(enabledChars: [CharacteristicType]) -> ProfileCharacteristicsViewController

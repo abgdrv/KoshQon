@@ -27,6 +27,7 @@ final class ProfileImageView: UIView {
     private lazy var profileImageView = UIImageView(image: image).apply {
         $0.isUserInteractionEnabled = true
         $0.clipsToBounds = true
+        $0.contentMode = .scaleAspectFill
     }
     
     private lazy var plusImageView = UIImageView(image: AppImage.Personal.plus.uiImage)

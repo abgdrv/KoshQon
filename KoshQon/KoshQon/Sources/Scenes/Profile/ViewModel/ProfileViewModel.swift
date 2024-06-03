@@ -18,26 +18,9 @@ final class ProfileViewModel {
     
     let profileType: ProfileType
     
+    let user: User
+    
     var items: [AnnouncementViewModel] = []
-    
-    var profile: Profile?
-    
-    private let main = ProfileMainInfo(firstName: "Алмат",
-                                       lastName: "Бегайдаров",
-                                       gender: .male,
-                                       country: Country.kz,
-                                       city: City.kostanay,
-                                       birthday: "23.03.2002".toDate(format: "dd.MM.yyyy") ?? Date(),
-                                       friends: 50,
-                                       phoneNumber: "+77775817773")
-    
-    private let about = ProfileAboutInfo(text: "Я - ChatGPT, модель искусственного интеллекта от OpenAI. Готов помочь с вопросами, текстами, программированием и многим другим.")
-    
-    private let common = ProfileCommonInfo(rating: 6.2,
-                                           good: 8.5,
-                                           responsible: 6.2,
-                                           clean: 3.8,
-                                           characteristics: [.cook, .job, .student, .sport])
     
     private let ads: [Announcement] = [
         
@@ -45,29 +28,21 @@ final class ProfileViewModel {
     
     // MARK: - Object Lifecycle
     
-    init(profileType: ProfileType) {
+    init(user: User, profileType: ProfileType) {
+        self.user = profileType == .myProfile ? AppData.shared.user : user
         self.profileType = profileType
         getAnnouncements()
-        getProfile()
     }
 }
 
 // MARK: - Private methods
 
-private extension ProfileViewModel {
+extension ProfileViewModel {
     func getAnnouncements() {
-        items = makeCellViewModels(items: ads)
+        items = makeCellViewModels(items: profileType == .myProfile ? AppData.shared.myAnnouncements : user.announcements)
     }
     
     func makeCellViewModels(items: [Announcement]) -> [AnnouncementViewModel] {
         return items.compactMap { AnnouncementViewModel(announcement: $0, isProfile: true) }
-    }
-    
-    func makeProfile() -> Profile {
-        return Profile(mainInfo: main, aboutInfo: about, commonInfo: common)
-    }
-    
-    func getProfile() {
-        profile = makeProfile()
     }
 }

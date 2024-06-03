@@ -13,6 +13,7 @@ final class TabBarCoordinator: BaseCoordinator, TabBarOutputCoordinator {
     
     // MARK: - Properties
     
+    private let isFirst: Bool
     var didSessionExpired: VoidCallback?
     var finishFlow: Callback<Bool>?
     
@@ -23,7 +24,8 @@ final class TabBarCoordinator: BaseCoordinator, TabBarOutputCoordinator {
     
     // MARK: - Object Lifecycle
     
-    init(router: RouterProtocol, factory: TabBarFlowFactory, coordinatorFactory: CoordinatorFactoryProtocol) {
+    init(isFirst: Bool, router: RouterProtocol, factory: TabBarFlowFactory, coordinatorFactory: CoordinatorFactoryProtocol) {
+        self.isFirst = isFirst
         self.router = router
         self.factory = factory
         self.coordinatorFactory = coordinatorFactory
@@ -56,7 +58,7 @@ private extension TabBarCoordinator {
         return { [unowned self] navController in
             self.navController = navController
             if navController.viewControllers.isEmpty {
-                var coordinator = self.coordinatorFactory.makeMainScreenCoordinator(navController: navController)
+                var coordinator = self.coordinatorFactory.makeMainScreenCoordinator(isFirst: isFirst, navController: navController)
                 coordinator.finishFlow = { [weak self] in
                     guard let self = self else { return }
                     self.removeDependency(coordinator)
@@ -112,7 +114,7 @@ private extension TabBarCoordinator {
         return { [unowned self] navController in
             self.navController = navController
             if navController.viewControllers.isEmpty {
-                var coordinator = self.coordinatorFactory.makeProfileCoordinator(profileType: .myProfile, navController: navController)
+                var coordinator = self.coordinatorFactory.makeProfileCoordinator(user: AppData.shared.user, profileType: .myProfile, navController: navController)
                 coordinator.finishFlow = { [weak self] isQuit in
                     guard let self = self else { return }
                     ProgressHUD.animate()

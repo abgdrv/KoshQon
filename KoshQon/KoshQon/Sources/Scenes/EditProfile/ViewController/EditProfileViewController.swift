@@ -41,7 +41,7 @@ final class EditProfileViewController: BaseViewController, ImageSettable {
     
     // MARK: - UI
     
-    private lazy var profileImageView = ProfileImageView(image: nil, isEditable: true)
+    private lazy var profileImageView = ProfileImageView(image: AppData.shared.user.image, isEditable: true)
     
     private lazy var detailsContainerView = UIView().apply {
         $0.backgroundColor = AppColor.Theme.secondaryBackground.uiColor
@@ -81,7 +81,9 @@ final class EditProfileViewController: BaseViewController, ImageSettable {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        tabBarController?.tabBar.isHidden = true
+        viewModel.getDetails()
+        viewModel.getProfileDetailsCellViewModels()
+        detailsTableView.reloadData()
     }
     
     override func viewDidLayoutSubviews() {
@@ -181,6 +183,7 @@ private extension EditProfileViewController {
 
 private extension EditProfileViewController {
     @objc func saveButtonTapped() {
+        AppData.shared.user.image = image
         didFinish?()
     }
 }

@@ -12,8 +12,9 @@ final class ProfileCommonView: HighlightView {
 
     // MARK: - Properties
     
-    private let info: ProfileCommonInfo?
     private var characteristicsViews: [UIView] = []
+    
+    let viewModel: ProfileViewModel
     
     // MARK: - UI
     
@@ -35,7 +36,13 @@ final class ProfileCommonView: HighlightView {
     
     private lazy var ratingLabel = UILabel().apply {
         $0.set(font: AppFont.medium.s40, textColor: AppColor.Theme.mainTitle.uiColor)
-        $0.text = "\(info?.rating ?? 0)"
+        let rating = viewModel.profileType == .myProfile ? AppData.shared.user.rating : viewModel.user.rating
+
+        if rating == Double(Int(rating)) {
+            $0.text = String(format: "%.0f", rating)
+        } else {
+            $0.text = String(format: "%.2f", rating)
+        }
     }
     
     private lazy var starImageView = UIImageView(image: AppImage.Common.star.uiImage).apply {
@@ -58,12 +65,16 @@ final class ProfileCommonView: HighlightView {
         $0.spacing = 2
     }
     
+    func update() {
+        self.characteristicsViews = getCharacteristicViews(enabledChars: viewModel.profileType == .myProfile ? AppData.shared.user.chars : viewModel.user.chars)
+    }
+    
     // MARK: - Object Lifecycle
     
-    init(info: ProfileCommonInfo?) {
-        self.info = info
+    init(viewModel: ProfileViewModel) {
+        self.viewModel = viewModel
         super.init(frame: .zero)
-        self.characteristicsViews = getCharacteristicViews(enabledChars: info?.characteristics ?? [])
+        update()
         setupViews()
         setupConstraints()
 
@@ -158,11 +169,11 @@ private extension ProfileCommonView {
             let view: UIView
             switch caseValue {
             case .good:
-                view = ProfileCharacteristicProgressView(type: caseValue, progress: info?.good ?? 0)
+                view = ProfileCharacteristicProgressView(type: caseValue, progress: Float(viewModel.profileType == .myProfile ? AppData.shared.user.good :  viewModel.user.good))
             case .responsible:
-                view = ProfileCharacteristicProgressView(type: caseValue, progress: info?.responsible ?? 0)
+                view = ProfileCharacteristicProgressView(type: caseValue, progress: Float(viewModel.profileType == .myProfile ? AppData.shared.user.responsible : viewModel.user.responsible))
             case .clean:
-                view = ProfileCharacteristicProgressView(type: caseValue, progress: info?.clean ?? 0)
+                view = ProfileCharacteristicProgressView(type: caseValue, progress: Float(viewModel.profileType == .myProfile ? AppData.shared.user.clean : viewModel.user.clean))
             default:
                 view = ProfileCharacteristicView(type: caseValue, isEnabled: enabledChars.contains(caseValue))
             }

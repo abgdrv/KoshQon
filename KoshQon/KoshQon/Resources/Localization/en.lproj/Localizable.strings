@@ -31,6 +31,7 @@
 "search_announcements" = "Search announcements";
 "go_to_page" = "Go to page";
 "save" = "Save";
+"create" = "Create";
 
 "forgot_password" = "Forgot password";
 "confirmation_code" = "Confirmation code";
@@ -188,8 +189,8 @@
 "turksib" = "Turksib district";
 "zhetysu" = "Zhetysu district";
 
-"condition_high" = "Fresh renovation, new furniture";
-"condition_middle" = "Not new, but neat and clean repair";
+"condition_high" = "Renovation";
+"condition_middle" = "Average";
 "condition_low" = "Without repair";
 
 "flat" = "Apartment";
@@ -208,3 +209,7 @@
 "age" = "Age";
 "budget" = "Budget";
 "description" = "Description";
+
+"announcement_author" = "The author of the announcement";
+"go_to_page" = "Go to the page";
+"report_message" = "If you have problems with the ad, please use the feedback form to file a complaint. We respond promptly to all requests.";

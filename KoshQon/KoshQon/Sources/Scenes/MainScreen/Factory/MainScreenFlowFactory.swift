@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol MainScreenFlowFactory: AlertFlowFactory {
-    func makeMainScreenView() -> MainScreenViewController
+protocol MainScreenFlowFactory: AnnouncementsFlowFactory, AnnouncementDetailsFlowFactory {
+    func makeMainScreenView(isFirst: Bool) -> MainScreenViewController
 }

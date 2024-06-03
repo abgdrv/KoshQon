@@ -9,8 +9,8 @@ import UIKit
 
 struct Announcement {
     let id: UUID = UUID()
-    let user: User?
-    var images: [UIImage] = []
+    let user: User
+    var images: [UIImage?] = []
     let type: String
     let city: String
     let district: String
@@ -35,5 +35,23 @@ struct Announcement {
     
     var address: String {
         return city + ", " + district
+    }
+    
+    var floorString: String {
+        floor.0 + " " + LocalizableKeys.AddAnnouncement.of.localized() + " " + floor.1
+    }
+    
+    var ageString: String {
+        age.0 + " - " + age.1
+    }
+    
+    var budgetString: String {
+        budget.0 + " - " + budget.1
+    }
+}
+
+extension Announcement: Equatable {
+    static func == (lhs: Announcement, rhs: Announcement) -> Bool {
+        return lhs.id == rhs.id // Assuming 'id' is a property of Announcement that uniquely identifies each announcement
     }
 }

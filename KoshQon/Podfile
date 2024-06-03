@@ -14,11 +14,6 @@ target 'KoshQon' do
   pod 'ContextMenuSwift'
   pod 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire.git', :branch => 'alamofire5'
   pod 'SVProgressHUD'
-pod "SkeletonView"
-
-  target 'KoshQonUITests' do
-    # Pods for UI testing
-    pod 'Cucumberish'
-  end
+pod 'UIView-Shimmer'
 
 end

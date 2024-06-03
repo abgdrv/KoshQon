@@ -32,11 +32,6 @@ final class LanguageViewController: BaseViewController {
         setupConstraints()
         setupBindings()
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        tabBarController?.tabBar.isHidden = true
-    }
 }
 
 private extension LanguageViewController {

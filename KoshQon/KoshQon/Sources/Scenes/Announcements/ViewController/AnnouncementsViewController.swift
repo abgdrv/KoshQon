@@ -13,6 +13,7 @@ final class AnnouncementsViewController: BaseViewController {
     // MARK: - Properties
     
     var didAnnouncementsDelete: Callback<VoidCallback>?
+    var didAnnouncementCellTap: Callback<Announcement>?
     
     private var deleteButtonSubscriber: AnyCancellable?
     
@@ -53,6 +54,16 @@ final class AnnouncementsViewController: BaseViewController {
         setupNavigation()
         setupBindings()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.getAnnouncements()
+        announcementsView = AnnouncementsView(viewModel: viewModel, type: type)
+        view = announcementsView
+        announcementsView.announcementsTableView.reloadData()
+        setupBindings()
+        setupNavigation()
+    }
 }
 
 // MARK: - Setup
@@ -66,7 +77,10 @@ private extension AnnouncementsViewController {
     }
     
     func setupBindings() {
-        
+        announcementsView.didAnnouncementCellTap = { [weak self] announcement in
+            guard let self = self else { return }
+            self.didAnnouncementCellTap?(announcement)
+        }
     }
 }
 
@@ -74,7 +88,10 @@ private extension AnnouncementsViewController {
 
 private extension AnnouncementsViewController {
     @objc func deleteButtonTapped() {
-        didAnnouncementsDelete?({})
+        didAnnouncementsDelete?({ [weak self] in
+            AppData.shared.favorites.removeAll()
+            self?.viewWillAppear(true)
+        })
     }
     
 }

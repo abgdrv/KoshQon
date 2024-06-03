@@ -10,23 +10,20 @@ import Foundation
 final class EditProfileViewModel {
     
     // MARK: - Properties
-    
-    private let profile: Profile
-    
+        
     var items: [ProfileDetailCellViewModel] = []
     private let detailTypes = ProfileDetailType.allCases
     private var details: [ProfileDetail] = []
         
     // MARK: - Object Lifecycle
     
-    init(profile: Profile) {
-        self.profile = profile
+    init() {
         getDetails()
         getProfileDetailsCellViewModels()
     }
 }
 
-private extension EditProfileViewModel {
+extension EditProfileViewModel {
     func getProfileDetailsCellViewModels() {
         items = makeCellViewModels(items: details)
     }
@@ -39,24 +36,24 @@ private extension EditProfileViewModel {
         var details: [ProfileDetail] = []
         detailTypes.forEach { type in
             let detail: ProfileDetail
-            var characteristics: [CharacteristicType] = [.cook, .job, .student, .sport]
+            let characteristics: [CharacteristicType] = AppData.shared.user.chars
             switch type {
             case .name:
-                detail = .init(type: type, value: [profile.mainInfo.fullName])
+                detail = .init(type: type, value: [AppData.shared.user.fullName])
             case .birthday:
-                detail = .init(type: type, value: [profile.mainInfo.birthdayString])
+                detail = .init(type: type, value: [AppData.shared.user.birthdayString])
             case .gender:
-                detail = .init(type: type, value: [profile.mainInfo.gender.title])
+                detail = .init(type: type, value: [AppData.shared.user.gender.title])
             case .phone:
-                detail = .init(type: type, value: [profile.mainInfo.phoneNumber])
+                detail = .init(type: type, value: [AppData.shared.user.phoneNumber])
             case .country:
-                detail = .init(type: type, value: [profile.mainInfo.country.countryTitle])
+                detail = .init(type: type, value: [AppData.shared.user.country.countryTitle])
             case .city:
-                detail = .init(type: type, value: [profile.mainInfo.city.name])
+                detail = .init(type: type, value: [AppData.shared.user.city.name])
             case .characteristics:
                 detail = .init(type: type, value: characteristics.map { $0.rawValue } )
             case .about:
-                detail = .init(type: type, value: ["Я - ChatGPT, модель искусственного интеллекта от OpenAI. Готов помочь с вопросами, текстами, программированием и многим другим."])
+                detail = .init(type: type, value: [AppData.shared.user.about])
             }
             details.append(detail)
         }

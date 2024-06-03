@@ -23,14 +23,12 @@ final class ProfileView: BaseView {
         $0.showsVerticalScrollIndicator = false
     }
     
-    private lazy var topView = ProfileTopView(info: viewModel.profile?.mainInfo)
-    private lazy var aboutView = ProfileAboutView(info: viewModel.profile?.aboutInfo)
-    private lazy var commonView = ProfileCommonView(info: viewModel.profile?.commonInfo)
-//    private lazy var announcementsView = ProfileAnnouncementsView(announcementViewModels: viewModel.items)
+    lazy var topView = ProfileTopView(viewModel: viewModel)
+    lazy var aboutView = ProfileAboutView(viewModel: viewModel)
+    lazy var commonView = ProfileCommonView(viewModel: viewModel)
+//    lazy var announcementsView = ProfileAnnouncementsView(announcementViewModels: viewModel.items)
     
-    private lazy var contentView = UIStackView(
-        arrangedSubviews: [topView, aboutView, commonView]
-    ).apply {
+    private lazy var contentView = UIStackView().apply {
         $0.axis = .vertical
         $0.spacing = 16
     }
@@ -52,6 +50,15 @@ private extension ProfileView {
     func setupViews() {
         addSubview(scrollView)
         scrollView.addSubview(contentView)
+        
+        contentView.addArrangedSubview(topView)
+        if !AppData.shared.user.about.isEmpty {
+            contentView.addArrangedSubview(aboutView)
+        }
+        contentView.addArrangedSubview(commonView)
+//        if !AppData.shared.myAnnouncements.isEmpty {
+//            contentView.addArrangedSubview(announcementsView)
+//        }
     }
     
     func setupConstraints() {

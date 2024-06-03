@@ -94,6 +94,9 @@ private extension EnterPhoneView {
 
 private extension EnterPhoneView {
     @objc func continueButtonTapped() {
+        var user = User(phoneNumber: "+7 " + (phoneTextField.text ?? ""), password: "", fname: "", lname: "", city: .almaty, birthday: Date(), gender: .male)
+        AppData.shared.user = user
+        
         didFinish?()
     }
 }

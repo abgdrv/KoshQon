@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import ProgressHUD
 
 final class AuthCoordinator: BaseCoordinator, AuthOutputCoordinator {
     
@@ -53,6 +54,7 @@ private extension AuthCoordinator {
         var coordinator = coordinatorFactory.makeEnterPhoneCoordinator(type: .registration, router: router)
         coordinator.finishFlow = { [weak self] in
             guard let self = self else { return }
+            ProgressHUD.success("Success", delay: 1.5)
             self.router.popToRootModule(animated: true)
             self.removeDependency(coordinator)
         }

@@ -13,15 +13,16 @@ protocol CoordinatorFactoryProtocol {
     func makeAuthCoordinator(router: RouterProtocol,
                              coordinatorFactory: CoordinatorFactoryProtocol) -> Coordinator & AuthOutputCoordinator
     func makeEnterPhoneCoordinator(type: EnterPhoneType, router: RouterProtocol) -> Coordinator & EnterPhoneOutputCoordinator
-    func makeTabBarCoordinator(router: RouterProtocol, coordinatorFactory: CoordinatorFactoryProtocol) -> Coordinator & TabBarOutputCoordinator
-    func makeMainScreenCoordinator(navController: UINavigationController) -> Coordinator & MainScreenOutputCoordinator
-    func makeFavoritesCoordinator(navController: UINavigationController) -> Coordinator & FavoritesOutputCoordinator
+    func makeTabBarCoordinator(isFirst: Bool, router: RouterProtocol, coordinatorFactory: CoordinatorFactoryProtocol) -> Coordinator & TabBarOutputCoordinator
+    func makeMainScreenCoordinator(isFirst: Bool, navController: UINavigationController) -> Coordinator & MainScreenOutputCoordinator
+    func makeFavoritesCoordinator(navController: UINavigationController) -> Coordinator & AnnouncementsOutputCoordinator
     func makeAddAnnouncementCoordinator(navController: UINavigationController) -> Coordinator & AddAnnouncementOutputCoordinator
-    func makeProfileCoordinator(profileType: ProfileType, navController: UINavigationController) -> Coordinator & ProfileOutputCoordinator
-    func makeProfileCoordinator(profileType: ProfileType, router: RouterProtocol) -> Coordinator & ProfileOutputCoordinator
+    func makeProfileCoordinator(user: User, profileType: ProfileType, navController: UINavigationController) -> Coordinator & ProfileOutputCoordinator
+    func makeProfileCoordinator(user: User, profileType: ProfileType, router: RouterProtocol) -> Coordinator & ProfileOutputCoordinator
     func makeSettingsCoordinator(router: RouterProtocol, coordinatorFactory: CoordinatorFactory) -> Coordinator & SettingsOutputCoordinator
     func makeEditProfileCoordinator(router: RouterProtocol) -> Coordinator & EditProfileOutputCoordinator
     func makeFriendsCoordinator(router: RouterProtocol, coordinatorFactory: CoordinatorFactory) -> Coordinator & FriendsOutputCoordinator
     func makePassCodeCoordinator(passcodeType: PassCodeType ,router: RouterProtocol) -> Coordinator & PassCodeOutputCoordinator
     func makeMessagesCoordinator(navController: UINavigationController) -> Coordinator & MessagesOutputCoordinator
+    func makeAnnouncementDetailsCoordinator(announcement: Announcement, router: RouterProtocol) -> Coordinator & AnnouncementDetailsOutputCoordinator
 }

@@ -7,13 +7,13 @@
 
 import UIKit
 import SnapKit
-import SkeletonView
+import UIView_Shimmer
 
 final class MainScreenView: BaseView {
     
     // MARK: - Properties
     
-    var didAnnouncementCellTap: Callback<AnnouncementViewModel>?
+    var didAnnouncementCellTap: Callback<Announcement>?
     var didNavigationCellTap: Callback<NavigationCellType>?
     
     var didScrollDown: VoidCallback?
@@ -89,12 +89,23 @@ extension MainScreenView: UITableViewDelegate, UITableViewDataSource {
             return cell
         }
                 
-        let cell = AnnouncementCell(viewModel: viewModel.announcementViewModels[indexPath.row], isGradient: true)
-        cell.didAnnouncementCellTap = { [weak self] viewModel in
+        let cell = AnnouncementCell(viewModel: viewModel.announcementViewModels[indexPath.row], isGradient: viewModel.isFirst)
+        cell.didAnnouncementCellTap = { [weak self] announcement in
             guard let self = self else { return }
-            self.didAnnouncementCellTap?(viewModel)
+            self.didAnnouncementCellTap?(announcement)
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if viewModel.isFirst {
+            
+            cell.setTemplateWithSubviews(shouldAnimate, color: AppColor.Static.lightGray.uiColor, animate: true)
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                self.shouldAnimate = false
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

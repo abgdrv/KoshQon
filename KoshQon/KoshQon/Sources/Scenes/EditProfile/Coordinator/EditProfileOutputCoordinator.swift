@@ -9,5 +9,4 @@ import Foundation
 
 protocol EditProfileOutputCoordinator {
     var finishFlow: VoidCallback? { get set }
-    var profile: Profile? { get set }
 }

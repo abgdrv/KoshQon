@@ -90,6 +90,7 @@ final class AddAnnouncementViewModel: ObservableObject {
         }
         
         AppData.shared.announcements.insert(announcement, at: 0)
+        AppData.shared.myAnnouncements.insert(announcement, at: 0)
         didCreate?()
     }
     

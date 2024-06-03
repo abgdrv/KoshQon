@@ -14,13 +14,15 @@ final class MainScreenCoordinator: BaseCoordinator, MainScreenOutputCoordinator 
     var finishFlow: VoidCallback?
     var reloadFlow: VoidCallback?
     
+    private let isFirst: Bool
     private let router: RouterProtocol
     private let factory: MainScreenFlowFactory
     private let coordinatorFactory: CoordinatorFactoryProtocol
     
     // MARK: - Object Lifecycle
     
-    init(router: RouterProtocol, factory: MainScreenFlowFactory, coordinatorFactory: CoordinatorFactoryProtocol) {
+    init(isFirst: Bool, router: RouterProtocol, factory: MainScreenFlowFactory, coordinatorFactory: CoordinatorFactoryProtocol) {
+        self.isFirst = isFirst
         self.router = router
         self.factory = factory
         self.coordinatorFactory = coordinatorFactory
@@ -34,11 +36,18 @@ final class MainScreenCoordinator: BaseCoordinator, MainScreenOutputCoordinator 
 
 private extension MainScreenCoordinator {
     func showMainScreen() {
-        let view = factory.makeMainScreenView()
+        let view = factory.makeMainScreenView(isFirst: isFirst)
+        
         view.didNavigationCellTap = { [weak self] type in
             guard let self = self else { return }
             self.openNavigationCell(type: type)
         }
+        
+        view.didAnnouncementCellTap = { [weak self] announcement in
+            guard let self = self else { return }
+            self.showAnnouncementDetails(announcement: announcement)
+        }
+        
         router.setRoodModule(view, hideNavBar: false, isAnimated: false)
     }
     
@@ -47,7 +56,8 @@ private extension MainScreenCoordinator {
     }
     
     func showMyAnnouncements() {
-        
+        let view = factory.makeAnnouncementsView(type: .myAnnouncements)
+        router.push(view)
     }
     
     func showGuide() {
@@ -68,5 +78,16 @@ private extension MainScreenCoordinator {
         default:
             break
         }
+    }
+    
+    func showAnnouncementDetails(announcement: Announcement) {
+        var coordinator = coordinatorFactory.makeAnnouncementDetailsCoordinator(announcement: announcement, router: router)
+        coordinator.finishFlow = { [weak self] in
+            guard let self = self else { return }
+            self.removeDependency(coordinator)
+            self.finishFlow?()
+        }
+        addDependency(coordinator)
+        coordinator.start()
     }
 }

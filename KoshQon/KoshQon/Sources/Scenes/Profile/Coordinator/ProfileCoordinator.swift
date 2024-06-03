@@ -14,6 +14,8 @@ final class ProfileCoordinator: BaseCoordinator, ProfileOutputCoordinator {
     
     var finishFlow: Callback<Bool>?
     
+    let user: User
+    
     private let router: RouterProtocol
     private let factory: ProfileFlowFactory
     private let coordinatorFactory: CoordinatorFactory
@@ -22,7 +24,8 @@ final class ProfileCoordinator: BaseCoordinator, ProfileOutputCoordinator {
     
     // MARK: - Object Lifecycle
     
-    init(router: RouterProtocol, factory: ProfileFlowFactory, coordinatorFactory: CoordinatorFactory, profileType: ProfileType) {
+    init(user: User, router: RouterProtocol, factory: ProfileFlowFactory, coordinatorFactory: CoordinatorFactory, profileType: ProfileType) {
+        self.user = user
         self.router = router
         self.factory = factory
         self.coordinatorFactory = coordinatorFactory
@@ -37,19 +40,23 @@ final class ProfileCoordinator: BaseCoordinator, ProfileOutputCoordinator {
 
 private extension ProfileCoordinator {
     func showProfile() {
-        let view = factory.makeProfileView(type: profileType)
+        let view = factory.makeProfileView(type: profileType, user: user)
+        
         view.didSettingsTap = { [weak self] in
             guard let self = self else { return }
             self.showSettingsFlow()
         }
+        
         view.didEditProfileTap = { [weak self] in
             guard let self = self else { return }
             self.showEditProfileFlow()
         }
+        
         view.didFriendsTap = { [weak self] in
             guard let self = self else { return }
             self.showFriendsFlow()
         }
+        
         if profileType == .myProfile {
             router.setRoodModule(view, hideNavBar: false, isAnimated: false)
         } else {
@@ -74,7 +81,6 @@ private extension ProfileCoordinator {
             guard let self = self else { return }
             self.removeDependency(coordinator)
         }
-        coordinator.profile = ProfileViewModel(profileType: .myProfile).profile
         addDependency(coordinator)
         coordinator.start()
     }

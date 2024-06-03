@@ -13,6 +13,7 @@ enum AppImage {
     
     enum Common: String, AppImageProtocol {
         case AppIcon
+        case Almat = "Almat"
         case backArrow = "common/back_arrow"
         case expandRight = "common/expand_right"
         case star = "common/star"
@@ -22,6 +23,9 @@ enum AppImage {
         case more = "common/more"
         case phone = "common/phone"
         case letter = "common/letter"
+        case heart = "common/heart"
+        case report = "common/report"
+        case heartFill = "common/heart_fill"
     }
     
     // MARK: - Auth

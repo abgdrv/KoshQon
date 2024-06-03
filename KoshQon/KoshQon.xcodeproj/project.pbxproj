@@ -104,9 +104,9 @@
 		47C01DFF2BB1B3BB00D1B2F2 /* MainScreenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01DFE2BB1B3BB00D1B2F2 /* MainScreenCoordinator.swift */; };
 		47C01E012BB1B41100D1B2F2 /* MainScreenFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01E002BB1B41100D1B2F2 /* MainScreenFlowFactory.swift */; };
 		47C01E042BB2890400D1B2F2 /* AnnouncementsType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01E032BB2890400D1B2F2 /* AnnouncementsType.swift */; };
-		47C01E0C2BB28C4600D1B2F2 /* FavoritesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01E0B2BB28C4600D1B2F2 /* FavoritesCoordinator.swift */; };
-		47C01E0E2BB28C5200D1B2F2 /* FavoritesOutputCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01E0D2BB28C5200D1B2F2 /* FavoritesOutputCoordinator.swift */; };
-		47C01E102BB28CCD00D1B2F2 /* FavoritesFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01E0F2BB28CCD00D1B2F2 /* FavoritesFlowFactory.swift */; };
+		47C01E0C2BB28C4600D1B2F2 /* AnnouncementsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01E0B2BB28C4600D1B2F2 /* AnnouncementsCoordinator.swift */; };
+		47C01E0E2BB28C5200D1B2F2 /* AnnouncementsOutputCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01E0D2BB28C5200D1B2F2 /* AnnouncementsOutputCoordinator.swift */; };
+		47C01E102BB28CCD00D1B2F2 /* AnnouncementsFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01E0F2BB28CCD00D1B2F2 /* AnnouncementsFlowFactory.swift */; };
 		47C01E1A2BB297E300D1B2F2 /* AddAnnouncementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01E192BB297E300D1B2F2 /* AddAnnouncementViewController.swift */; };
 		47C01E1C2BB2981800D1B2F2 /* AddAnnouncementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01E1B2BB2981800D1B2F2 /* AddAnnouncementViewModel.swift */; };
 		47C01E202BB2B26D00D1B2F2 /* AddAnnouncementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C01E1F2BB2B26D00D1B2F2 /* AddAnnouncementView.swift */; };
@@ -231,7 +231,15 @@
 		47F571952C0B960F008DCA81 /* DynamicTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F571942C0B960F008DCA81 /* DynamicTextEditor.swift */; };
 		47F571972C0B9C37008DCA81 /* ProceedButtonWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F571962C0B9C37008DCA81 /* ProceedButtonWrapper.swift */; };
 		47F571992C0C505D008DCA81 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F571982C0C505D008DCA81 /* AppData.swift */; };
-		A2BFAC16081DDB0F2EAD971E /* Pods_KoshQon_KoshQonUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42CE84A5574DC805229D129B /* Pods_KoshQon_KoshQonUITests.framework */; };
+		47F571A12C0C8E0C008DCA81 /* AnnouncementDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F571A02C0C8E0C008DCA81 /* AnnouncementDetailsViewController.swift */; };
+		47F571A32C0C8E61008DCA81 /* AnnouncementDetailsFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F571A22C0C8E61008DCA81 /* AnnouncementDetailsFlowFactory.swift */; };
+		47F571A52C0C8E8F008DCA81 /* AnnouncementDetailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F571A42C0C8E8F008DCA81 /* AnnouncementDetailsCoordinator.swift */; };
+		47F571A72C0C8E9F008DCA81 /* AnnouncementDetailsOutputCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F571A62C0C8E9F008DCA81 /* AnnouncementDetailsOutputCoordinator.swift */; };
+		47F571A92C0C9314008DCA81 /* AnnouncementDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F571A82C0C9314008DCA81 /* AnnouncementDetailsView.swift */; };
+		47F571AC2C0C9897008DCA81 /* AnnouncementDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F571AB2C0C9897008DCA81 /* AnnouncementDetailsViewModel.swift */; };
+		47F571AE2C0C99C6008DCA81 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F571AD2C0C99C6008DCA81 /* UIImage+Extensions.swift */; };
+		47F571B22C0CA3FE008DCA81 /* AnnouncementActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F571B12C0CA3FE008DCA81 /* AnnouncementActionButton.swift */; };
+		47F571B42C0CA8D2008DCA81 /* ImageSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F571B32C0CA8D2008DCA81 /* ImageSlider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -252,7 +260,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		42CE84A5574DC805229D129B /* Pods_KoshQon_KoshQonUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KoshQon_KoshQonUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		471086452B9C9AA900556C2D /* AnnouncementCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementCell.swift; sourceTree = "<group>"; };
 		471086492B9E308F00556C2D /* MainSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSectionHeaderView.swift; sourceTree = "<group>"; };
 		471086512B9E42E100556C2D /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -351,9 +358,9 @@
 		47C01DFE2BB1B3BB00D1B2F2 /* MainScreenCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenCoordinator.swift; sourceTree = "<group>"; };
 		47C01E002BB1B41100D1B2F2 /* MainScreenFlowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenFlowFactory.swift; sourceTree = "<group>"; };
 		47C01E032BB2890400D1B2F2 /* AnnouncementsType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementsType.swift; sourceTree = "<group>"; };
-		47C01E0B2BB28C4600D1B2F2 /* FavoritesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCoordinator.swift; sourceTree = "<group>"; };
-		47C01E0D2BB28C5200D1B2F2 /* FavoritesOutputCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesOutputCoordinator.swift; sourceTree = "<group>"; };
-		47C01E0F2BB28CCD00D1B2F2 /* FavoritesFlowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesFlowFactory.swift; sourceTree = "<group>"; };
+		47C01E0B2BB28C4600D1B2F2 /* AnnouncementsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementsCoordinator.swift; sourceTree = "<group>"; };
+		47C01E0D2BB28C5200D1B2F2 /* AnnouncementsOutputCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementsOutputCoordinator.swift; sourceTree = "<group>"; };
+		47C01E0F2BB28CCD00D1B2F2 /* AnnouncementsFlowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementsFlowFactory.swift; sourceTree = "<group>"; };
 		47C01E192BB297E300D1B2F2 /* AddAnnouncementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnnouncementViewController.swift; sourceTree = "<group>"; };
 		47C01E1B2BB2981800D1B2F2 /* AddAnnouncementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnnouncementViewModel.swift; sourceTree = "<group>"; };
 		47C01E1F2BB2B26D00D1B2F2 /* AddAnnouncementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnnouncementView.swift; sourceTree = "<group>"; };
@@ -486,11 +493,18 @@
 		47F571942C0B960F008DCA81 /* DynamicTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicTextEditor.swift; sourceTree = "<group>"; };
 		47F571962C0B9C37008DCA81 /* ProceedButtonWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProceedButtonWrapper.swift; sourceTree = "<group>"; };
 		47F571982C0C505D008DCA81 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
+		47F571A02C0C8E0C008DCA81 /* AnnouncementDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementDetailsViewController.swift; sourceTree = "<group>"; };
+		47F571A22C0C8E61008DCA81 /* AnnouncementDetailsFlowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementDetailsFlowFactory.swift; sourceTree = "<group>"; };
+		47F571A42C0C8E8F008DCA81 /* AnnouncementDetailsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementDetailsCoordinator.swift; sourceTree = "<group>"; };
+		47F571A62C0C8E9F008DCA81 /* AnnouncementDetailsOutputCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementDetailsOutputCoordinator.swift; sourceTree = "<group>"; };
+		47F571A82C0C9314008DCA81 /* AnnouncementDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementDetailsView.swift; sourceTree = "<group>"; };
+		47F571AB2C0C9897008DCA81 /* AnnouncementDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementDetailsViewModel.swift; sourceTree = "<group>"; };
+		47F571AD2C0C99C6008DCA81 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		47F571B12C0CA3FE008DCA81 /* AnnouncementActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementActionButton.swift; sourceTree = "<group>"; };
+		47F571B32C0CA8D2008DCA81 /* ImageSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSlider.swift; sourceTree = "<group>"; };
 		4B1CB0D67C4284B3386A5D17 /* Pods_KoshQon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KoshQon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5A64B66AF75DD7EB3AA05FD9 /* Pods-KoshQon-KoshQonUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KoshQon-KoshQonUITests.debug.xcconfig"; path = "Target Support Files/Pods-KoshQon-KoshQonUITests/Pods-KoshQon-KoshQonUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5F34D042224D89E307A460AA /* Pods-KoshQon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KoshQon.release.xcconfig"; path = "Target Support Files/Pods-KoshQon/Pods-KoshQon.release.xcconfig"; sourceTree = "<group>"; };
 		6D25178508F65D3C6D2EDA43 /* Pods-KoshQon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KoshQon.debug.xcconfig"; path = "Target Support Files/Pods-KoshQon/Pods-KoshQon.debug.xcconfig"; sourceTree = "<group>"; };
-		F30C6F289700564A4B99FF0F /* Pods-KoshQon-KoshQonUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KoshQon-KoshQonUITests.release.xcconfig"; path = "Target Support Files/Pods-KoshQon-KoshQonUITests/Pods-KoshQon-KoshQonUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -506,7 +520,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A2BFAC16081DDB0F2EAD971E /* Pods_KoshQon_KoshQonUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -655,6 +668,7 @@
 				47C01DD12BAD9D7500D1B2F2 /* UIButton+Extensions.swift */,
 				47C01DEA2BAEF2D600D1B2F2 /* UIDevice+Extensions.swift */,
 				47F5704A2C037CCA008DCA81 /* UIFont+Extensions.swift */,
+				47F571AD2C0C99C6008DCA81 /* UIImage+Extensions.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -776,6 +790,8 @@
 				47F571902C0B8C11008DCA81 /* CheckboxView.swift */,
 				47F571942C0B960F008DCA81 /* DynamicTextEditor.swift */,
 				47F571962C0B9C37008DCA81 /* ProceedButtonWrapper.swift */,
+				47F571B12C0CA3FE008DCA81 /* AnnouncementActionButton.swift */,
+				47F571B32C0CA8D2008DCA81 /* ImageSlider.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -841,6 +857,7 @@
 		4743D06B2B81191200103C5E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				47F5719B2C0C8DC2008DCA81 /* AnnouncementDetails */,
 				47F570502C03889A008DCA81 /* Messages */,
 				4743D06C2B81193000103C5E /* SplashScreen */,
 				4743D06D2B81194100103C5E /* Auth */,
@@ -1181,8 +1198,8 @@
 		47C01E052BB28AC700D1B2F2 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				47C01E0B2BB28C4600D1B2F2 /* FavoritesCoordinator.swift */,
-				47C01E0D2BB28C5200D1B2F2 /* FavoritesOutputCoordinator.swift */,
+				47C01E0B2BB28C4600D1B2F2 /* AnnouncementsCoordinator.swift */,
+				47C01E0D2BB28C5200D1B2F2 /* AnnouncementsOutputCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -1207,7 +1224,7 @@
 		47C01E092BB28BE900D1B2F2 /* Factory */ = {
 			isa = PBXGroup;
 			children = (
-				47C01E0F2BB28CCD00D1B2F2 /* FavoritesFlowFactory.swift */,
+				47C01E0F2BB28CCD00D1B2F2 /* AnnouncementsFlowFactory.swift */,
 			);
 			path = Factory;
 			sourceTree = "<group>";
@@ -1860,11 +1877,63 @@
 			path = Localization;
 			sourceTree = "<group>";
 		};
+		47F5719B2C0C8DC2008DCA81 /* AnnouncementDetails */ = {
+			isa = PBXGroup;
+			children = (
+				47F5719C2C0C8DCB008DCA81 /* Coordinator */,
+				47F5719D2C0C8DD8008DCA81 /* Factory */,
+				47F5719E2C0C8DE4008DCA81 /* ViewController */,
+				47F5719F2C0C8DF6008DCA81 /* View */,
+				47F571AA2C0C9884008DCA81 /* ViewModel */,
+			);
+			path = AnnouncementDetails;
+			sourceTree = "<group>";
+		};
+		47F5719C2C0C8DCB008DCA81 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				47F571A42C0C8E8F008DCA81 /* AnnouncementDetailsCoordinator.swift */,
+				47F571A62C0C8E9F008DCA81 /* AnnouncementDetailsOutputCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		47F5719D2C0C8DD8008DCA81 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				47F571A22C0C8E61008DCA81 /* AnnouncementDetailsFlowFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		47F5719E2C0C8DE4008DCA81 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				47F571A02C0C8E0C008DCA81 /* AnnouncementDetailsViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		47F5719F2C0C8DF6008DCA81 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				47F571A82C0C9314008DCA81 /* AnnouncementDetailsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		47F571AA2C0C9884008DCA81 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				47F571AB2C0C9897008DCA81 /* AnnouncementDetailsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		859EE003E211FF3686884D56 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				4B1CB0D67C4284B3386A5D17 /* Pods_KoshQon.framework */,
-				42CE84A5574DC805229D129B /* Pods_KoshQon_KoshQonUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1874,8 +1943,6 @@
 			children = (
 				6D25178508F65D3C6D2EDA43 /* Pods-KoshQon.debug.xcconfig */,
 				5F34D042224D89E307A460AA /* Pods-KoshQon.release.xcconfig */,
-				5A64B66AF75DD7EB3AA05FD9 /* Pods-KoshQon-KoshQonUITests.debug.xcconfig */,
-				F30C6F289700564A4B99FF0F /* Pods-KoshQon-KoshQonUITests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -1906,11 +1973,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 47D1BF362BD3AA10004992AA /* Build configuration list for PBXNativeTarget "KoshQonUITests" */;
 			buildPhases = (
-				B7F7B1DEC815EFE8E856EADD /* [CP] Check Pods Manifest.lock */,
 				47D1BF2A2BD3AA10004992AA /* Sources */,
 				47D1BF2B2BD3AA10004992AA /* Frameworks */,
 				47D1BF2C2BD3AA10004992AA /* Resources */,
-				3655FD5BFFDEF67523CA85CC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -2039,23 +2104,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KoshQon/Pods-KoshQon-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3655FD5BFFDEF67523CA85CC /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KoshQon-KoshQonUITests/Pods-KoshQon-KoshQonUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KoshQon-KoshQonUITests/Pods-KoshQon-KoshQonUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KoshQon-KoshQonUITests/Pods-KoshQon-KoshQonUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		9216BE3942CAB8A76E0F2D3C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2078,28 +2126,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B7F7B1DEC815EFE8E856EADD /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-KoshQon-KoshQonUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -2109,7 +2135,7 @@
 			files = (
 				47D1BE362BC64B37004992AA /* FriendsViewModel.swift in Sources */,
 				47D1BE2D2BC1E4B1004992AA /* ImageSetCoordinator.swift in Sources */,
-				47C01E102BB28CCD00D1B2F2 /* FavoritesFlowFactory.swift in Sources */,
+				47C01E102BB28CCD00D1B2F2 /* AnnouncementsFlowFactory.swift in Sources */,
 				4715996C2BF1D69100022D62 /* PassCodeOutputCoordinator.swift in Sources */,
 				475224E42BA9D5CC000DAE1B /* Router.swift in Sources */,
 				47D54CE82B963F5900021FA7 /* NSObject+Extensions.swift in Sources */,
@@ -2142,7 +2168,7 @@
 				475224BE2BA45A4A000DAE1B /* ProfileCommonView.swift in Sources */,
 				475225032BAB5B28000DAE1B /* MenuButton.swift in Sources */,
 				475224962BA04E94000DAE1B /* NavigationCellViewModel.swift in Sources */,
-				47C01E0C2BB28C4600D1B2F2 /* FavoritesCoordinator.swift in Sources */,
+				47C01E0C2BB28C4600D1B2F2 /* AnnouncementsCoordinator.swift in Sources */,
 				475224E22BA9D515000DAE1B /* RouterProtocol.swift in Sources */,
 				47D1BDEE2BB5F254004992AA /* ProfileDetailType.swift in Sources */,
 				475224D82BA9CBBA000DAE1B /* FlowFactory.swift in Sources */,
@@ -2177,7 +2203,9 @@
 				47C01E262BB2B5F400D1B2F2 /* AddAnnouncementOutputCoordinator.swift in Sources */,
 				47D54CC52B91EC7200021FA7 /* MainScreenViewController.swift in Sources */,
 				475224FA2BA9FECB000DAE1B /* AuthFlowFactory.swift in Sources */,
+				47F571A52C0C8E8F008DCA81 /* AnnouncementDetailsCoordinator.swift in Sources */,
 				47C01E1C2BB2981800D1B2F2 /* AddAnnouncementViewModel.swift in Sources */,
+				47F571A92C0C9314008DCA81 /* AnnouncementDetailsView.swift in Sources */,
 				47C01E1A2BB297E300D1B2F2 /* AddAnnouncementViewController.swift in Sources */,
 				47F571612C074407008DCA81 /* LanguageViewController.swift in Sources */,
 				47CD67242B88A8E10035DCB6 /* SetPasswordViewModel.swift in Sources */,
@@ -2203,6 +2231,7 @@
 				475224CB2BA99242000DAE1B /* TabBarViewModel.swift in Sources */,
 				47C01DFD2BB1B35C00D1B2F2 /* MainScreenOutputCoordinator.swift in Sources */,
 				4715D0442BD64D7900DF7868 /* NumberPadView.swift in Sources */,
+				47F571B42C0CA8D2008DCA81 /* ImageSlider.swift in Sources */,
 				47D1BDE12BB5783F004992AA /* EditProfileCoordinator.swift in Sources */,
 				47C01E042BB2890400D1B2F2 /* AnnouncementsType.swift in Sources */,
 				47C01E4A2BB4416500D1B2F2 /* SettingsFlowFactory.swift in Sources */,
@@ -2223,6 +2252,7 @@
 				475224A52BA162A4000DAE1B /* Reusable.swift in Sources */,
 				47F5718D2C09E6B7008DCA81 /* Condition.swift in Sources */,
 				47F571952C0B960F008DCA81 /* DynamicTextEditor.swift in Sources */,
+				47F571AC2C0C9897008DCA81 /* AnnouncementDetailsViewModel.swift in Sources */,
 				47F571992C0C505D008DCA81 /* AppData.swift in Sources */,
 				47D1BE3B2BC64C55004992AA /* FriendCellViewModel.swift in Sources */,
 				47CD671A2B8796060035DCB6 /* SmsCodeViewController.swift in Sources */,
@@ -2236,7 +2266,9 @@
 				47CD67282B88BB070035DCB6 /* SetPasswordViewController.swift in Sources */,
 				4774CD2A2BF918E900089B85 /* ErrorModel.swift in Sources */,
 				47C01DDC2BADC9A900D1B2F2 /* EnterPhoneOutputCoordinator.swift in Sources */,
+				47F571A32C0C8E61008DCA81 /* AnnouncementDetailsFlowFactory.swift in Sources */,
 				47D1BE052BBD5D5C004992AA /* MenuHeaderView.swift in Sources */,
+				47F571A12C0C8E0C008DCA81 /* AnnouncementDetailsViewController.swift in Sources */,
 				475224A22BA05800000DAE1B /* AnnouncementsViewModel.swift in Sources */,
 				47D54CEC2B96419700021FA7 /* UIView+Extensions.swift in Sources */,
 				4774CD2C2BF9195400089B85 /* ApiRouter.swift in Sources */,
@@ -2268,12 +2300,14 @@
 				47D1BE252BC1BA19004992AA /* ProfileCharacteristicsView.swift in Sources */,
 				472E1B372B8364E1005BF649 /* LoginViewController.swift in Sources */,
 				47D1BE462BC664D4004992AA /* FriendsCoordinator.swift in Sources */,
-				47C01E0E2BB28C5200D1B2F2 /* FavoritesOutputCoordinator.swift in Sources */,
+				47C01E0E2BB28C5200D1B2F2 /* AnnouncementsOutputCoordinator.swift in Sources */,
 				472E1B402B837AAE005BF649 /* ProceedButton.swift in Sources */,
 				47F5718F2C0B7E57008DCA81 /* ApartmentsType.swift in Sources */,
+				47F571A72C0C8E9F008DCA81 /* AnnouncementDetailsOutputCoordinator.swift in Sources */,
 				47D54CC32B91EC5800021FA7 /* MainScreenView.swift in Sources */,
 				4752249F2BA051EA000DAE1B /* AnnouncementsView.swift in Sources */,
 				47D1BE392BC64BED004992AA /* FriendCell.swift in Sources */,
+				47F571AE2C0C99C6008DCA81 /* UIImage+Extensions.swift in Sources */,
 				47D1BE292BC1E2A4004992AA /* ImageSettable.swift in Sources */,
 				47D1BE142BBEA356004992AA /* NavigationTableViewType.swift in Sources */,
 				47C01DFF2BB1B3BB00D1B2F2 /* MainScreenCoordinator.swift in Sources */,
@@ -2292,6 +2326,7 @@
 				47D1BE032BBAD1A9004992AA /* ProfileAboutMeView.swift in Sources */,
 				475224982BA04EAC000DAE1B /* AnnouncementViewModel.swift in Sources */,
 				47C01E012BB1B41100D1B2F2 /* MainScreenFlowFactory.swift in Sources */,
+				47F571B22C0CA3FE008DCA81 /* AnnouncementActionButton.swift in Sources */,
 				47C7B3872B8132E100125172 /* AppFontProtocol.swift in Sources */,
 				47C01E3B2BB2DF1C00D1B2F2 /* SettingsViewModel.swift in Sources */,
 				4715D0522BD66C3100DF7868 /* EntryType.swift in Sources */,
@@ -2560,7 +2595,6 @@
 		};
 		47D1BF372BD3AA10004992AA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5A64B66AF75DD7EB3AA05FD9 /* Pods-KoshQon-KoshQonUITests.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -2584,7 +2618,6 @@
 		};
 		47D1BF382BD3AA10004992AA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F30C6F289700564A4B99FF0F /* Pods-KoshQon-KoshQonUITests.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;

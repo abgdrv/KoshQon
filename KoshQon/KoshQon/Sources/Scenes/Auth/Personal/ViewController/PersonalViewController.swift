@@ -209,6 +209,14 @@ extension PersonalViewController: UIImagePickerControllerDelegate,
 
 private extension PersonalViewController {
     @objc func continueButtonTapped() {
+        AppData.shared.user.image = image
+        AppData.shared.user.fname = firstNameTextField.text ?? ""
+        AppData.shared.user.lname = lastNameTextField.text ?? ""
+        AppData.shared.user.birthday = datePicker.date
+        AppData.shared.user.gender = .male
+        AppData.shared.user.country = .kz
+        AppData.shared.user.city = .almaty
+        
         didFinish?()
     }
 }

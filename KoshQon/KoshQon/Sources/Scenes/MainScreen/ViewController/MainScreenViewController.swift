@@ -12,7 +12,7 @@ final class MainScreenViewController: BaseViewController {
     // MARK: - Properties
     
     var didNavigationCellTap: Callback<NavigationCellType>?
-    var didAnnouncementCellTap: Callback<AnnouncementViewModel>?
+    var didAnnouncementCellTap: Callback<Announcement>?
     
     private let viewModel: MainScreenViewModel
     
@@ -51,9 +51,9 @@ private extension MainScreenViewController {
             self.didNavigationCellTap?(type)
         }
         
-        mainScreenView.didAnnouncementCellTap = { [weak self] viewModel in
+        mainScreenView.didAnnouncementCellTap = { [weak self] announcement in
             guard let self = self else { return }
-            self.didAnnouncementCellTap?(viewModel)
+            self.didAnnouncementCellTap?(announcement)
         }
         
         mainScreenView.didScrollDown = { [weak self] in

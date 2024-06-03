@@ -36,11 +36,6 @@ final class ThemeViewController: BaseViewController {
         setupViews()
         setupConstraints()
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        tabBarController?.tabBar.isHidden = true
-    }
 }
 
 private extension ThemeViewController {

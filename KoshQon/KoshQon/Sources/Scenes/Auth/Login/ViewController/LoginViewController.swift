@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ProgressHUD
 
 final class LoginViewController: BaseViewController {
     
@@ -53,7 +54,20 @@ private extension LoginViewController {
         loginView.didLogin = { [weak self] model in
             guard let self = self else { return }
             self.viewModel.login(loginModel: model)
-            self.didLogin?()
+            
+            ProgressHUD.animate()
+            
+            if model.fullNumber == AppData.shared.mainUser.phoneNumber {
+                AppData.shared.user = AppData.shared.mainUser
+            }
+            
+            print(model.fullNumber)
+            print(AppData.shared.mainUser.phoneNumber)
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                ProgressHUD.dismiss()
+                self.didLogin?()
+            }
         }
         
         loginView.didRegister = { [weak self] in

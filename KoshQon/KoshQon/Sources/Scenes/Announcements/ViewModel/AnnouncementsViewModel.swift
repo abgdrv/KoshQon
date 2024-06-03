@@ -14,24 +14,19 @@ final class AnnouncementsViewModel {
     private let type: AnnouncementsType
     var items: [AnnouncementViewModel] = []
     
-    let ads: [Announcement] = [
-        
-    ]
-    
     // MARK: - Object Lifecycle
     
     init(type: AnnouncementsType) {
         self.type = type
         getAnnouncements()
     }
-
 }
 
 // MARK: - Private methods
 
-private extension AnnouncementsViewModel {
+extension AnnouncementsViewModel {
     func getAnnouncements() {
-        items = makeCellViewModels(items: ads)
+        items = makeCellViewModels(items: type == .favorites ? AppData.shared.favorites : AppData.shared.myAnnouncements)
     }
     
     func makeCellViewModels(items: [Announcement]) -> [AnnouncementViewModel] {

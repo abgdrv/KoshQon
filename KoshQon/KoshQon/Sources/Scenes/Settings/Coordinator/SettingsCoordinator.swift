@@ -39,7 +39,7 @@ private extension SettingsCoordinator {
             guard let self = self else { return }
             self.showNavigationCell(type: type)
         }
-        router.push(view)
+        router.push(view, hideBottomBar: true)
     }
     
     func showEditProfile() {
@@ -48,7 +48,6 @@ private extension SettingsCoordinator {
             guard let self = self else { return }
             self.removeDependency(coordinator)
         }
-        coordinator.profile = ProfileViewModel(profileType: .myProfile).profile
         addDependency(coordinator)
         coordinator.start()
     }

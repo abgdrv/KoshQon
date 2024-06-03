@@ -38,14 +38,15 @@ extension FlowFactory: SplashScreenFlowFactory,
                        EnterPhoneFlowFactory,
                        TabBarFlowFactory,
                        MainScreenFlowFactory,
-                       FavoritesFlowFactory,
+                       AnnouncementsFlowFactory,
                        AddAnnouncementFlowFactory,
                        ProfileFlowFactory,
                        SettingsFlowFactory,
                        EditProfileFlowFactory,
                        FriendsFlowFactory,
                        PassCodeFlowFactory,
-                       MessagesFlowFactory {
+                       MessagesFlowFactory,
+                       AnnouncementDetailsFlowFactory {
     
     func makeSplashScreen() -> SplashScreenViewController {
         let vc = SplashScreenViewController()
@@ -93,13 +94,13 @@ extension FlowFactory: SplashScreenFlowFactory,
         return vc
     }
     
-    func makeMainScreenView() -> MainScreenViewController {
-        let vm = MainScreenViewModel()
+    func makeMainScreenView(isFirst: Bool) -> MainScreenViewController {
+        let vm = MainScreenViewModel(isFirst: isFirst)
         let vc = MainScreenViewController(viewModel: vm)
         return vc
     }
     
-    func makeFavoritesView(type: AnnouncementsType) -> AnnouncementsViewController {
+    func makeAnnouncementsView(type: AnnouncementsType) -> AnnouncementsViewController {
         let vm = AnnouncementsViewModel(type: type)
         let vc = AnnouncementsViewController(viewModel: vm, type: type)
         return vc
@@ -111,8 +112,8 @@ extension FlowFactory: SplashScreenFlowFactory,
         return vc
     }
     
-    func makeProfileView(type: ProfileType) -> ProfileViewController {
-        let vm = ProfileViewModel(profileType: type)
+    func makeProfileView(type: ProfileType, user: User) -> ProfileViewController {
+        let vm = ProfileViewModel(user: user, profileType: type)
         let vc = ProfileViewController(viewModel: vm)
         return vc
     }
@@ -141,8 +142,8 @@ extension FlowFactory: SplashScreenFlowFactory,
         return vc
     }
     
-    func makeEditProfileView(profile: Profile) -> EditProfileViewController {
-        let vm = EditProfileViewModel(profile: profile)
+    func makeEditProfileView() -> EditProfileViewController {
+        let vm = EditProfileViewModel()
         let vc = EditProfileViewController(viewModel: vm)
         return vc
     }
@@ -175,5 +176,11 @@ extension FlowFactory: SplashScreenFlowFactory,
     
     func makeMessagesView(isATCChat: Bool) -> UIViewController {
         return MessagessViewController()
+    }
+    
+    func makeAnnouncementDetailsView(announcement: Announcement) -> AnnouncementDetailsViewController {
+        let vm = AnnouncementDetailsViewModel(announcement: announcement)
+        let vc = AnnouncementDetailsViewController(viewModel: vm)
+        return vc
     }
 }

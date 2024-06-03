@@ -12,6 +12,8 @@ final class AnnouncementsView: BaseView {
     
     // MARK: - Properties
     
+    var didAnnouncementCellTap: Callback<Announcement>?
+    
     private let viewModel: AnnouncementsViewModel
     private let type: AnnouncementsType
     
@@ -21,7 +23,7 @@ final class AnnouncementsView: BaseView {
         $0.backgroundColor = AppColor.Theme.secondaryBackground.uiColor
     }
     
-    private lazy var announcementsTableView = UITableView(frame: .zero, style: .plain).apply {
+    lazy var announcementsTableView = UITableView(frame: .zero, style: .plain).apply {
         $0.showsVerticalScrollIndicator = false
         $0.separatorStyle = .none
         $0.dataSource = self
@@ -70,6 +72,10 @@ extension AnnouncementsView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = AnnouncementCell(viewModel: viewModel.items[indexPath.row], isGradient: false)
+        cell.didAnnouncementCellTap = { [weak self] announcement in
+            guard let self = self else { return }
+            self.didAnnouncementCellTap?(announcement)
+        }
         return cell
     }
     
@@ -96,7 +102,7 @@ extension AnnouncementsView: UITableViewDelegate, UITableViewDataSource {
 private extension AnnouncementsView {
     func setupViews() {
         addSubview(contentView)
-        if viewModel.ads.isEmpty {
+        if viewModel.items.isEmpty {
             contentView.addSubview(emptyLabel)
             //            addSubviews(heartImageView, titleLabel, infoLabel, findButton)
         } else {
@@ -112,7 +118,7 @@ private extension AnnouncementsView {
             make.leading.trailing.bottom.equalToSuperview()
         }
         
-        if viewModel.ads.isEmpty {
+        if viewModel.items.isEmpty {
             emptyLabel.snp.makeConstraints { make in
                 make.center.equalTo(center)
             }

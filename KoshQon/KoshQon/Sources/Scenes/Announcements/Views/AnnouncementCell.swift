@@ -7,15 +7,27 @@
 
 import UIKit
 import SnapKit
-import SkeletonView
+import UIView_Shimmer
 
-final class AnnouncementCell: BaseCell {
+final class AnnouncementCell: BaseCell, ShimmeringViewProtocol {
     
     // MARK: - Properties
     
-    var didAnnouncementCellTap: Callback<AnnouncementViewModel>?
+    var didAnnouncementCellTap: Callback<Announcement>?
     
     private let viewModel: AnnouncementViewModel
+    
+    var shimmeringAnimatedItems: [UIView] {
+        [
+            adImageView,
+            titleLabel,
+            addressLabel,
+            ageLabel,
+            genderLabel,
+            budgetLabel,
+            dateLabel
+        ]
+    }
     
     // MARK: - UI
     
@@ -26,36 +38,33 @@ final class AnnouncementCell: BaseCell {
     private lazy var adImageView = UIImageView(image: AppImage.Main.adBlank.uiImage).apply {
         $0.contentMode = .scaleAspectFill
         $0.clipsToBounds = true
-        $0.isSkeletonable = true
-        $0.skeletonCornerRadius = 10
     }
     
     private lazy var titleLabel = UILabel().apply {
         $0.set(font: AppFont.regular.s16, textColor: AppColor.Theme.mainTitle.uiColor)
         $0.numberOfLines = 0
-        $0.isSkeletonable = true
+        $0.text = "                                                                                       "
     }
     
     private lazy var addressLabel = UILabel().apply {
         $0.set(font: AppFont.regular.s12, textColor: AppColor.Static.darkGray.uiColor)
         $0.textAlignment = .right
-        $0.isSkeletonable = true
+        $0.text = "                                                                                       "
     }
     
     private lazy var ageLabel = UILabel().apply {
         $0.set(font: AppFont.regular.s12, textColor: AppColor.Static.darkGray.uiColor)
-        $0.isSkeletonable = true
+        $0.text = "                                                                                       "
     }
     
     private lazy var genderLabel = UILabel().apply {
         $0.set(font: AppFont.regular.s12, textColor: AppColor.Static.darkGray.uiColor)
-        $0.isSkeletonable = true
-
+        $0.text = "                                                                                       "
     }
     
     private lazy var budgetLabel = UILabel().apply {
         $0.set(font: AppFont.regular.s12, textColor: AppColor.Static.darkGray.uiColor)
-        $0.isSkeletonable = true
+        $0.text = "                                                                                       "
     }
     
     private lazy var separatorView = SeparatorView()
@@ -64,7 +73,7 @@ final class AnnouncementCell: BaseCell {
     
     private lazy var dateLabel = UILabel().apply {
         $0.set(font: AppFont.regular.s12, textColor: AppColor.Static.darkGray.uiColor)
-        $0.isSkeletonable = true
+        $0.text = "                                                                                       "
     }
     
     
@@ -73,21 +82,13 @@ final class AnnouncementCell: BaseCell {
     init(viewModel: AnnouncementViewModel, isGradient: Bool) {
         self.viewModel = viewModel
         super.init()
-        setup(viewModel)
         setupViews()
         setupConstraints()
         setupBindings()
         
-        
-        if isGradient {
-            setupSkeleton()
-
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                self.stopSkeleton()
-                self.setup(viewModel)
-            }
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
+            self.setup(viewModel)
         }
-        
     }
     
     // MARK: - View Lifecycle
@@ -187,20 +188,21 @@ private extension AnnouncementCell {
     }
     
     func setupSkeleton() {
-        [titleLabel, ageLabel, genderLabel, budgetLabel, dateLabel, addressLabel, adImageView].forEach {
-            $0.showAnimatedGradientSkeleton()
-        }
+//        [titleLabel, ageLabel, genderLabel, budgetLabel, dateLabel, addressLabel, adImageView].forEach {
+//            $0.showAnimatedGradientSkeleton()
+//        }
+//        showske
     }
     
     func stopSkeleton() {
-        adImageView.hideSkeleton()
-        adImageView.layer.cornerRadius = 10
-        titleLabel.hideSkeleton()
-        addressLabel.hideSkeleton()
-        ageLabel.hideSkeleton()
-        genderLabel.hideSkeleton()
-        budgetLabel.hideSkeleton()
-        dateLabel.hideSkeleton()
+//        adImageView.hideSkeleton()
+//        adImageView.layer.cornerRadius = 10
+//        titleLabel.hideSkeleton()
+//        addressLabel.hideSkeleton()
+//        ageLabel.hideSkeleton()
+//        genderLabel.hideSkeleton()
+//        budgetLabel.hideSkeleton()
+//        dateLabel.hideSkeleton()
     }
 }
 
@@ -224,6 +226,6 @@ private extension AnnouncementCell {
 
 private extension AnnouncementCell {
     @objc func cellTapped() {
-        didAnnouncementCellTap?(viewModel)
+        didAnnouncementCellTap?(viewModel.announcement)
     }
 }

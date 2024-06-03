@@ -13,7 +13,6 @@ final class EditProfileCoordinator: ImageSetCoordinator, EditProfileOutputCoordi
     // MARK: - Properties
     
     var finishFlow: VoidCallback?
-    var profile: Profile?
     
     private let router: RouterProtocol
     private let factory: EditProfileFlowFactory
@@ -35,8 +34,7 @@ final class EditProfileCoordinator: ImageSetCoordinator, EditProfileOutputCoordi
 
 private extension EditProfileCoordinator {
     func showEditProfile() {
-        guard let profile = profile else { return }
-        let view = factory.makeEditProfileView(profile: profile)
+        let view = factory.makeEditProfileView()
         view.didProfileDetailCellTap = { [weak self] type, value in
             guard let self = self else { return }
             self.showProfileDetailCell(type: type, value: value)
@@ -57,7 +55,13 @@ private extension EditProfileCoordinator {
             guard let self = self else { return }
             self.router.push(cropImage)
         }
-        router.push(view)
+        
+        view.didFinish = { [weak self] in
+            guard let self = self else { return }
+            self.router.popModule()
+        }
+        
+        router.push(view, hideBottomBar: true)
     }
     
     func showPhoneDetail() {

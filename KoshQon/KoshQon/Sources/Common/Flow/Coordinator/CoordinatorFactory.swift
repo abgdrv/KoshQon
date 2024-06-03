@@ -26,18 +26,18 @@ final class CoordinatorFactory: CoordinatorFactoryProtocol {
         return coordinator
     }
     
-    func makeTabBarCoordinator(router: RouterProtocol, coordinatorFactory: CoordinatorFactoryProtocol) -> Coordinator & TabBarOutputCoordinator {
-        let coordinator = TabBarCoordinator(router: router, factory: FlowFactory(), coordinatorFactory: coordinatorFactory)
+    func makeTabBarCoordinator(isFirst: Bool, router: RouterProtocol, coordinatorFactory: CoordinatorFactoryProtocol) -> Coordinator & TabBarOutputCoordinator {
+        let coordinator = TabBarCoordinator(isFirst: isFirst, router: router, factory: FlowFactory(), coordinatorFactory: coordinatorFactory)
         return coordinator
     }
     
-    func makeMainScreenCoordinator(navController: UINavigationController) -> Coordinator & MainScreenOutputCoordinator {
-        let coordinator = MainScreenCoordinator(router: router(navController), factory: FlowFactory(), coordinatorFactory: self)
+    func makeMainScreenCoordinator(isFirst: Bool, navController: UINavigationController) -> Coordinator & MainScreenOutputCoordinator {
+        let coordinator = MainScreenCoordinator(isFirst: isFirst, router: router(navController), factory: FlowFactory(), coordinatorFactory: self)
         return coordinator
     }
     
-    func makeFavoritesCoordinator(navController: UINavigationController) -> Coordinator & FavoritesOutputCoordinator {
-        let coordinator = FavoritesCoordinator(router: router(navController), factory: FlowFactory(), coordinatorFactory: self)
+    func makeFavoritesCoordinator(navController: UINavigationController) -> Coordinator & AnnouncementsOutputCoordinator {
+        let coordinator = AnnouncementsCoordinator(router: router(navController), factory: FlowFactory(), coordinatorFactory: self)
         return coordinator
     }
     
@@ -46,13 +46,13 @@ final class CoordinatorFactory: CoordinatorFactoryProtocol {
         return coordinator
     }
     
-    func makeProfileCoordinator(profileType: ProfileType, navController: UINavigationController) -> Coordinator & ProfileOutputCoordinator {
-        let coordinator = ProfileCoordinator(router: router(navController), factory: FlowFactory(), coordinatorFactory: self, profileType: profileType)
+    func makeProfileCoordinator(user: User, profileType: ProfileType, navController: UINavigationController) -> Coordinator & ProfileOutputCoordinator {
+        let coordinator = ProfileCoordinator(user: user, router: router(navController), factory: FlowFactory(), coordinatorFactory: self, profileType: profileType)
         return coordinator
     }
     
-    func makeProfileCoordinator(profileType: ProfileType, router: RouterProtocol) -> Coordinator & ProfileOutputCoordinator {
-        let coordinator = ProfileCoordinator(router: router, factory: FlowFactory(), coordinatorFactory: self, profileType: profileType)
+    func makeProfileCoordinator(user: User, profileType: ProfileType, router: RouterProtocol) -> Coordinator & ProfileOutputCoordinator {
+        let coordinator = ProfileCoordinator(user: user, router: router, factory: FlowFactory(), coordinatorFactory: self, profileType: profileType)
         return coordinator
     }
     
@@ -76,8 +76,13 @@ final class CoordinatorFactory: CoordinatorFactoryProtocol {
         return coordinator
     }
     
-    func makeMessagesCoordinator(navController: UINavigationController) -> any Coordinator & MessagesOutputCoordinator {
+    func makeMessagesCoordinator(navController: UINavigationController) -> Coordinator & MessagesOutputCoordinator {
         let coordinator = MessagesCoordinator(router: router(navController), factory: FlowFactory(), coordinatorFactory: self)
+        return coordinator
+    }
+    
+    func makeAnnouncementDetailsCoordinator(announcement: Announcement, router: RouterProtocol) -> Coordinator & AnnouncementDetailsOutputCoordinator {
+        let coordinator = AnnouncementDetailsCoordinator(announcement: announcement, router: router, factory: FlowFactory())
         return coordinator
     }
 }

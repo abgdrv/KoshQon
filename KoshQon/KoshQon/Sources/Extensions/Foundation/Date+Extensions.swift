@@ -16,3 +16,13 @@ extension Date {
     }
     
 }
+
+extension Date {
+    func age() -> Int {
+        let currentDate = Date()
+        let calendar = Calendar.current
+        let ageComponents = calendar.dateComponents([.year], from: self, to: currentDate)
+        let age = ageComponents.year!
+        return age
+    }
+}

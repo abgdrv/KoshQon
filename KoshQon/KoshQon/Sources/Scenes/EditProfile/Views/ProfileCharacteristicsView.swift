@@ -86,7 +86,6 @@ private extension ProfileCharacteristicsView {
 private extension ProfileCharacteristicsView {
     func getCharacteristicViews(enabledChars: [CharacteristicType]) -> [ProfileCharacteristicView] {
         var views: [ProfileCharacteristicView] = []
-        print(enabledChars)
         
         for caseValue in CharacteristicType.allCases {
             let view: ProfileCharacteristicView
@@ -128,6 +127,7 @@ private extension ProfileCharacteristicsView {
                 savedChars.append(characteristicsViews[index].type)
             }
         }
+        AppData.shared.user.chars = savedChars
         didSave?(savedChars)
     }
 }
