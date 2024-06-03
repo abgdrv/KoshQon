@@ -9,6 +9,17 @@ import Foundation
 
 enum AppImage {
     
+    enum Announcements: String, AppImageProtocol {
+        case ann1_1
+        case ann1_2
+        case ann1_3
+        case ann2_1
+        case ann2_2
+        case ann2_3
+        case ann3_1
+        case ann3_2
+    }
+    
     // MARK: - Common
     
     enum Common: String, AppImageProtocol {

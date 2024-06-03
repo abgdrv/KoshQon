@@ -76,7 +76,6 @@
 		475225072BACA8A1000DAE1B /* PersonalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475225062BACA8A1000DAE1B /* PersonalViewModel.swift */; };
 		4756A0272B7FCC56003F9675 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4756A0262B7FCC56003F9675 /* AppDelegate.swift */; };
 		4756A0292B7FCC56003F9675 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4756A0282B7FCC56003F9675 /* SceneDelegate.swift */; };
-		4756A0302B7FCC57003F9675 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4756A02F2B7FCC57003F9675 /* Images.xcassets */; };
 		4756A0332B7FCC57003F9675 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4756A0312B7FCC57003F9675 /* LaunchScreen.storyboard */; };
 		4764D5882B84D47900D15A2E /* Anta-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4764D5872B84D47900D15A2E /* Anta-Regular.ttf */; };
 		4764D5952B85A0A500D15A2E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4764D5942B85A0A500D15A2E /* LoginViewModel.swift */; };
@@ -240,6 +239,7 @@
 		47F571AE2C0C99C6008DCA81 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F571AD2C0C99C6008DCA81 /* UIImage+Extensions.swift */; };
 		47F571B22C0CA3FE008DCA81 /* AnnouncementActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F571B12C0CA3FE008DCA81 /* AnnouncementActionButton.swift */; };
 		47F571B42C0CA8D2008DCA81 /* ImageSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F571B32C0CA8D2008DCA81 /* ImageSlider.swift */; };
+		47F571B92C0DF0BD008DCA81 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47F571B82C0DF0BD008DCA81 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -329,7 +329,6 @@
 		4756A0232B7FCC56003F9675 /* KoshQon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KoshQon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4756A0262B7FCC56003F9675 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4756A0282B7FCC56003F9675 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4756A02F2B7FCC57003F9675 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4756A0322B7FCC57003F9675 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4756A0342B7FCC57003F9675 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = KoshQon/Resources/Info.plist; sourceTree = SOURCE_ROOT; };
 		4764D5872B84D47900D15A2E /* Anta-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Anta-Regular.ttf"; sourceTree = "<group>"; };
@@ -502,6 +501,7 @@
 		47F571AD2C0C99C6008DCA81 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		47F571B12C0CA3FE008DCA81 /* AnnouncementActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementActionButton.swift; sourceTree = "<group>"; };
 		47F571B32C0CA8D2008DCA81 /* ImageSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSlider.swift; sourceTree = "<group>"; };
+		47F571B82C0DF0BD008DCA81 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4B1CB0D67C4284B3386A5D17 /* Pods_KoshQon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KoshQon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F34D042224D89E307A460AA /* Pods-KoshQon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KoshQon.release.xcconfig"; path = "Target Support Files/Pods-KoshQon/Pods-KoshQon.release.xcconfig"; sourceTree = "<group>"; };
 		6D25178508F65D3C6D2EDA43 /* Pods-KoshQon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KoshQon.debug.xcconfig"; path = "Target Support Files/Pods-KoshQon/Pods-KoshQon.debug.xcconfig"; sourceTree = "<group>"; };
@@ -827,7 +827,7 @@
 		4743D0682B81151900103C5E /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				4756A02F2B7FCC57003F9675 /* Images.xcassets */,
+				47F571B82C0DF0BD008DCA81 /* Images.xcassets */,
 				47C7B3952B81372F00125172 /* AppImageProtocol.swift */,
 				47C7B3972B81377400125172 /* AppImage.swift */,
 			);
@@ -2057,12 +2057,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				47C7B37E2B81321800125172 /* SF-Pro-Display-Semibold.otf in Resources */,
+				47F571B92C0DF0BD008DCA81 /* Images.xcassets in Resources */,
 				4743D06F2B81198800103C5E /* Colors.xcassets in Resources */,
 				47F5704D2C0382DE008DCA81 /* GoogleService-Info.plist in Resources */,
 				47C7B3802B81321800125172 /* SF-Pro-Display-Bold.otf in Resources */,
 				47F5714C2C04FF1C008DCA81 /* Localizable.strings in Resources */,
 				4756A0332B7FCC57003F9675 /* LaunchScreen.storyboard in Resources */,
-				4756A0302B7FCC57003F9675 /* Images.xcassets in Resources */,
 				47C7B3812B81321800125172 /* SF-Pro-Display-Regular.otf in Resources */,
 				4764D5882B84D47900D15A2E /* Anta-Regular.ttf in Resources */,
 				47C7B37F2B81321800125172 /* SF-Pro-Display-Medium.otf in Resources */,

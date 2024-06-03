@@ -32,7 +32,7 @@ final class ProfileAboutView: HighlightView {
     }
     
     lazy var aboutTextLabel = UILabel().apply {
-        $0.font = AppFont.regular.s12
+        $0.font = AppFont.regular.s14
         $0.textColor = AppColor.Static.darkGray.uiColor
         $0.numberOfLines = 0
         $0.text = viewModel.profileType == .myProfile ? AppData.shared.user.about : viewModel.user.about

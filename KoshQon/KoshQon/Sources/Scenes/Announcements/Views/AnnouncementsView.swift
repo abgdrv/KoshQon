@@ -87,7 +87,11 @@ extension AnnouncementsView: UITableViewDelegate, UITableViewDataSource {
                 
             }),
             UIAction(title: LocalizableKeys.Alert.delete.localized(), image: UIImage(systemName: "trash"), handler: { action in
-                
+                if self.viewModel.type == .favorites {
+                    AppData.shared.favorites.remove(at: indexPath.row)
+                } else {
+                    AppData.shared.myAnnouncements.remove(at: indexPath.row)
+                }
             })
         ]
         

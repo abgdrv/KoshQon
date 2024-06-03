@@ -23,7 +23,7 @@ struct Announcement {
     let condition: String
     let isInternet: Bool
     let description: String
-    let date: Date = Date()
+    var date: Date = Date()
     
     let age: (String, String)
     let gender: String

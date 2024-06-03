@@ -11,7 +11,7 @@ final class AnnouncementsViewModel {
     
     // MARK: - Properties
     
-    private let type: AnnouncementsType
+    let type: AnnouncementsType
     var items: [AnnouncementViewModel] = []
     
     // MARK: - Object Lifecycle

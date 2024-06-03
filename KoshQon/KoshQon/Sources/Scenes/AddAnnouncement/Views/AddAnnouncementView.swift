@@ -175,6 +175,8 @@ struct AddAnnouncementView: View {
                     .foregroundColor(AppColor.Static.darkGray.swiftUIColor)
                 }
                 
+                Spacer()
+                
                 Button {
                     viewModel.createAnnouncement()
                 } label: {
